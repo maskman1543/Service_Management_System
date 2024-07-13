@@ -28,13 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            panel1 = new Panel();
             SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(3, 83, 115);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1440, 72);
+            panel1.TabIndex = 0;
             // 
             // POS
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1440, 1024);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "POS";
             StartPosition = FormStartPosition.CenterScreen;
@@ -44,5 +55,7 @@
         }
 
         #endregion
+
+        private Panel panel1;
     }
 }
