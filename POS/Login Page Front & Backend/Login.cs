@@ -23,5 +23,10 @@ namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
             mainForm.Show(); // Show the main form
             this.Hide(); // Hide the splash screen
         }
+
+        private void Splash_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

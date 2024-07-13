@@ -33,31 +33,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Splash));
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.SuspendLayout();
+            timer = new System.Windows.Forms.Timer(components);
+            SuspendLayout();
             // 
             // timer
             // 
-            this.timer.Interval = 5000;
-            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
+            timer.Interval = 5000;
+            timer.Tick += Timer_Tick;
             // 
             // Splash
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = (System.Drawing.Image)resources.GetObject("$this.BackgroundImage");
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(683, 503);
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Splash";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Splash";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Center;
+            ClientSize = new Size(598, 377);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "Splash";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Splash";
+            Load += Splash_Load;
+            ResumeLayout(false);
         }
 
         #endregion

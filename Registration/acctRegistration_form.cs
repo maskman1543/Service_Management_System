@@ -12,6 +12,8 @@ using System.Data.OleDb;
 using Service_Management_System.Properties.DASHBOARD;
 using Service_Management_System.POS;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Security.Cryptography;
+using System.Text;
 
 
 
@@ -41,7 +43,19 @@ namespace Service_Management_System.Registration
             mainForm.Show(); // Show the main form
             this.Hide(); // Hide the splash screen
         }
-
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             // Retrieve values from input fields
@@ -67,6 +81,9 @@ namespace Service_Management_System.Registration
                 return;
             }
 
+            // Hash the password
+            string hashedPassword = HashPassword(password);
+
             // If validation passes, proceed with registration logic (example)
             try
             {
@@ -80,7 +97,7 @@ namespace Service_Management_System.Registration
                 command.Parameters.AddWithValue("@LastName", lastName);
                 command.Parameters.AddWithValue("@Email", email);
                 command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
-                command.Parameters.AddWithValue("@Password", password);
+                command.Parameters.AddWithValue("@Password", hashedPassword);
 
                 connection.Open();
                 int rowsAffected = command.ExecuteNonQuery();
@@ -97,9 +114,8 @@ namespace Service_Management_System.Registration
                     passwordValue.Text = "";
                     confirmPasswordValue.Text = "";
 
-                    POSForm mainForm = new POSForm(); // proceeds to POSForm
-                    mainForm.Show();
-                    this.Hide();// Hide the splash screen
+                    // Close the registration form
+                    this.Close();
                 }
                 else
                 {
@@ -112,6 +128,7 @@ namespace Service_Management_System.Registration
                 // Handle any specific error logging or display as needed
             }
         }
+
 
         private void button3_Click(object sender, EventArgs e)
         {
