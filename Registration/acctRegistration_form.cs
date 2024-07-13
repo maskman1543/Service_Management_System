@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Service_Management_System.POS.Login_Page_Front___Backend;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,12 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
 
 namespace Service_Management_System.Registration
 {
-
-
     public partial class acctRegistration_form : Form
     {
         public acctRegistration_form()
@@ -20,19 +18,18 @@ namespace Service_Management_System.Registration
             InitializeComponent();
         }
 
-        private void label14_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            Form2 mainForm = new Form2();
+            mainForm.Show(); // Show the main form
+            this.Hide(); // Hide the splash screen
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label12_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void txb_Email_TextChanged(object sender, EventArgs e)
-        {
-
+            Form2 mainForm = new Form2();
+            mainForm.Show(); // Show the main form
+            this.Hide(); // Hide the splash screen
         }
     }
 }
