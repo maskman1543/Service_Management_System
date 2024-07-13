@@ -9,6 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using Service_Management_System.Properties.DASHBOARD;
+using Service_Management_System.POS;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+
 
 namespace Service_Management_System.Registration
 {
@@ -19,6 +24,8 @@ namespace Service_Management_System.Registration
         public acctRegistration_form()
         {
             InitializeComponent();
+            passwordValue.PasswordChar = '*'; // Hide password characters
+            confirmPasswordValue.PasswordChar = '*';// Hide password characters
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -89,6 +96,10 @@ namespace Service_Management_System.Registration
                     phoneNumberValue.Text = "";
                     passwordValue.Text = "";
                     confirmPasswordValue.Text = "";
+
+                    POSForm mainForm = new POSForm(); // proceeds to POSForm
+                    mainForm.Show();
+                    this.Hide();// Hide the splash screen
                 }
                 else
                 {
@@ -106,8 +117,8 @@ namespace Service_Management_System.Registration
         {
             // Test connection string
             OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString);
-        
-            
+
+
 
             try
             {
@@ -123,6 +134,21 @@ namespace Service_Management_System.Registration
             {
                 if (connection.State == System.Data.ConnectionState.Open)
                     connection.Close();
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            // Toggle password visibility
+            if (checkBox1.Checked)
+            {
+                passwordValue.PasswordChar = '\0'; // Show password characters
+                confirmPasswordValue.PasswordChar= '\0';// Show password characters
+            }
+            else
+            {
+                passwordValue.PasswordChar = '*'; // Hide password characters
+                confirmPasswordValue.PasswordChar = '*';// Hide password characters
             }
         }
     }

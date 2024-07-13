@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Service_Management_System.Registration;
 
 namespace Service_Management_System.POS
 {
-    public partial class POS : Form
+    public partial class POSForm : Form
     {
-        public POS()
+        public POSForm()
         {
             InitializeComponent();
         }

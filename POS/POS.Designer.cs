@@ -1,6 +1,6 @@
 ﻿namespace Service_Management_System.POS
 {
-    partial class POS
+    partial class POSForm
     {
         /// <summary>
         /// Required designer variable.
@@ -40,14 +40,14 @@
             panel1.Size = new Size(1440, 72);
             panel1.TabIndex = 0;
             // 
-            // POS
+            // POSForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1440, 1024);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "POS";
+            Name = "POSForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "POS";
             Load += POS_Load;

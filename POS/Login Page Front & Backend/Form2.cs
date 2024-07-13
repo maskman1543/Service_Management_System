@@ -17,6 +17,7 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
         public Form2()
         {
             InitializeComponent();
+            PasswordTextBox.PasswordChar = '*';
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -64,6 +65,9 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
                             // Successful login
                             MessageBox.Show("Login successful!");
                             // You can perform further actions here after successful login
+                            POSForm mainForm = new POSForm(); // proceeds to POSForm
+                            mainForm.Show();
+                            this.Hide();// Hide the splash screen
                         }
                         else // If no matching user found
                         {
@@ -81,7 +85,19 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
                 MessageBox.Show($"An error occurred: {ex.Message}");
                 // Handle specific error scenarios or log errors as needed
             }
-            
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                PasswordTextBox.PasswordChar = '\0'; // Show password characters
+            }
+            else
+            {
+                PasswordTextBox.PasswordChar = '*'; // Hide password characters
+            }
         }
     }
 }

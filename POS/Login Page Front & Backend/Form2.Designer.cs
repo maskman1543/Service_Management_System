@@ -55,11 +55,9 @@
             groupBox1.Controls.Add(EmailTextBox);
             groupBox1.Controls.Add(label1);
             groupBox1.FlatStyle = FlatStyle.Popup;
-            groupBox1.Location = new Point(10, 9);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
+            groupBox1.Location = new Point(11, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(448, 603);
+            groupBox1.Size = new Size(512, 804);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
@@ -71,9 +69,9 @@
             linkLabel2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel2.ForeColor = Color.White;
             linkLabel2.LinkColor = Color.White;
-            linkLabel2.Location = new Point(186, 481);
+            linkLabel2.Location = new Point(213, 641);
             linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(61, 20);
+            linkLabel2.Size = new Size(75, 25);
             linkLabel2.TabIndex = 4;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Sign Up";
@@ -87,9 +85,9 @@
             linkLabel1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel1.ForeColor = Color.White;
             linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(158, 512);
+            linkLabel1.Location = new Point(181, 683);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(118, 20);
+            linkLabel1.Size = new Size(146, 25);
             linkLabel1.TabIndex = 4;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Forgot Password";
@@ -100,10 +98,9 @@
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(76, 430);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(87, 573);
             button1.Name = "button1";
-            button1.Size = new Size(290, 34);
+            button1.Size = new Size(331, 45);
             button1.TabIndex = 3;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
@@ -115,21 +112,20 @@
             checkBox1.BackColor = Color.Transparent;
             checkBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             checkBox1.ForeColor = SystemColors.Control;
-            checkBox1.Location = new Point(76, 384);
-            checkBox1.Margin = new Padding(3, 2, 3, 2);
+            checkBox1.Location = new Point(87, 512);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(150, 25);
+            checkBox1.Size = new Size(187, 32);
             checkBox1.TabIndex = 2;
             checkBox1.Text = "  Show Password";
             checkBox1.UseVisualStyleBackColor = false;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // PasswordTextBox
             // 
             PasswordTextBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            PasswordTextBox.Location = new Point(76, 327);
-            PasswordTextBox.Margin = new Padding(3, 2, 3, 2);
+            PasswordTextBox.Location = new Point(87, 436);
             PasswordTextBox.Name = "PasswordTextBox";
-            PasswordTextBox.Size = new Size(290, 36);
+            PasswordTextBox.Size = new Size(331, 43);
             PasswordTextBox.TabIndex = 1;
             // 
             // label2
@@ -139,19 +135,18 @@
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(76, 292);
+            label2.Location = new Point(87, 389);
             label2.Name = "label2";
-            label2.Size = new Size(100, 24);
+            label2.Size = new Size(128, 29);
             label2.TabIndex = 0;
             label2.Text = "Password";
             // 
             // EmailTextBox
             // 
             EmailTextBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            EmailTextBox.Location = new Point(76, 244);
-            EmailTextBox.Margin = new Padding(3, 2, 3, 2);
+            EmailTextBox.Location = new Point(87, 325);
             EmailTextBox.Name = "EmailTextBox";
-            EmailTextBox.Size = new Size(290, 36);
+            EmailTextBox.Size = new Size(331, 43);
             EmailTextBox.TabIndex = 1;
             // 
             // label1
@@ -161,20 +156,19 @@
             label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(76, 210);
+            label1.Location = new Point(87, 280);
             label1.Name = "label1";
-            label1.Size = new Size(105, 24);
+            label1.Size = new Size(132, 29);
             label1.TabIndex = 0;
             label1.Text = "Username";
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(469, 621);
+            ClientSize = new Size(536, 828);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
