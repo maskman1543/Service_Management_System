@@ -10,7 +10,7 @@ namespace Service_Management_System
     {
         public static class GlobalVariables
         {
-            public static string ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\ServiceManagementSYstem.accdb;Persist Security Info=False;";
+            public static string ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\ServiceManagementSYstem.accdb;Persist Security Info=False;";
         }
     }
 }
