@@ -30,8 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(acctRegistration_form));
             panel1 = new Panel();
-            button1 = new Button();
+            label14 = new Label();
+            label13 = new Label();
+            pictureBox1 = new PictureBox();
             label1 = new Label();
+            button1 = new Button();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -52,10 +55,7 @@
             button2 = new Button();
             label12 = new Label();
             checkBox1 = new CheckBox();
-            pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            label13 = new Label();
-            label14 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -75,17 +75,36 @@
             panel1.Size = new Size(378, 730);
             panel1.TabIndex = 0;
             // 
-            // button1
+            // label14
             // 
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tahoma", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(47, 598);
-            button1.Name = "button1";
-            button1.Size = new Size(263, 49);
-            button1.TabIndex = 0;
-            button1.Text = "SIGN IN";
-            button1.UseVisualStyleBackColor = true;
+            label14.AutoSize = true;
+            label14.Font = new Font("Microsoft YaHei", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.ForeColor = Color.Gainsboro;
+            label14.Location = new Point(47, 275);
+            label14.Name = "label14";
+            label14.Size = new Size(288, 27);
+            label14.TabIndex = 4;
+            label14.Text = "Service Management System";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Brush Script MT", 48F, FontStyle.Italic, GraphicsUnit.Point);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(0, 189);
+            label13.Name = "label13";
+            label13.Size = new Size(379, 98);
+            label13.TabIndex = 3;
+            label13.Text = "Service Flow";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(73, 29);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(207, 175);
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -97,6 +116,19 @@
             label1.Size = new Size(134, 24);
             label1.TabIndex = 1;
             label1.Text = "SIGN IN HERE";
+            // 
+            // button1
+            // 
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Tahoma", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(47, 598);
+            button1.Name = "button1";
+            button1.Size = new Size(263, 49);
+            button1.TabIndex = 0;
+            button1.Text = "SIGN IN";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
@@ -292,6 +324,7 @@
             label12.Size = new Size(22, 24);
             label12.TabIndex = 2;
             label12.Text = "X";
+            label12.Click += label12_Click;
             // 
             // checkBox1
             // 
@@ -302,15 +335,6 @@
             checkBox1.TabIndex = 19;
             checkBox1.Text = "Show Password";
             checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(73, 29);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(207, 175);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -327,28 +351,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(556, 254);
             panel2.TabIndex = 3;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Brush Script MT", 48F, FontStyle.Italic, GraphicsUnit.Point);
-            label13.ForeColor = Color.White;
-            label13.Location = new Point(0, 189);
-            label13.Name = "label13";
-            label13.Size = new Size(379, 98);
-            label13.TabIndex = 3;
-            label13.Text = "Service Flow";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Microsoft YaHei", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.ForeColor = Color.Gainsboro;
-            label14.Location = new Point(47, 275);
-            label14.Name = "label14";
-            label14.Size = new Size(288, 27);
-            label14.TabIndex = 4;
-            label14.Text = "Service Management System";
             // 
             // acctRegistration_form
             // 

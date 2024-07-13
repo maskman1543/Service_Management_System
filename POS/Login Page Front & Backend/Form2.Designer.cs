@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             groupBox1 = new GroupBox();
+            linkLabel2 = new LinkLabel();
             linkLabel1 = new LinkLabel();
             button1 = new Button();
             checkBox1 = new CheckBox();
@@ -45,6 +46,7 @@
             groupBox1.BackColor = SystemColors.ControlLightLight;
             groupBox1.BackgroundImage = (Image)resources.GetObject("groupBox1.BackgroundImage");
             groupBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            groupBox1.Controls.Add(linkLabel2);
             groupBox1.Controls.Add(linkLabel1);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(checkBox1);
@@ -58,6 +60,22 @@
             groupBox1.Size = new Size(512, 804);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            // 
+            // linkLabel2
+            // 
+            linkLabel2.ActiveLinkColor = Color.Red;
+            linkLabel2.AutoSize = true;
+            linkLabel2.BackColor = Color.Transparent;
+            linkLabel2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            linkLabel2.ForeColor = Color.White;
+            linkLabel2.LinkColor = Color.White;
+            linkLabel2.Location = new Point(212, 641);
+            linkLabel2.Name = "linkLabel2";
+            linkLabel2.Size = new Size(75, 25);
+            linkLabel2.TabIndex = 4;
+            linkLabel2.TabStop = true;
+            linkLabel2.Text = "Sign Up";
+            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
             // 
             // linkLabel1
             // 
@@ -80,7 +98,7 @@
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Roboto", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(87, 602);
+            button1.Location = new Point(87, 574);
             button1.Name = "button1";
             button1.Size = new Size(331, 46);
             button1.TabIndex = 3;
@@ -93,17 +111,17 @@
             checkBox1.BackColor = Color.Transparent;
             checkBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             checkBox1.ForeColor = SystemColors.Control;
-            checkBox1.Location = new Point(87, 542);
+            checkBox1.Location = new Point(87, 512);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(193, 32);
+            checkBox1.Size = new Size(187, 32);
             checkBox1.TabIndex = 2;
-            checkBox1.Text = "   Show Password";
+            checkBox1.Text = "  Show Password";
             checkBox1.UseVisualStyleBackColor = false;
             // 
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(87, 466);
+            textBox2.Location = new Point(87, 436);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(331, 43);
             textBox2.TabIndex = 1;
@@ -115,7 +133,7 @@
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(87, 420);
+            label2.Location = new Point(87, 390);
             label2.Name = "label2";
             label2.Size = new Size(124, 30);
             label2.TabIndex = 0;
@@ -124,7 +142,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(87, 356);
+            textBox1.Location = new Point(87, 326);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(331, 43);
             textBox1.TabIndex = 1;
@@ -136,7 +154,7 @@
             label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(87, 310);
+            label1.Location = new Point(87, 280);
             label1.Name = "label1";
             label1.Size = new Size(126, 30);
             label1.TabIndex = 0;
@@ -168,5 +186,6 @@
         private CheckBox checkBox1;
         private Button button1;
         private LinkLabel linkLabel1;
+        private LinkLabel linkLabel2;
     }
 }
