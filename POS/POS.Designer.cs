@@ -99,7 +99,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1440, 78);
+            panel1.Size = new Size(1461, 78);
             panel1.TabIndex = 0;
             // 
             // button9
@@ -609,9 +609,12 @@
             // 
             // POSForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1440, 1024);
+            AutoScaleMode = AutoScaleMode.Inherit;
+            AutoScroll = true;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            AutoValidate = AutoValidate.EnablePreventFocusChange;
+            ClientSize = new Size(1461, 1045);
             Controls.Add(panel6);
             Controls.Add(dataGridView2);
             Controls.Add(panel5);
