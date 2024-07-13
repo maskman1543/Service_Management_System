@@ -8,21 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Service_Management_System
+namespace Service_Management_System.POS
 {
-    public partial class dash : Form
+    public partial class POS : Form
     {
-        public dash()
+        public POS()
         {
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void POS_Load(object sender, EventArgs e)
         {
 
         }
