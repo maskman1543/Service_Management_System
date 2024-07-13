@@ -99,5 +99,10 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
                 PasswordTextBox.PasswordChar = '*'; // Hide password characters
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
