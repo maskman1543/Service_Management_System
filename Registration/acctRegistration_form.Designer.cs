@@ -269,6 +269,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(251, 30);
             textBox2.TabIndex = 16;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // label10
             // 
@@ -289,6 +290,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(251, 30);
             textBox3.TabIndex = 18;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // label11
             // 
@@ -335,6 +337,7 @@
             checkBox1.TabIndex = 19;
             checkBox1.Text = "Show Password";
             checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // panel2
             // 

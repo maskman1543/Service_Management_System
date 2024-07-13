@@ -16,6 +16,8 @@ namespace Service_Management_System.Registration
         public acctRegistration_form()
         {
             InitializeComponent();
+            textBox2.PasswordChar = '*';
+            textBox3.PasswordChar = '*';
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,6 +32,30 @@ namespace Service_Management_System.Registration
             Form2 mainForm = new Form2();
             mainForm.Show(); // Show the main form
             this.Hide(); // Hide the splash screen
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)//password textbx
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)//confirm password textbx
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                textBox2.PasswordChar = '\0'; // Show password characters
+                textBox3.PasswordChar = '\0'; // Show password characters
+            }
+            else
+            {
+                textBox2.PasswordChar = '*'; // Hide password characters
+                textBox3.PasswordChar = '*'; // Show password characters
+            }
         }
     }
 }
