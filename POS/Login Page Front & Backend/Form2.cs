@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
+using System.Text;
+
 
 namespace Service_Management_System.POS.Login_Page_Front___Backend
 {
@@ -27,6 +30,19 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
             mainForm.Show(); // Show the main form
             this.Hide();// Hide the splash screen
         }
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -40,9 +56,12 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
                 return;
             }
 
+            // Hash the entered password
+            string hashedPassword = HashPassword(password);
+
             try
             {
-                // Construct the SELECT query to fetch user details by Email
+                // Construct the SELECT query to fetch user details by Email and hashed Password
                 string query = "SELECT * FROM Users WHERE Email = @Email AND [Password] = @Password";
 
                 // Set up OleDb connection and command
@@ -50,9 +69,9 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
                 {
                     using (OleDbCommand command = new OleDbCommand(query, connection))
                     {
-                        // Add parameters for Email and password
+                        // Add parameters for Email and hashed password
                         command.Parameters.AddWithValue("@Email", email);
-                        command.Parameters.AddWithValue("@Password", password);
+                        command.Parameters.AddWithValue("@Password", hashedPassword);
 
                         // Open the connection
                         connection.Open();
@@ -65,9 +84,6 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
                             // Successful login
                             MessageBox.Show("Login successful!");
                             // You can perform further actions here after successful login
-                            POSForm mainForm = new POSForm(); // proceeds to POSForm
-                            mainForm.Show();
-                            this.Hide();// Hide the splash screen
                         }
                         else // If no matching user found
                         {
@@ -85,7 +101,6 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
                 MessageBox.Show($"An error occurred: {ex.Message}");
                 // Handle specific error scenarios or log errors as needed
             }
-
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -98,6 +113,11 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
             {
                 PasswordTextBox.PasswordChar = '*'; // Hide password characters
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
