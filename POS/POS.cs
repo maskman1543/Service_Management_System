@@ -22,5 +22,15 @@ namespace Service_Management_System.POS
         {
 
         }
+
+        private void btnSaveSale_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

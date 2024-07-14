@@ -47,11 +47,11 @@
             btnQuantity = new Button();
             btnDelete = new Button();
             panel3 = new Panel();
-            textBox1 = new TextBox();
             button1 = new Button();
             button8 = new Button();
             button7 = new Button();
             button6 = new Button();
+            textBox1 = new TextBox();
             dataGridView1 = new DataGridView();
             panel4 = new Panel();
             button11 = new Button();
@@ -99,7 +99,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1461, 78);
+            panel1.Size = new Size(1480, 78);
             panel1.TabIndex = 0;
             // 
             // button9
@@ -214,6 +214,7 @@
             btnSaveSale.Text = "Save sale";
             btnSaveSale.TextAlign = ContentAlignment.BottomCenter;
             btnSaveSale.UseVisualStyleBackColor = true;
+            btnSaveSale.Click += btnSaveSale_Click;
             // 
             // btnNewSale
             // 
@@ -281,7 +282,7 @@
             panel2.Controls.Add(button5);
             panel2.Controls.Add(btnQuantity);
             panel2.Controls.Add(btnDelete);
-            panel2.Location = new Point(0, 84);
+            panel2.Location = new Point(0, 78);
             panel2.Name = "panel2";
             panel2.Size = new Size(451, 70);
             panel2.TabIndex = 1;
@@ -332,26 +333,15 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(3, 83, 115);
-            panel3.Controls.Add(textBox1);
             panel3.Controls.Add(button1);
             panel3.Controls.Add(button8);
             panel3.Controls.Add(button7);
             panel3.Controls.Add(button6);
-            panel3.Location = new Point(457, 84);
+            panel3.Controls.Add(textBox1);
+            panel3.Location = new Point(451, 78);
             panel3.Name = "panel3";
-            panel3.Size = new Size(983, 70);
+            panel3.Size = new Size(1026, 70);
             panel3.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.Gray;
-            textBox1.Location = new Point(371, 11);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(600, 46);
-            textBox1.TabIndex = 3;
-            textBox1.Text = "Search";
             // 
             // button1
             // 
@@ -401,14 +391,25 @@
             button6.TabIndex = 6;
             button6.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.ForeColor = Color.Gray;
+            textBox1.Location = new Point(371, 11);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(624, 46);
+            textBox1.TabIndex = 3;
+            textBox1.Text = "Search";
+            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 154);
+            dataGridView1.Location = new Point(0, 141);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(451, 667);
+            dataGridView1.Size = new Size(451, 390);
             dataGridView1.TabIndex = 3;
             // 
             // panel4
@@ -417,7 +418,7 @@
             panel4.Controls.Add(button11);
             panel4.Controls.Add(button4);
             panel4.Controls.Add(button3);
-            panel4.Location = new Point(0, 944);
+            panel4.Location = new Point(0, 653);
             panel4.Name = "panel4";
             panel4.Size = new Size(451, 81);
             panel4.TabIndex = 4;
@@ -475,21 +476,21 @@
             panel5.Controls.Add(textBox6);
             panel5.Controls.Add(label6);
             panel5.Controls.Add(label5);
-            panel5.Location = new Point(457, 944);
+            panel5.Location = new Point(451, 656);
             panel5.Name = "panel5";
-            panel5.Size = new Size(983, 81);
+            panel5.Size = new Size(1027, 78);
             panel5.TabIndex = 10;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(846, 44);
+            textBox5.Location = new Point(895, 39);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(125, 27);
             textBox5.TabIndex = 17;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(846, 9);
+            textBox6.Location = new Point(895, 4);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(125, 27);
             textBox6.TabIndex = 16;
@@ -500,7 +501,7 @@
             label6.BackColor = Color.FromArgb(3, 83, 115);
             label6.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(676, 49);
+            label6.Location = new Point(725, 44);
             label6.Name = "label6";
             label6.Size = new Size(42, 23);
             label6.TabIndex = 14;
@@ -512,7 +513,7 @@
             label5.BackColor = Color.FromArgb(3, 83, 115);
             label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(676, 13);
+            label5.Location = new Point(725, 8);
             label5.Name = "label5";
             label5.Size = new Size(84, 23);
             label5.TabIndex = 15;
@@ -521,11 +522,11 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(457, 154);
+            dataGridView2.Location = new Point(451, 145);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(983, 793);
+            dataGridView2.Size = new Size(1022, 513);
             dataGridView2.TabIndex = 11;
             // 
             // panel6
@@ -538,10 +539,11 @@
             panel6.Controls.Add(label3);
             panel6.Controls.Add(label2);
             panel6.Controls.Add(label1);
-            panel6.Location = new Point(0, 819);
+            panel6.Location = new Point(0, 528);
             panel6.Name = "panel6";
             panel6.Size = new Size(451, 128);
             panel6.TabIndex = 13;
+            panel6.Paint += panel6_Paint;
             // 
             // textBox4
             // 
@@ -614,15 +616,15 @@
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
-            ClientSize = new Size(1461, 1045);
+            ClientSize = new Size(1480, 737);
             Controls.Add(panel6);
             Controls.Add(dataGridView2);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(dataGridView1);
-            Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
             Name = "POSForm";
             StartPosition = FormStartPosition.CenterScreen;

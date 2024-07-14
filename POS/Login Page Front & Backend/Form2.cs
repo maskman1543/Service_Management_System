@@ -84,6 +84,9 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
                             // Successful login
                             MessageBox.Show("Login successful!");
                             // You can perform further actions here after successful login
+                            POSForm posform = new POSForm();
+                            posform.Show();
+                            this.Close();
                         }
                         else // If no matching user found
                         {
