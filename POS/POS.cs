@@ -42,5 +42,10 @@ namespace Service_Management_System.POS
         {
 
         }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
