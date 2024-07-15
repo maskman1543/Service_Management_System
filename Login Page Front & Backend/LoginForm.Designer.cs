@@ -60,7 +60,7 @@
             linkLabel2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel2.ForeColor = Color.White;
             linkLabel2.LinkColor = Color.White;
-            linkLabel2.Location = new Point(190, 441);
+            linkLabel2.Location = new Point(190, 437);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(75, 25);
             linkLabel2.TabIndex = 4;
@@ -119,7 +119,7 @@
             // 
             PasswordTextBox.Anchor = AnchorStyles.None;
             PasswordTextBox.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            PasswordTextBox.Location = new Point(103, 461);
+            PasswordTextBox.Location = new Point(62, 203);
             PasswordTextBox.Name = "PasswordTextBox";
             PasswordTextBox.Size = new Size(331, 43);
             PasswordTextBox.TabIndex = 1;
@@ -133,7 +133,7 @@
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(99, 421);
+            label2.Location = new Point(58, 163);
             label2.Name = "label2";
             label2.Size = new Size(114, 31);
             label2.TabIndex = 0;
@@ -144,7 +144,7 @@
             // 
             EmailTextBox.Anchor = AnchorStyles.None;
             EmailTextBox.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            EmailTextBox.Location = new Point(103, 350);
+            EmailTextBox.Location = new Point(62, 99);
             EmailTextBox.Name = "EmailTextBox";
             EmailTextBox.Size = new Size(331, 43);
             EmailTextBox.TabIndex = 1;
@@ -158,7 +158,7 @@
             label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(100, 313);
+            label1.Location = new Point(59, 62);
             label1.Name = "label1";
             label1.Size = new Size(73, 31);
             label1.TabIndex = 0;
@@ -170,8 +170,12 @@
             panel_loginInfo.BackColor = Color.FromArgb(3, 83, 115);
             panel_loginInfo.Controls.Add(lkblContinueAsEmployee);
             panel_loginInfo.Controls.Add(linkLabel2);
+            panel_loginInfo.Controls.Add(EmailTextBox);
             panel_loginInfo.Controls.Add(checkBox1);
+            panel_loginInfo.Controls.Add(label1);
             panel_loginInfo.Controls.Add(linkLabel1);
+            panel_loginInfo.Controls.Add(PasswordTextBox);
+            panel_loginInfo.Controls.Add(label2);
             panel_loginInfo.Location = new Point(41, 279);
             panel_loginInfo.Name = "panel_loginInfo";
             panel_loginInfo.Size = new Size(455, 491);
@@ -187,7 +191,7 @@
             lkblContinueAsEmployee.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             lkblContinueAsEmployee.ForeColor = Color.White;
             lkblContinueAsEmployee.LinkColor = Color.White;
-            lkblContinueAsEmployee.Location = new Point(136, 400);
+            lkblContinueAsEmployee.Location = new Point(137, 386);
             lkblContinueAsEmployee.Name = "lkblContinueAsEmployee";
             lkblContinueAsEmployee.Size = new Size(188, 25);
             lkblContinueAsEmployee.TabIndex = 8;
@@ -252,11 +256,7 @@
             ClientSize = new Size(536, 828);
             Controls.Add(btnClose);
             Controls.Add(pictureBox1);
-            Controls.Add(EmailTextBox);
             Controls.Add(button1);
-            Controls.Add(label1);
-            Controls.Add(label2);
-            Controls.Add(PasswordTextBox);
             Controls.Add(panel_loginInfo);
             Controls.Add(pictureBox2);
             FormBorderStyle = FormBorderStyle.None;
@@ -270,7 +270,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
