@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POSForm));
             panel1 = new Panel();
+            btnmenU2 = new Button();
+            btn12MNU = new Button();
+            btnmen12 = new Button();
             button9 = new Button();
             button10 = new Button();
             btnMenu = new Button();
@@ -74,6 +78,27 @@
             textBox7 = new TextBox();
             textBox8 = new TextBox();
             jobOrderedView = new DataGridView();
+            sidepanelPOS = new Panel();
+            moveup = new PictureBox();
+            allout = new PictureBox();
+            adjust = new PictureBox();
+            pictureBox5 = new PictureBox();
+            button16 = new Button();
+            pictureBox6 = new PictureBox();
+            button17 = new Button();
+            pictureBox7 = new PictureBox();
+            button18 = new Button();
+            pictureBox8 = new PictureBox();
+            button19 = new Button();
+            pictureBox4 = new PictureBox();
+            button15 = new Button();
+            pictureBox3 = new PictureBox();
+            button14 = new Button();
+            pictureBox2 = new PictureBox();
+            button13 = new Button();
+            pictureBox1 = new PictureBox();
+            button12 = new Button();
+            timerSfx = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -84,11 +109,27 @@
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)servicesView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)jobOrderedView).BeginInit();
+            sidepanelPOS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)moveup).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)allout).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)adjust).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(3, 83, 115);
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(btnmenU2);
+            panel1.Controls.Add(btn12MNU);
+            panel1.Controls.Add(btnmen12);
             panel1.Controls.Add(button9);
             panel1.Controls.Add(button10);
             panel1.Controls.Add(btnMenu);
@@ -106,6 +147,35 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1480, 78);
             panel1.TabIndex = 0;
+            // 
+            // btnmenU2
+            // 
+            btnmenU2.BackColor = Color.FromArgb(3, 83, 115);
+            btnmenU2.BackgroundImage = (Image)resources.GetObject("btnmenU2.BackgroundImage");
+            btnmenU2.BackgroundImageLayout = ImageLayout.Stretch;
+            btnmenU2.FlatAppearance.BorderSize = 0;
+            btnmenU2.FlatStyle = FlatStyle.Flat;
+            btnmenU2.ForeColor = Color.Transparent;
+            btnmenU2.Location = new Point(1417, 18);
+            btnmenU2.Name = "btnmenU2";
+            btnmenU2.Size = new Size(51, 42);
+            btnmenU2.TabIndex = 10;
+            btnmenU2.UseVisualStyleBackColor = false;
+            btnmenU2.Click += btnmenU2_Click;
+            // 
+            // btn12MNU
+            // 
+            btn12MNU.Location = new Point(0, 0);
+            btn12MNU.Name = "btn12MNU";
+            btn12MNU.Size = new Size(75, 23);
+            btn12MNU.TabIndex = 0;
+            // 
+            // btnmen12
+            // 
+            btnmen12.Location = new Point(0, 0);
+            btnmen12.Name = "btnmen12";
+            btnmen12.Size = new Size(75, 23);
+            btnmen12.TabIndex = 0;
             // 
             // button9
             // 
@@ -133,18 +203,10 @@
             // 
             // btnMenu
             // 
-            btnMenu.FlatStyle = FlatStyle.Flat;
-            btnMenu.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnMenu.ForeColor = Color.FromArgb(3, 83, 115);
-            btnMenu.Image = (Image)resources.GetObject("btnMenu.Image");
-            btnMenu.Location = new Point(1416, 18);
+            btnMenu.Location = new Point(0, 0);
             btnMenu.Name = "btnMenu";
-            btnMenu.Padding = new Padding(2, 0, 0, 12);
-            btnMenu.Size = new Size(59, 46);
-            btnMenu.TabIndex = 12;
-            btnMenu.TextAlign = ContentAlignment.BottomCenter;
-            btnMenu.UseVisualStyleBackColor = true;
-            btnMenu.Click += btnMenu_Click;
+            btnMenu.Size = new Size(75, 23);
+            btnMenu.TabIndex = 14;
             // 
             // btnRefund
             // 
@@ -339,6 +401,7 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(3, 83, 115);
+            panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(button1);
             panel3.Controls.Add(button8);
             panel3.Controls.Add(button7);
@@ -479,14 +542,14 @@
             // 
             textBox5.Location = new Point(895, 39);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 23);
+            textBox5.Size = new Size(125, 27);
             textBox5.TabIndex = 17;
             // 
             // textBox6
             // 
             textBox6.Location = new Point(895, 4);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(125, 23);
+            textBox6.Size = new Size(125, 27);
             textBox6.TabIndex = 16;
             // 
             // label6
@@ -497,7 +560,7 @@
             label6.ForeColor = Color.White;
             label6.Location = new Point(725, 44);
             label6.Name = "label6";
-            label6.Size = new Size(36, 19);
+            label6.Size = new Size(42, 23);
             label6.TabIndex = 14;
             label6.Text = "Tax:";
             // 
@@ -509,7 +572,7 @@
             label5.ForeColor = Color.White;
             label5.Location = new Point(725, 8);
             label5.Name = "label5";
-            label5.Size = new Size(69, 19);
+            label5.Size = new Size(84, 23);
             label5.TabIndex = 15;
             label5.Text = "Subtotal:";
             // 
@@ -546,21 +609,21 @@
             // 
             textBox4.Location = new Point(320, 90);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 23);
+            textBox4.Size = new Size(125, 27);
             textBox4.TabIndex = 6;
             // 
             // textBox3
             // 
             textBox3.Location = new Point(320, 43);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 23);
+            textBox3.Size = new Size(125, 27);
             textBox3.TabIndex = 5;
             // 
             // textBox2
             // 
             textBox2.Location = new Point(320, 8);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 23);
+            textBox2.Size = new Size(125, 27);
             textBox2.TabIndex = 4;
             // 
             // label4
@@ -570,7 +633,7 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(12, 12);
             label4.Name = "label4";
-            label4.Size = new Size(69, 19);
+            label4.Size = new Size(84, 23);
             label4.TabIndex = 3;
             label4.Text = "Subtotal:";
             // 
@@ -581,7 +644,7 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(12, 48);
             label3.Name = "label3";
-            label3.Size = new Size(59, 19);
+            label3.Size = new Size(71, 23);
             label3.TabIndex = 2;
             label3.Text = "Vat tax:";
             label3.Click += label3_Click;
@@ -592,7 +655,7 @@
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(0, 67);
             label2.Name = "label2";
-            label2.Size = new Size(372, 15);
+            label2.Size = new Size(447, 20);
             label2.TabIndex = 1;
             label2.Text = "-------------------------------------------------------------------------";
             // 
@@ -603,7 +666,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(8, 87);
             label1.Name = "label1";
-            label1.Size = new Size(64, 28);
+            label1.Size = new Size(80, 35);
             label1.TabIndex = 0;
             label1.Text = "Total:";
             // 
@@ -651,6 +714,316 @@
             jobOrderedView.Size = new Size(451, 180);
             jobOrderedView.TabIndex = 15;
             // 
+            // sidepanelPOS
+            // 
+            sidepanelPOS.BackColor = Color.FromArgb(3, 83, 115);
+            sidepanelPOS.BorderStyle = BorderStyle.Fixed3D;
+            sidepanelPOS.Controls.Add(moveup);
+            sidepanelPOS.Controls.Add(allout);
+            sidepanelPOS.Controls.Add(adjust);
+            sidepanelPOS.Controls.Add(pictureBox5);
+            sidepanelPOS.Controls.Add(button16);
+            sidepanelPOS.Controls.Add(pictureBox6);
+            sidepanelPOS.Controls.Add(button17);
+            sidepanelPOS.Controls.Add(pictureBox7);
+            sidepanelPOS.Controls.Add(button18);
+            sidepanelPOS.Controls.Add(pictureBox8);
+            sidepanelPOS.Controls.Add(button19);
+            sidepanelPOS.Controls.Add(pictureBox4);
+            sidepanelPOS.Controls.Add(button15);
+            sidepanelPOS.Controls.Add(pictureBox3);
+            sidepanelPOS.Controls.Add(button14);
+            sidepanelPOS.Controls.Add(pictureBox2);
+            sidepanelPOS.Controls.Add(button13);
+            sidepanelPOS.Controls.Add(pictureBox1);
+            sidepanelPOS.Controls.Add(button12);
+            sidepanelPOS.Location = new Point(1470, 78);
+            sidepanelPOS.Name = "sidepanelPOS";
+            sidepanelPOS.Size = new Size(10, 10);
+            sidepanelPOS.TabIndex = 16;
+            // 
+            // moveup
+            // 
+            moveup.BackColor = Color.Transparent;
+            moveup.BackgroundImage = (Image)resources.GetObject("moveup.BackgroundImage");
+            moveup.BackgroundImageLayout = ImageLayout.Stretch;
+            moveup.Cursor = Cursors.Hand;
+            moveup.Location = new Point(185, 558);
+            moveup.Name = "moveup";
+            moveup.Size = new Size(52, 51);
+            moveup.TabIndex = 18;
+            moveup.TabStop = false;
+            moveup.MouseEnter += moveup_MouseEnter;
+            moveup.MouseLeave += moveup_MouseLeave;
+            // 
+            // allout
+            // 
+            allout.BackColor = Color.Transparent;
+            allout.BackgroundImage = (Image)resources.GetObject("allout.BackgroundImage");
+            allout.BackgroundImageLayout = ImageLayout.Stretch;
+            allout.Cursor = Cursors.Hand;
+            allout.Location = new Point(111, 556);
+            allout.Name = "allout";
+            allout.Size = new Size(52, 51);
+            allout.TabIndex = 17;
+            allout.TabStop = false;
+            allout.MouseEnter += allout_MouseEnter;
+            allout.MouseLeave += allout_MouseLeave;
+            // 
+            // adjust
+            // 
+            adjust.BackColor = Color.Transparent;
+            adjust.BackgroundImage = (Image)resources.GetObject("adjust.BackgroundImage");
+            adjust.BackgroundImageLayout = ImageLayout.Stretch;
+            adjust.Cursor = Cursors.Hand;
+            adjust.Location = new Point(32, 556);
+            adjust.Name = "adjust";
+            adjust.Size = new Size(52, 51);
+            adjust.TabIndex = 16;
+            adjust.TabStop = false;
+            adjust.MouseEnter += adjust_MouseEnter;
+            adjust.MouseLeave += adjust_MouseLeave;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox5.Location = new Point(3, 429);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(52, 51);
+            pictureBox5.TabIndex = 15;
+            pictureBox5.TabStop = false;
+            // 
+            // button16
+            // 
+            button16.BackColor = Color.FromArgb(3, 83, 115);
+            button16.FlatAppearance.BorderSize = 0;
+            button16.FlatStyle = FlatStyle.Flat;
+            button16.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button16.ForeColor = SystemColors.Control;
+            button16.Location = new Point(-2, 425);
+            button16.Name = "button16";
+            button16.Size = new Size(265, 57);
+            button16.TabIndex = 14;
+            button16.Text = "                   Feedback";
+            button16.TextAlign = ContentAlignment.MiddleLeft;
+            button16.UseCompatibleTextRendering = true;
+            button16.UseVisualStyleBackColor = false;
+            button16.MouseEnter += button16_MouseEnter;
+            button16.MouseLeave += button16_MouseLeave;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackColor = Color.Transparent;
+            pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
+            pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox6.Location = new Point(3, 368);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(52, 51);
+            pictureBox6.TabIndex = 13;
+            pictureBox6.TabStop = false;
+            // 
+            // button17
+            // 
+            button17.BackColor = Color.FromArgb(3, 83, 115);
+            button17.FlatAppearance.BorderSize = 0;
+            button17.FlatStyle = FlatStyle.Flat;
+            button17.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button17.ForeColor = SystemColors.Control;
+            button17.Location = new Point(-2, 364);
+            button17.Name = "button17";
+            button17.Size = new Size(265, 57);
+            button17.TabIndex = 12;
+            button17.Text = "                   Sign out";
+            button17.TextAlign = ContentAlignment.MiddleLeft;
+            button17.UseCompatibleTextRendering = true;
+            button17.UseVisualStyleBackColor = false;
+            button17.MouseEnter += button17_MouseEnter;
+            button17.MouseLeave += button17_MouseLeave;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.BackColor = Color.Transparent;
+            pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
+            pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox7.Location = new Point(3, 307);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(52, 51);
+            pictureBox7.TabIndex = 11;
+            pictureBox7.TabStop = false;
+            // 
+            // button18
+            // 
+            button18.BackColor = Color.FromArgb(3, 83, 115);
+            button18.FlatAppearance.BorderSize = 0;
+            button18.FlatStyle = FlatStyle.Flat;
+            button18.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button18.ForeColor = SystemColors.Control;
+            button18.Location = new Point(-2, 303);
+            button18.Name = "button18";
+            button18.Size = new Size(265, 57);
+            button18.TabIndex = 10;
+            button18.Text = "                   User info";
+            button18.TextAlign = ContentAlignment.MiddleLeft;
+            button18.UseCompatibleTextRendering = true;
+            button18.UseVisualStyleBackColor = false;
+            button18.MouseEnter += button18_MouseEnter;
+            button18.MouseLeave += button18_MouseLeave;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.BackColor = Color.Transparent;
+            pictureBox8.BackgroundImage = (Image)resources.GetObject("pictureBox8.BackgroundImage");
+            pictureBox8.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox8.Location = new Point(3, 246);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(52, 51);
+            pictureBox8.TabIndex = 9;
+            pictureBox8.TabStop = false;
+            // 
+            // button19
+            // 
+            button19.BackColor = Color.FromArgb(3, 83, 115);
+            button19.FlatAppearance.BorderSize = 0;
+            button19.FlatStyle = FlatStyle.Flat;
+            button19.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button19.ForeColor = SystemColors.Control;
+            button19.Location = new Point(-2, 242);
+            button19.Name = "button19";
+            button19.Size = new Size(265, 57);
+            button19.TabIndex = 8;
+            button19.Text = "                   End of Day";
+            button19.TextAlign = ContentAlignment.MiddleLeft;
+            button19.UseCompatibleTextRendering = true;
+            button19.UseVisualStyleBackColor = false;
+            button19.MouseEnter += button19_MouseEnter;
+            button19.MouseLeave += button19_MouseLeave;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
+            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.Location = new Point(3, 185);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(52, 51);
+            pictureBox4.TabIndex = 7;
+            pictureBox4.TabStop = false;
+            // 
+            // button15
+            // 
+            button15.BackColor = Color.FromArgb(3, 83, 115);
+            button15.FlatAppearance.BorderSize = 0;
+            button15.FlatStyle = FlatStyle.Flat;
+            button15.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button15.ForeColor = SystemColors.Control;
+            button15.Location = new Point(-2, 181);
+            button15.Name = "button15";
+            button15.Size = new Size(265, 57);
+            button15.TabIndex = 6;
+            button15.Text = "                   Cash In/ Out";
+            button15.TextAlign = ContentAlignment.MiddleLeft;
+            button15.UseCompatibleTextRendering = true;
+            button15.UseVisualStyleBackColor = false;
+            button15.MouseEnter += button15_MouseEnter;
+            button15.MouseLeave += button15_MouseLeave;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.Location = new Point(3, 124);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(52, 51);
+            pictureBox3.TabIndex = 5;
+            pictureBox3.TabStop = false;
+            // 
+            // button14
+            // 
+            button14.BackColor = Color.FromArgb(3, 83, 115);
+            button14.FlatAppearance.BorderSize = 0;
+            button14.FlatStyle = FlatStyle.Flat;
+            button14.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button14.ForeColor = SystemColors.Control;
+            button14.Location = new Point(-2, 120);
+            button14.Name = "button14";
+            button14.Size = new Size(265, 57);
+            button14.TabIndex = 4;
+            button14.Text = "                   View Open Sales";
+            button14.TextAlign = ContentAlignment.MiddleLeft;
+            button14.UseCompatibleTextRendering = true;
+            button14.UseVisualStyleBackColor = false;
+            button14.MouseEnter += button14_MouseEnter;
+            button14.MouseLeave += button14_MouseLeave;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Location = new Point(3, 63);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(52, 51);
+            pictureBox2.TabIndex = 3;
+            pictureBox2.TabStop = false;
+            // 
+            // button13
+            // 
+            button13.BackColor = Color.FromArgb(3, 83, 115);
+            button13.FlatAppearance.BorderSize = 0;
+            button13.FlatStyle = FlatStyle.Flat;
+            button13.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button13.ForeColor = SystemColors.Control;
+            button13.Location = new Point(-2, 59);
+            button13.Name = "button13";
+            button13.Size = new Size(265, 57);
+            button13.TabIndex = 2;
+            button13.Text = "                   View Sales History";
+            button13.TextAlign = ContentAlignment.MiddleLeft;
+            button13.UseCompatibleTextRendering = true;
+            button13.UseVisualStyleBackColor = false;
+            button13.MouseEnter += button13_MouseEnter;
+            button13.MouseLeave += button13_MouseLeave;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(3, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(52, 51);
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
+            // button12
+            // 
+            button12.BackColor = Color.FromArgb(3, 83, 115);
+            button12.BackgroundImageLayout = ImageLayout.Zoom;
+            button12.FlatAppearance.BorderSize = 0;
+            button12.FlatStyle = FlatStyle.Flat;
+            button12.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button12.ForeColor = SystemColors.Control;
+            button12.ImageAlign = ContentAlignment.MiddleLeft;
+            button12.Location = new Point(-2, -2);
+            button12.Name = "button12";
+            button12.Size = new Size(265, 57);
+            button12.TabIndex = 0;
+            button12.Text = "                   Management";
+            button12.TextAlign = ContentAlignment.MiddleLeft;
+            button12.UseCompatibleTextRendering = true;
+            button12.UseVisualStyleBackColor = false;
+            button12.Click += button12_Click;
+            button12.MouseEnter += button12_MouseEnter;
+            button12.MouseLeave += button12_MouseLeave;
+            // 
+            // timerSfx
+            // 
+            timerSfx.Interval = 50;
+            timerSfx.Tick += timerSfx_Tick;
+            // 
             // POSForm
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
@@ -659,6 +1032,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             ClientSize = new Size(1480, 737);
+            Controls.Add(sidepanelPOS);
             Controls.Add(jobOrderedView);
             Controls.Add(textBox8);
             Controls.Add(textBox7);
@@ -688,6 +1062,18 @@
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)servicesView).EndInit();
             ((System.ComponentModel.ISupportInitialize)jobOrderedView).EndInit();
+            sidepanelPOS.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)moveup).EndInit();
+            ((System.ComponentModel.ISupportInitialize)allout).EndInit();
+            ((System.ComponentModel.ISupportInitialize)adjust).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -740,5 +1126,29 @@
         private TextBox textBox7;
         private TextBox textBox8;
         private DataGridView jobOrderedView;
+        private Button btnmen12;
+        private Button btn12MNU;
+        private Button btnmenU2;
+        private Panel sidepanelPOS;
+        private Button button12;
+        private PictureBox adjust;
+        private PictureBox pictureBox5;
+        private Button button16;
+        private PictureBox pictureBox6;
+        private Button button17;
+        private PictureBox pictureBox7;
+        private Button button18;
+        private PictureBox pictureBox8;
+        private Button button19;
+        private PictureBox pictureBox4;
+        private Button button15;
+        private PictureBox pictureBox3;
+        private Button button14;
+        private PictureBox pictureBox2;
+        private Button button13;
+        private PictureBox pictureBox1;
+        private PictureBox moveup;
+        private PictureBox allout;
+        private System.Windows.Forms.Timer timerSfx;
     }
 }
