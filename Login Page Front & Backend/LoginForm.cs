@@ -15,9 +15,9 @@ using System.Text;
 
 namespace Service_Management_System.POS.Login_Page_Front___Backend
 {
-    public partial class Form2 : Form
+    public partial class LoginForm : Form
     {
-        public Form2()
+        public LoginForm()
         {
             InitializeComponent();
             PasswordTextBox.PasswordChar = '*';

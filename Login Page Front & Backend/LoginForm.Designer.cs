@@ -1,6 +1,6 @@
 ﻿namespace Service_Management_System.POS.Login_Page_Front___Backend
 {
-    partial class Form2
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             groupBox1 = new GroupBox();
             linkLabel2 = new LinkLabel();
             linkLabel1 = new LinkLabel();

@@ -19,7 +19,7 @@ namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
         private void Timer_Tick(object sender, EventArgs e)
         {
             timer.Stop(); // Stop the timer to avoid it firing again
-            Form2 mainForm = new Form2();
+            LoginForm mainForm = new LoginForm();
             mainForm.Show(); // Show the main form
             this.Hide(); // Hide the splash screen
         }
