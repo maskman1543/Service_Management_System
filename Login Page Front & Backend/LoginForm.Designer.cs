@@ -196,7 +196,7 @@
             // 
             // guna2Elipse_LoginForm
             // 
-            guna2Elipse_LoginForm.BorderRadius = 35;
+            guna2Elipse_LoginForm.BorderRadius = 20;
             guna2Elipse_LoginForm.TargetControl = this;
             // 
             // guna2Elipse_button1
