@@ -82,7 +82,6 @@
             EmailTextBox.Name = "EmailTextBox";
             EmailTextBox.Size = new Size(331, 43);
             EmailTextBox.TabIndex = 8;
-            EmailTextBox.TextChanged += this.EmailTextBox_TextChanged;
             // 
             // label1
             // 
@@ -97,7 +96,6 @@
             label1.Size = new Size(73, 31);
             label1.TabIndex = 6;
             label1.Text = "Email";
-            label1.Click += this.label1_Click_1;
             // 
             // label2
             // 
@@ -112,7 +110,6 @@
             label2.Size = new Size(114, 31);
             label2.TabIndex = 7;
             label2.Text = "Password";
-            label2.Click += this.label2_Click;
             // 
             // PasswordTextBox
             // 
@@ -122,7 +119,6 @@
             PasswordTextBox.Name = "PasswordTextBox";
             PasswordTextBox.Size = new Size(331, 43);
             PasswordTextBox.TabIndex = 9;
-            PasswordTextBox.TextChanged += this.PasswordTextBox_TextChanged;
             // 
             // panel_loginInfo
             // 
@@ -201,7 +197,6 @@
             linkLabel1.TabIndex = 4;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Forgot Password";
-            linkLabel1.LinkClicked += this.linkLabel1_LinkClicked;
             // 
             // linkLabel2
             // 

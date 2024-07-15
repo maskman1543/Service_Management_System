@@ -123,7 +123,6 @@
             PasswordTextBox.Name = "PasswordTextBox";
             PasswordTextBox.Size = new Size(331, 43);
             PasswordTextBox.TabIndex = 1;
-            PasswordTextBox.TextChanged += this.PasswordTextBox_TextChanged;
             // 
             // label2
             // 
