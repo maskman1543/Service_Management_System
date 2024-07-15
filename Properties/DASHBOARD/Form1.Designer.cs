@@ -317,9 +317,9 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(62, 180);
             label3.Name = "label3";
-            label3.Size = new Size(216, 35);
+            label3.Size = new Size(28, 35);
             label3.TabIndex = 22;
-            label3.Text = "Products & Services";
+            label3.Text = "a";
             label3.Click += label3_Click;
             // 
             // button14

@@ -51,8 +51,7 @@
             button8 = new Button();
             button7 = new Button();
             button6 = new Button();
-            textBox1 = new TextBox();
-            dataGridView1 = new DataGridView();
+            productOrderedView = new DataGridView();
             panel4 = new Panel();
             button11 = new Button();
             button4 = new Button();
@@ -62,7 +61,7 @@
             textBox6 = new TextBox();
             label6 = new Label();
             label5 = new Label();
-            dataGridView2 = new DataGridView();
+            partsView = new DataGridView();
             panel6 = new Panel();
             textBox4 = new TextBox();
             textBox3 = new TextBox();
@@ -71,14 +70,20 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            servicesView = new DataGridView();
+            textBox7 = new TextBox();
+            textBox8 = new TextBox();
+            jobOrderedView = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)productOrderedView).BeginInit();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)partsView).BeginInit();
             panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)servicesView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)jobOrderedView).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -337,10 +342,9 @@
             panel3.Controls.Add(button8);
             panel3.Controls.Add(button7);
             panel3.Controls.Add(button6);
-            panel3.Controls.Add(textBox1);
             panel3.Location = new Point(451, 78);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1026, 70);
+            panel3.Size = new Size(1027, 70);
             panel3.TabIndex = 2;
             // 
             // button1
@@ -391,26 +395,15 @@
             button6.TabIndex = 6;
             button6.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // productOrderedView
             // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.Gray;
-            textBox1.Location = new Point(371, 11);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(624, 46);
-            textBox1.TabIndex = 3;
-            textBox1.Text = "Search";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 141);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(451, 390);
-            dataGridView1.TabIndex = 3;
+            productOrderedView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            productOrderedView.Location = new Point(0, 154);
+            productOrderedView.Name = "productOrderedView";
+            productOrderedView.RowHeadersWidth = 51;
+            productOrderedView.RowTemplate.Height = 29;
+            productOrderedView.Size = new Size(451, 182);
+            productOrderedView.TabIndex = 3;
             // 
             // panel4
             // 
@@ -519,15 +512,16 @@
             label5.TabIndex = 15;
             label5.Text = "Subtotal:";
             // 
-            // dataGridView2
+            // partsView
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(451, 145);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(1022, 513);
-            dataGridView2.TabIndex = 11;
+            partsView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            partsView.Location = new Point(451, 209);
+            partsView.Name = "partsView";
+            partsView.RowHeadersWidth = 51;
+            partsView.RowTemplate.Height = 29;
+            partsView.Size = new Size(526, 449);
+            partsView.TabIndex = 11;
+            partsView.CellContentClick += partsServicesView_CellContentClick;
             // 
             // panel6
             // 
@@ -584,9 +578,10 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(12, 48);
             label3.Name = "label3";
-            label3.Size = new Size(42, 23);
+            label3.Size = new Size(71, 23);
             label3.TabIndex = 2;
-            label3.Text = "Tax:";
+            label3.Text = "Vat tax:";
+            label3.Click += label3_Click;
             // 
             // label2
             // 
@@ -609,6 +604,48 @@
             label1.TabIndex = 0;
             label1.Text = "Total:";
             // 
+            // servicesView
+            // 
+            servicesView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            servicesView.Location = new Point(983, 209);
+            servicesView.Name = "servicesView";
+            servicesView.RowHeadersWidth = 51;
+            servicesView.RowTemplate.Height = 29;
+            servicesView.Size = new Size(492, 449);
+            servicesView.TabIndex = 14;
+            // 
+            // textBox7
+            // 
+            textBox7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox7.ForeColor = Color.Gray;
+            textBox7.Location = new Point(466, 157);
+            textBox7.Multiline = true;
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(499, 46);
+            textBox7.TabIndex = 10;
+            textBox7.Text = "Search";
+            // 
+            // textBox8
+            // 
+            textBox8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox8.ForeColor = Color.Gray;
+            textBox8.Location = new Point(992, 157);
+            textBox8.Multiline = true;
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(479, 46);
+            textBox8.TabIndex = 10;
+            textBox8.Text = "Search";
+            // 
+            // jobOrderedView
+            // 
+            jobOrderedView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            jobOrderedView.Location = new Point(0, 342);
+            jobOrderedView.Name = "jobOrderedView";
+            jobOrderedView.RowHeadersWidth = 51;
+            jobOrderedView.RowTemplate.Height = 29;
+            jobOrderedView.Size = new Size(451, 180);
+            jobOrderedView.TabIndex = 15;
+            // 
             // POSForm
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
@@ -617,11 +654,15 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             ClientSize = new Size(1480, 737);
+            Controls.Add(jobOrderedView);
+            Controls.Add(textBox8);
+            Controls.Add(textBox7);
+            Controls.Add(servicesView);
             Controls.Add(panel6);
-            Controls.Add(dataGridView2);
+            Controls.Add(partsView);
             Controls.Add(panel5);
             Controls.Add(panel4);
-            Controls.Add(dataGridView1);
+            Controls.Add(productOrderedView);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panel3);
@@ -633,15 +674,17 @@
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)productOrderedView).EndInit();
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)partsView).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)servicesView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)jobOrderedView).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -670,12 +713,12 @@
         private Panel panel5;
         private TextBox textBox1;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView productOrderedView;
         private Panel panel4;
         private Button button11;
         private Button button4;
         private Button button3;
-        private DataGridView dataGridView2;
+        private DataGridView partsView;
         private Panel panel6;
         private Label label2;
         private Label label1;
@@ -688,5 +731,9 @@
         private TextBox textBox2;
         private Label label4;
         private Label label3;
+        private DataGridView servicesView;
+        private TextBox textBox7;
+        private TextBox textBox8;
+        private DataGridView jobOrderedView;
     }
 }

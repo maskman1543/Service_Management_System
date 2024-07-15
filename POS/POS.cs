@@ -32,5 +32,15 @@ namespace Service_Management_System.POS
         {
 
         }
+
+        private void partsServicesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
