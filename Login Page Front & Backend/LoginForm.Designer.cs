@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            groupBox1 = new GroupBox();
             linkLabel2 = new LinkLabel();
             linkLabel1 = new LinkLabel();
             button1 = new Button();
@@ -38,42 +37,25 @@
             label2 = new Label();
             EmailTextBox = new TextBox();
             label1 = new Label();
-            groupBox1.SuspendLayout();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            groupBox1.BackColor = SystemColors.ControlLightLight;
-            groupBox1.BackgroundImage = (Image)resources.GetObject("groupBox1.BackgroundImage");
-            groupBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            groupBox1.Controls.Add(linkLabel2);
-            groupBox1.Controls.Add(linkLabel1);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(checkBox1);
-            groupBox1.Controls.Add(PasswordTextBox);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(EmailTextBox);
-            groupBox1.Controls.Add(label1);
-            groupBox1.FlatStyle = FlatStyle.Popup;
-            groupBox1.Location = new Point(10, 9);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(448, 603);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
             // 
             // linkLabel2
             // 
             linkLabel2.ActiveLinkColor = Color.Red;
+            linkLabel2.Anchor = AnchorStyles.None;
             linkLabel2.AutoSize = true;
-            linkLabel2.BackColor = Color.Transparent;
+            linkLabel2.BackColor = Color.FromArgb(3, 83, 115);
             linkLabel2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel2.ForeColor = Color.White;
             linkLabel2.LinkColor = Color.White;
-            linkLabel2.Location = new Point(186, 481);
+            linkLabel2.Location = new Point(230, 623);
             linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(61, 20);
+            linkLabel2.Size = new Size(75, 25);
             linkLabel2.TabIndex = 4;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Sign Up";
@@ -82,28 +64,29 @@
             // linkLabel1
             // 
             linkLabel1.ActiveLinkColor = Color.Red;
+            linkLabel1.Anchor = AnchorStyles.None;
             linkLabel1.AutoSize = true;
-            linkLabel1.BackColor = Color.Transparent;
+            linkLabel1.BackColor = Color.FromArgb(3, 83, 115);
             linkLabel1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel1.ForeColor = Color.White;
             linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(158, 512);
+            linkLabel1.Location = new Point(198, 665);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(118, 20);
+            linkLabel1.Size = new Size(146, 25);
             linkLabel1.TabIndex = 4;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Forgot Password";
             // 
             // button1
             // 
-            button1.BackColor = Color.Turquoise;
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.FromArgb(78, 177, 217);
             button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(76, 430);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(104, 555);
             button1.Name = "button1";
-            button1.Size = new Size(290, 34);
+            button1.Size = new Size(331, 45);
             button1.TabIndex = 3;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
@@ -111,14 +94,14 @@
             // 
             // checkBox1
             // 
+            checkBox1.Anchor = AnchorStyles.None;
             checkBox1.AutoSize = true;
-            checkBox1.BackColor = Color.Transparent;
-            checkBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox1.BackColor = Color.FromArgb(3, 83, 115);
+            checkBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             checkBox1.ForeColor = SystemColors.Control;
-            checkBox1.Location = new Point(76, 384);
-            checkBox1.Margin = new Padding(3, 2, 3, 2);
+            checkBox1.Location = new Point(104, 494);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(150, 25);
+            checkBox1.Size = new Size(166, 27);
             checkBox1.TabIndex = 2;
             checkBox1.Text = "  Show Password";
             checkBox1.UseVisualStyleBackColor = false;
@@ -126,69 +109,111 @@
             // 
             // PasswordTextBox
             // 
-            PasswordTextBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            PasswordTextBox.Location = new Point(76, 327);
-            PasswordTextBox.Margin = new Padding(3, 2, 3, 2);
+            PasswordTextBox.Anchor = AnchorStyles.None;
+            PasswordTextBox.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            PasswordTextBox.Location = new Point(104, 418);
             PasswordTextBox.Name = "PasswordTextBox";
-            PasswordTextBox.Size = new Size(290, 36);
+            PasswordTextBox.Size = new Size(331, 43);
             PasswordTextBox.TabIndex = 1;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
+            label2.BackColor = Color.FromArgb(3, 83, 115);
             label2.FlatStyle = FlatStyle.Flat;
-            label2.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(76, 292);
+            label2.Location = new Point(100, 378);
             label2.Name = "label2";
-            label2.Size = new Size(100, 24);
+            label2.Size = new Size(114, 31);
             label2.TabIndex = 0;
             label2.Text = "Password";
             // 
             // EmailTextBox
             // 
-            EmailTextBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            EmailTextBox.Location = new Point(76, 244);
-            EmailTextBox.Margin = new Padding(3, 2, 3, 2);
+            EmailTextBox.Anchor = AnchorStyles.None;
+            EmailTextBox.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            EmailTextBox.Location = new Point(104, 307);
             EmailTextBox.Name = "EmailTextBox";
-            EmailTextBox.Size = new Size(290, 36);
+            EmailTextBox.Size = new Size(331, 43);
             EmailTextBox.TabIndex = 1;
+            EmailTextBox.TextChanged += EmailTextBox_TextChanged;
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
+            label1.BackColor = Color.FromArgb(3, 83, 115);
             label1.FlatStyle = FlatStyle.Flat;
-            label1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(76, 210);
+            label1.Location = new Point(101, 270);
             label1.Name = "label1";
-            label1.Size = new Size(62, 24);
+            label1.Size = new Size(73, 31);
             label1.TabIndex = 0;
             label1.Text = "Email";
             label1.Click += label1_Click;
             // 
-            // Form2
+            // panel1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            panel1.BackColor = Color.FromArgb(3, 83, 115);
+            panel1.Location = new Point(41, 226);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(455, 491);
+            panel1.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(41, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(455, 208);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(-2, 520);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(538, 307);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 7;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
+            // LoginForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(469, 621);
-            Controls.Add(groupBox1);
+            BackColor = Color.White;
+            ClientSize = new Size(536, 828);
+            Controls.Add(pictureBox1);
+            Controls.Add(linkLabel2);
+            Controls.Add(linkLabel1);
+            Controls.Add(EmailTextBox);
+            Controls.Add(button1);
+            Controls.Add(label1);
+            Controls.Add(checkBox1);
+            Controls.Add(label2);
+            Controls.Add(PasswordTextBox);
+            Controls.Add(panel1);
+            Controls.Add(pictureBox2);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
-            Name = "Form2";
+            Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            Load += LoginForm_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private GroupBox groupBox1;
         private Label label1;
         private TextBox PasswordTextBox;
         private Label label2;
@@ -197,5 +222,8 @@
         private Button button1;
         private LinkLabel linkLabel1;
         private LinkLabel linkLabel2;
+        private Panel panel1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }
