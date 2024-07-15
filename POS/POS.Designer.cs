@@ -478,14 +478,14 @@
             // 
             textBox5.Location = new Point(895, 39);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 27);
+            textBox5.Size = new Size(125, 23);
             textBox5.TabIndex = 17;
             // 
             // textBox6
             // 
             textBox6.Location = new Point(895, 4);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(125, 27);
+            textBox6.Size = new Size(125, 23);
             textBox6.TabIndex = 16;
             // 
             // label6
@@ -496,7 +496,7 @@
             label6.ForeColor = Color.White;
             label6.Location = new Point(725, 44);
             label6.Name = "label6";
-            label6.Size = new Size(42, 23);
+            label6.Size = new Size(36, 19);
             label6.TabIndex = 14;
             label6.Text = "Tax:";
             // 
@@ -508,12 +508,14 @@
             label5.ForeColor = Color.White;
             label5.Location = new Point(725, 8);
             label5.Name = "label5";
-            label5.Size = new Size(84, 23);
+            label5.Size = new Size(69, 19);
             label5.TabIndex = 15;
             label5.Text = "Subtotal:";
             // 
             // partsView
             // 
+            partsView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            partsView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             partsView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             partsView.Location = new Point(451, 209);
             partsView.Name = "partsView";
@@ -543,21 +545,21 @@
             // 
             textBox4.Location = new Point(320, 90);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
+            textBox4.Size = new Size(125, 23);
             textBox4.TabIndex = 6;
             // 
             // textBox3
             // 
             textBox3.Location = new Point(320, 43);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
+            textBox3.Size = new Size(125, 23);
             textBox3.TabIndex = 5;
             // 
             // textBox2
             // 
             textBox2.Location = new Point(320, 8);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
+            textBox2.Size = new Size(125, 23);
             textBox2.TabIndex = 4;
             // 
             // label4
@@ -567,7 +569,7 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(12, 12);
             label4.Name = "label4";
-            label4.Size = new Size(84, 23);
+            label4.Size = new Size(69, 19);
             label4.TabIndex = 3;
             label4.Text = "Subtotal:";
             // 
@@ -578,7 +580,7 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(12, 48);
             label3.Name = "label3";
-            label3.Size = new Size(71, 23);
+            label3.Size = new Size(59, 19);
             label3.TabIndex = 2;
             label3.Text = "Vat tax:";
             label3.Click += label3_Click;
@@ -589,7 +591,7 @@
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(0, 67);
             label2.Name = "label2";
-            label2.Size = new Size(447, 20);
+            label2.Size = new Size(372, 15);
             label2.TabIndex = 1;
             label2.Text = "-------------------------------------------------------------------------";
             // 
@@ -600,12 +602,13 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(8, 87);
             label1.Name = "label1";
-            label1.Size = new Size(80, 35);
+            label1.Size = new Size(64, 28);
             label1.TabIndex = 0;
             label1.Text = "Total:";
             // 
             // servicesView
             // 
+            servicesView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             servicesView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             servicesView.Location = new Point(983, 209);
             servicesView.Name = "servicesView";
@@ -613,6 +616,7 @@
             servicesView.RowTemplate.Height = 29;
             servicesView.Size = new Size(492, 449);
             servicesView.TabIndex = 14;
+            servicesView.CellContentClick += servicesView_CellContentClick;
             // 
             // textBox7
             // 
