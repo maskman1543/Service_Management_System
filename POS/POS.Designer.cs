@@ -137,13 +137,14 @@
             btnMenu.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnMenu.ForeColor = Color.FromArgb(3, 83, 115);
             btnMenu.Image = (Image)resources.GetObject("btnMenu.Image");
-            btnMenu.Location = new Point(1371, 15);
+            btnMenu.Location = new Point(1416, 18);
             btnMenu.Name = "btnMenu";
             btnMenu.Padding = new Padding(2, 0, 0, 12);
-            btnMenu.Size = new Size(46, 41);
+            btnMenu.Size = new Size(59, 46);
             btnMenu.TabIndex = 12;
             btnMenu.TextAlign = ContentAlignment.BottomCenter;
             btnMenu.UseVisualStyleBackColor = true;
+            btnMenu.Click += btnMenu_Click;
             // 
             // btnRefund
             // 
@@ -344,7 +345,7 @@
             panel3.Controls.Add(button6);
             panel3.Location = new Point(451, 78);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1027, 70);
+            panel3.Size = new Size(1029, 70);
             panel3.TabIndex = 2;
             // 
             // button1
@@ -471,7 +472,7 @@
             panel5.Controls.Add(label5);
             panel5.Location = new Point(451, 656);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1027, 78);
+            panel5.Size = new Size(1029, 78);
             panel5.TabIndex = 10;
             // 
             // textBox5
@@ -614,7 +615,7 @@
             servicesView.Name = "servicesView";
             servicesView.RowHeadersWidth = 51;
             servicesView.RowTemplate.Height = 29;
-            servicesView.Size = new Size(492, 449);
+            servicesView.Size = new Size(497, 449);
             servicesView.TabIndex = 14;
             servicesView.CellContentClick += servicesView_CellContentClick;
             // 

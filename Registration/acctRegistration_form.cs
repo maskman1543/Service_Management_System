@@ -32,14 +32,14 @@ namespace Service_Management_System.Registration
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 mainForm = new Form2();
+            LoginForm mainForm = new LoginForm();
             mainForm.Show(); // Show the main form
             this.Hide(); // Hide the splash screen
         }
 
         private void label12_Click(object sender, EventArgs e)
         {
-            Form2 mainForm = new Form2();
+            LoginForm mainForm = new LoginForm();
             mainForm.Show(); // Show the main form
             this.Hide(); // Hide the splash screen
         }
