@@ -37,6 +37,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Splash));
             timer = new System.Windows.Forms.Timer(components);
             pictureBox1 = new PictureBox();
+            guna2Elipse_Splash = new Guna.UI2.WinForms.Guna2Elipse(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -55,6 +56,11 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            // 
+            // guna2Elipse_Splash
+            // 
+            guna2Elipse_Splash.BorderRadius = 35;
+            guna2Elipse_Splash.TargetControl = this;
             // 
             // Splash
             // 
@@ -77,5 +83,6 @@
         #endregion
 
         private PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse_Splash;
     }
 }

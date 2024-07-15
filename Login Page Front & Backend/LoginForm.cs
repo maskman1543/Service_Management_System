@@ -142,5 +142,10 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

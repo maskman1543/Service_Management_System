@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             linkLabel2 = new LinkLabel();
             linkLabel1 = new LinkLabel();
@@ -37,9 +38,12 @@
             label2 = new Label();
             EmailTextBox = new TextBox();
             label1 = new Label();
-            panel1 = new Panel();
+            panel_loginInfo = new Panel();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
+            guna2Elipse_panelLoginInfo = new Guna.UI2.WinForms.Guna2Elipse(components);
+            guna2Elipse_LoginForm = new Guna.UI2.WinForms.Guna2Elipse(components);
+            guna2Elipse_button1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -155,13 +159,14 @@
             label1.Text = "Email";
             label1.Click += label1_Click;
             // 
-            // panel1
+            // panel_loginInfo
             // 
-            panel1.BackColor = Color.FromArgb(3, 83, 115);
-            panel1.Location = new Point(41, 226);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(455, 491);
-            panel1.TabIndex = 5;
+            panel_loginInfo.BackColor = Color.FromArgb(3, 83, 115);
+            panel_loginInfo.Location = new Point(41, 226);
+            panel_loginInfo.Name = "panel_loginInfo";
+            panel_loginInfo.Size = new Size(455, 491);
+            panel_loginInfo.TabIndex = 5;
+            panel_loginInfo.Paint += panel1_Paint;
             // 
             // pictureBox1
             // 
@@ -184,6 +189,21 @@
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
             // 
+            // guna2Elipse_panelLoginInfo
+            // 
+            guna2Elipse_panelLoginInfo.BorderRadius = 35;
+            guna2Elipse_panelLoginInfo.TargetControl = panel_loginInfo;
+            // 
+            // guna2Elipse_LoginForm
+            // 
+            guna2Elipse_LoginForm.BorderRadius = 35;
+            guna2Elipse_LoginForm.TargetControl = this;
+            // 
+            // guna2Elipse_button1
+            // 
+            guna2Elipse_button1.BorderRadius = 25;
+            guna2Elipse_button1.TargetControl = button1;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -199,7 +219,7 @@
             Controls.Add(checkBox1);
             Controls.Add(label2);
             Controls.Add(PasswordTextBox);
-            Controls.Add(panel1);
+            Controls.Add(panel_loginInfo);
             Controls.Add(pictureBox2);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
@@ -222,8 +242,11 @@
         private Button button1;
         private LinkLabel linkLabel1;
         private LinkLabel linkLabel2;
-        private Panel panel1;
+        private Panel panel_loginInfo;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse_panelLoginInfo;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse_LoginForm;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse_button1;
     }
 }
