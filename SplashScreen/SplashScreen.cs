@@ -28,5 +28,10 @@ namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

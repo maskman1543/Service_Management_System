@@ -42,7 +42,6 @@
             // 
             // timer
             // 
-            timer.Interval = 5000;
             timer.Tick += Timer_Tick;
             // 
             // pictureBox1
@@ -51,10 +50,11 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(336, 211);
+            pictureBox1.Size = new Size(593, 333);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // Splash
             // 
@@ -62,7 +62,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Center;
-            ClientSize = new Size(336, 211);
+            ClientSize = new Size(593, 333);
             Controls.Add(pictureBox1);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
