@@ -1,4 +1,5 @@
-﻿namespace Service_Management_System.POS
+﻿
+namespace Service_Management_System.POS
 {
     partial class POSForm
     {
@@ -690,6 +691,11 @@
             ((System.ComponentModel.ISupportInitialize)jobOrderedView).EndInit();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
