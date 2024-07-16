@@ -739,9 +739,9 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(button13);
             sidepanelPOS.Controls.Add(pictureBox1);
             sidepanelPOS.Controls.Add(button12);
-            sidepanelPOS.Location = new Point(1224, 78);
+            sidepanelPOS.Location = new Point(1418, 78);
             sidepanelPOS.Name = "sidepanelPOS";
-            sidepanelPOS.Size = new Size(256, 656);
+            sidepanelPOS.Size = new Size(62, 656);
             sidepanelPOS.TabIndex = 16;
             // 
             // moveup

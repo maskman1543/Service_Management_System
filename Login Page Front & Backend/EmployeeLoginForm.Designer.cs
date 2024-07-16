@@ -202,6 +202,7 @@
             checkBox1.TabIndex = 2;
             checkBox1.Text = "  Show Password";
             checkBox1.UseVisualStyleBackColor = false;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // linkLabel1
             // 
