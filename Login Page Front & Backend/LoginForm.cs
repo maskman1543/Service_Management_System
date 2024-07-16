@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Text;
 using Service_Management_System.Login_Page_Front___Backend;
+using Service_Management_System.POS.Login_Page_Front___Backend;
+using Service_Management_System.POS.Login_Page_Front_and_Back_End;
 
 
 namespace Service_Management_System.POS.Login_Page_Front___Backend
@@ -26,7 +28,6 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
             acctRegistration_form mainForm = new acctRegistration_form();
             mainForm.Show(); // Show the main form
             this.Hide();// Hide the splash screen
@@ -156,9 +157,16 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
 
         private void lkblContinueAsEmployee_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            EmployeeLoginForm employeeLoginForm = new EmployeeLoginForm();  
-            employeeLoginForm.ShowDialog();
-            this.Hide();
+            EmployeeLoginForm mainForm = new EmployeeLoginForm();
+            mainForm.Show();
+            //MessageBox.Show("Close Force 1");
+            this.Close();//Close the current instance of the login form
+
+            //(Brute Force Close Form)
+            LoginForm loginForm = new LoginForm();
+            loginForm.Close();
+            //MessageBox.Show("Close Force 2");
+           
         }
 
         private void label2_Click(object sender, EventArgs e)
