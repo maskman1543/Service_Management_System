@@ -738,14 +738,14 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(button13);
             sidepanelPOS.Controls.Add(pictureBox1);
             sidepanelPOS.Controls.Add(button12);
-            sidepanelPOS.Location = new Point(1470, 78);
+            sidepanelPOS.Location = new Point(1224, 78);
             sidepanelPOS.Name = "sidepanelPOS";
-            sidepanelPOS.Size = new Size(10, 10);
+            sidepanelPOS.Size = new Size(256, 656);
             sidepanelPOS.TabIndex = 16;
             // 
             // moveup
             // 
-            moveup.BackColor = Color.Transparent;
+            moveup.BackColor = Color.FromArgb(3, 83, 115);
             moveup.BackgroundImage = (Image)resources.GetObject("moveup.BackgroundImage");
             moveup.BackgroundImageLayout = ImageLayout.Stretch;
             moveup.Cursor = Cursors.Hand;
@@ -759,7 +759,7 @@ namespace Service_Management_System.POS
             // 
             // allout
             // 
-            allout.BackColor = Color.Transparent;
+            allout.BackColor = Color.FromArgb(3, 83, 115);
             allout.BackgroundImage = (Image)resources.GetObject("allout.BackgroundImage");
             allout.BackgroundImageLayout = ImageLayout.Stretch;
             allout.Cursor = Cursors.Hand;
@@ -773,7 +773,7 @@ namespace Service_Management_System.POS
             // 
             // adjust
             // 
-            adjust.BackColor = Color.Transparent;
+            adjust.BackColor = Color.FromArgb(3, 83, 115);
             adjust.BackgroundImage = (Image)resources.GetObject("adjust.BackgroundImage");
             adjust.BackgroundImageLayout = ImageLayout.Stretch;
             adjust.Cursor = Cursors.Hand;
@@ -787,7 +787,7 @@ namespace Service_Management_System.POS
             // 
             // pictureBox5
             // 
-            pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.BackColor = Color.FromArgb(3, 83, 115);
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
             pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox5.Location = new Point(3, 429);
@@ -816,7 +816,7 @@ namespace Service_Management_System.POS
             // 
             // pictureBox6
             // 
-            pictureBox6.BackColor = Color.Transparent;
+            pictureBox6.BackColor = Color.FromArgb(3, 83, 115);
             pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
             pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox6.Location = new Point(3, 368);
@@ -845,7 +845,7 @@ namespace Service_Management_System.POS
             // 
             // pictureBox7
             // 
-            pictureBox7.BackColor = Color.Transparent;
+            pictureBox7.BackColor = Color.FromArgb(3, 83, 115);
             pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
             pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox7.Location = new Point(3, 307);
@@ -874,7 +874,7 @@ namespace Service_Management_System.POS
             // 
             // pictureBox8
             // 
-            pictureBox8.BackColor = Color.Transparent;
+            pictureBox8.BackColor = Color.FromArgb(3, 83, 115);
             pictureBox8.BackgroundImage = (Image)resources.GetObject("pictureBox8.BackgroundImage");
             pictureBox8.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox8.Location = new Point(3, 246);
@@ -903,7 +903,7 @@ namespace Service_Management_System.POS
             // 
             // pictureBox4
             // 
-            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.BackColor = Color.FromArgb(3, 83, 115);
             pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
             pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox4.Location = new Point(3, 185);
@@ -932,7 +932,7 @@ namespace Service_Management_System.POS
             // 
             // pictureBox3
             // 
-            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.BackColor = Color.FromArgb(3, 83, 115);
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox3.Location = new Point(3, 124);
@@ -961,7 +961,7 @@ namespace Service_Management_System.POS
             // 
             // pictureBox2
             // 
-            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.BackColor = Color.FromArgb(3, 83, 115);
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox2.Location = new Point(3, 63);
@@ -990,7 +990,7 @@ namespace Service_Management_System.POS
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackColor = Color.FromArgb(3, 83, 115);
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(3, 2);

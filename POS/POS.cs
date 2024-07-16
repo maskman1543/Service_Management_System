@@ -16,7 +16,7 @@ namespace Service_Management_System.POS
     {
         private bool isFadingIn;
         private bool isFadingOut;
-        private int fadeDuration = 100; // Duration in milliseconds
+        private int fadeDuration = 90; // Duration in milliseconds
         private int fadeStep;
         public POSForm()
         {
