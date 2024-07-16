@@ -34,7 +34,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Splash));
             timer = new System.Windows.Forms.Timer(components);
             pictureBox1 = new PictureBox();
             guna2Elipse_Splash = new Guna.UI2.WinForms.Guna2Elipse(components);
@@ -48,7 +47,7 @@
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.ServiceFlow_LOGO_;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(593, 333);
