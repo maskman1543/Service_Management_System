@@ -410,6 +410,16 @@ namespace Service_Management_System.POS
             this.Close();
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
         /*private void button12_MouseEnter(object sender, EventArgs e)

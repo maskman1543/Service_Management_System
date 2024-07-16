@@ -148,6 +148,7 @@ namespace Service_Management_System.POS
             panel1.Name = "panel1";
             panel1.Size = new Size(1480, 78);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // btnmenU2
             // 
@@ -960,6 +961,7 @@ namespace Service_Management_System.POS
             button14.TextAlign = ContentAlignment.MiddleLeft;
             button14.UseCompatibleTextRendering = true;
             button14.UseVisualStyleBackColor = false;
+            button14.Click += button14_Click;
             button14.MouseEnter += button14_MouseEnter;
             button14.MouseLeave += button14_MouseLeave;
             // 
