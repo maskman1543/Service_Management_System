@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Text;
+using Service_Management_System.Login_Page_Front___Backend;
 
 
 namespace Service_Management_System.POS.Login_Page_Front___Backend
@@ -155,7 +156,8 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
 
         private void lkblContinueAsEmployee_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            EmployeeLoginForm employeeLoginForm = new EmployeeLoginForm();  
+            employeeLoginForm.ShowDialog();
         }
 
         private void label2_Click(object sender, EventArgs e)

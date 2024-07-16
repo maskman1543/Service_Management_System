@@ -94,7 +94,60 @@ namespace Service_Management_System.POS
 
         private void partsServicesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Check if the click is on a valid cell
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow selectedRow = partsView.Rows[e.RowIndex];
+                int productID = Convert.ToInt32(selectedRow.Cells["productID"].Value);
 
+                LoadProductOrderedView(productID);
+            }
+        }
+
+
+        private void LoadProductOrderedView(int productID)
+        {
+            string query = $"SELECT productTable.productID, productTable.productGroup, productTable.productName, productTable.Price, productTable.barcode\r\nFROM productTable;\r\n";
+                        
+
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            {
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    connection.Open();
+                    adapter.Fill(dataTable);
+                    productOrderedView.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+        private void LoadServiceOrderedView(int productID)
+        {
+            string query = $"SELECT servicesTb.serviceID, servicesTb.serviceName, servicesTb.serviceRate, mechanicTb.mechanicTb\r\nFROM mechanicTb INNER JOIN (servicesTb INNER JOIN JobOrderTb ON servicesTb.serviceID = JobOrderTb.serviceID) ON mechanicTb.mechanicTb = JobOrderTb.mechanicID;\r\n";
+
+
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            {
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    connection.Open();
+                    adapter.Fill(dataTable);
+                    jobOrderedView.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -103,7 +156,7 @@ namespace Service_Management_System.POS
         }
         private void LoadPartsView()
         {
-            string query = "SELECT productGroup, productName, Price, barcode FROM productTable;";
+            string query = "SELECT productTable.productID, productTable.productGroup, productTable.productName, productTable.Price, productTable.barcode\r\nFROM productTable;\r\n";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -122,9 +175,22 @@ namespace Service_Management_System.POS
                 }
             }
         }
+        private void servicesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow selectedRow = servicesView.Rows[e.RowIndex];
+                if (selectedRow.Cells["serviceID"].Value != null)
+                {
+                    int serviceID = Convert.ToInt32(selectedRow.Cells["serviceID"].Value);
+                    LoadServiceOrderedView(serviceID);
+                }
+            }
+        }
+
         private void LoadserviceView()
         {
-            string query = "SELECT servicesTb.serviceType, servicesTb.serviceName, servicesTb.serviceRate\r\nFROM servicesTb;\r\n";
+            string query = "SELECT servicesTb.serviceID, servicesTb.serviceType, servicesTb.serviceName, servicesTb.serviceRate FROM servicesTb;";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -144,10 +210,8 @@ namespace Service_Management_System.POS
             }
         }
 
-        private void servicesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
+
 
 
 
