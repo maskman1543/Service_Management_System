@@ -14,6 +14,7 @@ using Service_Management_System.POS;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Security.Cryptography;
 using System.Text;
+using Service_Management_System.POS.Login_Page_Front_and_Back_End;
 
 
 
@@ -32,7 +33,7 @@ namespace Service_Management_System.Registration
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LoginForm mainForm = new LoginForm();
+            Splash mainForm = new Splash();
             mainForm.Show(); // Show the main form
             this.Hide(); // Hide the splash screen
         }

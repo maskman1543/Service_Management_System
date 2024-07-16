@@ -56,9 +56,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(41, 60);
+            pictureBox1.Location = new Point(36, 45);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(455, 208);
+            pictureBox1.Size = new Size(398, 156);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -67,9 +68,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(-2, 520);
+            pictureBox2.Location = new Point(-2, 390);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(538, 307);
+            pictureBox2.Size = new Size(471, 230);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
@@ -78,9 +80,10 @@
             // 
             EmailTextBox.Anchor = AnchorStyles.None;
             EmailTextBox.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            EmailTextBox.Location = new Point(63, 146);
+            EmailTextBox.Location = new Point(55, 110);
+            EmailTextBox.Margin = new Padding(3, 2, 3, 2);
             EmailTextBox.Name = "EmailTextBox";
-            EmailTextBox.Size = new Size(331, 43);
+            EmailTextBox.Size = new Size(290, 36);
             EmailTextBox.TabIndex = 8;
             // 
             // label1
@@ -91,9 +94,9 @@
             label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(60, 109);
+            label1.Location = new Point(52, 82);
             label1.Name = "label1";
-            label1.Size = new Size(73, 31);
+            label1.Size = new Size(59, 25);
             label1.TabIndex = 6;
             label1.Text = "Email";
             // 
@@ -105,9 +108,9 @@
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(59, 201);
+            label2.Location = new Point(52, 151);
             label2.Name = "label2";
-            label2.Size = new Size(114, 31);
+            label2.Size = new Size(97, 25);
             label2.TabIndex = 7;
             label2.Text = "Password";
             // 
@@ -115,9 +118,10 @@
             // 
             PasswordTextBox.Anchor = AnchorStyles.None;
             PasswordTextBox.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            PasswordTextBox.Location = new Point(63, 241);
+            PasswordTextBox.Location = new Point(55, 181);
+            PasswordTextBox.Margin = new Padding(3, 2, 3, 2);
             PasswordTextBox.Name = "PasswordTextBox";
-            PasswordTextBox.Size = new Size(331, 43);
+            PasswordTextBox.Size = new Size(290, 36);
             PasswordTextBox.TabIndex = 9;
             // 
             // panel_loginInfo
@@ -132,9 +136,10 @@
             panel_loginInfo.Controls.Add(checkBox1);
             panel_loginInfo.Controls.Add(PasswordTextBox);
             panel_loginInfo.Controls.Add(linkLabel1);
-            panel_loginInfo.Location = new Point(41, 279);
+            panel_loginInfo.Location = new Point(36, 209);
+            panel_loginInfo.Margin = new Padding(3, 2, 3, 2);
             panel_loginInfo.Name = "panel_loginInfo";
-            panel_loginInfo.Size = new Size(455, 491);
+            panel_loginInfo.Size = new Size(398, 368);
             panel_loginInfo.TabIndex = 12;
             panel_loginInfo.Paint += panel_loginInfo_Paint;
             // 
@@ -143,9 +148,10 @@
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             guna2HtmlLabel1.ForeColor = Color.White;
-            guna2HtmlLabel1.Location = new Point(118, 22);
+            guna2HtmlLabel1.Location = new Point(103, 16);
+            guna2HtmlLabel1.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(227, 43);
+            guna2HtmlLabel1.Size = new Size(185, 34);
             guna2HtmlLabel1.TabIndex = 10;
             guna2HtmlLabel1.Text = "Employee Login";
             guna2HtmlLabel1.Click += guna2HtmlLabel1_Click;
@@ -157,12 +163,14 @@
             btnLogin.FlatStyle = FlatStyle.Popup;
             btnLogin.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(63, 386);
+            btnLogin.Location = new Point(55, 290);
+            btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(331, 45);
+            btnLogin.Size = new Size(290, 34);
             btnLogin.TabIndex = 9;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // lkblContinueAsEmployee
             // 
@@ -173,9 +181,9 @@
             lkblContinueAsEmployee.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             lkblContinueAsEmployee.ForeColor = Color.White;
             lkblContinueAsEmployee.LinkColor = Color.White;
-            lkblContinueAsEmployee.Location = new Point(262, 629);
+            lkblContinueAsEmployee.Location = new Point(229, 472);
             lkblContinueAsEmployee.Name = "lkblContinueAsEmployee";
-            lkblContinueAsEmployee.Size = new Size(188, 25);
+            lkblContinueAsEmployee.Size = new Size(156, 20);
             lkblContinueAsEmployee.TabIndex = 8;
             lkblContinueAsEmployee.TabStop = true;
             lkblContinueAsEmployee.Text = "Continue as Employee";
@@ -187,9 +195,10 @@
             checkBox1.BackColor = Color.FromArgb(3, 83, 115);
             checkBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             checkBox1.ForeColor = SystemColors.Control;
-            checkBox1.Location = new Point(228, 315);
+            checkBox1.Location = new Point(200, 236);
+            checkBox1.Margin = new Padding(3, 2, 3, 2);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(166, 27);
+            checkBox1.Size = new Size(140, 23);
             checkBox1.TabIndex = 2;
             checkBox1.Text = "  Show Password";
             checkBox1.UseVisualStyleBackColor = false;
@@ -203,9 +212,9 @@
             linkLabel1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel1.ForeColor = Color.White;
             linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(63, 314);
+            linkLabel1.Location = new Point(55, 236);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(146, 25);
+            linkLabel1.Size = new Size(118, 20);
             linkLabel1.TabIndex = 4;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Forgot Password";
@@ -219,9 +228,9 @@
             linkLabel2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel2.ForeColor = Color.White;
             linkLabel2.LinkColor = Color.White;
-            linkLabel2.Location = new Point(230, 566);
+            linkLabel2.Location = new Point(201, 424);
             linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(75, 25);
+            linkLabel2.Size = new Size(61, 20);
             linkLabel2.TabIndex = 11;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Sign Up";
@@ -233,9 +242,10 @@
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(104, 563);
+            button1.Location = new Point(91, 422);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(331, 45);
+            button1.Size = new Size(290, 34);
             button1.TabIndex = 10;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
@@ -245,9 +255,10 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.ForeColor = Color.White;
             button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(494, 6);
+            button3.Location = new Point(432, 4);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(35, 34);
+            button3.Size = new Size(31, 26);
             button3.TabIndex = 13;
             button3.UseVisualStyleBackColor = true;
             // 
@@ -268,10 +279,10 @@
             // 
             // EmployeeLoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(536, 828);
+            ClientSize = new Size(469, 621);
             Controls.Add(button3);
             Controls.Add(panel_loginInfo);
             Controls.Add(linkLabel2);
@@ -279,6 +290,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(pictureBox2);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "EmployeeLoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EmployeeLoginForm";

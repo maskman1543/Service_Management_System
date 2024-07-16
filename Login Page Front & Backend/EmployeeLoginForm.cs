@@ -46,5 +46,10 @@ namespace Service_Management_System.Login_Page_Front___Backend
         {
 
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

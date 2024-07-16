@@ -158,6 +158,7 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
         {
             EmployeeLoginForm employeeLoginForm = new EmployeeLoginForm();  
             employeeLoginForm.ShowDialog();
+            this.Hide();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -177,7 +178,7 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

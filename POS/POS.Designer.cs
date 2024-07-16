@@ -86,7 +86,7 @@ namespace Service_Management_System.POS
             pictureBox5 = new PictureBox();
             button16 = new Button();
             pictureBox6 = new PictureBox();
-            button17 = new Button();
+            btnSignout = new Button();
             pictureBox7 = new PictureBox();
             button18 = new Button();
             pictureBox8 = new PictureBox();
@@ -543,14 +543,14 @@ namespace Service_Management_System.POS
             // 
             textBox5.Location = new Point(895, 39);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 27);
+            textBox5.Size = new Size(125, 23);
             textBox5.TabIndex = 17;
             // 
             // textBox6
             // 
             textBox6.Location = new Point(895, 4);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(125, 27);
+            textBox6.Size = new Size(125, 23);
             textBox6.TabIndex = 16;
             // 
             // label6
@@ -561,7 +561,7 @@ namespace Service_Management_System.POS
             label6.ForeColor = Color.White;
             label6.Location = new Point(725, 44);
             label6.Name = "label6";
-            label6.Size = new Size(42, 23);
+            label6.Size = new Size(36, 19);
             label6.TabIndex = 14;
             label6.Text = "Tax:";
             // 
@@ -573,7 +573,7 @@ namespace Service_Management_System.POS
             label5.ForeColor = Color.White;
             label5.Location = new Point(725, 8);
             label5.Name = "label5";
-            label5.Size = new Size(84, 23);
+            label5.Size = new Size(69, 19);
             label5.TabIndex = 15;
             label5.Text = "Subtotal:";
             // 
@@ -610,21 +610,21 @@ namespace Service_Management_System.POS
             // 
             textBox4.Location = new Point(320, 90);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
+            textBox4.Size = new Size(125, 23);
             textBox4.TabIndex = 6;
             // 
             // textBox3
             // 
             textBox3.Location = new Point(320, 43);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
+            textBox3.Size = new Size(125, 23);
             textBox3.TabIndex = 5;
             // 
             // textBox2
             // 
             textBox2.Location = new Point(320, 8);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
+            textBox2.Size = new Size(125, 23);
             textBox2.TabIndex = 4;
             // 
             // label4
@@ -634,7 +634,7 @@ namespace Service_Management_System.POS
             label4.ForeColor = Color.White;
             label4.Location = new Point(12, 12);
             label4.Name = "label4";
-            label4.Size = new Size(84, 23);
+            label4.Size = new Size(69, 19);
             label4.TabIndex = 3;
             label4.Text = "Subtotal:";
             // 
@@ -645,7 +645,7 @@ namespace Service_Management_System.POS
             label3.ForeColor = Color.White;
             label3.Location = new Point(12, 48);
             label3.Name = "label3";
-            label3.Size = new Size(71, 23);
+            label3.Size = new Size(59, 19);
             label3.TabIndex = 2;
             label3.Text = "Vat tax:";
             label3.Click += label3_Click;
@@ -656,7 +656,7 @@ namespace Service_Management_System.POS
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(0, 67);
             label2.Name = "label2";
-            label2.Size = new Size(447, 20);
+            label2.Size = new Size(372, 15);
             label2.TabIndex = 1;
             label2.Text = "-------------------------------------------------------------------------";
             // 
@@ -667,7 +667,7 @@ namespace Service_Management_System.POS
             label1.ForeColor = Color.White;
             label1.Location = new Point(8, 87);
             label1.Name = "label1";
-            label1.Size = new Size(80, 35);
+            label1.Size = new Size(64, 28);
             label1.TabIndex = 0;
             label1.Text = "Total:";
             // 
@@ -725,7 +725,7 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(pictureBox5);
             sidepanelPOS.Controls.Add(button16);
             sidepanelPOS.Controls.Add(pictureBox6);
-            sidepanelPOS.Controls.Add(button17);
+            sidepanelPOS.Controls.Add(btnSignout);
             sidepanelPOS.Controls.Add(pictureBox7);
             sidepanelPOS.Controls.Add(button18);
             sidepanelPOS.Controls.Add(pictureBox8);
@@ -754,6 +754,7 @@ namespace Service_Management_System.POS
             moveup.Size = new Size(52, 51);
             moveup.TabIndex = 18;
             moveup.TabStop = false;
+            moveup.Click += moveup_Click;
             moveup.MouseEnter += moveup_MouseEnter;
             moveup.MouseLeave += moveup_MouseLeave;
             // 
@@ -768,6 +769,7 @@ namespace Service_Management_System.POS
             allout.Size = new Size(52, 51);
             allout.TabIndex = 17;
             allout.TabStop = false;
+            allout.Click += allout_Click;
             allout.MouseEnter += allout_MouseEnter;
             allout.MouseLeave += allout_MouseLeave;
             // 
@@ -824,24 +826,26 @@ namespace Service_Management_System.POS
             pictureBox6.Size = new Size(52, 51);
             pictureBox6.TabIndex = 13;
             pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
             // 
-            // button17
+            // btnSignout
             // 
-            button17.BackColor = Color.FromArgb(3, 83, 115);
-            button17.FlatAppearance.BorderSize = 0;
-            button17.FlatStyle = FlatStyle.Flat;
-            button17.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button17.ForeColor = SystemColors.Control;
-            button17.Location = new Point(-2, 364);
-            button17.Name = "button17";
-            button17.Size = new Size(265, 57);
-            button17.TabIndex = 12;
-            button17.Text = "                   Sign out";
-            button17.TextAlign = ContentAlignment.MiddleLeft;
-            button17.UseCompatibleTextRendering = true;
-            button17.UseVisualStyleBackColor = false;
-            button17.MouseEnter += button17_MouseEnter;
-            button17.MouseLeave += button17_MouseLeave;
+            btnSignout.BackColor = Color.FromArgb(3, 83, 115);
+            btnSignout.FlatAppearance.BorderSize = 0;
+            btnSignout.FlatStyle = FlatStyle.Flat;
+            btnSignout.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSignout.ForeColor = SystemColors.Control;
+            btnSignout.Location = new Point(-2, 364);
+            btnSignout.Name = "btnSignout";
+            btnSignout.Size = new Size(265, 57);
+            btnSignout.TabIndex = 12;
+            btnSignout.Text = "                   Sign out";
+            btnSignout.TextAlign = ContentAlignment.MiddleLeft;
+            btnSignout.UseCompatibleTextRendering = true;
+            btnSignout.UseVisualStyleBackColor = false;
+            btnSignout.Click += btnSignout_Click;
+            btnSignout.MouseEnter += button17_MouseEnter;
+            btnSignout.MouseLeave += button17_MouseLeave;
             // 
             // pictureBox7
             // 
@@ -969,6 +973,7 @@ namespace Service_Management_System.POS
             pictureBox2.Size = new Size(52, 51);
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // button13
             // 
@@ -985,6 +990,7 @@ namespace Service_Management_System.POS
             button13.TextAlign = ContentAlignment.MiddleLeft;
             button13.UseCompatibleTextRendering = true;
             button13.UseVisualStyleBackColor = false;
+            button13.Click += button13_Click;
             button13.MouseEnter += button13_MouseEnter;
             button13.MouseLeave += button13_MouseLeave;
             // 
@@ -1141,7 +1147,7 @@ namespace Service_Management_System.POS
         private PictureBox pictureBox5;
         private Button button16;
         private PictureBox pictureBox6;
-        private Button button17;
+        private Button btnSignout;
         private PictureBox pictureBox7;
         private Button button18;
         private PictureBox pictureBox8;

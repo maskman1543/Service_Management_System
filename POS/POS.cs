@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Service_Management_System.Login_Page_Front___Backend;
+using Service_Management_System.POS.Login_Page_Front_and_Back_End;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -108,7 +110,7 @@ namespace Service_Management_System.POS
         private void LoadProductOrderedView(int productID)
         {
             string query = $"SELECT productTable.productID, productTable.productGroup, productTable.productName, productTable.Price, productTable.barcode\r\nFROM productTable;\r\n";
-                        
+
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -308,15 +310,15 @@ namespace Service_Management_System.POS
         private void button17_MouseEnter(object sender, EventArgs e)
         {
             // Increase size when mouse enters
-            button17.Width = 275;
-            button17.Height = 62;
+            btnSignout.Width = 275;
+            btnSignout.Height = 62;
         }
 
         private void button17_MouseLeave(object sender, EventArgs e)
         {
             // Restore original size when mouse leaves
-            button17.Width = 265;
-            button17.Height = 57;
+            btnSignout.Width = 265;
+            btnSignout.Height = 57;
         }
 
         private void button16_MouseEnter(object sender, EventArgs e)
@@ -375,7 +377,40 @@ namespace Service_Management_System.POS
             moveup.Height = 51;
         }
 
-        
+        private void allout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void moveup_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            View_sales_history View = new View_sales_history();
+            View.Show();
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSignout_Click(object sender, EventArgs e)
+        {
+            Splash loginForm = new Splash();
+            loginForm.Show();
+            this.Close();
+        }
+
+
 
         /*private void button12_MouseEnter(object sender, EventArgs e)
         {
