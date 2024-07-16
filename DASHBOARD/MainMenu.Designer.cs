@@ -146,7 +146,7 @@
             btnCompany.IconChar = FontAwesome.Sharp.IconChar.Building;
             btnCompany.IconColor = Color.White;
             btnCompany.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnCompany.IconSize = 40;
+            btnCompany.IconSize = 30;
             btnCompany.ImageAlign = ContentAlignment.MiddleLeft;
             btnCompany.Location = new Point(0, 450);
             btnCompany.Name = "btnCompany";
@@ -169,7 +169,7 @@
             btnSecurity.IconChar = FontAwesome.Sharp.IconChar.Key;
             btnSecurity.IconColor = Color.White;
             btnSecurity.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnSecurity.IconSize = 40;
+            btnSecurity.IconSize = 30;
             btnSecurity.ImageAlign = ContentAlignment.MiddleLeft;
             btnSecurity.Location = new Point(0, 400);
             btnSecurity.Name = "btnSecurity";
@@ -192,7 +192,7 @@
             btnAnalytics.IconChar = FontAwesome.Sharp.IconChar.ChartPie;
             btnAnalytics.IconColor = Color.White;
             btnAnalytics.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAnalytics.IconSize = 40;
+            btnAnalytics.IconSize = 30;
             btnAnalytics.ImageAlign = ContentAlignment.MiddleLeft;
             btnAnalytics.Location = new Point(0, 350);
             btnAnalytics.Name = "btnAnalytics";
@@ -215,7 +215,7 @@
             btnStock.IconChar = FontAwesome.Sharp.IconChar.Cubes;
             btnStock.IconColor = Color.White;
             btnStock.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnStock.IconSize = 40;
+            btnStock.IconSize = 30;
             btnStock.ImageAlign = ContentAlignment.MiddleLeft;
             btnStock.Location = new Point(0, 300);
             btnStock.Name = "btnStock";
@@ -238,7 +238,7 @@
             btnProducts.IconChar = FontAwesome.Sharp.IconChar.HandHolding;
             btnProducts.IconColor = Color.White;
             btnProducts.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnProducts.IconSize = 40;
+            btnProducts.IconSize = 30;
             btnProducts.ImageAlign = ContentAlignment.MiddleLeft;
             btnProducts.Location = new Point(0, 250);
             btnProducts.Name = "btnProducts";
@@ -261,7 +261,7 @@
             btnDocuments.IconChar = FontAwesome.Sharp.IconChar.File;
             btnDocuments.IconColor = Color.White;
             btnDocuments.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnDocuments.IconSize = 40;
+            btnDocuments.IconSize = 30;
             btnDocuments.ImageAlign = ContentAlignment.MiddleLeft;
             btnDocuments.Location = new Point(0, 200);
             btnDocuments.Name = "btnDocuments";
@@ -284,7 +284,7 @@
             btnDashboard.IconChar = FontAwesome.Sharp.IconChar.BarChart;
             btnDashboard.IconColor = Color.White;
             btnDashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnDashboard.IconSize = 40;
+            btnDashboard.IconSize = 30;
             btnDashboard.ImageAlign = ContentAlignment.MiddleLeft;
             btnDashboard.Location = new Point(0, 150);
             btnDashboard.Name = "btnDashboard";
