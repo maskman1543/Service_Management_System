@@ -280,6 +280,7 @@
             Controls.Add(pictureBox2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "EmployeeLoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EmployeeLoginForm";
             Load += EmployeeLoginForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
