@@ -63,5 +63,10 @@ namespace Service_Management_System.Login_Page_Front___Backend
                 PasswordTextBox.PasswordChar = '*'; // Hide password characters
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

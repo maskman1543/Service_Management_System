@@ -44,7 +44,7 @@
             linkLabel1 = new LinkLabel();
             linkLabel2 = new LinkLabel();
             button1 = new Button();
-            button3 = new Button();
+            btnClose = new Button();
             guna2Elipse_EmployeeLoginForm = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse_btnLogin = new Guna.UI2.WinForms.Guna2Elipse(components);
@@ -251,17 +251,18 @@
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnClose
             // 
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(432, 4);
-            button3.Margin = new Padding(3, 2, 3, 2);
-            button3.Name = "button3";
-            button3.Size = new Size(31, 26);
-            button3.TabIndex = 13;
-            button3.UseVisualStyleBackColor = true;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.ForeColor = Color.White;
+            btnClose.Image = (Image)resources.GetObject("btnClose.Image");
+            btnClose.Location = new Point(432, 4);
+            btnClose.Margin = new Padding(3, 2, 3, 2);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(31, 26);
+            btnClose.TabIndex = 13;
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // guna2Elipse_EmployeeLoginForm
             // 
@@ -284,7 +285,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(469, 621);
-            Controls.Add(button3);
+            Controls.Add(btnClose);
             Controls.Add(panel_loginInfo);
             Controls.Add(linkLabel2);
             Controls.Add(button1);
@@ -319,7 +320,7 @@
         private LinkLabel linkLabel2;
         private Button button1;
         private Button btnLogin;
-        private Button button3;
+        private Button btnClose;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse_EmployeeLoginForm;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse_btnLogin;
