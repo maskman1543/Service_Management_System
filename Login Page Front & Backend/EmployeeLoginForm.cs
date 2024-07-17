@@ -51,5 +51,22 @@ namespace Service_Management_System.Login_Page_Front___Backend
         {
 
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                PasswordTextBox.PasswordChar = '\0'; // Show password characters
+            }
+            else
+            {
+                PasswordTextBox.PasswordChar = '*'; // Hide password characters
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

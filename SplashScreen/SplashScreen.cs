@@ -11,8 +11,7 @@ namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
             InitializeComponent();
 
             // Configure the timer
-            timer.Interval = 5000; // 5 seconds
-            timer.Tick += Timer_Tick;
+            timer.Interval = 3000; // 3 seconds
             timer.Start();
         }
 

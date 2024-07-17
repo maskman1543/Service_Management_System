@@ -345,8 +345,8 @@
             // 
             // acctRegistration_form
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(934, 731);
             Controls.Add(panel2);
             Controls.Add(btnClosed);
