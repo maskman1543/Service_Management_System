@@ -2,6 +2,7 @@ using Service_Management_System.DASHBOARD;
 using Service_Management_System.Properties.DASHBOARD;
 using System;
 using System.Windows.Forms;
+//using Service_Management_System.POS.AfterPayment;
 
 namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
 {
@@ -28,7 +29,7 @@ namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
 
             //This form1 below here is the Dashboard
 
-            POSForm formCheck = new POSForm();
+            AfterPayment formCheck = new AfterPayment();
             formCheck.Show(); //Showdialog();
 
             // Optionally, navigate to Splash after Form1 initialization
