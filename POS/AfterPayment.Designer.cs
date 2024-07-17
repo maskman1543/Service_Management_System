@@ -79,6 +79,8 @@
             btnExGF.Size = new Size(28, 25);
             btnExGF.TabIndex = 10;
             btnExGF.TabStop = false;
+            btnExGF.MouseEnter += btnExGF_MouseEnter;
+            btnExGF.MouseLeave += btnExGF_MouseLeave;
             // 
             // label1
             // 
@@ -210,6 +212,8 @@
             btnPrintrcp.Size = new Size(336, 108);
             btnPrintrcp.TabIndex = 3;
             btnPrintrcp.UseVisualStyleBackColor = true;
+            btnPrintrcp.MouseEnter += btnPrintrcp_MouseEnter;
+            btnPrintrcp.MouseLeave += btnPrintrcp_MouseLeave;
             // 
             // btnsvPDF
             // 
@@ -222,6 +226,8 @@
             btnsvPDF.Size = new Size(336, 108);
             btnsvPDF.TabIndex = 4;
             btnsvPDF.UseVisualStyleBackColor = true;
+            btnsvPDF.MouseEnter += btnsvPDF_MouseEnter;
+            btnsvPDF.MouseLeave += btnsvPDF_MouseLeave;
             // 
             // btnaddNts
             // 
@@ -234,6 +240,8 @@
             btnaddNts.Size = new Size(336, 108);
             btnaddNts.TabIndex = 5;
             btnaddNts.UseVisualStyleBackColor = true;
+            btnaddNts.MouseEnter += btnaddNts_MouseEnter;
+            btnaddNts.MouseLeave += btnaddNts_MouseLeave;
             // 
             // btnsndEmail
             // 
@@ -246,6 +254,8 @@
             btnsndEmail.Size = new Size(336, 108);
             btnsndEmail.TabIndex = 6;
             btnsndEmail.UseVisualStyleBackColor = true;
+            btnsndEmail.MouseEnter += btnsndEmail_MouseEnter;
+            btnsndEmail.MouseLeave += btnsndEmail_MouseLeave;
             // 
             // btnPrintinv
             // 
@@ -258,6 +268,8 @@
             btnPrintinv.Size = new Size(336, 108);
             btnPrintinv.TabIndex = 7;
             btnPrintinv.UseVisualStyleBackColor = true;
+            btnPrintinv.MouseEnter += btnPrintinv_MouseEnter;
+            btnPrintinv.MouseLeave += btnPrintinv_MouseLeave;
             // 
             // btnDone
             // 
@@ -270,6 +282,8 @@
             btnDone.Size = new Size(158, 55);
             btnDone.TabIndex = 8;
             btnDone.UseVisualStyleBackColor = true;
+            btnDone.MouseEnter += btnDone_MouseEnter;
+            btnDone.MouseLeave += btnDone_MouseLeave;
             // 
             // pictureBox1
             // 
@@ -304,6 +318,9 @@
             linkLabel1.TabStop = true;
             linkLabel1.Text = "0.00";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            linkLabel1.MouseEnter += linkLabel1_MouseEnter;
+            linkLabel1.MouseLeave += linkLabel1_MouseLeave;
+            linkLabel1.MouseHover += linkLabel1_MouseHover;
             // 
             // panel3
             // 
