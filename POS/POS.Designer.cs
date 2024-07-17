@@ -489,47 +489,50 @@ namespace Service_Management_System.POS
             // 
             // button11
             // 
+            button11.BackgroundImage = (Image)resources.GetObject("button11.BackgroundImage");
+            button11.BackgroundImageLayout = ImageLayout.Stretch;
+            button11.FlatAppearance.BorderSize = 0;
             button11.FlatStyle = FlatStyle.Flat;
             button11.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button11.ForeColor = Color.White;
-            button11.Image = (Image)resources.GetObject("button11.Image");
             button11.ImageAlign = ContentAlignment.TopCenter;
-            button11.Location = new Point(306, 11);
+            button11.Location = new Point(248, 8);
             button11.Name = "button11";
-            button11.Size = new Size(141, 63);
+            button11.Size = new Size(112, 70);
             button11.TabIndex = 5;
-            button11.Text = "Repeat routine";
             button11.TextAlign = ContentAlignment.BottomCenter;
             button11.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
+            button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
+            button4.BackgroundImageLayout = ImageLayout.Stretch;
+            button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button4.ForeColor = Color.White;
-            button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.TopCenter;
-            button4.Location = new Point(159, 11);
+            button4.Location = new Point(130, 7);
             button4.Name = "button4";
-            button4.Size = new Size(141, 63);
+            button4.Size = new Size(112, 70);
             button4.TabIndex = 4;
-            button4.Text = "Lock";
             button4.TextAlign = ContentAlignment.BottomCenter;
             button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            button3.BackColor = Color.Red;
+            button3.BackColor = Color.FromArgb(3, 83, 115);
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.TopCenter;
-            button3.Location = new Point(12, 11);
+            button3.Location = new Point(12, 7);
             button3.Name = "button3";
-            button3.Size = new Size(141, 63);
+            button3.Size = new Size(112, 70);
             button3.TabIndex = 3;
-            button3.Text = "Void order";
             button3.TextAlign = ContentAlignment.BottomCenter;
             button3.UseVisualStyleBackColor = false;
             // 
