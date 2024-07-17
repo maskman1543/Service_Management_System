@@ -142,6 +142,8 @@ namespace Service_Management_System.POS
             btnmenU2.TabIndex = 10;
             btnmenU2.UseVisualStyleBackColor = false;
             btnmenU2.Click += btnmenU2_Click;
+            btnmenU2.MouseEnter += btnmenU2_MouseEnter;
+            btnmenU2.MouseLeave += btnmenU2_MouseLeave;
             // 
             // button9
             // 
@@ -188,6 +190,8 @@ namespace Service_Management_System.POS
             btnRefund.TabIndex = 11;
             btnRefund.TextAlign = ContentAlignment.BottomCenter;
             btnRefund.UseVisualStyleBackColor = true;
+            btnRefund.MouseEnter += btnRefund_MouseEnter;
+            btnRefund.MouseLeave += btnRefund_MouseLeave;
             // 
             // button2
             // 
@@ -204,6 +208,8 @@ namespace Service_Management_System.POS
             button2.TabIndex = 10;
             button2.TextAlign = ContentAlignment.BottomCenter;
             button2.UseVisualStyleBackColor = true;
+            button2.MouseEnter += button2_MouseEnter;
+            button2.MouseLeave += button2_MouseLeave;
             // 
             // btnCash
             // 
@@ -220,6 +226,8 @@ namespace Service_Management_System.POS
             btnCash.TabIndex = 9;
             btnCash.TextAlign = ContentAlignment.BottomCenter;
             btnCash.UseVisualStyleBackColor = true;
+            btnCash.MouseEnter += btnCash_MouseEnter;
+            btnCash.MouseLeave += btnCash_MouseLeave;
             // 
             // btnPayment
             // 
@@ -236,6 +244,8 @@ namespace Service_Management_System.POS
             btnPayment.TabIndex = 8;
             btnPayment.TextAlign = ContentAlignment.BottomCenter;
             btnPayment.UseVisualStyleBackColor = true;
+            btnPayment.MouseEnter += btnPayment_MouseEnter;
+            btnPayment.MouseLeave += btnPayment_MouseLeave;
             // 
             // btnSaveSale
             // 
@@ -253,6 +263,8 @@ namespace Service_Management_System.POS
             btnSaveSale.TextAlign = ContentAlignment.BottomCenter;
             btnSaveSale.UseVisualStyleBackColor = true;
             btnSaveSale.Click += btnSaveSale_Click;
+            btnSaveSale.MouseEnter += btnSaveSale_MouseEnter;
+            btnSaveSale.MouseLeave += btnSaveSale_MouseLeave;
             // 
             // btnNewSale
             // 
@@ -269,6 +281,8 @@ namespace Service_Management_System.POS
             btnNewSale.TabIndex = 4;
             btnNewSale.TextAlign = ContentAlignment.BottomCenter;
             btnNewSale.UseVisualStyleBackColor = true;
+            btnNewSale.MouseEnter += btnNewSale_MouseEnter;
+            btnNewSale.MouseLeave += btnNewSale_MouseLeave;
             // 
             // btnDiscount
             // 
@@ -285,6 +299,8 @@ namespace Service_Management_System.POS
             btnDiscount.TabIndex = 3;
             btnDiscount.TextAlign = ContentAlignment.BottomCenter;
             btnDiscount.UseVisualStyleBackColor = true;
+            btnDiscount.MouseEnter += btnDiscount_MouseEnter;
+            btnDiscount.MouseLeave += btnDiscount_MouseLeave;
             // 
             // btnCustomer
             // 
@@ -301,6 +317,8 @@ namespace Service_Management_System.POS
             btnCustomer.TabIndex = 2;
             btnCustomer.TextAlign = ContentAlignment.BottomCenter;
             btnCustomer.UseVisualStyleBackColor = true;
+            btnCustomer.MouseEnter += btnCustomer_MouseEnter;
+            btnCustomer.MouseLeave += btnCustomer_MouseLeave;
             // 
             // btnSearch
             // 
@@ -319,6 +337,8 @@ namespace Service_Management_System.POS
             btnSearch.TextAlign = ContentAlignment.BottomCenter;
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
+            btnSearch.MouseEnter += btnSearch_MouseEnter;
+            btnSearch.MouseLeave += btnSearch_MouseLeave;
             // 
             // panel2
             // 
@@ -345,6 +365,8 @@ namespace Service_Management_System.POS
             button5.Size = new Size(75, 51);
             button5.TabIndex = 5;
             button5.UseVisualStyleBackColor = true;
+            button5.MouseEnter += button5_MouseEnter;
+            button5.MouseLeave += button5_MouseLeave;
             // 
             // btnQuantity
             // 
@@ -361,6 +383,8 @@ namespace Service_Management_System.POS
             btnQuantity.Size = new Size(156, 51);
             btnQuantity.TabIndex = 4;
             btnQuantity.UseVisualStyleBackColor = true;
+            btnQuantity.MouseEnter += btnQuantity_MouseEnter;
+            btnQuantity.MouseLeave += btnQuantity_MouseLeave;
             // 
             // btnDelete
             // 
@@ -378,6 +402,8 @@ namespace Service_Management_System.POS
             btnDelete.TabIndex = 3;
             btnDelete.TextAlign = ContentAlignment.MiddleRight;
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.MouseEnter += btnDelete_MouseEnter;
+            btnDelete.MouseLeave += btnDelete_MouseLeave;
             // 
             // panel3
             // 
@@ -406,6 +432,8 @@ namespace Service_Management_System.POS
             button1.TabIndex = 9;
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            button1.MouseEnter += button1_MouseEnter_1;
+            button1.MouseLeave += button1_MouseLeave_1;
             // 
             // button8
             // 
@@ -420,6 +448,8 @@ namespace Service_Management_System.POS
             button8.Size = new Size(75, 51);
             button8.TabIndex = 8;
             button8.UseVisualStyleBackColor = true;
+            button8.MouseEnter += button8_MouseEnter;
+            button8.MouseLeave += button8_MouseLeave;
             // 
             // button7
             // 
@@ -434,6 +464,8 @@ namespace Service_Management_System.POS
             button7.Size = new Size(75, 51);
             button7.TabIndex = 7;
             button7.UseVisualStyleBackColor = true;
+            button7.MouseEnter += button7_MouseEnter;
+            button7.MouseLeave += button7_MouseLeave;
             // 
             // button6
             // 
@@ -486,6 +518,8 @@ namespace Service_Management_System.POS
             button11.TabIndex = 5;
             button11.TextAlign = ContentAlignment.BottomCenter;
             button11.UseVisualStyleBackColor = true;
+            button11.MouseEnter += button11_MouseEnter;
+            button11.MouseLeave += button11_MouseLeave;
             // 
             // button4
             // 
@@ -502,6 +536,8 @@ namespace Service_Management_System.POS
             button4.TabIndex = 4;
             button4.TextAlign = ContentAlignment.BottomCenter;
             button4.UseVisualStyleBackColor = true;
+            button4.MouseEnter += button4_MouseEnter;
+            button4.MouseLeave += button4_MouseLeave;
             // 
             // button3
             // 
@@ -519,6 +555,8 @@ namespace Service_Management_System.POS
             button3.TabIndex = 3;
             button3.TextAlign = ContentAlignment.BottomCenter;
             button3.UseVisualStyleBackColor = false;
+            button3.MouseEnter += button3_MouseEnter;
+            button3.MouseLeave += button3_MouseLeave;
             // 
             // panel5
             // 
