@@ -26,6 +26,7 @@ namespace Service_Management_System.POS
             sidepanelPOS.Hide();
             timerSfx.Interval = 50; // Timer interval for smooth transition
             fadeStep = 255 * timerSfx.Interval / fadeDuration; // Calculate fade step
+            this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
         }
 
         private void timerSfx_Tick(object sender, EventArgs e)
@@ -428,6 +429,275 @@ namespace Service_Management_System.POS
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSearch_MouseEnter(object sender, EventArgs e)
+        {
+            // Increase size when mouse enters
+            btnSearch.Width = 79;
+            btnSearch.Height = 71;
+            //75, 67, orrig
+        }
+
+        private void btnSearch_MouseLeave(object sender, EventArgs e)
+        {
+            btnSearch.Width = 75;
+            btnSearch.Height = 67;
+            //75, 67, orrig
+        }
+
+        private void btnCustomer_MouseEnter(object sender, EventArgs e)
+        {
+            btnCustomer.Width = 79;
+            btnCustomer.Height = 71;
+            //75, 67, orrig
+        }
+
+        private void btnCustomer_MouseLeave(object sender, EventArgs e)
+        {
+            btnCustomer.Width = 75;
+            btnCustomer.Height = 67;
+            //75, 67, orrig
+        }
+
+        private void btnDiscount_MouseEnter(object sender, EventArgs e)
+        {
+            btnDiscount.Width = 79;
+            btnDiscount.Height = 71;
+            //75, 67, orrig
+        }
+
+        private void btnDiscount_MouseLeave(object sender, EventArgs e)
+        {
+            btnDiscount.Width = 75;
+            btnDiscount.Height = 67;
+            //75, 67, orrig
+        }
+
+        private void btnNewSale_MouseEnter(object sender, EventArgs e)
+        {
+            btnNewSale.Width = 79;
+            btnNewSale.Height = 71;
+            //75, 67, orrig
+        }
+
+        private void btnNewSale_MouseLeave(object sender, EventArgs e)
+        {
+            btnNewSale.Width = 75;
+            btnNewSale.Height = 67;
+            //75, 67, orrig
+        }
+
+        private void btnRefund_MouseEnter(object sender, EventArgs e)
+        {
+            btnRefund.Width = 79;
+            btnRefund.Height = 71;
+            //75, 67, orrig
+        }
+
+        private void btnRefund_MouseLeave(object sender, EventArgs e)
+        {
+            btnRefund.Width = 75;
+            btnRefund.Height = 67;
+            //75, 67, orrig
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            button2.Width = 79;
+            button2.Height = 71;
+            //75, 67, orrig
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.Width = 75;
+            button2.Height = 67;
+            //75, 67, orrig
+        }
+
+        private void btnSaveSale_MouseEnter(object sender, EventArgs e)
+        {
+            btnSaveSale.Width = 79;
+            btnSaveSale.Height = 71;
+            //75, 67, orrig
+        }
+
+        private void btnSaveSale_MouseLeave(object sender, EventArgs e)
+        {
+            btnSaveSale.Width = 75;
+            btnSaveSale.Height = 67;
+            //75, 67, orrig
+        }
+
+        private void btnPayment_MouseEnter(object sender, EventArgs e)
+        {
+            btnPayment.Width = 79;
+            btnPayment.Height = 71;
+            //75, 67, orrig
+        }
+
+        private void btnPayment_MouseLeave(object sender, EventArgs e)
+        {
+            btnPayment.Width = 75;
+            btnPayment.Height = 67;
+            //75, 67, orrig
+        }
+
+        private void btnCash_MouseEnter(object sender, EventArgs e)
+        {
+            btnCash.Width = 79;
+            btnCash.Height = 71;
+            //75, 67, orrig
+        }
+
+        private void btnCash_MouseLeave(object sender, EventArgs e)
+        {
+            btnCash.Width = 75;
+            btnCash.Height = 67;
+            //75, 67, orrig
+        }
+
+        private void btnDelete_MouseEnter(object sender, EventArgs e)
+        {
+            btnDelete.Width = 160;
+            btnDelete.Height = 55;
+            //156, 51 orrig
+        }
+
+        private void btnDelete_MouseLeave(object sender, EventArgs e)
+        {
+            btnDelete.Width = 156;
+            btnDelete.Height = 51;
+            //156, 51 orrig
+        }
+
+        private void btnQuantity_MouseEnter(object sender, EventArgs e)
+        {
+            btnQuantity.Width = 160;
+            btnQuantity.Height = 55;
+            //156, 51 orrig
+        }
+
+        private void btnQuantity_MouseLeave(object sender, EventArgs e)
+        {
+            btnQuantity.Width = 156;
+            btnQuantity.Height = 51;
+            //156, 51 orrig
+        }
+
+        private void button5_MouseEnter(object sender, EventArgs e)
+        {
+            button5.Width = 79;
+            button5.Height = 55;
+            //75, 51 orrig
+        }
+
+        private void button5_MouseLeave(object sender, EventArgs e)
+        {
+            button5.Width = 75;
+            button5.Height = 51;
+            //75, 51 orrig
+        }
+
+
+        private void button1_MouseEnter_1(object sender, EventArgs e)
+        {
+            button1.Width = 79;
+            button1.Height = 55;
+            //75, 51 orrig
+        }
+
+        private void button1_MouseLeave_1(object sender, EventArgs e)
+        {
+            button1.Width = 75;
+            button1.Height = 51;
+            //75, 51 orrig
+        }
+
+        private void button8_MouseEnter(object sender, EventArgs e)
+        {
+            button8.Width = 79;
+            button8.Height = 55;
+            //75, 51 orrig
+        }
+
+        private void button8_MouseLeave(object sender, EventArgs e)
+        {
+            button8.Width = 75;
+            button8.Height = 51;
+            //75, 51 orrig
+        }
+
+        private void button7_MouseEnter(object sender, EventArgs e)
+        {
+            button7.Width = 79;
+            button7.Height = 55;
+            //75, 51 orrig
+        }
+
+        private void button7_MouseLeave(object sender, EventArgs e)
+        {
+            button7.Width = 75;
+            button7.Height = 51;
+            //75, 51 orrig
+        }
+
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            button3.Width = 116;
+            button3.Height = 74;
+            //112, 70 orrig
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            button3.Width = 112;
+            button3.Height = 70;
+            //112, 70 orrig
+        }
+
+        private void button4_MouseEnter(object sender, EventArgs e)
+        {
+            button4.Width = 116;
+            button4.Height = 74;
+            //112, 70 orrig
+        }
+
+        private void button4_MouseLeave(object sender, EventArgs e)
+        {
+
+            button4.Width = 112;
+            button4.Height = 70;
+            //112, 70 orrig
+        }
+
+        private void button11_MouseEnter(object sender, EventArgs e)
+        {
+            button11.Width = 116;
+            button11.Height = 74;
+            //112, 70 orrig
+        }
+
+        private void button11_MouseLeave(object sender, EventArgs e)
+        {
+            button11.Width = 112;
+            button11.Height = 70;
+            //112, 70 orrig
+        }
+
+        private void btnmenU2_MouseEnter(object sender, EventArgs e)
+        {
+            btnmenU2.Width = 55;
+            btnmenU2.Height = 46;
+            //51, 42 orrig
+        }
+
+        private void btnmenU2_MouseLeave(object sender, EventArgs e)
+        {
+            btnmenU2.Width = 51;
+            btnmenU2.Height = 42;
+            //51, 42 orrig
         }
 
 
