@@ -60,7 +60,7 @@ namespace Service_Management_System.Login_Page_Front___Backend
             }
             else
             {
-                PasswordTextBox.PasswordChar = '*'; // Hide password characters
+                PasswordTextBox.PasswordChar = '•'; // Hide password characters
             }
         }
 

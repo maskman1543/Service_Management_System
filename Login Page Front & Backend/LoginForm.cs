@@ -23,7 +23,7 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
         public LoginForm()
         {
             InitializeComponent();
-            PasswordTextBox.PasswordChar = '*';
+            PasswordTextBox.PasswordChar = '•';
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -116,7 +116,7 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
             }
             else
             {
-                PasswordTextBox.PasswordChar = '*'; // Hide password characters
+                PasswordTextBox.PasswordChar = '•'; // Hide password characters
             }
         }
 
