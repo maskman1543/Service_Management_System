@@ -26,7 +26,7 @@ namespace Service_Management_System.POS
         {
             btnPrintrcp.Width = 366;
             btnPrintrcp.Height = 102;
-            
+
         }
 
         private void btnPrintrcp_MouseLeave(object sender, EventArgs e)
@@ -40,35 +40,35 @@ namespace Service_Management_System.POS
         {
             btnPrintinv.Width = 366;
             btnPrintinv.Height = 102;
-            
+
         }
 
         private void btnPrintinv_MouseLeave(object sender, EventArgs e)
         {
             btnPrintinv.Width = 362;
             btnPrintinv.Height = 98;
-            
+
         }
 
         private void btnsndEmail_MouseEnter(object sender, EventArgs e)
         {
             btnsndEmail.Width = 366;
             btnsndEmail.Height = 102;
-            
+
         }
 
         private void btnsndEmail_MouseLeave(object sender, EventArgs e)
         {
             btnsndEmail.Width = 362;
             btnsndEmail.Height = 98;
-            
+
         }
 
         private void btnsvPDF_MouseEnter(object sender, EventArgs e)
         {
             btnsvPDF.Width = 366;
             btnsvPDF.Height = 102;
-            
+
         }
 
 
@@ -76,28 +76,28 @@ namespace Service_Management_System.POS
         {
             btnsvPDF.Width = 362;
             btnsvPDF.Height = 98;
-            
+
         }
 
         private void btnaddNts_MouseEnter(object sender, EventArgs e)
         {
             btnaddNts.Width = 366;
             btnaddNts.Height = 102;
-            
+
         }
 
         private void btnaddNts_MouseLeave(object sender, EventArgs e)
         {
             btnaddNts.Width = 362;
             btnaddNts.Height = 98;
-            
+
         }
 
         private void btnDone_MouseEnter(object sender, EventArgs e)
         {
             btnDone.Width = 162;
             btnDone.Height = 59;
-            
+
         }
 
         private void btnDone_MouseLeave(object sender, EventArgs e)
@@ -111,7 +111,7 @@ namespace Service_Management_System.POS
         {
             btnExGF.Width = 32;
             btnExGF.Height = 29;
-            
+
         }
 
         private void btnExGF_MouseLeave(object sender, EventArgs e)
@@ -132,6 +132,11 @@ namespace Service_Management_System.POS
         }
 
         private void btnaddNts_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDone_Click(object sender, EventArgs e)
         {
 
         }

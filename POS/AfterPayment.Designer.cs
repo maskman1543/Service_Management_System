@@ -50,8 +50,13 @@
             btnDone = new Button();
             pictureBox1 = new PictureBox();
             label3 = new Label();
-            linkLabel1 = new LinkLabel();
             panel3 = new Panel();
+            label8 = new Label();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            panel6 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnExGF).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -62,6 +67,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(11, 67, 89);
+            panel1.Controls.Add(panel6);
             panel1.Controls.Add(btnExGF);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
@@ -86,22 +92,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(15, 13);
+            label1.Location = new Point(34, 23);
             label1.Name = "label1";
-            label1.Size = new Size(59, 28);
+            label1.Size = new Size(71, 31);
             label1.TabIndex = 5;
             label1.Text = "Items";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(353, 13);
+            label2.Location = new Point(352, 23);
             label2.Name = "label2";
-            label2.Size = new Size(77, 28);
+            label2.Size = new Size(91, 31);
             label2.TabIndex = 4;
             label2.Text = "Actions";
             // 
@@ -119,6 +125,10 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(textBox4);
+            panel2.Controls.Add(textBox3);
+            panel2.Controls.Add(textBox2);
+            panel2.Controls.Add(textBox1);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label5);
@@ -135,7 +145,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(11, 67, 89);
-            label7.Location = new Point(2, 155);
+            label7.Location = new Point(9, 162);
             label7.Name = "label7";
             label7.Size = new Size(52, 23);
             label7.TabIndex = 14;
@@ -146,7 +156,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(11, 67, 89);
-            label6.Location = new Point(3, 99);
+            label6.Location = new Point(8, 105);
             label6.Name = "label6";
             label6.Size = new Size(54, 23);
             label6.TabIndex = 13;
@@ -157,7 +167,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(11, 67, 89);
-            label5.Location = new Point(0, 49);
+            label5.Location = new Point(6, 50);
             label5.Name = "label5";
             label5.Size = new Size(42, 23);
             label5.TabIndex = 12;
@@ -168,7 +178,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(11, 67, 89);
-            label4.Location = new Point(2, 13);
+            label4.Location = new Point(6, 16);
             label4.Name = "label4";
             label4.Size = new Size(84, 23);
             label4.TabIndex = 11;
@@ -176,18 +186,18 @@
             // 
             // panel5
             // 
-            panel5.BackColor = Color.DimGray;
+            panel5.BackColor = Color.Black;
             panel5.Location = new Point(0, 142);
             panel5.Name = "panel5";
-            panel5.Size = new Size(324, 10);
+            panel5.Size = new Size(324, 4);
             panel5.TabIndex = 5;
             // 
             // panel4
             // 
-            panel4.BackColor = Color.DimGray;
+            panel4.BackColor = Color.Black;
             panel4.Location = new Point(0, 86);
             panel4.Name = "panel4";
-            panel4.Size = new Size(324, 10);
+            panel4.Size = new Size(324, 4);
             panel4.TabIndex = 4;
             // 
             // iconSplitButton1
@@ -279,11 +289,12 @@
             btnDone.BackgroundImageLayout = ImageLayout.Stretch;
             btnDone.FlatAppearance.BorderSize = 0;
             btnDone.FlatStyle = FlatStyle.Flat;
-            btnDone.Location = new Point(1292, 614);
+            btnDone.Location = new Point(1279, 613);
             btnDone.Name = "btnDone";
             btnDone.Size = new Size(158, 55);
             btnDone.TabIndex = 8;
             btnDone.UseVisualStyleBackColor = true;
+            btnDone.Click += btnDone_Click;
             btnDone.MouseEnter += btnDone_MouseEnter;
             btnDone.MouseLeave += btnDone_MouseLeave;
             // 
@@ -308,26 +319,72 @@
             label3.TabIndex = 6;
             label3.Text = "Change:";
             // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            linkLabel1.LinkColor = Color.FromArgb(11, 67, 89);
-            linkLabel1.Location = new Point(939, 99);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(45, 23);
-            linkLabel1.TabIndex = 9;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "0.00";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
-            // 
             // panel3
             // 
-            panel3.BackColor = Color.DimGray;
+            panel3.BackColor = Color.Black;
             panel3.Location = new Point(-2, 491);
             panel3.Name = "panel3";
-            panel3.Size = new Size(325, 10);
+            panel3.Size = new Size(325, 4);
             panel3.TabIndex = 3;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = Color.FromArgb(0, 192, 0);
+            label8.Location = new Point(941, 94);
+            label8.Name = "label8";
+            label8.Size = new Size(63, 32);
+            label8.TabIndex = 9;
+            label8.Text = "0.00";
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.White;
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox1.Location = new Point(211, 10);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(103, 27);
+            textBox1.TabIndex = 10;
+            // 
+            // textBox2
+            // 
+            textBox2.BackColor = Color.White;
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
+            textBox2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox2.Location = new Point(212, 48);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(103, 27);
+            textBox2.TabIndex = 15;
+            // 
+            // textBox3
+            // 
+            textBox3.BackColor = Color.White;
+            textBox3.BorderStyle = BorderStyle.FixedSingle;
+            textBox3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox3.Location = new Point(211, 99);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(103, 27);
+            textBox3.TabIndex = 16;
+            // 
+            // textBox4
+            // 
+            textBox4.BackColor = Color.White;
+            textBox4.BorderStyle = BorderStyle.FixedSingle;
+            textBox4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox4.Location = new Point(210, 158);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(103, 27);
+            textBox4.TabIndex = 10;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.White;
+            panel6.Location = new Point(324, 5);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(3, 64);
+            panel6.TabIndex = 11;
             // 
             // AfterPayment
             // 
@@ -335,8 +392,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1462, 690);
+            Controls.Add(label8);
             Controls.Add(panel3);
-            Controls.Add(linkLabel1);
             Controls.Add(label3);
             Controls.Add(pictureBox1);
             Controls.Add(btnDone);
@@ -378,7 +435,6 @@
         private Button btnDone;
         private PictureBox pictureBox1;
         private Label label3;
-        private LinkLabel linkLabel1;
         private PictureBox btnExGF;
         private Panel panel4;
         private Panel panel3;
@@ -387,5 +443,11 @@
         private Label label5;
         private Label label4;
         private Panel panel5;
+        private Label label8;
+        private Panel panel6;
+        private TextBox textBox4;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private TextBox textBox1;
     }
 }
