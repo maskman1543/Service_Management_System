@@ -159,14 +159,8 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
         {
             EmployeeLoginForm mainForm = new EmployeeLoginForm();
             mainForm.Show();
-            //MessageBox.Show("Close Force 1");
-            this.Close();//Close the current instance of the login form
-
-            //(Brute Force Close Form)
-            LoginForm loginForm = new LoginForm();
-            loginForm.Close();
-            //MessageBox.Show("Close Force 2");
-           
+            this.Close();//Close the current instance of the login form 
+            //MessageBox.Show("LoginForm Closed");
         }
 
         private void label2_Click(object sender, EventArgs e)
