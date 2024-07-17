@@ -492,7 +492,7 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(252, 27);
             textBox5.TabIndex = 22;
-            textBox5.TextChanged += this.textBox5_TextChanged;
+            //textBox5.TextChanged += this.textBox5_TextChanged;
             // 
             // button14
             // 

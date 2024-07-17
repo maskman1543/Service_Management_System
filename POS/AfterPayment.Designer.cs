@@ -79,6 +79,7 @@
             btnExGF.Size = new Size(28, 25);
             btnExGF.TabIndex = 10;
             btnExGF.TabStop = false;
+            btnExGF.Click += btnExGF_Click;
             btnExGF.MouseEnter += btnExGF_MouseEnter;
             btnExGF.MouseLeave += btnExGF_MouseLeave;
             // 
@@ -207,9 +208,9 @@
             btnPrintrcp.BackgroundImageLayout = ImageLayout.Stretch;
             btnPrintrcp.FlatAppearance.BorderSize = 0;
             btnPrintrcp.FlatStyle = FlatStyle.Flat;
-            btnPrintrcp.Location = new Point(374, 163);
+            btnPrintrcp.Location = new Point(329, 201);
             btnPrintrcp.Name = "btnPrintrcp";
-            btnPrintrcp.Size = new Size(336, 108);
+            btnPrintrcp.Size = new Size(362, 98);
             btnPrintrcp.TabIndex = 3;
             btnPrintrcp.UseVisualStyleBackColor = true;
             btnPrintrcp.MouseEnter += btnPrintrcp_MouseEnter;
@@ -221,9 +222,9 @@
             btnsvPDF.BackgroundImageLayout = ImageLayout.Stretch;
             btnsvPDF.FlatAppearance.BorderSize = 0;
             btnsvPDF.FlatStyle = FlatStyle.Flat;
-            btnsvPDF.Location = new Point(374, 291);
+            btnsvPDF.Location = new Point(329, 320);
             btnsvPDF.Name = "btnsvPDF";
-            btnsvPDF.Size = new Size(336, 108);
+            btnsvPDF.Size = new Size(362, 98);
             btnsvPDF.TabIndex = 4;
             btnsvPDF.UseVisualStyleBackColor = true;
             btnsvPDF.MouseEnter += btnsvPDF_MouseEnter;
@@ -235,11 +236,12 @@
             btnaddNts.BackgroundImageLayout = ImageLayout.Stretch;
             btnaddNts.FlatAppearance.BorderSize = 0;
             btnaddNts.FlatStyle = FlatStyle.Flat;
-            btnaddNts.Location = new Point(731, 291);
+            btnaddNts.Location = new Point(709, 320);
             btnaddNts.Name = "btnaddNts";
-            btnaddNts.Size = new Size(336, 108);
+            btnaddNts.Size = new Size(362, 98);
             btnaddNts.TabIndex = 5;
             btnaddNts.UseVisualStyleBackColor = true;
+            btnaddNts.Click += btnaddNts_Click;
             btnaddNts.MouseEnter += btnaddNts_MouseEnter;
             btnaddNts.MouseLeave += btnaddNts_MouseLeave;
             // 
@@ -249,9 +251,9 @@
             btnsndEmail.BackgroundImageLayout = ImageLayout.Stretch;
             btnsndEmail.FlatAppearance.BorderSize = 0;
             btnsndEmail.FlatStyle = FlatStyle.Flat;
-            btnsndEmail.Location = new Point(1089, 163);
+            btnsndEmail.Location = new Point(1088, 201);
             btnsndEmail.Name = "btnsndEmail";
-            btnsndEmail.Size = new Size(336, 108);
+            btnsndEmail.Size = new Size(362, 98);
             btnsndEmail.TabIndex = 6;
             btnsndEmail.UseVisualStyleBackColor = true;
             btnsndEmail.MouseEnter += btnsndEmail_MouseEnter;
@@ -263,9 +265,9 @@
             btnPrintinv.BackgroundImageLayout = ImageLayout.Stretch;
             btnPrintinv.FlatAppearance.BorderSize = 0;
             btnPrintinv.FlatStyle = FlatStyle.Flat;
-            btnPrintinv.Location = new Point(731, 163);
+            btnPrintinv.Location = new Point(709, 201);
             btnPrintinv.Name = "btnPrintinv";
-            btnPrintinv.Size = new Size(336, 108);
+            btnPrintinv.Size = new Size(362, 98);
             btnPrintinv.TabIndex = 7;
             btnPrintinv.UseVisualStyleBackColor = true;
             btnPrintinv.MouseEnter += btnPrintinv_MouseEnter;
@@ -277,7 +279,7 @@
             btnDone.BackgroundImageLayout = ImageLayout.Stretch;
             btnDone.FlatAppearance.BorderSize = 0;
             btnDone.FlatStyle = FlatStyle.Flat;
-            btnDone.Location = new Point(1267, 623);
+            btnDone.Location = new Point(1292, 614);
             btnDone.Name = "btnDone";
             btnDone.Size = new Size(158, 55);
             btnDone.TabIndex = 8;
@@ -318,9 +320,6 @@
             linkLabel1.TabStop = true;
             linkLabel1.Text = "0.00";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
-            linkLabel1.MouseEnter += linkLabel1_MouseEnter;
-            linkLabel1.MouseLeave += linkLabel1_MouseLeave;
-            linkLabel1.MouseHover += linkLabel1_MouseHover;
             // 
             // panel3
             // 
