@@ -164,17 +164,17 @@
             // panel4
             // 
             panel4.BackColor = Color.White;
-            panel4.Location = new Point(1011, 3);
+            panel4.Location = new Point(1024, 3);
             panel4.Name = "panel4";
-            panel4.Size = new Size(10, 51);
+            panel4.Size = new Size(3, 51);
             panel4.TabIndex = 3;
             // 
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Location = new Point(518, 3);
+            panel3.Location = new Point(520, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(10, 51);
+            panel3.Size = new Size(3, 51);
             panel3.TabIndex = 2;
             // 
             // button9
