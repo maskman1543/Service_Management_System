@@ -33,11 +33,8 @@ namespace Service_Management_System.POS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POSForm));
             panel1 = new Panel();
             btnmenU2 = new Button();
-            btn12MNU = new Button();
-            btnmen12 = new Button();
             button9 = new Button();
             button10 = new Button();
-            btnMenu = new Button();
             btnRefund = new Button();
             button2 = new Button();
             btnCash = new Button();
@@ -129,11 +126,8 @@ namespace Service_Management_System.POS
             panel1.BackColor = Color.FromArgb(3, 83, 115);
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(btnmenU2);
-            panel1.Controls.Add(btn12MNU);
-            panel1.Controls.Add(btnmen12);
             panel1.Controls.Add(button9);
             panel1.Controls.Add(button10);
-            panel1.Controls.Add(btnMenu);
             panel1.Controls.Add(btnRefund);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(btnCash);
@@ -165,186 +159,182 @@ namespace Service_Management_System.POS
             btnmenU2.UseVisualStyleBackColor = false;
             btnmenU2.Click += btnmenU2_Click;
             // 
-            // btn12MNU
-            // 
-            btn12MNU.Location = new Point(0, 0);
-            btn12MNU.Name = "btn12MNU";
-            btn12MNU.Size = new Size(75, 23);
-            btn12MNU.TabIndex = 0;
-            // 
-            // btnmen12
-            // 
-            btnmen12.Location = new Point(0, 0);
-            btnmen12.Name = "btnmen12";
-            btnmen12.Size = new Size(75, 23);
-            btnmen12.TabIndex = 0;
-            // 
             // button9
             // 
+            button9.BackgroundImage = (Image)resources.GetObject("button9.BackgroundImage");
+            button9.BackgroundImageLayout = ImageLayout.Zoom;
+            button9.FlatAppearance.BorderSize = 0;
             button9.FlatStyle = FlatStyle.Flat;
             button9.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button9.ForeColor = Color.White;
             button9.ImageAlign = ContentAlignment.MiddleLeft;
-            button9.Location = new Point(101, 8);
+            button9.Location = new Point(87, 3);
             button9.Name = "button9";
-            button9.Size = new Size(80, 63);
+            button9.Size = new Size(75, 67);
             button9.TabIndex = 9;
             button9.UseVisualStyleBackColor = true;
             // 
             // button10
             // 
+            button10.BackgroundImage = (Image)resources.GetObject("button10.BackgroundImage");
+            button10.BackgroundImageLayout = ImageLayout.Zoom;
+            button10.FlatAppearance.BorderSize = 0;
             button10.FlatStyle = FlatStyle.Flat;
             button10.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button10.ForeColor = Color.White;
             button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.Location = new Point(630, 7);
+            button10.Location = new Point(573, 3);
             button10.Name = "button10";
-            button10.Size = new Size(80, 63);
+            button10.Size = new Size(75, 67);
             button10.TabIndex = 13;
             button10.UseVisualStyleBackColor = true;
             // 
-            // btnMenu
-            // 
-            btnMenu.Location = new Point(0, 0);
-            btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(75, 23);
-            btnMenu.TabIndex = 14;
-            // 
             // btnRefund
             // 
+            btnRefund.BackgroundImage = (Image)resources.GetObject("btnRefund.BackgroundImage");
+            btnRefund.BackgroundImageLayout = ImageLayout.Zoom;
+            btnRefund.FlatAppearance.BorderSize = 0;
             btnRefund.FlatStyle = FlatStyle.Flat;
             btnRefund.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             btnRefund.ForeColor = Color.White;
-            btnRefund.Image = (Image)resources.GetObject("btnRefund.Image");
             btnRefund.ImageAlign = ContentAlignment.TopCenter;
-            btnRefund.Location = new Point(453, 7);
+            btnRefund.Location = new Point(411, 3);
             btnRefund.Name = "btnRefund";
-            btnRefund.Size = new Size(83, 63);
+            btnRefund.Size = new Size(75, 67);
             btnRefund.TabIndex = 11;
-            btnRefund.Text = "Refund";
             btnRefund.TextAlign = ContentAlignment.BottomCenter;
             btnRefund.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Zoom;
+            button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.TopCenter;
-            button2.Location = new Point(541, 8);
+            button2.Location = new Point(492, 3);
             button2.Name = "button2";
-            button2.Size = new Size(83, 63);
+            button2.Size = new Size(75, 67);
             button2.TabIndex = 10;
-            button2.Text = "---";
             button2.TextAlign = ContentAlignment.BottomCenter;
             button2.UseVisualStyleBackColor = true;
             // 
             // btnCash
             // 
+            btnCash.BackgroundImage = (Image)resources.GetObject("btnCash.BackgroundImage");
+            btnCash.BackgroundImageLayout = ImageLayout.Zoom;
+            btnCash.FlatAppearance.BorderSize = 0;
             btnCash.FlatStyle = FlatStyle.Flat;
             btnCash.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCash.ForeColor = Color.White;
-            btnCash.Image = (Image)resources.GetObject("btnCash.Image");
             btnCash.ImageAlign = ContentAlignment.TopCenter;
-            btnCash.Location = new Point(894, 9);
+            btnCash.Location = new Point(816, 4);
             btnCash.Name = "btnCash";
-            btnCash.Size = new Size(83, 63);
+            btnCash.Size = new Size(75, 67);
             btnCash.TabIndex = 9;
-            btnCash.Text = "Cash";
             btnCash.TextAlign = ContentAlignment.BottomCenter;
             btnCash.UseVisualStyleBackColor = true;
             // 
             // btnPayment
             // 
+            btnPayment.BackgroundImage = (Image)resources.GetObject("btnPayment.BackgroundImage");
+            btnPayment.BackgroundImageLayout = ImageLayout.Zoom;
+            btnPayment.FlatAppearance.BorderSize = 0;
             btnPayment.FlatStyle = FlatStyle.Flat;
             btnPayment.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnPayment.ForeColor = Color.White;
-            btnPayment.Image = (Image)resources.GetObject("btnPayment.Image");
             btnPayment.ImageAlign = ContentAlignment.TopCenter;
-            btnPayment.Location = new Point(805, 8);
+            btnPayment.Location = new Point(735, 3);
             btnPayment.Name = "btnPayment";
-            btnPayment.Size = new Size(83, 63);
+            btnPayment.Size = new Size(75, 67);
             btnPayment.TabIndex = 8;
-            btnPayment.Text = "Payment";
             btnPayment.TextAlign = ContentAlignment.BottomCenter;
             btnPayment.UseVisualStyleBackColor = true;
             // 
             // btnSaveSale
             // 
+            btnSaveSale.BackgroundImage = (Image)resources.GetObject("btnSaveSale.BackgroundImage");
+            btnSaveSale.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSaveSale.FlatAppearance.BorderSize = 0;
             btnSaveSale.FlatStyle = FlatStyle.Flat;
             btnSaveSale.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnSaveSale.ForeColor = Color.White;
-            btnSaveSale.Image = (Image)resources.GetObject("btnSaveSale.Image");
             btnSaveSale.ImageAlign = ContentAlignment.TopCenter;
-            btnSaveSale.Location = new Point(716, 7);
+            btnSaveSale.Location = new Point(654, 3);
             btnSaveSale.Name = "btnSaveSale";
-            btnSaveSale.Size = new Size(83, 63);
+            btnSaveSale.Size = new Size(75, 67);
             btnSaveSale.TabIndex = 7;
-            btnSaveSale.Text = "Save sale";
             btnSaveSale.TextAlign = ContentAlignment.BottomCenter;
             btnSaveSale.UseVisualStyleBackColor = true;
             btnSaveSale.Click += btnSaveSale_Click;
             // 
             // btnNewSale
             // 
+            btnNewSale.BackgroundImage = (Image)resources.GetObject("btnNewSale.BackgroundImage");
+            btnNewSale.BackgroundImageLayout = ImageLayout.Zoom;
+            btnNewSale.FlatAppearance.BorderSize = 0;
             btnNewSale.FlatStyle = FlatStyle.Flat;
             btnNewSale.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnNewSale.ForeColor = Color.White;
-            btnNewSale.Image = (Image)resources.GetObject("btnNewSale.Image");
             btnNewSale.ImageAlign = ContentAlignment.TopCenter;
-            btnNewSale.Location = new Point(364, 7);
+            btnNewSale.Location = new Point(330, 3);
             btnNewSale.Name = "btnNewSale";
-            btnNewSale.Size = new Size(83, 63);
+            btnNewSale.Size = new Size(75, 67);
             btnNewSale.TabIndex = 4;
-            btnNewSale.Text = "New sale";
             btnNewSale.TextAlign = ContentAlignment.BottomCenter;
             btnNewSale.UseVisualStyleBackColor = true;
             // 
             // btnDiscount
             // 
+            btnDiscount.BackgroundImage = (Image)resources.GetObject("btnDiscount.BackgroundImage");
+            btnDiscount.BackgroundImageLayout = ImageLayout.Zoom;
+            btnDiscount.FlatAppearance.BorderSize = 0;
             btnDiscount.FlatStyle = FlatStyle.Flat;
             btnDiscount.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             btnDiscount.ForeColor = Color.White;
-            btnDiscount.Image = (Image)resources.GetObject("btnDiscount.Image");
             btnDiscount.ImageAlign = ContentAlignment.TopCenter;
-            btnDiscount.Location = new Point(275, 8);
+            btnDiscount.Location = new Point(249, 3);
             btnDiscount.Name = "btnDiscount";
-            btnDiscount.Size = new Size(83, 63);
+            btnDiscount.Size = new Size(75, 67);
             btnDiscount.TabIndex = 3;
-            btnDiscount.Text = "Discount";
             btnDiscount.TextAlign = ContentAlignment.BottomCenter;
             btnDiscount.UseVisualStyleBackColor = true;
             // 
             // btnCustomer
             // 
+            btnCustomer.BackgroundImage = (Image)resources.GetObject("btnCustomer.BackgroundImage");
+            btnCustomer.BackgroundImageLayout = ImageLayout.Zoom;
+            btnCustomer.FlatAppearance.BorderSize = 0;
             btnCustomer.FlatStyle = FlatStyle.Flat;
             btnCustomer.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             btnCustomer.ForeColor = Color.White;
-            btnCustomer.Image = (Image)resources.GetObject("btnCustomer.Image");
             btnCustomer.ImageAlign = ContentAlignment.TopCenter;
-            btnCustomer.Location = new Point(186, 8);
+            btnCustomer.Location = new Point(168, 3);
             btnCustomer.Name = "btnCustomer";
-            btnCustomer.Size = new Size(83, 63);
+            btnCustomer.Size = new Size(75, 67);
             btnCustomer.TabIndex = 2;
-            btnCustomer.Text = "Customer";
             btnCustomer.TextAlign = ContentAlignment.BottomCenter;
             btnCustomer.UseVisualStyleBackColor = true;
             // 
             // btnSearch
             // 
+            btnSearch.BackgroundImage = (Image)resources.GetObject("btnSearch.BackgroundImage");
+            btnSearch.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSearch.FlatAppearance.BorderSize = 0;
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Image = (Image)resources.GetObject("btnSearch.Image");
             btnSearch.ImageAlign = ContentAlignment.TopCenter;
-            btnSearch.Location = new Point(12, 8);
+            btnSearch.Location = new Point(6, 3);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(83, 63);
+            btnSearch.Size = new Size(75, 67);
             btnSearch.TabIndex = 1;
-            btnSearch.Text = "Search";
+            btnSearch.Text = "\r\n";
             btnSearch.TextAlign = ContentAlignment.BottomCenter;
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // panel2
             // 
@@ -359,44 +349,49 @@ namespace Service_Management_System.POS
             // 
             // button5
             // 
+            button5.BackgroundImage = (Image)resources.GetObject("button5.BackgroundImage");
+            button5.BackgroundImageLayout = ImageLayout.Stretch;
+            button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button5.ForeColor = Color.White;
             button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(365, 11);
+            button5.Location = new Point(331, 4);
             button5.Name = "button5";
-            button5.Size = new Size(80, 46);
+            button5.Size = new Size(75, 51);
             button5.TabIndex = 5;
-            button5.Text = "---";
             button5.UseVisualStyleBackColor = true;
             // 
             // btnQuantity
             // 
+            btnQuantity.BackgroundImage = (Image)resources.GetObject("btnQuantity.BackgroundImage");
+            btnQuantity.BackgroundImageLayout = ImageLayout.Stretch;
+            btnQuantity.FlatAppearance.BorderSize = 0;
             btnQuantity.FlatStyle = FlatStyle.Flat;
             btnQuantity.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnQuantity.ForeColor = Color.White;
             btnQuantity.ImageAlign = ContentAlignment.MiddleLeft;
-            btnQuantity.Location = new Point(186, 11);
+            btnQuantity.Location = new Point(169, 4);
             btnQuantity.Name = "btnQuantity";
             btnQuantity.Padding = new Padding(35, 0, 35, 0);
-            btnQuantity.Size = new Size(172, 46);
+            btnQuantity.Size = new Size(156, 51);
             btnQuantity.TabIndex = 4;
-            btnQuantity.Text = "Quantity";
             btnQuantity.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
+            btnDelete.BackgroundImage = (Image)resources.GetObject("btnDelete.BackgroundImage");
+            btnDelete.BackgroundImageLayout = ImageLayout.Stretch;
+            btnDelete.FlatAppearance.BorderSize = 0;
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Image = (Image)resources.GetObject("btnDelete.Image");
             btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDelete.Location = new Point(7, 11);
+            btnDelete.Location = new Point(7, 4);
             btnDelete.Name = "btnDelete";
             btnDelete.Padding = new Padding(35, 0, 35, 0);
-            btnDelete.Size = new Size(172, 46);
+            btnDelete.Size = new Size(156, 51);
             btnDelete.TabIndex = 3;
-            btnDelete.Text = "Delete";
             btnDelete.TextAlign = ContentAlignment.MiddleRight;
             btnDelete.UseVisualStyleBackColor = true;
             // 
@@ -415,49 +410,59 @@ namespace Service_Management_System.POS
             // 
             // button1
             // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(273, 11);
+            button1.Location = new Point(257, 3);
             button1.Name = "button1";
-            button1.Size = new Size(80, 46);
+            button1.Size = new Size(75, 51);
             button1.TabIndex = 9;
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button8
             // 
+            button8.BackgroundImage = (Image)resources.GetObject("button8.BackgroundImage");
+            button8.BackgroundImageLayout = ImageLayout.Stretch;
+            button8.FlatAppearance.BorderSize = 0;
             button8.FlatStyle = FlatStyle.Flat;
             button8.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button8.ForeColor = Color.White;
-            button8.Image = (Image)resources.GetObject("button8.Image");
-            button8.Location = new Point(187, 11);
+            button8.Location = new Point(176, 3);
             button8.Name = "button8";
-            button8.Size = new Size(80, 46);
+            button8.Size = new Size(75, 51);
             button8.TabIndex = 8;
             button8.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
+            button7.BackgroundImage = (Image)resources.GetObject("button7.BackgroundImage");
+            button7.BackgroundImageLayout = ImageLayout.Stretch;
+            button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button7.ForeColor = Color.White;
-            button7.Image = (Image)resources.GetObject("button7.Image");
-            button7.Location = new Point(101, 11);
+            button7.Location = new Point(95, 3);
             button7.Name = "button7";
-            button7.Size = new Size(80, 46);
+            button7.Size = new Size(75, 51);
             button7.TabIndex = 7;
             button7.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
+            button6.BackgroundImage = (Image)resources.GetObject("button6.BackgroundImage");
+            button6.BackgroundImageLayout = ImageLayout.Stretch;
+            button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button6.ForeColor = Color.White;
             button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(15, 11);
+            button6.Location = new Point(14, 3);
             button6.Name = "button6";
-            button6.Size = new Size(80, 46);
+            button6.Size = new Size(75, 51);
             button6.TabIndex = 6;
             button6.UseVisualStyleBackColor = true;
             // 
@@ -544,14 +549,14 @@ namespace Service_Management_System.POS
             // 
             textBox5.Location = new Point(895, 39);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 23);
+            textBox5.Size = new Size(125, 27);
             textBox5.TabIndex = 17;
             // 
             // textBox6
             // 
             textBox6.Location = new Point(895, 4);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(125, 23);
+            textBox6.Size = new Size(125, 27);
             textBox6.TabIndex = 16;
             // 
             // label6
@@ -562,7 +567,7 @@ namespace Service_Management_System.POS
             label6.ForeColor = Color.White;
             label6.Location = new Point(725, 44);
             label6.Name = "label6";
-            label6.Size = new Size(36, 19);
+            label6.Size = new Size(42, 23);
             label6.TabIndex = 14;
             label6.Text = "Tax:";
             // 
@@ -574,7 +579,7 @@ namespace Service_Management_System.POS
             label5.ForeColor = Color.White;
             label5.Location = new Point(725, 8);
             label5.Name = "label5";
-            label5.Size = new Size(69, 19);
+            label5.Size = new Size(84, 23);
             label5.TabIndex = 15;
             label5.Text = "Subtotal:";
             // 
@@ -611,21 +616,21 @@ namespace Service_Management_System.POS
             // 
             textBox4.Location = new Point(320, 90);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 23);
+            textBox4.Size = new Size(125, 27);
             textBox4.TabIndex = 6;
             // 
             // textBox3
             // 
             textBox3.Location = new Point(320, 43);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 23);
+            textBox3.Size = new Size(125, 27);
             textBox3.TabIndex = 5;
             // 
             // textBox2
             // 
             textBox2.Location = new Point(320, 8);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 23);
+            textBox2.Size = new Size(125, 27);
             textBox2.TabIndex = 4;
             // 
             // label4
@@ -635,7 +640,7 @@ namespace Service_Management_System.POS
             label4.ForeColor = Color.White;
             label4.Location = new Point(12, 12);
             label4.Name = "label4";
-            label4.Size = new Size(69, 19);
+            label4.Size = new Size(84, 23);
             label4.TabIndex = 3;
             label4.Text = "Subtotal:";
             // 
@@ -646,7 +651,7 @@ namespace Service_Management_System.POS
             label3.ForeColor = Color.White;
             label3.Location = new Point(12, 48);
             label3.Name = "label3";
-            label3.Size = new Size(59, 19);
+            label3.Size = new Size(71, 23);
             label3.TabIndex = 2;
             label3.Text = "Vat tax:";
             label3.Click += label3_Click;
@@ -657,7 +662,7 @@ namespace Service_Management_System.POS
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(0, 67);
             label2.Name = "label2";
-            label2.Size = new Size(372, 15);
+            label2.Size = new Size(447, 20);
             label2.TabIndex = 1;
             label2.Text = "-------------------------------------------------------------------------";
             // 
@@ -668,7 +673,7 @@ namespace Service_Management_System.POS
             label1.ForeColor = Color.White;
             label1.Location = new Point(8, 87);
             label1.Name = "label1";
-            label1.Size = new Size(64, 28);
+            label1.Size = new Size(80, 35);
             label1.TabIndex = 0;
             label1.Text = "Total:";
             // 
@@ -1104,7 +1109,6 @@ namespace Service_Management_System.POS
         private Button btnCash;
         private Button button2;
         private Button btnRefund;
-        private Button btnMenu;
         private Panel panel2;
         private Button btnDelete;
         private Panel panel3;
@@ -1140,8 +1144,6 @@ namespace Service_Management_System.POS
         private TextBox textBox7;
         private TextBox textBox8;
         private DataGridView jobOrderedView;
-        private Button btnmen12;
-        private Button btn12MNU;
         private Button btnmenU2;
         private Panel sidepanelPOS;
         private Button button12;
