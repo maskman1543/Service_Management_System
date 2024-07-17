@@ -30,7 +30,20 @@ namespace Service_Management_System.POS
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            PictureBox minilogo;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POSForm));
+            sidepanelPOS = new Panel();
+            moveup = new PictureBox();
+            allout = new PictureBox();
+            adjust = new PictureBox();
+            button16 = new Button();
+            btnSignout = new Button();
+            button18 = new Button();
+            button19 = new Button();
+            button15 = new Button();
+            button14 = new Button();
+            button13 = new Button();
+            button12 = new Button();
             panel1 = new Panel();
             btnmenU2 = new Button();
             button9 = new Button();
@@ -76,19 +89,13 @@ namespace Service_Management_System.POS
             textBox7 = new TextBox();
             textBox8 = new TextBox();
             jobOrderedView = new DataGridView();
-            sidepanelPOS = new Panel();
-            moveup = new PictureBox();
-            allout = new PictureBox();
-            adjust = new PictureBox();
-            button16 = new Button();
-            btnSignout = new Button();
-            button18 = new Button();
-            button19 = new Button();
-            button15 = new Button();
-            button14 = new Button();
-            button13 = new Button();
-            button12 = new Button();
             timerSfx = new System.Windows.Forms.Timer(components);
+            minilogo = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)minilogo).BeginInit();
+            sidepanelPOS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)moveup).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)allout).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)adjust).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -99,16 +106,246 @@ namespace Service_Management_System.POS
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)servicesView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)jobOrderedView).BeginInit();
-            sidepanelPOS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)moveup).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)allout).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)adjust).BeginInit();
             SuspendLayout();
+            // 
+            // minilogo
+            // 
+            minilogo.BackgroundImage = (Image)resources.GetObject("minilogo.BackgroundImage");
+            minilogo.BackgroundImageLayout = ImageLayout.Zoom;
+            minilogo.Location = new Point(1264, 18);
+            minilogo.Name = "minilogo";
+            minilogo.Size = new Size(125, 42);
+            minilogo.TabIndex = 14;
+            minilogo.TabStop = false;
+            // 
+            // sidepanelPOS
+            // 
+            sidepanelPOS.BackColor = Color.FromArgb(26, 95, 122);
+            sidepanelPOS.BackgroundImageLayout = ImageLayout.Stretch;
+            sidepanelPOS.BorderStyle = BorderStyle.Fixed3D;
+            sidepanelPOS.Controls.Add(moveup);
+            sidepanelPOS.Controls.Add(allout);
+            sidepanelPOS.Controls.Add(adjust);
+            sidepanelPOS.Controls.Add(button16);
+            sidepanelPOS.Controls.Add(btnSignout);
+            sidepanelPOS.Controls.Add(button18);
+            sidepanelPOS.Controls.Add(button19);
+            sidepanelPOS.Controls.Add(button15);
+            sidepanelPOS.Controls.Add(button14);
+            sidepanelPOS.Controls.Add(button13);
+            sidepanelPOS.Controls.Add(button12);
+            sidepanelPOS.ImeMode = ImeMode.NoControl;
+            sidepanelPOS.Location = new Point(1436, 78);
+            sidepanelPOS.Name = "sidepanelPOS";
+            sidepanelPOS.Size = new Size(44, 656);
+            sidepanelPOS.TabIndex = 16;
+            // 
+            // moveup
+            // 
+            moveup.BackColor = Color.Transparent;
+            moveup.BackgroundImage = (Image)resources.GetObject("moveup.BackgroundImage");
+            moveup.BackgroundImageLayout = ImageLayout.Stretch;
+            moveup.Cursor = Cursors.Hand;
+            moveup.Location = new Point(185, 558);
+            moveup.Name = "moveup";
+            moveup.Size = new Size(52, 51);
+            moveup.TabIndex = 18;
+            moveup.TabStop = false;
+            moveup.Click += moveup_Click;
+            moveup.MouseEnter += moveup_MouseEnter;
+            moveup.MouseLeave += moveup_MouseLeave;
+            // 
+            // allout
+            // 
+            allout.BackColor = Color.Transparent;
+            allout.BackgroundImage = (Image)resources.GetObject("allout.BackgroundImage");
+            allout.BackgroundImageLayout = ImageLayout.Stretch;
+            allout.Cursor = Cursors.Hand;
+            allout.Location = new Point(111, 556);
+            allout.Name = "allout";
+            allout.Size = new Size(52, 51);
+            allout.TabIndex = 17;
+            allout.TabStop = false;
+            allout.Click += allout_Click;
+            allout.MouseEnter += allout_MouseEnter;
+            allout.MouseLeave += allout_MouseLeave;
+            // 
+            // adjust
+            // 
+            adjust.BackColor = Color.Transparent;
+            adjust.BackgroundImage = (Image)resources.GetObject("adjust.BackgroundImage");
+            adjust.BackgroundImageLayout = ImageLayout.Stretch;
+            adjust.Cursor = Cursors.Hand;
+            adjust.Location = new Point(32, 556);
+            adjust.Name = "adjust";
+            adjust.Size = new Size(52, 51);
+            adjust.TabIndex = 16;
+            adjust.TabStop = false;
+            adjust.MouseEnter += adjust_MouseEnter;
+            adjust.MouseLeave += adjust_MouseLeave;
+            // 
+            // button16
+            // 
+            button16.BackColor = Color.Transparent;
+            button16.BackgroundImage = (Image)resources.GetObject("button16.BackgroundImage");
+            button16.BackgroundImageLayout = ImageLayout.Stretch;
+            button16.FlatAppearance.BorderSize = 0;
+            button16.FlatStyle = FlatStyle.Flat;
+            button16.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button16.ForeColor = SystemColors.Control;
+            button16.Location = new Point(-24, 370);
+            button16.Name = "button16";
+            button16.Size = new Size(269, 57);
+            button16.TabIndex = 14;
+            button16.TextAlign = ContentAlignment.MiddleLeft;
+            button16.UseCompatibleTextRendering = true;
+            button16.UseVisualStyleBackColor = false;
+            button16.MouseEnter += button16_MouseEnter;
+            button16.MouseLeave += button16_MouseLeave;
+            // 
+            // btnSignout
+            // 
+            btnSignout.BackColor = Color.Transparent;
+            btnSignout.BackgroundImage = (Image)resources.GetObject("btnSignout.BackgroundImage");
+            btnSignout.BackgroundImageLayout = ImageLayout.Stretch;
+            btnSignout.FlatAppearance.BorderSize = 0;
+            btnSignout.FlatStyle = FlatStyle.Flat;
+            btnSignout.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSignout.ForeColor = SystemColors.Control;
+            btnSignout.Location = new Point(-24, 316);
+            btnSignout.Name = "btnSignout";
+            btnSignout.Size = new Size(269, 57);
+            btnSignout.TabIndex = 12;
+            btnSignout.TextAlign = ContentAlignment.MiddleLeft;
+            btnSignout.UseCompatibleTextRendering = true;
+            btnSignout.UseVisualStyleBackColor = false;
+            btnSignout.Click += btnSignout_Click;
+            btnSignout.MouseEnter += button17_MouseEnter;
+            btnSignout.MouseLeave += button17_MouseLeave;
+            // 
+            // button18
+            // 
+            button18.BackColor = Color.Transparent;
+            button18.BackgroundImage = (Image)resources.GetObject("button18.BackgroundImage");
+            button18.BackgroundImageLayout = ImageLayout.Stretch;
+            button18.FlatAppearance.BorderSize = 0;
+            button18.FlatStyle = FlatStyle.Flat;
+            button18.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button18.ForeColor = SystemColors.Control;
+            button18.Location = new Point(-24, 262);
+            button18.Name = "button18";
+            button18.Size = new Size(269, 57);
+            button18.TabIndex = 10;
+            button18.TextAlign = ContentAlignment.MiddleLeft;
+            button18.UseCompatibleTextRendering = true;
+            button18.UseVisualStyleBackColor = false;
+            button18.MouseEnter += button18_MouseEnter;
+            button18.MouseLeave += button18_MouseLeave;
+            // 
+            // button19
+            // 
+            button19.BackColor = Color.Transparent;
+            button19.BackgroundImage = (Image)resources.GetObject("button19.BackgroundImage");
+            button19.BackgroundImageLayout = ImageLayout.Stretch;
+            button19.FlatAppearance.BorderSize = 0;
+            button19.FlatStyle = FlatStyle.Flat;
+            button19.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button19.ForeColor = SystemColors.Control;
+            button19.Location = new Point(-24, 208);
+            button19.Name = "button19";
+            button19.Size = new Size(269, 57);
+            button19.TabIndex = 8;
+            button19.TextAlign = ContentAlignment.MiddleLeft;
+            button19.UseCompatibleTextRendering = true;
+            button19.UseVisualStyleBackColor = false;
+            button19.MouseEnter += button19_MouseEnter;
+            button19.MouseLeave += button19_MouseLeave;
+            // 
+            // button15
+            // 
+            button15.BackColor = Color.Transparent;
+            button15.BackgroundImage = (Image)resources.GetObject("button15.BackgroundImage");
+            button15.BackgroundImageLayout = ImageLayout.Stretch;
+            button15.FlatAppearance.BorderSize = 0;
+            button15.FlatStyle = FlatStyle.Flat;
+            button15.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button15.ForeColor = SystemColors.Control;
+            button15.Location = new Point(-24, 154);
+            button15.Name = "button15";
+            button15.Size = new Size(269, 57);
+            button15.TabIndex = 6;
+            button15.TextAlign = ContentAlignment.MiddleLeft;
+            button15.UseCompatibleTextRendering = true;
+            button15.UseVisualStyleBackColor = false;
+            button15.MouseEnter += button15_MouseEnter;
+            button15.MouseLeave += button15_MouseLeave;
+            // 
+            // button14
+            // 
+            button14.BackColor = Color.Transparent;
+            button14.BackgroundImage = (Image)resources.GetObject("button14.BackgroundImage");
+            button14.BackgroundImageLayout = ImageLayout.Stretch;
+            button14.FlatAppearance.BorderSize = 0;
+            button14.FlatStyle = FlatStyle.Flat;
+            button14.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button14.ForeColor = SystemColors.Control;
+            button14.Location = new Point(-24, 100);
+            button14.Name = "button14";
+            button14.Size = new Size(269, 57);
+            button14.TabIndex = 4;
+            button14.TextAlign = ContentAlignment.MiddleLeft;
+            button14.UseCompatibleTextRendering = true;
+            button14.UseVisualStyleBackColor = false;
+            button14.Click += button14_Click;
+            button14.MouseEnter += button14_MouseEnter;
+            button14.MouseLeave += button14_MouseLeave;
+            // 
+            // button13
+            // 
+            button13.BackColor = Color.Transparent;
+            button13.BackgroundImage = (Image)resources.GetObject("button13.BackgroundImage");
+            button13.BackgroundImageLayout = ImageLayout.Stretch;
+            button13.FlatAppearance.BorderSize = 0;
+            button13.FlatStyle = FlatStyle.Flat;
+            button13.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button13.ForeColor = SystemColors.Control;
+            button13.Location = new Point(-24, 48);
+            button13.Name = "button13";
+            button13.Size = new Size(269, 57);
+            button13.TabIndex = 2;
+            button13.TextAlign = ContentAlignment.MiddleLeft;
+            button13.UseCompatibleTextRendering = true;
+            button13.UseVisualStyleBackColor = false;
+            button13.Click += button13_Click;
+            button13.MouseEnter += button13_MouseEnter;
+            button13.MouseLeave += button13_MouseLeave;
+            // 
+            // button12
+            // 
+            button12.BackColor = Color.Transparent;
+            button12.BackgroundImage = (Image)resources.GetObject("button12.BackgroundImage");
+            button12.BackgroundImageLayout = ImageLayout.Zoom;
+            button12.FlatAppearance.BorderSize = 0;
+            button12.FlatStyle = FlatStyle.Flat;
+            button12.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button12.ForeColor = SystemColors.Control;
+            button12.ImageAlign = ContentAlignment.MiddleLeft;
+            button12.Location = new Point(-24, -2);
+            button12.Name = "button12";
+            button12.Size = new Size(269, 57);
+            button12.TabIndex = 0;
+            button12.TextAlign = ContentAlignment.MiddleLeft;
+            button12.UseCompatibleTextRendering = true;
+            button12.UseVisualStyleBackColor = false;
+            button12.Click += button12_Click;
+            button12.MouseEnter += button12_MouseEnter;
+            button12.MouseLeave += button12_MouseLeave;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(3, 83, 115);
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(minilogo);
             panel1.Controls.Add(btnmenU2);
             panel1.Controls.Add(button9);
             panel1.Controls.Add(button10);
@@ -415,7 +652,7 @@ namespace Service_Management_System.POS
             panel3.Controls.Add(button6);
             panel3.Location = new Point(451, 78);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1029, 70);
+            panel3.Size = new Size(587, 70);
             panel3.TabIndex = 2;
             // 
             // button1
@@ -572,14 +809,14 @@ namespace Service_Management_System.POS
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(895, 39);
+            textBox5.Location = new Point(854, 39);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(125, 27);
             textBox5.TabIndex = 17;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(895, 4);
+            textBox6.Location = new Point(854, 4);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(125, 27);
             textBox6.TabIndex = 16;
@@ -590,7 +827,7 @@ namespace Service_Management_System.POS
             label6.BackColor = Color.FromArgb(3, 83, 115);
             label6.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(725, 44);
+            label6.Location = new Point(684, 44);
             label6.Name = "label6";
             label6.Size = new Size(42, 23);
             label6.TabIndex = 14;
@@ -602,7 +839,7 @@ namespace Service_Management_System.POS
             label5.BackColor = Color.FromArgb(3, 83, 115);
             label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(725, 8);
+            label5.Location = new Point(684, 8);
             label5.Name = "label5";
             label5.Size = new Size(84, 23);
             label5.TabIndex = 15;
@@ -617,7 +854,7 @@ namespace Service_Management_System.POS
             partsView.Name = "partsView";
             partsView.RowHeadersWidth = 51;
             partsView.RowTemplate.Height = 29;
-            partsView.Size = new Size(526, 449);
+            partsView.Size = new Size(1150, 449);
             partsView.TabIndex = 11;
             partsView.CellContentClick += partsServicesView_CellContentClick;
             // 
@@ -746,228 +983,6 @@ namespace Service_Management_System.POS
             jobOrderedView.Size = new Size(451, 180);
             jobOrderedView.TabIndex = 15;
             // 
-            // sidepanelPOS
-            // 
-            sidepanelPOS.BackColor = Color.FromArgb(26, 95, 122);
-            sidepanelPOS.BackgroundImageLayout = ImageLayout.Stretch;
-            sidepanelPOS.BorderStyle = BorderStyle.Fixed3D;
-            sidepanelPOS.Controls.Add(moveup);
-            sidepanelPOS.Controls.Add(allout);
-            sidepanelPOS.Controls.Add(adjust);
-            sidepanelPOS.Controls.Add(button16);
-            sidepanelPOS.Controls.Add(btnSignout);
-            sidepanelPOS.Controls.Add(button18);
-            sidepanelPOS.Controls.Add(button19);
-            sidepanelPOS.Controls.Add(button15);
-            sidepanelPOS.Controls.Add(button14);
-            sidepanelPOS.Controls.Add(button13);
-            sidepanelPOS.Controls.Add(button12);
-            sidepanelPOS.Location = new Point(1224, 78);
-            sidepanelPOS.Name = "sidepanelPOS";
-            sidepanelPOS.Size = new Size(256, 656);
-            sidepanelPOS.TabIndex = 16;
-            // 
-            // moveup
-            // 
-            moveup.BackColor = Color.Transparent;
-            moveup.BackgroundImage = (Image)resources.GetObject("moveup.BackgroundImage");
-            moveup.BackgroundImageLayout = ImageLayout.Stretch;
-            moveup.Cursor = Cursors.Hand;
-            moveup.Location = new Point(185, 558);
-            moveup.Name = "moveup";
-            moveup.Size = new Size(52, 51);
-            moveup.TabIndex = 18;
-            moveup.TabStop = false;
-            moveup.Click += moveup_Click;
-            moveup.MouseEnter += moveup_MouseEnter;
-            moveup.MouseLeave += moveup_MouseLeave;
-            // 
-            // allout
-            // 
-            allout.BackColor = Color.Transparent;
-            allout.BackgroundImage = (Image)resources.GetObject("allout.BackgroundImage");
-            allout.BackgroundImageLayout = ImageLayout.Stretch;
-            allout.Cursor = Cursors.Hand;
-            allout.Location = new Point(111, 556);
-            allout.Name = "allout";
-            allout.Size = new Size(52, 51);
-            allout.TabIndex = 17;
-            allout.TabStop = false;
-            allout.Click += allout_Click;
-            allout.MouseEnter += allout_MouseEnter;
-            allout.MouseLeave += allout_MouseLeave;
-            // 
-            // adjust
-            // 
-            adjust.BackColor = Color.Transparent;
-            adjust.BackgroundImage = (Image)resources.GetObject("adjust.BackgroundImage");
-            adjust.BackgroundImageLayout = ImageLayout.Stretch;
-            adjust.Cursor = Cursors.Hand;
-            adjust.Location = new Point(32, 556);
-            adjust.Name = "adjust";
-            adjust.Size = new Size(52, 51);
-            adjust.TabIndex = 16;
-            adjust.TabStop = false;
-            adjust.MouseEnter += adjust_MouseEnter;
-            adjust.MouseLeave += adjust_MouseLeave;
-            // 
-            // button16
-            // 
-            button16.BackColor = Color.Transparent;
-            button16.BackgroundImage = (Image)resources.GetObject("button16.BackgroundImage");
-            button16.BackgroundImageLayout = ImageLayout.Stretch;
-            button16.FlatAppearance.BorderSize = 0;
-            button16.FlatStyle = FlatStyle.Flat;
-            button16.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button16.ForeColor = SystemColors.Control;
-            button16.Location = new Point(-2, 370);
-            button16.Name = "button16";
-            button16.Size = new Size(265, 57);
-            button16.TabIndex = 14;
-            button16.TextAlign = ContentAlignment.MiddleLeft;
-            button16.UseCompatibleTextRendering = true;
-            button16.UseVisualStyleBackColor = false;
-            button16.MouseEnter += button16_MouseEnter;
-            button16.MouseLeave += button16_MouseLeave;
-            // 
-            // btnSignout
-            // 
-            btnSignout.BackColor = Color.Transparent;
-            btnSignout.BackgroundImage = (Image)resources.GetObject("btnSignout.BackgroundImage");
-            btnSignout.BackgroundImageLayout = ImageLayout.Stretch;
-            btnSignout.FlatAppearance.BorderSize = 0;
-            btnSignout.FlatStyle = FlatStyle.Flat;
-            btnSignout.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSignout.ForeColor = SystemColors.Control;
-            btnSignout.Location = new Point(-2, 316);
-            btnSignout.Name = "btnSignout";
-            btnSignout.Size = new Size(265, 57);
-            btnSignout.TabIndex = 12;
-            btnSignout.TextAlign = ContentAlignment.MiddleLeft;
-            btnSignout.UseCompatibleTextRendering = true;
-            btnSignout.UseVisualStyleBackColor = false;
-            btnSignout.Click += btnSignout_Click;
-            btnSignout.MouseEnter += button17_MouseEnter;
-            btnSignout.MouseLeave += button17_MouseLeave;
-            // 
-            // button18
-            // 
-            button18.BackColor = Color.Transparent;
-            button18.BackgroundImage = (Image)resources.GetObject("button18.BackgroundImage");
-            button18.BackgroundImageLayout = ImageLayout.Stretch;
-            button18.FlatAppearance.BorderSize = 0;
-            button18.FlatStyle = FlatStyle.Flat;
-            button18.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button18.ForeColor = SystemColors.Control;
-            button18.Location = new Point(-2, 262);
-            button18.Name = "button18";
-            button18.Size = new Size(265, 57);
-            button18.TabIndex = 10;
-            button18.TextAlign = ContentAlignment.MiddleLeft;
-            button18.UseCompatibleTextRendering = true;
-            button18.UseVisualStyleBackColor = false;
-            button18.MouseEnter += button18_MouseEnter;
-            button18.MouseLeave += button18_MouseLeave;
-            // 
-            // button19
-            // 
-            button19.BackColor = Color.Transparent;
-            button19.BackgroundImage = (Image)resources.GetObject("button19.BackgroundImage");
-            button19.BackgroundImageLayout = ImageLayout.Stretch;
-            button19.FlatAppearance.BorderSize = 0;
-            button19.FlatStyle = FlatStyle.Flat;
-            button19.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button19.ForeColor = SystemColors.Control;
-            button19.Location = new Point(-2, 208);
-            button19.Name = "button19";
-            button19.Size = new Size(265, 57);
-            button19.TabIndex = 8;
-            button19.TextAlign = ContentAlignment.MiddleLeft;
-            button19.UseCompatibleTextRendering = true;
-            button19.UseVisualStyleBackColor = false;
-            button19.MouseEnter += button19_MouseEnter;
-            button19.MouseLeave += button19_MouseLeave;
-            // 
-            // button15
-            // 
-            button15.BackColor = Color.Transparent;
-            button15.BackgroundImage = (Image)resources.GetObject("button15.BackgroundImage");
-            button15.BackgroundImageLayout = ImageLayout.Stretch;
-            button15.FlatAppearance.BorderSize = 0;
-            button15.FlatStyle = FlatStyle.Flat;
-            button15.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button15.ForeColor = SystemColors.Control;
-            button15.Location = new Point(-2, 154);
-            button15.Name = "button15";
-            button15.Size = new Size(265, 57);
-            button15.TabIndex = 6;
-            button15.TextAlign = ContentAlignment.MiddleLeft;
-            button15.UseCompatibleTextRendering = true;
-            button15.UseVisualStyleBackColor = false;
-            button15.MouseEnter += button15_MouseEnter;
-            button15.MouseLeave += button15_MouseLeave;
-            // 
-            // button14
-            // 
-            button14.BackColor = Color.Transparent;
-            button14.BackgroundImage = (Image)resources.GetObject("button14.BackgroundImage");
-            button14.BackgroundImageLayout = ImageLayout.Stretch;
-            button14.FlatAppearance.BorderSize = 0;
-            button14.FlatStyle = FlatStyle.Flat;
-            button14.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button14.ForeColor = SystemColors.Control;
-            button14.Location = new Point(-2, 100);
-            button14.Name = "button14";
-            button14.Size = new Size(265, 57);
-            button14.TabIndex = 4;
-            button14.TextAlign = ContentAlignment.MiddleLeft;
-            button14.UseCompatibleTextRendering = true;
-            button14.UseVisualStyleBackColor = false;
-            button14.Click += button14_Click;
-            button14.MouseEnter += button14_MouseEnter;
-            button14.MouseLeave += button14_MouseLeave;
-            // 
-            // button13
-            // 
-            button13.BackColor = Color.Transparent;
-            button13.BackgroundImage = (Image)resources.GetObject("button13.BackgroundImage");
-            button13.BackgroundImageLayout = ImageLayout.Stretch;
-            button13.FlatAppearance.BorderSize = 0;
-            button13.FlatStyle = FlatStyle.Flat;
-            button13.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button13.ForeColor = SystemColors.Control;
-            button13.Location = new Point(-2, 48);
-            button13.Name = "button13";
-            button13.Size = new Size(265, 57);
-            button13.TabIndex = 2;
-            button13.TextAlign = ContentAlignment.MiddleLeft;
-            button13.UseCompatibleTextRendering = true;
-            button13.UseVisualStyleBackColor = false;
-            button13.Click += button13_Click;
-            button13.MouseEnter += button13_MouseEnter;
-            button13.MouseLeave += button13_MouseLeave;
-            // 
-            // button12
-            // 
-            button12.BackColor = Color.Transparent;
-            button12.BackgroundImage = (Image)resources.GetObject("button12.BackgroundImage");
-            button12.BackgroundImageLayout = ImageLayout.Zoom;
-            button12.FlatAppearance.BorderSize = 0;
-            button12.FlatStyle = FlatStyle.Flat;
-            button12.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button12.ForeColor = SystemColors.Control;
-            button12.ImageAlign = ContentAlignment.MiddleLeft;
-            button12.Location = new Point(-2, -2);
-            button12.Name = "button12";
-            button12.Size = new Size(265, 57);
-            button12.TabIndex = 0;
-            button12.TextAlign = ContentAlignment.MiddleLeft;
-            button12.UseCompatibleTextRendering = true;
-            button12.UseVisualStyleBackColor = false;
-            button12.Click += button12_Click;
-            button12.MouseEnter += button12_MouseEnter;
-            button12.MouseLeave += button12_MouseLeave;
-            // 
             // timerSfx
             // 
             timerSfx.Interval = 50;
@@ -977,9 +992,6 @@ namespace Service_Management_System.POS
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            AutoScroll = true;
-            AutoSize = true;
-            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             ClientSize = new Size(1480, 737);
             Controls.Add(sidepanelPOS);
@@ -1000,6 +1012,11 @@ namespace Service_Management_System.POS
             StartPosition = FormStartPosition.CenterScreen;
             Text = "POS";
             Load += POS_Load;
+            ((System.ComponentModel.ISupportInitialize)minilogo).EndInit();
+            sidepanelPOS.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)moveup).EndInit();
+            ((System.ComponentModel.ISupportInitialize)allout).EndInit();
+            ((System.ComponentModel.ISupportInitialize)adjust).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -1012,10 +1029,6 @@ namespace Service_Management_System.POS
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)servicesView).EndInit();
             ((System.ComponentModel.ISupportInitialize)jobOrderedView).EndInit();
-            sidepanelPOS.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)moveup).EndInit();
-            ((System.ComponentModel.ISupportInitialize)allout).EndInit();
-            ((System.ComponentModel.ISupportInitialize)adjust).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

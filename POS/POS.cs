@@ -16,64 +16,67 @@ namespace Service_Management_System.POS
 {
     public partial class POSForm : Form
     {
-        private bool isFadingIn;
-        private bool isFadingOut;
-        private int fadeDuration = 90; // Duration in milliseconds
-        private int fadeStep;
+        private bool isExpanding;
+        private bool isCollapsing;
+        private int stepSize = 10; // Step size for smooth transition
+        private int additionalWidth = 212; // Additional width when expanded
+        private int originalWidth = 44; // Original width when collapsed
+        private int targetWidth;
         public POSForm()
         {
             InitializeComponent();
-            sidepanelPOS.Hide();
-            timerSfx.Interval = 50; // Timer interval for smooth transition
-            fadeStep = 255 * timerSfx.Interval / fadeDuration; // Calculate fade step
+            sidepanelPOS.Width = originalWidth;
+            timerSfx.Interval = 15; // Timer interval for smooth transition
             this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
+            sidepanelPOS.Width = originalWidth;
         }
+
 
         private void timerSfx_Tick(object sender, EventArgs e)
         {
-            if (isFadingIn)
+            if (isExpanding)
             {
-                int alpha = sidepanelPOS.BackColor.A + fadeStep;
-                if (alpha >= 255)
+                if (sidepanelPOS.Width < targetWidth)
                 {
-                    alpha = 255;
-                    isFadingIn = false;
-                    timerSfx.Stop();
+                    sidepanelPOS.Width += stepSize;
+                    sidepanelPOS.Left -= stepSize; // Move to the left
+                    if (sidepanelPOS.Width >= targetWidth)
+                    {
+                        sidepanelPOS.Width = targetWidth;
+                        isExpanding = false;
+                        timerSfx.Stop();
+                    }
                 }
-                sidepanelPOS.BackColor = Color.FromArgb(alpha, sidepanelPOS.BackColor);
             }
-            else if (isFadingOut)
+            else if (isCollapsing)
             {
-                int alpha = sidepanelPOS.BackColor.A - fadeStep;
-                if (alpha <= 0)
+                if (sidepanelPOS.Width > originalWidth)
                 {
-                    alpha = 0;
-                    isFadingOut = false;
-                    timerSfx.Stop();
-                    sidepanelPOS.Hide();
-                    sidepanelPOS.Width = 10;
-                    sidepanelPOS.Height = 10;
-                    sidepanelPOS.Location = new Point(1470, 78);
+                    sidepanelPOS.Width -= stepSize;
+                    sidepanelPOS.Left += stepSize; // Move to the right
+                    if (sidepanelPOS.Width <= originalWidth)
+                    {
+                        sidepanelPOS.Width = originalWidth;
+                        isCollapsing = false;
+                        timerSfx.Stop();
+                    }
                 }
-                sidepanelPOS.BackColor = Color.FromArgb(alpha, sidepanelPOS.BackColor);
             }
         }
 
         private void btnmenU2_Click(object sender, EventArgs e)
         {
-            if (sidepanelPOS.Visible)
+            if (sidepanelPOS.Width == originalWidth)
             {
-                isFadingOut = true;
-                isFadingIn = false;
+                targetWidth = originalWidth + additionalWidth;
+                isExpanding = true;
+                isCollapsing = false;
             }
             else
             {
-                isFadingIn = true;
-                isFadingOut = false;
-                sidepanelPOS.Width = 256;
-                sidepanelPOS.Height = 656;
-                sidepanelPOS.Location = new Point(1224, 78); // Set the Location property with a Point
-                sidepanelPOS.Show();
+                targetWidth = originalWidth;
+                isCollapsing = true;
+                isExpanding = false;
             }
             timerSfx.Start();
         }
