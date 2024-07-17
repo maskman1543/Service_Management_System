@@ -10,6 +10,11 @@ namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
         [STAThread]
         static void Main()
         {
+            if (Environment.OSVersion.Version.Major >= 6)
+            {
+                SetProcessDPIAware();
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -32,5 +37,7 @@ namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
 
             Application.Run(); // Start the application message loop
         }
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
     }
 }

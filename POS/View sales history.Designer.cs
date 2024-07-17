@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_sales_history));
             panel1 = new Panel();
-            button12 = new Button();
             label1 = new Label();
             btnClose = new Button();
             panel2 = new Panel();
@@ -68,41 +67,23 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(11, 67, 89);
-            panel1.Controls.Add(button12);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnClose);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1295, 34);
+            panel1.Size = new Size(1480, 45);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
-            // 
-            // button12
-            // 
-            button12.BackColor = Color.FromArgb(11, 67, 89);
-            button12.FlatAppearance.BorderSize = 0;
-            button12.FlatStyle = FlatStyle.Flat;
-            button12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button12.ForeColor = Color.White;
-            button12.Location = new Point(1113, 4);
-            button12.Margin = new Padding(3, 2, 3, 2);
-            button12.Name = "button12";
-            button12.Size = new Size(114, 25);
-            button12.TabIndex = 6;
-            button12.Text = "BACK BTN";
-            button12.UseVisualStyleBackColor = false;
-            button12.Click += button12_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(4, 4);
+            label1.Location = new Point(5, 5);
             label1.Name = "label1";
-            label1.Size = new Size(120, 25);
+            label1.Size = new Size(146, 31);
             label1.TabIndex = 3;
             label1.Text = "Sales history";
             // 
@@ -111,11 +92,10 @@
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.ForeColor = Color.FromArgb(11, 67, 89);
             btnClose.Image = (Image)resources.GetObject("btnClose.Image");
-            btnClose.Location = new Point(1262, 4);
-            btnClose.Margin = new Padding(3, 2, 3, 2);
+            btnClose.Location = new Point(1442, 5);
             btnClose.Name = "btnClose";
-            btnClose.Padding = new Padding(4, 0, 0, 8);
-            btnClose.Size = new Size(24, 26);
+            btnClose.Padding = new Padding(5, 0, 0, 11);
+            btnClose.Size = new Size(27, 35);
             btnClose.TabIndex = 2;
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
@@ -137,10 +117,9 @@
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
-            panel2.Location = new Point(0, 33);
-            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Location = new Point(0, 44);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1295, 50);
+            panel2.Size = new Size(1480, 67);
             panel2.TabIndex = 1;
             // 
             // button10
@@ -151,10 +130,9 @@
             button10.ForeColor = Color.White;
             button10.Image = (Image)resources.GetObject("button10.Image");
             button10.ImageAlign = ContentAlignment.TopCenter;
-            button10.Location = new Point(165, 3);
-            button10.Margin = new Padding(3, 2, 3, 2);
+            button10.Location = new Point(189, 4);
             button10.Name = "button10";
-            button10.Size = new Size(92, 46);
+            button10.Size = new Size(105, 61);
             button10.TabIndex = 8;
             button10.Text = "dd/mm/yyyy";
             button10.TextAlign = ContentAlignment.BottomCenter;
@@ -165,22 +143,20 @@
             listBox1.BackColor = Color.White;
             listBox1.ForeColor = Color.Silver;
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
+            listBox1.ItemHeight = 20;
             listBox1.Items.AddRange(new object[] { "POS", "POS", "POS" });
-            listBox1.Location = new Point(10, 29);
-            listBox1.Margin = new Padding(3, 2, 3, 2);
+            listBox1.Location = new Point(11, 39);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(110, 19);
+            listBox1.Size = new Size(125, 24);
             listBox1.TabIndex = 2;
             // 
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.None;
             textBox1.ForeColor = Color.Silver;
-            textBox1.Location = new Point(10, 7);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Location = new Point(11, 9);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(109, 16);
+            textBox1.Size = new Size(125, 20);
             textBox1.TabIndex = 2;
             textBox1.Text = "Document no.";
             textBox1.TextChanged += textBox1_TextChanged;
@@ -188,19 +164,17 @@
             // panel4
             // 
             panel4.BackColor = Color.White;
-            panel4.Location = new Point(885, 2);
-            panel4.Margin = new Padding(3, 2, 3, 2);
+            panel4.Location = new Point(1011, 3);
             panel4.Name = "panel4";
-            panel4.Size = new Size(9, 38);
+            panel4.Size = new Size(10, 51);
             panel4.TabIndex = 3;
             // 
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Location = new Point(453, 2);
-            panel3.Margin = new Padding(3, 2, 3, 2);
+            panel3.Location = new Point(518, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(9, 38);
+            panel3.Size = new Size(10, 51);
             panel3.TabIndex = 2;
             // 
             // button9
@@ -211,10 +185,9 @@
             button9.ForeColor = Color.White;
             button9.Image = (Image)resources.GetObject("button9.Image");
             button9.ImageAlign = ContentAlignment.TopCenter;
-            button9.Location = new Point(989, 2);
-            button9.Margin = new Padding(3, 2, 3, 2);
+            button9.Location = new Point(1130, 3);
             button9.Name = "button9";
-            button9.Size = new Size(70, 47);
+            button9.Size = new Size(80, 63);
             button9.TabIndex = 3;
             button9.Text = "Delete";
             button9.TextAlign = ContentAlignment.BottomCenter;
@@ -228,10 +201,9 @@
             button8.ForeColor = Color.White;
             button8.Image = (Image)resources.GetObject("button8.Image");
             button8.ImageAlign = ContentAlignment.TopCenter;
-            button8.Location = new Point(914, 2);
-            button8.Margin = new Padding(3, 2, 3, 2);
+            button8.Location = new Point(1045, 3);
             button8.Name = "button8";
-            button8.Size = new Size(70, 47);
+            button8.Size = new Size(80, 63);
             button8.TabIndex = 3;
             button8.Text = "Refund";
             button8.TextAlign = ContentAlignment.BottomCenter;
@@ -245,10 +217,9 @@
             button7.ForeColor = Color.White;
             button7.Image = (Image)resources.GetObject("button7.Image");
             button7.ImageAlign = ContentAlignment.TopCenter;
-            button7.Location = new Point(797, 2);
-            button7.Margin = new Padding(3, 2, 3, 2);
+            button7.Location = new Point(911, 3);
             button7.Name = "button7";
-            button7.Size = new Size(82, 48);
+            button7.Size = new Size(94, 64);
             button7.TabIndex = 3;
             button7.Text = "Send email";
             button7.TextAlign = ContentAlignment.BottomCenter;
@@ -262,10 +233,9 @@
             button6.ForeColor = Color.White;
             button6.Image = (Image)resources.GetObject("button6.Image");
             button6.ImageAlign = ContentAlignment.TopCenter;
-            button6.Location = new Point(724, 2);
-            button6.Margin = new Padding(3, 2, 3, 2);
+            button6.Location = new Point(827, 3);
             button6.Name = "button6";
-            button6.Size = new Size(70, 48);
+            button6.Size = new Size(80, 64);
             button6.TabIndex = 7;
             button6.Text = "Receipt";
             button6.TextAlign = ContentAlignment.BottomCenter;
@@ -279,10 +249,9 @@
             button5.ForeColor = Color.White;
             button5.Image = (Image)resources.GetObject("button5.Image");
             button5.ImageAlign = ContentAlignment.TopCenter;
-            button5.Location = new Point(636, 2);
-            button5.Margin = new Padding(3, 2, 3, 2);
+            button5.Location = new Point(727, 3);
             button5.Name = "button5";
-            button5.Size = new Size(82, 48);
+            button5.Size = new Size(94, 64);
             button5.TabIndex = 6;
             button5.Text = "Save as pdf";
             button5.TextAlign = ContentAlignment.BottomCenter;
@@ -297,10 +266,9 @@
             button4.ForeColor = Color.White;
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.TopCenter;
-            button4.Location = new Point(561, 4);
-            button4.Margin = new Padding(3, 2, 3, 2);
+            button4.Location = new Point(641, 5);
             button4.Name = "button4";
-            button4.Size = new Size(70, 46);
+            button4.Size = new Size(80, 61);
             button4.TabIndex = 5;
             button4.Text = "Print";
             button4.TextAlign = ContentAlignment.BottomCenter;
@@ -315,10 +283,9 @@
             button3.ForeColor = Color.White;
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.TopCenter;
-            button3.Location = new Point(485, 2);
-            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Location = new Point(554, 3);
             button3.Name = "button3";
-            button3.Size = new Size(71, 49);
+            button3.Size = new Size(81, 65);
             button3.TabIndex = 4;
             button3.Text = "Customer";
             button3.TextAlign = ContentAlignment.BottomCenter;
@@ -333,10 +300,9 @@
             button2.ForeColor = Color.White;
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.TopCenter;
-            button2.Location = new Point(337, 2);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Location = new Point(385, 3);
             button2.Name = "button2";
-            button2.Size = new Size(101, 46);
+            button2.Size = new Size(115, 61);
             button2.TabIndex = 3;
             button2.Text = "Show all users";
             button2.TextAlign = ContentAlignment.BottomCenter;
@@ -350,10 +316,9 @@
             button1.ForeColor = Color.White;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.TopCenter;
-            button1.Location = new Point(262, 2);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(299, 3);
             button1.Name = "button1";
-            button1.Size = new Size(70, 47);
+            button1.Size = new Size(80, 63);
             button1.TabIndex = 2;
             button1.Text = "Refresh";
             button1.TextAlign = ContentAlignment.BottomCenter;
@@ -367,37 +332,34 @@
             panel5.Controls.Add(label3);
             panel5.Controls.Add(label2);
             panel5.Controls.Add(button11);
-            panel5.Location = new Point(0, 494);
-            panel5.Margin = new Padding(3, 2, 3, 2);
+            panel5.Location = new Point(0, 659);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1295, 61);
+            panel5.Size = new Size(1480, 81);
             panel5.TabIndex = 2;
             // 
             // textBox3
             // 
             textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Location = new Point(127, 38);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
+            textBox3.Location = new Point(145, 51);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(56, 16);
+            textBox3.Size = new Size(64, 20);
             textBox3.TabIndex = 5;
             // 
             // textBox2
             // 
             textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Location = new Point(127, 12);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
+            textBox2.Location = new Point(145, 16);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(56, 16);
+            textBox2.Size = new Size(64, 20);
             textBox2.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.White;
-            label3.Location = new Point(10, 37);
+            label3.Location = new Point(11, 49);
             label3.Name = "label3";
-            label3.Size = new Size(80, 15);
+            label3.Size = new Size(100, 20);
             label3.TabIndex = 4;
             label3.Text = "Total amount:";
             // 
@@ -405,9 +367,9 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(10, 11);
+            label2.Location = new Point(11, 15);
             label2.Name = "label2";
-            label2.Size = new Size(105, 15);
+            label2.Size = new Size(128, 20);
             label2.TabIndex = 3;
             label2.Text = "Documents count:";
             // 
@@ -418,10 +380,9 @@
             button11.FlatStyle = FlatStyle.Flat;
             button11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button11.ForeColor = Color.White;
-            button11.Location = new Point(1189, 17);
-            button11.Margin = new Padding(3, 2, 3, 2);
+            button11.Location = new Point(1359, 23);
             button11.Name = "button11";
-            button11.Size = new Size(82, 33);
+            button11.Size = new Size(94, 44);
             button11.TabIndex = 3;
             button11.Text = "Close";
             button11.UseVisualStyleBackColor = false;
@@ -429,32 +390,30 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 104);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Location = new Point(0, 139);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1295, 181);
+            dataGridView1.Size = new Size(1480, 241);
             dataGridView1.TabIndex = 3;
             // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(0, 305);
-            dataGridView2.Margin = new Padding(3, 2, 3, 2);
+            dataGridView2.Location = new Point(0, 407);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(1295, 188);
+            dataGridView2.Size = new Size(1480, 251);
             dataGridView2.TabIndex = 4;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(3, 86);
+            label4.Location = new Point(3, 115);
             label4.Name = "label4";
-            label4.Size = new Size(71, 15);
+            label4.Size = new Size(89, 20);
             label4.TabIndex = 5;
             label4.Text = "Documents";
             // 
@@ -462,18 +421,18 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(3, 288);
+            label5.Location = new Point(3, 384);
             label5.Name = "label5";
-            label5.Size = new Size(100, 15);
+            label5.Size = new Size(125, 20);
             label5.TabIndex = 6;
             label5.Text = "Document items";
             // 
             // View_sales_history
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.White;
-            ClientSize = new Size(1295, 553);
+            ClientSize = new Size(1480, 737);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(dataGridView2);
@@ -482,7 +441,6 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "View_sales_history";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "View_sales_history";
@@ -529,6 +487,5 @@
         private DataGridView dataGridView2;
         private Label label4;
         private Label label5;
-        private Button button12;
     }
 }
