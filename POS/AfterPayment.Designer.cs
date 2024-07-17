@@ -212,7 +212,7 @@
             btnPrintrcp.Name = "btnPrintrcp";
             btnPrintrcp.Size = new Size(362, 98);
             btnPrintrcp.TabIndex = 3;
-            btnPrintrcp.UseVisualStyleBackColor = true;
+            btnPrintrcp.UseVisualStyleBackColor = false;
             btnPrintrcp.MouseEnter += btnPrintrcp_MouseEnter;
             btnPrintrcp.MouseLeave += btnPrintrcp_MouseLeave;
             // 
@@ -226,7 +226,7 @@
             btnsvPDF.Name = "btnsvPDF";
             btnsvPDF.Size = new Size(362, 98);
             btnsvPDF.TabIndex = 4;
-            btnsvPDF.UseVisualStyleBackColor = true;
+            btnsvPDF.UseVisualStyleBackColor = false;
             btnsvPDF.MouseEnter += btnsvPDF_MouseEnter;
             btnsvPDF.MouseLeave += btnsvPDF_MouseLeave;
             // 
@@ -240,7 +240,7 @@
             btnaddNts.Name = "btnaddNts";
             btnaddNts.Size = new Size(362, 98);
             btnaddNts.TabIndex = 5;
-            btnaddNts.UseVisualStyleBackColor = true;
+            btnaddNts.UseVisualStyleBackColor = false;
             btnaddNts.Click += btnaddNts_Click;
             btnaddNts.MouseEnter += btnaddNts_MouseEnter;
             btnaddNts.MouseLeave += btnaddNts_MouseLeave;
@@ -255,7 +255,7 @@
             btnsndEmail.Name = "btnsndEmail";
             btnsndEmail.Size = new Size(362, 98);
             btnsndEmail.TabIndex = 6;
-            btnsndEmail.UseVisualStyleBackColor = true;
+            btnsndEmail.UseVisualStyleBackColor = false;
             btnsndEmail.MouseEnter += btnsndEmail_MouseEnter;
             btnsndEmail.MouseLeave += btnsndEmail_MouseLeave;
             // 
@@ -269,7 +269,7 @@
             btnPrintinv.Name = "btnPrintinv";
             btnPrintinv.Size = new Size(362, 98);
             btnPrintinv.TabIndex = 7;
-            btnPrintinv.UseVisualStyleBackColor = true;
+            btnPrintinv.UseVisualStyleBackColor = false;
             btnPrintinv.MouseEnter += btnPrintinv_MouseEnter;
             btnPrintinv.MouseLeave += btnPrintinv_MouseLeave;
             // 
