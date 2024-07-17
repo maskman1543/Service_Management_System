@@ -26,6 +26,7 @@ namespace Service_Management_System.POS
             sidepanelPOS.Hide();
             timerSfx.Interval = 50; // Timer interval for smooth transition
             fadeStep = 255 * timerSfx.Interval / fadeDuration; // Calculate fade step
+            this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
         }
 
         private void timerSfx_Tick(object sender, EventArgs e)
