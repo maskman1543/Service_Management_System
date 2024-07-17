@@ -722,11 +722,11 @@ namespace Service_Management_System.POS
             // productOrderedView
             // 
             productOrderedView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            productOrderedView.Location = new Point(0, 154);
+            productOrderedView.Location = new Point(0, 157);
             productOrderedView.Name = "productOrderedView";
             productOrderedView.RowHeadersWidth = 51;
             productOrderedView.RowTemplate.Height = 29;
-            productOrderedView.Size = new Size(451, 182);
+            productOrderedView.Size = new Size(451, 188);
             productOrderedView.TabIndex = 3;
             // 
             // panel4
@@ -854,13 +854,13 @@ namespace Service_Management_System.POS
             partsView.Name = "partsView";
             partsView.RowHeadersWidth = 51;
             partsView.RowTemplate.Height = 29;
-            partsView.Size = new Size(1150, 449);
+            partsView.Size = new Size(531, 449);
             partsView.TabIndex = 11;
             partsView.CellContentClick += partsServicesView_CellContentClick;
             // 
             // panel6
             // 
-            panel6.BackColor = Color.DarkGray;
+            panel6.BackColor = Color.FromArgb(3, 83, 115);
             panel6.Controls.Add(textBox4);
             panel6.Controls.Add(textBox3);
             panel6.Controls.Add(textBox2);
@@ -955,7 +955,7 @@ namespace Service_Management_System.POS
             // 
             textBox7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBox7.ForeColor = Color.Gray;
-            textBox7.Location = new Point(466, 157);
+            textBox7.Location = new Point(451, 157);
             textBox7.Multiline = true;
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(499, 46);
@@ -966,7 +966,7 @@ namespace Service_Management_System.POS
             // 
             textBox8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBox8.ForeColor = Color.Gray;
-            textBox8.Location = new Point(992, 157);
+            textBox8.Location = new Point(983, 157);
             textBox8.Multiline = true;
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(479, 46);
@@ -980,7 +980,7 @@ namespace Service_Management_System.POS
             jobOrderedView.Name = "jobOrderedView";
             jobOrderedView.RowHeadersWidth = 51;
             jobOrderedView.RowTemplate.Height = 29;
-            jobOrderedView.Size = new Size(451, 180);
+            jobOrderedView.Size = new Size(451, 188);
             jobOrderedView.TabIndex = 15;
             // 
             // timerSfx
