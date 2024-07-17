@@ -652,7 +652,7 @@ namespace Service_Management_System.POS
             panel3.Controls.Add(button6);
             panel3.Location = new Point(451, 78);
             panel3.Name = "panel3";
-            panel3.Size = new Size(587, 70);
+            panel3.Size = new Size(1029, 70);
             panel3.TabIndex = 2;
             // 
             // button1
