@@ -29,6 +29,8 @@ namespace Service_Management_System.POS
             timerSfx.Interval = 15; // Timer interval for smooth transition
             this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
             sidepanelPOS.Width = originalWidth;
+            sidepanelPOS.Size = new Size(44, 656);
+            sidepanelPOS.Location = new Point(1436, 78);
         }
 
 
