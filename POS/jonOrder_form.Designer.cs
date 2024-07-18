@@ -44,6 +44,7 @@
             guna2ElipsePlate = new Guna.UI2.WinForms.Guna2Elipse(components);
             btnContiue = new Guna.UI2.WinForms.Guna2Elipse(components);
             btnCancel = new Guna.UI2.WinForms.Guna2Elipse(components);
+            elipseForm = new Guna.UI2.WinForms.Guna2Elipse(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -171,6 +172,11 @@
             btnCancel.BorderRadius = 10;
             btnCancel.TargetControl = button2;
             // 
+            // elipseForm
+            // 
+            elipseForm.BorderRadius = 20;
+            elipseForm.TargetControl = this;
+            // 
             // jonOrder_form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -187,6 +193,7 @@
             Controls.Add(FirstNameValue);
             FormBorderStyle = FormBorderStyle.None;
             Name = "jonOrder_form";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "jonOrder_form";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -209,5 +216,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2ElipsePlate;
         private Guna.UI2.WinForms.Guna2Elipse btnContiue;
         private Guna.UI2.WinForms.Guna2Elipse btnCancel;
+        private Guna.UI2.WinForms.Guna2Elipse elipseForm;
     }
 }

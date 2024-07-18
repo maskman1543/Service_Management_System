@@ -121,7 +121,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAABCdJREFUeF7t3V9oTnEYB/D9sy0lW1LmSkoKyYVcIEUSibILl/7culNrmVyQFaJs
+        EAAACxABrSO9dQAABCdJREFUeF7t3V9oTnEYB/D9sy0lW1LmSkoKyYVcIEUSibILl/7culNrmVyQFaJs
         U0q5olzM/+SK3HAvIykpXJhZ3NBM/sz3Ob/v6k3vODvO75xn7/N86lvS9nv+ZPbufd9zVuecc84556yb
         mJhoQNYgh5BryBDyCfnGyJ/l764i8jHysQ38dJcXLLUD6UXeItP1BpHP7eBxLisssR3pR74i/0vOkLPa
         eLybDiyuExlB8vYe6WQZ9y9YViMi/5Jj60MaWdZVgwW1IjdkWwWRWq0s7yphMfKVIY+OinYbaWIbbhKW
@@ -159,5 +159,8 @@
   </metadata>
   <metadata name="btnCancel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>686, 17</value>
+  </metadata>
+  <metadata name="elipseForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>808, 17</value>
   </metadata>
 </root>

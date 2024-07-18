@@ -28,9 +28,10 @@ namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
             //mainmenuForm.Show();
 
             //This form1 below here is the Dashboard
-
-            AfterPayment formCheck = new AfterPayment();
-            formCheck.Show(); //Showdialog();
+            POSForm pOSForm = new POSForm();
+            pOSForm.Show();
+            //AfterPayment formCheck = new AfterPayment();
+            //formCheck.Show(); //Showdialog();
 
             // Optionally, navigate to Splash after Form1 initialization
             // Form1 form1 = new Form1();
