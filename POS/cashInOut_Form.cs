@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Service_Management_System.POS
 {
-    public partial class viewOpensales_form : Form
+    public partial class cashInOut_Form : Form
     {
-        public viewOpensales_form()
+        public cashInOut_Form()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             POSForm pOSForm = new POSForm();
             pOSForm.Show();

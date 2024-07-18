@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using Service_Management_System.POS;
 
 namespace Service_Management_System.DASHBOARD
 {
@@ -129,7 +130,10 @@ namespace Service_Management_System.DASHBOARD
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender, RGBColors.color1);
+
+            POSForm pOSForm = new POSForm();
+            pOSForm.Show();
+            this.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

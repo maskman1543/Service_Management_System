@@ -34,7 +34,6 @@
             btnMenu = new Button();
             label1 = new Label();
             panelMenu = new Panel();
-            btnExit = new FontAwesome.Sharp.IconButton();
             btnCompany = new FontAwesome.Sharp.IconButton();
             btnSecurity = new FontAwesome.Sharp.IconButton();
             btnAnalytics = new FontAwesome.Sharp.IconButton();
@@ -46,6 +45,7 @@
             label14 = new Label();
             label2 = new Label();
             pictureBox1 = new PictureBox();
+            btnExit = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             panelDesktop = new Panel();
             sidebarTimer = new System.Windows.Forms.Timer(components);
@@ -97,7 +97,6 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(3, 83, 115);
-            panelMenu.Controls.Add(btnExit);
             panelMenu.Controls.Add(btnCompany);
             panelMenu.Controls.Add(btnSecurity);
             panelMenu.Controls.Add(btnAnalytics);
@@ -106,6 +105,7 @@
             panelMenu.Controls.Add(btnDocuments);
             panelMenu.Controls.Add(btnDashboard);
             panelMenu.Controls.Add(panel3);
+            panelMenu.Controls.Add(btnExit);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 45);
             panelMenu.MaximumSize = new Size(270, 979);
@@ -113,28 +113,6 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(270, 979);
             panelMenu.TabIndex = 1;
-            // 
-            // btnExit
-            // 
-            btnExit.Dock = DockStyle.Bottom;
-            btnExit.FlatAppearance.BorderSize = 0;
-            btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnExit.ForeColor = Color.White;
-            btnExit.IconChar = FontAwesome.Sharp.IconChar.OctopusDeploy;
-            btnExit.IconColor = Color.White;
-            btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnExit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnExit.Location = new Point(0, 919);
-            btnExit.Name = "btnExit";
-            btnExit.Padding = new Padding(10, 0, 21, 0);
-            btnExit.Size = new Size(270, 60);
-            btnExit.TabIndex = 8;
-            btnExit.Text = "Exit";
-            btnExit.TextAlign = ContentAlignment.MiddleLeft;
-            btnExit.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnExit.UseVisualStyleBackColor = true;
-            btnExit.Click += btnExit_Click;
             // 
             // btnCompany
             // 
@@ -341,6 +319,25 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
+            // btnExit
+            // 
+            btnExit.FlatAppearance.BorderSize = 0;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnExit.ForeColor = Color.White;
+            btnExit.IconChar = FontAwesome.Sharp.IconChar.Backward;
+            btnExit.IconColor = Color.White;
+            btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnExit.ImageAlign = ContentAlignment.MiddleLeft;
+            btnExit.Location = new Point(0, 855);
+            btnExit.Name = "btnExit";
+            btnExit.Padding = new Padding(10, 0, 21, 0);
+            btnExit.Size = new Size(270, 60);
+            btnExit.TabIndex = 8;
+            btnExit.Text = "Back";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
+            // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(11, 67, 89);
@@ -356,7 +353,7 @@
             panelDesktop.Dock = DockStyle.Fill;
             panelDesktop.Location = new Point(270, 54);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(900, 970);
+            panelDesktop.Size = new Size(900, 906);
             panelDesktop.TabIndex = 3;
             // 
             // sidebarTimer
@@ -368,13 +365,14 @@
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1170, 1024);
+            ClientSize = new Size(1170, 960);
             Controls.Add(panelDesktop);
             Controls.Add(panel2);
             Controls.Add(panelMenu);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainMenu";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Dashboard_form";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
