@@ -30,11 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AfterPayment));
             panel1 = new Panel();
+            panel6 = new Panel();
             btnExGF = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
@@ -52,11 +57,6 @@
             label3 = new Label();
             panel3 = new Panel();
             label8 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            panel6 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnExGF).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -76,6 +76,14 @@
             panel1.Size = new Size(1469, 69);
             panel1.TabIndex = 0;
             // 
+            // panel6
+            // 
+            panel6.BackColor = Color.White;
+            panel6.Location = new Point(324, 5);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(3, 64);
+            panel6.TabIndex = 11;
+            // 
             // btnExGF
             // 
             btnExGF.BackgroundImage = (Image)resources.GetObject("btnExGF.BackgroundImage");
@@ -92,22 +100,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
             label1.Location = new Point(34, 23);
             label1.Name = "label1";
-            label1.Size = new Size(71, 31);
+            label1.Size = new Size(72, 27);
             label1.TabIndex = 5;
             label1.Text = "Items";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
             label2.Location = new Point(352, 23);
             label2.Name = "label2";
-            label2.Size = new Size(91, 31);
+            label2.Size = new Size(96, 27);
             label2.TabIndex = 4;
             label2.Text = "Actions";
             // 
@@ -139,6 +147,46 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(323, 200);
             panel2.TabIndex = 2;
+            // 
+            // textBox4
+            // 
+            textBox4.BackColor = Color.White;
+            textBox4.BorderStyle = BorderStyle.FixedSingle;
+            textBox4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox4.Location = new Point(210, 158);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(103, 27);
+            textBox4.TabIndex = 10;
+            // 
+            // textBox3
+            // 
+            textBox3.BackColor = Color.White;
+            textBox3.BorderStyle = BorderStyle.FixedSingle;
+            textBox3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox3.Location = new Point(211, 99);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(103, 27);
+            textBox3.TabIndex = 16;
+            // 
+            // textBox2
+            // 
+            textBox2.BackColor = Color.White;
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
+            textBox2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox2.Location = new Point(212, 48);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(103, 27);
+            textBox2.TabIndex = 15;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.White;
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox1.Location = new Point(211, 10);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(103, 27);
+            textBox1.TabIndex = 10;
             // 
             // label7
             // 
@@ -337,54 +385,6 @@
             label8.Size = new Size(63, 32);
             label8.TabIndex = 9;
             label8.Text = "0.00";
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.White;
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.Location = new Point(211, 10);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(103, 27);
-            textBox1.TabIndex = 10;
-            // 
-            // textBox2
-            // 
-            textBox2.BackColor = Color.White;
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox2.Location = new Point(212, 48);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(103, 27);
-            textBox2.TabIndex = 15;
-            // 
-            // textBox3
-            // 
-            textBox3.BackColor = Color.White;
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox3.Location = new Point(211, 99);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(103, 27);
-            textBox3.TabIndex = 16;
-            // 
-            // textBox4
-            // 
-            textBox4.BackColor = Color.White;
-            textBox4.BorderStyle = BorderStyle.FixedSingle;
-            textBox4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox4.Location = new Point(210, 158);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(103, 27);
-            textBox4.TabIndex = 10;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.White;
-            panel6.Location = new Point(324, 5);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(3, 64);
-            panel6.TabIndex = 11;
             // 
             // AfterPayment
             // 
