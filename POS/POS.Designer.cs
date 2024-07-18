@@ -135,9 +135,9 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(button13);
             sidepanelPOS.Controls.Add(button12);
             sidepanelPOS.ImeMode = ImeMode.NoControl;
-            sidepanelPOS.Location = new Point(1225, 78);
+            sidepanelPOS.Location = new Point(1436, 78);
             sidepanelPOS.Name = "sidepanelPOS";
-            sidepanelPOS.Size = new Size(255, 656);
+            sidepanelPOS.Size = new Size(44, 656);
             sidepanelPOS.TabIndex = 16;
             // 
             // moveup
@@ -849,14 +849,13 @@ namespace Service_Management_System.POS
             // 
             // partsView
             // 
-            partsView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             partsView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             partsView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             partsView.Location = new Point(451, 209);
             partsView.Name = "partsView";
             partsView.RowHeadersWidth = 51;
             partsView.RowTemplate.Height = 29;
-            partsView.Size = new Size(531, 449);
+            partsView.Size = new Size(526, 449);
             partsView.TabIndex = 11;
             partsView.CellContentClick += partsServicesView_CellContentClick;
             // 
@@ -949,7 +948,7 @@ namespace Service_Management_System.POS
             servicesView.Name = "servicesView";
             servicesView.RowHeadersWidth = 51;
             servicesView.RowTemplate.Height = 29;
-            servicesView.Size = new Size(497, 449);
+            servicesView.Size = new Size(492, 449);
             servicesView.TabIndex = 14;
             servicesView.CellContentClick += servicesView_CellContentClick;
             // 
@@ -1000,7 +999,6 @@ namespace Service_Management_System.POS
             Controls.Add(jobOrderedView);
             Controls.Add(textBox8);
             Controls.Add(textBox7);
-            Controls.Add(servicesView);
             Controls.Add(panel6);
             Controls.Add(partsView);
             Controls.Add(panel5);
@@ -1009,7 +1007,10 @@ namespace Service_Management_System.POS
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panel3);
+            Controls.Add(servicesView);
             FormBorderStyle = FormBorderStyle.None;
+            MaximumSize = new Size(1710, 737);
+            MinimumSize = new Size(1480, 737);
             Name = "POSForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "POS";

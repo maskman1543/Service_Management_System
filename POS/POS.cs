@@ -24,9 +24,18 @@ namespace Service_Management_System.POS
         private int additionalWidth = 212; // Additional width when expanded
         private int originalWidth = 44; // Original width when collapsed
         private int targetWidth;
+        private int formOriginalWidth;
+        private int formTargetWidth;
+        /*private bool isExpanding;
+        private bool isCollapsing;
+        private int stepSize = 10; // Step size for smooth transition
+        private int additionalWidth = 212; // Additional width when expanded
+        private int originalWidth = 44; // Original width when collapsed
+        private int targetWidth;*/
         public POSForm()
         {
-            InitializeComponent();
+
+            /*InitializeComponent();
             InitializeProductOrderedView();
             InitializeJobOrderedView();
             sidepanelPOS.Width = originalWidth;
@@ -34,13 +43,55 @@ namespace Service_Management_System.POS
             this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
             sidepanelPOS.Width = originalWidth;
             sidepanelPOS.Size = new Size(44, 656);
-            sidepanelPOS.Location = new Point(1436, 78);
+            sidepanelPOS.Location = new Point(1436, 78);*/
+            InitializeComponent();
+            InitializeProductOrderedView();
+            InitializeJobOrderedView();
+            sidepanelPOS.Width = originalWidth;
+            timerSfx.Interval = 15; // Timer interval for smooth transition
+            this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
+            //sidepanelPOS.Size = new Size(originalWidth, 656);
+            //sidepanelPOS.Location = new Point(1436, 78);
+
+            formOriginalWidth = this.Width; // Store the original width of the form
+            formTargetWidth = formOriginalWidth + additionalWidth; // Target width when expanded
+
         }
 
         
         private void timerSfx_Tick(object sender, EventArgs e)
         {
             if (isExpanding)
+            {
+                if (sidepanelPOS.Width < targetWidth)
+                {
+                    sidepanelPOS.Width += stepSize;
+                    this.Width += stepSize; // Expand the form
+                    if (sidepanelPOS.Width >= targetWidth)
+                    {
+                        sidepanelPOS.Width = targetWidth;
+                        this.Width = formTargetWidth; // Ensure form reaches target width
+                        isExpanding = false;
+                        timerSfx.Stop();
+                    }
+                }
+            }
+            else if (isCollapsing)
+            {
+                if (sidepanelPOS.Width > originalWidth)
+                {
+                    sidepanelPOS.Width -= stepSize;
+                    this.Width -= stepSize; // Shrink the form
+                    if (sidepanelPOS.Width <= originalWidth)
+                    {
+                        sidepanelPOS.Width = originalWidth;
+                        this.Width = formOriginalWidth; // Ensure form reaches original width
+                        isCollapsing = false;
+                        timerSfx.Stop();
+                    }
+                }
+            }
+            /*if (isExpanding)
             {
                 if (sidepanelPOS.Width < targetWidth)
                 {
@@ -67,7 +118,7 @@ namespace Service_Management_System.POS
                         timerSfx.Stop();
                     }
                 }
-            }
+            }*/
         }
 
         private void btnmenU2_Click(object sender, EventArgs e)
@@ -85,6 +136,19 @@ namespace Service_Management_System.POS
                 isExpanding = false;
             }
             timerSfx.Start();
+            /*if (sidepanelPOS.Width == originalWidth)
+            {
+                targetWidth = originalWidth + additionalWidth;
+                isExpanding = true;
+                isCollapsing = false;
+            }
+            else
+            {
+                targetWidth = originalWidth;
+                isCollapsing = true;
+                isExpanding = false;
+            }
+            timerSfx.Start();*/
         }
 
 
