@@ -51,5 +51,12 @@ namespace Service_Management_System.POS
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            POSForm pOSForm = new POSForm();
+            pOSForm.Show();
+            this.Close();
+        }
     }
 }

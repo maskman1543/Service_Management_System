@@ -1,4 +1,5 @@
-﻿using Service_Management_System.Login_Page_Front___Backend;
+﻿using Service_Management_System.DASHBOARD;
+using Service_Management_System.Login_Page_Front___Backend;
 using Service_Management_System.POS.Login_Page_Front_and_Back_End;
 using System;
 using System.Collections.Generic;
@@ -240,7 +241,9 @@ namespace Service_Management_System.POS
 
         private void button12_Click(object sender, EventArgs e)
         {
-
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.Show();
+            this.Close();
         }
 
         private void button13_MouseEnter(object sender, EventArgs e)
@@ -260,15 +263,15 @@ namespace Service_Management_System.POS
         private void button14_MouseEnter(object sender, EventArgs e)
         {
             // Increase size when mouse enters
-            button14.Width = 275;
-            button14.Height = 62;
+            btnViewopensales.Width = 275;
+            btnViewopensales.Height = 62;
         }
 
         private void button14_MouseLeave(object sender, EventArgs e)
         {
             // Restore original size when mouse leaves
-            button14.Width = 265;
-            button14.Height = 57;
+            btnViewopensales.Width = 265;
+            btnViewopensales.Height = 57;
         }
 
         private void button15_MouseEnter(object sender, EventArgs e)
@@ -423,7 +426,9 @@ namespace Service_Management_System.POS
 
         private void button14_Click(object sender, EventArgs e)
         {
-
+            viewOpensales_form opensales_Form = new viewOpensales_form();
+            opensales_Form.Show();
+            this.Close();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -703,6 +708,21 @@ namespace Service_Management_System.POS
             btnmenU2.Width = 51;
             btnmenU2.Height = 42;
             //51, 42 orrig
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            cashInOut_Form cashInOut_Form = new cashInOut_Form();
+            cashInOut_Form.Show();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            jonOrder_form joborder = new jonOrder_form();
+            joborder.Show();
+            
+
         }
 
 

@@ -162,6 +162,7 @@
             button1.TabIndex = 2;
             button1.Text = "Close";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label2
             // 

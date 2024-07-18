@@ -36,6 +36,7 @@
             button13 = new Button();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
+            panel7 = new Panel();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
@@ -79,7 +80,6 @@
             textBox4 = new TextBox();
             textBox5 = new TextBox();
             panel6 = new Panel();
-            panel7 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -167,6 +167,14 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(300, 136);
             panel2.TabIndex = 2;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.Black;
+            panel7.Location = new Point(1, 80);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(298, 4);
+            panel7.TabIndex = 25;
             // 
             // textBox3
             // 
@@ -466,6 +474,7 @@
             button1.Text = "Cancel";
             button1.TextAlign = ContentAlignment.MiddleRight;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -717,14 +726,6 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(298, 4);
             panel6.TabIndex = 24;
-            // 
-            // panel7
-            // 
-            panel7.BackColor = Color.Black;
-            panel7.Location = new Point(1, 80);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(298, 4);
-            panel7.TabIndex = 25;
             // 
             // Payment
             // 

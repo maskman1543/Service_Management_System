@@ -386,6 +386,7 @@
             button11.TabIndex = 3;
             button11.Text = "Close";
             button11.UseVisualStyleBackColor = false;
+            button11.Click += button11_Click;
             // 
             // dataGridView1
             // 

@@ -971,7 +971,7 @@
         GAEDAAAoRsAAAACKETAAAIBiBAwAAKAYAQMAAChGwAAAAAo5vvp/44IIK4x1Bl4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button14.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnViewopensales.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAxgAAACdCAYAAAA36N6SAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAs
         SgAALEoBd3p0TQAAIM5JREFUeF7t3YnXXHV9x3H/jrKoqLhUEUVtbXvaUlvbWtvjaWut9hyUXdlBQA1Z

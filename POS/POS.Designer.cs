@@ -41,7 +41,7 @@ namespace Service_Management_System.POS
             button18 = new Button();
             button19 = new Button();
             button15 = new Button();
-            button14 = new Button();
+            btnViewopensales = new Button();
             button13 = new Button();
             button12 = new Button();
             panel1 = new Panel();
@@ -131,7 +131,7 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(button18);
             sidepanelPOS.Controls.Add(button19);
             sidepanelPOS.Controls.Add(button15);
-            sidepanelPOS.Controls.Add(button14);
+            sidepanelPOS.Controls.Add(btnViewopensales);
             sidepanelPOS.Controls.Add(button13);
             sidepanelPOS.Controls.Add(button12);
             sidepanelPOS.ImeMode = ImeMode.NoControl;
@@ -277,28 +277,29 @@ namespace Service_Management_System.POS
             button15.TextAlign = ContentAlignment.MiddleLeft;
             button15.UseCompatibleTextRendering = true;
             button15.UseVisualStyleBackColor = false;
+            button15.Click += button15_Click;
             button15.MouseEnter += button15_MouseEnter;
             button15.MouseLeave += button15_MouseLeave;
             // 
-            // button14
+            // btnViewopensales
             // 
-            button14.BackColor = Color.Transparent;
-            button14.BackgroundImage = (Image)resources.GetObject("button14.BackgroundImage");
-            button14.BackgroundImageLayout = ImageLayout.Stretch;
-            button14.FlatAppearance.BorderSize = 0;
-            button14.FlatStyle = FlatStyle.Flat;
-            button14.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button14.ForeColor = SystemColors.Control;
-            button14.Location = new Point(-24, 100);
-            button14.Name = "button14";
-            button14.Size = new Size(269, 57);
-            button14.TabIndex = 4;
-            button14.TextAlign = ContentAlignment.MiddleLeft;
-            button14.UseCompatibleTextRendering = true;
-            button14.UseVisualStyleBackColor = false;
-            button14.Click += button14_Click;
-            button14.MouseEnter += button14_MouseEnter;
-            button14.MouseLeave += button14_MouseLeave;
+            btnViewopensales.BackColor = Color.Transparent;
+            btnViewopensales.BackgroundImage = (Image)resources.GetObject("btnViewopensales.BackgroundImage");
+            btnViewopensales.BackgroundImageLayout = ImageLayout.Stretch;
+            btnViewopensales.FlatAppearance.BorderSize = 0;
+            btnViewopensales.FlatStyle = FlatStyle.Flat;
+            btnViewopensales.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnViewopensales.ForeColor = SystemColors.Control;
+            btnViewopensales.Location = new Point(-24, 100);
+            btnViewopensales.Name = "btnViewopensales";
+            btnViewopensales.Size = new Size(269, 57);
+            btnViewopensales.TabIndex = 4;
+            btnViewopensales.TextAlign = ContentAlignment.MiddleLeft;
+            btnViewopensales.UseCompatibleTextRendering = true;
+            btnViewopensales.UseVisualStyleBackColor = false;
+            btnViewopensales.Click += button14_Click;
+            btnViewopensales.MouseEnter += button14_MouseEnter;
+            btnViewopensales.MouseLeave += button14_MouseLeave;
             // 
             // button13
             // 
@@ -445,6 +446,7 @@ namespace Service_Management_System.POS
             button2.TabIndex = 10;
             button2.TextAlign = ContentAlignment.BottomCenter;
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             button2.MouseEnter += button2_MouseEnter;
             button2.MouseLeave += button2_MouseLeave;
             // 
@@ -1094,7 +1096,7 @@ namespace Service_Management_System.POS
         private Button button18;
         private Button button19;
         private Button button15;
-        private Button button14;
+        private Button btnViewopensales;
         private Button button13;
         private PictureBox moveup;
         private PictureBox allout;

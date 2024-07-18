@@ -58,7 +58,7 @@
             button5 = new Button();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             save = new Guna.UI2.WinForms.Guna2Elipse(components);
-            guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            cancel = new Guna.UI2.WinForms.Guna2Elipse(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -312,6 +312,7 @@
             button3.TabIndex = 2;
             button3.Text = "Cancel";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // dataGridView1
             // 
@@ -381,8 +382,13 @@
             // 
             // save
             // 
-            save.BorderRadius = 10;
+            save.BorderRadius = 20;
             save.TargetControl = button4;
+            // 
+            // cancel
+            // 
+            cancel.BorderRadius = 20;
+            cancel.TargetControl = button3;
             // 
             // cashInOut_Form
             // 
@@ -453,6 +459,6 @@
         private Button button5;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse save;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
+        private Guna.UI2.WinForms.Guna2Elipse cancel;
     }
 }
