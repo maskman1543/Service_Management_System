@@ -391,6 +391,7 @@ namespace Service_Management_System.POS
             // Increase size when mouse enters
             button12.Width = 275;
             button12.Height = 62;
+            sidepanelPOS.BringToFront();
         }
 
         private void button12_MouseLeave(object sender, EventArgs e)
@@ -412,6 +413,7 @@ namespace Service_Management_System.POS
             // Increase size when mouse enters
             button13.Width = 275;
             button13.Height = 62;
+            sidepanelPOS.BringToFront();
         }
 
         private void button13_MouseLeave(object sender, EventArgs e)
@@ -426,6 +428,7 @@ namespace Service_Management_System.POS
             // Increase size when mouse enters
             btnViewopensales.Width = 275;
             btnViewopensales.Height = 62;
+            sidepanelPOS.BringToFront();
         }
 
         private void button14_MouseLeave(object sender, EventArgs e)
@@ -910,6 +913,11 @@ namespace Service_Management_System.POS
         private void servicesView_MouseLeave(object sender, EventArgs e)
         {
             sidepanelPOS.BringToFront();
+        }
+
+        private void sidepanelPOS_MouseEnter_1(object sender, EventArgs e)
+        {
+
         }
 
 
