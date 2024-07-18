@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace Service_Management_System.POS
 {
-   
+
     public partial class POSForm : Form
     {
         private bool isExpanding;
@@ -58,7 +58,7 @@ namespace Service_Management_System.POS
 
         }
 
-        
+
         private void timerSfx_Tick(object sender, EventArgs e)
         {
             if (isExpanding)
@@ -391,6 +391,7 @@ namespace Service_Management_System.POS
             // Increase size when mouse enters
             button12.Width = 275;
             button12.Height = 62;
+            sidepanelPOS.BringToFront();
         }
 
         private void button12_MouseLeave(object sender, EventArgs e)
@@ -412,6 +413,7 @@ namespace Service_Management_System.POS
             // Increase size when mouse enters
             button13.Width = 275;
             button13.Height = 62;
+            sidepanelPOS.BringToFront();
         }
 
         private void button13_MouseLeave(object sender, EventArgs e)
@@ -426,6 +428,7 @@ namespace Service_Management_System.POS
             // Increase size when mouse enters
             btnViewopensales.Width = 275;
             btnViewopensales.Height = 62;
+            sidepanelPOS.BringToFront();
         }
 
         private void button14_MouseLeave(object sender, EventArgs e)
@@ -882,7 +885,38 @@ namespace Service_Management_System.POS
         {
             jonOrder_form joborder = new jonOrder_form();
             joborder.Show();
-            
+
+
+        }
+
+        private void servicesView_MouseEnter(object sender, EventArgs e)
+        {
+            servicesView.BringToFront();
+        }
+
+        private void sidepanelPOS_MouseEnter(object sender, EventArgs e)
+        {
+            sidepanelPOS.BringToFront();
+        }
+
+        private void button12_MouseEnter_1(object sender, EventArgs e)
+        {
+            sidepanelPOS.BringToFront();
+        }
+
+        private void servicesView_MouseEnter_1(object sender, EventArgs e)
+        {
+            servicesView.BringToFront();
+            //textBox8.BringToFront();
+        }
+
+        private void servicesView_MouseLeave(object sender, EventArgs e)
+        {
+            sidepanelPOS.BringToFront();
+        }
+
+        private void sidepanelPOS_MouseEnter_1(object sender, EventArgs e)
+        {
 
         }
 

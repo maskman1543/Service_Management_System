@@ -139,6 +139,7 @@ namespace Service_Management_System.POS
             sidepanelPOS.Name = "sidepanelPOS";
             sidepanelPOS.Size = new Size(44, 656);
             sidepanelPOS.TabIndex = 16;
+            sidepanelPOS.MouseEnter += sidepanelPOS_MouseEnter;
             // 
             // moveup
             // 
@@ -951,6 +952,8 @@ namespace Service_Management_System.POS
             servicesView.Size = new Size(492, 449);
             servicesView.TabIndex = 14;
             servicesView.CellContentClick += servicesView_CellContentClick;
+            servicesView.MouseEnter += servicesView_MouseEnter_1;
+            servicesView.MouseLeave += servicesView_MouseLeave;
             // 
             // textBox7
             // 
@@ -973,6 +976,7 @@ namespace Service_Management_System.POS
             textBox8.Size = new Size(479, 46);
             textBox8.TabIndex = 10;
             textBox8.Text = "Search";
+            textBox8.MouseEnter += servicesView_MouseEnter_1;
             // 
             // jobOrderedView
             // 
