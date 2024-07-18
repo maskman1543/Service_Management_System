@@ -14,6 +14,7 @@ using System.Windows.Forms;
 
 namespace Service_Management_System.POS
 {
+   
     public partial class POSForm : Form
     {
         private bool isExpanding;
@@ -25,13 +26,15 @@ namespace Service_Management_System.POS
         public POSForm()
         {
             InitializeComponent();
+            InitializeProductOrderedView();
+            InitializeJobOrderedView();
             sidepanelPOS.Width = originalWidth;
             timerSfx.Interval = 15; // Timer interval for smooth transition
             this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
             sidepanelPOS.Width = originalWidth;
         }
 
-
+        
         private void timerSfx_Tick(object sender, EventArgs e)
         {
             if (isExpanding)
@@ -97,24 +100,76 @@ namespace Service_Management_System.POS
         {
 
         }
+        private void AddOrUpdateProductOrderedView(int productID)
+        {
+            // Query to get product details including quantity
+            string query = $"SELECT productID, productGroup, productName, Price, Quantity, barcode " +
+                           $"FROM productTable WHERE productID = {productID}";
 
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            {
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    connection.Open();
+                    adapter.Fill(dataTable);
+
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        DataRow productRow = dataTable.Rows[0];
+                        bool found = false;
+
+                        // Check if the product is already in the target DataGridView
+                        foreach (DataGridViewRow row in productOrderedView.Rows)
+                        {
+                            if (Convert.ToInt32(row.Cells["productID"].Value) == productID)
+                            {
+                                // Update the quantity
+                                row.Cells["Quantity"].Value = Convert.ToInt32(row.Cells["Quantity"].Value) + 1;
+                                found = true;
+                                break;
+                            }
+                        }
+
+                        if (!found)
+                        {
+                            // Add new row if not found
+                            productOrderedView.Rows.Add(productRow.ItemArray);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
         private void partsServicesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Check if the click is on a valid cell
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow selectedRow = partsView.Rows[e.RowIndex];
                 int productID = Convert.ToInt32(selectedRow.Cells["productID"].Value);
 
-                LoadProductOrderedView(productID);
+                AddOrUpdateProductOrderedView(productID);
             }
         }
-
+        private void InitializeProductOrderedView()
+        {
+            productOrderedView.Columns.Add("productID", "Product ID");
+            productOrderedView.Columns.Add("productGroup", "Product Group");
+            productOrderedView.Columns.Add("productName", "Product Name");
+            productOrderedView.Columns.Add("Price", "Price");
+            productOrderedView.Columns.Add("Quantity", "Quantity");
+            productOrderedView.Columns.Add("barcode", "Barcode");
+        }
 
         private void LoadProductOrderedView(int productID)
         {
-            string query = $"SELECT productTable.productID, productTable.productGroup, productTable.productName, productTable.Price, productTable.barcode\r\nFROM productTable;\r\n";
-
+            string query = $"SELECT productID, productGroup, productName, Price, barcode " +
+                   $"FROM productTable WHERE productID = {productID}";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -133,10 +188,20 @@ namespace Service_Management_System.POS
                 }
             }
         }
-        private void LoadServiceOrderedView(int productID)
+        private void InitializeJobOrderedView()
         {
-            string query = $"SELECT servicesTb.serviceID, servicesTb.serviceName, servicesTb.serviceRate, mechanicTb.mechanicTb\r\nFROM mechanicTb INNER JOIN (servicesTb INNER JOIN JobOrderTb ON servicesTb.serviceID = JobOrderTb.serviceID) ON mechanicTb.mechanicTb = JobOrderTb.mechanicID;\r\n";
-
+            jobOrderedView.Columns.Add("serviceID", "Service ID");
+            jobOrderedView.Columns.Add("serviceName", "Service Name");
+            jobOrderedView.Columns.Add("serviceRate", "Service Rate");
+            jobOrderedView.Columns.Add("mechanicName", "Mechanic Name");
+        }
+        private void LoadServiceOrderedView(int serviceID)
+        {
+            string query = $"SELECT servicesTb.serviceID, servicesTb.serviceName, servicesTb.serviceRate, mechanicTb.mechanicName " +
+                   $"FROM mechanicTb " +
+                   $"INNER JOIN (servicesTb INNER JOIN JobOrderTb ON servicesTb.serviceID = JobOrderTb.serviceID) " +
+                   $"ON mechanicTb.mechanicID = JobOrderTb.mechanicID " +
+                   $"WHERE servicesTb.serviceID = {serviceID}";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -181,6 +246,38 @@ namespace Service_Management_System.POS
                 }
             }
         }
+        private void AddServiceToOrderedView(int serviceID)
+        {
+            string query = $"SELECT servicesTb.serviceID, servicesTb.serviceName, servicesTb.serviceRate, mechanicTb.mechanicName " +
+                           $"FROM mechanicTb " +
+                           $"INNER JOIN (servicesTb INNER JOIN JobOrderTb ON servicesTb.serviceID = JobOrderTb.serviceID) " +
+                           $"ON mechanicTb.mechanicID = JobOrderTb.mechanicID " +
+                           $"WHERE servicesTb.serviceID = {serviceID}";
+
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            {
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    connection.Open();
+                    adapter.Fill(dataTable);
+
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        DataRow serviceRow = dataTable.Rows[0];
+
+                        // Add new row for service
+                        jobOrderedView.Rows.Add(serviceRow.ItemArray);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
         private void servicesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -189,7 +286,7 @@ namespace Service_Management_System.POS
                 if (selectedRow.Cells["serviceID"].Value != null)
                 {
                     int serviceID = Convert.ToInt32(selectedRow.Cells["serviceID"].Value);
-                    LoadServiceOrderedView(serviceID);
+                    AddServiceToOrderedView(serviceID);
                 }
             }
         }
