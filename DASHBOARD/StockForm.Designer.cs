@@ -29,27 +29,59 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            SPView = new DataGridView();
+            textBox7 = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)SPView).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(204, 295);
+            label1.Location = new Point(11, 9);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(64, 28);
+            label1.Size = new Size(52, 21);
             label1.TabIndex = 1;
             label1.Text = "Stock";
             // 
+            // SPView
+            // 
+            SPView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            SPView.BackgroundColor = SystemColors.ActiveCaption;
+            SPView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            SPView.Location = new Point(12, 138);
+            SPView.Name = "SPView";
+            SPView.RowTemplate.Height = 25;
+            SPView.Size = new Size(696, 586);
+            SPView.TabIndex = 2;
+            SPView.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // textBox7
+            // 
+            textBox7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox7.ForeColor = Color.Gray;
+            textBox7.Location = new Point(12, 95);
+            textBox7.Margin = new Padding(2);
+            textBox7.Multiline = true;
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(400, 38);
+            textBox7.TabIndex = 11;
+            textBox7.Text = "Search";
+            // 
             // StockForm
             // 
-            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(900, 970);
+            ClientSize = new Size(720, 776);
+            Controls.Add(textBox7);
+            Controls.Add(SPView);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
             Name = "StockForm";
             Text = "StockForm";
+            ((System.ComponentModel.ISupportInitialize)SPView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -57,5 +89,7 @@
         #endregion
 
         private Label label1;
+        private DataGridView SPView;
+        private TextBox textBox7;
     }
 }
