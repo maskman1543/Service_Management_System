@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace Service_Management_System.POS
 {
-   
+
     public partial class POSForm : Form
     {
         private bool isExpanding;
@@ -58,7 +58,7 @@ namespace Service_Management_System.POS
 
         }
 
-        
+
         private void timerSfx_Tick(object sender, EventArgs e)
         {
             if (isExpanding)
@@ -882,8 +882,34 @@ namespace Service_Management_System.POS
         {
             jonOrder_form joborder = new jonOrder_form();
             joborder.Show();
-            
 
+
+        }
+
+        private void servicesView_MouseEnter(object sender, EventArgs e)
+        {
+            servicesView.BringToFront();
+        }
+
+        private void sidepanelPOS_MouseEnter(object sender, EventArgs e)
+        {
+            sidepanelPOS.BringToFront();
+        }
+
+        private void button12_MouseEnter_1(object sender, EventArgs e)
+        {
+            sidepanelPOS.BringToFront();
+        }
+
+        private void servicesView_MouseEnter_1(object sender, EventArgs e)
+        {
+            servicesView.BringToFront();
+            //textBox8.BringToFront();
+        }
+
+        private void servicesView_MouseLeave(object sender, EventArgs e)
+        {
+            sidepanelPOS.BringToFront();
         }
 
 

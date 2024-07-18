@@ -139,6 +139,7 @@ namespace Service_Management_System.POS
             sidepanelPOS.Name = "sidepanelPOS";
             sidepanelPOS.Size = new Size(44, 656);
             sidepanelPOS.TabIndex = 16;
+            sidepanelPOS.MouseEnter += button12_MouseEnter_1;
             // 
             // moveup
             // 
@@ -200,7 +201,7 @@ namespace Service_Management_System.POS
             button16.TextAlign = ContentAlignment.MiddleLeft;
             button16.UseCompatibleTextRendering = true;
             button16.UseVisualStyleBackColor = false;
-            button16.MouseEnter += button16_MouseEnter;
+            button16.MouseEnter += button12_MouseEnter_1;
             button16.MouseLeave += button16_MouseLeave;
             // 
             // btnSignout
@@ -220,7 +221,7 @@ namespace Service_Management_System.POS
             btnSignout.UseCompatibleTextRendering = true;
             btnSignout.UseVisualStyleBackColor = false;
             btnSignout.Click += btnSignout_Click;
-            btnSignout.MouseEnter += button17_MouseEnter;
+            btnSignout.MouseEnter += button12_MouseEnter_1;
             btnSignout.MouseLeave += button17_MouseLeave;
             // 
             // button18
@@ -239,7 +240,7 @@ namespace Service_Management_System.POS
             button18.TextAlign = ContentAlignment.MiddleLeft;
             button18.UseCompatibleTextRendering = true;
             button18.UseVisualStyleBackColor = false;
-            button18.MouseEnter += button18_MouseEnter;
+            button18.MouseEnter += button12_MouseEnter_1;
             button18.MouseLeave += button18_MouseLeave;
             // 
             // button19
@@ -258,7 +259,7 @@ namespace Service_Management_System.POS
             button19.TextAlign = ContentAlignment.MiddleLeft;
             button19.UseCompatibleTextRendering = true;
             button19.UseVisualStyleBackColor = false;
-            button19.MouseEnter += button19_MouseEnter;
+            button19.MouseEnter += button12_MouseEnter_1;
             button19.MouseLeave += button19_MouseLeave;
             // 
             // button15
@@ -278,7 +279,7 @@ namespace Service_Management_System.POS
             button15.UseCompatibleTextRendering = true;
             button15.UseVisualStyleBackColor = false;
             button15.Click += button15_Click;
-            button15.MouseEnter += button15_MouseEnter;
+            button15.MouseEnter += button12_MouseEnter_1;
             button15.MouseLeave += button15_MouseLeave;
             // 
             // btnViewopensales
@@ -298,7 +299,7 @@ namespace Service_Management_System.POS
             btnViewopensales.UseCompatibleTextRendering = true;
             btnViewopensales.UseVisualStyleBackColor = false;
             btnViewopensales.Click += button14_Click;
-            btnViewopensales.MouseEnter += button14_MouseEnter;
+            btnViewopensales.MouseEnter += button12_MouseEnter_1;
             btnViewopensales.MouseLeave += button14_MouseLeave;
             // 
             // button13
@@ -318,7 +319,7 @@ namespace Service_Management_System.POS
             button13.UseCompatibleTextRendering = true;
             button13.UseVisualStyleBackColor = false;
             button13.Click += button13_Click;
-            button13.MouseEnter += button13_MouseEnter;
+            button13.MouseEnter += button12_MouseEnter_1;
             button13.MouseLeave += button13_MouseLeave;
             // 
             // button12
@@ -339,7 +340,7 @@ namespace Service_Management_System.POS
             button12.UseCompatibleTextRendering = true;
             button12.UseVisualStyleBackColor = false;
             button12.Click += button12_Click;
-            button12.MouseEnter += button12_MouseEnter;
+            button12.MouseEnter += button12_MouseEnter_1;
             button12.MouseLeave += button12_MouseLeave;
             // 
             // panel1
@@ -951,6 +952,8 @@ namespace Service_Management_System.POS
             servicesView.Size = new Size(492, 449);
             servicesView.TabIndex = 14;
             servicesView.CellContentClick += servicesView_CellContentClick;
+            servicesView.MouseEnter += servicesView_MouseEnter_1;
+            servicesView.MouseLeave += servicesView_MouseLeave;
             // 
             // textBox7
             // 
@@ -973,6 +976,7 @@ namespace Service_Management_System.POS
             textBox8.Size = new Size(479, 46);
             textBox8.TabIndex = 10;
             textBox8.Text = "Search";
+            textBox8.MouseEnter += servicesView_MouseEnter_1;
             // 
             // jobOrderedView
             // 
