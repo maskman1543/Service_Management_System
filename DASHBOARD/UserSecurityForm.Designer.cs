@@ -80,12 +80,12 @@
             EmployeeView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             EmployeeView.BackgroundColor = Color.White;
             EmployeeView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            EmployeeView.Location = new Point(15, 138);
+            EmployeeView.Location = new Point(13, 135);
             EmployeeView.Margin = new Padding(4);
             EmployeeView.Name = "EmployeeView";
             EmployeeView.RowHeadersWidth = 51;
             EmployeeView.RowTemplate.Height = 25;
-            EmployeeView.Size = new Size(870, 802);
+            EmployeeView.Size = new Size(1071, 744);
             EmployeeView.TabIndex = 1;
             EmployeeView.CellContentClick += EmployeeView_CellContentClick;
             // 
@@ -95,7 +95,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(900, 46);
+            panel1.Size = new Size(1097, 46);
             panel1.TabIndex = 12;
             panel1.Paint += panel1_Paint;
             // 
@@ -110,7 +110,7 @@
             panel2.Controls.Add(button1);
             panel2.Location = new Point(0, 46);
             panel2.Name = "panel2";
-            panel2.Size = new Size(900, 67);
+            panel2.Size = new Size(1097, 67);
             panel2.TabIndex = 13;
             panel2.Paint += panel2_Paint;
             // 
@@ -223,11 +223,12 @@
             sidebar_AddUser.Controls.Add(textBox1);
             sidebar_AddUser.Controls.Add(label3);
             sidebar_AddUser.Controls.Add(label2);
-            sidebar_AddUser.Location = new Point(556, 46);
-            sidebar_AddUser.MaximumSize = new Size(344, 924);
-            sidebar_AddUser.MinimumSize = new Size(0, 924);
+            sidebar_AddUser.Dock = DockStyle.Right;
+            sidebar_AddUser.Location = new Point(1097, 46);
+            sidebar_AddUser.MaximumSize = new Size(343, 860);
+            sidebar_AddUser.MinimumSize = new Size(0, 860);
             sidebar_AddUser.Name = "sidebar_AddUser";
-            sidebar_AddUser.Size = new Size(344, 924);
+            sidebar_AddUser.Size = new Size(0, 860);
             sidebar_AddUser.TabIndex = 26;
             sidebar_AddUser.Paint += panel3_Paint;
             // 
@@ -239,7 +240,7 @@
             button6.ForeColor = Color.White;
             button6.Image = (Image)resources.GetObject("button6.Image");
             button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(115, 875);
+            button6.Location = new Point(115, 811);
             button6.Name = "button6";
             button6.Padding = new Padding(10, 0, 10, 0);
             button6.Size = new Size(104, 37);
@@ -256,7 +257,7 @@
             button5.ForeColor = Color.White;
             button5.Image = (Image)resources.GetObject("button5.Image");
             button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(225, 875);
+            button5.Location = new Point(225, 811);
             button5.Name = "button5";
             button5.Size = new Size(104, 37);
             button5.TabIndex = 13;
@@ -383,11 +384,16 @@
             label2.TabIndex = 1;
             label2.Text = "Add users";
             // 
+            // sidebarTimer
+            // 
+            sidebarTimer.Interval = 2;
+            sidebarTimer.Tick += sidebarTimer_Tick;
+            // 
             // UserSecurityForm
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(900, 970);
+            ClientSize = new Size(1097, 906);
             Controls.Add(sidebar_AddUser);
             Controls.Add(panel2);
             Controls.Add(EmployeeView);

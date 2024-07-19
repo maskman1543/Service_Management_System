@@ -76,7 +76,19 @@ namespace Service_Management_System.DASHBOARD
         {
             sidebarTimer.Start();
         }
-        private void sidebar_Tick(object sender, EventArgs e)
+
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblBack_Click(object sender, EventArgs e)
+        {
+            sidebarTimer.Start();
+        }
+
+        private void sidebarTimer_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand)
             {
@@ -96,16 +108,6 @@ namespace Service_Management_System.DASHBOARD
                     sidebarTimer.Stop();
                 }
             }
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblBack_Click(object sender, EventArgs e)
-        {
-            sidebarTimer.Stop();
         }
     }
 }

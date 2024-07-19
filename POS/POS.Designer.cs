@@ -1059,7 +1059,7 @@ namespace Service_Management_System.POS
             // 
             // timerSfx
             // 
-            timerSfx.Interval = 50;
+            timerSfx.Interval = 2;
             timerSfx.Tick += timerSfx_Tick;
             // 
             // panel8
