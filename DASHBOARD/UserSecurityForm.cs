@@ -26,7 +26,7 @@ namespace Service_Management_System.DASHBOARD
 
         private void LoadEmployeesView()
         {
-            string query = "SELECT employeeTb.employeeID, employeeTb.FirstName, employeeTb.LastName, employeeTb.ContactNumber\r\nFROM employeeTb;\r\n";
+            string query = "SELECT EmployeeTb.EmployeeID, EmployeeTb.FirstName, EmployeeTb.LastName, EmployeeTb.Email, EmployeeTb.Contact\r\nFROM EmployeeTb;\r\n";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -44,6 +44,11 @@ namespace Service_Management_System.DASHBOARD
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+        }
+
+        private void EmployeeView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

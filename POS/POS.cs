@@ -170,8 +170,9 @@ namespace Service_Management_System.POS
         private void AddOrUpdateProductOrderedView(int productID)
         {
             // Query to get product details including quantity
-            string query = $"SELECT productID, productGroup, productName, Price, Quantity, barcode " +
-                           $"FROM productTable WHERE productID = {productID}";
+            string query = $"SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Price, productTable.Quantity, productTable.Barcode " +
+                   $"FROM productTable " +
+                   $"WHERE productTable.ProductID = {productID}";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -191,7 +192,7 @@ namespace Service_Management_System.POS
                         // Check if the product is already in the target DataGridView
                         foreach (DataGridViewRow row in productOrderedView.Rows)
                         {
-                            if (Convert.ToInt32(row.Cells["productID"].Value) == productID)
+                            if (Convert.ToInt32(row.Cells["ProductID"].Value) == productID)
                             {
                                 // Update the quantity
                                 row.Cells["Quantity"].Value = Convert.ToInt32(row.Cells["Quantity"].Value) + 1;
@@ -218,25 +219,26 @@ namespace Service_Management_System.POS
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow selectedRow = partsView.Rows[e.RowIndex];
-                int productID = Convert.ToInt32(selectedRow.Cells["productID"].Value);
+                int productID = Convert.ToInt32(selectedRow.Cells["ProductID"].Value);
 
                 AddOrUpdateProductOrderedView(productID);
             }
         }
         private void InitializeProductOrderedView()
         {
-            productOrderedView.Columns.Add("productID", "Product ID");
-            productOrderedView.Columns.Add("productGroup", "Product Group");
-            productOrderedView.Columns.Add("productName", "Product Name");
+            productOrderedView.Columns.Add("ProductID", "Product ID");
+            productOrderedView.Columns.Add("ProductType", "Product Group");
+            productOrderedView.Columns.Add("ProductName", "Product Name");
             productOrderedView.Columns.Add("Price", "Price");
             productOrderedView.Columns.Add("Quantity", "Quantity");
-            productOrderedView.Columns.Add("barcode", "Barcode");
+            productOrderedView.Columns.Add("Barcode", "Barcode");
         }
 
         private void LoadProductOrderedView(int productID)
         {
-            string query = $"SELECT productID, productGroup, productName, Price, barcode " +
-                   $"FROM productTable WHERE productID = {productID}";
+            string query = $"SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Price, productTable.Quantity, productTable.Barcode " +
+                   $"FROM productTable " +
+                   $"WHERE productTable.ProductID = {productID}";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -294,7 +296,7 @@ namespace Service_Management_System.POS
         }
         private void LoadPartsView()
         {
-            string query = "SELECT productTable.productID, productTable.productGroup, productTable.productName, productTable.Price, productTable.barcode\r\nFROM productTable;\r\n";
+            string query = "SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Price, productTable.Quantity, productTable.Barcode\r\nFROM productTable;\r\n";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -315,11 +317,9 @@ namespace Service_Management_System.POS
         }
         private void AddServiceToOrderedView(int serviceID)
         {
-            string query = $"SELECT servicesTb.serviceID, servicesTb.serviceName, servicesTb.serviceRate, mechanicTb.mechanicName " +
-                           $"FROM mechanicTb " +
-                           $"INNER JOIN (servicesTb INNER JOIN JobOrderTb ON servicesTb.serviceID = JobOrderTb.serviceID) " +
-                           $"ON mechanicTb.mechanicID = JobOrderTb.mechanicID " +
-                           $"WHERE servicesTb.serviceID = {serviceID}";
+            string query = $"SELECT servicesTb.serviceID, servicesTb.serviceType, servicesTb.serviceName, servicesTb.serviceRate " +
+                   $"FROM servicesTb " +
+                   $"WHERE servicesTb.serviceID = {serviceID}";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -360,7 +360,7 @@ namespace Service_Management_System.POS
 
         private void LoadserviceView()
         {
-            string query = "SELECT servicesTb.serviceID, servicesTb.serviceType, servicesTb.serviceName, servicesTb.serviceRate FROM servicesTb;";
+            string query = "SELECT * FROM servicesTb";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -916,6 +916,11 @@ namespace Service_Management_System.POS
         }
 
         private void sidepanelPOS_MouseEnter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productOrderedView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
