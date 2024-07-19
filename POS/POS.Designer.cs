@@ -83,9 +83,9 @@ namespace Service_Management_System.POS
             label5 = new Label();
             partsView = new DataGridView();
             panel6 = new Panel();
-            label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
+            lblTotal = new Label();
+            lblVaTax = new Label();
+            lblsubtotal = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
@@ -189,7 +189,6 @@ namespace Service_Management_System.POS
             // allout
             // 
             allout.BackColor = Color.Transparent;
-            allout.BackgroundImage = (Image)resources.GetObject("allout.BackgroundImage");
             allout.BackgroundImageLayout = ImageLayout.Stretch;
             allout.Cursor = Cursors.Hand;
             allout.Location = new Point(94, 474);
@@ -199,13 +198,10 @@ namespace Service_Management_System.POS
             allout.TabIndex = 17;
             allout.TabStop = false;
             allout.Click += allout_Click;
-            allout.MouseEnter += allout_MouseEnter;
-            allout.MouseLeave += allout_MouseLeave;
             // 
             // adjust
             // 
             adjust.BackColor = Color.Transparent;
-            adjust.BackgroundImage = (Image)resources.GetObject("adjust.BackgroundImage");
             adjust.BackgroundImageLayout = ImageLayout.Stretch;
             adjust.Cursor = Cursors.Hand;
             adjust.Location = new Point(42, 475);
@@ -214,8 +210,6 @@ namespace Service_Management_System.POS
             adjust.Size = new Size(32, 27);
             adjust.TabIndex = 16;
             adjust.TabStop = false;
-            adjust.MouseEnter += adjust_MouseEnter;
-            adjust.MouseLeave += adjust_MouseLeave;
             // 
             // button16
             // 
@@ -991,9 +985,9 @@ namespace Service_Management_System.POS
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Controls.Add(label9);
-            panel6.Controls.Add(label8);
-            panel6.Controls.Add(label7);
+            panel6.Controls.Add(lblTotal);
+            panel6.Controls.Add(lblVaTax);
+            panel6.Controls.Add(lblsubtotal);
             panel6.Controls.Add(label4);
             panel6.Controls.Add(label3);
             panel6.Controls.Add(label2);
@@ -1005,41 +999,42 @@ namespace Service_Management_System.POS
             panel6.TabIndex = 13;
             panel6.Paint += panel6_Paint;
             // 
-            // label9
+            // lblTotal
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = Color.FromArgb(3, 83, 115);
-            label9.Location = new Point(278, 68);
-            label9.Margin = new Padding(2, 0, 2, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(58, 30);
-            label9.TabIndex = 6;
-            label9.Text = "0.00";
+            lblTotal.AutoSize = true;
+            lblTotal.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTotal.ForeColor = Color.FromArgb(3, 83, 115);
+            lblTotal.Location = new Point(278, 68);
+            lblTotal.Margin = new Padding(2, 0, 2, 0);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(58, 30);
+            lblTotal.TabIndex = 6;
+            lblTotal.Text = "0.00";
             // 
-            // label8
+            // lblVaTax
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = Color.FromArgb(3, 83, 115);
-            label8.Location = new Point(289, 38);
-            label8.Margin = new Padding(2, 0, 2, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(37, 19);
-            label8.TabIndex = 5;
-            label8.Text = "0.00";
+            lblVaTax.AutoSize = true;
+            lblVaTax.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            lblVaTax.ForeColor = Color.FromArgb(3, 83, 115);
+            lblVaTax.Location = new Point(289, 38);
+            lblVaTax.Margin = new Padding(2, 0, 2, 0);
+            lblVaTax.Name = "lblVaTax";
+            lblVaTax.Size = new Size(37, 19);
+            lblVaTax.TabIndex = 5;
+            lblVaTax.Text = "0.00";
             // 
-            // label7
+            // lblsubtotal
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = Color.FromArgb(3, 83, 115);
-            label7.Location = new Point(289, 10);
-            label7.Margin = new Padding(2, 0, 2, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(37, 19);
-            label7.TabIndex = 4;
-            label7.Text = "0.00";
+            lblsubtotal.AutoSize = true;
+            lblsubtotal.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            lblsubtotal.ForeColor = Color.FromArgb(3, 83, 115);
+            lblsubtotal.Location = new Point(289, 10);
+            lblsubtotal.Margin = new Padding(2, 0, 2, 0);
+            lblsubtotal.Name = "lblsubtotal";
+            lblsubtotal.Size = new Size(37, 19);
+            lblsubtotal.TabIndex = 4;
+            lblsubtotal.Text = "0.00";
+            lblsubtotal.Click += lblsubtotal_Click;
             // 
             // label4
             // 
@@ -1308,9 +1303,9 @@ namespace Service_Management_System.POS
         private Panel panel7;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private Label label9;
-        private Label label8;
-        private Label label7;
+        private Label lblTotal;
+        private Label lblVaTax;
+        private Label lblsubtotal;
         private Panel panel8;
         private Panel panel9;
         private Label label10;

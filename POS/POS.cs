@@ -336,9 +336,11 @@ namespace Service_Management_System.POS
             decimal vat = subtotal * VAT_RATE;
             decimal total = subtotal + vat;
 
+            
             lblsubtotal.Text = subtotal.ToString("C");
-            lblVatTax.Text = vat.ToString("C");
+            lblVaTax.Text = vat.ToString("C");
             lblTotal.Text = total.ToString("C");
+
         }
 
 
@@ -464,13 +466,13 @@ namespace Service_Management_System.POS
             button16.Height = 57;
         }
 
-        
 
-        
 
-        
 
-        
+
+
+
+
 
         private void moveup_MouseEnter(object sender, EventArgs e)
         {
@@ -905,6 +907,11 @@ namespace Service_Management_System.POS
         {
             new AfterPayment().Show();
             this.Hide();
+        }
+
+        private void lblsubtotal_Click(object sender, EventArgs e)
+        {
+
         }
 
 
