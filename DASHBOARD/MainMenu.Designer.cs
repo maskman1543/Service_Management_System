@@ -34,6 +34,7 @@
             btnMenu = new Button();
             label1 = new Label();
             panelMenu = new Panel();
+            btnPayroll = new FontAwesome.Sharp.IconButton();
             btnCompany = new FontAwesome.Sharp.IconButton();
             btnSecurity = new FontAwesome.Sharp.IconButton();
             btnAnalytics = new FontAwesome.Sharp.IconButton();
@@ -100,6 +101,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(3, 83, 115);
+            panelMenu.Controls.Add(btnPayroll);
             panelMenu.Controls.Add(btnCompany);
             panelMenu.Controls.Add(btnSecurity);
             panelMenu.Controls.Add(btnAnalytics);
@@ -117,6 +119,30 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(270, 979);
             panelMenu.TabIndex = 1;
+            // 
+            // btnPayroll
+            // 
+            btnPayroll.Dock = DockStyle.Top;
+            btnPayroll.FlatAppearance.BorderSize = 0;
+            btnPayroll.FlatStyle = FlatStyle.Flat;
+            btnPayroll.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnPayroll.ForeColor = Color.White;
+            btnPayroll.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
+            btnPayroll.IconColor = Color.White;
+            btnPayroll.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPayroll.IconSize = 30;
+            btnPayroll.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPayroll.Location = new Point(0, 506);
+            btnPayroll.Margin = new Padding(2);
+            btnPayroll.Name = "btnPayroll";
+            btnPayroll.Padding = new Padding(10, 0, 21, 0);
+            btnPayroll.Size = new Size(270, 51);
+            btnPayroll.TabIndex = 9;
+            btnPayroll.Text = "Payroll";
+            btnPayroll.TextAlign = ContentAlignment.MiddleLeft;
+            btnPayroll.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnPayroll.UseVisualStyleBackColor = true;
+            btnPayroll.Click += btnPayroll_Click;
             // 
             // btnCompany
             // 
@@ -423,5 +449,6 @@
         private Panel panel2;
         private Panel panelDesktop;
         private System.Windows.Forms.Timer sidebarTimer;
+        private FontAwesome.Sharp.IconButton btnPayroll;
     }
 }
