@@ -182,5 +182,15 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
         {
             this.Close();
         }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
