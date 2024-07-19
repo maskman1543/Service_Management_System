@@ -245,6 +245,7 @@
             // 
             // panel3
             // 
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel3.BackColor = Color.FromArgb(0, 0, 0, 77);
             panel3.Controls.Add(button28);
             panel3.Controls.Add(button27);

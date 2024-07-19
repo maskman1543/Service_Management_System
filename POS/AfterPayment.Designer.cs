@@ -66,29 +66,31 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(11, 67, 89);
             panel1.Controls.Add(panel6);
             panel1.Controls.Add(btnExGF);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(-3, -4);
+            panel1.Location = new Point(0, -4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1469, 69);
+            panel1.Size = new Size(1484, 69);
             panel1.TabIndex = 0;
             // 
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Location = new Point(324, 5);
+            panel6.Location = new Point(321, 5);
             panel6.Name = "panel6";
             panel6.Size = new Size(3, 64);
             panel6.TabIndex = 11;
             // 
             // btnExGF
             // 
+            btnExGF.Anchor = AnchorStyles.Right;
             btnExGF.BackgroundImage = (Image)resources.GetObject("btnExGF.BackgroundImage");
             btnExGF.BackgroundImageLayout = ImageLayout.Stretch;
-            btnExGF.Location = new Point(1425, 16);
+            btnExGF.Location = new Point(1440, 16);
             btnExGF.Name = "btnExGF";
             btnExGF.Size = new Size(28, 25);
             btnExGF.TabIndex = 10;
@@ -102,7 +104,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(34, 23);
+            label1.Location = new Point(22, 23);
             label1.Name = "label1";
             label1.Size = new Size(72, 27);
             label1.TabIndex = 5;
@@ -266,7 +268,7 @@
             btnPrintrcp.BackgroundImageLayout = ImageLayout.Stretch;
             btnPrintrcp.FlatAppearance.BorderSize = 0;
             btnPrintrcp.FlatStyle = FlatStyle.Flat;
-            btnPrintrcp.Location = new Point(329, 201);
+            btnPrintrcp.Location = new Point(339, 201);
             btnPrintrcp.Name = "btnPrintrcp";
             btnPrintrcp.Size = new Size(362, 98);
             btnPrintrcp.TabIndex = 3;
@@ -280,7 +282,7 @@
             btnsvPDF.BackgroundImageLayout = ImageLayout.Stretch;
             btnsvPDF.FlatAppearance.BorderSize = 0;
             btnsvPDF.FlatStyle = FlatStyle.Flat;
-            btnsvPDF.Location = new Point(329, 320);
+            btnsvPDF.Location = new Point(338, 320);
             btnsvPDF.Name = "btnsvPDF";
             btnsvPDF.Size = new Size(362, 98);
             btnsvPDF.TabIndex = 4;
@@ -290,11 +292,12 @@
             // 
             // btnaddNts
             // 
+            btnaddNts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             btnaddNts.BackgroundImage = (Image)resources.GetObject("btnaddNts.BackgroundImage");
             btnaddNts.BackgroundImageLayout = ImageLayout.Stretch;
             btnaddNts.FlatAppearance.BorderSize = 0;
             btnaddNts.FlatStyle = FlatStyle.Flat;
-            btnaddNts.Location = new Point(709, 320);
+            btnaddNts.Location = new Point(722, 320);
             btnaddNts.Name = "btnaddNts";
             btnaddNts.Size = new Size(362, 98);
             btnaddNts.TabIndex = 5;
@@ -305,11 +308,12 @@
             // 
             // btnsndEmail
             // 
+            btnsndEmail.Anchor = AnchorStyles.None;
             btnsndEmail.BackgroundImage = (Image)resources.GetObject("btnsndEmail.BackgroundImage");
             btnsndEmail.BackgroundImageLayout = ImageLayout.Stretch;
             btnsndEmail.FlatAppearance.BorderSize = 0;
             btnsndEmail.FlatStyle = FlatStyle.Flat;
-            btnsndEmail.Location = new Point(1088, 201);
+            btnsndEmail.Location = new Point(1104, 201);
             btnsndEmail.Name = "btnsndEmail";
             btnsndEmail.Size = new Size(362, 98);
             btnsndEmail.TabIndex = 6;
@@ -319,11 +323,12 @@
             // 
             // btnPrintinv
             // 
+            btnPrintinv.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             btnPrintinv.BackgroundImage = (Image)resources.GetObject("btnPrintinv.BackgroundImage");
             btnPrintinv.BackgroundImageLayout = ImageLayout.Stretch;
             btnPrintinv.FlatAppearance.BorderSize = 0;
             btnPrintinv.FlatStyle = FlatStyle.Flat;
-            btnPrintinv.Location = new Point(709, 201);
+            btnPrintinv.Location = new Point(723, 201);
             btnPrintinv.Name = "btnPrintinv";
             btnPrintinv.Size = new Size(362, 98);
             btnPrintinv.TabIndex = 7;
@@ -333,11 +338,12 @@
             // 
             // btnDone
             // 
+            btnDone.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             btnDone.BackgroundImage = (Image)resources.GetObject("btnDone.BackgroundImage");
             btnDone.BackgroundImageLayout = ImageLayout.Stretch;
             btnDone.FlatAppearance.BorderSize = 0;
             btnDone.FlatStyle = FlatStyle.Flat;
-            btnDone.Location = new Point(1279, 613);
+            btnDone.Location = new Point(1297, 613);
             btnDone.Name = "btnDone";
             btnDone.Size = new Size(158, 55);
             btnDone.TabIndex = 8;
@@ -391,7 +397,7 @@
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(1462, 690);
+            ClientSize = new Size(1480, 690);
             Controls.Add(label8);
             Controls.Add(panel3);
             Controls.Add(label3);
