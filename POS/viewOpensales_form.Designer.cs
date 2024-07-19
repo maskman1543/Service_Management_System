@@ -66,13 +66,15 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(1451, 7);
+            label6.Image = (Image)resources.GetObject("label6.Image");
+            label6.Location = new Point(1451, 4);
             label6.Name = "label6";
-            label6.Size = new Size(24, 28);
+            label6.Padding = new Padding(2, 0, 0, 5);
+            label6.Size = new Size(22, 36);
             label6.TabIndex = 3;
-            label6.Text = "X";
+            label6.Text = " ";
             // 
             // pictureBox1
             // 

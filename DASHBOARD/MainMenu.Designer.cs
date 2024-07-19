@@ -87,15 +87,16 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Dock = DockStyle.Right;
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(1333, 0);
+            label1.Image = (Image)resources.GetObject("label1.Image");
+            label1.Location = new Point(1341, 3);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(34, 38);
+            label1.Padding = new Padding(0, 0, 0, 5);
+            label1.Size = new Size(20, 36);
             label1.TabIndex = 0;
-            label1.Text = "X";
+            label1.Text = " ";
             label1.Click += label1_Click;
             // 
             // panelMenu

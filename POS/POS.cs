@@ -18,21 +18,17 @@ namespace Service_Management_System.POS
 
     public partial class POSForm : Form
     {
-        private bool isExpanding;
-        private bool isCollapsing;
-        private int stepSize = 10; // Step size for smooth transition
-        private int targetWidth;
-        private int formOriginalWidth;
-        private int formTargetWidth;
         bool sidebarExpand;
+        private jonOrder_form orderForm;
+        private const decimal VAT_RATE = 0.12m;
+
+
         public POSForm()
         {
             InitializeComponent();
             InitializeProductOrderedView();
             InitializeJobOrderedView();
-            timerSfx.Interval = 15; // Timer interval for smooth transition
-            this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
-            formOriginalWidth = this.Width; // Store the original width of the form
+            //this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
         }
 
 
@@ -124,6 +120,7 @@ namespace Service_Management_System.POS
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
+                DisplaySubTotal();
             }
         }
         private void partsServicesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -172,9 +169,9 @@ namespace Service_Management_System.POS
         private void InitializeJobOrderedView()
         {
             jobOrderedView.Columns.Add("serviceID", "Service ID");
+            jobOrderedView.Columns.Add("serviceType", "Service Type");
             jobOrderedView.Columns.Add("serviceName", "Service Name");
             jobOrderedView.Columns.Add("serviceRate", "Service Rate");
-            jobOrderedView.Columns.Add("mechanicName", "Mechanic Name");
         }
         private void LoadServiceOrderedView(int serviceID)
         {
@@ -261,6 +258,7 @@ namespace Service_Management_System.POS
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+            DisplaySubTotal();
         }
         private void servicesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -296,11 +294,52 @@ namespace Service_Management_System.POS
                 }
             }
         }
+        private decimal CalculateProductSubTotal()
+        {
+            decimal productTotal = 0;
 
+            foreach (DataGridViewRow row in productOrderedView.Rows)
+            {
+                decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
+                decimal quantity = Convert.ToDecimal(row.Cells["Quantity"].Value);
+                productTotal += price * quantity;
+            }
+            return productTotal;
+        }
+        private decimal CalculateServiceSubTotal()
+        {
+            decimal serviceTotal = 0;
 
+            foreach (DataGridViewRow row in jobOrderedView.Rows)
+            {
+                if (row.Cells["serviceRate"].Value != null)
+                {
+                    decimal serviceRate = 0;
+                    if (decimal.TryParse(row.Cells["serviceRate"].Value.ToString(), out serviceRate))
+                    {
+                        serviceTotal += serviceRate;
+                    }
+                    else
+                    {
+                        // Handle invalid data in serviceRate cell if necessary
+                    }
+                }
+            }
+            return serviceTotal;
+        }
+        private void DisplaySubTotal()
+        {
+            decimal productTotal = CalculateProductSubTotal();
+            decimal ServiceTOtal = CalculateServiceSubTotal();
+            decimal subtotal = productTotal + ServiceTOtal;
 
+            decimal vat = subtotal * VAT_RATE;
+            decimal total = subtotal + vat;
 
-
+            lblsubtotal.Text = subtotal.ToString("C");
+            lblVatTax.Text = vat.ToString("C");
+            lblTotal.Text = total.ToString("C");
+        }
 
 
         private void button12_MouseEnter(object sender, EventArgs e)
@@ -425,33 +464,13 @@ namespace Service_Management_System.POS
             button16.Height = 57;
         }
 
-        private void adjust_MouseEnter(object sender, EventArgs e)
-        {
-            // Increase size when mouse enters
-            adjust.Width = 44;
-            adjust.Height = 43;
-        }
+        
 
-        private void adjust_MouseLeave(object sender, EventArgs e)
-        {
-            // Restore original size when mouse leaves
-            adjust.Width = 40;
-            adjust.Height = 39;
-        }
+        
 
-        private void allout_MouseEnter(object sender, EventArgs e)
-        {
-            // Increase size when mouse enters
-            allout.Width = 44;
-            allout.Height = 43;
-        }
+        
 
-        private void allout_MouseLeave(object sender, EventArgs e)
-        {
-            // Restore original size when mouse leaves
-            allout.Width = 40;
-            allout.Height = 39;
-        }
+        
 
         private void moveup_MouseEnter(object sender, EventArgs e)
         {
@@ -801,10 +820,18 @@ namespace Service_Management_System.POS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            jonOrder_form joborder = new jonOrder_form();
-            joborder.Show();
-
-
+            // Check if the form is already open
+            if (orderForm == null || orderForm.IsDisposed)
+            {
+                // If not, create a new instance and show it
+                orderForm = new jonOrder_form();
+                orderForm.Show();
+            }
+            else
+            {
+                // If already open, bring it to the front
+                orderForm.BringToFront();
+            }
         }
 
         private void servicesView_MouseEnter(object sender, EventArgs e)
@@ -866,6 +893,18 @@ namespace Service_Management_System.POS
         private void jobOrderedView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            new Payment().Show();
+            this.Hide();
+        }
+
+        private void btnCash_Click(object sender, EventArgs e)
+        {
+            new AfterPayment().Show();
+            this.Hide();
         }
 
 

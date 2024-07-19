@@ -127,6 +127,16 @@
         RK5CYII=
 </value>
   </data>
+  <data name="label1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EAAACxABrSO9dQAAAQdJREFUWEftlU0KwjAQhetGvYSuXPVeuvJw4g+eQ4+g3kKwfk8mIJSSpE2yygcP
+        20lm3qidpqlUKpVKZYiu62Z2Gc2U3B8U2KILWlooGHJ26IwWFoqDxBk6InFCc1vywt49+qAXWls4Hpmi
+        AxJX5P0l2KNvLvMn2lh4PBQJboK1tOYOinmbIJbH3EHRwSa4zmvuoHivCVTG3IGJmtBUiDsqZ+7ATE3c
+        kHij1pbKgKGbc5mLqPfEJDD6/89bFPWemAQGvQeOT++IJoHCg08793mboKB31IjnaYJCwXPOetomKBBs
+        7mBfmiZI1HGsQjpSg8wd7FcTGs0HWlk4His06jy33PHmZWmaL9Q2/W29zS5JAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAeQAAACvCAYAAAAsRq3iAAAABGdBTUEAALGPC/xhBQAATuJJREFUeF7t
