@@ -95,5 +95,17 @@ namespace Service_Management_System.POS
         {
 
         }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            textBox1.Text = "Document no.";
+        }
+
+        
     }
 }

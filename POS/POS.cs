@@ -832,6 +832,26 @@ namespace Service_Management_System.POS
 
         }
 
+        private void textBox7_Enter(object sender, EventArgs e)
+        {
+            textBox7.Text = "";
+        }
+
+        private void textBox7_Leave(object sender, EventArgs e)
+        {
+            textBox7.Text = "Search Product";
+        }
+
+        private void textBox8_Enter(object sender, EventArgs e)
+        {
+            textBox8.Text = "";
+        }
+
+        private void textBox8_Leave(object sender, EventArgs e)
+        {
+            textBox8.Text = "Search Services";
+        }
+
 
 
 

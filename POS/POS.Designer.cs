@@ -749,6 +749,8 @@ namespace Service_Management_System.POS
             textBox8.Size = new Size(222, 31);
             textBox8.TabIndex = 10;
             textBox8.Text = "Search Services";
+            textBox8.Enter += textBox8_Enter;
+            textBox8.Leave += textBox8_Leave;
             // 
             // button7
             // 
@@ -776,6 +778,8 @@ namespace Service_Management_System.POS
             textBox7.Size = new Size(222, 31);
             textBox7.TabIndex = 10;
             textBox7.Text = "Search Product";
+            textBox7.Enter += textBox7_Enter;
+            textBox7.Leave += textBox7_Leave;
             // 
             // button6
             // 
