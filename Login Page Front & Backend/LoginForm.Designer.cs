@@ -39,6 +39,8 @@
             EmailTextBox = new TextBox();
             label1 = new Label();
             panel_loginInfo = new Panel();
+            label3 = new Label();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lkblContinueAsEmployee = new LinkLabel();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -46,8 +48,6 @@
             guna2Elipse_LoginForm = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse_button1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             btnClose = new Button();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            label3 = new Label();
             panel_loginInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -61,7 +61,7 @@
             linkLabel2.BackColor = Color.FromArgb(3, 83, 115);
             linkLabel2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel2.ForeColor = Color.White;
-            linkLabel2.LinkColor = Color.White;
+            linkLabel2.LinkColor = Color.Cyan;
             linkLabel2.Location = new Point(182, 438);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(75, 25);
@@ -78,7 +78,7 @@
             linkLabel1.BackColor = Color.FromArgb(3, 83, 115);
             linkLabel1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel1.ForeColor = Color.White;
-            linkLabel1.LinkColor = Color.White;
+            linkLabel1.LinkColor = Color.Cyan;
             linkLabel1.Location = new Point(59, 295);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(146, 25);
@@ -186,6 +186,30 @@
             panel_loginInfo.TabIndex = 5;
             panel_loginInfo.Paint += panel1_Paint;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(116, 64);
+            label3.Name = "label3";
+            label3.Size = new Size(231, 23);
+            label3.TabIndex = 12;
+            label3.Text = "Login to access your account";
+            label3.Click += label3_Click;
+            // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Century Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel1.ForeColor = Color.White;
+            guna2HtmlLabel1.Location = new Point(185, 15);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(89, 41);
+            guna2HtmlLabel1.TabIndex = 11;
+            guna2HtmlLabel1.Text = "Login";
+            guna2HtmlLabel1.Click += guna2HtmlLabel1_Click;
+            // 
             // lkblContinueAsEmployee
             // 
             lkblContinueAsEmployee.ActiveLinkColor = Color.Red;
@@ -194,7 +218,7 @@
             lkblContinueAsEmployee.BackColor = Color.FromArgb(3, 83, 115);
             lkblContinueAsEmployee.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             lkblContinueAsEmployee.ForeColor = Color.White;
-            lkblContinueAsEmployee.LinkColor = Color.White;
+            lkblContinueAsEmployee.LinkColor = Color.Cyan;
             lkblContinueAsEmployee.Location = new Point(132, 404);
             lkblContinueAsEmployee.Name = "lkblContinueAsEmployee";
             lkblContinueAsEmployee.Size = new Size(188, 25);
@@ -251,30 +275,6 @@
             btnClose.TabIndex = 8;
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
-            // 
-            // guna2HtmlLabel1
-            // 
-            guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Century Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel1.ForeColor = Color.White;
-            guna2HtmlLabel1.Location = new Point(185, 16);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(89, 41);
-            guna2HtmlLabel1.TabIndex = 11;
-            guna2HtmlLabel1.Text = "Login";
-            guna2HtmlLabel1.Click += guna2HtmlLabel1_Click;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(116, 64);
-            label3.Name = "label3";
-            label3.Size = new Size(231, 23);
-            label3.TabIndex = 12;
-            label3.Text = "Login to access your account";
-            label3.Click += label3_Click;
             // 
             // LoginForm
             // 
