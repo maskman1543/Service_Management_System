@@ -312,8 +312,6 @@ namespace Service_Management_System.POS
             btnViewopensales.UseCompatibleTextRendering = true;
             btnViewopensales.UseVisualStyleBackColor = false;
             btnViewopensales.Click += button14_Click;
-            btnViewopensales.MouseEnter += button14_MouseEnter;
-            btnViewopensales.MouseLeave += button14_MouseLeave;
             // 
             // button13
             // 
@@ -332,8 +330,6 @@ namespace Service_Management_System.POS
             button13.UseCompatibleTextRendering = true;
             button13.UseVisualStyleBackColor = false;
             button13.Click += button13_Click;
-            button13.MouseEnter += button13_MouseEnter;
-            button13.MouseLeave += button13_MouseLeave;
             // 
             // button12
             // 
@@ -353,8 +349,6 @@ namespace Service_Management_System.POS
             button12.UseCompatibleTextRendering = true;
             button12.UseVisualStyleBackColor = false;
             button12.Click += button12_Click;
-            button12.MouseEnter += button12_MouseEnter;
-            button12.MouseLeave += button12_MouseLeave;
             // 
             // panel1
             // 
@@ -580,13 +574,13 @@ namespace Service_Management_System.POS
             btnSearch.FlatAppearance.BorderSize = 0;
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSearch.ForeColor = Color.White;
+            btnSearch.ForeColor = Color.IndianRed;
             btnSearch.ImageAlign = ContentAlignment.TopCenter;
             btnSearch.Location = new Point(6, 3);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(75, 67);
             btnSearch.TabIndex = 1;
-            btnSearch.Text = "\r\n";
+            btnSearch.Text = "\r\n.";
             btnSearch.TextAlign = ContentAlignment.BottomCenter;
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
@@ -965,8 +959,6 @@ namespace Service_Management_System.POS
             servicesView.Size = new Size(492, 449);
             servicesView.TabIndex = 14;
             servicesView.CellContentClick += servicesView_CellContentClick;
-            servicesView.MouseEnter += servicesView_MouseEnter_1;
-            servicesView.MouseLeave += servicesView_MouseLeave;
             // 
             // textBox7
             // 
