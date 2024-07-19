@@ -33,6 +33,7 @@ namespace Service_Management_System.POS
             PictureBox minilogo;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POSForm));
             sidepanelPOS = new Panel();
+            panel7 = new Panel();
             moveup = new PictureBox();
             allout = new PictureBox();
             adjust = new PictureBox();
@@ -62,9 +63,13 @@ namespace Service_Management_System.POS
             btnQuantity = new Button();
             btnDelete = new Button();
             panel3 = new Panel();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             button1 = new Button();
             button8 = new Button();
+            textBox8 = new TextBox();
             button7 = new Button();
+            textBox7 = new TextBox();
             button6 = new Button();
             productOrderedView = new DataGridView();
             panel4 = new Panel();
@@ -78,18 +83,22 @@ namespace Service_Management_System.POS
             label5 = new Label();
             partsView = new DataGridView();
             panel6 = new Panel();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             servicesView = new DataGridView();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
             jobOrderedView = new DataGridView();
             timerSfx = new System.Windows.Forms.Timer(components);
+            panel8 = new Panel();
+            label10 = new Label();
+            panel9 = new Panel();
+            label11 = new Label();
+            panel10 = new Panel();
+            label12 = new Label();
             minilogo = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)minilogo).BeginInit();
             sidepanelPOS.SuspendLayout();
@@ -99,6 +108,8 @@ namespace Service_Management_System.POS
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productOrderedView).BeginInit();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
@@ -106,6 +117,9 @@ namespace Service_Management_System.POS
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)servicesView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)jobOrderedView).BeginInit();
+            panel8.SuspendLayout();
+            panel9.SuspendLayout();
+            panel10.SuspendLayout();
             SuspendLayout();
             // 
             // minilogo
@@ -123,6 +137,7 @@ namespace Service_Management_System.POS
             sidepanelPOS.BackColor = Color.FromArgb(26, 95, 122);
             sidepanelPOS.BackgroundImageLayout = ImageLayout.Stretch;
             sidepanelPOS.BorderStyle = BorderStyle.Fixed3D;
+            sidepanelPOS.Controls.Add(panel7);
             sidepanelPOS.Controls.Add(moveup);
             sidepanelPOS.Controls.Add(allout);
             sidepanelPOS.Controls.Add(adjust);
@@ -134,12 +149,23 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(btnViewopensales);
             sidepanelPOS.Controls.Add(button13);
             sidepanelPOS.Controls.Add(button12);
+            sidepanelPOS.Dock = DockStyle.Right;
             sidepanelPOS.ImeMode = ImeMode.NoControl;
-            sidepanelPOS.Location = new Point(1436, 78);
+            sidepanelPOS.Location = new Point(1225, 78);
+            sidepanelPOS.MaximumSize = new Size(255, 656);
+            sidepanelPOS.MinimumSize = new Size(0, 656);
             sidepanelPOS.Name = "sidepanelPOS";
-            sidepanelPOS.Size = new Size(44, 656);
+            sidepanelPOS.Size = new Size(255, 656);
             sidepanelPOS.TabIndex = 16;
             sidepanelPOS.MouseEnter += sidepanelPOS_MouseEnter;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.White;
+            panel7.Location = new Point(0, 559);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(255, 3);
+            panel7.TabIndex = 19;
             // 
             // moveup
             // 
@@ -147,9 +173,9 @@ namespace Service_Management_System.POS
             moveup.BackgroundImage = (Image)resources.GetObject("moveup.BackgroundImage");
             moveup.BackgroundImageLayout = ImageLayout.Stretch;
             moveup.Cursor = Cursors.Hand;
-            moveup.Location = new Point(185, 558);
+            moveup.Location = new Point(179, 593);
             moveup.Name = "moveup";
-            moveup.Size = new Size(52, 51);
+            moveup.Size = new Size(40, 39);
             moveup.TabIndex = 18;
             moveup.TabStop = false;
             moveup.Click += moveup_Click;
@@ -162,9 +188,9 @@ namespace Service_Management_System.POS
             allout.BackgroundImage = (Image)resources.GetObject("allout.BackgroundImage");
             allout.BackgroundImageLayout = ImageLayout.Stretch;
             allout.Cursor = Cursors.Hand;
-            allout.Location = new Point(111, 556);
+            allout.Location = new Point(117, 593);
             allout.Name = "allout";
-            allout.Size = new Size(52, 51);
+            allout.Size = new Size(39, 38);
             allout.TabIndex = 17;
             allout.TabStop = false;
             allout.Click += allout_Click;
@@ -177,9 +203,9 @@ namespace Service_Management_System.POS
             adjust.BackgroundImage = (Image)resources.GetObject("adjust.BackgroundImage");
             adjust.BackgroundImageLayout = ImageLayout.Stretch;
             adjust.Cursor = Cursors.Hand;
-            adjust.Location = new Point(32, 556);
+            adjust.Location = new Point(52, 594);
             adjust.Name = "adjust";
-            adjust.Size = new Size(52, 51);
+            adjust.Size = new Size(40, 34);
             adjust.TabIndex = 16;
             adjust.TabStop = false;
             adjust.MouseEnter += adjust_MouseEnter;
@@ -299,8 +325,6 @@ namespace Service_Management_System.POS
             btnViewopensales.UseCompatibleTextRendering = true;
             btnViewopensales.UseVisualStyleBackColor = false;
             btnViewopensales.Click += button14_Click;
-            btnViewopensales.MouseEnter += button14_MouseEnter;
-            btnViewopensales.MouseLeave += button14_MouseLeave;
             // 
             // button13
             // 
@@ -319,8 +343,6 @@ namespace Service_Management_System.POS
             button13.UseCompatibleTextRendering = true;
             button13.UseVisualStyleBackColor = false;
             button13.Click += button13_Click;
-            button13.MouseEnter += button13_MouseEnter;
-            button13.MouseLeave += button13_MouseLeave;
             // 
             // button12
             // 
@@ -340,8 +362,6 @@ namespace Service_Management_System.POS
             button12.UseCompatibleTextRendering = true;
             button12.UseVisualStyleBackColor = false;
             button12.Click += button12_Click;
-            button12.MouseEnter += button12_MouseEnter;
-            button12.MouseLeave += button12_MouseLeave;
             // 
             // panel1
             // 
@@ -567,13 +587,13 @@ namespace Service_Management_System.POS
             btnSearch.FlatAppearance.BorderSize = 0;
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSearch.ForeColor = Color.White;
+            btnSearch.ForeColor = Color.IndianRed;
             btnSearch.ImageAlign = ContentAlignment.TopCenter;
             btnSearch.Location = new Point(6, 3);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(75, 67);
             btnSearch.TabIndex = 1;
-            btnSearch.Text = "\r\n";
+            btnSearch.Text = "\r\n.";
             btnSearch.TextAlign = ContentAlignment.BottomCenter;
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
@@ -649,14 +669,42 @@ namespace Service_Management_System.POS
             // 
             panel3.BackColor = Color.FromArgb(3, 83, 115);
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(pictureBox2);
+            panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(button1);
             panel3.Controls.Add(button8);
+            panel3.Controls.Add(textBox8);
             panel3.Controls.Add(button7);
+            panel3.Controls.Add(textBox7);
             panel3.Controls.Add(button6);
             panel3.Location = new Point(451, 78);
             panel3.Name = "panel3";
             panel3.Size = new Size(1029, 70);
             panel3.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox2.BackColor = Color.White;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(789, 8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(25, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox2.TabIndex = 17;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox1.BackColor = Color.White;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(550, 11);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(25, 25);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 16;
+            pictureBox1.TabStop = false;
             // 
             // button1
             // 
@@ -691,6 +739,19 @@ namespace Service_Management_System.POS
             button8.MouseEnter += button8_MouseEnter;
             button8.MouseLeave += button8_MouseLeave;
             // 
+            // textBox8
+            // 
+            textBox8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox8.ForeColor = Color.Gray;
+            textBox8.Location = new Point(595, 6);
+            textBox8.Multiline = true;
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(222, 31);
+            textBox8.TabIndex = 10;
+            textBox8.Text = "Search Services";
+            textBox8.Enter += textBox8_Enter;
+            textBox8.Leave += textBox8_Leave;
+            // 
             // button7
             // 
             button7.BackgroundImage = (Image)resources.GetObject("button7.BackgroundImage");
@@ -706,6 +767,19 @@ namespace Service_Management_System.POS
             button7.UseVisualStyleBackColor = true;
             button7.MouseEnter += button7_MouseEnter;
             button7.MouseLeave += button7_MouseLeave;
+            // 
+            // textBox7
+            // 
+            textBox7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox7.ForeColor = Color.Gray;
+            textBox7.Location = new Point(354, 8);
+            textBox7.Multiline = true;
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(222, 31);
+            textBox7.TabIndex = 10;
+            textBox7.Text = "Search Product";
+            textBox7.Enter += textBox7_Enter;
+            textBox7.Leave += textBox7_Leave;
             // 
             // button6
             // 
@@ -724,12 +798,13 @@ namespace Service_Management_System.POS
             // 
             // productOrderedView
             // 
+            productOrderedView.BackgroundColor = Color.White;
             productOrderedView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            productOrderedView.Location = new Point(0, 157);
+            productOrderedView.Location = new Point(0, 203);
             productOrderedView.Name = "productOrderedView";
             productOrderedView.RowHeadersWidth = 51;
             productOrderedView.RowTemplate.Height = 29;
-            productOrderedView.Size = new Size(451, 188);
+            productOrderedView.Size = new Size(451, 160);
             productOrderedView.TabIndex = 3;
             productOrderedView.CellContentClick += productOrderedView_CellContentClick;
             // 
@@ -815,14 +890,14 @@ namespace Service_Management_System.POS
             // 
             textBox5.Location = new Point(854, 39);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 27);
+            textBox5.Size = new Size(159, 27);
             textBox5.TabIndex = 17;
             // 
             // textBox6
             // 
             textBox6.Location = new Point(854, 4);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(125, 27);
+            textBox6.Size = new Size(159, 27);
             textBox6.TabIndex = 16;
             // 
             // label6
@@ -852,21 +927,22 @@ namespace Service_Management_System.POS
             // partsView
             // 
             partsView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            partsView.BackgroundColor = Color.White;
             partsView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            partsView.Location = new Point(451, 209);
+            partsView.Location = new Point(454, 202);
             partsView.Name = "partsView";
             partsView.RowHeadersWidth = 51;
             partsView.RowTemplate.Height = 29;
-            partsView.Size = new Size(526, 449);
+            partsView.Size = new Size(523, 456);
             partsView.TabIndex = 11;
             partsView.CellContentClick += partsServicesView_CellContentClick;
             // 
             // panel6
             // 
-            panel6.BackColor = Color.FromArgb(3, 83, 115);
-            panel6.Controls.Add(textBox4);
-            panel6.Controls.Add(textBox3);
-            panel6.Controls.Add(textBox2);
+            panel6.BackColor = Color.White;
+            panel6.Controls.Add(label9);
+            panel6.Controls.Add(label8);
+            panel6.Controls.Add(label7);
             panel6.Controls.Add(label4);
             panel6.Controls.Add(label3);
             panel6.Controls.Add(label2);
@@ -877,32 +953,44 @@ namespace Service_Management_System.POS
             panel6.TabIndex = 13;
             panel6.Paint += panel6_Paint;
             // 
-            // textBox4
+            // label9
             // 
-            textBox4.Location = new Point(320, 90);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 6;
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.FromArgb(3, 83, 115);
+            label9.Location = new Point(347, 85);
+            label9.Name = "label9";
+            label9.Size = new Size(73, 38);
+            label9.TabIndex = 6;
+            label9.Text = "0.00";
             // 
-            // textBox3
+            // label8
             // 
-            textBox3.Location = new Point(320, 43);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 5;
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = Color.FromArgb(3, 83, 115);
+            label8.Location = new Point(361, 48);
+            label8.Name = "label8";
+            label8.Size = new Size(45, 23);
+            label8.TabIndex = 5;
+            label8.Text = "0.00";
             // 
-            // textBox2
+            // label7
             // 
-            textBox2.Location = new Point(320, 8);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 4;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = Color.FromArgb(3, 83, 115);
+            label7.Location = new Point(361, 12);
+            label7.Name = "label7";
+            label7.Size = new Size(45, 23);
+            label7.TabIndex = 4;
+            label7.Text = "0.00";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
+            label4.ForeColor = Color.FromArgb(3, 83, 115);
             label4.Location = new Point(12, 12);
             label4.Name = "label4";
             label4.Size = new Size(84, 23);
@@ -913,7 +1001,7 @@ namespace Service_Management_System.POS
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
+            label3.ForeColor = Color.FromArgb(3, 83, 115);
             label3.Location = new Point(12, 48);
             label3.Name = "label3";
             label3.Size = new Size(71, 23);
@@ -935,7 +1023,7 @@ namespace Service_Management_System.POS
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
+            label1.ForeColor = Color.FromArgb(3, 83, 115);
             label1.Location = new Point(8, 87);
             label1.Name = "label1";
             label1.Size = new Size(80, 35);
@@ -945,54 +1033,92 @@ namespace Service_Management_System.POS
             // servicesView
             // 
             servicesView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            servicesView.BackgroundColor = Color.White;
             servicesView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            servicesView.Location = new Point(983, 209);
+            servicesView.Location = new Point(984, 203);
             servicesView.Name = "servicesView";
             servicesView.RowHeadersWidth = 51;
             servicesView.RowTemplate.Height = 29;
-            servicesView.Size = new Size(492, 449);
+            servicesView.Size = new Size(492, 456);
             servicesView.TabIndex = 14;
             servicesView.CellContentClick += servicesView_CellContentClick;
-            servicesView.MouseEnter += servicesView_MouseEnter_1;
-            servicesView.MouseLeave += servicesView_MouseLeave;
-            // 
-            // textBox7
-            // 
-            textBox7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox7.ForeColor = Color.Gray;
-            textBox7.Location = new Point(451, 157);
-            textBox7.Multiline = true;
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(499, 46);
-            textBox7.TabIndex = 10;
-            textBox7.Text = "Search";
-            // 
-            // textBox8
-            // 
-            textBox8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox8.ForeColor = Color.Gray;
-            textBox8.Location = new Point(983, 157);
-            textBox8.Multiline = true;
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(479, 46);
-            textBox8.TabIndex = 10;
-            textBox8.Text = "Search";
-            textBox8.MouseEnter += servicesView_MouseEnter_1;
             // 
             // jobOrderedView
             // 
+            jobOrderedView.BackgroundColor = Color.White;
             jobOrderedView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            jobOrderedView.Location = new Point(0, 342);
+            jobOrderedView.Location = new Point(0, 367);
             jobOrderedView.Name = "jobOrderedView";
             jobOrderedView.RowHeadersWidth = 51;
             jobOrderedView.RowTemplate.Height = 29;
-            jobOrderedView.Size = new Size(451, 188);
+            jobOrderedView.Size = new Size(451, 160);
             jobOrderedView.TabIndex = 15;
+            jobOrderedView.CellContentClick += jobOrderedView_CellContentClick;
             // 
             // timerSfx
             // 
             timerSfx.Interval = 50;
             timerSfx.Tick += timerSfx_Tick;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(90, 126, 140);
+            panel8.Controls.Add(label10);
+            panel8.Location = new Point(454, 148);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(523, 56);
+            panel8.TabIndex = 17;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Century Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(174, 8);
+            label10.Name = "label10";
+            label10.Size = new Size(159, 34);
+            label10.TabIndex = 0;
+            label10.Text = "PRODUCTS";
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(90, 126, 140);
+            panel9.Controls.Add(label11);
+            panel9.Location = new Point(984, 148);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(492, 56);
+            panel9.TabIndex = 18;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Century Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(192, 8);
+            label11.Name = "label11";
+            label11.Size = new Size(140, 34);
+            label11.TabIndex = 1;
+            label11.Text = "SERVICES";
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.FromArgb(90, 126, 140);
+            panel10.Controls.Add(label12);
+            panel10.Location = new Point(0, 148);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(451, 56);
+            panel10.TabIndex = 18;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Century Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(90, 8);
+            label12.Name = "label12";
+            label12.Size = new Size(270, 34);
+            label12.TabIndex = 0;
+            label12.Text = "ORDERED/REQUEST";
             // 
             // POSForm
             // 
@@ -1001,9 +1127,9 @@ namespace Service_Management_System.POS
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             ClientSize = new Size(1480, 737);
             Controls.Add(sidepanelPOS);
+            Controls.Add(panel10);
+            Controls.Add(panel9);
             Controls.Add(jobOrderedView);
-            Controls.Add(textBox8);
-            Controls.Add(textBox7);
             Controls.Add(panel6);
             Controls.Add(partsView);
             Controls.Add(panel5);
@@ -1013,6 +1139,7 @@ namespace Service_Management_System.POS
             Controls.Add(panel1);
             Controls.Add(panel3);
             Controls.Add(servicesView);
+            Controls.Add(panel8);
             FormBorderStyle = FormBorderStyle.None;
             MaximumSize = new Size(1710, 737);
             MinimumSize = new Size(1480, 737);
@@ -1028,6 +1155,9 @@ namespace Service_Management_System.POS
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)productOrderedView).EndInit();
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
@@ -1037,8 +1167,13 @@ namespace Service_Management_System.POS
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)servicesView).EndInit();
             ((System.ComponentModel.ISupportInitialize)jobOrderedView).EndInit();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -1084,9 +1219,6 @@ namespace Service_Management_System.POS
         private TextBox textBox6;
         private Label label6;
         private Label label5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
         private Label label4;
         private Label label3;
         private DataGridView servicesView;
@@ -1096,7 +1228,6 @@ namespace Service_Management_System.POS
         private Button btnmenU2;
         private Panel sidepanelPOS;
         private Button button12;
-        private PictureBox adjust;
         private Button button16;
         private Button btnSignout;
         private Button button18;
@@ -1105,7 +1236,20 @@ namespace Service_Management_System.POS
         private Button btnViewopensales;
         private Button button13;
         private PictureBox moveup;
-        private PictureBox allout;
         private System.Windows.Forms.Timer timerSfx;
+        private Panel panel7;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox1;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private Panel panel8;
+        private Panel panel9;
+        private Label label10;
+        private Label label11;
+        private Panel panel10;
+        private Label label12;
+        private PictureBox allout;
+        private PictureBox adjust;
     }
 }

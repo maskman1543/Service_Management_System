@@ -90,5 +90,22 @@ namespace Service_Management_System.POS
             pOSForm.Show();
             this.Close();
         }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            textBox1.Text = "Document no.";
+        }
+
+        
     }
 }

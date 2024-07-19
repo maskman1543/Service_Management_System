@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(acctRegistration_form));
             panel1 = new Panel();
-            button3 = new Button();
             label14 = new Label();
             label13 = new Label();
             pictureBox1 = new PictureBox();
@@ -63,7 +62,6 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(3, 83, 115);
-            panel1.Controls.Add(button3);
             panel1.Controls.Add(label14);
             panel1.Controls.Add(label13);
             panel1.Controls.Add(pictureBox1);
@@ -74,17 +72,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(378, 731);
             panel1.TabIndex = 0;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(218, 415);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(86, 31);
-            button3.TabIndex = 5;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
             // 
             // label14
             // 
@@ -402,6 +389,5 @@
         private Panel panel2;
         private Label label14;
         private Label label13;
-        private Button button3;
     }
 }
