@@ -25,6 +25,7 @@ namespace Service_Management_System.POS
         private int formOriginalWidth;
         private int formTargetWidth;
         bool sidebarExpand;
+        private jonOrder_form orderForm;
         public POSForm()
         {
             InitializeComponent();
@@ -801,10 +802,18 @@ namespace Service_Management_System.POS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            jonOrder_form joborder = new jonOrder_form();
-            joborder.Show();
-
-
+            // Check if the form is already open
+            if (orderForm == null || orderForm.IsDisposed)
+            {
+                // If not, create a new instance and show it
+                orderForm = new jonOrder_form();
+                orderForm.Show();
+            }
+            else
+            {
+                // If already open, bring it to the front
+                orderForm.BringToFront();
+            }
         }
 
         private void servicesView_MouseEnter(object sender, EventArgs e)
