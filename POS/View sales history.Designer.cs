@@ -82,11 +82,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
             label1.Location = new Point(5, 5);
             label1.Name = "label1";
-            label1.Size = new Size(146, 31);
+            label1.Size = new Size(148, 27);
             label1.TabIndex = 3;
             label1.Text = "Sales history";
             // 
