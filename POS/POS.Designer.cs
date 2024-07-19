@@ -806,7 +806,6 @@ namespace Service_Management_System.POS
             productOrderedView.RowTemplate.Height = 29;
             productOrderedView.Size = new Size(451, 160);
             productOrderedView.TabIndex = 3;
-            productOrderedView.CellContentClick += productOrderedView_CellContentClick;
             // 
             // panel4
             // 
