@@ -853,6 +853,18 @@ namespace Service_Management_System.POS
             textBox8.Text = "Search Services";
         }
 
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            new Payment().Show();
+            this.Show();
+        }
+
+        private void btnCash_Click(object sender, EventArgs e)
+        {
+            new AfterPayment().Show();
+            this.Show();
+        }
+
 
 
 
