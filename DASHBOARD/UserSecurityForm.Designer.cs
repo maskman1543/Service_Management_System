@@ -38,10 +38,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(11, 9);
+            label1.Location = new Point(14, 11);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(143, 21);
+            label1.Size = new Size(178, 28);
             label1.TabIndex = 0;
             label1.Text = "User and Security";
             label1.Click += label1_Click;
@@ -50,29 +50,32 @@
             // 
             EmployeeView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             EmployeeView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            EmployeeView.Location = new Point(12, 120);
+            EmployeeView.Location = new Point(15, 150);
+            EmployeeView.Margin = new Padding(4, 4, 4, 4);
             EmployeeView.Name = "EmployeeView";
+            EmployeeView.RowHeadersWidth = 51;
             EmployeeView.RowTemplate.Height = 25;
-            EmployeeView.Size = new Size(696, 605);
+            EmployeeView.Size = new Size(870, 756);
             EmployeeView.TabIndex = 1;
+            EmployeeView.CellContentClick += EmployeeView_CellContentClick;
             // 
             // textBox7
             // 
             textBox7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBox7.ForeColor = Color.Gray;
-            textBox7.Location = new Point(12, 77);
+            textBox7.Location = new Point(15, 96);
             textBox7.Margin = new Padding(2);
             textBox7.Multiline = true;
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(417, 38);
+            textBox7.Size = new Size(520, 46);
             textBox7.TabIndex = 11;
             textBox7.Text = "Search";
             // 
             // UserSecurityForm
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(720, 776);
+            ClientSize = new Size(900, 970);
             Controls.Add(textBox7);
             Controls.Add(EmployeeView);
             Controls.Add(label1);
