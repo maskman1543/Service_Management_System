@@ -20,6 +20,8 @@ namespace Service_Management_System.POS
     {
         bool sidebarExpand;
         private jonOrder_form orderForm;
+        private const decimal VAT_RATE = 0.12m;
+
 
         public POSForm()
         {
@@ -118,6 +120,7 @@ namespace Service_Management_System.POS
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
+                DisplaySubTotal();
             }
         }
         private void partsServicesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -166,9 +169,9 @@ namespace Service_Management_System.POS
         private void InitializeJobOrderedView()
         {
             jobOrderedView.Columns.Add("serviceID", "Service ID");
+            jobOrderedView.Columns.Add("serviceType", "Service Type");
             jobOrderedView.Columns.Add("serviceName", "Service Name");
             jobOrderedView.Columns.Add("serviceRate", "Service Rate");
-            jobOrderedView.Columns.Add("mechanicName", "Mechanic Name");
         }
         private void LoadServiceOrderedView(int serviceID)
         {
@@ -255,6 +258,7 @@ namespace Service_Management_System.POS
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+            DisplaySubTotal();
         }
         private void servicesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -290,11 +294,52 @@ namespace Service_Management_System.POS
                 }
             }
         }
+        private decimal CalculateProductSubTotal()
+        {
+            decimal productTotal = 0;
 
+            foreach (DataGridViewRow row in productOrderedView.Rows)
+            {
+                decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
+                decimal quantity = Convert.ToDecimal(row.Cells["Quantity"].Value);
+                productTotal += price * quantity;
+            }
+            return productTotal;
+        }
+        private decimal CalculateServiceSubTotal()
+        {
+            decimal serviceTotal = 0;
 
+            foreach (DataGridViewRow row in jobOrderedView.Rows)
+            {
+                if (row.Cells["serviceRate"].Value != null)
+                {
+                    decimal serviceRate = 0;
+                    if (decimal.TryParse(row.Cells["serviceRate"].Value.ToString(), out serviceRate))
+                    {
+                        serviceTotal += serviceRate;
+                    }
+                    else
+                    {
+                        // Handle invalid data in serviceRate cell if necessary
+                    }
+                }
+            }
+            return serviceTotal;
+        }
+        private void DisplaySubTotal()
+        {
+            decimal productTotal = CalculateProductSubTotal();
+            decimal ServiceTOtal = CalculateServiceSubTotal();
+            decimal subtotal = productTotal + ServiceTOtal;
 
+            decimal vat = subtotal * VAT_RATE;
+            decimal total = subtotal + vat;
 
-
+            lblsubtotal.Text = subtotal.ToString("C");
+            lblVatTax.Text = vat.ToString("C");
+            lblTotal.Text = total.ToString("C");
+        }
 
 
         private void button12_MouseEnter(object sender, EventArgs e)
