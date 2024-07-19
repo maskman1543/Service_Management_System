@@ -37,6 +37,7 @@
             label2 = new Label();
             PasswordTextBox = new TextBox();
             panel_loginInfo = new Panel();
+            label3 = new Label();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnLogin = new Button();
             lkblContinueAsEmployee = new LinkLabel();
@@ -48,7 +49,6 @@
             guna2Elipse_EmployeeLoginForm = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse_loginInfo = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse_btnLogin = new Guna.UI2.WinForms.Guna2Elipse(components);
-            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel_loginInfo.SuspendLayout();
@@ -80,7 +80,7 @@
             EmailTextBox.Anchor = AnchorStyles.None;
             EmailTextBox.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
             EmailTextBox.ForeColor = Color.FromArgb(224, 224, 224);
-            EmailTextBox.Location = new Point(63, 147);
+            EmailTextBox.Location = new Point(63, 148);
             EmailTextBox.Multiline = true;
             EmailTextBox.Name = "EmailTextBox";
             EmailTextBox.Size = new Size(331, 43);
@@ -94,7 +94,7 @@
             label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(59, 119);
+            label1.Location = new Point(59, 120);
             label1.Name = "label1";
             label1.Size = new Size(59, 25);
             label1.TabIndex = 6;
@@ -108,7 +108,7 @@
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(59, 211);
+            label2.Location = new Point(59, 217);
             label2.Name = "label2";
             label2.Size = new Size(91, 25);
             label2.TabIndex = 7;
@@ -119,7 +119,7 @@
             PasswordTextBox.Anchor = AnchorStyles.None;
             PasswordTextBox.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
             PasswordTextBox.ForeColor = Color.FromArgb(224, 224, 224);
-            PasswordTextBox.Location = new Point(63, 241);
+            PasswordTextBox.Location = new Point(63, 247);
             PasswordTextBox.Multiline = true;
             PasswordTextBox.Name = "PasswordTextBox";
             PasswordTextBox.PasswordChar = '•';
@@ -145,14 +145,25 @@
             panel_loginInfo.TabIndex = 12;
             panel_loginInfo.Paint += panel_loginInfo_Paint;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(156, 67);
+            label3.Name = "label3";
+            label3.Size = new Size(149, 25);
+            label3.TabIndex = 11;
+            label3.Text = "Enter your details";
+            // 
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel1.Font = new Font("Century Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             guna2HtmlLabel1.ForeColor = Color.White;
-            guna2HtmlLabel1.Location = new Point(115, 12);
+            guna2HtmlLabel1.Location = new Point(109, 18);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(227, 43);
+            guna2HtmlLabel1.Size = new Size(258, 41);
             guna2HtmlLabel1.TabIndex = 10;
             guna2HtmlLabel1.Text = "Employee Login";
             guna2HtmlLabel1.Click += guna2HtmlLabel1_Click;
@@ -164,7 +175,7 @@
             btnLogin.FlatStyle = FlatStyle.Popup;
             btnLogin.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(63, 385);
+            btnLogin.Location = new Point(63, 381);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(331, 45);
             btnLogin.TabIndex = 9;
@@ -211,7 +222,7 @@
             linkLabel1.BackColor = Color.FromArgb(3, 83, 115);
             linkLabel1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel1.ForeColor = Color.White;
-            linkLabel1.LinkColor = Color.White;
+            linkLabel1.LinkColor = Color.Cyan;
             linkLabel1.Location = new Point(248, 314);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(146, 25);
@@ -275,17 +286,6 @@
             // 
             guna2Elipse_btnLogin.BorderRadius = 25;
             guna2Elipse_btnLogin.TargetControl = btnLogin;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(156, 63);
-            label3.Name = "label3";
-            label3.Size = new Size(149, 25);
-            label3.TabIndex = 11;
-            label3.Text = "Enter your details";
             // 
             // EmployeeLoginForm
             // 
