@@ -142,6 +142,7 @@
             button13.Size = new Size(44, 29);
             button13.TabIndex = 16;
             button13.UseVisualStyleBackColor = true;
+            button13.Click += button13_Click;
             // 
             // dataGridView1
             // 

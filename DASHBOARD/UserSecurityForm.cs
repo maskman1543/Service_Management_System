@@ -13,6 +13,7 @@ namespace Service_Management_System.DASHBOARD
 {
     public partial class UserSecurityForm : Form
     {
+        bool sidebarExpand;
         public UserSecurityForm()
         {
             InitializeComponent();
@@ -49,6 +50,62 @@ namespace Service_Management_System.DASHBOARD
         private void EmployeeView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            sidebarTimer.Start();
+        }
+        private void sidebar_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                sidebar_AddUser.Width -= 10;
+                if (sidebar_AddUser.Width == sidebar_AddUser.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    sidebarTimer.Stop();
+                }
+            }
+            else
+            {
+                sidebar_AddUser.Width += 10;
+                if (sidebar_AddUser.Width == sidebar_AddUser.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    sidebarTimer.Stop();
+                }
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblBack_Click(object sender, EventArgs e)
+        {
+            sidebarTimer.Stop();
         }
     }
 }
