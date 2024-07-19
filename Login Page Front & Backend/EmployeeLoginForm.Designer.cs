@@ -206,7 +206,7 @@
             checkBox1.BackColor = Color.FromArgb(3, 83, 115);
             checkBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             checkBox1.ForeColor = SystemColors.Control;
-            checkBox1.Location = new Point(63, 314);
+            checkBox1.Location = new Point(228, 312);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(166, 27);
             checkBox1.TabIndex = 2;
@@ -223,7 +223,7 @@
             linkLabel1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel1.ForeColor = Color.White;
             linkLabel1.LinkColor = Color.Cyan;
-            linkLabel1.Location = new Point(248, 314);
+            linkLabel1.Location = new Point(63, 311);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(146, 25);
             linkLabel1.TabIndex = 4;
