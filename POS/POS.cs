@@ -877,6 +877,18 @@ namespace Service_Management_System.POS
 
         }
 
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            new Payment().Show();
+            this.Hide();
+        }
+
+        private void btnCash_Click(object sender, EventArgs e)
+        {
+            new AfterPayment().Show();
+            this.Hide();
+        }
+
 
 
 
