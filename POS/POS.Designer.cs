@@ -35,8 +35,6 @@ namespace Service_Management_System.POS
             sidepanelPOS = new Panel();
             panel7 = new Panel();
             moveup = new PictureBox();
-            allout = new PictureBox();
-            adjust = new PictureBox();
             button16 = new Button();
             btnSignout = new Button();
             button18 = new Button();
@@ -103,8 +101,6 @@ namespace Service_Management_System.POS
             ((System.ComponentModel.ISupportInitialize)minilogo).BeginInit();
             sidepanelPOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)moveup).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)allout).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)adjust).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -135,13 +131,11 @@ namespace Service_Management_System.POS
             // 
             // sidepanelPOS
             // 
-            sidepanelPOS.BackColor = Color.FromArgb(26, 95, 122);
+            sidepanelPOS.BackColor = Color.FromArgb(3, 83, 115);
             sidepanelPOS.BackgroundImageLayout = ImageLayout.Stretch;
             sidepanelPOS.BorderStyle = BorderStyle.Fixed3D;
             sidepanelPOS.Controls.Add(panel7);
             sidepanelPOS.Controls.Add(moveup);
-            sidepanelPOS.Controls.Add(allout);
-            sidepanelPOS.Controls.Add(adjust);
             sidepanelPOS.Controls.Add(button16);
             sidepanelPOS.Controls.Add(btnSignout);
             sidepanelPOS.Controls.Add(button18);
@@ -176,7 +170,7 @@ namespace Service_Management_System.POS
             moveup.BackgroundImage = (Image)resources.GetObject("moveup.BackgroundImage");
             moveup.BackgroundImageLayout = ImageLayout.Stretch;
             moveup.Cursor = Cursors.Hand;
-            moveup.Location = new Point(179, 592);
+            moveup.Location = new Point(119, 588);
             moveup.Margin = new Padding(2);
             moveup.Name = "moveup";
             moveup.Size = new Size(40, 39);
@@ -186,34 +180,10 @@ namespace Service_Management_System.POS
             moveup.MouseEnter += moveup_MouseEnter;
             moveup.MouseLeave += moveup_MouseLeave;
             // 
-            // allout
-            // 
-            allout.BackColor = Color.Transparent;
-            allout.BackgroundImageLayout = ImageLayout.Stretch;
-            allout.Cursor = Cursors.Hand;
-            allout.Location = new Point(118, 592);
-            allout.Margin = new Padding(2);
-            allout.Name = "allout";
-            allout.Size = new Size(39, 38);
-            allout.TabIndex = 17;
-            allout.TabStop = false;
-            allout.Click += allout_Click;
-            // 
-            // adjust
-            // 
-            adjust.BackColor = Color.Transparent;
-            adjust.BackgroundImageLayout = ImageLayout.Stretch;
-            adjust.Cursor = Cursors.Hand;
-            adjust.Location = new Point(52, 594);
-            adjust.Margin = new Padding(2);
-            adjust.Name = "adjust";
-            adjust.Size = new Size(40, 34);
-            adjust.TabIndex = 16;
-            adjust.TabStop = false;
-            // 
             // button16
             // 
-            button16.BackColor = Color.Transparent;
+            button16.AutoSize = true;
+            button16.BackColor = Color.FromArgb(3, 83, 115);
             button16.BackgroundImage = (Image)resources.GetObject("button16.BackgroundImage");
             button16.BackgroundImageLayout = ImageLayout.Stretch;
             button16.FlatAppearance.BorderSize = 0;
@@ -233,7 +203,8 @@ namespace Service_Management_System.POS
             // 
             // btnSignout
             // 
-            btnSignout.BackColor = Color.Transparent;
+            btnSignout.AutoSize = true;
+            btnSignout.BackColor = Color.FromArgb(3, 83, 115);
             btnSignout.BackgroundImage = (Image)resources.GetObject("btnSignout.BackgroundImage");
             btnSignout.BackgroundImageLayout = ImageLayout.Stretch;
             btnSignout.FlatAppearance.BorderSize = 0;
@@ -254,7 +225,8 @@ namespace Service_Management_System.POS
             // 
             // button18
             // 
-            button18.BackColor = Color.Transparent;
+            button18.AutoSize = true;
+            button18.BackColor = Color.FromArgb(3, 83, 115);
             button18.BackgroundImage = (Image)resources.GetObject("button18.BackgroundImage");
             button18.BackgroundImageLayout = ImageLayout.Stretch;
             button18.FlatAppearance.BorderSize = 0;
@@ -274,7 +246,8 @@ namespace Service_Management_System.POS
             // 
             // button19
             // 
-            button19.BackColor = Color.Transparent;
+            button19.AutoSize = true;
+            button19.BackColor = Color.FromArgb(3, 83, 115);
             button19.BackgroundImage = (Image)resources.GetObject("button19.BackgroundImage");
             button19.BackgroundImageLayout = ImageLayout.Stretch;
             button19.FlatAppearance.BorderSize = 0;
@@ -294,7 +267,8 @@ namespace Service_Management_System.POS
             // 
             // button15
             // 
-            button15.BackColor = Color.Transparent;
+            button15.AutoSize = true;
+            button15.BackColor = Color.FromArgb(3, 83, 115);
             button15.BackgroundImage = (Image)resources.GetObject("button15.BackgroundImage");
             button15.BackgroundImageLayout = ImageLayout.Stretch;
             button15.FlatAppearance.BorderSize = 0;
@@ -315,7 +289,8 @@ namespace Service_Management_System.POS
             // 
             // btnViewopensales
             // 
-            btnViewopensales.BackColor = Color.Transparent;
+            btnViewopensales.AutoSize = true;
+            btnViewopensales.BackColor = Color.FromArgb(3, 83, 115);
             btnViewopensales.BackgroundImage = (Image)resources.GetObject("btnViewopensales.BackgroundImage");
             btnViewopensales.BackgroundImageLayout = ImageLayout.Stretch;
             btnViewopensales.FlatAppearance.BorderSize = 0;
@@ -331,10 +306,13 @@ namespace Service_Management_System.POS
             btnViewopensales.UseCompatibleTextRendering = true;
             btnViewopensales.UseVisualStyleBackColor = false;
             btnViewopensales.Click += button14_Click;
+            btnViewopensales.MouseEnter += button14_MouseEnter;
+            btnViewopensales.MouseLeave += button14_MouseLeave;
             // 
             // button13
             // 
-            button13.BackColor = Color.Transparent;
+            button13.AutoSize = true;
+            button13.BackColor = Color.FromArgb(3, 83, 115);
             button13.BackgroundImage = (Image)resources.GetObject("button13.BackgroundImage");
             button13.BackgroundImageLayout = ImageLayout.Stretch;
             button13.FlatAppearance.BorderSize = 0;
@@ -350,10 +328,13 @@ namespace Service_Management_System.POS
             button13.UseCompatibleTextRendering = true;
             button13.UseVisualStyleBackColor = false;
             button13.Click += button13_Click;
+            button13.MouseEnter += button13_MouseEnter;
+            button13.MouseLeave += button13_MouseLeave;
             // 
             // button12
             // 
-            button12.BackColor = Color.Transparent;
+            button12.AutoSize = true;
+            button12.BackColor = Color.FromArgb(3, 83, 115);
             button12.BackgroundImage = (Image)resources.GetObject("button12.BackgroundImage");
             button12.BackgroundImageLayout = ImageLayout.Zoom;
             button12.FlatAppearance.BorderSize = 0;
@@ -370,6 +351,8 @@ namespace Service_Management_System.POS
             button12.UseCompatibleTextRendering = true;
             button12.UseVisualStyleBackColor = false;
             button12.Click += button12_Click;
+            button12.MouseEnter += button12_MouseEnter;
+            button12.MouseLeave += button12_MouseLeave;
             // 
             // panel1
             // 
@@ -398,6 +381,7 @@ namespace Service_Management_System.POS
             // 
             // btnmenU2
             // 
+            btnmenU2.AutoSize = true;
             btnmenU2.BackColor = Color.FromArgb(3, 83, 115);
             btnmenU2.BackgroundImage = (Image)resources.GetObject("btnmenU2.BackgroundImage");
             btnmenU2.BackgroundImageLayout = ImageLayout.Stretch;
@@ -416,8 +400,9 @@ namespace Service_Management_System.POS
             // 
             // button9
             // 
+            button9.AutoSize = true;
             button9.BackgroundImage = (Image)resources.GetObject("button9.BackgroundImage");
-            button9.BackgroundImageLayout = ImageLayout.Zoom;
+            button9.BackgroundImageLayout = ImageLayout.Stretch;
             button9.FlatAppearance.BorderSize = 0;
             button9.FlatStyle = FlatStyle.Flat;
             button9.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -432,8 +417,9 @@ namespace Service_Management_System.POS
             // 
             // button10
             // 
+            button10.AutoSize = true;
             button10.BackgroundImage = (Image)resources.GetObject("button10.BackgroundImage");
-            button10.BackgroundImageLayout = ImageLayout.Zoom;
+            button10.BackgroundImageLayout = ImageLayout.Stretch;
             button10.FlatAppearance.BorderSize = 0;
             button10.FlatStyle = FlatStyle.Flat;
             button10.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -448,8 +434,9 @@ namespace Service_Management_System.POS
             // 
             // btnRefund
             // 
+            btnRefund.AutoSize = true;
             btnRefund.BackgroundImage = (Image)resources.GetObject("btnRefund.BackgroundImage");
-            btnRefund.BackgroundImageLayout = ImageLayout.Zoom;
+            btnRefund.BackgroundImageLayout = ImageLayout.Stretch;
             btnRefund.FlatAppearance.BorderSize = 0;
             btnRefund.FlatStyle = FlatStyle.Flat;
             btnRefund.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -467,8 +454,9 @@ namespace Service_Management_System.POS
             // 
             // button2
             // 
+            button2.AutoSize = true;
             button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Zoom;
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -487,8 +475,9 @@ namespace Service_Management_System.POS
             // 
             // btnCash
             // 
+            btnCash.AutoSize = true;
             btnCash.BackgroundImage = (Image)resources.GetObject("btnCash.BackgroundImage");
-            btnCash.BackgroundImageLayout = ImageLayout.Zoom;
+            btnCash.BackgroundImageLayout = ImageLayout.Stretch;
             btnCash.FlatAppearance.BorderSize = 0;
             btnCash.FlatStyle = FlatStyle.Flat;
             btnCash.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -506,8 +495,9 @@ namespace Service_Management_System.POS
             // 
             // btnPayment
             // 
+            btnPayment.AutoSize = true;
             btnPayment.BackgroundImage = (Image)resources.GetObject("btnPayment.BackgroundImage");
-            btnPayment.BackgroundImageLayout = ImageLayout.Zoom;
+            btnPayment.BackgroundImageLayout = ImageLayout.Stretch;
             btnPayment.FlatAppearance.BorderSize = 0;
             btnPayment.FlatStyle = FlatStyle.Flat;
             btnPayment.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -525,8 +515,9 @@ namespace Service_Management_System.POS
             // 
             // btnSaveSale
             // 
+            btnSaveSale.AutoSize = true;
             btnSaveSale.BackgroundImage = (Image)resources.GetObject("btnSaveSale.BackgroundImage");
-            btnSaveSale.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSaveSale.BackgroundImageLayout = ImageLayout.Stretch;
             btnSaveSale.FlatAppearance.BorderSize = 0;
             btnSaveSale.FlatStyle = FlatStyle.Flat;
             btnSaveSale.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -545,8 +536,9 @@ namespace Service_Management_System.POS
             // 
             // btnNewSale
             // 
+            btnNewSale.AutoSize = true;
             btnNewSale.BackgroundImage = (Image)resources.GetObject("btnNewSale.BackgroundImage");
-            btnNewSale.BackgroundImageLayout = ImageLayout.Zoom;
+            btnNewSale.BackgroundImageLayout = ImageLayout.Stretch;
             btnNewSale.FlatAppearance.BorderSize = 0;
             btnNewSale.FlatStyle = FlatStyle.Flat;
             btnNewSale.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -564,8 +556,9 @@ namespace Service_Management_System.POS
             // 
             // btnDiscount
             // 
+            btnDiscount.AutoSize = true;
             btnDiscount.BackgroundImage = (Image)resources.GetObject("btnDiscount.BackgroundImage");
-            btnDiscount.BackgroundImageLayout = ImageLayout.Zoom;
+            btnDiscount.BackgroundImageLayout = ImageLayout.Stretch;
             btnDiscount.FlatAppearance.BorderSize = 0;
             btnDiscount.FlatStyle = FlatStyle.Flat;
             btnDiscount.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -583,8 +576,9 @@ namespace Service_Management_System.POS
             // 
             // btnCustomer
             // 
+            btnCustomer.AutoSize = true;
             btnCustomer.BackgroundImage = (Image)resources.GetObject("btnCustomer.BackgroundImage");
-            btnCustomer.BackgroundImageLayout = ImageLayout.Zoom;
+            btnCustomer.BackgroundImageLayout = ImageLayout.Stretch;
             btnCustomer.FlatAppearance.BorderSize = 0;
             btnCustomer.FlatStyle = FlatStyle.Flat;
             btnCustomer.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -602,8 +596,9 @@ namespace Service_Management_System.POS
             // 
             // btnSearch
             // 
+            btnSearch.AutoSize = true;
             btnSearch.BackgroundImage = (Image)resources.GetObject("btnSearch.BackgroundImage");
-            btnSearch.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSearch.BackgroundImageLayout = ImageLayout.Stretch;
             btnSearch.FlatAppearance.BorderSize = 0;
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -635,6 +630,7 @@ namespace Service_Management_System.POS
             // 
             // button5
             // 
+            button5.AutoSize = true;
             button5.BackgroundImage = (Image)resources.GetObject("button5.BackgroundImage");
             button5.BackgroundImageLayout = ImageLayout.Stretch;
             button5.FlatAppearance.BorderSize = 0;
@@ -653,6 +649,7 @@ namespace Service_Management_System.POS
             // 
             // btnQuantity
             // 
+            btnQuantity.AutoSize = true;
             btnQuantity.BackgroundImage = (Image)resources.GetObject("btnQuantity.BackgroundImage");
             btnQuantity.BackgroundImageLayout = ImageLayout.Stretch;
             btnQuantity.FlatAppearance.BorderSize = 0;
@@ -672,6 +669,7 @@ namespace Service_Management_System.POS
             // 
             // btnDelete
             // 
+            btnDelete.AutoSize = true;
             btnDelete.BackgroundImage = (Image)resources.GetObject("btnDelete.BackgroundImage");
             btnDelete.BackgroundImageLayout = ImageLayout.Stretch;
             btnDelete.FlatAppearance.BorderSize = 0;
@@ -736,6 +734,7 @@ namespace Service_Management_System.POS
             // 
             // button1
             // 
+            button1.AutoSize = true;
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
@@ -754,6 +753,7 @@ namespace Service_Management_System.POS
             // 
             // button8
             // 
+            button8.AutoSize = true;
             button8.BackgroundImage = (Image)resources.GetObject("button8.BackgroundImage");
             button8.BackgroundImageLayout = ImageLayout.Stretch;
             button8.FlatAppearance.BorderSize = 0;
@@ -785,6 +785,7 @@ namespace Service_Management_System.POS
             // 
             // button7
             // 
+            button7.AutoSize = true;
             button7.BackgroundImage = (Image)resources.GetObject("button7.BackgroundImage");
             button7.BackgroundImageLayout = ImageLayout.Stretch;
             button7.FlatAppearance.BorderSize = 0;
@@ -816,6 +817,7 @@ namespace Service_Management_System.POS
             // 
             // button6
             // 
+            button6.AutoSize = true;
             button6.BackgroundImage = (Image)resources.GetObject("button6.BackgroundImage");
             button6.BackgroundImageLayout = ImageLayout.Stretch;
             button6.FlatAppearance.BorderSize = 0;
@@ -857,6 +859,7 @@ namespace Service_Management_System.POS
             // 
             // button11
             // 
+            button11.AutoSize = true;
             button11.BackgroundImage = (Image)resources.GetObject("button11.BackgroundImage");
             button11.BackgroundImageLayout = ImageLayout.Stretch;
             button11.FlatAppearance.BorderSize = 0;
@@ -876,6 +879,7 @@ namespace Service_Management_System.POS
             // 
             // button4
             // 
+            button4.AutoSize = true;
             button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
             button4.BackgroundImageLayout = ImageLayout.Stretch;
             button4.FlatAppearance.BorderSize = 0;
@@ -895,6 +899,7 @@ namespace Service_Management_System.POS
             // 
             // button3
             // 
+            button3.AutoSize = true;
             button3.BackColor = Color.FromArgb(3, 83, 115);
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.BackgroundImageLayout = ImageLayout.Stretch;
@@ -1113,7 +1118,7 @@ namespace Service_Management_System.POS
             // 
             // timerSfx
             // 
-            timerSfx.Interval = 10;
+            timerSfx.Interval = 5;
             timerSfx.Tick += timerSfx_Tick;
             // 
             // panel8
@@ -1212,17 +1217,19 @@ namespace Service_Management_System.POS
             Load += POS_Load;
             ((System.ComponentModel.ISupportInitialize)minilogo).EndInit();
             sidepanelPOS.ResumeLayout(false);
+            sidepanelPOS.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)moveup).EndInit();
-            ((System.ComponentModel.ISupportInitialize)allout).EndInit();
-            ((System.ComponentModel.ISupportInitialize)adjust).EndInit();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)productOrderedView).EndInit();
             panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)partsView).EndInit();
@@ -1312,7 +1319,5 @@ namespace Service_Management_System.POS
         private Label label11;
         private Panel panel10;
         private Label label12;
-        private PictureBox allout;
-        private PictureBox adjust;
     }
 }

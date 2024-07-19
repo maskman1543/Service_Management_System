@@ -21,6 +21,7 @@ namespace Service_Management_System.POS
         bool sidebarExpand;
         private jonOrder_form orderForm;
         private const decimal VAT_RATE = 0.12m;
+        //ss
 
 
         public POSForm()
