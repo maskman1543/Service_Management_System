@@ -388,8 +388,8 @@
             // 
             // AfterPayment
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1462, 690);
             Controls.Add(label8);
@@ -407,6 +407,7 @@
             Controls.Add(dataGridView1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AfterPayment";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AfterPayment";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
