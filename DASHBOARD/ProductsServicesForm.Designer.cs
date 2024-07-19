@@ -56,6 +56,18 @@
             searchbar = new Guna.UI2.WinForms.Guna2Elipse(components);
             pictureBox1 = new PictureBox();
             dgv_sidepanel = new Guna.UI2.WinForms.Guna2Elipse(components);
+            panel3 = new Panel();
+            panelpro_service = new Panel();
+            panel5 = new Panel();
+            button8 = new Button();
+            pictureBox2 = new PictureBox();
+            btnDetails = new Button();
+            label6 = new Label();
+            btnStockControl = new Button();
+            panel4 = new Panel();
+            Details = new Guna.UI2.WinForms.Guna2Elipse(components);
+            StockControl = new Guna.UI2.WinForms.Guna2Elipse(components);
+            sidebar_addproducts = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)PSView).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
@@ -63,6 +75,9 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel3.SuspendLayout();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -330,6 +345,7 @@
             button5.Text = "Add Product";
             button5.TextAlign = ContentAlignment.BottomCenter;
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -383,12 +399,140 @@
             dgv_sidepanel.BorderRadius = 18;
             dgv_sidepanel.TargetControl = dataGridView1;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(3, 83, 115);
+            panel3.Controls.Add(panelpro_service);
+            panel3.Controls.Add(panel5);
+            panel3.Dock = DockStyle.Right;
+            panel3.Location = new Point(1097, 122);
+            panel3.MaximumSize = new Size(425, 784);
+            panel3.MinimumSize = new Size(0, 784);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(0, 784);
+            panel3.TabIndex = 25;
+            panel3.Paint += panel3_Paint;
+            // 
+            // panelpro_service
+            // 
+            panelpro_service.Dock = DockStyle.Fill;
+            panelpro_service.Location = new Point(0, 99);
+            panelpro_service.Name = "panelpro_service";
+            panelpro_service.Size = new Size(0, 685);
+            panelpro_service.TabIndex = 6;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(button8);
+            panel5.Controls.Add(pictureBox2);
+            panel5.Controls.Add(btnDetails);
+            panel5.Controls.Add(label6);
+            panel5.Controls.Add(btnStockControl);
+            panel5.Controls.Add(panel4);
+            panel5.Dock = DockStyle.Top;
+            panel5.Location = new Point(0, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(0, 99);
+            panel5.TabIndex = 5;
+            // 
+            // button8
+            // 
+            button8.BackColor = Color.White;
+            button8.FlatAppearance.BorderColor = Color.White;
+            button8.FlatAppearance.BorderSize = 0;
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            button8.ForeColor = Color.FromArgb(3, 83, 115);
+            button8.Location = new Point(7, 62);
+            button8.Name = "button8";
+            button8.Size = new Size(132, 31);
+            button8.TabIndex = 5;
+            button8.Text = "Details";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(376, 17);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(25, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
+            // btnDetails
+            // 
+            btnDetails.BackColor = Color.White;
+            btnDetails.FlatAppearance.BorderColor = Color.White;
+            btnDetails.FlatAppearance.BorderSize = 0;
+            btnDetails.FlatStyle = FlatStyle.Flat;
+            btnDetails.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDetails.ForeColor = Color.FromArgb(3, 83, 115);
+            btnDetails.Location = new Point(140, 62);
+            btnDetails.Name = "btnDetails";
+            btnDetails.Size = new Size(141, 31);
+            btnDetails.TabIndex = 3;
+            btnDetails.Text = "Price and Tax";
+            btnDetails.UseVisualStyleBackColor = false;
+            btnDetails.Click += btnDetails_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(13, 16);
+            label6.Name = "label6";
+            label6.Size = new Size(247, 23);
+            label6.TabIndex = 0;
+            label6.Text = "New products / services";
+            // 
+            // btnStockControl
+            // 
+            btnStockControl.BackColor = Color.White;
+            btnStockControl.FlatAppearance.BorderColor = Color.White;
+            btnStockControl.FlatAppearance.BorderSize = 0;
+            btnStockControl.FlatStyle = FlatStyle.Flat;
+            btnStockControl.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnStockControl.ForeColor = Color.FromArgb(3, 83, 115);
+            btnStockControl.Location = new Point(282, 62);
+            btnStockControl.Name = "btnStockControl";
+            btnStockControl.Size = new Size(132, 31);
+            btnStockControl.TabIndex = 4;
+            btnStockControl.Text = "Stock control";
+            btnStockControl.UseVisualStyleBackColor = false;
+            btnStockControl.Click += btnStockControl_Click;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.White;
+            panel4.Location = new Point(2, 95);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(425, 2);
+            panel4.TabIndex = 2;
+            // 
+            // Details
+            // 
+            Details.BorderRadius = 25;
+            // 
+            // StockControl
+            // 
+            StockControl.BorderRadius = 25;
+            // 
+            // sidebar_addproducts
+            // 
+            sidebar_addproducts.Interval = 2;
+            sidebar_addproducts.Tick += sidebar_addproducts_Tick;
+            // 
             // ProductsServicesForm
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.White;
             ClientSize = new Size(1097, 906);
+            Controls.Add(panel3);
             Controls.Add(pictureBox1);
             Controls.Add(panel2);
             Controls.Add(guna2CustomGradientPanel1);
@@ -410,6 +554,10 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel3.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -440,5 +588,17 @@
         private PictureBox pictureBox1;
         private DataGridView dataGridView1;
         private Guna.UI2.WinForms.Guna2Elipse dgv_sidepanel;
+        private Panel panel3;
+        private Label label6;
+        private Button btnDetails;
+        private Panel panel4;
+        private Button btnStockControl;
+        private Guna.UI2.WinForms.Guna2Elipse Details;
+        private Guna.UI2.WinForms.Guna2Elipse StockControl;
+        private Panel panel5;
+        private Panel panelpro_service;
+        private PictureBox pictureBox2;
+        private System.Windows.Forms.Timer sidebar_addproducts;
+        private Button button8;
     }
 }
