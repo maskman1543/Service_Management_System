@@ -25,7 +25,7 @@ namespace Service_Management_System.DASHBOARD
         }
         private void LoadStockView()
         {
-            string query = "SELECT productTable.productID, productTable.productName, productTable.productGroup, productTable.Cost, productTable.Price, productTable.barcode, StockTb.Stock\r\nFROM StockTb LEFT JOIN productTable ON StockTb.StockID = productTable.stockID;\r\n";
+            string query = "SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, StockTb.QStock, productTable.Barcode, productTable.Description\r\nFROM StockTb INNER JOIN productTable ON StockTb.StockID = productTable.StockID;\r\n";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
