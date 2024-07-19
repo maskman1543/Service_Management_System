@@ -60,7 +60,7 @@ namespace Service_Management_System.DASHBOARD
             {
                 using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
                 {
-                    string query = "SELECT productTable.productID, productTable.productName, productTable.productGroup, productTable.Cost, productTable.Price, productTable.barcode, productTable.supplierID\r\nFROM productTable;\r\n";
+                    string query = "SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Cost, productTable.Price, productTable.Barcode, productTable.Description\r\nFROM productTable;\r\n";
                     OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);

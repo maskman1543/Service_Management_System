@@ -423,43 +423,44 @@ namespace Service_Management_System.POS
         private void adjust_MouseEnter(object sender, EventArgs e)
         {
             // Increase size when mouse enters
-            adjust.Width = 57;
-            adjust.Height = 56;
+            adjust.Width = 44;
+            adjust.Height = 43;
         }
 
         private void adjust_MouseLeave(object sender, EventArgs e)
         {
             // Restore original size when mouse leaves
-            adjust.Width = 52;
-            adjust.Height = 51;
+            adjust.Width = 40;
+            adjust.Height = 39;
         }
 
         private void allout_MouseEnter(object sender, EventArgs e)
         {
             // Increase size when mouse enters
-            allout.Width = 57;
-            allout.Height = 56;
+            allout.Width = 44;
+            allout.Height = 43;
         }
 
         private void allout_MouseLeave(object sender, EventArgs e)
         {
             // Restore original size when mouse leaves
-            allout.Width = 52;
-            allout.Height = 51;
+            allout.Width = 40;
+            allout.Height = 39;
         }
 
         private void moveup_MouseEnter(object sender, EventArgs e)
         {
             // Increase size when mouse enters
-            moveup.Width = 57;
-            moveup.Height = 56;
+            moveup.Width = 44;
+            moveup.Height = 43;
+            //40, 39
         }
 
         private void moveup_MouseLeave(object sender, EventArgs e)
         {
             // Restore original size when mouse leaves
-            moveup.Width = 52;
-            moveup.Height = 51;
+            moveup.Width = 40;
+            moveup.Height = 39;
         }
 
         private void allout_Click(object sender, EventArgs e)
@@ -830,6 +831,26 @@ namespace Service_Management_System.POS
         private void sidepanelPOS_MouseEnter_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox7_Enter(object sender, EventArgs e)
+        {
+            textBox7.Text = "";
+        }
+
+        private void textBox7_Leave(object sender, EventArgs e)
+        {
+            textBox7.Text = "Search Product";
+        }
+
+        private void textBox8_Enter(object sender, EventArgs e)
+        {
+            textBox8.Text = "";
+        }
+
+        private void textBox8_Leave(object sender, EventArgs e)
+        {
+            textBox8.Text = "Search Services";
         }
 
 

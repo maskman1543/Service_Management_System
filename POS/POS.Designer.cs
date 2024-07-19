@@ -151,11 +151,11 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(button12);
             sidepanelPOS.Dock = DockStyle.Right;
             sidepanelPOS.ImeMode = ImeMode.NoControl;
-            sidepanelPOS.Location = new Point(1470, 78);
+            sidepanelPOS.Location = new Point(1225, 78);
             sidepanelPOS.MaximumSize = new Size(255, 656);
             sidepanelPOS.MinimumSize = new Size(0, 656);
             sidepanelPOS.Name = "sidepanelPOS";
-            sidepanelPOS.Size = new Size(10, 656);
+            sidepanelPOS.Size = new Size(255, 656);
             sidepanelPOS.TabIndex = 16;
             sidepanelPOS.MouseEnter += sidepanelPOS_MouseEnter;
             // 
@@ -749,6 +749,8 @@ namespace Service_Management_System.POS
             textBox8.Size = new Size(222, 31);
             textBox8.TabIndex = 10;
             textBox8.Text = "Search Services";
+            textBox8.Enter += textBox8_Enter;
+            textBox8.Leave += textBox8_Leave;
             // 
             // button7
             // 
@@ -776,6 +778,8 @@ namespace Service_Management_System.POS
             textBox7.Size = new Size(222, 31);
             textBox7.TabIndex = 10;
             textBox7.Text = "Search Product";
+            textBox7.Enter += textBox7_Enter;
+            textBox7.Leave += textBox7_Leave;
             // 
             // button6
             // 
@@ -802,6 +806,7 @@ namespace Service_Management_System.POS
             productOrderedView.RowTemplate.Height = 29;
             productOrderedView.Size = new Size(451, 160);
             productOrderedView.TabIndex = 3;
+            productOrderedView.CellContentClick += productOrderedView_CellContentClick;
             // 
             // panel4
             // 
@@ -1222,7 +1227,6 @@ namespace Service_Management_System.POS
         private Button btnmenU2;
         private Panel sidepanelPOS;
         private Button button12;
-        private PictureBox adjust;
         private Button button16;
         private Button btnSignout;
         private Button button18;
@@ -1231,7 +1235,6 @@ namespace Service_Management_System.POS
         private Button btnViewopensales;
         private Button button13;
         private PictureBox moveup;
-        private PictureBox allout;
         private System.Windows.Forms.Timer timerSfx;
         private Panel panel7;
         private PictureBox pictureBox2;
@@ -1245,5 +1248,7 @@ namespace Service_Management_System.POS
         private Label label11;
         private Panel panel10;
         private Label label12;
+        private PictureBox allout;
+        private PictureBox adjust;
     }
 }
