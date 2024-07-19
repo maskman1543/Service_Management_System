@@ -49,6 +49,7 @@ namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.ServiceFlow_LOGO_;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(593, 333);
