@@ -33,6 +33,7 @@ namespace Service_Management_System.POS
             PictureBox minilogo;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POSForm));
             sidepanelPOS = new Panel();
+            panel7 = new Panel();
             moveup = new PictureBox();
             allout = new PictureBox();
             adjust = new PictureBox();
@@ -123,6 +124,7 @@ namespace Service_Management_System.POS
             sidepanelPOS.BackColor = Color.FromArgb(26, 95, 122);
             sidepanelPOS.BackgroundImageLayout = ImageLayout.Stretch;
             sidepanelPOS.BorderStyle = BorderStyle.Fixed3D;
+            sidepanelPOS.Controls.Add(panel7);
             sidepanelPOS.Controls.Add(moveup);
             sidepanelPOS.Controls.Add(allout);
             sidepanelPOS.Controls.Add(adjust);
@@ -134,12 +136,23 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(btnViewopensales);
             sidepanelPOS.Controls.Add(button13);
             sidepanelPOS.Controls.Add(button12);
+            sidepanelPOS.Dock = DockStyle.Right;
             sidepanelPOS.ImeMode = ImeMode.NoControl;
-            sidepanelPOS.Location = new Point(1436, 78);
+            sidepanelPOS.Location = new Point(1225, 78);
+            sidepanelPOS.MaximumSize = new Size(255, 656);
+            sidepanelPOS.MinimumSize = new Size(44, 656);
             sidepanelPOS.Name = "sidepanelPOS";
-            sidepanelPOS.Size = new Size(44, 656);
+            sidepanelPOS.Size = new Size(255, 656);
             sidepanelPOS.TabIndex = 16;
             sidepanelPOS.MouseEnter += sidepanelPOS_MouseEnter;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.White;
+            panel7.Location = new Point(0, 559);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(255, 3);
+            panel7.TabIndex = 19;
             // 
             // moveup
             // 
@@ -147,9 +160,9 @@ namespace Service_Management_System.POS
             moveup.BackgroundImage = (Image)resources.GetObject("moveup.BackgroundImage");
             moveup.BackgroundImageLayout = ImageLayout.Stretch;
             moveup.Cursor = Cursors.Hand;
-            moveup.Location = new Point(185, 558);
+            moveup.Location = new Point(179, 593);
             moveup.Name = "moveup";
-            moveup.Size = new Size(52, 51);
+            moveup.Size = new Size(40, 39);
             moveup.TabIndex = 18;
             moveup.TabStop = false;
             moveup.Click += moveup_Click;
@@ -162,9 +175,9 @@ namespace Service_Management_System.POS
             allout.BackgroundImage = (Image)resources.GetObject("allout.BackgroundImage");
             allout.BackgroundImageLayout = ImageLayout.Stretch;
             allout.Cursor = Cursors.Hand;
-            allout.Location = new Point(111, 556);
+            allout.Location = new Point(117, 593);
             allout.Name = "allout";
-            allout.Size = new Size(52, 51);
+            allout.Size = new Size(39, 38);
             allout.TabIndex = 17;
             allout.TabStop = false;
             allout.Click += allout_Click;
@@ -177,9 +190,9 @@ namespace Service_Management_System.POS
             adjust.BackgroundImage = (Image)resources.GetObject("adjust.BackgroundImage");
             adjust.BackgroundImageLayout = ImageLayout.Stretch;
             adjust.Cursor = Cursors.Hand;
-            adjust.Location = new Point(32, 556);
+            adjust.Location = new Point(52, 594);
             adjust.Name = "adjust";
-            adjust.Size = new Size(52, 51);
+            adjust.Size = new Size(40, 34);
             adjust.TabIndex = 16;
             adjust.TabStop = false;
             adjust.MouseEnter += adjust_MouseEnter;
@@ -1106,5 +1119,6 @@ namespace Service_Management_System.POS
         private PictureBox moveup;
         private PictureBox allout;
         private System.Windows.Forms.Timer timerSfx;
+        private Panel panel7;
     }
 }
