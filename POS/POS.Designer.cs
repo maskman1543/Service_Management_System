@@ -968,7 +968,6 @@ namespace Service_Management_System.POS
             textBox8.Size = new Size(479, 46);
             textBox8.TabIndex = 10;
             textBox8.Text = "Search";
-            textBox8.MouseEnter += servicesView_MouseEnter_1;
             // 
             // jobOrderedView
             // 
