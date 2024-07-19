@@ -21,42 +21,18 @@ namespace Service_Management_System.POS
         private bool isExpanding;
         private bool isCollapsing;
         private int stepSize = 10; // Step size for smooth transition
-        private int additionalWidth = 212; // Additional width when expanded
-        private int originalWidth = 44; // Original width when collapsed
         private int targetWidth;
         private int formOriginalWidth;
         private int formTargetWidth;
         bool sidebarExpand;
-        /*private bool isExpanding;
-        private bool isCollapsing;
-        private int stepSize = 10; // Step size for smooth transition
-        private int additionalWidth = 212; // Additional width when expanded
-        private int originalWidth = 44; // Original width when collapsed
-        private int targetWidth;*/
         public POSForm()
         {
-
-            /*InitializeComponent();
-            InitializeProductOrderedView();
-            InitializeJobOrderedView();
-            sidepanelPOS.Width = originalWidth;
-            timerSfx.Interval = 15; // Timer interval for smooth transition
-            this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
-            sidepanelPOS.Width = originalWidth;
-            sidepanelPOS.Size = new Size(44, 656);
-            sidepanelPOS.Location = new Point(1436, 78);*/
             InitializeComponent();
             InitializeProductOrderedView();
             InitializeJobOrderedView();
-            sidepanelPOS.Width = originalWidth;
             timerSfx.Interval = 15; // Timer interval for smooth transition
             this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
-            //sidepanelPOS.Size = new Size(originalWidth, 656);
-            //sidepanelPOS.Location = new Point(1436, 78);
-
             formOriginalWidth = this.Width; // Store the original width of the form
-            formTargetWidth = formOriginalWidth + additionalWidth; // Target width when expanded
-
         }
 
 
