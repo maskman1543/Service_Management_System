@@ -57,11 +57,14 @@
             dataGridView2 = new DataGridView();
             label4 = new Label();
             label5 = new Label();
+            panel6 = new Panel();
+            panel7 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -141,7 +144,7 @@
             // listBox1
             // 
             listBox1.BackColor = Color.White;
-            listBox1.ForeColor = Color.Silver;
+            listBox1.ForeColor = Color.Gray;
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 20;
             listBox1.Items.AddRange(new object[] { "POS", "POS", "POS" });
@@ -153,7 +156,7 @@
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.None;
-            textBox1.ForeColor = Color.Silver;
+            textBox1.ForeColor = Color.Gray;
             textBox1.Location = new Point(11, 9);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(125, 20);
@@ -390,6 +393,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(0, 139);
             dataGridView1.Name = "dataGridView1";
@@ -400,6 +404,7 @@
             // 
             // dataGridView2
             // 
+            dataGridView2.BackgroundColor = Color.White;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(0, 407);
             dataGridView2.Name = "dataGridView2";
@@ -412,7 +417,8 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(3, 115);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(8, 5);
             label4.Name = "label4";
             label4.Size = new Size(89, 20);
             label4.TabIndex = 5;
@@ -421,12 +427,32 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.FromArgb(90, 126, 140);
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(3, 384);
             label5.Name = "label5";
             label5.Size = new Size(125, 20);
             label5.TabIndex = 6;
             label5.Text = "Document items";
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(90, 126, 140);
+            panel6.Controls.Add(label4);
+            panel6.Location = new Point(0, 111);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(1480, 29);
+            panel6.TabIndex = 7;
+            panel6.Paint += panel6_Paint;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(90, 126, 140);
+            panel7.Location = new Point(0, 378);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(1480, 30);
+            panel7.TabIndex = 8;
             // 
             // View_sales_history
             // 
@@ -434,13 +460,14 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.White;
             ClientSize = new Size(1480, 737);
+            Controls.Add(panel6);
             Controls.Add(label5);
-            Controls.Add(label4);
             Controls.Add(dataGridView2);
             Controls.Add(dataGridView1);
             Controls.Add(panel5);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panel7);
             FormBorderStyle = FormBorderStyle.None;
             Name = "View_sales_history";
             StartPosition = FormStartPosition.CenterScreen;
@@ -454,6 +481,8 @@
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -488,5 +517,7 @@
         private DataGridView dataGridView2;
         private Label label4;
         private Label label5;
+        private Panel panel6;
+        private Panel panel7;
     }
 }
