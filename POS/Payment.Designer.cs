@@ -97,7 +97,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1840, 61);
+            panel1.Size = new Size(1480, 61);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -134,10 +134,11 @@
             // 
             // button13
             // 
+            button13.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             button13.FlatAppearance.BorderSize = 0;
             button13.FlatStyle = FlatStyle.Flat;
             button13.Image = (Image)resources.GetObject("button13.Image");
-            button13.Location = new Point(1784, 17);
+            button13.Location = new Point(1424, 17);
             button13.Name = "button13";
             button13.Size = new Size(44, 29);
             button13.TabIndex = 16;
@@ -260,10 +261,11 @@
             panel3.Controls.Add(button16);
             panel3.Controls.Add(button15);
             panel3.Controls.Add(button14);
-            panel3.Location = new Point(1476, 377);
+            panel3.Location = new Point(1116, 377);
             panel3.Name = "panel3";
             panel3.Size = new Size(364, 360);
             panel3.TabIndex = 3;
+            panel3.Paint += panel3_Paint;
             // 
             // button28
             // 
@@ -575,13 +577,14 @@
             // 
             // button9
             // 
+            button9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             button9.BackColor = Color.FromArgb(3, 83, 115);
             button9.FlatAppearance.BorderSize = 0;
             button9.FlatStyle = FlatStyle.Flat;
             button9.ForeColor = Color.White;
             button9.Image = (Image)resources.GetObject("button9.Image");
             button9.ImageAlign = ContentAlignment.MiddleLeft;
-            button9.Location = new Point(1681, 80);
+            button9.Location = new Point(1321, 80);
             button9.Name = "button9";
             button9.Padding = new Padding(20, 0, 15, 0);
             button9.Size = new Size(147, 45);
@@ -592,13 +595,14 @@
             // 
             // button10
             // 
+            button10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             button10.BackColor = Color.FromArgb(3, 83, 115);
             button10.FlatAppearance.BorderSize = 0;
             button10.FlatStyle = FlatStyle.Flat;
             button10.ForeColor = Color.White;
             button10.Image = (Image)resources.GetObject("button10.Image");
             button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.Location = new Point(1521, 80);
+            button10.Location = new Point(1161, 80);
             button10.Name = "button10";
             button10.Padding = new Padding(20, 0, 20, 0);
             button10.Size = new Size(147, 45);
@@ -609,13 +613,14 @@
             // 
             // button11
             // 
+            button11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             button11.BackColor = Color.FromArgb(3, 83, 115);
             button11.FlatAppearance.BorderSize = 0;
             button11.FlatStyle = FlatStyle.Flat;
             button11.ForeColor = Color.White;
             button11.Image = (Image)resources.GetObject("button11.Image");
             button11.ImageAlign = ContentAlignment.MiddleLeft;
-            button11.Location = new Point(1359, 80);
+            button11.Location = new Point(999, 80);
             button11.Name = "button11";
             button11.Padding = new Padding(25, 0, 15, 0);
             button11.Size = new Size(147, 45);
@@ -626,13 +631,14 @@
             // 
             // button12
             // 
+            button12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             button12.BackColor = Color.FromArgb(3, 83, 115);
             button12.FlatAppearance.BorderSize = 0;
             button12.FlatStyle = FlatStyle.Flat;
             button12.ForeColor = Color.White;
             button12.Image = (Image)resources.GetObject("button12.Image");
             button12.ImageAlign = ContentAlignment.MiddleLeft;
-            button12.Location = new Point(1195, 80);
+            button12.Location = new Point(835, 80);
             button12.Name = "button12";
             button12.Padding = new Padding(25, 0, 25, 0);
             button12.Size = new Size(147, 45);
@@ -702,10 +708,11 @@
             // 
             // textBox4
             // 
+            textBox4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             textBox4.BackColor = Color.White;
             textBox4.BorderStyle = BorderStyle.FixedSingle;
             textBox4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox4.Location = new Point(1576, 244);
+            textBox4.Location = new Point(1216, 244);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(252, 27);
             textBox4.TabIndex = 23;
@@ -713,10 +720,11 @@
             // 
             // textBox5
             // 
+            textBox5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             textBox5.BackColor = Color.White;
             textBox5.BorderStyle = BorderStyle.FixedSingle;
             textBox5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox5.Location = new Point(1576, 212);
+            textBox5.Location = new Point(1216, 212);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(252, 27);
             textBox5.TabIndex = 22;
@@ -734,7 +742,7 @@
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(242, 242, 242);
-            ClientSize = new Size(1840, 737);
+            ClientSize = new Size(1480, 737);
             Controls.Add(textBox4);
             Controls.Add(panel6);
             Controls.Add(textBox5);
