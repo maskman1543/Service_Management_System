@@ -35,8 +35,6 @@ namespace Service_Management_System.POS
             sidepanelPOS = new Panel();
             panel7 = new Panel();
             moveup = new PictureBox();
-            allout = new PictureBox();
-            adjust = new PictureBox();
             button16 = new Button();
             btnSignout = new Button();
             button18 = new Button();
@@ -103,8 +101,6 @@ namespace Service_Management_System.POS
             ((System.ComponentModel.ISupportInitialize)minilogo).BeginInit();
             sidepanelPOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)moveup).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)allout).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)adjust).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -134,13 +130,11 @@ namespace Service_Management_System.POS
             // 
             // sidepanelPOS
             // 
-            sidepanelPOS.BackColor = Color.FromArgb(26, 95, 122);
+            sidepanelPOS.BackColor = Color.FromArgb(3, 83, 115);
             sidepanelPOS.BackgroundImageLayout = ImageLayout.Stretch;
             sidepanelPOS.BorderStyle = BorderStyle.Fixed3D;
             sidepanelPOS.Controls.Add(panel7);
             sidepanelPOS.Controls.Add(moveup);
-            sidepanelPOS.Controls.Add(allout);
-            sidepanelPOS.Controls.Add(adjust);
             sidepanelPOS.Controls.Add(button16);
             sidepanelPOS.Controls.Add(btnSignout);
             sidepanelPOS.Controls.Add(button18);
@@ -173,7 +167,7 @@ namespace Service_Management_System.POS
             moveup.BackgroundImage = (Image)resources.GetObject("moveup.BackgroundImage");
             moveup.BackgroundImageLayout = ImageLayout.Stretch;
             moveup.Cursor = Cursors.Hand;
-            moveup.Location = new Point(179, 593);
+            moveup.Location = new Point(112, 591);
             moveup.Name = "moveup";
             moveup.Size = new Size(40, 39);
             moveup.TabIndex = 18;
@@ -182,38 +176,9 @@ namespace Service_Management_System.POS
             moveup.MouseEnter += moveup_MouseEnter;
             moveup.MouseLeave += moveup_MouseLeave;
             // 
-            // allout
-            // 
-            allout.BackColor = Color.Transparent;
-            allout.BackgroundImage = (Image)resources.GetObject("allout.BackgroundImage");
-            allout.BackgroundImageLayout = ImageLayout.Stretch;
-            allout.Cursor = Cursors.Hand;
-            allout.Location = new Point(117, 593);
-            allout.Name = "allout";
-            allout.Size = new Size(39, 38);
-            allout.TabIndex = 17;
-            allout.TabStop = false;
-            allout.Click += allout_Click;
-            allout.MouseEnter += allout_MouseEnter;
-            allout.MouseLeave += allout_MouseLeave;
-            // 
-            // adjust
-            // 
-            adjust.BackColor = Color.Transparent;
-            adjust.BackgroundImage = (Image)resources.GetObject("adjust.BackgroundImage");
-            adjust.BackgroundImageLayout = ImageLayout.Stretch;
-            adjust.Cursor = Cursors.Hand;
-            adjust.Location = new Point(52, 594);
-            adjust.Name = "adjust";
-            adjust.Size = new Size(40, 34);
-            adjust.TabIndex = 16;
-            adjust.TabStop = false;
-            adjust.MouseEnter += adjust_MouseEnter;
-            adjust.MouseLeave += adjust_MouseLeave;
-            // 
             // button16
             // 
-            button16.BackColor = Color.Transparent;
+            button16.BackColor = Color.FromArgb(3, 83, 115);
             button16.BackgroundImage = (Image)resources.GetObject("button16.BackgroundImage");
             button16.BackgroundImageLayout = ImageLayout.Stretch;
             button16.FlatAppearance.BorderSize = 0;
@@ -232,7 +197,7 @@ namespace Service_Management_System.POS
             // 
             // btnSignout
             // 
-            btnSignout.BackColor = Color.Transparent;
+            btnSignout.BackColor = Color.FromArgb(3, 83, 115);
             btnSignout.BackgroundImage = (Image)resources.GetObject("btnSignout.BackgroundImage");
             btnSignout.BackgroundImageLayout = ImageLayout.Stretch;
             btnSignout.FlatAppearance.BorderSize = 0;
@@ -252,7 +217,7 @@ namespace Service_Management_System.POS
             // 
             // button18
             // 
-            button18.BackColor = Color.Transparent;
+            button18.BackColor = Color.FromArgb(3, 83, 115);
             button18.BackgroundImage = (Image)resources.GetObject("button18.BackgroundImage");
             button18.BackgroundImageLayout = ImageLayout.Stretch;
             button18.FlatAppearance.BorderSize = 0;
@@ -271,7 +236,7 @@ namespace Service_Management_System.POS
             // 
             // button19
             // 
-            button19.BackColor = Color.Transparent;
+            button19.BackColor = Color.FromArgb(3, 83, 115);
             button19.BackgroundImage = (Image)resources.GetObject("button19.BackgroundImage");
             button19.BackgroundImageLayout = ImageLayout.Stretch;
             button19.FlatAppearance.BorderSize = 0;
@@ -290,7 +255,7 @@ namespace Service_Management_System.POS
             // 
             // button15
             // 
-            button15.BackColor = Color.Transparent;
+            button15.BackColor = Color.FromArgb(3, 83, 115);
             button15.BackgroundImage = (Image)resources.GetObject("button15.BackgroundImage");
             button15.BackgroundImageLayout = ImageLayout.Stretch;
             button15.FlatAppearance.BorderSize = 0;
@@ -310,7 +275,7 @@ namespace Service_Management_System.POS
             // 
             // btnViewopensales
             // 
-            btnViewopensales.BackColor = Color.Transparent;
+            btnViewopensales.BackColor = Color.FromArgb(3, 83, 115);
             btnViewopensales.BackgroundImage = (Image)resources.GetObject("btnViewopensales.BackgroundImage");
             btnViewopensales.BackgroundImageLayout = ImageLayout.Stretch;
             btnViewopensales.FlatAppearance.BorderSize = 0;
@@ -325,10 +290,12 @@ namespace Service_Management_System.POS
             btnViewopensales.UseCompatibleTextRendering = true;
             btnViewopensales.UseVisualStyleBackColor = false;
             btnViewopensales.Click += button14_Click;
+            btnViewopensales.MouseEnter += button14_MouseEnter;
+            btnViewopensales.MouseLeave += button14_MouseLeave;
             // 
             // button13
             // 
-            button13.BackColor = Color.Transparent;
+            button13.BackColor = Color.FromArgb(3, 83, 115);
             button13.BackgroundImage = (Image)resources.GetObject("button13.BackgroundImage");
             button13.BackgroundImageLayout = ImageLayout.Stretch;
             button13.FlatAppearance.BorderSize = 0;
@@ -343,10 +310,12 @@ namespace Service_Management_System.POS
             button13.UseCompatibleTextRendering = true;
             button13.UseVisualStyleBackColor = false;
             button13.Click += button13_Click;
+            button13.MouseEnter += button13_MouseEnter;
+            button13.MouseLeave += button13_MouseLeave;
             // 
             // button12
             // 
-            button12.BackColor = Color.Transparent;
+            button12.BackColor = Color.FromArgb(3, 83, 115);
             button12.BackgroundImage = (Image)resources.GetObject("button12.BackgroundImage");
             button12.BackgroundImageLayout = ImageLayout.Zoom;
             button12.FlatAppearance.BorderSize = 0;
@@ -362,6 +331,8 @@ namespace Service_Management_System.POS
             button12.UseCompatibleTextRendering = true;
             button12.UseVisualStyleBackColor = false;
             button12.Click += button12_Click;
+            button12.MouseEnter += button12_MouseEnter;
+            button12.MouseLeave += button12_MouseLeave;
             // 
             // panel1
             // 
@@ -1059,7 +1030,7 @@ namespace Service_Management_System.POS
             // 
             // timerSfx
             // 
-            timerSfx.Interval = 2;
+            timerSfx.Interval = 5;
             timerSfx.Tick += timerSfx_Tick;
             // 
             // panel8
@@ -1152,8 +1123,6 @@ namespace Service_Management_System.POS
             ((System.ComponentModel.ISupportInitialize)minilogo).EndInit();
             sidepanelPOS.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)moveup).EndInit();
-            ((System.ComponentModel.ISupportInitialize)allout).EndInit();
-            ((System.ComponentModel.ISupportInitialize)adjust).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -1229,7 +1198,6 @@ namespace Service_Management_System.POS
         private DataGridView jobOrderedView;
         private Button btnmenU2;
         private Panel sidepanelPOS;
-        private Button button12;
         private Button button16;
         private Button btnSignout;
         private Button button18;
@@ -1251,7 +1219,6 @@ namespace Service_Management_System.POS
         private Label label11;
         private Panel panel10;
         private Label label12;
-        private PictureBox allout;
-        private PictureBox adjust;
+        private Button button12;
     }
 }

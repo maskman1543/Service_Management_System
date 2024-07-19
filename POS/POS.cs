@@ -18,22 +18,15 @@ namespace Service_Management_System.POS
 
     public partial class POSForm : Form
     {
-        private bool isExpanding;
-        private bool isCollapsing;
-        private int stepSize = 10; // Step size for smooth transition
-        private int targetWidth;
-        private int formOriginalWidth;
-        private int formTargetWidth;
         bool sidebarExpand;
         private jonOrder_form orderForm;
+
         public POSForm()
         {
             InitializeComponent();
             InitializeProductOrderedView();
             InitializeJobOrderedView();
-            timerSfx.Interval = 15; // Timer interval for smooth transition
-            this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
-            formOriginalWidth = this.Width; // Store the original width of the form
+            //this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
         }
 
 
@@ -426,33 +419,13 @@ namespace Service_Management_System.POS
             button16.Height = 57;
         }
 
-        private void adjust_MouseEnter(object sender, EventArgs e)
-        {
-            // Increase size when mouse enters
-            adjust.Width = 44;
-            adjust.Height = 43;
-        }
+        
 
-        private void adjust_MouseLeave(object sender, EventArgs e)
-        {
-            // Restore original size when mouse leaves
-            adjust.Width = 40;
-            adjust.Height = 39;
-        }
+        
 
-        private void allout_MouseEnter(object sender, EventArgs e)
-        {
-            // Increase size when mouse enters
-            allout.Width = 44;
-            allout.Height = 43;
-        }
+        
 
-        private void allout_MouseLeave(object sender, EventArgs e)
-        {
-            // Restore original size when mouse leaves
-            allout.Width = 40;
-            allout.Height = 39;
-        }
+        
 
         private void moveup_MouseEnter(object sender, EventArgs e)
         {
