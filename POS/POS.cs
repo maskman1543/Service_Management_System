@@ -21,134 +21,46 @@ namespace Service_Management_System.POS
         private bool isExpanding;
         private bool isCollapsing;
         private int stepSize = 10; // Step size for smooth transition
-        private int additionalWidth = 212; // Additional width when expanded
-        private int originalWidth = 44; // Original width when collapsed
         private int targetWidth;
         private int formOriginalWidth;
         private int formTargetWidth;
-        /*private bool isExpanding;
-        private bool isCollapsing;
-        private int stepSize = 10; // Step size for smooth transition
-        private int additionalWidth = 212; // Additional width when expanded
-        private int originalWidth = 44; // Original width when collapsed
-        private int targetWidth;*/
+        bool sidebarExpand;
         public POSForm()
         {
-
-            /*InitializeComponent();
-            InitializeProductOrderedView();
-            InitializeJobOrderedView();
-            sidepanelPOS.Width = originalWidth;
-            timerSfx.Interval = 15; // Timer interval for smooth transition
-            this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
-            sidepanelPOS.Width = originalWidth;
-            sidepanelPOS.Size = new Size(44, 656);
-            sidepanelPOS.Location = new Point(1436, 78);*/
             InitializeComponent();
             InitializeProductOrderedView();
             InitializeJobOrderedView();
-            sidepanelPOS.Width = originalWidth;
             timerSfx.Interval = 15; // Timer interval for smooth transition
             this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
-            //sidepanelPOS.Size = new Size(originalWidth, 656);
-            //sidepanelPOS.Location = new Point(1436, 78);
-
             formOriginalWidth = this.Width; // Store the original width of the form
-            formTargetWidth = formOriginalWidth + additionalWidth; // Target width when expanded
-
         }
 
 
         private void timerSfx_Tick(object sender, EventArgs e)
         {
-            if (isExpanding)
+            if (sidebarExpand)
             {
-                if (sidepanelPOS.Width < targetWidth)
+                sidepanelPOS.Width -= 10;
+                if (sidepanelPOS.Width == sidepanelPOS.MinimumSize.Width)
                 {
-                    sidepanelPOS.Width += stepSize;
-                    this.Width += stepSize; // Expand the form
-                    if (sidepanelPOS.Width >= targetWidth)
-                    {
-                        sidepanelPOS.Width = targetWidth;
-                        this.Width = formTargetWidth; // Ensure form reaches target width
-                        isExpanding = false;
-                        timerSfx.Stop();
-                    }
+                    sidebarExpand = false;
+                    timerSfx.Stop();
                 }
             }
-            else if (isCollapsing)
+            else
             {
-                if (sidepanelPOS.Width > originalWidth)
+                sidepanelPOS.Width += 10;
+                if (sidepanelPOS.Width == sidepanelPOS.MaximumSize.Width)
                 {
-                    sidepanelPOS.Width -= stepSize;
-                    this.Width -= stepSize; // Shrink the form
-                    if (sidepanelPOS.Width <= originalWidth)
-                    {
-                        sidepanelPOS.Width = originalWidth;
-                        this.Width = formOriginalWidth; // Ensure form reaches original width
-                        isCollapsing = false;
-                        timerSfx.Stop();
-                    }
+                    sidebarExpand = true;
+                    timerSfx.Stop();
                 }
             }
-            /*if (isExpanding)
-            {
-                if (sidepanelPOS.Width < targetWidth)
-                {
-                    sidepanelPOS.Width += stepSize;
-                    sidepanelPOS.Left -= stepSize; // Move to the left
-                    if (sidepanelPOS.Width >= targetWidth)
-                    {
-                        sidepanelPOS.Width = targetWidth;
-                        isExpanding = false;
-                        timerSfx.Stop();
-                    }
-                }
-            }
-            else if (isCollapsing)
-            {
-                if (sidepanelPOS.Width > originalWidth)
-                {
-                    sidepanelPOS.Width -= stepSize;
-                    sidepanelPOS.Left += stepSize; // Move to the right
-                    if (sidepanelPOS.Width <= originalWidth)
-                    {
-                        sidepanelPOS.Width = originalWidth;
-                        isCollapsing = false;
-                        timerSfx.Stop();
-                    }
-                }
-            }*/
         }
 
         private void btnmenU2_Click(object sender, EventArgs e)
         {
-            if (sidepanelPOS.Width == originalWidth)
-            {
-                targetWidth = originalWidth + additionalWidth;
-                isExpanding = true;
-                isCollapsing = false;
-            }
-            else
-            {
-                targetWidth = originalWidth;
-                isCollapsing = true;
-                isExpanding = false;
-            }
             timerSfx.Start();
-            /*if (sidepanelPOS.Width == originalWidth)
-            {
-                targetWidth = originalWidth + additionalWidth;
-                isExpanding = true;
-                isCollapsing = false;
-            }
-            else
-            {
-                targetWidth = originalWidth;
-                isCollapsing = true;
-                isExpanding = false;
-            }
-            timerSfx.Start();*/
         }
 
 
@@ -170,9 +82,8 @@ namespace Service_Management_System.POS
         private void AddOrUpdateProductOrderedView(int productID)
         {
             // Query to get product details including quantity
-            string query = $"SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Price, productTable.Quantity, productTable.Barcode " +
-                   $"FROM productTable " +
-                   $"WHERE productTable.ProductID = {productID}";
+            string query = $"SELECT productID, productGroup, productName, Price, Quantity, barcode " +
+                           $"FROM productTable WHERE productID = {productID}";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -192,7 +103,7 @@ namespace Service_Management_System.POS
                         // Check if the product is already in the target DataGridView
                         foreach (DataGridViewRow row in productOrderedView.Rows)
                         {
-                            if (Convert.ToInt32(row.Cells["ProductID"].Value) == productID)
+                            if (Convert.ToInt32(row.Cells["productID"].Value) == productID)
                             {
                                 // Update the quantity
                                 row.Cells["Quantity"].Value = Convert.ToInt32(row.Cells["Quantity"].Value) + 1;
@@ -219,26 +130,25 @@ namespace Service_Management_System.POS
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow selectedRow = partsView.Rows[e.RowIndex];
-                int productID = Convert.ToInt32(selectedRow.Cells["ProductID"].Value);
+                int productID = Convert.ToInt32(selectedRow.Cells["productID"].Value);
 
                 AddOrUpdateProductOrderedView(productID);
             }
         }
         private void InitializeProductOrderedView()
         {
-            productOrderedView.Columns.Add("ProductID", "Product ID");
-            productOrderedView.Columns.Add("ProductType", "Product Group");
-            productOrderedView.Columns.Add("ProductName", "Product Name");
+            productOrderedView.Columns.Add("productID", "Product ID");
+            productOrderedView.Columns.Add("productGroup", "Product Group");
+            productOrderedView.Columns.Add("productName", "Product Name");
             productOrderedView.Columns.Add("Price", "Price");
             productOrderedView.Columns.Add("Quantity", "Quantity");
-            productOrderedView.Columns.Add("Barcode", "Barcode");
+            productOrderedView.Columns.Add("barcode", "Barcode");
         }
 
         private void LoadProductOrderedView(int productID)
         {
-            string query = $"SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Price, productTable.Quantity, productTable.Barcode " +
-                   $"FROM productTable " +
-                   $"WHERE productTable.ProductID = {productID}";
+            string query = $"SELECT productID, productGroup, productName, Price, barcode " +
+                   $"FROM productTable WHERE productID = {productID}";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -296,7 +206,7 @@ namespace Service_Management_System.POS
         }
         private void LoadPartsView()
         {
-            string query = "SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Price, productTable.Quantity, productTable.Barcode\r\nFROM productTable;\r\n";
+            string query = "SELECT productTable.productID, productTable.productGroup, productTable.productName, productTable.Price, productTable.barcode\r\nFROM productTable;\r\n";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -317,9 +227,11 @@ namespace Service_Management_System.POS
         }
         private void AddServiceToOrderedView(int serviceID)
         {
-            string query = $"SELECT servicesTb.serviceID, servicesTb.serviceType, servicesTb.serviceName, servicesTb.serviceRate " +
-                   $"FROM servicesTb " +
-                   $"WHERE servicesTb.serviceID = {serviceID}";
+            string query = $"SELECT servicesTb.serviceID, servicesTb.serviceName, servicesTb.serviceRate, mechanicTb.mechanicName " +
+                           $"FROM mechanicTb " +
+                           $"INNER JOIN (servicesTb INNER JOIN JobOrderTb ON servicesTb.serviceID = JobOrderTb.serviceID) " +
+                           $"ON mechanicTb.mechanicID = JobOrderTb.mechanicID " +
+                           $"WHERE servicesTb.serviceID = {serviceID}";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -360,7 +272,7 @@ namespace Service_Management_System.POS
 
         private void LoadserviceView()
         {
-            string query = "SELECT * FROM servicesTb";
+            string query = "SELECT servicesTb.serviceID, servicesTb.serviceType, servicesTb.serviceName, servicesTb.serviceRate FROM servicesTb;";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -920,9 +832,24 @@ namespace Service_Management_System.POS
 
         }
 
-        private void productOrderedView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void textBox7_Enter(object sender, EventArgs e)
         {
+            textBox7.Text = "";
+        }
 
+        private void textBox7_Leave(object sender, EventArgs e)
+        {
+            textBox7.Text = "Search Product";
+        }
+
+        private void textBox8_Enter(object sender, EventArgs e)
+        {
+            textBox8.Text = "";
+        }
+
+        private void textBox8_Leave(object sender, EventArgs e)
+        {
+            textBox8.Text = "Search Services";
         }
 
 

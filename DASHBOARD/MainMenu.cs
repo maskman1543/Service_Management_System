@@ -179,5 +179,11 @@ namespace Service_Management_System.DASHBOARD
         {
             sidebarTimer.Start();
         }
+
+        private void btnPayroll_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.color2);
+            OpenchildForm(new Payroll_Form());
+        }
     }
 }

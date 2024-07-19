@@ -58,6 +58,8 @@
             FirstNameValue.Size = new Size(350, 28);
             FirstNameValue.TabIndex = 8;
             FirstNameValue.Text = "Customer name";
+            FirstNameValue.Enter += FirstNameValue_Enter;
+            FirstNameValue.Leave += FirstNameValue_Leave;
             // 
             // textBox1
             // 
@@ -69,6 +71,8 @@
             textBox1.Size = new Size(350, 28);
             textBox1.TabIndex = 9;
             textBox1.Text = "Phone no.";
+            textBox1.Enter += textBox1_Enter;
+            textBox1.Leave += textBox1_Leave;
             // 
             // textBox2
             // 
@@ -80,6 +84,8 @@
             textBox2.Size = new Size(350, 28);
             textBox2.TabIndex = 10;
             textBox2.Text = "Vehicle type";
+            textBox2.Enter += textBox2_Enter;
+            textBox2.Leave += textBox2_Leave;
             // 
             // textBox3
             // 
@@ -91,6 +97,8 @@
             textBox3.Size = new Size(350, 28);
             textBox3.TabIndex = 11;
             textBox3.Text = "Plate no.";
+            textBox3.Enter += textBox3_Enter;
+            textBox3.Leave += textBox3_Leave;
             // 
             // label1
             // 
