@@ -336,7 +336,7 @@ namespace Service_Management_System.POS
             decimal vat = subtotal * VAT_RATE;
             decimal total = subtotal + vat;
 
-            
+
             lblsubtotal.Text = subtotal.ToString("C");
             lblVaTax.Text = vat.ToString("C");
             lblTotal.Text = total.ToString("C");

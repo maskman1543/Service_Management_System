@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Service_Management_System.DASHBOARD
 {
-    public partial class addproduct_form : Form
+    public partial class priceandtax_form : Form
     {
-        public addproduct_form()
+        public priceandtax_form()
         {
             InitializeComponent();
         }

@@ -126,10 +126,10 @@ namespace Service_Management_System.POS
             // 
             minilogo.BackgroundImage = (Image)resources.GetObject("minilogo.BackgroundImage");
             minilogo.BackgroundImageLayout = ImageLayout.Zoom;
-            minilogo.Location = new Point(1011, 14);
+            minilogo.Location = new Point(1264, 18);
             minilogo.Margin = new Padding(2);
             minilogo.Name = "minilogo";
-            minilogo.Size = new Size(100, 34);
+            minilogo.Size = new Size(125, 42);
             minilogo.TabIndex = 14;
             minilogo.TabStop = false;
             // 
@@ -152,22 +152,22 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(button12);
             sidepanelPOS.Dock = DockStyle.Right;
             sidepanelPOS.ImeMode = ImeMode.NoControl;
-            sidepanelPOS.Location = new Point(979, 63);
+            sidepanelPOS.Location = new Point(1480, 78);
             sidepanelPOS.Margin = new Padding(2);
-            sidepanelPOS.MaximumSize = new Size(205, 526);
-            sidepanelPOS.MinimumSize = new Size(4, 526);
+            sidepanelPOS.MaximumSize = new Size(255, 656);
+            sidepanelPOS.MinimumSize = new Size(0, 656);
             sidepanelPOS.Name = "sidepanelPOS";
-            sidepanelPOS.Size = new Size(205, 526);
+            sidepanelPOS.Size = new Size(0, 656);
             sidepanelPOS.TabIndex = 16;
             sidepanelPOS.MouseEnter += sidepanelPOS_MouseEnter;
             // 
             // panel7
             // 
             panel7.BackColor = Color.White;
-            panel7.Location = new Point(0, 447);
+            panel7.Location = new Point(0, 559);
             panel7.Margin = new Padding(2);
             panel7.Name = "panel7";
-            panel7.Size = new Size(204, 2);
+            panel7.Size = new Size(255, 2);
             panel7.TabIndex = 19;
             // 
             // moveup
@@ -176,10 +176,10 @@ namespace Service_Management_System.POS
             moveup.BackgroundImage = (Image)resources.GetObject("moveup.BackgroundImage");
             moveup.BackgroundImageLayout = ImageLayout.Stretch;
             moveup.Cursor = Cursors.Hand;
-            moveup.Location = new Point(143, 474);
+            moveup.Location = new Point(179, 592);
             moveup.Margin = new Padding(2);
             moveup.Name = "moveup";
-            moveup.Size = new Size(32, 31);
+            moveup.Size = new Size(40, 39);
             moveup.TabIndex = 18;
             moveup.TabStop = false;
             moveup.Click += moveup_Click;
@@ -191,10 +191,10 @@ namespace Service_Management_System.POS
             allout.BackColor = Color.Transparent;
             allout.BackgroundImageLayout = ImageLayout.Stretch;
             allout.Cursor = Cursors.Hand;
-            allout.Location = new Point(94, 474);
+            allout.Location = new Point(118, 592);
             allout.Margin = new Padding(2);
             allout.Name = "allout";
-            allout.Size = new Size(31, 30);
+            allout.Size = new Size(39, 38);
             allout.TabIndex = 17;
             allout.TabStop = false;
             allout.Click += allout_Click;
@@ -204,10 +204,10 @@ namespace Service_Management_System.POS
             adjust.BackColor = Color.Transparent;
             adjust.BackgroundImageLayout = ImageLayout.Stretch;
             adjust.Cursor = Cursors.Hand;
-            adjust.Location = new Point(42, 475);
+            adjust.Location = new Point(52, 594);
             adjust.Margin = new Padding(2);
             adjust.Name = "adjust";
-            adjust.Size = new Size(32, 27);
+            adjust.Size = new Size(40, 34);
             adjust.TabIndex = 16;
             adjust.TabStop = false;
             // 
@@ -220,10 +220,10 @@ namespace Service_Management_System.POS
             button16.FlatStyle = FlatStyle.Flat;
             button16.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             button16.ForeColor = SystemColors.Control;
-            button16.Location = new Point(-19, 296);
+            button16.Location = new Point(-24, 370);
             button16.Margin = new Padding(2);
             button16.Name = "button16";
-            button16.Size = new Size(215, 46);
+            button16.Size = new Size(269, 58);
             button16.TabIndex = 14;
             button16.TextAlign = ContentAlignment.MiddleLeft;
             button16.UseCompatibleTextRendering = true;
@@ -240,10 +240,10 @@ namespace Service_Management_System.POS
             btnSignout.FlatStyle = FlatStyle.Flat;
             btnSignout.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             btnSignout.ForeColor = SystemColors.Control;
-            btnSignout.Location = new Point(-19, 253);
+            btnSignout.Location = new Point(-24, 316);
             btnSignout.Margin = new Padding(2);
             btnSignout.Name = "btnSignout";
-            btnSignout.Size = new Size(215, 46);
+            btnSignout.Size = new Size(269, 58);
             btnSignout.TabIndex = 12;
             btnSignout.TextAlign = ContentAlignment.MiddleLeft;
             btnSignout.UseCompatibleTextRendering = true;
@@ -261,10 +261,10 @@ namespace Service_Management_System.POS
             button18.FlatStyle = FlatStyle.Flat;
             button18.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             button18.ForeColor = SystemColors.Control;
-            button18.Location = new Point(-19, 210);
+            button18.Location = new Point(-24, 262);
             button18.Margin = new Padding(2);
             button18.Name = "button18";
-            button18.Size = new Size(215, 46);
+            button18.Size = new Size(269, 58);
             button18.TabIndex = 10;
             button18.TextAlign = ContentAlignment.MiddleLeft;
             button18.UseCompatibleTextRendering = true;
@@ -281,10 +281,10 @@ namespace Service_Management_System.POS
             button19.FlatStyle = FlatStyle.Flat;
             button19.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             button19.ForeColor = SystemColors.Control;
-            button19.Location = new Point(-19, 166);
+            button19.Location = new Point(-24, 208);
             button19.Margin = new Padding(2);
             button19.Name = "button19";
-            button19.Size = new Size(215, 46);
+            button19.Size = new Size(269, 58);
             button19.TabIndex = 8;
             button19.TextAlign = ContentAlignment.MiddleLeft;
             button19.UseCompatibleTextRendering = true;
@@ -301,10 +301,10 @@ namespace Service_Management_System.POS
             button15.FlatStyle = FlatStyle.Flat;
             button15.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             button15.ForeColor = SystemColors.Control;
-            button15.Location = new Point(-19, 123);
+            button15.Location = new Point(-24, 154);
             button15.Margin = new Padding(2);
             button15.Name = "button15";
-            button15.Size = new Size(215, 46);
+            button15.Size = new Size(269, 58);
             button15.TabIndex = 6;
             button15.TextAlign = ContentAlignment.MiddleLeft;
             button15.UseCompatibleTextRendering = true;
@@ -322,10 +322,10 @@ namespace Service_Management_System.POS
             btnViewopensales.FlatStyle = FlatStyle.Flat;
             btnViewopensales.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             btnViewopensales.ForeColor = SystemColors.Control;
-            btnViewopensales.Location = new Point(-19, 80);
+            btnViewopensales.Location = new Point(-24, 100);
             btnViewopensales.Margin = new Padding(2);
             btnViewopensales.Name = "btnViewopensales";
-            btnViewopensales.Size = new Size(215, 46);
+            btnViewopensales.Size = new Size(269, 58);
             btnViewopensales.TabIndex = 4;
             btnViewopensales.TextAlign = ContentAlignment.MiddleLeft;
             btnViewopensales.UseCompatibleTextRendering = true;
@@ -341,10 +341,10 @@ namespace Service_Management_System.POS
             button13.FlatStyle = FlatStyle.Flat;
             button13.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             button13.ForeColor = SystemColors.Control;
-            button13.Location = new Point(-19, 38);
+            button13.Location = new Point(-24, 48);
             button13.Margin = new Padding(2);
             button13.Name = "button13";
-            button13.Size = new Size(215, 46);
+            button13.Size = new Size(269, 58);
             button13.TabIndex = 2;
             button13.TextAlign = ContentAlignment.MiddleLeft;
             button13.UseCompatibleTextRendering = true;
@@ -361,10 +361,10 @@ namespace Service_Management_System.POS
             button12.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             button12.ForeColor = SystemColors.Control;
             button12.ImageAlign = ContentAlignment.MiddleLeft;
-            button12.Location = new Point(-19, -2);
+            button12.Location = new Point(-24, -2);
             button12.Margin = new Padding(2);
             button12.Name = "button12";
-            button12.Size = new Size(215, 46);
+            button12.Size = new Size(269, 58);
             button12.TabIndex = 0;
             button12.TextAlign = ContentAlignment.MiddleLeft;
             button12.UseCompatibleTextRendering = true;
@@ -392,7 +392,7 @@ namespace Service_Management_System.POS
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1184, 63);
+            panel1.Size = new Size(1480, 78);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -404,10 +404,10 @@ namespace Service_Management_System.POS
             btnmenU2.FlatAppearance.BorderSize = 0;
             btnmenU2.FlatStyle = FlatStyle.Flat;
             btnmenU2.ForeColor = Color.Transparent;
-            btnmenU2.Location = new Point(1134, 14);
+            btnmenU2.Location = new Point(1418, 18);
             btnmenU2.Margin = new Padding(2);
             btnmenU2.Name = "btnmenU2";
-            btnmenU2.Size = new Size(41, 34);
+            btnmenU2.Size = new Size(51, 42);
             btnmenU2.TabIndex = 10;
             btnmenU2.UseVisualStyleBackColor = false;
             btnmenU2.Click += btnmenU2_Click;
@@ -423,10 +423,10 @@ namespace Service_Management_System.POS
             button9.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button9.ForeColor = Color.White;
             button9.ImageAlign = ContentAlignment.MiddleLeft;
-            button9.Location = new Point(70, 2);
+            button9.Location = new Point(88, 2);
             button9.Margin = new Padding(2);
             button9.Name = "button9";
-            button9.Size = new Size(60, 54);
+            button9.Size = new Size(75, 68);
             button9.TabIndex = 9;
             button9.UseVisualStyleBackColor = true;
             // 
@@ -439,10 +439,10 @@ namespace Service_Management_System.POS
             button10.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button10.ForeColor = Color.White;
             button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.Location = new Point(458, 2);
+            button10.Location = new Point(572, 2);
             button10.Margin = new Padding(2);
             button10.Name = "button10";
-            button10.Size = new Size(60, 54);
+            button10.Size = new Size(75, 68);
             button10.TabIndex = 13;
             button10.UseVisualStyleBackColor = true;
             // 
@@ -455,10 +455,10 @@ namespace Service_Management_System.POS
             btnRefund.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             btnRefund.ForeColor = Color.White;
             btnRefund.ImageAlign = ContentAlignment.TopCenter;
-            btnRefund.Location = new Point(329, 2);
+            btnRefund.Location = new Point(411, 2);
             btnRefund.Margin = new Padding(2);
             btnRefund.Name = "btnRefund";
-            btnRefund.Size = new Size(60, 54);
+            btnRefund.Size = new Size(75, 68);
             btnRefund.TabIndex = 11;
             btnRefund.TextAlign = ContentAlignment.BottomCenter;
             btnRefund.UseVisualStyleBackColor = true;
@@ -474,10 +474,10 @@ namespace Service_Management_System.POS
             button2.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
             button2.ImageAlign = ContentAlignment.TopCenter;
-            button2.Location = new Point(394, 2);
+            button2.Location = new Point(492, 2);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(60, 54);
+            button2.Size = new Size(75, 68);
             button2.TabIndex = 10;
             button2.TextAlign = ContentAlignment.BottomCenter;
             button2.UseVisualStyleBackColor = true;
@@ -494,10 +494,10 @@ namespace Service_Management_System.POS
             btnCash.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCash.ForeColor = Color.White;
             btnCash.ImageAlign = ContentAlignment.TopCenter;
-            btnCash.Location = new Point(653, 3);
+            btnCash.Location = new Point(816, 4);
             btnCash.Margin = new Padding(2);
             btnCash.Name = "btnCash";
-            btnCash.Size = new Size(60, 54);
+            btnCash.Size = new Size(75, 68);
             btnCash.TabIndex = 9;
             btnCash.TextAlign = ContentAlignment.BottomCenter;
             btnCash.UseVisualStyleBackColor = true;
@@ -513,10 +513,10 @@ namespace Service_Management_System.POS
             btnPayment.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnPayment.ForeColor = Color.White;
             btnPayment.ImageAlign = ContentAlignment.TopCenter;
-            btnPayment.Location = new Point(588, 2);
+            btnPayment.Location = new Point(735, 2);
             btnPayment.Margin = new Padding(2);
             btnPayment.Name = "btnPayment";
-            btnPayment.Size = new Size(60, 54);
+            btnPayment.Size = new Size(75, 68);
             btnPayment.TabIndex = 8;
             btnPayment.TextAlign = ContentAlignment.BottomCenter;
             btnPayment.UseVisualStyleBackColor = true;
@@ -532,10 +532,10 @@ namespace Service_Management_System.POS
             btnSaveSale.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnSaveSale.ForeColor = Color.White;
             btnSaveSale.ImageAlign = ContentAlignment.TopCenter;
-            btnSaveSale.Location = new Point(523, 2);
+            btnSaveSale.Location = new Point(654, 2);
             btnSaveSale.Margin = new Padding(2);
             btnSaveSale.Name = "btnSaveSale";
-            btnSaveSale.Size = new Size(60, 54);
+            btnSaveSale.Size = new Size(75, 68);
             btnSaveSale.TabIndex = 7;
             btnSaveSale.TextAlign = ContentAlignment.BottomCenter;
             btnSaveSale.UseVisualStyleBackColor = true;
@@ -552,10 +552,10 @@ namespace Service_Management_System.POS
             btnNewSale.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnNewSale.ForeColor = Color.White;
             btnNewSale.ImageAlign = ContentAlignment.TopCenter;
-            btnNewSale.Location = new Point(264, 2);
+            btnNewSale.Location = new Point(330, 2);
             btnNewSale.Margin = new Padding(2);
             btnNewSale.Name = "btnNewSale";
-            btnNewSale.Size = new Size(60, 54);
+            btnNewSale.Size = new Size(75, 68);
             btnNewSale.TabIndex = 4;
             btnNewSale.TextAlign = ContentAlignment.BottomCenter;
             btnNewSale.UseVisualStyleBackColor = true;
@@ -571,10 +571,10 @@ namespace Service_Management_System.POS
             btnDiscount.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             btnDiscount.ForeColor = Color.White;
             btnDiscount.ImageAlign = ContentAlignment.TopCenter;
-            btnDiscount.Location = new Point(199, 2);
+            btnDiscount.Location = new Point(249, 2);
             btnDiscount.Margin = new Padding(2);
             btnDiscount.Name = "btnDiscount";
-            btnDiscount.Size = new Size(60, 54);
+            btnDiscount.Size = new Size(75, 68);
             btnDiscount.TabIndex = 3;
             btnDiscount.TextAlign = ContentAlignment.BottomCenter;
             btnDiscount.UseVisualStyleBackColor = true;
@@ -590,10 +590,10 @@ namespace Service_Management_System.POS
             btnCustomer.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             btnCustomer.ForeColor = Color.White;
             btnCustomer.ImageAlign = ContentAlignment.TopCenter;
-            btnCustomer.Location = new Point(134, 2);
+            btnCustomer.Location = new Point(168, 2);
             btnCustomer.Margin = new Padding(2);
             btnCustomer.Name = "btnCustomer";
-            btnCustomer.Size = new Size(60, 54);
+            btnCustomer.Size = new Size(75, 68);
             btnCustomer.TabIndex = 2;
             btnCustomer.TextAlign = ContentAlignment.BottomCenter;
             btnCustomer.UseVisualStyleBackColor = true;
@@ -609,10 +609,10 @@ namespace Service_Management_System.POS
             btnSearch.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnSearch.ForeColor = Color.IndianRed;
             btnSearch.ImageAlign = ContentAlignment.TopCenter;
-            btnSearch.Location = new Point(5, 2);
+            btnSearch.Location = new Point(6, 2);
             btnSearch.Margin = new Padding(2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(60, 54);
+            btnSearch.Size = new Size(75, 68);
             btnSearch.TabIndex = 1;
             btnSearch.Text = "\r\n.";
             btnSearch.TextAlign = ContentAlignment.BottomCenter;
@@ -627,10 +627,10 @@ namespace Service_Management_System.POS
             panel2.Controls.Add(button5);
             panel2.Controls.Add(btnQuantity);
             panel2.Controls.Add(btnDelete);
-            panel2.Location = new Point(0, 62);
+            panel2.Location = new Point(0, 78);
             panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(361, 56);
+            panel2.Size = new Size(451, 70);
             panel2.TabIndex = 1;
             // 
             // button5
@@ -642,10 +642,10 @@ namespace Service_Management_System.POS
             button5.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button5.ForeColor = Color.White;
             button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(265, 3);
+            button5.Location = new Point(331, 4);
             button5.Margin = new Padding(2);
             button5.Name = "button5";
-            button5.Size = new Size(60, 41);
+            button5.Size = new Size(75, 51);
             button5.TabIndex = 5;
             button5.UseVisualStyleBackColor = true;
             button5.MouseEnter += button5_MouseEnter;
@@ -660,11 +660,11 @@ namespace Service_Management_System.POS
             btnQuantity.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnQuantity.ForeColor = Color.White;
             btnQuantity.ImageAlign = ContentAlignment.MiddleLeft;
-            btnQuantity.Location = new Point(135, 3);
+            btnQuantity.Location = new Point(169, 4);
             btnQuantity.Margin = new Padding(2);
             btnQuantity.Name = "btnQuantity";
-            btnQuantity.Padding = new Padding(28, 0, 28, 0);
-            btnQuantity.Size = new Size(125, 41);
+            btnQuantity.Padding = new Padding(35, 0, 35, 0);
+            btnQuantity.Size = new Size(156, 51);
             btnQuantity.TabIndex = 4;
             btnQuantity.UseVisualStyleBackColor = true;
             btnQuantity.MouseEnter += btnQuantity_MouseEnter;
@@ -679,11 +679,11 @@ namespace Service_Management_System.POS
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
             btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDelete.Location = new Point(6, 3);
+            btnDelete.Location = new Point(8, 4);
             btnDelete.Margin = new Padding(2);
             btnDelete.Name = "btnDelete";
-            btnDelete.Padding = new Padding(28, 0, 28, 0);
-            btnDelete.Size = new Size(125, 41);
+            btnDelete.Padding = new Padding(35, 0, 35, 0);
+            btnDelete.Size = new Size(156, 51);
             btnDelete.TabIndex = 3;
             btnDelete.TextAlign = ContentAlignment.MiddleRight;
             btnDelete.UseVisualStyleBackColor = true;
@@ -702,10 +702,10 @@ namespace Service_Management_System.POS
             panel3.Controls.Add(button7);
             panel3.Controls.Add(textBox7);
             panel3.Controls.Add(button6);
-            panel3.Location = new Point(361, 62);
+            panel3.Location = new Point(451, 78);
             panel3.Margin = new Padding(2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(824, 56);
+            panel3.Size = new Size(1030, 70);
             panel3.TabIndex = 2;
             // 
             // pictureBox2
@@ -713,7 +713,7 @@ namespace Service_Management_System.POS
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox2.BackColor = Color.White;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(631, 6);
+            pictureBox2.Location = new Point(789, 8);
             pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(25, 25);
@@ -726,7 +726,7 @@ namespace Service_Management_System.POS
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.BackColor = Color.White;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(440, 9);
+            pictureBox1.Location = new Point(550, 11);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(25, 25);
@@ -742,10 +742,10 @@ namespace Service_Management_System.POS
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(206, 2);
+            button1.Location = new Point(258, 2);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(60, 41);
+            button1.Size = new Size(75, 51);
             button1.TabIndex = 9;
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
@@ -760,10 +760,10 @@ namespace Service_Management_System.POS
             button8.FlatStyle = FlatStyle.Flat;
             button8.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button8.ForeColor = Color.White;
-            button8.Location = new Point(141, 2);
+            button8.Location = new Point(176, 2);
             button8.Margin = new Padding(2);
             button8.Name = "button8";
-            button8.Size = new Size(60, 41);
+            button8.Size = new Size(75, 51);
             button8.TabIndex = 8;
             button8.UseVisualStyleBackColor = true;
             button8.MouseEnter += button8_MouseEnter;
@@ -773,11 +773,11 @@ namespace Service_Management_System.POS
             // 
             textBox8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBox8.ForeColor = Color.Gray;
-            textBox8.Location = new Point(476, 5);
+            textBox8.Location = new Point(595, 6);
             textBox8.Margin = new Padding(2);
             textBox8.Multiline = true;
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(178, 26);
+            textBox8.Size = new Size(222, 32);
             textBox8.TabIndex = 10;
             textBox8.Text = "Search Services";
             textBox8.Enter += textBox8_Enter;
@@ -791,10 +791,10 @@ namespace Service_Management_System.POS
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button7.ForeColor = Color.White;
-            button7.Location = new Point(76, 2);
+            button7.Location = new Point(95, 2);
             button7.Margin = new Padding(2);
             button7.Name = "button7";
-            button7.Size = new Size(60, 41);
+            button7.Size = new Size(75, 51);
             button7.TabIndex = 7;
             button7.UseVisualStyleBackColor = true;
             button7.MouseEnter += button7_MouseEnter;
@@ -804,11 +804,11 @@ namespace Service_Management_System.POS
             // 
             textBox7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBox7.ForeColor = Color.Gray;
-            textBox7.Location = new Point(283, 6);
+            textBox7.Location = new Point(354, 8);
             textBox7.Margin = new Padding(2);
             textBox7.Multiline = true;
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(178, 26);
+            textBox7.Size = new Size(222, 32);
             textBox7.TabIndex = 10;
             textBox7.Text = "Search Product";
             textBox7.Enter += textBox7_Enter;
@@ -823,10 +823,10 @@ namespace Service_Management_System.POS
             button6.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button6.ForeColor = Color.White;
             button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(11, 2);
+            button6.Location = new Point(14, 2);
             button6.Margin = new Padding(2);
             button6.Name = "button6";
-            button6.Size = new Size(60, 41);
+            button6.Size = new Size(75, 51);
             button6.TabIndex = 6;
             button6.UseVisualStyleBackColor = true;
             // 
@@ -834,12 +834,12 @@ namespace Service_Management_System.POS
             // 
             productOrderedView.BackgroundColor = Color.White;
             productOrderedView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            productOrderedView.Location = new Point(0, 162);
+            productOrderedView.Location = new Point(0, 202);
             productOrderedView.Margin = new Padding(2);
             productOrderedView.Name = "productOrderedView";
             productOrderedView.RowHeadersWidth = 51;
             productOrderedView.RowTemplate.Height = 29;
-            productOrderedView.Size = new Size(361, 128);
+            productOrderedView.Size = new Size(451, 160);
             productOrderedView.TabIndex = 3;
             productOrderedView.CellContentClick += productOrderedView_CellContentClick;
             // 
@@ -849,10 +849,10 @@ namespace Service_Management_System.POS
             panel4.Controls.Add(button11);
             panel4.Controls.Add(button4);
             panel4.Controls.Add(button3);
-            panel4.Location = new Point(0, 522);
+            panel4.Location = new Point(0, 652);
             panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(361, 65);
+            panel4.Size = new Size(451, 81);
             panel4.TabIndex = 4;
             // 
             // button11
@@ -864,10 +864,10 @@ namespace Service_Management_System.POS
             button11.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button11.ForeColor = Color.White;
             button11.ImageAlign = ContentAlignment.TopCenter;
-            button11.Location = new Point(198, 6);
+            button11.Location = new Point(248, 8);
             button11.Margin = new Padding(2);
             button11.Name = "button11";
-            button11.Size = new Size(90, 56);
+            button11.Size = new Size(112, 70);
             button11.TabIndex = 5;
             button11.TextAlign = ContentAlignment.BottomCenter;
             button11.UseVisualStyleBackColor = true;
@@ -883,10 +883,10 @@ namespace Service_Management_System.POS
             button4.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button4.ForeColor = Color.White;
             button4.ImageAlign = ContentAlignment.TopCenter;
-            button4.Location = new Point(104, 6);
+            button4.Location = new Point(130, 8);
             button4.Margin = new Padding(2);
             button4.Name = "button4";
-            button4.Size = new Size(90, 56);
+            button4.Size = new Size(112, 70);
             button4.TabIndex = 4;
             button4.TextAlign = ContentAlignment.BottomCenter;
             button4.UseVisualStyleBackColor = true;
@@ -903,10 +903,10 @@ namespace Service_Management_System.POS
             button3.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
             button3.ImageAlign = ContentAlignment.TopCenter;
-            button3.Location = new Point(10, 6);
+            button3.Location = new Point(12, 8);
             button3.Margin = new Padding(2);
             button3.Name = "button3";
-            button3.Size = new Size(90, 56);
+            button3.Size = new Size(112, 70);
             button3.TabIndex = 3;
             button3.TextAlign = ContentAlignment.BottomCenter;
             button3.UseVisualStyleBackColor = false;
@@ -920,26 +920,26 @@ namespace Service_Management_System.POS
             panel5.Controls.Add(textBox6);
             panel5.Controls.Add(label6);
             panel5.Controls.Add(label5);
-            panel5.Location = new Point(361, 525);
+            panel5.Location = new Point(451, 656);
             panel5.Margin = new Padding(2);
             panel5.Name = "panel5";
-            panel5.Size = new Size(823, 62);
+            panel5.Size = new Size(1029, 78);
             panel5.TabIndex = 10;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(683, 31);
+            textBox5.Location = new Point(854, 39);
             textBox5.Margin = new Padding(2);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(128, 23);
+            textBox5.Size = new Size(159, 27);
             textBox5.TabIndex = 17;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(683, 3);
+            textBox6.Location = new Point(854, 4);
             textBox6.Margin = new Padding(2);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(128, 23);
+            textBox6.Size = new Size(159, 27);
             textBox6.TabIndex = 16;
             // 
             // label6
@@ -948,10 +948,10 @@ namespace Service_Management_System.POS
             label6.BackColor = Color.FromArgb(3, 83, 115);
             label6.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(547, 35);
+            label6.Location = new Point(684, 44);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(36, 19);
+            label6.Size = new Size(42, 23);
             label6.TabIndex = 14;
             label6.Text = "Tax:";
             // 
@@ -961,10 +961,10 @@ namespace Service_Management_System.POS
             label5.BackColor = Color.FromArgb(3, 83, 115);
             label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(547, 6);
+            label5.Location = new Point(684, 8);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(69, 19);
+            label5.Size = new Size(84, 23);
             label5.TabIndex = 15;
             label5.Text = "Subtotal:";
             // 
@@ -973,12 +973,12 @@ namespace Service_Management_System.POS
             partsView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             partsView.BackgroundColor = Color.White;
             partsView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            partsView.Location = new Point(363, 162);
+            partsView.Location = new Point(454, 202);
             partsView.Margin = new Padding(2);
             partsView.Name = "partsView";
             partsView.RowHeadersWidth = 51;
             partsView.RowTemplate.Height = 29;
-            partsView.Size = new Size(418, 365);
+            partsView.Size = new Size(522, 456);
             partsView.TabIndex = 11;
             partsView.CellContentClick += partsServicesView_CellContentClick;
             // 
@@ -992,10 +992,10 @@ namespace Service_Management_System.POS
             panel6.Controls.Add(label3);
             panel6.Controls.Add(label2);
             panel6.Controls.Add(label1);
-            panel6.Location = new Point(0, 422);
+            panel6.Location = new Point(0, 528);
             panel6.Margin = new Padding(2);
             panel6.Name = "panel6";
-            panel6.Size = new Size(361, 102);
+            panel6.Size = new Size(451, 128);
             panel6.TabIndex = 13;
             panel6.Paint += panel6_Paint;
             // 
@@ -1004,10 +1004,10 @@ namespace Service_Management_System.POS
             lblTotal.AutoSize = true;
             lblTotal.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             lblTotal.ForeColor = Color.FromArgb(3, 83, 115);
-            lblTotal.Location = new Point(278, 68);
+            lblTotal.Location = new Point(348, 85);
             lblTotal.Margin = new Padding(2, 0, 2, 0);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(58, 30);
+            lblTotal.Size = new Size(73, 38);
             lblTotal.TabIndex = 6;
             lblTotal.Text = "0.00";
             // 
@@ -1016,10 +1016,10 @@ namespace Service_Management_System.POS
             lblVaTax.AutoSize = true;
             lblVaTax.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             lblVaTax.ForeColor = Color.FromArgb(3, 83, 115);
-            lblVaTax.Location = new Point(289, 38);
+            lblVaTax.Location = new Point(361, 48);
             lblVaTax.Margin = new Padding(2, 0, 2, 0);
             lblVaTax.Name = "lblVaTax";
-            lblVaTax.Size = new Size(37, 19);
+            lblVaTax.Size = new Size(45, 23);
             lblVaTax.TabIndex = 5;
             lblVaTax.Text = "0.00";
             // 
@@ -1028,10 +1028,10 @@ namespace Service_Management_System.POS
             lblsubtotal.AutoSize = true;
             lblsubtotal.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             lblsubtotal.ForeColor = Color.FromArgb(3, 83, 115);
-            lblsubtotal.Location = new Point(289, 10);
+            lblsubtotal.Location = new Point(361, 12);
             lblsubtotal.Margin = new Padding(2, 0, 2, 0);
             lblsubtotal.Name = "lblsubtotal";
-            lblsubtotal.Size = new Size(37, 19);
+            lblsubtotal.Size = new Size(45, 23);
             lblsubtotal.TabIndex = 4;
             lblsubtotal.Text = "0.00";
             lblsubtotal.Click += lblsubtotal_Click;
@@ -1041,10 +1041,10 @@ namespace Service_Management_System.POS
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(3, 83, 115);
-            label4.Location = new Point(10, 10);
+            label4.Location = new Point(12, 12);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(69, 19);
+            label4.Size = new Size(84, 23);
             label4.TabIndex = 3;
             label4.Text = "Subtotal:";
             // 
@@ -1053,10 +1053,10 @@ namespace Service_Management_System.POS
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(3, 83, 115);
-            label3.Location = new Point(10, 38);
+            label3.Location = new Point(12, 48);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(59, 19);
+            label3.Size = new Size(71, 23);
             label3.TabIndex = 2;
             label3.Text = "Vat tax:";
             label3.Click += label3_Click;
@@ -1065,10 +1065,10 @@ namespace Service_Management_System.POS
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(0, 54);
+            label2.Location = new Point(0, 68);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(372, 15);
+            label2.Size = new Size(447, 20);
             label2.TabIndex = 1;
             label2.Text = "-------------------------------------------------------------------------";
             // 
@@ -1077,10 +1077,10 @@ namespace Service_Management_System.POS
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(3, 83, 115);
-            label1.Location = new Point(6, 70);
+            label1.Location = new Point(8, 88);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(64, 28);
+            label1.Size = new Size(80, 35);
             label1.TabIndex = 0;
             label1.Text = "Total:";
             // 
@@ -1089,12 +1089,12 @@ namespace Service_Management_System.POS
             servicesView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             servicesView.BackgroundColor = Color.White;
             servicesView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            servicesView.Location = new Point(787, 162);
+            servicesView.Location = new Point(984, 202);
             servicesView.Margin = new Padding(2);
             servicesView.Name = "servicesView";
             servicesView.RowHeadersWidth = 51;
             servicesView.RowTemplate.Height = 29;
-            servicesView.Size = new Size(394, 365);
+            servicesView.Size = new Size(492, 456);
             servicesView.TabIndex = 14;
             servicesView.CellContentClick += servicesView_CellContentClick;
             // 
@@ -1102,28 +1102,28 @@ namespace Service_Management_System.POS
             // 
             jobOrderedView.BackgroundColor = Color.White;
             jobOrderedView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            jobOrderedView.Location = new Point(0, 294);
+            jobOrderedView.Location = new Point(0, 368);
             jobOrderedView.Margin = new Padding(2);
             jobOrderedView.Name = "jobOrderedView";
             jobOrderedView.RowHeadersWidth = 51;
             jobOrderedView.RowTemplate.Height = 29;
-            jobOrderedView.Size = new Size(361, 128);
+            jobOrderedView.Size = new Size(451, 160);
             jobOrderedView.TabIndex = 15;
             jobOrderedView.CellContentClick += jobOrderedView_CellContentClick;
             // 
             // timerSfx
             // 
-            timerSfx.Interval = 50;
+            timerSfx.Interval = 10;
             timerSfx.Tick += timerSfx_Tick;
             // 
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(90, 126, 140);
             panel8.Controls.Add(label10);
-            panel8.Location = new Point(363, 118);
+            panel8.Location = new Point(454, 148);
             panel8.Margin = new Padding(2);
             panel8.Name = "panel8";
-            panel8.Size = new Size(418, 45);
+            panel8.Size = new Size(522, 56);
             panel8.TabIndex = 17;
             // 
             // label10
@@ -1131,10 +1131,10 @@ namespace Service_Management_System.POS
             label10.AutoSize = true;
             label10.Font = new Font("Century Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(139, 6);
+            label10.Location = new Point(174, 8);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
-            label10.Size = new Size(128, 25);
+            label10.Size = new Size(159, 34);
             label10.TabIndex = 0;
             label10.Text = "PRODUCTS";
             // 
@@ -1142,10 +1142,10 @@ namespace Service_Management_System.POS
             // 
             panel9.BackColor = Color.FromArgb(90, 126, 140);
             panel9.Controls.Add(label11);
-            panel9.Location = new Point(787, 118);
+            panel9.Location = new Point(984, 148);
             panel9.Margin = new Padding(2);
             panel9.Name = "panel9";
-            panel9.Size = new Size(394, 45);
+            panel9.Size = new Size(492, 56);
             panel9.TabIndex = 18;
             // 
             // label11
@@ -1153,10 +1153,10 @@ namespace Service_Management_System.POS
             label11.AutoSize = true;
             label11.Font = new Font("Century Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(154, 6);
+            label11.Location = new Point(192, 8);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
-            label11.Size = new Size(112, 25);
+            label11.Size = new Size(140, 34);
             label11.TabIndex = 1;
             label11.Text = "SERVICES";
             // 
@@ -1164,10 +1164,10 @@ namespace Service_Management_System.POS
             // 
             panel10.BackColor = Color.FromArgb(90, 126, 140);
             panel10.Controls.Add(label12);
-            panel10.Location = new Point(0, 118);
+            panel10.Location = new Point(0, 148);
             panel10.Margin = new Padding(2);
             panel10.Name = "panel10";
-            panel10.Size = new Size(361, 45);
+            panel10.Size = new Size(451, 56);
             panel10.TabIndex = 18;
             // 
             // label12
@@ -1175,19 +1175,19 @@ namespace Service_Management_System.POS
             label12.AutoSize = true;
             label12.Font = new Font("Century Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(72, 6);
+            label12.Location = new Point(90, 8);
             label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
-            label12.Size = new Size(216, 25);
+            label12.Size = new Size(270, 34);
             label12.TabIndex = 0;
             label12.Text = "ORDERED/REQUEST";
             // 
             // POSForm
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
-            ClientSize = new Size(1184, 590);
+            ClientSize = new Size(1480, 738);
             Controls.Add(sidepanelPOS);
             Controls.Add(panel10);
             Controls.Add(panel9);
@@ -1204,8 +1204,8 @@ namespace Service_Management_System.POS
             Controls.Add(panel8);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);
-            MaximumSize = new Size(1368, 590);
-            MinimumSize = new Size(1184, 590);
+            MaximumSize = new Size(1710, 738);
+            MinimumSize = new Size(1480, 738);
             Name = "POSForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "POS";

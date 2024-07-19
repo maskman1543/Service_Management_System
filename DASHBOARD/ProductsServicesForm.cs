@@ -128,7 +128,7 @@ namespace Service_Management_System.DASHBOARD
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            OpenchildForm(new addproduct_form());
+            OpenchildForm(new priceandtax_form());
         }
 
         private void btnStockControl_Click(object sender, EventArgs e)
@@ -145,7 +145,7 @@ namespace Service_Management_System.DASHBOARD
                     form.Hide(); // Hide the AnalysisForm if it is open
                     return; // Exit the method
                 }
-                else if (form is addproduct_form)
+                else if (form is priceandtax_form)
                 {
                     form.Hide(); // Hide the AnalysisForm if it is open
                     return; // Exit the method
