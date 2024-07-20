@@ -1,5 +1,6 @@
 ﻿using Service_Management_System.DASHBOARD;
 using Service_Management_System.Login_Page_Front___Backend;
+using Service_Management_System.POS.Login_Page_Front___Backend;
 using Service_Management_System.POS.Login_Page_Front_and_Back_End;
 using System;
 using System.Collections.Generic;
@@ -498,7 +499,9 @@ namespace Service_Management_System.POS
 
         private void moveup_Click(object sender, EventArgs e)
         {
-
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)

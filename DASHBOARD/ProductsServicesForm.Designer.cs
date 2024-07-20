@@ -58,6 +58,25 @@
             dgv_sidepanel = new Guna.UI2.WinForms.Guna2Elipse(components);
             panel3 = new Panel();
             panelpro_service = new Panel();
+            panelUpper = new Panel();
+            panel7 = new Panel();
+            comboBox2 = new ComboBox();
+            label20 = new Label();
+            textBox12 = new TextBox();
+            label21 = new Label();
+            textBox13 = new TextBox();
+            label22 = new Label();
+            label19 = new Label();
+            label18 = new Label();
+            textBox8 = new TextBox();
+            label14 = new Label();
+            textBox9 = new TextBox();
+            label15 = new Label();
+            textBox10 = new TextBox();
+            label16 = new Label();
+            textBox11 = new TextBox();
+            label17 = new Label();
+            label13 = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             btnsave = new FontAwesome.Sharp.IconButton();
             textBox6 = new TextBox();
@@ -77,13 +96,12 @@
             panel5 = new Panel();
             button8 = new Button();
             pictureBox2 = new PictureBox();
-            btnDetails = new Button();
             label6 = new Label();
-            btnStockControl = new Button();
             panel4 = new Panel();
             Details = new Guna.UI2.WinForms.Guna2Elipse(components);
             StockControl = new Guna.UI2.WinForms.Guna2Elipse(components);
             sidebar_addproducts = new System.Windows.Forms.Timer(components);
+            Upper_timer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)PSView).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
@@ -93,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             panelpro_service.SuspendLayout();
+            panelUpper.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -432,6 +451,8 @@
             // 
             // panelpro_service
             // 
+            panelpro_service.Controls.Add(panelUpper);
+            panelpro_service.Controls.Add(label13);
             panelpro_service.Controls.Add(iconButton1);
             panelpro_service.Controls.Add(btnsave);
             panelpro_service.Controls.Add(textBox6);
@@ -453,6 +474,231 @@
             panelpro_service.Name = "panelpro_service";
             panelpro_service.Size = new Size(0, 685);
             panelpro_service.TabIndex = 6;
+            // 
+            // panelUpper
+            // 
+            panelUpper.Controls.Add(panel7);
+            panelUpper.Controls.Add(comboBox2);
+            panelUpper.Controls.Add(label20);
+            panelUpper.Controls.Add(textBox12);
+            panelUpper.Controls.Add(label21);
+            panelUpper.Controls.Add(textBox13);
+            panelUpper.Controls.Add(label22);
+            panelUpper.Controls.Add(label19);
+            panelUpper.Controls.Add(label18);
+            panelUpper.Controls.Add(textBox8);
+            panelUpper.Controls.Add(label14);
+            panelUpper.Controls.Add(textBox9);
+            panelUpper.Controls.Add(label15);
+            panelUpper.Controls.Add(textBox10);
+            panelUpper.Controls.Add(label16);
+            panelUpper.Controls.Add(textBox11);
+            panelUpper.Controls.Add(label17);
+            panelUpper.Dock = DockStyle.Top;
+            panelUpper.Location = new Point(0, 0);
+            panelUpper.MaximumSize = new Size(425, 611);
+            panelUpper.MinimumSize = new Size(425, 0);
+            panelUpper.Name = "panelUpper";
+            panelUpper.Size = new Size(425, 0);
+            panelUpper.TabIndex = 17;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.White;
+            panel7.Location = new Point(6, 337);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(425, 3);
+            panel7.TabIndex = 31;
+            // 
+            // comboBox2
+            // 
+            comboBox2.BackColor = Color.FromArgb(3, 83, 115);
+            comboBox2.ForeColor = Color.White;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(22, 432);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(310, 28);
+            comboBox2.TabIndex = 37;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label20.ForeColor = Color.White;
+            label20.Location = new Point(22, 409);
+            label20.Name = "label20";
+            label20.Size = new Size(66, 20);
+            label20.TabIndex = 36;
+            label20.Text = "Supplier";
+            // 
+            // textBox12
+            // 
+            textBox12.BackColor = Color.FromArgb(3, 83, 115);
+            textBox12.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox12.ForeColor = Color.White;
+            textBox12.Location = new Point(20, 570);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(127, 30);
+            textBox12.TabIndex = 35;
+            textBox12.Text = "0";
+            textBox12.TextAlign = HorizontalAlignment.Right;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label21.ForeColor = Color.White;
+            label21.Location = new Point(20, 547);
+            label21.Name = "label21";
+            label21.Size = new Size(141, 20);
+            label21.TabIndex = 34;
+            label21.Text = "Preffered quantity";
+            // 
+            // textBox13
+            // 
+            textBox13.BackColor = Color.FromArgb(3, 83, 115);
+            textBox13.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox13.ForeColor = Color.White;
+            textBox13.Location = new Point(22, 500);
+            textBox13.Name = "textBox13";
+            textBox13.Size = new Size(125, 30);
+            textBox13.TabIndex = 33;
+            textBox13.Text = "0";
+            textBox13.TextAlign = HorizontalAlignment.Right;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label22.ForeColor = Color.White;
+            label22.Location = new Point(22, 477);
+            label22.Name = "label22";
+            label22.Size = new Size(104, 20);
+            label22.TabIndex = 32;
+            label22.Text = "Reader point";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label19.ForeColor = Color.White;
+            label19.Location = new Point(24, 363);
+            label19.Name = "label19";
+            label19.Size = new Size(211, 37);
+            label19.TabIndex = 31;
+            label19.Text = "Stock Control";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.ForeColor = Color.White;
+            label18.Location = new Point(16, 11);
+            label18.Name = "label18";
+            label18.Size = new Size(211, 37);
+            label18.TabIndex = 30;
+            label18.Text = "Price and Tax";
+            // 
+            // textBox8
+            // 
+            textBox8.BackColor = Color.FromArgb(3, 83, 115);
+            textBox8.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox8.ForeColor = Color.White;
+            textBox8.Location = new Point(23, 290);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(125, 30);
+            textBox8.TabIndex = 29;
+            textBox8.Text = "0";
+            textBox8.TextAlign = HorizontalAlignment.Right;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.ForeColor = Color.White;
+            label14.Location = new Point(23, 267);
+            label14.Name = "label14";
+            label14.Size = new Size(81, 20);
+            label14.TabIndex = 28;
+            label14.Text = "Sale price";
+            // 
+            // textBox9
+            // 
+            textBox9.BackColor = Color.FromArgb(3, 83, 115);
+            textBox9.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox9.ForeColor = Color.White;
+            textBox9.Location = new Point(22, 219);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(127, 30);
+            textBox9.TabIndex = 27;
+            textBox9.Text = "0";
+            textBox9.TextAlign = HorizontalAlignment.Right;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.ForeColor = Color.White;
+            label15.Location = new Point(22, 196);
+            label15.Name = "label15";
+            label15.Size = new Size(66, 20);
+            label15.TabIndex = 26;
+            label15.Text = "Markup";
+            // 
+            // textBox10
+            // 
+            textBox10.BackColor = Color.FromArgb(3, 83, 115);
+            textBox10.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox10.ForeColor = Color.White;
+            textBox10.Location = new Point(24, 149);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(125, 30);
+            textBox10.TabIndex = 25;
+            textBox10.Text = "0";
+            textBox10.TextAlign = HorizontalAlignment.Right;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.ForeColor = Color.White;
+            label16.Location = new Point(24, 126);
+            label16.Name = "label16";
+            label16.Size = new Size(42, 20);
+            label16.TabIndex = 24;
+            label16.Text = "Cost";
+            // 
+            // textBox11
+            // 
+            textBox11.BackColor = Color.FromArgb(3, 83, 115);
+            textBox11.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox11.ForeColor = Color.White;
+            textBox11.Location = new Point(23, 81);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(310, 30);
+            textBox11.TabIndex = 23;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.ForeColor = Color.White;
+            label17.Location = new Point(22, 58);
+            label17.Name = "label17";
+            label17.Size = new Size(47, 20);
+            label17.TabIndex = 22;
+            label17.Text = "Taxes";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(16, 21);
+            label13.Name = "label13";
+            label13.Size = new Size(113, 37);
+            label13.TabIndex = 16;
+            label13.Text = "Details";
             // 
             // iconButton1
             // 
@@ -497,7 +743,7 @@
             textBox6.BackColor = Color.FromArgb(3, 83, 115);
             textBox6.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             textBox6.ForeColor = Color.White;
-            textBox6.Location = new Point(14, 249);
+            textBox6.Location = new Point(14, 301);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(125, 30);
             textBox6.TabIndex = 13;
@@ -507,7 +753,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(14, 226);
+            label12.Location = new Point(14, 278);
             label12.Name = "label12";
             label12.Size = new Size(160, 20);
             label12.TabIndex = 12;
@@ -518,7 +764,7 @@
             textBox5.BackColor = Color.FromArgb(3, 83, 115);
             textBox5.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             textBox5.ForeColor = Color.White;
-            textBox5.Location = new Point(15, 439);
+            textBox5.Location = new Point(15, 486);
             textBox5.Multiline = true;
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(401, 116);
@@ -529,7 +775,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(15, 416);
+            label11.Location = new Point(15, 463);
             label11.Name = "label11";
             label11.Size = new Size(91, 20);
             label11.TabIndex = 10;
@@ -540,7 +786,7 @@
             textBox4.BackColor = Color.FromArgb(3, 83, 115);
             textBox4.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             textBox4.ForeColor = Color.White;
-            textBox4.Location = new Point(12, 373);
+            textBox4.Location = new Point(12, 429);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(401, 30);
             textBox4.TabIndex = 9;
@@ -550,7 +796,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(12, 350);
+            label10.Location = new Point(12, 406);
             label10.Name = "label10";
             label10.Size = new Size(115, 20);
             label10.TabIndex = 8;
@@ -561,7 +807,7 @@
             comboBox1.BackColor = Color.FromArgb(3, 83, 115);
             comboBox1.ForeColor = Color.White;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(14, 314);
+            comboBox1.Location = new Point(14, 366);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(310, 28);
             comboBox1.TabIndex = 7;
@@ -571,7 +817,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(13, 291);
+            label9.Location = new Point(13, 343);
             label9.Name = "label9";
             label9.Size = new Size(56, 20);
             label9.TabIndex = 6;
@@ -582,7 +828,7 @@
             textBox3.BackColor = Color.FromArgb(3, 83, 115);
             textBox3.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             textBox3.ForeColor = Color.White;
-            textBox3.Location = new Point(13, 178);
+            textBox3.Location = new Point(13, 230);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(401, 30);
             textBox3.TabIndex = 5;
@@ -592,7 +838,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(13, 155);
+            label8.Location = new Point(13, 207);
             label8.Name = "label8";
             label8.Size = new Size(73, 20);
             label8.TabIndex = 4;
@@ -603,7 +849,7 @@
             textBox2.BackColor = Color.FromArgb(3, 83, 115);
             textBox2.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             textBox2.ForeColor = Color.White;
-            textBox2.Location = new Point(15, 108);
+            textBox2.Location = new Point(15, 162);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(125, 30);
             textBox2.TabIndex = 3;
@@ -613,7 +859,7 @@
             btnCode.AutoSize = true;
             btnCode.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnCode.ForeColor = Color.White;
-            btnCode.Location = new Point(15, 85);
+            btnCode.Location = new Point(15, 139);
             btnCode.Name = "btnCode";
             btnCode.Size = new Size(51, 20);
             btnCode.TabIndex = 2;
@@ -624,7 +870,7 @@
             textBox1.BackColor = Color.FromArgb(3, 83, 115);
             textBox1.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(14, 40);
+            textBox1.Location = new Point(14, 94);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(310, 30);
             textBox1.TabIndex = 1;
@@ -634,7 +880,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(13, 17);
+            label7.Location = new Point(13, 71);
             label7.Name = "label7";
             label7.Size = new Size(53, 20);
             label7.TabIndex = 0;
@@ -644,9 +890,7 @@
             // 
             panel5.Controls.Add(button8);
             panel5.Controls.Add(pictureBox2);
-            panel5.Controls.Add(btnDetails);
             panel5.Controls.Add(label6);
-            panel5.Controls.Add(btnStockControl);
             panel5.Controls.Add(panel4);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 0);
@@ -664,9 +908,9 @@
             button8.ForeColor = Color.FromArgb(3, 83, 115);
             button8.Location = new Point(7, 62);
             button8.Name = "button8";
-            button8.Size = new Size(132, 31);
+            button8.Size = new Size(414, 31);
             button8.TabIndex = 5;
-            button8.Text = "Details";
+            button8.Text = "Price and Tax / Stock Control";
             button8.UseVisualStyleBackColor = false;
             button8.Click += button8_Click;
             // 
@@ -681,22 +925,6 @@
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
             // 
-            // btnDetails
-            // 
-            btnDetails.BackColor = Color.White;
-            btnDetails.FlatAppearance.BorderColor = Color.White;
-            btnDetails.FlatAppearance.BorderSize = 0;
-            btnDetails.FlatStyle = FlatStyle.Flat;
-            btnDetails.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDetails.ForeColor = Color.FromArgb(3, 83, 115);
-            btnDetails.Location = new Point(140, 62);
-            btnDetails.Name = "btnDetails";
-            btnDetails.Size = new Size(141, 31);
-            btnDetails.TabIndex = 3;
-            btnDetails.Text = "Price and Tax";
-            btnDetails.UseVisualStyleBackColor = false;
-            btnDetails.Click += btnDetails_Click;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -707,22 +935,6 @@
             label6.Size = new Size(247, 23);
             label6.TabIndex = 0;
             label6.Text = "New products / services";
-            // 
-            // btnStockControl
-            // 
-            btnStockControl.BackColor = Color.White;
-            btnStockControl.FlatAppearance.BorderColor = Color.White;
-            btnStockControl.FlatAppearance.BorderSize = 0;
-            btnStockControl.FlatStyle = FlatStyle.Flat;
-            btnStockControl.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnStockControl.ForeColor = Color.FromArgb(3, 83, 115);
-            btnStockControl.Location = new Point(282, 62);
-            btnStockControl.Name = "btnStockControl";
-            btnStockControl.Size = new Size(132, 31);
-            btnStockControl.TabIndex = 4;
-            btnStockControl.Text = "Stock control";
-            btnStockControl.UseVisualStyleBackColor = false;
-            btnStockControl.Click += btnStockControl_Click;
             // 
             // panel4
             // 
@@ -744,6 +956,11 @@
             // 
             sidebar_addproducts.Interval = 2;
             sidebar_addproducts.Tick += sidebar_addproducts_Tick;
+            // 
+            // Upper_timer
+            // 
+            Upper_timer.Interval = 1;
+            Upper_timer.Tick += Upper_timer_Tick;
             // 
             // ProductsServicesForm
             // 
@@ -776,6 +993,8 @@
             panel3.ResumeLayout(false);
             panelpro_service.ResumeLayout(false);
             panelpro_service.PerformLayout();
+            panelUpper.ResumeLayout(false);
+            panelUpper.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -811,9 +1030,7 @@
         private Guna.UI2.WinForms.Guna2Elipse dgv_sidepanel;
         private Panel panel3;
         private Label label6;
-        private Button btnDetails;
         private Panel panel4;
-        private Button btnStockControl;
         private Guna.UI2.WinForms.Guna2Elipse Details;
         private Guna.UI2.WinForms.Guna2Elipse StockControl;
         private Panel panel5;
@@ -837,5 +1054,25 @@
         private Label label11;
         private FontAwesome.Sharp.IconButton btnsave;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private Label label13;
+        private Panel panelUpper;
+        private Label label18;
+        private TextBox textBox8;
+        private Label label14;
+        private TextBox textBox9;
+        private Label label15;
+        private TextBox textBox10;
+        private Label label16;
+        private TextBox textBox11;
+        private Label label17;
+        private Panel panel7;
+        private Label label19;
+        private ComboBox comboBox2;
+        private Label label20;
+        private TextBox textBox12;
+        private Label label21;
+        private TextBox textBox13;
+        private Label label22;
+        private System.Windows.Forms.Timer Upper_timer;
     }
 }

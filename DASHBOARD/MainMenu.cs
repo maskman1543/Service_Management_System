@@ -156,7 +156,7 @@ namespace Service_Management_System.DASHBOARD
         {
             if (sidebarExpand)
             {
-                panelMenu.Width -= 10;
+                panelMenu.Width -= 50;
                 if (panelMenu.Width == panelMenu.MinimumSize.Width)
                 {
                     sidebarExpand = false;
@@ -165,7 +165,7 @@ namespace Service_Management_System.DASHBOARD
             }
             else
             {
-                panelMenu.Width += 10;
+                panelMenu.Width += 50;
                 if (panelMenu.Width == panelMenu.MaximumSize.Width)
                 {
                     sidebarExpand = true;
