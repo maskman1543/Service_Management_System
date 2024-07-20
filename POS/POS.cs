@@ -39,7 +39,7 @@ namespace Service_Management_System.POS
         {
             if (sidebarExpand)
             {
-                sidepanelPOS.Width -= 10;
+                sidepanelPOS.Width -= 30;
                 if (sidepanelPOS.Width == sidepanelPOS.MinimumSize.Width)
                 {
                     sidebarExpand = false;
@@ -48,7 +48,7 @@ namespace Service_Management_System.POS
             }
             else
             {
-                sidepanelPOS.Width += 10;
+                sidepanelPOS.Width += 30;
                 if (sidepanelPOS.Width == sidepanelPOS.MaximumSize.Width)
                 {
                     sidebarExpand = true;
@@ -943,7 +943,7 @@ namespace Service_Management_System.POS
         {
             if (sidebarExpandDiscount)
             {
-                panel_Discount.Height -= 10;
+                panel_Discount.Height -= 70;
                 if (panel_Discount.Height <= panel_Discount.MinimumSize.Height)
                 {
                     panel_Discount.Height = panel_Discount.MinimumSize.Height; // Ensure it doesn't go below minimum size
@@ -953,7 +953,7 @@ namespace Service_Management_System.POS
             }
             else
             {
-                panel_Discount.Height += 10;
+                panel_Discount.Height += 70;
                 if (panel_Discount.Height >= panel_Discount.MaximumSize.Height)
                 {
                     panel_Discount.Height = panel_Discount.MaximumSize.Height; // Ensure it doesn't exceed maximum size
@@ -966,6 +966,13 @@ namespace Service_Management_System.POS
         private void btnDiscount_Click(object sender, EventArgs e)
         {
             timer_Discount.Start();
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            endofDay_form endofDay_Form = new endofDay_form();
+            endofDay_Form.Show();
+            this.Close();
         }
 
 

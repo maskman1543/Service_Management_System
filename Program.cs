@@ -30,7 +30,7 @@ namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
 
 
             //This form1 below here is the Dashboard
-            jonOrder_form pOSForm = new jonOrder_form();
+            POSForm pOSForm = new POSForm();
             pOSForm.Show();
             //AfterPayment formCheck = new AfterPayment();
             //formCheck.Show(); //Showdialog();
