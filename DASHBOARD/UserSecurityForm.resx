@@ -149,7 +149,7 @@
         lQt2gq12d8JdTJzLrrxC/1DqCw5Qc5oA9MhIAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAgVJREFUWEftlk8vA0EYhyVV2RXqWAchoQ4cHVyFj2B10/Ygmibc90+VEAkJwgGJ
@@ -234,5 +234,37 @@
   </data>
   <metadata name="sidebarTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <data name="button8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAANhJREFUSEvtkrsKwjAYRl0qOIqTm6PP4eTuW7i5+YYuGfMAUlyFFkIJpDX9P7Al
+        ai41TbcOB9JczoGkC8ZYNiVzIMgkAa31jnO+xDh5oK7rCwVexAnfSQOG/FYUxRpzyQIkP3fysiw33XyS
+        gEsORgd8cjAqEJKD6MAQOegDdODaNM1dSrk3N9igvf3f4pODPqCUOtCBiiIPX+QfOfi4ondEuCJDr8Xk
+        5w1ckRg5sD7ydyRWDqwBQJEjCSviGSsHzgAwIlFy4A0AIcQ2z/OVbW0IwcBY5kAAlrWKR8ICjQrR7AAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="button9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAM5JREFUSEvtlFEKAjEMRIW9hKI31JP1OgpepP1r0YxQKe0kjejizxYeLmaSV1vZ
+        XQhhWZNNMIUKcs7nGOOB1RjIoofVBoEELw9ZpZSbR4IMsuhBb18fBNKwl4YrGmTdU0qnPlMh2WOfoUfk
+        kXiGA/WSLYl3OFAFgEk+GQ5MAZCB70vEZ/uMGutpmQpAt2us6c4r3wjUf1fLf4+o2/nrWMh35i9RBWy4
+        UVMlVGANNzJUMgg8wyseySBY/WUH8Or1DK8gix5WUy/5V2yCCWF5AhOcSXUg+0xhAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="lblBackEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAANBJREFUWEftljEKAjEQRVdBQQt7K7ESFEE9kh7PSrAVLLQQPIGVWIkWHiG+Wadf
+        WcMMyDx4TSbZP7C7SYogCP6ClFIDVzjRIVsInqPwwoUO20FoE9fSATxxqiU7CG3hRjqAB461ZAehbdxK
+        B3DHkZbsILSDO+kAbjjUkh2EdnEvHcAVB1qyg9AenqQDuGBfS9Uw+Vguy8tZH18Nkw+fNVn5voEcEFj/
+        FfwKYX4fIWF+vyFhfhsRYX5bMWG+hxGBszLa8TiWC8kSfS4kQRDUpyjesZaywTz9e5QAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <metadata name="sidebarTimerbtnEdit.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>164, 17</value>
   </metadata>
 </root>

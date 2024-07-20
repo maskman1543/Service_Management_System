@@ -18,6 +18,7 @@ namespace Service_Management_System.DASHBOARD
     public partial class UserSecurityForm : Form
     {
         bool sidebarExpand;
+        bool sidebarExpandbtnEdit;
         public UserSecurityForm()
         {
             InitializeComponent();
@@ -134,12 +135,12 @@ namespace Service_Management_System.DASHBOARD
             string firstName = EFirstNameValue.Text;
             string lastName = ELastNameValue.Text;
             string email = EEmailValue.Text;
-           // string phoneNumber = phoneNumberValue.Text;
+            // string phoneNumber = phoneNumberValue.Text;
             string password = EPasswordValue.Text;
             string confirmPassword = ECPasswordValue.Text;
 
             // Validate inputs (optional)
-            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(email) 
+            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(email)
                /* string.IsNullOrEmpty(phoneNumber*/ || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
             {
                 MessageBox.Show("Please fill in all required fields.");
@@ -208,7 +209,7 @@ namespace Service_Management_System.DASHBOARD
                 DataGridViewRow selectedRow = EmployeeView.Rows[selectedRowIndex];
                 int id = Convert.ToInt32(selectedRow.Cells["EmployeeID"].Value); // Assuming "ID" is the primary key column
 
-                
+
                 using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
                 {
                     string query = "DELETE FROM EmployeeTb WHERE EmployeeID = @ID";
@@ -240,6 +241,38 @@ namespace Service_Management_System.DASHBOARD
             {
                 MessageBox.Show("Please select a cell to delete.");
             }
+        }
+
+        private void sidebarTimerbtnEdit_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpandbtnEdit)
+            {
+                sidebar_EditUserInfo.Width -= 10;
+                if (sidebar_EditUserInfo.Width == sidebar_EditUserInfo.MinimumSize.Width)
+                {
+                    sidebarExpandbtnEdit = false;
+                    sidebarTimerbtnEdit.Stop();
+                }
+            }
+            else
+            {
+                sidebar_EditUserInfo.Width += 10;
+                if (sidebar_EditUserInfo.Width == sidebar_EditUserInfo.MaximumSize.Width)
+                {
+                    sidebarExpandbtnEdit = true;
+                    sidebarTimerbtnEdit.Stop();
+                }
+            }
+        }
+
+        private void lblBackEdit_Click(object sender, EventArgs e)
+        {
+            sidebarTimerbtnEdit.Start();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            sidebarTimerbtnEdit.Start();
         }
     }
 
