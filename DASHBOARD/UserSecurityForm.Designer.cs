@@ -44,15 +44,15 @@
             button6 = new Button();
             button5 = new Button();
             lblBack = new Label();
-            textBox5 = new TextBox();
+            ECPasswordValue = new TextBox();
             label7 = new Label();
-            textBox4 = new TextBox();
+            EPasswordValue = new TextBox();
             label6 = new Label();
-            textBox3 = new TextBox();
+            EEmailValue = new TextBox();
             label5 = new Label();
-            textBox2 = new TextBox();
+            ELastNameValue = new TextBox();
             label4 = new Label();
-            textBox1 = new TextBox();
+            EFirstNameValue = new TextBox();
             label3 = new Label();
             label2 = new Label();
             sidebarTimer = new System.Windows.Forms.Timer(components);
@@ -212,23 +212,23 @@
             sidebar_AddUser.Controls.Add(button6);
             sidebar_AddUser.Controls.Add(button5);
             sidebar_AddUser.Controls.Add(lblBack);
-            sidebar_AddUser.Controls.Add(textBox5);
+            sidebar_AddUser.Controls.Add(ECPasswordValue);
             sidebar_AddUser.Controls.Add(label7);
-            sidebar_AddUser.Controls.Add(textBox4);
+            sidebar_AddUser.Controls.Add(EPasswordValue);
             sidebar_AddUser.Controls.Add(label6);
-            sidebar_AddUser.Controls.Add(textBox3);
+            sidebar_AddUser.Controls.Add(EEmailValue);
             sidebar_AddUser.Controls.Add(label5);
-            sidebar_AddUser.Controls.Add(textBox2);
+            sidebar_AddUser.Controls.Add(ELastNameValue);
             sidebar_AddUser.Controls.Add(label4);
-            sidebar_AddUser.Controls.Add(textBox1);
+            sidebar_AddUser.Controls.Add(EFirstNameValue);
             sidebar_AddUser.Controls.Add(label3);
             sidebar_AddUser.Controls.Add(label2);
             sidebar_AddUser.Dock = DockStyle.Right;
-            sidebar_AddUser.Location = new Point(1097, 46);
+            sidebar_AddUser.Location = new Point(754, 46);
             sidebar_AddUser.MaximumSize = new Size(343, 860);
             sidebar_AddUser.MinimumSize = new Size(0, 860);
             sidebar_AddUser.Name = "sidebar_AddUser";
-            sidebar_AddUser.Size = new Size(0, 860);
+            sidebar_AddUser.Size = new Size(343, 860);
             sidebar_AddUser.TabIndex = 26;
             sidebar_AddUser.Paint += panel3_Paint;
             // 
@@ -248,6 +248,7 @@
             button6.Text = "Save";
             button6.TextAlign = ContentAlignment.MiddleRight;
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -280,13 +281,13 @@
             lblBack.Text = "  ";
             lblBack.Click += lblBack_Click;
             // 
-            // textBox5
+            // ECPasswordValue
             // 
-            textBox5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox5.Location = new Point(30, 419);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(286, 27);
-            textBox5.TabIndex = 11;
+            ECPasswordValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            ECPasswordValue.Location = new Point(30, 419);
+            ECPasswordValue.Name = "ECPasswordValue";
+            ECPasswordValue.Size = new Size(286, 27);
+            ECPasswordValue.TabIndex = 11;
             // 
             // label7
             // 
@@ -298,13 +299,13 @@
             label7.TabIndex = 10;
             label7.Text = "Confirm password";
             // 
-            // textBox4
+            // EPasswordValue
             // 
-            textBox4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox4.Location = new Point(29, 342);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(286, 27);
-            textBox4.TabIndex = 9;
+            EPasswordValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            EPasswordValue.Location = new Point(29, 342);
+            EPasswordValue.Name = "EPasswordValue";
+            EPasswordValue.Size = new Size(286, 27);
+            EPasswordValue.TabIndex = 9;
             // 
             // label6
             // 
@@ -316,13 +317,13 @@
             label6.TabIndex = 8;
             label6.Text = "Password";
             // 
-            // textBox3
+            // EEmailValue
             // 
-            textBox3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox3.Location = new Point(28, 268);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(286, 27);
-            textBox3.TabIndex = 7;
+            EEmailValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            EEmailValue.Location = new Point(28, 268);
+            EEmailValue.Name = "EEmailValue";
+            EEmailValue.Size = new Size(286, 27);
+            EEmailValue.TabIndex = 7;
             // 
             // label5
             // 
@@ -334,13 +335,13 @@
             label5.TabIndex = 6;
             label5.Text = "Email";
             // 
-            // textBox2
+            // ELastNameValue
             // 
-            textBox2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox2.Location = new Point(27, 193);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(286, 27);
-            textBox2.TabIndex = 5;
+            ELastNameValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            ELastNameValue.Location = new Point(27, 193);
+            ELastNameValue.Name = "ELastNameValue";
+            ELastNameValue.Size = new Size(286, 27);
+            ELastNameValue.TabIndex = 5;
             // 
             // label4
             // 
@@ -352,13 +353,13 @@
             label4.TabIndex = 4;
             label4.Text = "Last name";
             // 
-            // textBox1
+            // EFirstNameValue
             // 
-            textBox1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.Location = new Point(27, 123);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(286, 27);
-            textBox1.TabIndex = 3;
+            EFirstNameValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            EFirstNameValue.Location = new Point(27, 123);
+            EFirstNameValue.Name = "EFirstNameValue";
+            EFirstNameValue.Size = new Size(286, 27);
+            EFirstNameValue.TabIndex = 3;
             // 
             // label3
             // 
@@ -425,15 +426,15 @@
         private Button button4;
         private Panel sidebar_AddUser;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox EFirstNameValue;
         private Label label3;
-        private TextBox textBox5;
+        private TextBox ECPasswordValue;
         private Label label7;
-        private TextBox textBox4;
+        private TextBox EPasswordValue;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox EEmailValue;
         private Label label5;
-        private TextBox textBox2;
+        private TextBox ELastNameValue;
         private Label label4;
         private Button button5;
         private Label lblBack;

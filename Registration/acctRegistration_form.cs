@@ -90,7 +90,7 @@ namespace Service_Management_System.Registration
             {
                 // Example: Insert user data into a database
                 OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString);
-                string query = "INSERT INTO Users (Firstname, LastName, Email, PhoneNumber, [Password]) " +
+                string query = "INSERT INTO Users (FirstName, LastName, Email, PhoneNumber, [Password]) " +
                                "VALUES (@FirstName, @LastName, @Email, @PhoneNumber, @Password)";
 
                 OleDbCommand command = new OleDbCommand(query, connection);
@@ -117,6 +117,8 @@ namespace Service_Management_System.Registration
 
                     // Close the registration form
                     this.Close();
+                    LoginForm loginForm = new LoginForm();
+                    loginForm.Show();
                 }
                 else
                 {
