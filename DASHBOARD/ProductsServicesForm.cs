@@ -22,8 +22,51 @@ namespace Service_Management_System.DASHBOARD
         public ProductsServicesForm()
         {
             InitializeComponent();
+            DisplayProductCountRecord();
+            DisplayServiceCountRecord();
         }
 
+        private void DisplayProductCountRecord()
+        {
+          
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            {
+                string query = "SELECT COUNT(*) FROM productTable";
+
+                OleDbCommand command = new OleDbCommand(query, connection);
+
+                try
+                {
+                    connection.Open();
+                    int count = (int)command.ExecuteScalar();
+                    label4.Text = $"{count}";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+            }
+        }
+        private void DisplayServiceCountRecord()
+        {
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            {
+                string query = "SELECT COUNT(*) FROM servicesTb";
+
+                OleDbCommand command = new OleDbCommand(query, connection);
+
+                try
+                {
+                    connection.Open();
+                    int count = (int)command.ExecuteScalar();
+                    label5.Text = $"{count}";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+            }
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
