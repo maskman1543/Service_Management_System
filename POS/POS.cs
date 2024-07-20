@@ -21,6 +21,7 @@ namespace Service_Management_System.POS
         bool sidebarExpand;
         private jonOrder_form orderForm;
         private const decimal VAT_RATE = 0.12m;
+        //ss
 
 
         public POSForm()
@@ -336,7 +337,7 @@ namespace Service_Management_System.POS
             decimal vat = subtotal * VAT_RATE;
             decimal total = subtotal + vat;
 
-            
+
             lblsubtotal.Text = subtotal.ToString("C");
             lblVaTax.Text = vat.ToString("C");
             lblTotal.Text = total.ToString("C");

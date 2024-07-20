@@ -1,6 +1,6 @@
 ﻿namespace Service_Management_System.DASHBOARD
 {
-    partial class stockControl_form
+    partial class priceandtax_form
     {
         /// <summary>
         /// Required designer variable.
@@ -28,25 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
+            textBox6 = new TextBox();
+            label12 = new Label();
             textBox3 = new TextBox();
             label8 = new Label();
             textBox2 = new TextBox();
             btnCode = new Label();
-            label1 = new Label();
-            comboBox1 = new ComboBox();
+            textBox1 = new TextBox();
+            label7 = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             btnsave = new FontAwesome.Sharp.IconButton();
             SuspendLayout();
+            // 
+            // textBox6
+            // 
+            textBox6.BackColor = Color.FromArgb(3, 83, 115);
+            textBox6.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox6.ForeColor = Color.White;
+            textBox6.Location = new Point(13, 241);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(125, 30);
+            textBox6.TabIndex = 21;
+            textBox6.Text = "0";
+            textBox6.TextAlign = HorizontalAlignment.Right;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(13, 218);
+            label12.Name = "label12";
+            label12.Size = new Size(81, 20);
+            label12.TabIndex = 20;
+            label12.Text = "Sale price";
             // 
             // textBox3
             // 
             textBox3.BackColor = Color.FromArgb(3, 83, 115);
             textBox3.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             textBox3.ForeColor = Color.White;
-            textBox3.Location = new Point(10, 179);
+            textBox3.Location = new Point(12, 170);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(127, 30);
-            textBox3.TabIndex = 15;
+            textBox3.TabIndex = 19;
             textBox3.Text = "0";
             textBox3.TextAlign = HorizontalAlignment.Right;
             // 
@@ -55,21 +80,21 @@
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(10, 156);
+            label8.Location = new Point(12, 147);
             label8.Name = "label8";
-            label8.Size = new Size(141, 20);
-            label8.TabIndex = 14;
-            label8.Text = "Preffered quantity";
+            label8.Size = new Size(66, 20);
+            label8.TabIndex = 18;
+            label8.Text = "Markup";
             // 
             // textBox2
             // 
             textBox2.BackColor = Color.FromArgb(3, 83, 115);
             textBox2.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             textBox2.ForeColor = Color.White;
-            textBox2.Location = new Point(12, 109);
+            textBox2.Location = new Point(14, 100);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(125, 30);
-            textBox2.TabIndex = 13;
+            textBox2.TabIndex = 17;
             textBox2.Text = "0";
             textBox2.TextAlign = HorizontalAlignment.Right;
             // 
@@ -78,32 +103,32 @@
             btnCode.AutoSize = true;
             btnCode.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnCode.ForeColor = Color.White;
-            btnCode.Location = new Point(12, 86);
+            btnCode.Location = new Point(14, 77);
             btnCode.Name = "btnCode";
-            btnCode.Size = new Size(104, 20);
-            btnCode.TabIndex = 12;
-            btnCode.Text = "Reader point";
+            btnCode.Size = new Size(42, 20);
+            btnCode.TabIndex = 16;
+            btnCode.Text = "Cost";
             // 
-            // label1
+            // textBox1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 18);
-            label1.Name = "label1";
-            label1.Size = new Size(66, 20);
-            label1.TabIndex = 16;
-            label1.Text = "Supplier";
+            textBox1.BackColor = Color.FromArgb(3, 83, 115);
+            textBox1.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.ForeColor = Color.White;
+            textBox1.Location = new Point(13, 32);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(310, 30);
+            textBox1.TabIndex = 15;
             // 
-            // comboBox1
+            // label7
             // 
-            comboBox1.BackColor = Color.FromArgb(3, 83, 115);
-            comboBox1.ForeColor = Color.White;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 41);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(310, 28);
-            comboBox1.TabIndex = 17;
+            label7.AutoSize = true;
+            label7.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(12, 9);
+            label7.Name = "label7";
+            label7.Size = new Size(47, 20);
+            label7.TabIndex = 14;
+            label7.Text = "Taxes";
             // 
             // iconButton1
             // 
@@ -120,7 +145,7 @@
             iconButton1.Name = "iconButton1";
             iconButton1.Padding = new Padding(10, 0, 0, 0);
             iconButton1.Size = new Size(137, 43);
-            iconButton1.TabIndex = 19;
+            iconButton1.TabIndex = 23;
             iconButton1.Text = "Cancel";
             iconButton1.UseVisualStyleBackColor = true;
             // 
@@ -139,11 +164,11 @@
             btnsave.Name = "btnsave";
             btnsave.Padding = new Padding(10, 0, 0, 0);
             btnsave.Size = new Size(137, 43);
-            btnsave.TabIndex = 18;
+            btnsave.TabIndex = 22;
             btnsave.Text = "Save";
             btnsave.UseVisualStyleBackColor = true;
             // 
-            // stockControl_form
+            // priceandtax_form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -151,27 +176,31 @@
             ClientSize = new Size(425, 685);
             Controls.Add(iconButton1);
             Controls.Add(btnsave);
-            Controls.Add(comboBox1);
-            Controls.Add(label1);
+            Controls.Add(textBox6);
+            Controls.Add(label12);
             Controls.Add(textBox3);
             Controls.Add(label8);
             Controls.Add(textBox2);
             Controls.Add(btnCode);
+            Controls.Add(textBox1);
+            Controls.Add(label7);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "stockControl_form";
-            Text = "stockControl_form";
+            Name = "priceandtax_form";
+            Text = "addproduct_form";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private TextBox textBox6;
+        private Label label12;
         private TextBox textBox3;
         private Label label8;
         private TextBox textBox2;
         private Label btnCode;
-        private Label label1;
-        private ComboBox comboBox1;
+        private TextBox textBox1;
+        private Label label7;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btnsave;
     }
