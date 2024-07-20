@@ -27,6 +27,8 @@ namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
             //MainMenu mainmenuForm = new MainMenu();
             //mainmenuForm.Show();
 
+
+
             //This form1 below here is the Dashboard
             jonOrder_form pOSForm = new jonOrder_form();
             pOSForm.Show();

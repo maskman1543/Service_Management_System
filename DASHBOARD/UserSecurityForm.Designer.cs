@@ -100,8 +100,10 @@
             EmployeeView.Location = new Point(13, 135);
             EmployeeView.Margin = new Padding(4);
             EmployeeView.Name = "EmployeeView";
+            EmployeeView.ReadOnly = true;
             EmployeeView.RowHeadersWidth = 51;
             EmployeeView.RowTemplate.Height = 25;
+            EmployeeView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             EmployeeView.Size = new Size(1071, 744);
             EmployeeView.TabIndex = 1;
             EmployeeView.CellContentClick += EmployeeView_CellContentClick;
@@ -242,7 +244,7 @@
             sidebar_AddUser.Controls.Add(label3);
             sidebar_AddUser.Controls.Add(label2);
             sidebar_AddUser.Dock = DockStyle.Right;
-            sidebar_AddUser.Location = new Point(754, 46);
+            sidebar_AddUser.Location = new Point(1097, 46);
             sidebar_AddUser.MaximumSize = new Size(343, 860);
             sidebar_AddUser.MinimumSize = new Size(0, 860);
             sidebar_AddUser.Name = "sidebar_AddUser";
@@ -415,7 +417,7 @@
             // 
             // sidebarTimer
             // 
-            sidebarTimer.Interval = 2;
+            sidebarTimer.Interval = 1;
             sidebarTimer.Tick += sidebarTimer_Tick;
             // 
             // sidebar_EditUserInfo
@@ -436,9 +438,11 @@
             sidebar_EditUserInfo.Controls.Add(label13);
             sidebar_EditUserInfo.Controls.Add(label14);
             sidebar_EditUserInfo.Dock = DockStyle.Right;
-            sidebar_EditUserInfo.Location = new Point(754, 46);
+            sidebar_EditUserInfo.Location = new Point(1097, 46);
+            sidebar_EditUserInfo.MaximumSize = new Size(343, 860);
+            sidebar_EditUserInfo.MinimumSize = new Size(0, 860);
             sidebar_EditUserInfo.Name = "sidebar_EditUserInfo";
-            sidebar_EditUserInfo.Size = new Size(343, 860);
+            sidebar_EditUserInfo.Size = new Size(0, 860);
             sidebar_EditUserInfo.TabIndex = 26;
             // 
             // button8
