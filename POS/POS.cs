@@ -19,6 +19,7 @@ namespace Service_Management_System.POS
     public partial class POSForm : Form
     {
         bool sidebarExpand;
+        bool sidebarExpandDiscount;
         private jonOrder_form orderForm;
         private const decimal VAT_RATE = 0.12m;
         //ss
@@ -913,6 +914,55 @@ namespace Service_Management_System.POS
         private void lblsubtotal_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button14_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_Discount_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer_Discount_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpandDiscount)
+            {
+                panel_Discount.Height -= 10;
+                if (panel_Discount.Height <= panel_Discount.MinimumSize.Height)
+                {
+                    panel_Discount.Height = panel_Discount.MinimumSize.Height; // Ensure it doesn't go below minimum size
+                    sidebarExpandDiscount = false;
+                    timer_Discount.Stop();
+                }
+            }
+            else
+            {
+                panel_Discount.Height += 10;
+                if (panel_Discount.Height >= panel_Discount.MaximumSize.Height)
+                {
+                    panel_Discount.Height = panel_Discount.MaximumSize.Height; // Ensure it doesn't exceed maximum size
+                    sidebarExpandDiscount = true;
+                    timer_Discount.Stop();
+                }
+            }
+        }
+
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+            timer_Discount.Start();
         }
 
 

@@ -97,6 +97,30 @@ namespace Service_Management_System.POS
             label11 = new Label();
             panel10 = new Panel();
             label12 = new Label();
+            panel_Discount = new Panel();
+            tbxInputDicsount = new TextBox();
+            label8 = new Label();
+            panel12 = new Panel();
+            panel11 = new Panel();
+            button32 = new Button();
+            button31 = new Button();
+            button30 = new Button();
+            button29 = new Button();
+            button28 = new Button();
+            button27 = new Button();
+            button26 = new Button();
+            button25 = new Button();
+            button24 = new Button();
+            button23 = new Button();
+            button22 = new Button();
+            button21 = new Button();
+            button20 = new Button();
+            button17 = new Button();
+            button14 = new Button();
+            btnPeso = new Button();
+            btnPercent = new Button();
+            label7 = new Label();
+            timer_Discount = new System.Windows.Forms.Timer(components);
             minilogo = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)minilogo).BeginInit();
             sidepanelPOS.SuspendLayout();
@@ -116,6 +140,8 @@ namespace Service_Management_System.POS
             panel8.SuspendLayout();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
+            panel_Discount.SuspendLayout();
+            panel11.SuspendLayout();
             SuspendLayout();
             // 
             // minilogo
@@ -571,6 +597,7 @@ namespace Service_Management_System.POS
             btnDiscount.TabIndex = 3;
             btnDiscount.TextAlign = ContentAlignment.BottomCenter;
             btnDiscount.UseVisualStyleBackColor = true;
+            btnDiscount.Click += btnDiscount_Click;
             btnDiscount.MouseEnter += btnDiscount_MouseEnter;
             btnDiscount.MouseLeave += btnDiscount_MouseLeave;
             // 
@@ -1187,12 +1214,287 @@ namespace Service_Management_System.POS
             label12.TabIndex = 0;
             label12.Text = "ORDERED/REQUEST";
             // 
+            // panel_Discount
+            // 
+            panel_Discount.BackColor = Color.FromArgb(242, 242, 242);
+            panel_Discount.Controls.Add(tbxInputDicsount);
+            panel_Discount.Controls.Add(label8);
+            panel_Discount.Controls.Add(panel12);
+            panel_Discount.Controls.Add(panel11);
+            panel_Discount.Controls.Add(btnPeso);
+            panel_Discount.Controls.Add(btnPercent);
+            panel_Discount.Controls.Add(label7);
+            panel_Discount.Location = new Point(493, 0);
+            panel_Discount.MaximumSize = new Size(450, 705);
+            panel_Discount.Name = "panel_Discount";
+            panel_Discount.Size = new Size(450, 705);
+            panel_Discount.TabIndex = 15;
+            panel_Discount.Paint += panel_Discount_Paint;
+            // 
+            // tbxInputDicsount
+            // 
+            tbxInputDicsount.BackColor = Color.FromArgb(242, 242, 242);
+            tbxInputDicsount.BorderStyle = BorderStyle.None;
+            tbxInputDicsount.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            tbxInputDicsount.ForeColor = Color.FromArgb(3, 83, 115);
+            tbxInputDicsount.Location = new Point(206, 270);
+            tbxInputDicsount.Name = "tbxInputDicsount";
+            tbxInputDicsount.Size = new Size(107, 27);
+            tbxInputDicsount.TabIndex = 6;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Image = (Image)resources.GetObject("label8.Image");
+            label8.Location = new Point(319, 266);
+            label8.Name = "label8";
+            label8.Size = new Size(26, 31);
+            label8.TabIndex = 5;
+            label8.Text = "  ";
+            // 
+            // panel12
+            // 
+            panel12.BackColor = Color.FromArgb(3, 83, 115);
+            panel12.Location = new Point(100, 304);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(247, 3);
+            panel12.TabIndex = 4;
+            // 
+            // panel11
+            // 
+            panel11.Controls.Add(button32);
+            panel11.Controls.Add(button31);
+            panel11.Controls.Add(button30);
+            panel11.Controls.Add(button29);
+            panel11.Controls.Add(button28);
+            panel11.Controls.Add(button27);
+            panel11.Controls.Add(button26);
+            panel11.Controls.Add(button25);
+            panel11.Controls.Add(button24);
+            panel11.Controls.Add(button23);
+            panel11.Controls.Add(button22);
+            panel11.Controls.Add(button21);
+            panel11.Controls.Add(button20);
+            panel11.Controls.Add(button17);
+            panel11.Controls.Add(button14);
+            panel11.Location = new Point(13, 388);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(420, 299);
+            panel11.TabIndex = 3;
+            // 
+            // button32
+            // 
+            button32.Image = (Image)resources.GetObject("button32.Image");
+            button32.Location = new Point(316, 153);
+            button32.Name = "button32";
+            button32.Size = new Size(94, 140);
+            button32.TabIndex = 14;
+            button32.UseVisualStyleBackColor = true;
+            // 
+            // button31
+            // 
+            button31.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button31.ForeColor = Color.FromArgb(3, 83, 115);
+            button31.Location = new Point(216, 226);
+            button31.Name = "button31";
+            button31.Size = new Size(94, 67);
+            button31.TabIndex = 13;
+            button31.Text = ".";
+            button31.UseVisualStyleBackColor = true;
+            // 
+            // button30
+            // 
+            button30.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button30.ForeColor = Color.FromArgb(3, 83, 115);
+            button30.Location = new Point(115, 226);
+            button30.Name = "button30";
+            button30.Size = new Size(94, 67);
+            button30.TabIndex = 12;
+            button30.Text = "0";
+            button30.UseVisualStyleBackColor = true;
+            // 
+            // button29
+            // 
+            button29.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button29.ForeColor = Color.FromArgb(3, 83, 115);
+            button29.Location = new Point(15, 226);
+            button29.Name = "button29";
+            button29.Size = new Size(94, 67);
+            button29.TabIndex = 11;
+            button29.Text = "-";
+            button29.UseVisualStyleBackColor = true;
+            // 
+            // button28
+            // 
+            button28.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button28.ForeColor = Color.FromArgb(3, 83, 115);
+            button28.Location = new Point(216, 153);
+            button28.Name = "button28";
+            button28.Size = new Size(94, 67);
+            button28.TabIndex = 10;
+            button28.Text = "9";
+            button28.UseVisualStyleBackColor = true;
+            // 
+            // button27
+            // 
+            button27.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button27.ForeColor = Color.FromArgb(3, 83, 115);
+            button27.Location = new Point(116, 153);
+            button27.Name = "button27";
+            button27.Size = new Size(94, 67);
+            button27.TabIndex = 9;
+            button27.Text = "8";
+            button27.UseVisualStyleBackColor = true;
+            button27.Click += button27_Click;
+            // 
+            // button26
+            // 
+            button26.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button26.ForeColor = Color.FromArgb(3, 83, 115);
+            button26.Location = new Point(15, 153);
+            button26.Name = "button26";
+            button26.Size = new Size(94, 67);
+            button26.TabIndex = 8;
+            button26.Text = "7";
+            button26.UseVisualStyleBackColor = true;
+            // 
+            // button25
+            // 
+            button25.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button25.ForeColor = Color.FromArgb(3, 83, 115);
+            button25.Location = new Point(316, 80);
+            button25.Name = "button25";
+            button25.Size = new Size(94, 67);
+            button25.TabIndex = 7;
+            button25.Text = "esc";
+            button25.UseVisualStyleBackColor = true;
+            // 
+            // button24
+            // 
+            button24.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button24.ForeColor = Color.FromArgb(3, 83, 115);
+            button24.Location = new Point(216, 80);
+            button24.Name = "button24";
+            button24.Size = new Size(94, 67);
+            button24.TabIndex = 6;
+            button24.Text = "6";
+            button24.UseVisualStyleBackColor = true;
+            // 
+            // button23
+            // 
+            button23.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button23.ForeColor = Color.FromArgb(3, 83, 115);
+            button23.Location = new Point(116, 80);
+            button23.Name = "button23";
+            button23.Size = new Size(94, 67);
+            button23.TabIndex = 5;
+            button23.Text = "5";
+            button23.UseVisualStyleBackColor = true;
+            // 
+            // button22
+            // 
+            button22.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button22.ForeColor = Color.FromArgb(3, 83, 115);
+            button22.Location = new Point(15, 80);
+            button22.Name = "button22";
+            button22.Size = new Size(94, 67);
+            button22.TabIndex = 4;
+            button22.Text = "4";
+            button22.UseVisualStyleBackColor = true;
+            // 
+            // button21
+            // 
+            button21.Image = (Image)resources.GetObject("button21.Image");
+            button21.Location = new Point(315, 7);
+            button21.Name = "button21";
+            button21.Size = new Size(94, 67);
+            button21.TabIndex = 3;
+            button21.UseVisualStyleBackColor = true;
+            // 
+            // button20
+            // 
+            button20.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button20.ForeColor = Color.FromArgb(3, 83, 115);
+            button20.Location = new Point(215, 7);
+            button20.Name = "button20";
+            button20.Size = new Size(94, 67);
+            button20.TabIndex = 2;
+            button20.Text = "3";
+            button20.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            button17.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button17.ForeColor = Color.FromArgb(3, 83, 115);
+            button17.Location = new Point(115, 7);
+            button17.Name = "button17";
+            button17.Size = new Size(94, 67);
+            button17.TabIndex = 1;
+            button17.Text = "2";
+            button17.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            button14.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button14.ForeColor = Color.FromArgb(3, 83, 115);
+            button14.Location = new Point(15, 7);
+            button14.Name = "button14";
+            button14.Size = new Size(94, 67);
+            button14.TabIndex = 0;
+            button14.Text = "1";
+            button14.UseVisualStyleBackColor = true;
+            button14.Click += button14_Click_1;
+            // 
+            // btnPeso
+            // 
+            btnPeso.BackColor = Color.White;
+            btnPeso.FlatAppearance.BorderSize = 0;
+            btnPeso.FlatStyle = FlatStyle.Flat;
+            btnPeso.ForeColor = Color.White;
+            btnPeso.Image = (Image)resources.GetObject("btnPeso.Image");
+            btnPeso.Location = new Point(224, 103);
+            btnPeso.Name = "btnPeso";
+            btnPeso.Size = new Size(127, 45);
+            btnPeso.TabIndex = 2;
+            btnPeso.UseVisualStyleBackColor = false;
+            // 
+            // btnPercent
+            // 
+            btnPercent.BackColor = Color.FromArgb(3, 83, 115);
+            btnPercent.FlatAppearance.BorderSize = 0;
+            btnPercent.FlatStyle = FlatStyle.Flat;
+            btnPercent.ForeColor = Color.White;
+            btnPercent.Image = (Image)resources.GetObject("btnPercent.Image");
+            btnPercent.Location = new Point(96, 103);
+            btnPercent.Name = "btnPercent";
+            btnPercent.Size = new Size(127, 45);
+            btnPercent.TabIndex = 1;
+            btnPercent.UseVisualStyleBackColor = false;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = Color.FromArgb(3, 83, 115);
+            label7.Location = new Point(85, 27);
+            label7.Name = "label7";
+            label7.Size = new Size(279, 34);
+            label7.TabIndex = 0;
+            label7.Text = "Apply cart discount";
+            // 
+            // timer_Discount
+            // 
+            timer_Discount.Interval = 1;
+            timer_Discount.Tick += timer_Discount_Tick;
+            // 
             // POSForm
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             ClientSize = new Size(1480, 738);
+            Controls.Add(panel_Discount);
             Controls.Add(sidepanelPOS);
             Controls.Add(panel10);
             Controls.Add(panel9);
@@ -1243,6 +1545,9 @@ namespace Service_Management_System.POS
             panel9.PerformLayout();
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
+            panel_Discount.ResumeLayout(false);
+            panel_Discount.PerformLayout();
+            panel11.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1274,7 +1579,7 @@ namespace Service_Management_System.POS
         private Button button7;
         private Button button6;
         private Panel panel5;
-        private TextBox textBox1;
+        private TextBox tbxInputDicsount;
         private Button button1;
         private DataGridView productOrderedView;
         private Panel panel4;
@@ -1319,5 +1624,28 @@ namespace Service_Management_System.POS
         private Label label11;
         private Panel panel10;
         private Label label12;
+        private Panel panel_Discount;
+        private Button btnPercent;
+        private Label label7;
+        private Button btnPeso;
+        private Panel panel11;
+        private Button button14;
+        private Button button21;
+        private Button button20;
+        private Button button17;
+        private Button button32;
+        private Button button31;
+        private Button button30;
+        private Button button29;
+        private Button button28;
+        private Button button27;
+        private Button button26;
+        private Button button25;
+        private Button button24;
+        private Button button23;
+        private Button button22;
+        private Panel panel12;
+        private Label label8;
+        private System.Windows.Forms.Timer timer_Discount;
     }
 }
