@@ -1227,7 +1227,7 @@ namespace Service_Management_System.POS
             panel_Discount.Location = new Point(493, 0);
             panel_Discount.MaximumSize = new Size(450, 705);
             panel_Discount.Name = "panel_Discount";
-            panel_Discount.Size = new Size(450, 705);
+            panel_Discount.Size = new Size(450, 0);
             panel_Discount.TabIndex = 15;
             panel_Discount.Paint += panel_Discount_Paint;
             // 

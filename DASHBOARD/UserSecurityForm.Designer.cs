@@ -283,7 +283,9 @@
             // 
             // ECPasswordValue
             // 
+            ECPasswordValue.BackColor = Color.FromArgb(3, 83, 115);
             ECPasswordValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            ECPasswordValue.ForeColor = Color.White;
             ECPasswordValue.Location = new Point(30, 419);
             ECPasswordValue.Name = "ECPasswordValue";
             ECPasswordValue.Size = new Size(286, 27);
@@ -301,7 +303,9 @@
             // 
             // EPasswordValue
             // 
+            EPasswordValue.BackColor = Color.FromArgb(3, 83, 115);
             EPasswordValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            EPasswordValue.ForeColor = Color.White;
             EPasswordValue.Location = new Point(29, 342);
             EPasswordValue.Name = "EPasswordValue";
             EPasswordValue.Size = new Size(286, 27);
@@ -319,7 +323,9 @@
             // 
             // EEmailValue
             // 
+            EEmailValue.BackColor = Color.FromArgb(3, 83, 115);
             EEmailValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            EEmailValue.ForeColor = Color.White;
             EEmailValue.Location = new Point(28, 268);
             EEmailValue.Name = "EEmailValue";
             EEmailValue.Size = new Size(286, 27);
@@ -337,7 +343,9 @@
             // 
             // ELastNameValue
             // 
+            ELastNameValue.BackColor = Color.FromArgb(3, 83, 115);
             ELastNameValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            ELastNameValue.ForeColor = Color.White;
             ELastNameValue.Location = new Point(27, 193);
             ELastNameValue.Name = "ELastNameValue";
             ELastNameValue.Size = new Size(286, 27);
@@ -355,7 +363,9 @@
             // 
             // EFirstNameValue
             // 
+            EFirstNameValue.BackColor = Color.FromArgb(3, 83, 115);
             EFirstNameValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            EFirstNameValue.ForeColor = Color.White;
             EFirstNameValue.Location = new Point(27, 123);
             EFirstNameValue.Name = "EFirstNameValue";
             EFirstNameValue.Size = new Size(286, 27);
