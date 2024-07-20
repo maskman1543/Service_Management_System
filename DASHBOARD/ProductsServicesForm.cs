@@ -17,6 +17,8 @@ namespace Service_Management_System.DASHBOARD
     {
         POSForm POSForm = new POSForm();
         bool sidebarExpand;
+        bool upper;
+        private bool isDetails = true;
         private Form currentChildForm;
 
         public ProductsServicesForm()
@@ -78,7 +80,7 @@ namespace Service_Management_System.DASHBOARD
         {
             if (sidebarExpand)
             {
-                panel3.Width -= 10;
+                panel3.Width -= 50;
                 if (panel3.Width == panel3.MinimumSize.Width)
                 {
                     sidebarExpand = false;
@@ -87,7 +89,7 @@ namespace Service_Management_System.DASHBOARD
             }
             else
             {
-                panel3.Width += 10;
+                panel3.Width += 50;
                 if (panel3.Width == panel3.MaximumSize.Width)
                 {
                     sidebarExpand = true;
@@ -138,17 +140,36 @@ namespace Service_Management_System.DASHBOARD
 
         private void button8_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            Upper_timer.Start();
+            if (isDetails)
             {
-                if (form is stockControl_form)
+                button8.Text = "Details";
+            }
+            else
+            {
+                button8.Text = "Price and Tax / Stock Control";
+            }
+            isDetails = !isDetails;
+        }
+
+        private void Upper_timer_Tick(object sender, EventArgs e)
+        {
+            if (upper)
+            {
+                panelUpper.Height -= 50;
+                if (panelUpper.Height == panelUpper.MinimumSize.Height)
                 {
-                    form.Hide(); // Hide the AnalysisForm if it is open
-                    return; // Exit the method
+                    upper = false;
+                    Upper_timer.Stop();
                 }
-                else if (form is priceandtax_form)
+            }
+            else
+            {
+                panelUpper.Height += 50;
+                if (panelUpper.Height == panelUpper.MaximumSize.Height)
                 {
-                    form.Hide(); // Hide the AnalysisForm if it is open
-                    return; // Exit the method
+                    upper = true;
+                    Upper_timer.Stop();
                 }
             }
         }
