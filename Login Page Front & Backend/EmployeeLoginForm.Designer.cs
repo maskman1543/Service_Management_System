@@ -79,12 +79,13 @@
             // 
             EmailTextBox.Anchor = AnchorStyles.None;
             EmailTextBox.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            EmailTextBox.ForeColor = Color.FromArgb(224, 224, 224);
+            EmailTextBox.ForeColor = Color.Black;
             EmailTextBox.Location = new Point(63, 148);
             EmailTextBox.Multiline = true;
             EmailTextBox.Name = "EmailTextBox";
             EmailTextBox.Size = new Size(331, 43);
             EmailTextBox.TabIndex = 8;
+            EmailTextBox.TextChanged += EmailTextBox_TextChanged;
             // 
             // label1
             // 
@@ -118,13 +119,14 @@
             // 
             PasswordTextBox.Anchor = AnchorStyles.None;
             PasswordTextBox.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            PasswordTextBox.ForeColor = Color.FromArgb(224, 224, 224);
+            PasswordTextBox.ForeColor = Color.Black;
             PasswordTextBox.Location = new Point(63, 247);
             PasswordTextBox.Multiline = true;
             PasswordTextBox.Name = "PasswordTextBox";
             PasswordTextBox.PasswordChar = '•';
             PasswordTextBox.Size = new Size(331, 43);
             PasswordTextBox.TabIndex = 9;
+            PasswordTextBox.TextChanged += PasswordTextBox_TextChanged;
             // 
             // panel_loginInfo
             // 

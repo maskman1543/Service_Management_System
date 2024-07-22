@@ -144,6 +144,15 @@ namespace Service_Management_System.Login_Page_Front___Backend
             this.Close();
         }
 
+        private void EmailTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

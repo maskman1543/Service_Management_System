@@ -779,8 +779,10 @@ namespace Service_Management_System.POS
             productOrderedView.Location = new Point(0, 202);
             productOrderedView.Margin = new Padding(2);
             productOrderedView.Name = "productOrderedView";
+            productOrderedView.ReadOnly = true;
             productOrderedView.RowHeadersWidth = 51;
             productOrderedView.RowTemplate.Height = 29;
+            productOrderedView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             productOrderedView.Size = new Size(451, 160);
             productOrderedView.TabIndex = 3;
             productOrderedView.CellContentClick += productOrderedView_CellContentClick;
@@ -921,8 +923,10 @@ namespace Service_Management_System.POS
             partsView.Location = new Point(454, 202);
             partsView.Margin = new Padding(2);
             partsView.Name = "partsView";
+            partsView.ReadOnly = true;
             partsView.RowHeadersWidth = 51;
             partsView.RowTemplate.Height = 29;
+            partsView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             partsView.Size = new Size(522, 456);
             partsView.TabIndex = 11;
             partsView.CellContentClick += partsServicesView_CellContentClick;
@@ -1037,8 +1041,10 @@ namespace Service_Management_System.POS
             servicesView.Location = new Point(984, 202);
             servicesView.Margin = new Padding(2);
             servicesView.Name = "servicesView";
+            servicesView.ReadOnly = true;
             servicesView.RowHeadersWidth = 51;
             servicesView.RowTemplate.Height = 29;
+            servicesView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             servicesView.Size = new Size(492, 456);
             servicesView.TabIndex = 14;
             servicesView.CellContentClick += servicesView_CellContentClick;
@@ -1050,8 +1056,10 @@ namespace Service_Management_System.POS
             jobOrderedView.Location = new Point(0, 368);
             jobOrderedView.Margin = new Padding(2);
             jobOrderedView.Name = "jobOrderedView";
+            jobOrderedView.ReadOnly = true;
             jobOrderedView.RowHeadersWidth = 51;
             jobOrderedView.RowTemplate.Height = 29;
+            jobOrderedView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             jobOrderedView.Size = new Size(451, 160);
             jobOrderedView.TabIndex = 15;
             jobOrderedView.CellContentClick += jobOrderedView_CellContentClick;
