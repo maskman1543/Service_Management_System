@@ -547,7 +547,8 @@ namespace Service_Management_System.POS
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            SearchService(textBox8.Text.Trim());
+            SearchProduct(textBox7.Text.Trim());
         }
 
         private void button1_Click(object sender, EventArgs e)

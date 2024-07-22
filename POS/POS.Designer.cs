@@ -628,7 +628,7 @@ namespace Service_Management_System.POS
             btnSearch.FlatAppearance.BorderSize = 0;
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSearch.ForeColor = Color.IndianRed;
+            btnSearch.ForeColor = Color.White;
             btnSearch.ImageAlign = ContentAlignment.TopCenter;
             btnSearch.Location = new Point(6, 2);
             btnSearch.Margin = new Padding(2);
