@@ -698,73 +698,53 @@ namespace Service_Management_System.POS
 
         private void btnQuantity_MouseEnter(object sender, EventArgs e)
         {
-            btnQuantity.Width = 160;
-            btnQuantity.Height = 55;
-            //156, 51 orrig
+           
         }
 
         private void btnQuantity_MouseLeave(object sender, EventArgs e)
         {
-            btnQuantity.Width = 156;
-            btnQuantity.Height = 51;
-            //156, 51 orrig
+           
         }
 
         private void button5_MouseEnter(object sender, EventArgs e)
         {
-            button5.Width = 79;
-            button5.Height = 55;
-            //75, 51 orrig
+           
         }
 
         private void button5_MouseLeave(object sender, EventArgs e)
         {
-            button5.Width = 75;
-            button5.Height = 51;
-            //75, 51 orrig
+            
         }
 
 
         private void button1_MouseEnter_1(object sender, EventArgs e)
         {
-            button1.Width = 79;
-            button1.Height = 55;
-            //75, 51 orrig
+           
         }
 
         private void button1_MouseLeave_1(object sender, EventArgs e)
         {
-            button1.Width = 75;
-            button1.Height = 51;
-            //75, 51 orrig
+            
         }
 
         private void button8_MouseEnter(object sender, EventArgs e)
         {
-            button8.Width = 79;
-            button8.Height = 55;
-            //75, 51 orrig
+          
         }
 
         private void button8_MouseLeave(object sender, EventArgs e)
         {
-            button8.Width = 75;
-            button8.Height = 51;
-            //75, 51 orrig
+            
         }
 
         private void button7_MouseEnter(object sender, EventArgs e)
         {
-            button7.Width = 79;
-            button7.Height = 55;
-            //75, 51 orrig
+     
         }
 
         private void button7_MouseLeave(object sender, EventArgs e)
         {
-            button7.Width = 75;
-            button7.Height = 51;
-            //75, 51 orrig
+           
         }
 
         private void button3_MouseEnter(object sender, EventArgs e)
