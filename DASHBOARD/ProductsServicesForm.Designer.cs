@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductsServicesForm));
             label1 = new Label();
             PSView = new DataGridView();
@@ -81,17 +81,17 @@
             btnsave = new FontAwesome.Sharp.IconButton();
             textBox6 = new TextBox();
             label12 = new Label();
-            textBox5 = new TextBox();
+            DescriptionValue = new TextBox();
             label11 = new Label();
             textBox4 = new TextBox();
             label10 = new Label();
             comboBox1 = new ComboBox();
             label9 = new Label();
-            textBox3 = new TextBox();
+            BarcodeValue = new TextBox();
             label8 = new Label();
             textBox2 = new TextBox();
             btnCode = new Label();
-            textBox1 = new TextBox();
+            ProductNameValue = new TextBox();
             label7 = new Label();
             panel5 = new Panel();
             button8 = new Button();
@@ -225,10 +225,10 @@
             // 
             guna2CustomGradientPanel1.BackColor = Color.White;
             guna2CustomGradientPanel1.Controls.Add(dataGridView1);
-            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges1;
+            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges3;
             guna2CustomGradientPanel1.Location = new Point(15, 128);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2CustomGradientPanel1.Size = new Size(282, 765);
             guna2CustomGradientPanel1.TabIndex = 13;
             // 
@@ -366,6 +366,7 @@
             button6.Text = "Edit Product";
             button6.TextAlign = ContentAlignment.BottomCenter;
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -441,11 +442,11 @@
             panel3.Controls.Add(panelpro_service);
             panel3.Controls.Add(panel5);
             panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(1097, 122);
+            panel3.Location = new Point(672, 122);
             panel3.MaximumSize = new Size(425, 784);
             panel3.MinimumSize = new Size(0, 784);
             panel3.Name = "panel3";
-            panel3.Size = new Size(0, 784);
+            panel3.Size = new Size(425, 784);
             panel3.TabIndex = 25;
             panel3.Paint += panel3_Paint;
             // 
@@ -457,22 +458,22 @@
             panelpro_service.Controls.Add(btnsave);
             panelpro_service.Controls.Add(textBox6);
             panelpro_service.Controls.Add(label12);
-            panelpro_service.Controls.Add(textBox5);
+            panelpro_service.Controls.Add(DescriptionValue);
             panelpro_service.Controls.Add(label11);
             panelpro_service.Controls.Add(textBox4);
             panelpro_service.Controls.Add(label10);
             panelpro_service.Controls.Add(comboBox1);
             panelpro_service.Controls.Add(label9);
-            panelpro_service.Controls.Add(textBox3);
+            panelpro_service.Controls.Add(BarcodeValue);
             panelpro_service.Controls.Add(label8);
             panelpro_service.Controls.Add(textBox2);
             panelpro_service.Controls.Add(btnCode);
-            panelpro_service.Controls.Add(textBox1);
+            panelpro_service.Controls.Add(ProductNameValue);
             panelpro_service.Controls.Add(label7);
             panelpro_service.Dock = DockStyle.Fill;
             panelpro_service.Location = new Point(0, 99);
             panelpro_service.Name = "panelpro_service";
-            panelpro_service.Size = new Size(0, 685);
+            panelpro_service.Size = new Size(425, 685);
             panelpro_service.TabIndex = 6;
             // 
             // panelUpper
@@ -737,6 +738,7 @@
             btnsave.TabIndex = 14;
             btnsave.Text = "Save";
             btnsave.UseVisualStyleBackColor = true;
+            btnsave.Click += btnsave_Click;
             // 
             // textBox6
             // 
@@ -759,16 +761,16 @@
             label12.TabIndex = 12;
             label12.Text = "Unit of measurement";
             // 
-            // textBox5
+            // DescriptionValue
             // 
-            textBox5.BackColor = Color.FromArgb(3, 83, 115);
-            textBox5.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.ForeColor = Color.White;
-            textBox5.Location = new Point(15, 486);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(401, 116);
-            textBox5.TabIndex = 11;
+            DescriptionValue.BackColor = Color.FromArgb(3, 83, 115);
+            DescriptionValue.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            DescriptionValue.ForeColor = Color.White;
+            DescriptionValue.Location = new Point(15, 486);
+            DescriptionValue.Multiline = true;
+            DescriptionValue.Name = "DescriptionValue";
+            DescriptionValue.Size = new Size(401, 116);
+            DescriptionValue.TabIndex = 11;
             // 
             // label11
             // 
@@ -823,15 +825,15 @@
             label9.TabIndex = 6;
             label9.Text = "Group";
             // 
-            // textBox3
+            // BarcodeValue
             // 
-            textBox3.BackColor = Color.FromArgb(3, 83, 115);
-            textBox3.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.ForeColor = Color.White;
-            textBox3.Location = new Point(13, 230);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(401, 30);
-            textBox3.TabIndex = 5;
+            BarcodeValue.BackColor = Color.FromArgb(3, 83, 115);
+            BarcodeValue.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            BarcodeValue.ForeColor = Color.White;
+            BarcodeValue.Location = new Point(13, 230);
+            BarcodeValue.Name = "BarcodeValue";
+            BarcodeValue.Size = new Size(401, 30);
+            BarcodeValue.TabIndex = 5;
             // 
             // label8
             // 
@@ -865,15 +867,15 @@
             btnCode.TabIndex = 2;
             btnCode.Text = "Code";
             // 
-            // textBox1
+            // ProductNameValue
             // 
-            textBox1.BackColor = Color.FromArgb(3, 83, 115);
-            textBox1.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(14, 94);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(310, 30);
-            textBox1.TabIndex = 1;
+            ProductNameValue.BackColor = Color.FromArgb(3, 83, 115);
+            ProductNameValue.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            ProductNameValue.ForeColor = Color.White;
+            ProductNameValue.Location = new Point(14, 94);
+            ProductNameValue.Name = "ProductNameValue";
+            ProductNameValue.Size = new Size(310, 30);
+            ProductNameValue.TabIndex = 1;
             // 
             // label7
             // 
@@ -895,7 +897,7 @@
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(0, 99);
+            panel5.Size = new Size(425, 99);
             panel5.TabIndex = 5;
             // 
             // button8
@@ -1038,11 +1040,11 @@
         private PictureBox pictureBox2;
         private System.Windows.Forms.Timer sidebar_addproducts;
         private Button button8;
-        private TextBox textBox1;
+        private TextBox ProductNameValue;
         private Label label7;
         private ComboBox comboBox1;
         private Label label9;
-        private TextBox textBox3;
+        private TextBox BarcodeValue;
         private Label label8;
         private TextBox textBox2;
         private Label btnCode;
@@ -1050,7 +1052,7 @@
         private Label label10;
         private TextBox textBox6;
         private Label label12;
-        private TextBox textBox5;
+        private TextBox DescriptionValue;
         private Label label11;
         private FontAwesome.Sharp.IconButton btnsave;
         private FontAwesome.Sharp.IconButton iconButton1;

@@ -50,7 +50,8 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
         {
             string email = EmailTextBox.Text.Trim();
             string password = PasswordTextBox.Text;
-
+            bool state = true;
+            Class1.GlobalVariables.State = state;
             // Validate input
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {

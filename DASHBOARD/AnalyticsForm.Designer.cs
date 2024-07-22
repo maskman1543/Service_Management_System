@@ -67,7 +67,7 @@
             btnYearly.TabIndex = 5;
             btnYearly.Text = "Yearly";
             btnYearly.UseVisualStyleBackColor = false;
-            btnYearly.Click += this.btnYearly_Click;
+            //btnYearly.Click += this.btnYearly_Click;
             // 
             // btnWeekly
             // 
@@ -82,7 +82,7 @@
             btnWeekly.TabIndex = 6;
             btnWeekly.Text = "Weekly";
             btnWeekly.UseVisualStyleBackColor = false;
-            btnWeekly.Click += this.btnWeekly_Click;
+            //btnWeekly.Click += this.btnWeekly_Click;
             // 
             // btnMonthly
             // 
@@ -97,7 +97,7 @@
             btnMonthly.TabIndex = 4;
             btnMonthly.Text = "Monthly";
             btnMonthly.UseVisualStyleBackColor = false;
-            btnMonthly.Click += this.btnMonthly_Click;
+           // btnMonthly.Click += this.btnMonthly_Click;
             // 
             // btnDaily
             // 
@@ -112,7 +112,7 @@
             btnDaily.TabIndex = 2;
             btnDaily.Text = "Daily";
             btnDaily.UseVisualStyleBackColor = false;
-            btnDaily.Click += this.btnDaily_Click;
+           
             // 
             // panel2
             // 
@@ -169,7 +169,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "AnalyticsForm";
             Text = "AnalyticsForm";
-            Load += AnalyticsForm_Load;
+            //Load += AnalyticsForm_Load;
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }

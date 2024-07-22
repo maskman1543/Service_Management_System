@@ -170,12 +170,12 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(button12);
             sidepanelPOS.Dock = DockStyle.Right;
             sidepanelPOS.ImeMode = ImeMode.NoControl;
-            sidepanelPOS.Location = new Point(1476, 78);
+            sidepanelPOS.Location = new Point(1225, 78);
             sidepanelPOS.Margin = new Padding(2);
             sidepanelPOS.MaximumSize = new Size(255, 656);
             sidepanelPOS.MinimumSize = new Size(4, 656);
             sidepanelPOS.Name = "sidepanelPOS";
-            sidepanelPOS.Size = new Size(4, 656);
+            sidepanelPOS.Size = new Size(255, 656);
             sidepanelPOS.TabIndex = 16;
             sidepanelPOS.MouseEnter += sidepanelPOS_MouseEnter;
             // 
@@ -439,7 +439,6 @@ namespace Service_Management_System.POS
             button9.Size = new Size(75, 68);
             button9.TabIndex = 9;
             button9.UseVisualStyleBackColor = true;
-            button9.Click += button9_Click;
             // 
             // button10
             // 
