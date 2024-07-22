@@ -1119,7 +1119,7 @@ namespace Service_Management_System.POS
                 }
             }
 
-           
+
             foreach (DataGridViewRow row in jobOrderedView.SelectedRows)
             {
                 if (!row.IsNewRow)
@@ -1127,6 +1127,11 @@ namespace Service_Management_System.POS
                     jobOrderedView.Rows.Remove(row);
                 }
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 
