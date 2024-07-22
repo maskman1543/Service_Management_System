@@ -57,6 +57,8 @@ namespace Service_Management_System.POS
             btnCustomer = new Button();
             btnSearch = new Button();
             panel2 = new Panel();
+            textBox1 = new TextBox();
+            lblQuantity = new Label();
             btnDelete = new Button();
             panel3 = new Panel();
             pictureBox2 = new PictureBox();
@@ -115,8 +117,6 @@ namespace Service_Management_System.POS
             btnPercent = new Button();
             label7 = new Label();
             timer_Discount = new System.Windows.Forms.Timer(components);
-            lblQuantity = new Label();
-            textBox1 = new TextBox();
             guna2Elipse_textBox7 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse_textBox8 = new Guna.UI2.WinForms.Guna2Elipse(components);
             minilogo = new PictureBox();
@@ -653,6 +653,30 @@ namespace Service_Management_System.POS
             panel2.Name = "panel2";
             panel2.Size = new Size(451, 70);
             panel2.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.FromArgb(3, 83, 115);
+            textBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox1.ForeColor = Color.White;
+            textBox1.Location = new Point(330, 11);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(97, 48);
+            textBox1.TabIndex = 5;
+            textBox1.TextAlign = HorizontalAlignment.Center;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // lblQuantity
+            // 
+            lblQuantity.AutoSize = true;
+            lblQuantity.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lblQuantity.ForeColor = Color.White;
+            lblQuantity.Location = new Point(196, 20);
+            lblQuantity.Name = "lblQuantity";
+            lblQuantity.Size = new Size(103, 31);
+            lblQuantity.TabIndex = 4;
+            lblQuantity.Text = "Quantity";
             // 
             // btnDelete
             // 
@@ -1399,30 +1423,6 @@ namespace Service_Management_System.POS
             // 
             timer_Discount.Interval = 1;
             timer_Discount.Tick += timer_Discount_Tick;
-            // 
-            // lblQuantity
-            // 
-            lblQuantity.AutoSize = true;
-            lblQuantity.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            lblQuantity.ForeColor = Color.White;
-            lblQuantity.Location = new Point(196, 20);
-            lblQuantity.Name = "lblQuantity";
-            lblQuantity.Size = new Size(103, 31);
-            lblQuantity.TabIndex = 4;
-            lblQuantity.Text = "Quantity";
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.FromArgb(3, 83, 115);
-            textBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(330, 11);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(97, 48);
-            textBox1.TabIndex = 5;
-            textBox1.TextAlign = HorizontalAlignment.Center;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // guna2Elipse_textBox7
             // 

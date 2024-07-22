@@ -16,5 +16,15 @@ namespace Service_Management_System.DASHBOARD
         {
             InitializeComponent();
         }
+
+        private void AnalyticsForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
