@@ -149,7 +149,7 @@ namespace Service_Management_System.POS
             sidepanelPOS.Location = new Point(1225, 78);
             sidepanelPOS.Margin = new Padding(2);
             sidepanelPOS.MaximumSize = new Size(255, 656);
-            sidepanelPOS.MinimumSize = new Size(0, 656);
+            sidepanelPOS.MinimumSize = new Size(4, 656);
             sidepanelPOS.Name = "sidepanelPOS";
             sidepanelPOS.Size = new Size(255, 656);
             sidepanelPOS.TabIndex = 16;
@@ -414,6 +414,7 @@ namespace Service_Management_System.POS
             button9.Size = new Size(75, 68);
             button9.TabIndex = 9;
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button10
             // 
@@ -812,6 +813,7 @@ namespace Service_Management_System.POS
             textBox7.Size = new Size(222, 32);
             textBox7.TabIndex = 10;
             textBox7.Text = "Search Product";
+            textBox7.TextChanged += textBox7_TextChanged;
             textBox7.Enter += textBox7_Enter;
             textBox7.Leave += textBox7_Leave;
             // 
@@ -834,6 +836,7 @@ namespace Service_Management_System.POS
             // 
             // productOrderedView
             // 
+            productOrderedView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             productOrderedView.BackgroundColor = Color.White;
             productOrderedView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             productOrderedView.Location = new Point(0, 202);
@@ -1105,6 +1108,7 @@ namespace Service_Management_System.POS
             // 
             // jobOrderedView
             // 
+            jobOrderedView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             jobOrderedView.BackgroundColor = Color.White;
             jobOrderedView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             jobOrderedView.Location = new Point(0, 368);

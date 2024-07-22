@@ -31,9 +31,13 @@ namespace Service_Management_System.POS
             InitializeProductOrderedView();
             InitializeJobOrderedView();
             //this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
+
         }
 
-
+        public void ClearDataGridView()
+        {
+            productOrderedView.Rows.Clear();
+        }
         private void timerSfx_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand)
@@ -363,6 +367,11 @@ namespace Service_Management_System.POS
 
         private void button12_Click(object sender, EventArgs e)
         {
+            if (Class1.GlobalVariables.State = false)
+            {
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+            }
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
             this.Close();
@@ -917,6 +926,17 @@ namespace Service_Management_System.POS
         {
 
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 

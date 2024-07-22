@@ -31,7 +31,7 @@ namespace Service_Management_System.POS
             {
                 using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
                 {
-                    string query = "SELECT JobOrderTb.JobOrderID, employeeTb.FirstName, customerTb.customerName, vehicleTb.plateNumber, JobOrderTb.dateCreated, JobOrderTb.discount, JobOrderTb.subtotal, JobOrderTb.status\r\nFROM vehicleTb INNER JOIN (customerTb INNER JOIN (employeeTb INNER JOIN JobOrderTb ON employeeTb.employeeID = JobOrderTb.employeeID) ON customerTb.customerID = JobOrderTb.customerID) ON vehicleTb.vehicleID = customerTb.vehicleID;";
+                    string query = "SELECT jobOrderJunctionTb.JobOrderID, CustomerTb.LastName, VehicleTb.Model\r\nFROM VehicleTb INNER JOIN (CustomerTb INNER JOIN jobOrderJunctionTb ON CustomerTb.CustomerID = jobOrderJunctionTb.CustomerID) ON VehicleTb.VehicleID = CustomerTb.VehicleID;\r\n";
                     ;
                     OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();

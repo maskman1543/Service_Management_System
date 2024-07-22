@@ -21,15 +21,14 @@ namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
 
             //This splash below is the start of the Employee features and tabs.
 
-            //Splash splashForm = new Splash();
-            //splashForm.Show(); // Show Splash form initially
+            Splash splashForm = new Splash();
+            splashForm.Show(); // Show Splash form initially
 
             //MainMenu mainmenuForm = new MainMenu();
             //mainmenuForm.Show();
 
             //This form1 below here is the Dashboard
-            jonOrder_form pOSForm = new jonOrder_form();
-            pOSForm.Show();
+            
             //AfterPayment formCheck = new AfterPayment();
             //formCheck.Show(); //Showdialog();
 
