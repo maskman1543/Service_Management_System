@@ -48,6 +48,8 @@
             guna2Elipse_panel5 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse_panel6 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse_TimeDate = new Guna.UI2.WinForms.Guna2Elipse(components);
+            guna2Elipse_dataGridView1 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            guna2Elipse_dataGridView2 = new Guna.UI2.WinForms.Guna2Elipse(components);
             panel_TimeDate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -212,6 +214,16 @@
             guna2Elipse_TimeDate.BorderRadius = 10;
             guna2Elipse_TimeDate.TargetControl = panel_TimeDate;
             // 
+            // guna2Elipse_dataGridView1
+            // 
+            guna2Elipse_dataGridView1.BorderRadius = 8;
+            guna2Elipse_dataGridView1.TargetControl = dataGridView1;
+            // 
+            // guna2Elipse_dataGridView2
+            // 
+            guna2Elipse_dataGridView2.BorderRadius = 8;
+            guna2Elipse_dataGridView2.TargetControl = dataGridView2;
+            // 
             // DashboardForm
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
@@ -258,5 +270,7 @@
         private Label label2;
         private System.Windows.Forms.Timer timer1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse_TimeDate;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse_dataGridView1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse_dataGridView2;
     }
 }
