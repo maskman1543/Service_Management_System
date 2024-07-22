@@ -96,7 +96,7 @@
             lblTimeAndDateNow.AutoSize = true;
             lblTimeAndDateNow.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblTimeAndDateNow.ForeColor = Color.White;
-            lblTimeAndDateNow.Location = new Point(80, 90);
+            lblTimeAndDateNow.Location = new Point(78, 90);
             lblTimeAndDateNow.Name = "lblTimeAndDateNow";
             lblTimeAndDateNow.Size = new Size(51, 25);
             lblTimeAndDateNow.TabIndex = 1;
