@@ -1068,7 +1068,7 @@ namespace Service_Management_System.POS
             }
         }
 
-        
+
         private void SearchService(string searchTerm)
         {
             string query;
@@ -1100,11 +1100,31 @@ namespace Service_Management_System.POS
                 {
                     connection.Open();
                     adapter.Fill(dataTable);
-                    servicesView.DataSource = dataTable; // Ensure servicesView is the correct control for displaying services
+                    servicesView.DataSource = dataTable;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in productOrderedView.SelectedRows)
+            {
+                if (!row.IsNewRow)
+                {
+                    productOrderedView.Rows.Remove(row);
+                }
+            }
+
+           
+            foreach (DataGridViewRow row in jobOrderedView.SelectedRows)
+            {
+                if (!row.IsNewRow)
+                {
+                    jobOrderedView.Rows.Remove(row);
                 }
             }
         }

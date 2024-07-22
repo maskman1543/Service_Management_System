@@ -713,6 +713,7 @@ namespace Service_Management_System.POS
             btnDelete.TabIndex = 3;
             btnDelete.TextAlign = ContentAlignment.MiddleRight;
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             btnDelete.MouseEnter += btnDelete_MouseEnter;
             btnDelete.MouseLeave += btnDelete_MouseLeave;
             // 
