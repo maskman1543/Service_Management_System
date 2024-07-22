@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 //using Service_Management_System.Registration;
 
@@ -66,7 +67,7 @@ namespace Service_Management_System.POS
         private void POS_Load(object sender, EventArgs e)
         {
             LoadPartsView();
-            LoadserviceView();
+            LoadServiceView();
         }
 
         private void btnSaveSale_Click(object sender, EventArgs e)
@@ -80,7 +81,6 @@ namespace Service_Management_System.POS
         }
         private void AddOrUpdateProductOrderedView(int productID)
         {
-            // Query to get product details including quantity
             string query = $"SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Price, productTable.Quantity, productTable.Barcode " +
                    $"FROM productTable " +
                    $"WHERE productTable.ProductID = {productID}";
@@ -123,9 +123,17 @@ namespace Service_Management_System.POS
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
-                DisplaySubTotal();
+                finally
+                {
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                }
+                DisplaySubTotal(); // Make sure this is properly defined and updates the total
             }
         }
+
         private void partsServicesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -213,7 +221,8 @@ namespace Service_Management_System.POS
         }
         private void LoadPartsView()
         {
-            string query = "SELECT productTable.ProductID, productTable.ProductType, productTable.productName, productTable.Price, productTable.Barcode\r\nFROM productTable;\r\n";
+            string query = "SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Price, productTable.Barcode " +
+                   "FROM productTable";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -232,11 +241,12 @@ namespace Service_Management_System.POS
                 }
             }
         }
+
         private void AddServiceToOrderedView(int serviceID)
         {
-            string query = $"SELECT servicesTb.serviceID, servicesTb.serviceType, servicesTb.serviceName, servicesTb.serviceRate " +
-                   $"FROM servicesTb " +
-                   $"WHERE servicesTb.serviceID = {serviceID}";
+            string query = $"SELECT serviceID, serviceType, serviceName, serviceRate " +
+                           $"FROM servicesTb " +
+                           $"WHERE serviceID = {serviceID}";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -263,6 +273,8 @@ namespace Service_Management_System.POS
             }
             DisplaySubTotal();
         }
+
+
         private void servicesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -276,9 +288,9 @@ namespace Service_Management_System.POS
             }
         }
 
-        private void LoadserviceView()
+        private void LoadServiceView()
         {
-            string query = "SELECT servicesTb.serviceID, servicesTb.serviceType, servicesTb.serviceName, servicesTb.serviceRate FROM servicesTb;";
+            string query = "SELECT serviceID, serviceType, serviceName, serviceRate FROM servicesTb";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
@@ -297,6 +309,8 @@ namespace Service_Management_System.POS
                 }
             }
         }
+
+
         private decimal CalculateProductSubTotal()
         {
             decimal productTotal = 0;
@@ -468,14 +482,6 @@ namespace Service_Management_System.POS
             button16.Width = 265;
             button16.Height = 57;
         }
-
-
-
-
-
-
-
-
 
         private void moveup_MouseEnter(object sender, EventArgs e)
         {
@@ -975,13 +981,139 @@ namespace Service_Management_System.POS
             this.Close();
         }
 
+        // Existing search zlogic
+        private int _selectedProductID = -1; // Use -1 to indicate no selection
 
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            SearchProduct(textBox7.Text.Trim());
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string searchQuery = textBox7.Text.Trim();
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                DataTable dataTable = (DataTable)partsView.DataSource;
+                if (dataTable != null && dataTable.Rows.Count > 0)
+                {
+                    int productID = Convert.ToInt32(dataTable.Rows[0]["ProductID"]);
+                    AddOrUpdateProductOrderedView(productID);
+                }
+            }
+            else
+            {
+                LoadPartsView(); // Reload all products if search query is empty
+            }
+        }
+
+        private void SearchProduct(string searchTerm)
+        {
+            string query = "SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Price, productTable.Barcode " +
+                      "FROM productTable " +
+                      "WHERE productTable.ProductName LIKE ? OR productTable.ProductType LIKE ? OR productTable.Barcode LIKE ?";
+
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            {
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
+
+                // Clear existing parameters
+                adapter.SelectCommand.Parameters.Clear();
+
+                // Add parameters for the search term
+                adapter.SelectCommand.Parameters.AddWithValue("?", "%" + searchTerm + "%");
+                adapter.SelectCommand.Parameters.AddWithValue("?", "%" + searchTerm + "%");
+                adapter.SelectCommand.Parameters.AddWithValue("?", "%" + searchTerm + "%");
+
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    connection.Open();
+                    adapter.Fill(dataTable);
+                    partsView.DataSource = dataTable;
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show("Database Error: " + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                finally
+                {
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+        }
+
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            SearchService(textBox8.Text.Trim());
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            DataTable dataTable = (DataTable)servicesView.DataSource;
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                // Assuming you want to add the first service from the search results
+                int serviceID = Convert.ToInt32(dataTable.Rows[0]["serviceID"]);
+                AddServiceToOrderedView(serviceID);
+            }
+        }
+
+        
+        private void SearchService(string searchTerm)
+        {
+            string query;
+
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                query = "SELECT serviceID, serviceType, serviceName, serviceRate FROM servicesTb";
+            }
+            else
+            {
+                query = "SELECT serviceID, serviceType, serviceName, serviceRate " +
+                        "FROM servicesTb " +
+                        "WHERE serviceName LIKE ? OR serviceType LIKE ?";
+            }
+
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            {
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
+
+                if (!string.IsNullOrEmpty(searchTerm))
+                {
+                    adapter.SelectCommand.Parameters.AddWithValue("?", "%" + searchTerm + "%");
+                    adapter.SelectCommand.Parameters.AddWithValue("?", "%" + searchTerm + "%");
+                }
+
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    connection.Open();
+                    adapter.Fill(dataTable);
+                    servicesView.DataSource = dataTable; // Ensure servicesView is the correct control for displaying services
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
 
 
 
         /*private void button12_MouseEnter(object sender, EventArgs e)
         {
-            
+
         }*/
     }
 }
