@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeLoginForm));
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            EmailTextBox = new TextBox();
+            EmployeeIDTextBox = new TextBox();
             label1 = new Label();
             label2 = new Label();
             PasswordTextBox = new TextBox();
@@ -75,17 +75,17 @@
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
-            // EmailTextBox
+            // EmployeeIDTextBox
             // 
-            EmailTextBox.Anchor = AnchorStyles.None;
-            EmailTextBox.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            EmailTextBox.ForeColor = Color.Black;
-            EmailTextBox.Location = new Point(63, 148);
-            EmailTextBox.Multiline = true;
-            EmailTextBox.Name = "EmailTextBox";
-            EmailTextBox.Size = new Size(331, 43);
-            EmailTextBox.TabIndex = 8;
-            EmailTextBox.TextChanged += EmailTextBox_TextChanged;
+            EmployeeIDTextBox.Anchor = AnchorStyles.None;
+            EmployeeIDTextBox.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            EmployeeIDTextBox.ForeColor = Color.FromArgb(224, 224, 224);
+            EmployeeIDTextBox.Location = new Point(63, 148);
+            EmployeeIDTextBox.Multiline = true;
+            EmployeeIDTextBox.Name = "EmployeeIDTextBox";
+            EmployeeIDTextBox.Size = new Size(331, 43);
+            EmployeeIDTextBox.TabIndex = 8;
+            EmployeeIDTextBox.TextChanged += EmployeeIDTextBox_TextChanged;
             // 
             // label1
             // 
@@ -119,21 +119,20 @@
             // 
             PasswordTextBox.Anchor = AnchorStyles.None;
             PasswordTextBox.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            PasswordTextBox.ForeColor = Color.Black;
+            PasswordTextBox.ForeColor = Color.FromArgb(224, 224, 224);
             PasswordTextBox.Location = new Point(63, 247);
             PasswordTextBox.Multiline = true;
             PasswordTextBox.Name = "PasswordTextBox";
             PasswordTextBox.PasswordChar = '•';
             PasswordTextBox.Size = new Size(331, 43);
             PasswordTextBox.TabIndex = 9;
-            PasswordTextBox.TextChanged += PasswordTextBox_TextChanged;
             // 
             // panel_loginInfo
             // 
             panel_loginInfo.BackColor = Color.FromArgb(3, 83, 115);
             panel_loginInfo.Controls.Add(label3);
             panel_loginInfo.Controls.Add(guna2HtmlLabel1);
-            panel_loginInfo.Controls.Add(EmailTextBox);
+            panel_loginInfo.Controls.Add(EmployeeIDTextBox);
             panel_loginInfo.Controls.Add(btnLogin);
             panel_loginInfo.Controls.Add(label1);
             panel_loginInfo.Controls.Add(lkblContinueAsEmployee);
@@ -318,7 +317,7 @@
 
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private TextBox EmailTextBox;
+        private TextBox EmployeeIDTextBox;
         private Label label1;
         private Label label2;
         private TextBox PasswordTextBox;

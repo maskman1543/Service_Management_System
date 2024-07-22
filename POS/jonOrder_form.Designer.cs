@@ -53,10 +53,9 @@
             FirstNameValue.Cursor = Cursors.IBeam;
             FirstNameValue.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             FirstNameValue.ForeColor = Color.Silver;
-            FirstNameValue.Location = new Point(156, 132);
-            FirstNameValue.Margin = new Padding(3, 2, 3, 2);
+            FirstNameValue.Location = new Point(178, 176);
             FirstNameValue.Name = "FirstNameValue";
-            FirstNameValue.Size = new Size(307, 24);
+            FirstNameValue.Size = new Size(350, 28);
             FirstNameValue.TabIndex = 8;
             FirstNameValue.Text = "Customer name";
             FirstNameValue.Enter += FirstNameValue_Enter;
@@ -67,10 +66,9 @@
             textBox1.Cursor = Cursors.IBeam;
             textBox1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox1.ForeColor = Color.Silver;
-            textBox1.Location = new Point(156, 160);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Location = new Point(178, 213);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(307, 24);
+            textBox1.Size = new Size(350, 28);
             textBox1.TabIndex = 9;
             textBox1.Text = "Phone no.";
             textBox1.Enter += textBox1_Enter;
@@ -81,10 +79,9 @@
             textBox2.Cursor = Cursors.IBeam;
             textBox2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox2.ForeColor = Color.Silver;
-            textBox2.Location = new Point(156, 187);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
+            textBox2.Location = new Point(178, 249);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(307, 24);
+            textBox2.Size = new Size(350, 28);
             textBox2.TabIndex = 10;
             textBox2.Text = "Vehicle type";
             textBox2.TextChanged += textBox2_TextChanged;
@@ -96,10 +93,9 @@
             textBox3.Cursor = Cursors.IBeam;
             textBox3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             textBox3.ForeColor = Color.Silver;
-            textBox3.Location = new Point(156, 214);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
+            textBox3.Location = new Point(178, 285);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(307, 24);
+            textBox3.Size = new Size(350, 28);
             textBox3.TabIndex = 11;
             textBox3.Text = "Plate no.";
             textBox3.Enter += textBox3_Enter;
@@ -110,9 +106,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 22.2F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(116, 89);
+            label1.Location = new Point(133, 119);
             label1.Name = "label1";
-            label1.Size = new Size(374, 37);
+            label1.Size = new Size(458, 44);
             label1.TabIndex = 12;
             label1.Text = "Order or customer name";
             // 
@@ -123,10 +119,9 @@
             btnContinue.FlatStyle = FlatStyle.Flat;
             btnContinue.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnContinue.ForeColor = Color.White;
-            btnContinue.Location = new Point(207, 247);
-            btnContinue.Margin = new Padding(3, 2, 3, 2);
+            btnContinue.Location = new Point(237, 329);
             btnContinue.Name = "btnContinue";
-            btnContinue.Size = new Size(91, 28);
+            btnContinue.Size = new Size(104, 37);
             btnContinue.TabIndex = 13;
             btnContinue.Text = "Continue";
             btnContinue.UseVisualStyleBackColor = false;
@@ -139,10 +134,9 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(304, 247);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Location = new Point(347, 329);
             button2.Name = "button2";
-            button2.Size = new Size(91, 28);
+            button2.Size = new Size(104, 37);
             button2.TabIndex = 14;
             button2.Text = "Cancel";
             button2.UseVisualStyleBackColor = false;
@@ -151,8 +145,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(266, 12);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(304, 16);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(100, 100);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -196,10 +189,10 @@
             // 
             // jonOrder_form
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(3, 83, 115);
-            ClientSize = new Size(588, 326);
+            ClientSize = new Size(672, 435);
             Controls.Add(pictureBox1);
             Controls.Add(button2);
             Controls.Add(btnContinue);
@@ -209,10 +202,10 @@
             Controls.Add(textBox1);
             Controls.Add(FirstNameValue);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "jonOrder_form";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "jonOrder_form";
+            Load += jonOrder_form_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

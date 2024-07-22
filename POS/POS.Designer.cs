@@ -170,12 +170,12 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(button12);
             sidepanelPOS.Dock = DockStyle.Right;
             sidepanelPOS.ImeMode = ImeMode.NoControl;
-            sidepanelPOS.Location = new Point(1476, 78);
+            sidepanelPOS.Location = new Point(1225, 78);
             sidepanelPOS.Margin = new Padding(2);
             sidepanelPOS.MaximumSize = new Size(255, 656);
             sidepanelPOS.MinimumSize = new Size(4, 656);
             sidepanelPOS.Name = "sidepanelPOS";
-            sidepanelPOS.Size = new Size(4, 656);
+            sidepanelPOS.Size = new Size(255, 656);
             sidepanelPOS.TabIndex = 16;
             sidepanelPOS.MouseEnter += sidepanelPOS_MouseEnter;
             // 
@@ -774,6 +774,7 @@ namespace Service_Management_System.POS
             // 
             // productOrderedView
             // 
+            productOrderedView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             productOrderedView.BackgroundColor = Color.White;
             productOrderedView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             productOrderedView.Location = new Point(0, 202);
@@ -1051,6 +1052,7 @@ namespace Service_Management_System.POS
             // 
             // jobOrderedView
             // 
+            jobOrderedView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             jobOrderedView.BackgroundColor = Color.White;
             jobOrderedView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             jobOrderedView.Location = new Point(0, 368);

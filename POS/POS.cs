@@ -378,9 +378,22 @@ namespace Service_Management_System.POS
 
         private void button12_Click(object sender, EventArgs e)
         {
-            MainMenu mainMenu = new MainMenu();
-            mainMenu.Show();
-            this.Close();
+            
+            bool state = Class1.GlobalVariables.State;
+           
+            if (state == false)
+            {
+                AccessRequest accessRequest = new AccessRequest();
+                accessRequest.Show();
+                this.Close();
+            }
+            else
+            {
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.Show();
+                this.Close();
+            }
+            
         }
 
         private void button13_MouseEnter(object sender, EventArgs e)

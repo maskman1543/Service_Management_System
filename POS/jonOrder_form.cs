@@ -6,13 +6,14 @@ namespace Service_Management_System.POS
 {
     public partial class jonOrder_form : Form
     {
+       int jobOrderNumber = Class1.GlobalVariables.JobOrderNumber;
         public jonOrder_form()
         {
             InitializeComponent();
             btnContinue.Click -= new EventHandler(btnContinue_Click); // Detach any existing handlers
             btnContinue.Click += new EventHandler(btnContinue_Click); // Attach the handler
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -84,7 +85,7 @@ namespace Service_Management_System.POS
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
@@ -98,9 +99,9 @@ namespace Service_Management_System.POS
                 return;
             }
 
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Elementz\source\repos\Service_Management_System\bin\Debug\net6.0-windows\ServiceManagementSYstem.accdb";
+           
 
-            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
                 connection.Open();
                 OleDbTransaction transaction = connection.BeginTransaction();
@@ -130,6 +131,7 @@ namespace Service_Management_System.POS
                         cmdCustomer.Parameters.AddWithValue("@VehicleID", vehicleID);
                         cmdCustomer.ExecuteNonQuery();
                     }
+                    
 
                     transaction.Commit();
                     MessageBox.Show("Data inserted successfully!");
@@ -139,7 +141,20 @@ namespace Service_Management_System.POS
                     transaction.Rollback();
                     MessageBox.Show("An error occurred: " + ex.Message);
                 }
+
             }
+            
+            POSForm pOSForm = new POSForm();
+            this.Close();   
+        }
+       
+        public void ClearDataGridView()
+        {
+
+        }
+        private void jonOrder_form_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

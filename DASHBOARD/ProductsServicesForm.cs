@@ -30,7 +30,7 @@ namespace Service_Management_System.DASHBOARD
 
         private void DisplayProductCountRecord()
         {
-          
+
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
             {
                 string query = "SELECT COUNT(*) FROM productTable";
@@ -215,6 +215,18 @@ namespace Service_Management_System.DASHBOARD
                     Upper_timer.Stop();
                 }
             }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnsave_Click(object sender, EventArgs e)
+        {
+            string productName = ProductNameValue.Text;
+            string Description = DescriptionValue.Text;
+            
         }
     }
 }
