@@ -26,5 +26,15 @@ namespace Service_Management_System.DASHBOARD
         {
 
         }
+
+        private void btnWeekly_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnYearly_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
