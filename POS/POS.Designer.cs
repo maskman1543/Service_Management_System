@@ -576,6 +576,7 @@ namespace Service_Management_System.POS
             btnNewSale.TabIndex = 4;
             btnNewSale.TextAlign = ContentAlignment.BottomCenter;
             btnNewSale.UseVisualStyleBackColor = true;
+            btnNewSale.Click += btnNewSale_Click;
             btnNewSale.MouseEnter += btnNewSale_MouseEnter;
             btnNewSale.MouseLeave += btnNewSale_MouseLeave;
             // 
