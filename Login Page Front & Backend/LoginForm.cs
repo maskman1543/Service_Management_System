@@ -14,7 +14,7 @@ using System.Text;
 using Service_Management_System.Login_Page_Front___Backend;
 using Service_Management_System.POS.Login_Page_Front___Backend;
 using Service_Management_System.POS.Login_Page_Front_and_Back_End;
-
+using Service_Management_System.DASHBOARD;
 
 namespace Service_Management_System.POS.Login_Page_Front___Backend
 {
@@ -87,8 +87,8 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
                             // Successful login
                             MessageBox.Show("Login successful!");
                             // You can perform further actions here after successful login
-                            POSForm posform = new POSForm();
-                            posform.Show();
+                            MainMenu mainMenu = new MainMenu();
+                            mainMenu.Show();
                             this.Close();
                         }
                         else // If no matching user found

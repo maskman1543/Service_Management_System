@@ -48,8 +48,6 @@
             label7 = new Label();
             EPasswordValue = new TextBox();
             label6 = new Label();
-            EEmailValue = new TextBox();
-            label5 = new Label();
             ELastNameValue = new TextBox();
             label4 = new Label();
             EFirstNameValue = new TextBox();
@@ -72,6 +70,8 @@
             label13 = new Label();
             label14 = new Label();
             sidebarTimerbtnEdit = new System.Windows.Forms.Timer(components);
+            EEmailValue = new TextBox();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)EmployeeView).BeginInit();
             panel2.SuspendLayout();
             sidebar_AddUser.SuspendLayout();
@@ -229,6 +229,8 @@
             // sidebar_AddUser
             // 
             sidebar_AddUser.BackColor = Color.FromArgb(3, 83, 115);
+            sidebar_AddUser.Controls.Add(EEmailValue);
+            sidebar_AddUser.Controls.Add(label5);
             sidebar_AddUser.Controls.Add(button6);
             sidebar_AddUser.Controls.Add(button5);
             sidebar_AddUser.Controls.Add(lblBack);
@@ -236,8 +238,6 @@
             sidebar_AddUser.Controls.Add(label7);
             sidebar_AddUser.Controls.Add(EPasswordValue);
             sidebar_AddUser.Controls.Add(label6);
-            sidebar_AddUser.Controls.Add(EEmailValue);
-            sidebar_AddUser.Controls.Add(label5);
             sidebar_AddUser.Controls.Add(ELastNameValue);
             sidebar_AddUser.Controls.Add(label4);
             sidebar_AddUser.Controls.Add(EFirstNameValue);
@@ -306,7 +306,7 @@
             ECPasswordValue.BackColor = Color.FromArgb(3, 83, 115);
             ECPasswordValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             ECPasswordValue.ForeColor = Color.White;
-            ECPasswordValue.Location = new Point(30, 419);
+            ECPasswordValue.Location = new Point(28, 405);
             ECPasswordValue.Name = "ECPasswordValue";
             ECPasswordValue.Size = new Size(286, 27);
             ECPasswordValue.TabIndex = 11;
@@ -314,10 +314,11 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(29, 392);
+            label7.Location = new Point(27, 378);
             label7.Name = "label7";
-            label7.Size = new Size(129, 20);
+            label7.Size = new Size(145, 23);
             label7.TabIndex = 10;
             label7.Text = "Confirm password";
             // 
@@ -326,7 +327,7 @@
             EPasswordValue.BackColor = Color.FromArgb(3, 83, 115);
             EPasswordValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             EPasswordValue.ForeColor = Color.White;
-            EPasswordValue.Location = new Point(29, 342);
+            EPasswordValue.Location = new Point(27, 328);
             EPasswordValue.Name = "EPasswordValue";
             EPasswordValue.Size = new Size(286, 27);
             EPasswordValue.TabIndex = 9;
@@ -334,32 +335,13 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(28, 315);
+            label6.Location = new Point(26, 301);
             label6.Name = "label6";
-            label6.Size = new Size(70, 20);
+            label6.Size = new Size(79, 23);
             label6.TabIndex = 8;
             label6.Text = "Password";
-            // 
-            // EEmailValue
-            // 
-            EEmailValue.BackColor = Color.FromArgb(3, 83, 115);
-            EEmailValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            EEmailValue.ForeColor = Color.White;
-            EEmailValue.Location = new Point(28, 268);
-            EEmailValue.Name = "EEmailValue";
-            EEmailValue.Size = new Size(286, 27);
-            EEmailValue.TabIndex = 7;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(27, 241);
-            label5.Name = "label5";
-            label5.Size = new Size(46, 20);
-            label5.TabIndex = 6;
-            label5.Text = "Email";
             // 
             // ELastNameValue
             // 
@@ -374,10 +356,11 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
             label4.Location = new Point(26, 166);
             label4.Name = "label4";
-            label4.Size = new Size(76, 20);
+            label4.Size = new Size(85, 23);
             label4.TabIndex = 4;
             label4.Text = "Last name";
             // 
@@ -394,10 +377,11 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
             label3.Location = new Point(26, 96);
             label3.Name = "label3";
-            label3.Size = new Size(77, 20);
+            label3.Size = new Size(86, 23);
             label3.TabIndex = 2;
             label3.Text = "First name";
             label3.Click += label3_Click;
@@ -611,6 +595,27 @@
             sidebarTimerbtnEdit.Interval = 1;
             sidebarTimerbtnEdit.Tick += sidebarTimerbtnEdit_Tick;
             // 
+            // EEmailValue
+            // 
+            EEmailValue.BackColor = Color.FromArgb(3, 83, 115);
+            EEmailValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            EEmailValue.ForeColor = Color.White;
+            EEmailValue.Location = new Point(27, 264);
+            EEmailValue.Name = "EEmailValue";
+            EEmailValue.Size = new Size(286, 27);
+            EEmailValue.TabIndex = 16;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(26, 237);
+            label5.Name = "label5";
+            label5.Size = new Size(50, 23);
+            label5.TabIndex = 15;
+            label5.Text = "Email";
+            // 
             // UserSecurityForm
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
@@ -656,8 +661,6 @@
         private Label label7;
         private TextBox EPasswordValue;
         private Label label6;
-        private TextBox EEmailValue;
-        private Label label5;
         private TextBox ELastNameValue;
         private Label label4;
         private Button button5;
@@ -680,5 +683,7 @@
         private Label label13;
         private Label label14;
         private System.Windows.Forms.Timer sidebarTimerbtnEdit;
+        private TextBox EEmailValue;
+        private Label label5;
     }
 }

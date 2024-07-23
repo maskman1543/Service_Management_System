@@ -206,7 +206,7 @@ namespace Service_Management_System.POS
             }
         }
 
-        
+
         private void LoadPartsView()
         {
             string query = "SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Price, productTable.Barcode " +
@@ -407,9 +407,9 @@ namespace Service_Management_System.POS
 
         private void button12_Click(object sender, EventArgs e)
         {
-            
+
             bool state = Class1.GlobalVariables.State;
-           
+
             if (state == false)
             {
                 AccessRequest accessRequest = new AccessRequest();
@@ -422,7 +422,7 @@ namespace Service_Management_System.POS
                 mainMenu.Show();
                 this.Close();
             }
-            
+
         }
 
 
@@ -469,7 +469,7 @@ namespace Service_Management_System.POS
                 orderForm.BringToFront();
             }
         }
-        
+
 
         private void timer_Discount_Tick(object sender, EventArgs e)
         {
@@ -1065,7 +1065,7 @@ namespace Service_Management_System.POS
         {
 
         }
-        
+
 
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
@@ -1163,6 +1163,36 @@ namespace Service_Management_System.POS
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNewSale_Click(object sender, EventArgs e)
+        {
+            // Check if the form is already open
+            if (orderForm == null || orderForm.IsDisposed)
+            {
+                // If not, create a new instance and show it
+                orderForm = new jonOrder_form();
+                orderForm.Show();
+            }
+            else
+            {
+                // If already open, bring it to the front
+                orderForm.BringToFront();
+            }
+        }
+
+        private void btnPayment_Click_1(object sender, EventArgs e)
+        {
+            Payment payment = new Payment();
+            payment.Show();
+            this.Close();
+        }
+
+        private void btnCash_Click_1(object sender, EventArgs e)
+        {
+            AfterPayment payment = new AfterPayment();
+            payment.Show();
+            this.Close();
         }
 
 
