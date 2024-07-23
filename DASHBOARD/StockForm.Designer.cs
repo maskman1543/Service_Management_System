@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockForm));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockForm));
             sidebar_addproducts = new System.Windows.Forms.Timer(components);
             Details = new Guna.UI2.WinForms.Guna2Elipse(components);
             StockControl = new Guna.UI2.WinForms.Guna2Elipse(components);
             Upper_timer = new System.Windows.Forms.Timer(components);
             label1 = new Label();
             panel1 = new Panel();
+            pictureBox2 = new PictureBox();
             textBox7 = new TextBox();
             productBtn = new Button();
             ServiceBtn = new Button();
@@ -45,6 +46,15 @@
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
+            label11 = new Label();
+            panel5 = new Panel();
+            label9 = new Label();
+            panel4 = new Panel();
+            label8 = new Label();
+            panel3 = new Panel();
+            label10 = new Label();
+            label7 = new Label();
+            label6 = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
@@ -56,15 +66,6 @@
             dgv_sidepanel = new Guna.UI2.WinForms.Guna2Elipse(components);
             pictureBox1 = new PictureBox();
             searchbar = new Guna.UI2.WinForms.Guna2Elipse(components);
-            label6 = new Label();
-            label7 = new Label();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            label8 = new Label();
-            panel5 = new Panel();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
             label12 = new Label();
             label13 = new Label();
             label14 = new Label();
@@ -75,18 +76,17 @@
             label19 = new Label();
             label20 = new Label();
             label21 = new Label();
-            pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)SPView).BeginInit();
             guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
@@ -128,6 +128,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1097, 46);
             panel1.TabIndex = 30;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(15, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(40, 40);
+            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox2.TabIndex = 30;
+            pictureBox2.TabStop = false;
             // 
             // textBox7
             // 
@@ -236,6 +246,93 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1097, 76);
             panel2.TabIndex = 32;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.ForeColor = Color.Black;
+            label11.Location = new Point(730, 45);
+            label11.Name = "label11";
+            label11.Size = new Size(17, 20);
+            label11.TabIndex = 27;
+            label11.Text = "0";
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.Green;
+            panel5.Controls.Add(label9);
+            panel5.Location = new Point(999, 39);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(81, 34);
+            panel5.TabIndex = 29;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(30, 8);
+            label9.Name = "label9";
+            label9.Size = new Size(17, 20);
+            label9.TabIndex = 26;
+            label9.Text = "0";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(3, 83, 115);
+            panel4.Controls.Add(label8);
+            panel4.Location = new Point(914, 38);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(81, 34);
+            panel4.TabIndex = 28;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(30, 8);
+            label8.Name = "label8";
+            label8.Size = new Size(17, 20);
+            label8.TabIndex = 26;
+            label8.Text = "0";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Maroon;
+            panel3.Controls.Add(label10);
+            panel3.Controls.Add(label7);
+            panel3.Location = new Point(827, 38);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(81, 34);
+            panel3.TabIndex = 27;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(32, 7);
+            label10.Name = "label10";
+            label10.Size = new Size(17, 20);
+            label10.TabIndex = 27;
+            label10.Text = "0";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(30, 8);
+            label7.Name = "label7";
+            label7.Size = new Size(17, 20);
+            label7.TabIndex = 26;
+            label7.Text = "0";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(609, 47);
+            label6.Name = "label6";
+            label6.Size = new Size(104, 20);
+            label6.TabIndex = 25;
+            label6.Text = "Product count:";
             // 
             // label5
             // 
@@ -363,114 +460,27 @@
             searchbar.BorderRadius = 25;
             searchbar.TargetControl = textBox7;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(609, 47);
-            label6.Name = "label6";
-            label6.Size = new Size(104, 20);
-            label6.TabIndex = 25;
-            label6.Text = "Product count:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(30, 8);
-            label7.Name = "label7";
-            label7.Size = new Size(17, 20);
-            label7.TabIndex = 26;
-            label7.Text = "0";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.Maroon;
-            panel3.Controls.Add(label10);
-            panel3.Controls.Add(label7);
-            panel3.Location = new Point(827, 38);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(81, 34);
-            panel3.TabIndex = 27;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(3, 83, 115);
-            panel4.Controls.Add(label8);
-            panel4.Location = new Point(914, 38);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(81, 34);
-            panel4.TabIndex = 28;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(30, 8);
-            label8.Name = "label8";
-            label8.Size = new Size(17, 20);
-            label8.TabIndex = 26;
-            label8.Text = "0";
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.Green;
-            panel5.Controls.Add(label9);
-            panel5.Location = new Point(999, 39);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(81, 34);
-            panel5.TabIndex = 29;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(30, 8);
-            label9.Name = "label9";
-            label9.Size = new Size(17, 20);
-            label9.TabIndex = 26;
-            label9.Text = "0";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(32, 7);
-            label10.Name = "label10";
-            label10.Size = new Size(17, 20);
-            label10.TabIndex = 27;
-            label10.Text = "0";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.ForeColor = Color.Black;
-            label11.Location = new Point(730, 45);
-            label11.Name = "label11";
-            label11.Size = new Size(17, 20);
-            label11.TabIndex = 27;
-            label11.Text = "0";
-            // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label12.ForeColor = Color.Black;
             label12.Location = new Point(512, 812);
             label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
-            label12.Size = new Size(95, 28);
+            label12.Size = new Size(102, 28);
             label12.TabIndex = 34;
             label12.Text = "Cost Price";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.Black;
             label13.Location = new Point(805, 812);
             label13.Margin = new Padding(2, 0, 2, 0);
             label13.Name = "label13";
-            label13.Size = new Size(92, 28);
+            label13.Size = new Size(99, 28);
             label13.TabIndex = 35;
             label13.Text = "Sale Price";
             // 
@@ -562,16 +572,6 @@
             label21.TabIndex = 43;
             label21.Text = "0";
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(15, 3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(40, 40);
-            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox2.TabIndex = 30;
-            pictureBox2.TabStop = false;
-            // 
             // pictureBox3
             // 
             pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -615,19 +615,19 @@
             Load += StockForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)SPView).EndInit();
             guna2CustomGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
