@@ -1181,6 +1181,20 @@ namespace Service_Management_System.POS
             }
         }
 
+        private void btnPayment_Click_1(object sender, EventArgs e)
+        {
+            Payment payment = new Payment();
+            payment.Show();
+            this.Close();
+        }
+
+        private void btnCash_Click_1(object sender, EventArgs e)
+        {
+            AfterPayment payment = new AfterPayment();
+            payment.Show();
+            this.Close();
+        }
+
 
 
         /*private void button12_MouseEnter(object sender, EventArgs e)

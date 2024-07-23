@@ -515,6 +515,7 @@ namespace Service_Management_System.POS
             btnCash.TabIndex = 9;
             btnCash.TextAlign = ContentAlignment.BottomCenter;
             btnCash.UseVisualStyleBackColor = true;
+            btnCash.Click += btnCash_Click_1;
             btnCash.MouseEnter += btnCash_MouseEnter;
             btnCash.MouseLeave += btnCash_MouseLeave;
             // 
@@ -535,6 +536,7 @@ namespace Service_Management_System.POS
             btnPayment.TabIndex = 8;
             btnPayment.TextAlign = ContentAlignment.BottomCenter;
             btnPayment.UseVisualStyleBackColor = true;
+            btnPayment.Click += btnPayment_Click_1;
             btnPayment.MouseEnter += btnPayment_MouseEnter;
             btnPayment.MouseLeave += btnPayment_MouseLeave;
             // 
