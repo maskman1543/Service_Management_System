@@ -387,7 +387,7 @@ namespace Service_Management_System.POS
                     connection.Open();
                     foreach (int productID in productIDs)
                     {
-                        string query = "INSERT INTO CartProductsTb (CartID, ProductID) VALUES (@CartID, @ProductID)";
+                        string query = "INSERT INTO CartTb (CartID, ProductID) VALUES (@CartID, @ProductID)";
                         OleDbCommand command = new OleDbCommand(query, connection);
                         command.Parameters.AddWithValue("@CartID", newCartID);
                         command.Parameters.AddWithValue("@ProductID", productID);

@@ -17,6 +17,7 @@ namespace Service_Management_System.DASHBOARD
     {
         POSForm POSForm = new POSForm();
         bool sidebarExpand;
+        bool sidebarExpand2;
         bool upper;
         private bool isDetails = true;
         private Form currentChildForm;
@@ -31,9 +32,9 @@ namespace Service_Management_System.DASHBOARD
         private void DisplayProductCountRecord()
         {
 
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
-                string query = "SELECT COUNT(*) FROM productTable";
+                string query = "SELECT COUNT(*) FROM Products";
 
                 OleDbCommand command = new OleDbCommand(query, connection);
 
@@ -51,9 +52,9 @@ namespace Service_Management_System.DASHBOARD
         }
         private void DisplayServiceCountRecord()
         {
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
-                string query = "SELECT COUNT(*) FROM servicesTb";
+                string query = "SELECT COUNT(*) FROM Services";
 
                 OleDbCommand command = new OleDbCommand(query, connection);
 
@@ -83,9 +84,9 @@ namespace Service_Management_System.DASHBOARD
         {
             try
             {
-                using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+                using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
                 {
-                    string query = "SELECT * FROM servicesTb";
+                    string query = "SELECT * FROM Services";
                     OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
@@ -103,9 +104,9 @@ namespace Service_Management_System.DASHBOARD
         {
             try
             {
-                using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+                using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
                 {
-                    string query = "SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Cost, productTable.Price, productTable.Barcode, productTable.Description\r\nFROM productTable;\r\n";
+                    string query = "SELECT * FROM Products";
                     OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
@@ -225,8 +226,105 @@ namespace Service_Management_System.DASHBOARD
         private void btnsave_Click(object sender, EventArgs e)
         {
             string productName = ProductNameValue.Text;
-            string Description = DescriptionValue.Text;
-            
+            decimal price = decimal.Parse(txtPriceValue.Text);
+            int quantityInStock = int.Parse(QuantityInStock.Text);
+            decimal cost = decimal.Parse(txtCostValue.Text);
+
+            // Create the SQL INSERT statement
+            string insertQuery = "INSERT INTO Products (ProductName, Price, QuantityInStock, Cost) VALUES (@ProductName, @Price, @QuantityInStock, @Cost)";
+
+            // Create a connection object
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                // Create a command object
+                using (OleDbCommand command = new OleDbCommand(insertQuery, connection))
+                {
+                    // Add parameters to the command
+                    command.Parameters.AddWithValue("@ProductName", productName);
+                    command.Parameters.AddWithValue("@Price", price);
+                    command.Parameters.AddWithValue("@Cost", cost);
+                    command.Parameters.AddWithValue("@QuantityInStock", quantityInStock);
+
+                    // Open the connection
+                    connection.Open();
+
+                    // Execute the command
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Product saved successfully.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+            }
+
         }
+
+        private void servicesidebar_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand2)
+            {
+                panel6.Width -= 50;
+                if (panel6.Width == panel6.MinimumSize.Width)
+                {
+                    sidebarExpand2 = false;
+                    servicesidebar.Stop();
+                }
+            }
+            else
+            {
+                panel6.Width += 50;
+                if (panel6.Width == panel6.MaximumSize.Width)
+                {
+                    sidebarExpand2 = true;
+                    servicesidebar.Stop();
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            servicesidebar.Start();
+        }
+
+        private void btnSaveService_Click(object sender, EventArgs e)
+        {
+            string serviceName = txtServiceName.Text;
+            decimal servicePrice = decimal.Parse(txtServicePrice.Text);
+           
+
+            // Create the SQL INSERT statement
+            string insertQuery = "INSERT INTO Services (ServiceName, Price) VALUES (@ServiceName, @Price)";
+
+            // Create a connection object
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                // Create a command object
+                using (OleDbCommand command = new OleDbCommand(insertQuery, connection))
+                {
+                    // Add parameters to the command
+                    command.Parameters.AddWithValue("@ServiceName", serviceName);
+                    command.Parameters.AddWithValue("@Price", servicePrice);
+                    
+
+                    // Open the connection
+                    connection.Open();
+
+                    // Execute the command
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Service saved successfully.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+            }
+            }
     }
 }

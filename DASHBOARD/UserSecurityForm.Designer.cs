@@ -244,11 +244,11 @@
             sidebar_AddUser.Controls.Add(label3);
             sidebar_AddUser.Controls.Add(label2);
             sidebar_AddUser.Dock = DockStyle.Right;
-            sidebar_AddUser.Location = new Point(1097, 46);
+            sidebar_AddUser.Location = new Point(754, 46);
             sidebar_AddUser.MaximumSize = new Size(343, 860);
-            sidebar_AddUser.MinimumSize = new Size(0, 860);
+            sidebar_AddUser.MinimumSize = new Size(343, 860);
             sidebar_AddUser.Name = "sidebar_AddUser";
-            sidebar_AddUser.Size = new Size(0, 860);
+            sidebar_AddUser.Size = new Size(343, 860);
             sidebar_AddUser.TabIndex = 26;
             sidebar_AddUser.Paint += panel3_Paint;
             // 
