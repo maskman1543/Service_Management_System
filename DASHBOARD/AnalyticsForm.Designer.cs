@@ -77,7 +77,7 @@
             btnYearly.TabIndex = 5;
             btnYearly.Text = "Yearly";
             btnYearly.UseVisualStyleBackColor = false;
-            btnYearly.Click += btnYearly_Click;
+            
             // 
             // btnWeekly
             // 
@@ -92,7 +92,7 @@
             btnWeekly.TabIndex = 6;
             btnWeekly.Text = "Weekly";
             btnWeekly.UseVisualStyleBackColor = false;
-            btnWeekly.Click += btnWeekly_Click;
+           
             // 
             // btnMonthly
             // 
@@ -222,7 +222,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "AnalyticsForm";
             Text = "AnalyticsForm";
-            Load += AnalyticsForm_Load;
+          
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }

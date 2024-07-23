@@ -1,4 +1,5 @@
 ﻿using Service_Management_System.POS;
+using Service_Management_System.DASHBOARD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -84,10 +85,10 @@ namespace Service_Management_System.Login_Page_Front___Backend
             try
             {
                 // Construct the SELECT query to fetch user details by Email and hashed Password
-                string query = "SELECT * FROM EmployeeTb WHERE Email = @Email AND [Password] = @Password";
+                string query = "SELECT * FROM Employees WHERE Email = @Email AND [Password] = @Password";
 
                 // Set up OleDb connection and command
-                using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+                using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
                 {
                     using (OleDbCommand command = new OleDbCommand(query, connection))
                     {

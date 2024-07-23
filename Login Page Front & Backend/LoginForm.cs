@@ -66,7 +66,7 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
             {
                 // Construct the SELECT query to fetch user details by Email and hashed Password
                 string query = "SELECT * FROM Users WHERE Email = @Email AND [Password] = @Password";
-
+                
                 // Set up OleDb connection and command
                 using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
                 {

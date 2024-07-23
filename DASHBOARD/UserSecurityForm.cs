@@ -34,9 +34,9 @@ namespace Service_Management_System.DASHBOARD
 
         private void LoadEmployeesView()
         {
-            string query = "SELECT EmployeeTb.EmployeeID, EmployeeTb.FirstName, EmployeeTb.LastName, EmployeeTb.Email, EmployeeTb.Contact\r\nFROM EmployeeTb;\r\n";
+            string query = "SELECT * FROM Employees";
 
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
@@ -161,8 +161,8 @@ namespace Service_Management_System.DASHBOARD
             try
             {
                 // Example: Insert user data into a database
-                OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString);
-                string query = "INSERT INTO EmployeeTb (Firstname, LastName, Email, [Password]) " +
+                OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2);
+                string query = "INSERT INTO Employees (Firstname, LastName, Email, [Password]) " +
                                "VALUES (@FirstName, @LastName, @Email, @Password)";
 
                 OleDbCommand command = new OleDbCommand(query, connection);

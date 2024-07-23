@@ -663,9 +663,10 @@ namespace Service_Management_System.POS
             textBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             textBox1.ForeColor = Color.White;
             textBox1.Location = new Point(330, 11);
+            textBox1.Margin = new Padding(2);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(97, 48);
+            textBox1.Size = new Size(96, 48);
             textBox1.TabIndex = 5;
             textBox1.TextAlign = HorizontalAlignment.Center;
             textBox1.TextChanged += textBox1_TextChanged;
@@ -676,6 +677,7 @@ namespace Service_Management_System.POS
             lblQuantity.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblQuantity.ForeColor = Color.White;
             lblQuantity.Location = new Point(196, 20);
+            lblQuantity.Margin = new Padding(2, 0, 2, 0);
             lblQuantity.Name = "lblQuantity";
             lblQuantity.Size = new Size(103, 31);
             lblQuantity.TabIndex = 4;
@@ -722,7 +724,7 @@ namespace Service_Management_System.POS
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox2.BackColor = Color.White;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(973, 23);
+            pictureBox2.Location = new Point(972, 22);
             pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(25, 25);
@@ -736,7 +738,7 @@ namespace Service_Management_System.POS
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.BackColor = Color.White;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(477, 23);
+            pictureBox1.Location = new Point(478, 22);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(25, 25);
@@ -753,7 +755,7 @@ namespace Service_Management_System.POS
             textBox8.Margin = new Padding(2);
             textBox8.Multiline = true;
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(464, 41);
+            textBox8.Size = new Size(464, 42);
             textBox8.TabIndex = 10;
             textBox8.Text = "Search Services";
             textBox8.TextChanged += textBox8_TextChanged;
@@ -768,7 +770,7 @@ namespace Service_Management_System.POS
             textBox7.Margin = new Padding(2);
             textBox7.Multiline = true;
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(498, 41);
+            textBox7.Size = new Size(498, 42);
             textBox7.TabIndex = 10;
             textBox7.Text = "Search Product";
             textBox7.TextChanged += textBox7_TextChanged;
