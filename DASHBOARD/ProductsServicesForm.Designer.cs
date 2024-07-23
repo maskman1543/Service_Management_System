@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductsServicesForm));
             label1 = new Label();
             PSView = new DataGridView();
@@ -225,10 +225,10 @@
             // 
             guna2CustomGradientPanel1.BackColor = Color.White;
             guna2CustomGradientPanel1.Controls.Add(dataGridView1);
-            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges3;
+            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges1;
             guna2CustomGradientPanel1.Location = new Point(15, 128);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2CustomGradientPanel1.Size = new Size(282, 765);
             guna2CustomGradientPanel1.TabIndex = 13;
             // 
@@ -442,11 +442,11 @@
             panel3.Controls.Add(panelpro_service);
             panel3.Controls.Add(panel5);
             panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(672, 122);
+            panel3.Location = new Point(1097, 122);
             panel3.MaximumSize = new Size(425, 784);
             panel3.MinimumSize = new Size(0, 784);
             panel3.Name = "panel3";
-            panel3.Size = new Size(425, 784);
+            panel3.Size = new Size(0, 784);
             panel3.TabIndex = 25;
             panel3.Paint += panel3_Paint;
             // 
@@ -473,7 +473,7 @@
             panelpro_service.Dock = DockStyle.Fill;
             panelpro_service.Location = new Point(0, 99);
             panelpro_service.Name = "panelpro_service";
-            panelpro_service.Size = new Size(425, 685);
+            panelpro_service.Size = new Size(0, 685);
             panelpro_service.TabIndex = 6;
             // 
             // panelUpper
@@ -897,7 +897,7 @@
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(425, 99);
+            panel5.Size = new Size(0, 99);
             panel5.TabIndex = 5;
             // 
             // button8

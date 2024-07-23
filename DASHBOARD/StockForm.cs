@@ -44,5 +44,10 @@ namespace Service_Management_System.DASHBOARD
                 }
             }
         }
+
+        private void StockForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
