@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Text;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using Service_Management_System.POS.Login_Page_Front___Backend;
 
 namespace Service_Management_System.Login_Page_Front___Backend
 {
@@ -148,6 +149,12 @@ namespace Service_Management_System.Login_Page_Front___Backend
         private void EmployeeIDTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new LoginForm().Show();
+            this.Hide();
         }
     }
 }
