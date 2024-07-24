@@ -816,6 +816,7 @@ namespace Service_Management_System.POS
             // 
             // productOrderedView
             // 
+            productOrderedView.AllowUserToAddRows = false;
             productOrderedView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             productOrderedView.BackgroundColor = Color.White;
             productOrderedView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1096,6 +1097,7 @@ namespace Service_Management_System.POS
             // 
             // jobOrderedView
             // 
+            jobOrderedView.AllowUserToAddRows = false;
             jobOrderedView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             jobOrderedView.BackgroundColor = Color.White;
             jobOrderedView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
