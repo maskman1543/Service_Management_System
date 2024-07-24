@@ -24,6 +24,9 @@ namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
             Splash splashForm = new Splash();
             splashForm.Show(); // Show Splash form initially
 
+            //MainMenu mainMenu = new MainMenu();
+           // mainMenu.Show();
+
             //MainMenu mainmenuForm = new MainMenu();
             //mainmenuForm.Show();
 
