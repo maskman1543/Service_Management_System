@@ -72,6 +72,7 @@ namespace Service_Management_System.Login_Page_Front___Backend
             string password = PasswordTextBox.Text;
             bool state = false;
             Class1.GlobalVariables.State = state;
+
             // Validate input
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
@@ -104,8 +105,29 @@ namespace Service_Management_System.Login_Page_Front___Backend
 
                         if (reader.Read()) // If user exists
                         {
+                            // Get the employee ID
+                            int employeeId = reader.GetInt32(reader.GetOrdinal("EmployeeID"));
+
+                            // Close the reader
+                            reader.Close();
+
+                            // Get the current date
+                            string dateString = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+                            // Insert the login time and date
+                            string insertQuery = "INSERT INTO EmployeeAtt (EmployeeID, DateIn) VALUES (@EmployeeID, @DateIn)";
+                            using (OleDbCommand insertCommand = new OleDbCommand(insertQuery, connection))
+                            {
+                                insertCommand.Parameters.AddWithValue("@EmployeeID", employeeId);
+                                insertCommand.Parameters.AddWithValue("@DateIn", dateString);
+
+                                // Execute the insert command
+                                insertCommand.ExecuteNonQuery();
+                            }
+
                             // Successful login
                             MessageBox.Show("Login successful!");
+
                             // You can perform further actions here after successful login
                             POSForm posform = new POSForm();
                             posform.Show();
@@ -116,8 +138,7 @@ namespace Service_Management_System.Login_Page_Front___Backend
                             MessageBox.Show("Invalid email or password. Please try again.");
                         }
 
-                        // Close the reader and connection
-                        reader.Close();
+                        // Close the connection
                         connection.Close();
                     }
                 }
