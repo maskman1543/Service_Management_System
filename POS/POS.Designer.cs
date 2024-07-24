@@ -32,9 +32,9 @@ namespace Service_Management_System.POS
             components = new System.ComponentModel.Container();
             PictureBox minilogo;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POSForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             sidepanelPOS = new Panel();
             panel7 = new Panel();
             moveup = new PictureBox();
@@ -206,12 +206,12 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(button12);
             sidepanelPOS.Dock = DockStyle.Right;
             sidepanelPOS.ImeMode = ImeMode.NoControl;
-            sidepanelPOS.Location = new Point(1225, 78);
+            sidepanelPOS.Location = new Point(1476, 78);
             sidepanelPOS.Margin = new Padding(2);
             sidepanelPOS.MaximumSize = new Size(255, 656);
             sidepanelPOS.MinimumSize = new Size(4, 656);
             sidepanelPOS.Name = "sidepanelPOS";
-            sidepanelPOS.Size = new Size(255, 656);
+            sidepanelPOS.Size = new Size(4, 656);
             sidepanelPOS.TabIndex = 16;
             sidepanelPOS.MouseEnter += sidepanelPOS_MouseEnter;
             // 
@@ -1632,26 +1632,26 @@ namespace Service_Management_System.POS
             // 
             // dgvMechanic
             // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dgvMechanic.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvMechanic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dgvMechanic.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvMechanic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvMechanic.ColumnHeadersHeight = 30;
             dgvMechanic.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvMechanic.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvMechanic.DefaultCellStyle = dataGridViewCellStyle6;
             dgvMechanic.GridColor = Color.FromArgb(231, 229, 255);
             dgvMechanic.Location = new Point(30, 219);
             dgvMechanic.Name = "dgvMechanic";
@@ -1705,11 +1705,11 @@ namespace Service_Management_System.POS
             panel_UserInfo.Controls.Add(label17);
             panel_UserInfo.Controls.Add(tbxFirstName);
             panel_UserInfo.Controls.Add(label16);
-            panel_UserInfo.Location = new Point(1088, 1);
-            panel_UserInfo.MaximumSize = new Size(392, 733);
-            panel_UserInfo.MinimumSize = new Size(392, 0);
+            panel_UserInfo.Location = new Point(1162, 1);
+            panel_UserInfo.MaximumSize = new Size(318, 733);
+            panel_UserInfo.MinimumSize = new Size(318, 0);
             panel_UserInfo.Name = "panel_UserInfo";
-            panel_UserInfo.Size = new Size(392, 0);
+            panel_UserInfo.Size = new Size(318, 733);
             panel_UserInfo.TabIndex = 15;
             panel_UserInfo.Paint += panel_UserInfo_Paint;
             // 
@@ -1726,7 +1726,7 @@ namespace Service_Management_System.POS
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label21.ForeColor = Color.White;
-            label21.Location = new Point(53, 441);
+            label21.Location = new Point(42, 442);
             label21.Name = "label21";
             label21.Size = new Size(63, 20);
             label21.TabIndex = 11;
@@ -1736,7 +1736,7 @@ namespace Service_Management_System.POS
             // 
             tbxPosition.BackColor = Color.FromArgb(3, 83, 115);
             tbxPosition.ForeColor = Color.White;
-            tbxPosition.Location = new Point(53, 467);
+            tbxPosition.Location = new Point(42, 468);
             tbxPosition.Name = "tbxPosition";
             tbxPosition.Size = new Size(241, 27);
             tbxPosition.TabIndex = 10;
@@ -1746,7 +1746,7 @@ namespace Service_Management_System.POS
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label20.ForeColor = Color.White;
-            label20.Location = new Point(53, 362);
+            label20.Location = new Point(42, 363);
             label20.Name = "label20";
             label20.Size = new Size(46, 20);
             label20.TabIndex = 9;
@@ -1756,7 +1756,7 @@ namespace Service_Management_System.POS
             // 
             tbxEmail.BackColor = Color.FromArgb(3, 83, 115);
             tbxEmail.ForeColor = Color.White;
-            tbxEmail.Location = new Point(53, 388);
+            tbxEmail.Location = new Point(42, 389);
             tbxEmail.Name = "tbxEmail";
             tbxEmail.Size = new Size(241, 27);
             tbxEmail.TabIndex = 8;
@@ -1766,7 +1766,7 @@ namespace Service_Management_System.POS
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label19.ForeColor = Color.White;
-            label19.Location = new Point(53, 269);
+            label19.Location = new Point(42, 270);
             label19.Name = "label19";
             label19.Size = new Size(90, 20);
             label19.TabIndex = 7;
@@ -1776,7 +1776,7 @@ namespace Service_Management_System.POS
             // 
             tbxContactNumber.BackColor = Color.FromArgb(3, 83, 115);
             tbxContactNumber.ForeColor = Color.White;
-            tbxContactNumber.Location = new Point(53, 300);
+            tbxContactNumber.Location = new Point(42, 301);
             tbxContactNumber.Name = "tbxContactNumber";
             tbxContactNumber.Size = new Size(241, 27);
             tbxContactNumber.TabIndex = 6;
@@ -1799,7 +1799,7 @@ namespace Service_Management_System.POS
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label18.ForeColor = Color.White;
-            label18.Location = new Point(53, 184);
+            label18.Location = new Point(42, 185);
             label18.Name = "label18";
             label18.Size = new Size(77, 20);
             label18.TabIndex = 4;
@@ -1809,7 +1809,7 @@ namespace Service_Management_System.POS
             // 
             tbxLastName.BackColor = Color.FromArgb(3, 83, 115);
             tbxLastName.ForeColor = Color.White;
-            tbxLastName.Location = new Point(53, 215);
+            tbxLastName.Location = new Point(42, 216);
             tbxLastName.Name = "tbxLastName";
             tbxLastName.Size = new Size(241, 27);
             tbxLastName.TabIndex = 3;
@@ -1819,7 +1819,7 @@ namespace Service_Management_System.POS
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label17.ForeColor = Color.White;
-            label17.Location = new Point(53, 99);
+            label17.Location = new Point(42, 100);
             label17.Name = "label17";
             label17.Size = new Size(80, 20);
             label17.TabIndex = 2;
@@ -1829,7 +1829,7 @@ namespace Service_Management_System.POS
             // 
             tbxFirstName.BackColor = Color.FromArgb(3, 83, 115);
             tbxFirstName.ForeColor = Color.White;
-            tbxFirstName.Location = new Point(53, 130);
+            tbxFirstName.Location = new Point(42, 131);
             tbxFirstName.Name = "tbxFirstName";
             tbxFirstName.Size = new Size(241, 27);
             tbxFirstName.TabIndex = 1;
@@ -1840,7 +1840,7 @@ namespace Service_Management_System.POS
             label16.BackColor = Color.FromArgb(3, 83, 115);
             label16.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label16.ForeColor = Color.White;
-            label16.Location = new Point(16, 14);
+            label16.Location = new Point(9, 7);
             label16.Name = "label16";
             label16.Size = new Size(208, 31);
             label16.TabIndex = 0;
