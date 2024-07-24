@@ -97,7 +97,7 @@ namespace Service_Management_System.DASHBOARD
 
             string selectQuery = "SELECT COUNT(*) FROM EmployeePayroll WHERE EmployeeID = @EmployeeID";
             string insertQuery = "INSERT INTO EmployeePayroll (EmployeeID, DayOfPresent, sss, pagibig, NetSalary) VALUES (@EmployeeID, @BasicSalary, @SSS, @Pagibig, @NetSalary)";
-            string updateQuery = "UPDATE EmployeePayroll SET DayOfPresent = @BasicSalary, sss = @SSS, pagibig = @Pagibig, NetSalary = @NetSalaryWHERE EmployeeID = @EmployeeID";
+            string updateQuery = "UPDATE EmployeePayroll SET DayOfPresent = @BasicSalary, sss = @SSS, pagibig = @Pagibig, NetSalary = @NetSalary WHERE EmployeeID = @EmployeeID";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
