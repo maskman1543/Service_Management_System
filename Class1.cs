@@ -21,7 +21,7 @@ namespace Service_Management_System
         {
             int jobOrderID = -1; // Default value indicating an error or no result
 
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 try
                 {

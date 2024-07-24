@@ -105,35 +105,23 @@ namespace Service_Management_System.POS
             {
                 connection.Open();
                 OleDbTransaction transaction = connection.BeginTransaction();
-                jobOrderNumber = 0;
+                
                 try
                 {
-                    string insertVehicleQuery = "INSERT INTO JobOrders (Vehicle, PlateNo) VALUES (@Vehicle, @PlateNo)";
-                    string vehicle;
+           
                     
-                    using (OleDbCommand cmdVehicle = new OleDbCommand(insertVehicleQuery, connection, transaction))
-                    {
-                        cmdVehicle.Parameters.AddWithValue("@Vehicle", textBox2.Text);
-                        cmdVehicle.Parameters.AddWithValue("@PlateNumber", textBox3.Text);
-                        cmdVehicle.ExecuteNonQuery();
 
-                        string getVehicleIDQuery = "SELECT @@IDENTITY";
-                        using (OleDbCommand cmdGetVehicleID = new OleDbCommand(getVehicleIDQuery, connection, transaction))
-                        {
-                            vehicle = Convert.ToString(cmdGetVehicleID.ExecuteScalar());
-                        }
-                    }
-
-                    string insertCustomerQuery = "INSERT INTO JobOrders (CustomerName, CustomerContact, Vehicle) VALUES (@CustomerName, @CustomerContact, @Vehicle)";
+                    string insertCustomerQuery = "INSERT INTO JobOrders (CustomerName, CustomerContact, Vehicle, PlateNo) VALUES (@CustomerName, @CustomerContact, @Vehicle, @PlateNo)";
                     using (OleDbCommand cmdCustomer = new OleDbCommand(insertCustomerQuery, connection, transaction))
                     {
                         cmdCustomer.Parameters.AddWithValue("@CustomerName", FirstNameValue.Text);
                         cmdCustomer.Parameters.AddWithValue("@CustomerContact", textBox1.Text);
-                        cmdCustomer.Parameters.AddWithValue("@Vehicle", vehicle);
+                        cmdCustomer.Parameters.AddWithValue("@Vehicle", textBox2.Text);
+                        cmdCustomer.Parameters.AddWithValue("@PlateNo", textBox3.Text);
                         cmdCustomer.ExecuteNonQuery();
                     }
-
-                    jobOrderNumber = Class1.GlobalVariables.JobOrderNumber;
+                    Class1.GlobalVariables.JobOrderNumber = Class1.GetJobOrderID(insertCustomerQuery);
+                    MessageBox.Show("Job Order Number: "+Class1.GlobalVariables.JobOrderNumber);
                     transaction.Commit();
                     MessageBox.Show("Data inserted successfully!");
                 }

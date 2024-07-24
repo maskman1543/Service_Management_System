@@ -164,16 +164,14 @@ namespace Service_Management_System.POS
         }
         private void InitializeJobOrderedView()
         {
-            jobOrderedView.Columns.Add("serviceID", "Service ID");
-            jobOrderedView.Columns.Add("serviceType", "Service Type");
-            jobOrderedView.Columns.Add("serviceName", "Service Name");
-            jobOrderedView.Columns.Add("serviceRate", "Service Rate");
+            jobOrderedView.Columns.Add("ServiceID", "Service ID");
+            //jobOrderedView.Columns.Add("serviceType", "Service Type");
+            jobOrderedView.Columns.Add("ServiceName", "Service Name");
+            jobOrderedView.Columns.Add("Price", "Service Rate");
         }
         private void LoadServiceOrderedView(int serviceID)
         {
-            string query = $"SELECT servicesTb.serviceID, servicesTb.serviceType, servicesTb.serviceName, servicesTb.serviceRate " +
-                   $"FROM servicesTb " +
-                   $"WHERE servicesTb.serviceID = {serviceID}";
+            string query = $"SELECT ServiceID, ServiceName, Price FROM Services";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
@@ -226,7 +224,7 @@ namespace Service_Management_System.POS
 
         private void AddServiceToOrderedView(int serviceID)
         {
-            string query = "SELECT ServiceName, ServiceRate FROM Services WHERE ServiceID = serviceID";
+            string query = "SELECT ServiceID, ServiceName, Price FROM Services WHERE ServiceID = ServiceID";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
@@ -243,7 +241,7 @@ namespace Service_Management_System.POS
                         DataRow serviceRow = dataTable.Rows[0];
 
                         // Add new row for service
-                        jobOrderedView.Rows.Add(serviceRow["serviceID"], serviceRow["serviceType"], serviceRow["serviceName"], serviceRow["serviceRate"]);
+                        jobOrderedView.Rows.Add(serviceRow["ServiceID"],  serviceRow["serviceName"], serviceRow["Price"]);
                     }
                 }
                 catch (Exception ex)
@@ -260,9 +258,9 @@ namespace Service_Management_System.POS
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow selectedRow = servicesView.Rows[e.RowIndex];
-                if (selectedRow.Cells["serviceID"].Value != null)
+                if (selectedRow.Cells["ServiceID"].Value != null)
                 {
-                    int serviceID = Convert.ToInt32(selectedRow.Cells["serviceID"].Value);
+                    int serviceID = Convert.ToInt32(selectedRow.Cells["ServiceID"].Value);
                     AddServiceToOrderedView(serviceID);
                 }
             }
@@ -270,9 +268,9 @@ namespace Service_Management_System.POS
 
         private void LoadServiceView()
         {
-            string query = "SELECT serviceID, serviceType, serviceName, serviceRate FROM servicesTb";
+            string query = "SELECT ServiceID, ServiceName, Price FROM Services";
 
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
@@ -309,10 +307,10 @@ namespace Service_Management_System.POS
 
             foreach (DataGridViewRow row in jobOrderedView.Rows)
             {
-                if (row.Cells["serviceRate"].Value != null)
+                if (row.Cells["Price"].Value != null)
                 {
                     decimal serviceRate = 0;
-                    if (decimal.TryParse(row.Cells["serviceRate"].Value.ToString(), out serviceRate))
+                    if (decimal.TryParse(row.Cells["Price"].Value.ToString(), out serviceRate))
                     {
                         serviceTotal += serviceRate;
                     }
@@ -343,9 +341,9 @@ namespace Service_Management_System.POS
         private void btnSaveSale_Click(object sender, EventArgs e)
         {
             int newCartID;
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
-                string query = "INSERT INTO CartTb DEFAULT VALUES";
+                string query = "INSERT INTO JobOrderItem DEFAULT VALUES";
                 OleDbCommand command = new OleDbCommand(query, connection);
 
                 try
@@ -360,7 +358,7 @@ namespace Service_Management_System.POS
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error generating new CartID: " + ex.Message);
+                    MessageBox.Show("Error generating new JobOrderItemID: " + ex.Message);
                     return;
                 }
             }
@@ -527,11 +525,11 @@ namespace Service_Management_System.POS
 
         private void SearchProduct(string searchTerm)
         {
-            string query = "SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Price, productTable.Barcode " +
-                      "FROM productTable " +
-                      "WHERE productTable.ProductName LIKE ? OR productTable.ProductType LIKE ? OR productTable.Barcode LIKE ?";
+            string query = "SELECT ProductID, ProductName, Price " +
+                      "FROM Products " +
+                      "WHERE Products.ProductName LIKE ? OR Products.Barcode LIKE ?";
 
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
 
@@ -589,16 +587,16 @@ namespace Service_Management_System.POS
 
             if (string.IsNullOrEmpty(searchTerm))
             {
-                query = "SELECT serviceID, serviceType, serviceName, serviceRate FROM servicesTb";
+                query = "SELECT ServiceID, ServiceName, Price FROM Services";
             }
             else
             {
-                query = "SELECT serviceID, serviceType, serviceName, serviceRate " +
-                        "FROM servicesTb " +
-                        "WHERE serviceName LIKE ? OR serviceType LIKE ?";
+                query = "SELECT ServiceID, ServiceName, Price " +
+                        "FROM Services " +
+                        "WHERE ServiceName LIKE ?";
             }
 
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
 

@@ -170,12 +170,12 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(button12);
             sidepanelPOS.Dock = DockStyle.Right;
             sidepanelPOS.ImeMode = ImeMode.NoControl;
-            sidepanelPOS.Location = new Point(1476, 78);
+            sidepanelPOS.Location = new Point(1225, 78);
             sidepanelPOS.Margin = new Padding(2);
             sidepanelPOS.MaximumSize = new Size(255, 656);
             sidepanelPOS.MinimumSize = new Size(4, 656);
             sidepanelPOS.Name = "sidepanelPOS";
-            sidepanelPOS.Size = new Size(4, 656);
+            sidepanelPOS.Size = new Size(255, 656);
             sidepanelPOS.TabIndex = 16;
             sidepanelPOS.MouseEnter += sidepanelPOS_MouseEnter;
             // 
@@ -760,7 +760,6 @@ namespace Service_Management_System.POS
             textBox8.Text = "Search Services";
             textBox8.TextChanged += textBox8_TextChanged;
             textBox8.Enter += textBox8_Enter;
-            textBox8.Leave += textBox8_Leave;
             // 
             // textBox7
             // 
@@ -775,7 +774,6 @@ namespace Service_Management_System.POS
             textBox7.Text = "Search Product";
             textBox7.TextChanged += textBox7_TextChanged;
             textBox7.Enter += textBox7_Enter;
-            textBox7.Leave += textBox7_Leave;
             // 
             // productOrderedView
             // 
