@@ -23,6 +23,7 @@ namespace Service_Management_System.POS
         bool sidebarExpand;
         bool sidebarExpandDiscount;
         bool sidebarExpandMechanic;
+        bool sidebarExpandUserInfo;
         private jonOrder_form orderForm;
         private const decimal VAT_RATE = 0.12m;
         //ss
@@ -34,6 +35,7 @@ namespace Service_Management_System.POS
             InitializeProductOrderedView();
             InitializeJobOrderedView();
             MechanicTable();
+            dgvRowCount();
             //this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
         }
 
@@ -120,7 +122,6 @@ namespace Service_Management_System.POS
                 }
                 DisplaySubTotal();
             }
-
         }
 
         private void partsServicesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -243,7 +244,7 @@ namespace Service_Management_System.POS
                         DataRow serviceRow = dataTable.Rows[0];
 
                         // Add new row for service
-                        jobOrderedView.Rows.Add(serviceRow["ServiceID"],  serviceRow["serviceName"], serviceRow["Price"]);
+                        jobOrderedView.Rows.Add(serviceRow["ServiceID"], serviceRow["serviceName"], serviceRow["Price"]);
                     }
                 }
                 catch (Exception ex)
@@ -770,15 +771,15 @@ namespace Service_Management_System.POS
         private void button18_MouseEnter(object sender, EventArgs e)
         {
             // Increase size when mouse enters
-            button18.Width = 275;
-            button18.Height = 62;
+            btnUserInfo.Width = 275;
+            btnUserInfo.Height = 62;
         }
 
         private void button18_MouseLeave(object sender, EventArgs e)
         {
             // Restore original size when mouse leaves
-            button18.Width = 265;
-            button18.Height = 57;
+            btnUserInfo.Width = 265;
+            btnUserInfo.Height = 57;
         }
 
         private void button17_MouseEnter(object sender, EventArgs e)
@@ -1281,6 +1282,67 @@ namespace Service_Management_System.POS
                     command.ExecuteNonQuery();
                 }
             }
+        }
+        private void dgvRowCount()
+        {
+            int rowCount = productOrderedView.Rows.Count - 1;
+            textBox1.Text = rowCount.ToString();
+        }
+
+        private void productOrderedView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            dgvRowCount();
+        }
+
+        private void productOrderedView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            dgvRowCount();
+        }
+
+        private void tbxContactNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUserInfoBack_Click(object sender, EventArgs e)
+        {
+            timerUserInfo.Start();
+            sidepanelPOS.Visible = true;
+        }
+
+        private void timerUserInfo_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpandUserInfo)
+            {
+                panel_UserInfo.Height -= 70;
+                if (panel_UserInfo.Height <= panel_UserInfo.MinimumSize.Height)
+                {
+                    panel_UserInfo.Height = panel_UserInfo.MinimumSize.Height; // Ensure it doesn't go below minimum size
+                    sidebarExpandUserInfo = false;
+                    timerUserInfo.Stop();
+                }
+            }
+            else
+            {
+                panel_UserInfo.Height += 70;
+                if (panel_UserInfo.Height >= panel_UserInfo.MaximumSize.Height)
+                {
+                    panel_UserInfo.Height = panel_UserInfo.MaximumSize.Height; // Ensure it doesn't exceed maximum size
+                    sidebarExpandUserInfo = true;
+                    timerUserInfo.Stop();
+                }
+            }
+        }
+
+        private void btnUserInfo_Click(object sender, EventArgs e)
+        {
+            timerUserInfo.Start();
+            sidepanelPOS.Visible = false;
+        }
+
+        private void panel_UserInfo_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
 

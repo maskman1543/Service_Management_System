@@ -412,6 +412,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(6, 3, 6, 3);
             Name = "cashInOut_Form";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "cashInOut_Form";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

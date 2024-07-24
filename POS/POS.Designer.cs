@@ -32,15 +32,15 @@ namespace Service_Management_System.POS
             components = new System.ComponentModel.Container();
             PictureBox minilogo;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POSForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             sidepanelPOS = new Panel();
             panel7 = new Panel();
             moveup = new PictureBox();
             button16 = new Button();
             btnSignout = new Button();
-            button18 = new Button();
+            btnUserInfo = new Button();
             button19 = new Button();
             button15 = new Button();
             btnViewopensales = new Button();
@@ -136,6 +136,21 @@ namespace Service_Management_System.POS
             tbxMechanicID = new TextBox();
             dgvMechanic = new Guna.UI2.WinForms.Guna2DataGridView();
             timerMechanic = new System.Windows.Forms.Timer(components);
+            panel_UserInfo = new Panel();
+            panel13 = new Panel();
+            label21 = new Label();
+            tbxPosition = new TextBox();
+            label20 = new Label();
+            tbxEmail = new TextBox();
+            label19 = new Label();
+            tbxContactNumber = new TextBox();
+            lblUserInfoBack = new Label();
+            label18 = new Label();
+            tbxLastName = new TextBox();
+            label17 = new Label();
+            tbxFirstName = new TextBox();
+            label16 = new Label();
+            timerUserInfo = new System.Windows.Forms.Timer(components);
             minilogo = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)minilogo).BeginInit();
             sidepanelPOS.SuspendLayout();
@@ -160,6 +175,7 @@ namespace Service_Management_System.POS
             panel_Mechanic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvMechanic).BeginInit();
+            panel_UserInfo.SuspendLayout();
             SuspendLayout();
             // 
             // minilogo
@@ -182,7 +198,7 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(moveup);
             sidepanelPOS.Controls.Add(button16);
             sidepanelPOS.Controls.Add(btnSignout);
-            sidepanelPOS.Controls.Add(button18);
+            sidepanelPOS.Controls.Add(btnUserInfo);
             sidepanelPOS.Controls.Add(button19);
             sidepanelPOS.Controls.Add(button15);
             sidepanelPOS.Controls.Add(btnViewopensales);
@@ -190,19 +206,19 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(button12);
             sidepanelPOS.Dock = DockStyle.Right;
             sidepanelPOS.ImeMode = ImeMode.NoControl;
-            sidepanelPOS.Location = new Point(1225, 78);
+            sidepanelPOS.Location = new Point(1476, 78);
             sidepanelPOS.Margin = new Padding(2);
             sidepanelPOS.MaximumSize = new Size(255, 656);
             sidepanelPOS.MinimumSize = new Size(4, 656);
             sidepanelPOS.Name = "sidepanelPOS";
-            sidepanelPOS.Size = new Size(255, 656);
+            sidepanelPOS.Size = new Size(4, 656);
             sidepanelPOS.TabIndex = 16;
             sidepanelPOS.MouseEnter += sidepanelPOS_MouseEnter;
             // 
             // panel7
             // 
             panel7.BackColor = Color.White;
-            panel7.Location = new Point(0, 559);
+            panel7.Location = new Point(0, 585);
             panel7.Margin = new Padding(2);
             panel7.Name = "panel7";
             panel7.Size = new Size(255, 2);
@@ -214,7 +230,7 @@ namespace Service_Management_System.POS
             moveup.BackgroundImage = (Image)resources.GetObject("moveup.BackgroundImage");
             moveup.BackgroundImageLayout = ImageLayout.Stretch;
             moveup.Cursor = Cursors.Hand;
-            moveup.Location = new Point(106, 588);
+            moveup.Location = new Point(106, 600);
             moveup.Margin = new Padding(2);
             moveup.Name = "moveup";
             moveup.Size = new Size(40, 39);
@@ -267,26 +283,27 @@ namespace Service_Management_System.POS
             btnSignout.MouseEnter += button17_MouseEnter;
             btnSignout.MouseLeave += button17_MouseLeave;
             // 
-            // button18
+            // btnUserInfo
             // 
-            button18.AutoSize = true;
-            button18.BackColor = Color.FromArgb(3, 83, 115);
-            button18.BackgroundImage = (Image)resources.GetObject("button18.BackgroundImage");
-            button18.BackgroundImageLayout = ImageLayout.Stretch;
-            button18.FlatAppearance.BorderSize = 0;
-            button18.FlatStyle = FlatStyle.Flat;
-            button18.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button18.ForeColor = SystemColors.Control;
-            button18.Location = new Point(-24, 262);
-            button18.Margin = new Padding(2);
-            button18.Name = "button18";
-            button18.Size = new Size(269, 58);
-            button18.TabIndex = 10;
-            button18.TextAlign = ContentAlignment.MiddleLeft;
-            button18.UseCompatibleTextRendering = true;
-            button18.UseVisualStyleBackColor = false;
-            button18.MouseEnter += button18_MouseEnter;
-            button18.MouseLeave += button18_MouseLeave;
+            btnUserInfo.AutoSize = true;
+            btnUserInfo.BackColor = Color.FromArgb(3, 83, 115);
+            btnUserInfo.BackgroundImage = (Image)resources.GetObject("btnUserInfo.BackgroundImage");
+            btnUserInfo.BackgroundImageLayout = ImageLayout.Stretch;
+            btnUserInfo.FlatAppearance.BorderSize = 0;
+            btnUserInfo.FlatStyle = FlatStyle.Flat;
+            btnUserInfo.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUserInfo.ForeColor = SystemColors.Control;
+            btnUserInfo.Location = new Point(-24, 262);
+            btnUserInfo.Margin = new Padding(2);
+            btnUserInfo.Name = "btnUserInfo";
+            btnUserInfo.Size = new Size(269, 58);
+            btnUserInfo.TabIndex = 10;
+            btnUserInfo.TextAlign = ContentAlignment.MiddleLeft;
+            btnUserInfo.UseCompatibleTextRendering = true;
+            btnUserInfo.UseVisualStyleBackColor = false;
+            btnUserInfo.Click += btnUserInfo_Click;
+            btnUserInfo.MouseEnter += button18_MouseEnter;
+            btnUserInfo.MouseLeave += button18_MouseLeave;
             // 
             // button19
             // 
@@ -812,6 +829,8 @@ namespace Service_Management_System.POS
             productOrderedView.Size = new Size(451, 160);
             productOrderedView.TabIndex = 3;
             productOrderedView.CellContentClick += productOrderedView_CellContentClick;
+            productOrderedView.RowsAdded += productOrderedView_RowsAdded;
+            productOrderedView.RowsRemoved += productOrderedView_RowsRemoved;
             // 
             // panel4
             // 
@@ -1613,26 +1632,26 @@ namespace Service_Management_System.POS
             // 
             // dgvMechanic
             // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dgvMechanic.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvMechanic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dgvMechanic.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dgvMechanic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dgvMechanic.ColumnHeadersHeight = 30;
             dgvMechanic.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvMechanic.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
+            dgvMechanic.DefaultCellStyle = dataGridViewCellStyle9;
             dgvMechanic.GridColor = Color.FromArgb(231, 229, 255);
             dgvMechanic.Location = new Point(30, 219);
             dgvMechanic.Name = "dgvMechanic";
@@ -1670,12 +1689,175 @@ namespace Service_Management_System.POS
             timerMechanic.Interval = 1;
             timerMechanic.Tick += timerMechanic_Tick;
             // 
+            // panel_UserInfo
+            // 
+            panel_UserInfo.BackColor = Color.FromArgb(3, 83, 115);
+            panel_UserInfo.Controls.Add(panel13);
+            panel_UserInfo.Controls.Add(label21);
+            panel_UserInfo.Controls.Add(tbxPosition);
+            panel_UserInfo.Controls.Add(label20);
+            panel_UserInfo.Controls.Add(tbxEmail);
+            panel_UserInfo.Controls.Add(label19);
+            panel_UserInfo.Controls.Add(tbxContactNumber);
+            panel_UserInfo.Controls.Add(lblUserInfoBack);
+            panel_UserInfo.Controls.Add(label18);
+            panel_UserInfo.Controls.Add(tbxLastName);
+            panel_UserInfo.Controls.Add(label17);
+            panel_UserInfo.Controls.Add(tbxFirstName);
+            panel_UserInfo.Controls.Add(label16);
+            panel_UserInfo.Location = new Point(1162, 1);
+            panel_UserInfo.MaximumSize = new Size(318, 733);
+            panel_UserInfo.MinimumSize = new Size(318, 0);
+            panel_UserInfo.Name = "panel_UserInfo";
+            panel_UserInfo.Size = new Size(318, 0);
+            panel_UserInfo.TabIndex = 15;
+            panel_UserInfo.Paint += panel_UserInfo_Paint;
+            // 
+            // panel13
+            // 
+            panel13.BackColor = Color.White;
+            panel13.Location = new Point(0, 669);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(392, 3);
+            panel13.TabIndex = 12;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label21.ForeColor = Color.White;
+            label21.Location = new Point(42, 442);
+            label21.Name = "label21";
+            label21.Size = new Size(63, 20);
+            label21.TabIndex = 11;
+            label21.Text = "Position";
+            // 
+            // tbxPosition
+            // 
+            tbxPosition.BackColor = Color.FromArgb(3, 83, 115);
+            tbxPosition.ForeColor = Color.White;
+            tbxPosition.Location = new Point(42, 468);
+            tbxPosition.Name = "tbxPosition";
+            tbxPosition.Size = new Size(241, 27);
+            tbxPosition.TabIndex = 10;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label20.ForeColor = Color.White;
+            label20.Location = new Point(42, 363);
+            label20.Name = "label20";
+            label20.Size = new Size(46, 20);
+            label20.TabIndex = 9;
+            label20.Text = "Email";
+            // 
+            // tbxEmail
+            // 
+            tbxEmail.BackColor = Color.FromArgb(3, 83, 115);
+            tbxEmail.ForeColor = Color.White;
+            tbxEmail.Location = new Point(42, 389);
+            tbxEmail.Name = "tbxEmail";
+            tbxEmail.Size = new Size(241, 27);
+            tbxEmail.TabIndex = 8;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label19.ForeColor = Color.White;
+            label19.Location = new Point(42, 270);
+            label19.Name = "label19";
+            label19.Size = new Size(90, 20);
+            label19.TabIndex = 7;
+            label19.Text = "Contact No.";
+            // 
+            // tbxContactNumber
+            // 
+            tbxContactNumber.BackColor = Color.FromArgb(3, 83, 115);
+            tbxContactNumber.ForeColor = Color.White;
+            tbxContactNumber.Location = new Point(42, 301);
+            tbxContactNumber.Name = "tbxContactNumber";
+            tbxContactNumber.Size = new Size(241, 27);
+            tbxContactNumber.TabIndex = 6;
+            tbxContactNumber.TextChanged += tbxContactNumber_TextChanged;
+            // 
+            // lblUserInfoBack
+            // 
+            lblUserInfoBack.AutoSize = true;
+            lblUserInfoBack.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblUserInfoBack.Image = (Image)resources.GetObject("lblUserInfoBack.Image");
+            lblUserInfoBack.Location = new Point(16, 688);
+            lblUserInfoBack.Name = "lblUserInfoBack";
+            lblUserInfoBack.Size = new Size(44, 31);
+            lblUserInfoBack.TabIndex = 5;
+            lblUserInfoBack.Text = "     ";
+            lblUserInfoBack.Click += lblUserInfoBack_Click;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label18.ForeColor = Color.White;
+            label18.Location = new Point(42, 185);
+            label18.Name = "label18";
+            label18.Size = new Size(77, 20);
+            label18.TabIndex = 4;
+            label18.Text = "Last name";
+            // 
+            // tbxLastName
+            // 
+            tbxLastName.BackColor = Color.FromArgb(3, 83, 115);
+            tbxLastName.ForeColor = Color.White;
+            tbxLastName.Location = new Point(42, 216);
+            tbxLastName.Name = "tbxLastName";
+            tbxLastName.Size = new Size(241, 27);
+            tbxLastName.TabIndex = 3;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.ForeColor = Color.White;
+            label17.Location = new Point(42, 100);
+            label17.Name = "label17";
+            label17.Size = new Size(80, 20);
+            label17.TabIndex = 2;
+            label17.Text = "First name";
+            // 
+            // tbxFirstName
+            // 
+            tbxFirstName.BackColor = Color.FromArgb(3, 83, 115);
+            tbxFirstName.ForeColor = Color.White;
+            tbxFirstName.Location = new Point(42, 131);
+            tbxFirstName.Name = "tbxFirstName";
+            tbxFirstName.Size = new Size(241, 27);
+            tbxFirstName.TabIndex = 1;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.BackColor = Color.FromArgb(3, 83, 115);
+            label16.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.ForeColor = Color.White;
+            label16.Location = new Point(9, 7);
+            label16.Name = "label16";
+            label16.Size = new Size(208, 31);
+            label16.TabIndex = 0;
+            label16.Text = "User informations";
+            // 
+            // timerUserInfo
+            // 
+            timerUserInfo.Interval = 1;
+            timerUserInfo.Tick += timerUserInfo_Tick;
+            // 
             // POSForm
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             ClientSize = new Size(1480, 738);
+            Controls.Add(panel_UserInfo);
             Controls.Add(panel_Mechanic);
             Controls.Add(panel_Discount);
             Controls.Add(sidepanelPOS);
@@ -1735,6 +1917,8 @@ namespace Service_Management_System.POS
             panel_Mechanic.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvMechanic).EndInit();
+            panel_UserInfo.ResumeLayout(false);
+            panel_UserInfo.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1786,7 +1970,7 @@ namespace Service_Management_System.POS
         private Button button12;
         private Button button16;
         private Button btnSignout;
-        private Button button18;
+        private Button btnUserInfo;
         private Button button19;
         private Button button15;
         private Button btnViewopensales;
@@ -1846,5 +2030,20 @@ namespace Service_Management_System.POS
         private System.Windows.Forms.Timer timerMechanic;
         private Label label9;
         private TextBox tbxMechanicLastName;
+        private Panel panel_UserInfo;
+        private Label label16;
+        private Label label17;
+        private TextBox tbxFirstName;
+        private Label lblUserInfoBack;
+        private Label label18;
+        private TextBox tbxLastName;
+        private Label label19;
+        private TextBox tbxContactNumber;
+        private Label label20;
+        private TextBox tbxEmail;
+        private Panel panel13;
+        private Label label21;
+        private TextBox tbxPosition;
+        private System.Windows.Forms.Timer timerUserInfo;
     }
 }
