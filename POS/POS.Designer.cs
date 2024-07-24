@@ -32,6 +32,9 @@ namespace Service_Management_System.POS
             components = new System.ComponentModel.Container();
             PictureBox minilogo;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POSForm));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             sidepanelPOS = new Panel();
             panel7 = new Panel();
             moveup = new PictureBox();
@@ -45,7 +48,7 @@ namespace Service_Management_System.POS
             button12 = new Button();
             panel1 = new Panel();
             btnmenU2 = new Button();
-            button9 = new Button();
+            btnMechanic = new Button();
             button10 = new Button();
             btnRefund = new Button();
             button2 = new Button();
@@ -119,6 +122,20 @@ namespace Service_Management_System.POS
             timer_Discount = new System.Windows.Forms.Timer(components);
             guna2Elipse_textBox7 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse_textBox8 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            panel_Mechanic = new Panel();
+            label9 = new Label();
+            tbxMechanicLastName = new TextBox();
+            pictureBox3 = new PictureBox();
+            label15 = new Label();
+            label14 = new Label();
+            label13 = new Label();
+            tbxMechanicName = new TextBox();
+            lblBack = new Label();
+            btnCancel = new Button();
+            btnEnter = new Button();
+            tbxMechanicID = new TextBox();
+            dgvMechanic = new Guna.UI2.WinForms.Guna2DataGridView();
+            timerMechanic = new System.Windows.Forms.Timer(components);
             minilogo = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)minilogo).BeginInit();
             sidepanelPOS.SuspendLayout();
@@ -140,6 +157,9 @@ namespace Service_Management_System.POS
             panel10.SuspendLayout();
             panel_Discount.SuspendLayout();
             panel11.SuspendLayout();
+            panel_Mechanic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMechanic).BeginInit();
             SuspendLayout();
             // 
             // minilogo
@@ -385,7 +405,7 @@ namespace Service_Management_System.POS
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(minilogo);
             panel1.Controls.Add(btnmenU2);
-            panel1.Controls.Add(button9);
+            panel1.Controls.Add(btnMechanic);
             panel1.Controls.Add(button10);
             panel1.Controls.Add(btnRefund);
             panel1.Controls.Add(button2);
@@ -423,22 +443,24 @@ namespace Service_Management_System.POS
             btnmenU2.MouseEnter += btnmenU2_MouseEnter;
             btnmenU2.MouseLeave += btnmenU2_MouseLeave;
             // 
-            // button9
+            // btnMechanic
             // 
-            button9.AutoSize = true;
-            button9.BackgroundImage = (Image)resources.GetObject("button9.BackgroundImage");
-            button9.BackgroundImageLayout = ImageLayout.Stretch;
-            button9.FlatAppearance.BorderSize = 0;
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            button9.ForeColor = Color.White;
-            button9.ImageAlign = ContentAlignment.MiddleLeft;
-            button9.Location = new Point(88, 2);
-            button9.Margin = new Padding(2);
-            button9.Name = "button9";
-            button9.Size = new Size(75, 68);
-            button9.TabIndex = 9;
-            button9.UseVisualStyleBackColor = true;
+            btnMechanic.AutoSize = true;
+            btnMechanic.BackgroundImage = (Image)resources.GetObject("btnMechanic.BackgroundImage");
+            btnMechanic.BackgroundImageLayout = ImageLayout.Center;
+            btnMechanic.FlatAppearance.BorderSize = 0;
+            btnMechanic.FlatStyle = FlatStyle.Flat;
+            btnMechanic.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnMechanic.ForeColor = Color.White;
+            btnMechanic.ImageAlign = ContentAlignment.MiddleLeft;
+            btnMechanic.Location = new Point(88, -1);
+            btnMechanic.Margin = new Padding(2);
+            btnMechanic.Name = "btnMechanic";
+            btnMechanic.Padding = new Padding(0, 35, 0, 0);
+            btnMechanic.Size = new Size(75, 76);
+            btnMechanic.TabIndex = 9;
+            btnMechanic.UseVisualStyleBackColor = true;
+            btnMechanic.Click += btnMechanic_Click;
             // 
             // button10
             // 
@@ -662,11 +684,11 @@ namespace Service_Management_System.POS
             textBox1.BackColor = Color.FromArgb(3, 83, 115);
             textBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(330, 11);
+            textBox1.Location = new Point(324, 17);
             textBox1.Margin = new Padding(2);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(96, 48);
+            textBox1.Size = new Size(96, 40);
             textBox1.TabIndex = 5;
             textBox1.TextAlign = HorizontalAlignment.Center;
             textBox1.TextChanged += textBox1_TextChanged;
@@ -760,7 +782,6 @@ namespace Service_Management_System.POS
             textBox8.Text = "Search Services";
             textBox8.TextChanged += textBox8_TextChanged;
             textBox8.Enter += textBox8_Enter;
-            textBox8.Leave += textBox8_Leave;
             // 
             // textBox7
             // 
@@ -775,7 +796,6 @@ namespace Service_Management_System.POS
             textBox7.Text = "Search Product";
             textBox7.TextChanged += textBox7_TextChanged;
             textBox7.Enter += textBox7_Enter;
-            textBox7.Leave += textBox7_Leave;
             // 
             // productOrderedView
             // 
@@ -957,12 +977,12 @@ namespace Service_Management_System.POS
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTotal.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblTotal.ForeColor = Color.FromArgb(3, 83, 115);
-            lblTotal.Location = new Point(348, 85);
+            lblTotal.Location = new Point(342, 88);
             lblTotal.Margin = new Padding(2, 0, 2, 0);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(73, 38);
+            lblTotal.Size = new Size(59, 31);
             lblTotal.TabIndex = 6;
             lblTotal.Text = "0.00";
             // 
@@ -1449,12 +1469,214 @@ namespace Service_Management_System.POS
             guna2Elipse_textBox8.BorderRadius = 15;
             guna2Elipse_textBox8.TargetControl = textBox8;
             // 
+            // panel_Mechanic
+            // 
+            panel_Mechanic.BackColor = Color.FromArgb(242, 242, 242);
+            panel_Mechanic.Controls.Add(label9);
+            panel_Mechanic.Controls.Add(tbxMechanicLastName);
+            panel_Mechanic.Controls.Add(pictureBox3);
+            panel_Mechanic.Controls.Add(label15);
+            panel_Mechanic.Controls.Add(label14);
+            panel_Mechanic.Controls.Add(label13);
+            panel_Mechanic.Controls.Add(tbxMechanicName);
+            panel_Mechanic.Controls.Add(lblBack);
+            panel_Mechanic.Controls.Add(btnCancel);
+            panel_Mechanic.Controls.Add(btnEnter);
+            panel_Mechanic.Controls.Add(tbxMechanicID);
+            panel_Mechanic.Controls.Add(dgvMechanic);
+            panel_Mechanic.Location = new Point(487, 0);
+            panel_Mechanic.MaximumSize = new Size(473, 619);
+            panel_Mechanic.MinimumSize = new Size(473, 0);
+            panel_Mechanic.Name = "panel_Mechanic";
+            panel_Mechanic.Size = new Size(473, 0);
+            panel_Mechanic.TabIndex = 15;
+            panel_Mechanic.Paint += panel_Mechanic_Paint;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.FromArgb(3, 83, 115);
+            label9.Location = new Point(189, 151);
+            label9.Name = "label9";
+            label9.Size = new Size(80, 20);
+            label9.TabIndex = 12;
+            label9.Text = "Last Name";
+            // 
+            // tbxMechanicLastName
+            // 
+            tbxMechanicLastName.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            tbxMechanicLastName.Location = new Point(189, 172);
+            tbxMechanicLastName.Name = "tbxMechanicLastName";
+            tbxMechanicLastName.Size = new Size(227, 27);
+            tbxMechanicLastName.TabIndex = 11;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(52, 100);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(100, 100);
+            pictureBox3.TabIndex = 10;
+            pictureBox3.TabStop = false;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.ForeColor = Color.FromArgb(3, 83, 115);
+            label15.Location = new Point(265, 95);
+            label15.Name = "label15";
+            label15.Size = new Size(83, 20);
+            label15.TabIndex = 9;
+            label15.Text = "First Name";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.ForeColor = Color.FromArgb(3, 83, 115);
+            label14.Location = new Point(189, 98);
+            label14.Name = "label14";
+            label14.Size = new Size(24, 20);
+            label14.TabIndex = 8;
+            label14.Text = "ID";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.ForeColor = Color.FromArgb(3, 83, 115);
+            label13.Location = new Point(14, 14);
+            label13.Name = "label13";
+            label13.Size = new Size(253, 31);
+            label13.TabIndex = 7;
+            label13.Text = "Mechanic Information";
+            // 
+            // tbxMechanicName
+            // 
+            tbxMechanicName.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            tbxMechanicName.Location = new Point(265, 121);
+            tbxMechanicName.Name = "tbxMechanicName";
+            tbxMechanicName.Size = new Size(151, 27);
+            tbxMechanicName.TabIndex = 6;
+            // 
+            // lblBack
+            // 
+            lblBack.AutoSize = true;
+            lblBack.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblBack.Image = (Image)resources.GetObject("lblBack.Image");
+            lblBack.Location = new Point(415, 19);
+            lblBack.Name = "lblBack";
+            lblBack.Size = new Size(42, 28);
+            lblBack.TabIndex = 5;
+            lblBack.Text = "      ";
+            lblBack.Click += lblBack_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = Color.FromArgb(3, 83, 115);
+            btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancel.ForeColor = Color.White;
+            btnCancel.Location = new Point(338, 552);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(118, 42);
+            btnCancel.TabIndex = 4;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // btnEnter
+            // 
+            btnEnter.BackColor = Color.FromArgb(3, 83, 115);
+            btnEnter.FlatAppearance.BorderSize = 0;
+            btnEnter.FlatStyle = FlatStyle.Flat;
+            btnEnter.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEnter.ForeColor = Color.White;
+            btnEnter.Location = new Point(213, 552);
+            btnEnter.Name = "btnEnter";
+            btnEnter.Size = new Size(118, 42);
+            btnEnter.TabIndex = 3;
+            btnEnter.Text = "Enter";
+            btnEnter.UseVisualStyleBackColor = false;
+            btnEnter.Click += btnEnter_Click;
+            // 
+            // tbxMechanicID
+            // 
+            tbxMechanicID.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            tbxMechanicID.Location = new Point(189, 121);
+            tbxMechanicID.Name = "tbxMechanicID";
+            tbxMechanicID.Size = new Size(55, 27);
+            tbxMechanicID.TabIndex = 2;
+            // 
+            // dgvMechanic
+            // 
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dgvMechanic.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvMechanic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvMechanic.ColumnHeadersHeight = 30;
+            dgvMechanic.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvMechanic.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvMechanic.GridColor = Color.FromArgb(231, 229, 255);
+            dgvMechanic.Location = new Point(30, 219);
+            dgvMechanic.Name = "dgvMechanic";
+            dgvMechanic.ReadOnly = true;
+            dgvMechanic.RowHeadersVisible = false;
+            dgvMechanic.RowHeadersWidth = 55;
+            dgvMechanic.RowTemplate.Height = 29;
+            dgvMechanic.Size = new Size(418, 235);
+            dgvMechanic.TabIndex = 1;
+            dgvMechanic.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgvMechanic.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvMechanic.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvMechanic.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvMechanic.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgvMechanic.ThemeStyle.BackColor = Color.White;
+            dgvMechanic.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgvMechanic.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dgvMechanic.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvMechanic.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dgvMechanic.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgvMechanic.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvMechanic.ThemeStyle.HeaderStyle.Height = 30;
+            dgvMechanic.ThemeStyle.ReadOnly = true;
+            dgvMechanic.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgvMechanic.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvMechanic.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dgvMechanic.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgvMechanic.ThemeStyle.RowsStyle.Height = 29;
+            dgvMechanic.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgvMechanic.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvMechanic.CellContentClick += dgvMechanic_CellContentClick;
+            // 
+            // timerMechanic
+            // 
+            timerMechanic.Interval = 1;
+            timerMechanic.Tick += timerMechanic_Tick;
+            // 
             // POSForm
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             ClientSize = new Size(1480, 738);
+            Controls.Add(panel_Mechanic);
             Controls.Add(panel_Discount);
             Controls.Add(sidepanelPOS);
             Controls.Add(panel10);
@@ -1473,7 +1695,7 @@ namespace Service_Management_System.POS
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);
             MaximumSize = new Size(1710, 738);
-            MinimumSize = new Size(1480, 738);
+            MinimumSize = new Size(1469, 738);
             Name = "POSForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "POS";
@@ -1509,6 +1731,10 @@ namespace Service_Management_System.POS
             panel_Discount.ResumeLayout(false);
             panel_Discount.PerformLayout();
             panel11.ResumeLayout(false);
+            panel_Mechanic.ResumeLayout(false);
+            panel_Mechanic.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMechanic).EndInit();
             ResumeLayout(false);
         }
 
@@ -1532,7 +1758,7 @@ namespace Service_Management_System.POS
         private Panel panel2;
         private Button btnDelete;
         private Panel panel3;
-        private Button button9;
+        private Button btnMechanic;
         private Button button10;
         private Panel panel5;
         private TextBox tbxInputDicsount;
@@ -1606,5 +1832,19 @@ namespace Service_Management_System.POS
         private Label lblQuantity;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse_textBox7;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse_textBox8;
+        private Panel panel_Mechanic;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvMechanic;
+        private Button btnEnter;
+        private TextBox tbxMechanicID;
+        private Label label13;
+        private TextBox tbxMechanicName;
+        private Label lblBack;
+        private Button btnCancel;
+        private Label label15;
+        private Label label14;
+        private PictureBox pictureBox3;
+        private System.Windows.Forms.Timer timerMechanic;
+        private Label label9;
+        private TextBox tbxMechanicLastName;
     }
 }

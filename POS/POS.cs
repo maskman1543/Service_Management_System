@@ -22,6 +22,7 @@ namespace Service_Management_System.POS
     {
         bool sidebarExpand;
         bool sidebarExpandDiscount;
+        bool sidebarExpandMechanic;
         private jonOrder_form orderForm;
         private const decimal VAT_RATE = 0.12m;
         //ss
@@ -32,6 +33,7 @@ namespace Service_Management_System.POS
             InitializeComponent();
             InitializeProductOrderedView();
             InitializeJobOrderedView();
+            MechanicTable();
             //this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
         }
 
@@ -1193,6 +1195,89 @@ namespace Service_Management_System.POS
             AfterPayment payment = new AfterPayment();
             payment.Show();
             this.Close();
+        }
+
+        private void panel_Mechanic_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnMechanic_Click(object sender, EventArgs e)
+        {
+            timerMechanic.Start();
+
+        }
+
+        private void timerMechanic_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpandMechanic)
+            {
+                panel_Mechanic.Height -= 70;
+                if (panel_Mechanic.Height <= panel_Mechanic.MinimumSize.Height)
+                {
+                    panel_Mechanic.Height = panel_Mechanic.MinimumSize.Height; // Ensure it doesn't go below minimum size
+                    sidebarExpandMechanic = false;
+                    timerMechanic.Stop();
+                }
+            }
+            else
+            {
+                panel_Mechanic.Height += 70;
+                if (panel_Mechanic.Height >= panel_Mechanic.MaximumSize.Height)
+                {
+                    panel_Mechanic.Height = panel_Mechanic.MaximumSize.Height; // Ensure it doesn't exceed maximum size
+                    sidebarExpandMechanic = true;
+                    timerMechanic.Stop();
+                }
+            }
+        }
+
+        private void dgvMechanic_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvMechanic.Rows[e.RowIndex];
+                tbxMechanicID.Text = row.Cells["MechanicID"].Value.ToString();
+                tbxMechanicName.Text = row.Cells["FirstName"].Value.ToString();
+                tbxMechanicLastName.Text = row.Cells["LastName"].Value.ToString();
+            }
+        }
+        private void MechanicTable()
+        {
+            string query = "SELECT Mechanics.MechanicID, Mechanics.FirstName, Mechanics.LastName, Mechanics.JobOrderServiceID, Mechanics.Salary " +
+                   "FROM Mechanics";
+
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    connection.Open();
+                    adapter.Fill(dataTable);
+                    dgvMechanic.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            timerMechanic.Start();
+        }
+
+        private void lblBack_Click(object sender, EventArgs e)
+        {
+            timerMechanic.Start();
+        }
+
+        private void btnEnter_Click(object sender, EventArgs e)
+        {
+
         }
 
 

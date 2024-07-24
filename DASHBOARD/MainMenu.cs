@@ -25,6 +25,9 @@ namespace Service_Management_System.DASHBOARD
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 50);
             panelMenu.Controls.Add(leftBorderBtn);
+
+            ActiveButton(btnDashboard, RGBColors.color1);
+            OpenchildForm(new DashboardForm());
         }
         private struct RGBColors
         {
@@ -184,6 +187,11 @@ namespace Service_Management_System.DASHBOARD
         {
             ActiveButton(sender, RGBColors.color2);
             OpenchildForm(new Payroll_Form());
+        }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+           
         }
     }
 }

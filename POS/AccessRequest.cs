@@ -105,7 +105,8 @@ namespace Service_Management_System.POS
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            new POSForm().Show();
+            this.Hide();
         }
     }
 }

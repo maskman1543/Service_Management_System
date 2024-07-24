@@ -79,8 +79,8 @@
             // EmployeeIDTextBox
             // 
             EmployeeIDTextBox.Anchor = AnchorStyles.None;
-            EmployeeIDTextBox.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            EmployeeIDTextBox.ForeColor = Color.FromArgb(224, 224, 224);
+            EmployeeIDTextBox.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            EmployeeIDTextBox.ForeColor = Color.Black;
             EmployeeIDTextBox.Location = new Point(63, 148);
             EmployeeIDTextBox.Multiline = true;
             EmployeeIDTextBox.Name = "EmployeeIDTextBox";
@@ -119,8 +119,8 @@
             // PasswordTextBox
             // 
             PasswordTextBox.Anchor = AnchorStyles.None;
-            PasswordTextBox.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            PasswordTextBox.ForeColor = Color.FromArgb(224, 224, 224);
+            PasswordTextBox.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            PasswordTextBox.ForeColor = Color.Black;
             PasswordTextBox.Location = new Point(63, 247);
             PasswordTextBox.Multiline = true;
             PasswordTextBox.Name = "PasswordTextBox";
