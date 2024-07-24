@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Data.OleDb;
 using System.Windows.Forms;
+using static Service_Management_System.Class1;
 
 namespace Service_Management_System.POS
 {
     public partial class jonOrder_form : Form
     {
-       int jobOrderNumber = Class1.GlobalVariables.JobOrderNumber;
+       
+        JobOrderService jobOrderService = new JobOrderService();
         public jonOrder_form()
         {
             InitializeComponent();
@@ -98,8 +100,8 @@ namespace Service_Management_System.POS
                 MessageBox.Show("Please fill in all fields.");
                 return;
             }
-
-           
+            string CustmoerName = FirstNameValue.Text;
+            
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
@@ -108,8 +110,8 @@ namespace Service_Management_System.POS
                 
                 try
                 {
-           
                     
+
 
                     string insertCustomerQuery = "INSERT INTO JobOrders (CustomerName, CustomerContact, Vehicle, PlateNo) VALUES (@CustomerName, @CustomerContact, @Vehicle, @PlateNo)";
                     using (OleDbCommand cmdCustomer = new OleDbCommand(insertCustomerQuery, connection, transaction))
@@ -120,19 +122,21 @@ namespace Service_Management_System.POS
                         cmdCustomer.Parameters.AddWithValue("@PlateNo", textBox3.Text);
                         cmdCustomer.ExecuteNonQuery();
                     }
-                    Class1.GlobalVariables.JobOrderNumber = Class1.GetJobOrderID(insertCustomerQuery);
-                    MessageBox.Show("Job Order Number: "+Class1.GlobalVariables.JobOrderNumber);
+                    
                     transaction.Commit();
                     MessageBox.Show("Data inserted successfully!");
+                    
                 }
                 catch (Exception ex)
                 {
                     transaction.Rollback();
                     MessageBox.Show("An error occurred: " + ex.Message);
                 }
-
+                
             }
-            
+            int jobOrderID = jobOrderService.GetJobOrderIDByCustomerName(FirstNameValue.Text);
+            Class1.GlobalVariables.JobOrderNumber = jobOrderID;
+            MessageBox.Show("Job Order Number: " + Class1.GlobalVariables.JobOrderNumber);
             POSForm pOSForm = new POSForm();
             this.Close();   
         }
