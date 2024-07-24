@@ -15,6 +15,7 @@ namespace Service_Management_System
             public static string ConnectionString2 = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\ServiceManagementSystemC.accdb;Persist Security Info=False;";
             public static int JobOrderNumber;
             public static bool State;
+
         }
         public static int GetJobOrderID(string query)
         {

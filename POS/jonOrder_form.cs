@@ -101,38 +101,39 @@ namespace Service_Management_System.POS
 
            
 
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 connection.Open();
                 OleDbTransaction transaction = connection.BeginTransaction();
-
+                jobOrderNumber = 0;
                 try
                 {
-                    string insertVehicleQuery = "INSERT INTO VehicleTb (Model, PlateNumber) VALUES (@Model, @PlateNumber)";
-                    int vehicleID;
+                    string insertVehicleQuery = "INSERT INTO JobOrders (Vehicle, PlateNo) VALUES (@Vehicle, @PlateNo)";
+                    string vehicle;
+                    
                     using (OleDbCommand cmdVehicle = new OleDbCommand(insertVehicleQuery, connection, transaction))
                     {
-                        cmdVehicle.Parameters.AddWithValue("@Model", textBox2.Text);
+                        cmdVehicle.Parameters.AddWithValue("@Vehicle", textBox2.Text);
                         cmdVehicle.Parameters.AddWithValue("@PlateNumber", textBox3.Text);
                         cmdVehicle.ExecuteNonQuery();
 
                         string getVehicleIDQuery = "SELECT @@IDENTITY";
                         using (OleDbCommand cmdGetVehicleID = new OleDbCommand(getVehicleIDQuery, connection, transaction))
                         {
-                            vehicleID = Convert.ToInt32(cmdGetVehicleID.ExecuteScalar());
+                            vehicle = Convert.ToString(cmdGetVehicleID.ExecuteScalar());
                         }
                     }
 
-                    string insertCustomerQuery = "INSERT INTO CustomerTb (FirstName, Contact, VehicleID) VALUES (@FirstName, @Contact, @VehicleID)";
+                    string insertCustomerQuery = "INSERT INTO JobOrders (CustomerName, CustomerContact, Vehicle) VALUES (@CustomerName, @CustomerContact, @Vehicle)";
                     using (OleDbCommand cmdCustomer = new OleDbCommand(insertCustomerQuery, connection, transaction))
                     {
-                        cmdCustomer.Parameters.AddWithValue("@FirstName", FirstNameValue.Text);
-                        cmdCustomer.Parameters.AddWithValue("@Contact", textBox1.Text);
-                        cmdCustomer.Parameters.AddWithValue("@VehicleID", vehicleID);
+                        cmdCustomer.Parameters.AddWithValue("@CustomerName", FirstNameValue.Text);
+                        cmdCustomer.Parameters.AddWithValue("@CustomerContact", textBox1.Text);
+                        cmdCustomer.Parameters.AddWithValue("@Vehicle", vehicle);
                         cmdCustomer.ExecuteNonQuery();
                     }
-                    
 
+                    jobOrderNumber = Class1.GlobalVariables.JobOrderNumber;
                     transaction.Commit();
                     MessageBox.Show("Data inserted successfully!");
                 }

@@ -2,7 +2,7 @@
 using Service_Management_System.Login_Page_Front___Backend;
 using Service_Management_System.POS.Login_Page_Front___Backend;
 using Service_Management_System.POS.Login_Page_Front_and_Back_End;
-using System;
+using System;    
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -72,11 +72,9 @@ namespace Service_Management_System.POS
 
         private void AddOrUpdateProductOrderedView(int productID)
         {
-            string query = $"SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Price, productTable.Quantity, productTable.Barcode " +
-                   $"FROM productTable " +
-                   $"WHERE productTable.ProductID = {productID}";
+            string query = $"SELECT ProductID, ProductName, Price FROM Products WHERE ProductID = {productID}";
 
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
@@ -91,12 +89,10 @@ namespace Service_Management_System.POS
                         DataRow productRow = dataTable.Rows[0];
                         bool found = false;
 
-                        // Check if the product is already in the target DataGridView
                         foreach (DataGridViewRow row in productOrderedView.Rows)
                         {
                             if (Convert.ToInt32(row.Cells["ProductID"].Value) == productID)
                             {
-                                // Update the quantity
                                 row.Cells["Quantity"].Value = Convert.ToInt32(row.Cells["Quantity"].Value) + 1;
                                 found = true;
                                 break;
@@ -105,8 +101,7 @@ namespace Service_Management_System.POS
 
                         if (!found)
                         {
-                            // Add new row if not found
-                            productOrderedView.Rows.Add(productRow.ItemArray);
+                            productOrderedView.Rows.Add(productRow["ProductID"], productRow["ProductName"], productRow["Price"], 1);
                         }
                     }
                 }
@@ -121,8 +116,9 @@ namespace Service_Management_System.POS
                         connection.Close();
                     }
                 }
-                DisplaySubTotal(); // Make sure this is properly defined and updates the total
+                DisplaySubTotal();
             }
+
         }
 
         private void partsServicesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -138,20 +134,18 @@ namespace Service_Management_System.POS
         private void InitializeProductOrderedView()
         {
             productOrderedView.Columns.Add("ProductID", "Product ID");
-            productOrderedView.Columns.Add("ProductGroup", "Product Group");
+            //productOrderedView.Columns.Add("ProductGroup", "Product Group");
             productOrderedView.Columns.Add("ProductName", "Product Name");
             productOrderedView.Columns.Add("Price", "Price");
             productOrderedView.Columns.Add("Quantity", "Quantity");
-            productOrderedView.Columns.Add("Barcode", "Barcode");
+            //productOrderedView.Columns.Add("Barcode", "Barcode");
         }
 
         private void LoadProductOrderedView(int productID)
         {
-            string query = $"SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Price, productTable.Quantity, productTable.Barcode " +
-                    $"FROM productTable " +
-                    $"WHERE productTable.ProductID = {productID}";
+            string query = $"SELECT ProductID, ProductName, Price FROM Products WHERE ProductID = {productID}";
 
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
@@ -181,7 +175,7 @@ namespace Service_Management_System.POS
                    $"FROM servicesTb " +
                    $"WHERE servicesTb.serviceID = {serviceID}";
 
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
@@ -209,10 +203,10 @@ namespace Service_Management_System.POS
 
         private void LoadPartsView()
         {
-            string query = "SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Price, productTable.Barcode " +
-                   "FROM productTable";
+            string query = "SELECT ProductID, Productname, Price FROM Products";
 
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
@@ -232,11 +226,9 @@ namespace Service_Management_System.POS
 
         private void AddServiceToOrderedView(int serviceID)
         {
-            string query = $"SELECT serviceID, serviceType, serviceName, serviceRate " +
-                           $"FROM servicesTb " +
-                           $"WHERE serviceID = {serviceID}";
+            string query = "SELECT ServiceName, ServiceRate FROM Services WHERE ServiceID = serviceID";
 
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
