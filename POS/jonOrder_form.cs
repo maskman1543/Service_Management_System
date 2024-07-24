@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Data.OleDb;
 using System.Windows.Forms;
+using static Service_Management_System.Class1;
 
 namespace Service_Management_System.POS
 {
     public partial class jonOrder_form : Form
     {
-       int jobOrderNumber = Class1.GlobalVariables.JobOrderNumber;
+       
+        JobOrderService jobOrderService = new JobOrderService();
         public jonOrder_form()
         {
             InitializeComponent();
@@ -98,52 +100,43 @@ namespace Service_Management_System.POS
                 MessageBox.Show("Please fill in all fields.");
                 return;
             }
+            string CustmoerName = FirstNameValue.Text;
+            
 
-           
-
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 connection.Open();
                 OleDbTransaction transaction = connection.BeginTransaction();
-
+                
                 try
                 {
-                    string insertVehicleQuery = "INSERT INTO VehicleTb (Model, PlateNumber) VALUES (@Model, @PlateNumber)";
-                    int vehicleID;
-                    using (OleDbCommand cmdVehicle = new OleDbCommand(insertVehicleQuery, connection, transaction))
-                    {
-                        cmdVehicle.Parameters.AddWithValue("@Model", textBox2.Text);
-                        cmdVehicle.Parameters.AddWithValue("@PlateNumber", textBox3.Text);
-                        cmdVehicle.ExecuteNonQuery();
+                    
 
-                        string getVehicleIDQuery = "SELECT @@IDENTITY";
-                        using (OleDbCommand cmdGetVehicleID = new OleDbCommand(getVehicleIDQuery, connection, transaction))
-                        {
-                            vehicleID = Convert.ToInt32(cmdGetVehicleID.ExecuteScalar());
-                        }
-                    }
 
-                    string insertCustomerQuery = "INSERT INTO CustomerTb (FirstName, Contact, VehicleID) VALUES (@FirstName, @Contact, @VehicleID)";
+                    string insertCustomerQuery = "INSERT INTO JobOrders (CustomerName, CustomerContact, Vehicle, PlateNo) VALUES (@CustomerName, @CustomerContact, @Vehicle, @PlateNo)";
                     using (OleDbCommand cmdCustomer = new OleDbCommand(insertCustomerQuery, connection, transaction))
                     {
-                        cmdCustomer.Parameters.AddWithValue("@FirstName", FirstNameValue.Text);
-                        cmdCustomer.Parameters.AddWithValue("@Contact", textBox1.Text);
-                        cmdCustomer.Parameters.AddWithValue("@VehicleID", vehicleID);
+                        cmdCustomer.Parameters.AddWithValue("@CustomerName", FirstNameValue.Text);
+                        cmdCustomer.Parameters.AddWithValue("@CustomerContact", textBox1.Text);
+                        cmdCustomer.Parameters.AddWithValue("@Vehicle", textBox2.Text);
+                        cmdCustomer.Parameters.AddWithValue("@PlateNo", textBox3.Text);
                         cmdCustomer.ExecuteNonQuery();
                     }
                     
-
                     transaction.Commit();
                     MessageBox.Show("Data inserted successfully!");
+                    
                 }
                 catch (Exception ex)
                 {
                     transaction.Rollback();
                     MessageBox.Show("An error occurred: " + ex.Message);
                 }
-
+                
             }
-            
+            int jobOrderID = jobOrderService.GetJobOrderIDByCustomerName(FirstNameValue.Text);
+            Class1.GlobalVariables.JobOrderNumber = jobOrderID;
+            MessageBox.Show("Job Order Number: " + Class1.GlobalVariables.JobOrderNumber);
             POSForm pOSForm = new POSForm();
             this.Close();   
         }

@@ -29,9 +29,9 @@ namespace Service_Management_System.POS
         {
             try
             {
-                using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+                using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
                 {
-                    string query = "SELECT jobOrderJunctionTb.JobOrderID, CustomerTb.LastName, VehicleTb.Model\r\nFROM VehicleTb INNER JOIN (CustomerTb INNER JOIN jobOrderJunctionTb ON CustomerTb.CustomerID = jobOrderJunctionTb.CustomerID) ON VehicleTb.VehicleID = CustomerTb.VehicleID;\r\n";
+                    string query = "SELECT CustomerName, CustomerContact, DateCreated, Vehicle, PlateNo FROM JobOrders WHERE Status = False";
                     ;
                     OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
@@ -46,6 +46,10 @@ namespace Service_Management_System.POS
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
     }
 
 }

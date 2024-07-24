@@ -63,11 +63,14 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel8 = new Panel();
-            label19 = new Label();
             pictureBox9 = new PictureBox();
+            label19 = new Label();
             dataGridView1 = new DataGridView();
             panel9 = new Panel();
             label20 = new Label();
+            panel10 = new Panel();
+            panel11 = new Panel();
+            panel12 = new Panel();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             panel6.SuspendLayout();
@@ -460,6 +463,16 @@
             panel8.Size = new Size(1097, 46);
             panel8.TabIndex = 18;
             // 
+            // pictureBox9
+            // 
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Location = new Point(23, 3);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(40, 40);
+            pictureBox9.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox9.TabIndex = 3;
+            pictureBox9.TabStop = false;
+            // 
             // label19
             // 
             label19.AutoSize = true;
@@ -471,16 +484,6 @@
             label19.Size = new Size(67, 28);
             label19.TabIndex = 2;
             label19.Text = "Payroll";
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(23, 3);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(40, 40);
-            pictureBox9.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox9.TabIndex = 3;
-            pictureBox9.TabStop = false;
             // 
             // dataGridView1
             // 
@@ -514,11 +517,36 @@
             label20.TabIndex = 1;
             label20.Text = "EMPLOYEE PAYROLL";
             // 
+            // panel10
+            // 
+            panel10.Location = new Point(424, 336);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(655, 145);
+            panel10.TabIndex = 21;
+            // 
+            // panel11
+            // 
+            panel11.Location = new Point(424, 157);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(655, 180);
+            panel11.TabIndex = 22;
+            // 
+            // panel12
+            // 
+            panel12.Location = new Point(17, 157);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(407, 324);
+            panel12.TabIndex = 22;
+            // 
             // Payroll_Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(1097, 906);
+            Controls.Add(panel12);
+            Controls.Add(panel11);
+            Controls.Add(panel10);
             Controls.Add(panel9);
             Controls.Add(dataGridView1);
             Controls.Add(panel8);
@@ -604,5 +632,8 @@
         private DataGridView dataGridView1;
         private Panel panel9;
         private Label label20;
+        private Panel panel10;
+        private Panel panel11;
+        private Panel panel12;
     }
 }
