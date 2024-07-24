@@ -34,8 +34,6 @@
             EmployeeView = new DataGridView();
             panel1 = new Panel();
             panel2 = new Panel();
-            button4 = new Button();
-            button2 = new Button();
             btnEdit = new Button();
             btnAddUser = new Button();
             button7 = new Button();
@@ -63,9 +61,6 @@
             sidebar_EditUserInfo = new Panel();
             conPass = new TextBox();
             label16 = new Label();
-            rdbMec = new RadioButton();
-            label15 = new Label();
-            rdbCashier = new RadioButton();
             button8 = new Button();
             button9 = new Button();
             lblBackEdit = new Label();
@@ -86,6 +81,7 @@
             panel3 = new Panel();
             label18 = new Label();
             mechanicsView = new DataGridView();
+            label15 = new Label();
             ((System.ComponentModel.ISupportInitialize)EmployeeView).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -124,6 +120,7 @@
             EmployeeView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             EmployeeView.Size = new Size(1071, 306);
             EmployeeView.TabIndex = 1;
+            EmployeeView.CellClick += EmployeeView_CellClick;
             EmployeeView.CellContentClick += EmployeeView_CellContentClick;
             // 
             // panel1
@@ -140,8 +137,6 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(button4);
-            panel2.Controls.Add(button2);
             panel2.Controls.Add(btnEdit);
             panel2.Controls.Add(btnAddUser);
             panel2.Controls.Add(button7);
@@ -151,36 +146,6 @@
             panel2.Size = new Size(1097, 67);
             panel2.TabIndex = 13;
             panel2.Paint += panel2_Paint;
-            // 
-            // button4
-            // 
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.ImageAlign = ContentAlignment.TopCenter;
-            button4.Location = new Point(556, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(145, 60);
-            button4.TabIndex = 25;
-            button4.Text = "Show inactive users";
-            button4.TextAlign = ContentAlignment.BottomCenter;
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.TopCenter;
-            button2.Location = new Point(432, 5);
-            button2.Name = "button2";
-            button2.Size = new Size(118, 60);
-            button2.TabIndex = 24;
-            button2.Text = "Reset password";
-            button2.TextAlign = ContentAlignment.BottomCenter;
-            button2.UseVisualStyleBackColor = true;
             // 
             // btnEdit
             // 
@@ -244,6 +209,7 @@
             button1.Text = "Refresh";
             button1.TextAlign = ContentAlignment.BottomCenter;
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // sidebar_AddUser
             // 
@@ -267,7 +233,7 @@
             sidebar_AddUser.Controls.Add(label3);
             sidebar_AddUser.Controls.Add(label2);
             sidebar_AddUser.Dock = DockStyle.Right;
-            sidebar_AddUser.Location = new Point(1097, 46);
+            sidebar_AddUser.Location = new Point(754, 46);
             sidebar_AddUser.MaximumSize = new Size(343, 860);
             sidebar_AddUser.MinimumSize = new Size(0, 860);
             sidebar_AddUser.Name = "sidebar_AddUser";
@@ -502,11 +468,9 @@
             // sidebar_EditUserInfo
             // 
             sidebar_EditUserInfo.BackColor = Color.FromArgb(3, 83, 115);
+            sidebar_EditUserInfo.Controls.Add(label15);
             sidebar_EditUserInfo.Controls.Add(conPass);
             sidebar_EditUserInfo.Controls.Add(label16);
-            sidebar_EditUserInfo.Controls.Add(rdbMec);
-            sidebar_EditUserInfo.Controls.Add(label15);
-            sidebar_EditUserInfo.Controls.Add(rdbCashier);
             sidebar_EditUserInfo.Controls.Add(button8);
             sidebar_EditUserInfo.Controls.Add(button9);
             sidebar_EditUserInfo.Controls.Add(lblBackEdit);
@@ -522,11 +486,11 @@
             sidebar_EditUserInfo.Controls.Add(label13);
             sidebar_EditUserInfo.Controls.Add(label14);
             sidebar_EditUserInfo.Dock = DockStyle.Right;
-            sidebar_EditUserInfo.Location = new Point(1097, 46);
+            sidebar_EditUserInfo.Location = new Point(754, 46);
             sidebar_EditUserInfo.MaximumSize = new Size(343, 860);
             sidebar_EditUserInfo.MinimumSize = new Size(0, 860);
             sidebar_EditUserInfo.Name = "sidebar_EditUserInfo";
-            sidebar_EditUserInfo.Size = new Size(0, 860);
+            sidebar_EditUserInfo.Size = new Size(343, 860);
             sidebar_EditUserInfo.TabIndex = 26;
             // 
             // conPass
@@ -550,43 +514,6 @@
             label16.TabIndex = 30;
             label16.Text = "Confirm password";
             // 
-            // rdbMec
-            // 
-            rdbMec.AutoSize = true;
-            rdbMec.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rdbMec.ForeColor = Color.White;
-            rdbMec.Location = new Point(49, 377);
-            rdbMec.Name = "rdbMec";
-            rdbMec.Size = new Size(92, 24);
-            rdbMec.TabIndex = 29;
-            rdbMec.TabStop = true;
-            rdbMec.Text = "Mechanic";
-            rdbMec.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.ForeColor = Color.White;
-            label15.Location = new Point(31, 316);
-            label15.Name = "label15";
-            label15.Size = new Size(67, 23);
-            label15.TabIndex = 28;
-            label15.Text = "Position";
-            // 
-            // rdbCashier
-            // 
-            rdbCashier.AutoSize = true;
-            rdbCashier.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            rdbCashier.ForeColor = Color.White;
-            rdbCashier.Location = new Point(49, 347);
-            rdbCashier.Name = "rdbCashier";
-            rdbCashier.Size = new Size(77, 24);
-            rdbCashier.TabIndex = 27;
-            rdbCashier.TabStop = true;
-            rdbCashier.Text = "Cashier";
-            rdbCashier.UseVisualStyleBackColor = true;
-            // 
             // button8
             // 
             button8.BackColor = Color.FromArgb(3, 83, 115);
@@ -595,12 +522,12 @@
             button8.ForeColor = Color.White;
             button8.Image = (Image)resources.GetObject("button8.Image");
             button8.ImageAlign = ContentAlignment.MiddleLeft;
-            button8.Location = new Point(115, 811);
+            button8.Location = new Point(91, 811);
             button8.Name = "button8";
             button8.Padding = new Padding(10, 0, 10, 0);
-            button8.Size = new Size(104, 37);
+            button8.Size = new Size(128, 37);
             button8.TabIndex = 26;
-            button8.Text = "Save";
+            button8.Text = "Update";
             button8.TextAlign = ContentAlignment.MiddleRight;
             button8.UseVisualStyleBackColor = false;
             button8.Click += button8_Click;
@@ -681,7 +608,7 @@
             txbEmail.BackColor = Color.FromArgb(3, 83, 115);
             txbEmail.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txbEmail.ForeColor = Color.White;
-            txbEmail.Location = new Point(28, 272);
+            txbEmail.Location = new Point(27, 313);
             txbEmail.Name = "txbEmail";
             txbEmail.Size = new Size(286, 27);
             txbEmail.TabIndex = 19;
@@ -690,7 +617,7 @@
             // 
             label11.AutoSize = true;
             label11.ForeColor = Color.White;
-            label11.Location = new Point(27, 245);
+            label11.Location = new Point(26, 286);
             label11.Name = "label11";
             label11.Size = new Size(46, 20);
             label11.TabIndex = 18;
@@ -813,6 +740,19 @@
             mechanicsView.Size = new Size(1071, 306);
             mechanicsView.TabIndex = 29;
             // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.FromArgb(3, 83, 115);
+            label15.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.ForeColor = Color.White;
+            label15.Location = new Point(27, 380);
+            label15.Margin = new Padding(2, 0, 2, 0);
+            label15.Name = "label15";
+            label15.Size = new Size(171, 31);
+            label15.TabIndex = 32;
+            label15.Text = "Reset Password";
+            // 
             // UserSecurityForm
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
@@ -856,8 +796,6 @@
         private Button btnAddUser;
         private Button button7;
         private Button btnEdit;
-        private Button button2;
-        private Button button4;
         private Panel sidebar_AddUser;
         private Label label2;
         private TextBox EFirstNameValue;
@@ -891,9 +829,6 @@
         private TextBox EEmailValue;
         private Label label5;
         private Label label8;
-        private RadioButton rdbMec;
-        private Label label15;
-        private RadioButton rdbCashier;
         private TextBox conPass;
         private Label label16;
         private Button btnMechanic;
@@ -904,5 +839,6 @@
         private Panel panel3;
         private Label label18;
         private DataGridView mechanicsView;
+        private Label label15;
     }
 }

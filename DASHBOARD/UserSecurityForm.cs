@@ -402,6 +402,32 @@ namespace Service_Management_System.DASHBOARD
             ECPasswordValue.BackColor = Color.FromArgb(3, 83, 115);
             userRole = "Cashier";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            InitializeComponent();
+            LoadEmployeesView();
+            LoadMechanicsView();
+            EPasswordValue.PasswordChar = '*'; // Hide password characters
+            ECPasswordValue.PasswordChar = '*';// Hide password characters
+
+            this.btnMechanic.Click += new System.EventHandler(this.button10_Click);
+        }
+
+        private void EmployeeView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ensure the click is not on the header row
+            if (e.RowIndex >= 0)
+            {
+                // Get the selected row
+                DataGridViewRow selectedRow = EmployeeView.Rows[e.RowIndex];
+
+                // Set the values from the selected row to the text boxes
+                txbFname.Text = selectedRow.Cells["FirstName"].Value.ToString();
+                txbLname.Text = selectedRow.Cells["LastName"].Value.ToString();
+                txbEmail.Text = selectedRow.Cells["Email"].Value.ToString();
+            }
+        }
     }
 
 }
