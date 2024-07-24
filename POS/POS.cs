@@ -26,7 +26,7 @@ namespace Service_Management_System.POS
         private jonOrder_form orderForm;
         private const decimal VAT_RATE = 0.12m;
         //ss
-
+        int JobOrderID = Class1.GlobalVariables.JobOrderNumber;
 
         public POSForm()
         {
@@ -1266,6 +1266,21 @@ namespace Service_Management_System.POS
         private void btnEnter_Click(object sender, EventArgs e)
         {
 
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                connection.Open();
+
+                string sql = "UPDATE JobOrders SET MechanicID = MechanicID WHERE JobOrderID = JobOrderID";
+                using (OleDbCommand command = new OleDbCommand(sql, connection))
+                {
+                    // Add parameters with values
+                    command.Parameters.AddWithValue("MechanicID", tbxMechanicID);
+                    command.Parameters.AddWithValue("JobOrderID", JobOrderID); // Replace with the actual JobOrderID
+
+                    // Execute the command
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
 

@@ -16,13 +16,14 @@ namespace Service_Management_System.POS
 {
     public partial class View_sales_history : Form
     {
+        
         private PrintDocument printDocument;
         private OleDbConnection _connection;
         public View_sales_history()
         {
             InitializeComponent();
             LoadJobOrderHistory();
-            _connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString);
+            _connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2);
            JobOrderHistoryView.CellClick += DataGridView1_CellClick;
             printDocument = new PrintDocument();
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
@@ -49,7 +50,7 @@ namespace Service_Management_System.POS
             try
             {
                 _connection.Open();
-                string query = @"SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Cost, productTable.Price, productTable.Quantity, productTable.Barcode FROM productTable;
+                string query = @"SELECT ;
 
                 WHERE JobOrderID = ?";
 
@@ -75,9 +76,9 @@ namespace Service_Management_System.POS
         {
             try
             {
-                using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+                using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
                 {
-                    string query = "SELECT jobOrderJunctionTb.JobOrderID, CustomerTb.FirstName, VehicleTb.Model, EmployeeTb.FirstName, mechanicTb.MName, VehicleTb.PlateNumber, jobOrderJunctionTb.Subtotal, jobOrderJunctionTb.DateCreated, jobOrderJunctionTb.Discount\r\nFROM mechanicTb INNER JOIN (VehicleTb INNER JOIN (EmployeeTb INNER JOIN (CustomerTb INNER JOIN jobOrderJunctionTb ON CustomerTb.CustomerID = jobOrderJunctionTb.CustomerID) ON EmployeeTb.EmployeeID = jobOrderJunctionTb.EmployeeID) ON VehicleTb.VehicleID = CustomerTb.VehicleID) ON mechanicTb.mechanicID = jobOrderJunctionTb.MechanicID;\r\n";
+                    string query = "SELECT SalesHistory.SalesHistoryID, JobOrders.CustomerName, JobOrders.DateCreated, Sales.SaleDate, JobOrders.Vehicle, JobOrders.SubTotal\r\nFROM JobOrders INNER JOIN (Sales INNER JOIN SalesHistory ON Sales.SaleID = SalesHistory.SaleID) ON JobOrders.JobOrderID = Sales.JobOrderID;\r\n";
                     OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
@@ -168,7 +169,7 @@ namespace Service_Management_System.POS
             {
                 _connection.Open();
                 // Adjust the SQL query to match your database schema
-                string query = "SELECT productTable.ProductID, productTable.ProductType, productTable.ProductName, productTable.Cost, productTable.Price, productTable.Barcode, productTable.Description\r\nFROM productTable;\r\n";
+                string query = "SELECT JobOrderItem.JobOrderItemsID, Products.ProductName, Products.Price\r\nFROM Products INNER JOIN ((JobOrders INNER JOIN (Sales INNER JOIN SalesHistory ON Sales.SaleID = SalesHistory.SaleID) ON JobOrders.JobOrderID = Sales.JobOrderID) INNER JOIN JobOrderItem ON JobOrders.JobOrderID = JobOrderItem.JobOrderID) ON Products.ProductID = JobOrderItem.ProductID;\r\n";
 
                 using (OleDbCommand cmd = new OleDbCommand(query, _connection))
                 {

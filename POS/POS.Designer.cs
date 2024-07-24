@@ -1488,7 +1488,7 @@ namespace Service_Management_System.POS
             panel_Mechanic.MaximumSize = new Size(473, 619);
             panel_Mechanic.MinimumSize = new Size(473, 0);
             panel_Mechanic.Name = "panel_Mechanic";
-            panel_Mechanic.Size = new Size(473, 0);
+            panel_Mechanic.Size = new Size(473, 619);
             panel_Mechanic.TabIndex = 15;
             panel_Mechanic.Paint += panel_Mechanic_Paint;
             // 
