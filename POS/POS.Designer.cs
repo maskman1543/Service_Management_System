@@ -214,7 +214,7 @@ namespace Service_Management_System.POS
             moveup.BackgroundImage = (Image)resources.GetObject("moveup.BackgroundImage");
             moveup.BackgroundImageLayout = ImageLayout.Stretch;
             moveup.Cursor = Cursors.Hand;
-            moveup.Location = new Point(119, 588);
+            moveup.Location = new Point(106, 588);
             moveup.Margin = new Padding(2);
             moveup.Name = "moveup";
             moveup.Size = new Size(40, 39);

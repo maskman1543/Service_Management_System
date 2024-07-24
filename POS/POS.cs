@@ -420,9 +420,7 @@ namespace Service_Management_System.POS
 
         private void moveup_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
-            this.Close();
+            Application.Exit();
         }
 
         private void button13_Click(object sender, EventArgs e)
