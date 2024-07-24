@@ -13,6 +13,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Service_Management_System.POS.Login_Page_Front_and_Back_End;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace Service_Management_System.DASHBOARD
 {
@@ -21,6 +22,7 @@ namespace Service_Management_System.DASHBOARD
         bool sidebarExpand;
         bool sidebarExpandbtnEdit;
         private string userRole;
+        bool upper;
 
         public UserSecurityForm()
         {
@@ -122,8 +124,8 @@ namespace Service_Management_System.DASHBOARD
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             sidebarTimer.Start();
-            sidebar_EditUserInfo.Visible = false;
-            sidebar_AddUser.Visible = true;
+            //sidebar_EditUserInfo.Visible = false;
+            //sidebar_AddUser.Visible = true;
         }
 
 
@@ -366,13 +368,125 @@ namespace Service_Management_System.DASHBOARD
         private void btnEdit_Click(object sender, EventArgs e)
         {
             sidebarTimerbtnEdit.Start();
-            sidebar_AddUser.Visible = false;
-            sidebar_EditUserInfo.Visible = true;
+            //sidebar_AddUser.Visible = false;
+            //sidebar_EditUserInfo.Visible = true;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txbEmail.Text))
+            {
+                if (mechanicsView.SelectedCells.Count > 0)
+                {
+                    int selectedRowIndex = mechanicsView.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = mechanicsView.Rows[selectedRowIndex];
 
+                    // Assuming you have input fields to update these values
+                    string newFirstName = txbFname.Text;
+                    string newLastName = txbLname.Text;
+
+                    // Get the original values for comparison or to use in the query
+                    string originalFirstName = selectedRow.Cells["FirstName"].Value.ToString();
+                    string originalLastName = selectedRow.Cells["LastName"].Value.ToString();
+
+                    using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+                    {
+                        string query = "UPDATE Mechanics SET FirstName = @NewFirstName, LastName = @NewLastName " +
+                                       "WHERE FirstName = @OriginalFirstName AND LastName = @OriginalLastName";
+
+                        OleDbCommand command = new OleDbCommand(query, connection);
+                        command.Parameters.AddWithValue("@NewFirstName", newFirstName);
+                        command.Parameters.AddWithValue("@NewLastName", newLastName);
+                        command.Parameters.AddWithValue("@OriginalFirstName", originalFirstName);
+                        command.Parameters.AddWithValue("@OriginalLastName", originalLastName);
+
+                        try
+                        {
+                            connection.Open();
+                            int rowsAffected = command.ExecuteNonQuery();
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Record updated successfully.");
+                                LoadMechanicsView(); // Refresh the DataGridView
+                            }
+                            else
+                            {
+                                MessageBox.Show("Record update failed.");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("An error occurred: " + ex.Message);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a cell to update.");
+                }
+            }
+            else
+            {
+                // Check if a row is selected
+                if (EmployeeView.SelectedCells.Count > 0)
+                {
+                    int selectedRowIndex = EmployeeView.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = EmployeeView.Rows[selectedRowIndex];
+                    int id = Convert.ToInt32(selectedRow.Cells["EmployeeID"].Value); // Assuming "EmployeeID" is the primary key column
+
+                    // Retrieve updated values from the textboxes
+                    string firstName = txbFname.Text;
+                    string lastName = txbLname.Text;
+                    string email = txbEmail.Text;
+
+                    // Validate inputs
+                    if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(email))
+                    {
+                        MessageBox.Show("Please fill in all required fields.");
+                        return;
+                    }
+
+                    // Construct the SQL update query
+                    string query = "UPDATE Employees SET FirstName = @FirstName, LastName = @LastName, Email = @Email WHERE EmployeeID = @ID";
+
+                    using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+                    {
+                        OleDbCommand command = new OleDbCommand(query, connection);
+                        command.Parameters.AddWithValue("@FirstName", firstName);
+                        command.Parameters.AddWithValue("@LastName", lastName);
+                        command.Parameters.AddWithValue("@Email", email);
+                        command.Parameters.AddWithValue("@ID", id);
+
+                        try
+                        {
+                            connection.Open();
+                            int rowsAffected = command.ExecuteNonQuery();
+                            connection.Close();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Record updated successfully.");
+                                txbFname.Text = "";
+                                txbLname.Text = "";
+                                txbEmail.Text = "";
+                                LoadEmployeesView(); // Refresh the DataGridView
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to update record. Please try again.");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("An error occurred: " + ex.Message);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a row to update.");
+                }
+            }
         }
 
 
@@ -389,6 +503,9 @@ namespace Service_Management_System.DASHBOARD
             EEmailValue.BackColor = Color.LightGray;
             EPasswordValue.BackColor = Color.LightGray;
             ECPasswordValue.BackColor = Color.LightGray;
+            EEmailValue.Text = "";
+            EPasswordValue.Text = "";
+            ECPasswordValue.Text = "";
             userRole = "Mechanic";
 
         }
@@ -430,6 +547,8 @@ namespace Service_Management_System.DASHBOARD
                 txbFname.Text = selectedRow.Cells["FirstName"].Value.ToString();
                 txbLname.Text = selectedRow.Cells["LastName"].Value.ToString();
                 txbEmail.Text = selectedRow.Cells["Email"].Value.ToString();
+                txbEmail.BackColor = Color.FromArgb(3, 83, 115);
+                txbEmail.ForeColor = Color.White;
             }
         }
 
@@ -441,6 +560,159 @@ namespace Service_Management_System.DASHBOARD
         private void btnCancelEditUsers_Click(object sender, EventArgs e)
         {
             sidebarTimerbtnEdit.Start();
+        }
+
+        private void mechanicsView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Get the selected row
+                DataGridViewRow selectedRow = EmployeeView.Rows[e.RowIndex];
+
+                // Set the values from the selected row to the text boxes
+                txbFname.Text = selectedRow.Cells["FirstName"].Value.ToString();
+                txbLname.Text = selectedRow.Cells["LastName"].Value.ToString();
+                txbEmail.Enabled = false;
+                txbEmail.Text = "";
+                txbEmail.BackColor = Color.LightGray;
+            }
+        }
+
+        private void resetPas_Tick(object sender, EventArgs e)
+        {
+            if (upper)
+            {
+                panelUpper.Height -= 50;
+                if (panelUpper.Height == panelUpper.MinimumSize.Height)
+                {
+                    upper = false;
+                    resetPas.Stop();
+                }
+            }
+            else
+            {
+                panelUpper.Height += 50;
+                if (panelUpper.Height == panelUpper.MaximumSize.Height)
+                {
+                    upper = true;
+                    resetPas.Stop();
+                }
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            resetPas.Start();
+        }
+        private string HashPassword1(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+        private string DecryptPassword(string encryptedPassword)
+        {
+            // Implement your decryption logic here. Example using AES (replace with your logic).
+            using (Aes aes = Aes.Create())
+            {
+                byte[] key = Encoding.UTF8.GetBytes("your-encryption-key"); // Adjust key and IV accordingly
+                byte[] iv = Encoding.UTF8.GetBytes("your-encryption-iv");
+
+                aes.Key = key;
+                aes.IV = iv;
+
+                ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
+
+                using (MemoryStream ms = new MemoryStream(Convert.FromBase64String(encryptedPassword)))
+                {
+                    using (CryptoStream cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader reader = new StreamReader(cs))
+                        {
+                            return reader.ReadToEnd();
+                        }
+                    }
+                }
+            }
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (EmployeeView.SelectedCells.Count > 0)
+                {
+                    int selectedRowIndex = EmployeeView.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = EmployeeView.Rows[selectedRowIndex];
+                    int id = Convert.ToInt32(selectedRow.Cells["EmployeeID"].Value); // Assuming "EmployeeID" is the primary key column
+
+                    // Retrieve the encrypted password from the selected row
+                    string encryptedPassword = selectedRow.Cells["Password"].Value.ToString();
+                    string decryptedPassword = DecryptPassword(encryptedPassword);
+
+                    // Validate the current password
+                    if (txboldPass.Text != decryptedPassword)
+                    {
+                        MessageBox.Show("The current password is incorrect.");
+                        return;
+                    }
+
+                    // Validate that the new password and confirm password match
+                    if (txbnewPass.Text != txbconPass.Text)
+                    {
+                        MessageBox.Show("The new password and confirm password do not match.");
+                        return;
+                    }
+
+                    // Hash the new password
+                    string hashedNewPassword = HashPassword1(txbnewPass.Text);
+
+                    // Update the password in the database
+                    using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+                    {
+                        string query = "UPDATE Employees SET [Password] = @Password WHERE EmployeeID = @ID";
+
+                        OleDbCommand command = new OleDbCommand(query, connection);
+                        command.Parameters.AddWithValue("@Password", hashedNewPassword);
+                        command.Parameters.AddWithValue("@ID", id);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+                        connection.Close();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Password updated successfully.");
+                            txboldPass.Text = "";
+                            txbnewPass.Text = "";
+                            txbconPass.Text = "";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to update password. Please try again.");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a row to update.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
+        private void sidebar_EditUserInfo_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 
