@@ -95,49 +95,65 @@ namespace Service_Management_System.DASHBOARD
                 return;
             }
 
-            string selectQuery = "SELECT COUNT(*) FROM EmployeePayroll WHERE EmployeeID = @EmployeeID";
-            string insertQuery = "INSERT INTO EmployeePayroll (EmployeeID, DayOfPresent, sss, pagibig, NetSalary) VALUES (@EmployeeID, @BasicSalary, @SSS, @Pagibig, @NetSalary)";
-            string updateQuery = "UPDATE EmployeePayroll SET DayOfPresent = @BasicSalary, sss = @SSS, pagibig = @Pagibig, NetSalary = @NetSalary WHERE EmployeeID = @EmployeeID";
+            string selectQuery = "SELECT COUNT(*) FROM EmployeePayroll WHERE EmployeeID = ?";
+            string insertQuery = "INSERT INTO EmployeePayroll (EmployeeID, DayOfPresent, sss, pagibig, NetSalary) VALUES (?, ?, ?, ?, ?)";
+            string updateQuery = "UPDATE EmployeePayroll SET DayOfPresent = ?, sss = ?, pagibig = ?, NetSalary = ? WHERE EmployeeID = ?";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 OleDbCommand selectCmd = new OleDbCommand(selectQuery, connection);
-                selectCmd.Parameters.AddWithValue("@EmployeeID", EmpID.Text);
+                selectCmd.Parameters.AddWithValue("?", EmpID.Text);
 
                 try
                 {
                     connection.Open();
                     int recordCount = (int)selectCmd.ExecuteScalar();
 
-                    OleDbCommand cmd;
                     if (recordCount > 0)
                     {
                         // Update the existing record
-                        cmd = new OleDbCommand(updateQuery, connection);
-                        MessageBox.Show("Updating existing record.");
+                        using (OleDbCommand updateCmd = new OleDbCommand(updateQuery, connection))
+                        {
+                            updateCmd.Parameters.AddWithValue("?", SalaryTxb.Text);
+                            updateCmd.Parameters.AddWithValue("?", SSS.Text);
+                            updateCmd.Parameters.AddWithValue("?", PagIbig.Text);
+                            updateCmd.Parameters.AddWithValue("?", NetSalary.Text);
+                            updateCmd.Parameters.AddWithValue("?", EmpID.Text); // Parameter for WHERE clause must be added last
+
+                            int rowsAffected = updateCmd.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Payroll record updated successfully.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("No rows affected. Please check the EmployeeID.");
+                            }
+                        }
                     }
                     else
                     {
                         // Insert a new record
-                        cmd = new OleDbCommand(insertQuery, connection);
-                        MessageBox.Show("Inserting new record.");
-                    }
+                        using (OleDbCommand insertCmd = new OleDbCommand(insertQuery, connection))
+                        {
+                            insertCmd.Parameters.AddWithValue("?", EmpID.Text);
+                            insertCmd.Parameters.AddWithValue("?", SalaryTxb.Text);
+                            insertCmd.Parameters.AddWithValue("?", SSS.Text);
+                            insertCmd.Parameters.AddWithValue("?", PagIbig.Text);
+                            insertCmd.Parameters.AddWithValue("?", NetSalary.Text);
 
-                    cmd.Parameters.AddWithValue("@BasicSalary", SalaryTxb.Text);
-                    cmd.Parameters.AddWithValue("@SSS", SSS.Text);
-                    cmd.Parameters.AddWithValue("@Pagibig", PagIbig.Text);
-                    cmd.Parameters.AddWithValue("@NetSalary", NetSalary.Text);
-                    cmd.Parameters.AddWithValue("@EmployeeID", EmpID.Text); // Parameter for WHERE clause must be added last
+                            int rowsAffected = insertCmd.ExecuteNonQuery();
 
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show(recordCount > 0 ? "Payroll record updated successfully." : "Payroll record saved successfully.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("No rows affected. Please check the EmployeeID.");
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Payroll record saved successfully.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to save the payroll record. Please check the details.");
+                            }
+                        }
                     }
                 }
                 catch (Exception ex)

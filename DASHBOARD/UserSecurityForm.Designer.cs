@@ -59,16 +59,19 @@
             label2 = new Label();
             sidebarTimer = new System.Windows.Forms.Timer(components);
             sidebar_EditUserInfo = new Panel();
-            label15 = new Label();
-            conPass = new TextBox();
+            panelUpper = new Panel();
+            button2 = new Button();
+            label10 = new Label();
+            txboldPass = new TextBox();
+            label9 = new Label();
+            txbconPass = new TextBox();
+            txbnewPass = new TextBox();
             label16 = new Label();
+            pictureBox1 = new PictureBox();
+            label15 = new Label();
             button8 = new Button();
             btnCancelEditUsers = new Button();
             lblBackEdit = new Label();
-            newPass = new TextBox();
-            label9 = new Label();
-            oldPass = new TextBox();
-            label10 = new Label();
             txbEmail = new TextBox();
             label11 = new Label();
             txbLname = new TextBox();
@@ -82,11 +85,14 @@
             panel3 = new Panel();
             label18 = new Label();
             mechanicsView = new DataGridView();
+            resetPas = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)EmployeeView).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             sidebar_AddUser.SuspendLayout();
             sidebar_EditUserInfo.SuspendLayout();
+            panelUpper.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel8.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)mechanicsView).BeginInit();
@@ -469,16 +475,12 @@
             // sidebar_EditUserInfo
             // 
             sidebar_EditUserInfo.BackColor = Color.FromArgb(3, 83, 115);
+            sidebar_EditUserInfo.Controls.Add(panelUpper);
+            sidebar_EditUserInfo.Controls.Add(pictureBox1);
             sidebar_EditUserInfo.Controls.Add(label15);
-            sidebar_EditUserInfo.Controls.Add(conPass);
-            sidebar_EditUserInfo.Controls.Add(label16);
             sidebar_EditUserInfo.Controls.Add(button8);
             sidebar_EditUserInfo.Controls.Add(btnCancelEditUsers);
             sidebar_EditUserInfo.Controls.Add(lblBackEdit);
-            sidebar_EditUserInfo.Controls.Add(newPass);
-            sidebar_EditUserInfo.Controls.Add(label9);
-            sidebar_EditUserInfo.Controls.Add(oldPass);
-            sidebar_EditUserInfo.Controls.Add(label10);
             sidebar_EditUserInfo.Controls.Add(txbEmail);
             sidebar_EditUserInfo.Controls.Add(label11);
             sidebar_EditUserInfo.Controls.Add(txbLname);
@@ -493,6 +495,112 @@
             sidebar_EditUserInfo.Name = "sidebar_EditUserInfo";
             sidebar_EditUserInfo.Size = new Size(0, 860);
             sidebar_EditUserInfo.TabIndex = 26;
+            sidebar_EditUserInfo.Paint += sidebar_EditUserInfo_Paint;
+            // 
+            // panelUpper
+            // 
+            panelUpper.Controls.Add(button2);
+            panelUpper.Controls.Add(label10);
+            panelUpper.Controls.Add(txboldPass);
+            panelUpper.Controls.Add(label9);
+            panelUpper.Controls.Add(txbconPass);
+            panelUpper.Controls.Add(txbnewPass);
+            panelUpper.Controls.Add(label16);
+            panelUpper.Location = new Point(0, 417);
+            panelUpper.MaximumSize = new Size(343, 300);
+            panelUpper.MinimumSize = new Size(343, 0);
+            panelUpper.Name = "panelUpper";
+            panelUpper.Size = new Size(343, 0);
+            panelUpper.TabIndex = 34;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(3, 83, 115);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(91, 245);
+            button2.Name = "button2";
+            button2.Padding = new Padding(10, 0, 10, 0);
+            button2.Size = new Size(128, 37);
+            button2.TabIndex = 35;
+            button2.Text = "Save";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(16, 10);
+            label10.Name = "label10";
+            label10.Size = new Size(100, 20);
+            label10.TabIndex = 20;
+            label10.Text = "Old password";
+            // 
+            // txboldPass
+            // 
+            txboldPass.BackColor = Color.FromArgb(3, 83, 115);
+            txboldPass.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txboldPass.ForeColor = Color.White;
+            txboldPass.Location = new Point(17, 37);
+            txboldPass.Name = "txboldPass";
+            txboldPass.Size = new Size(286, 27);
+            txboldPass.TabIndex = 21;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(17, 87);
+            label9.Name = "label9";
+            label9.Size = new Size(106, 20);
+            label9.TabIndex = 22;
+            label9.Text = "New password";
+            // 
+            // txbconPass
+            // 
+            txbconPass.BackColor = Color.FromArgb(3, 83, 115);
+            txbconPass.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txbconPass.ForeColor = Color.White;
+            txbconPass.Location = new Point(19, 187);
+            txbconPass.Name = "txbconPass";
+            txbconPass.Size = new Size(286, 27);
+            txbconPass.TabIndex = 31;
+            // 
+            // txbnewPass
+            // 
+            txbnewPass.BackColor = Color.FromArgb(3, 83, 115);
+            txbnewPass.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txbnewPass.ForeColor = Color.White;
+            txbnewPass.Location = new Point(18, 114);
+            txbnewPass.Name = "txbnewPass";
+            txbnewPass.Size = new Size(286, 27);
+            txbnewPass.TabIndex = 23;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.ForeColor = Color.White;
+            label16.Location = new Point(18, 160);
+            label16.Name = "label16";
+            label16.Size = new Size(145, 23);
+            label16.TabIndex = 30;
+            label16.Text = "Confirm password";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(225, 381);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(30, 30);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 33;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label15
             // 
@@ -506,27 +614,6 @@
             label15.Size = new Size(171, 31);
             label15.TabIndex = 32;
             label15.Text = "Reset Password";
-            // 
-            // conPass
-            // 
-            conPass.BackColor = Color.FromArgb(3, 83, 115);
-            conPass.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            conPass.ForeColor = Color.White;
-            conPass.Location = new Point(29, 606);
-            conPass.Name = "conPass";
-            conPass.Size = new Size(286, 27);
-            conPass.TabIndex = 31;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.ForeColor = Color.White;
-            label16.Location = new Point(28, 579);
-            label16.Name = "label16";
-            label16.Size = new Size(145, 23);
-            label16.TabIndex = 30;
-            label16.Text = "Confirm password";
             // 
             // button8
             // 
@@ -577,46 +664,6 @@
             lblBackEdit.TabIndex = 24;
             lblBackEdit.Text = "  ";
             lblBackEdit.Click += lblBackEdit_Click;
-            // 
-            // newPass
-            // 
-            newPass.BackColor = Color.FromArgb(3, 83, 115);
-            newPass.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            newPass.ForeColor = Color.White;
-            newPass.Location = new Point(28, 533);
-            newPass.Name = "newPass";
-            newPass.Size = new Size(286, 27);
-            newPass.TabIndex = 23;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(27, 506);
-            label9.Name = "label9";
-            label9.Size = new Size(106, 20);
-            label9.TabIndex = 22;
-            label9.Text = "New password";
-            // 
-            // oldPass
-            // 
-            oldPass.BackColor = Color.FromArgb(3, 83, 115);
-            oldPass.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            oldPass.ForeColor = Color.White;
-            oldPass.Location = new Point(27, 456);
-            oldPass.Name = "oldPass";
-            oldPass.Size = new Size(286, 27);
-            oldPass.TabIndex = 21;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(26, 429);
-            label10.Name = "label10";
-            label10.Size = new Size(100, 20);
-            label10.TabIndex = 20;
-            label10.Text = "Old password";
             // 
             // txbEmail
             // 
@@ -754,6 +801,12 @@
             mechanicsView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             mechanicsView.Size = new Size(1071, 306);
             mechanicsView.TabIndex = 29;
+            mechanicsView.CellClick += mechanicsView_CellClick;
+            // 
+            // resetPas
+            // 
+            resetPas.Interval = 5;
+            resetPas.Tick += resetPas_Tick;
             // 
             // UserSecurityForm
             // 
@@ -780,6 +833,9 @@
             sidebar_AddUser.PerformLayout();
             sidebar_EditUserInfo.ResumeLayout(false);
             sidebar_EditUserInfo.PerformLayout();
+            panelUpper.ResumeLayout(false);
+            panelUpper.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             panel3.ResumeLayout(false);
@@ -816,9 +872,9 @@
         private Button button8;
         private Button btnCancelEditUsers;
         private Label lblBackEdit;
-        private TextBox newPass;
+        private TextBox txbnewPass;
         private Label label9;
-        private TextBox oldPass;
+        private TextBox txboldPass;
         private Label label10;
         private TextBox txbEmail;
         private Label label11;
@@ -831,7 +887,7 @@
         private TextBox EEmailValue;
         private Label label5;
         private Label label8;
-        private TextBox conPass;
+        private TextBox txbconPass;
         private Label label16;
         private Button btnMechanic;
         private Button btnCashier;
@@ -842,5 +898,9 @@
         private Label label18;
         private DataGridView mechanicsView;
         private Label label15;
+        private Panel panelUpper;
+        private PictureBox pictureBox1;
+        private System.Windows.Forms.Timer resetPas;
+        private Button button2;
     }
 }

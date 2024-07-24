@@ -204,6 +204,23 @@
   <metadata name="sidebarTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAohJREFUSEvNl8tuTWEYhjtQrZka1JBWIiFmJiZoy6jFnRgoV2AiPeASqtIaaEyo
+        Q0QU4R4cwh04hQGjep7l3dlWt7X32t1b4k2eZH3vf/j6//1Pe+C/1+bm5i44C4uwCs+D3wtwBoZTvXfR
+        2TjchO/wEW7DVbgQ/F6DT2CdGzCW5t2LxkNwDX7CXZiEHSlukWUwBetgG2dmKMX1RIO98Apew/HYtUWb
+        k/AWXsJo7Paiokk/wCPYHbtr0XYEHsN7aJ+cCk6vIzVp5bTWlX2AyR35ztitotD/qdO77ZFuFX058jew
+        EKssCsbgB0zG6pvo8wS44A7EagrTLXMvYd9F3/dhOeFvYXg4uAf7PtqG6PsUfIPmIUNwDjwcel5QVaLv
+        QfCQmYlVmB55awlLwj8ChxJ2FHUPw8GEJeHfgfmEhXELFhOWhD8LX+BYrEpZJ3XPxyoJ3+N1NWFheNjP
+        JmwRZVfgK1Qmp+woOJXXY7WIsouwkbAwNjQT/lWUVybH65hUUX4JniYsjMqp/lPUaUnOd62kijoeUCsJ
+        C6NycW2VCaBIHvzumFRRz8U1l7AwvMT9qwdjtRX1Gsm7Sep2+gzTsQpzGNzcU7E6irqXJWFHUfd0cpRf
+        KRjLsJ6w76LvB7CUsCnM/eAlUXvUdUWfE+AlMR6rLAp8rniFjcTqWfS1B95Bc1FtFYU+BLy0vbz78RBw
+        QT2BF1D9EFBUGAWfKybf9shp60hN2vnp05AVwZE77ROxa4s2vjadXkdaL2lDNHDaPVhccF7i3qeV+9wy
+        cMs8BNvMQfvpbSca+yRyq/lQ8JDx9PHoazzo/dbzcHCfLsG+NO9ddOYhMwPzsALPgt9609C/nzD/RgMD
+        vwDDCET7RmGYwwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="button8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -235,5 +252,8 @@
   </data>
   <metadata name="sidebarTimerbtnEdit.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>164, 17</value>
+  </metadata>
+  <metadata name="resetPas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>359, 17</value>
   </metadata>
 </root>
