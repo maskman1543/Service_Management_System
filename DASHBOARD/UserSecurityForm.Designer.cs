@@ -46,7 +46,7 @@
             EEmailValue = new TextBox();
             label5 = new Label();
             button6 = new Button();
-            button5 = new Button();
+            btnCancelAddUsers = new Button();
             lblBack = new Label();
             ECPasswordValue = new TextBox();
             label7 = new Label();
@@ -59,10 +59,11 @@
             label2 = new Label();
             sidebarTimer = new System.Windows.Forms.Timer(components);
             sidebar_EditUserInfo = new Panel();
+            label15 = new Label();
             conPass = new TextBox();
             label16 = new Label();
             button8 = new Button();
-            button9 = new Button();
+            btnCancelEditUsers = new Button();
             lblBackEdit = new Label();
             newPass = new TextBox();
             label9 = new Label();
@@ -81,7 +82,6 @@
             panel3 = new Panel();
             label18 = new Label();
             mechanicsView = new DataGridView();
-            label15 = new Label();
             ((System.ComponentModel.ISupportInitialize)EmployeeView).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -221,7 +221,7 @@
             sidebar_AddUser.Controls.Add(EEmailValue);
             sidebar_AddUser.Controls.Add(label5);
             sidebar_AddUser.Controls.Add(button6);
-            sidebar_AddUser.Controls.Add(button5);
+            sidebar_AddUser.Controls.Add(btnCancelAddUsers);
             sidebar_AddUser.Controls.Add(lblBack);
             sidebar_AddUser.Controls.Add(ECPasswordValue);
             sidebar_AddUser.Controls.Add(label7);
@@ -233,7 +233,7 @@
             sidebar_AddUser.Controls.Add(label3);
             sidebar_AddUser.Controls.Add(label2);
             sidebar_AddUser.Dock = DockStyle.Right;
-            sidebar_AddUser.Location = new Point(754, 46);
+            sidebar_AddUser.Location = new Point(1097, 46);
             sidebar_AddUser.MaximumSize = new Size(343, 860);
             sidebar_AddUser.MinimumSize = new Size(0, 860);
             sidebar_AddUser.Name = "sidebar_AddUser";
@@ -331,21 +331,22 @@
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
             // 
-            // button5
+            // btnCancelAddUsers
             // 
-            button5.BackColor = Color.FromArgb(3, 83, 115);
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.ForeColor = Color.White;
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(225, 811);
-            button5.Name = "button5";
-            button5.Size = new Size(104, 37);
-            button5.TabIndex = 13;
-            button5.Text = "Cancel";
-            button5.TextAlign = ContentAlignment.MiddleRight;
-            button5.UseVisualStyleBackColor = false;
+            btnCancelAddUsers.BackColor = Color.FromArgb(3, 83, 115);
+            btnCancelAddUsers.FlatStyle = FlatStyle.Flat;
+            btnCancelAddUsers.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelAddUsers.ForeColor = Color.White;
+            btnCancelAddUsers.Image = (Image)resources.GetObject("btnCancelAddUsers.Image");
+            btnCancelAddUsers.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCancelAddUsers.Location = new Point(225, 811);
+            btnCancelAddUsers.Name = "btnCancelAddUsers";
+            btnCancelAddUsers.Size = new Size(104, 37);
+            btnCancelAddUsers.TabIndex = 13;
+            btnCancelAddUsers.Text = "Cancel";
+            btnCancelAddUsers.TextAlign = ContentAlignment.MiddleRight;
+            btnCancelAddUsers.UseVisualStyleBackColor = false;
+            btnCancelAddUsers.Click += btnCancelAddUsers_Click;
             // 
             // lblBack
             // 
@@ -472,7 +473,7 @@
             sidebar_EditUserInfo.Controls.Add(conPass);
             sidebar_EditUserInfo.Controls.Add(label16);
             sidebar_EditUserInfo.Controls.Add(button8);
-            sidebar_EditUserInfo.Controls.Add(button9);
+            sidebar_EditUserInfo.Controls.Add(btnCancelEditUsers);
             sidebar_EditUserInfo.Controls.Add(lblBackEdit);
             sidebar_EditUserInfo.Controls.Add(newPass);
             sidebar_EditUserInfo.Controls.Add(label9);
@@ -486,12 +487,25 @@
             sidebar_EditUserInfo.Controls.Add(label13);
             sidebar_EditUserInfo.Controls.Add(label14);
             sidebar_EditUserInfo.Dock = DockStyle.Right;
-            sidebar_EditUserInfo.Location = new Point(754, 46);
+            sidebar_EditUserInfo.Location = new Point(1097, 46);
             sidebar_EditUserInfo.MaximumSize = new Size(343, 860);
             sidebar_EditUserInfo.MinimumSize = new Size(0, 860);
             sidebar_EditUserInfo.Name = "sidebar_EditUserInfo";
-            sidebar_EditUserInfo.Size = new Size(343, 860);
+            sidebar_EditUserInfo.Size = new Size(0, 860);
             sidebar_EditUserInfo.TabIndex = 26;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.FromArgb(3, 83, 115);
+            label15.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.ForeColor = Color.White;
+            label15.Location = new Point(27, 380);
+            label15.Margin = new Padding(2, 0, 2, 0);
+            label15.Name = "label15";
+            label15.Size = new Size(171, 31);
+            label15.TabIndex = 32;
+            label15.Text = "Reset Password";
             // 
             // conPass
             // 
@@ -532,21 +546,22 @@
             button8.UseVisualStyleBackColor = false;
             button8.Click += button8_Click;
             // 
-            // button9
+            // btnCancelEditUsers
             // 
-            button9.BackColor = Color.FromArgb(3, 83, 115);
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button9.ForeColor = Color.White;
-            button9.Image = (Image)resources.GetObject("button9.Image");
-            button9.ImageAlign = ContentAlignment.MiddleLeft;
-            button9.Location = new Point(225, 811);
-            button9.Name = "button9";
-            button9.Size = new Size(104, 37);
-            button9.TabIndex = 25;
-            button9.Text = "Cancel";
-            button9.TextAlign = ContentAlignment.MiddleRight;
-            button9.UseVisualStyleBackColor = false;
+            btnCancelEditUsers.BackColor = Color.FromArgb(3, 83, 115);
+            btnCancelEditUsers.FlatStyle = FlatStyle.Flat;
+            btnCancelEditUsers.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelEditUsers.ForeColor = Color.White;
+            btnCancelEditUsers.Image = (Image)resources.GetObject("btnCancelEditUsers.Image");
+            btnCancelEditUsers.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCancelEditUsers.Location = new Point(225, 811);
+            btnCancelEditUsers.Name = "btnCancelEditUsers";
+            btnCancelEditUsers.Size = new Size(104, 37);
+            btnCancelEditUsers.TabIndex = 25;
+            btnCancelEditUsers.Text = "Cancel";
+            btnCancelEditUsers.TextAlign = ContentAlignment.MiddleRight;
+            btnCancelEditUsers.UseVisualStyleBackColor = false;
+            btnCancelEditUsers.Click += btnCancelEditUsers_Click;
             // 
             // lblBackEdit
             // 
@@ -740,19 +755,6 @@
             mechanicsView.Size = new Size(1071, 306);
             mechanicsView.TabIndex = 29;
             // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.BackColor = Color.FromArgb(3, 83, 115);
-            label15.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.ForeColor = Color.White;
-            label15.Location = new Point(27, 380);
-            label15.Margin = new Padding(2, 0, 2, 0);
-            label15.Name = "label15";
-            label15.Size = new Size(171, 31);
-            label15.TabIndex = 32;
-            label15.Text = "Reset Password";
-            // 
             // UserSecurityForm
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
@@ -806,13 +808,13 @@
         private Label label6;
         private TextBox ELastNameValue;
         private Label label4;
-        private Button button5;
+        private Button btnCancelAddUsers;
         private Label lblBack;
         private Button button6;
         private System.Windows.Forms.Timer sidebarTimer;
         private Panel sidebar_EditUserInfo;
         private Button button8;
-        private Button button9;
+        private Button btnCancelEditUsers;
         private Label lblBackEdit;
         private TextBox newPass;
         private Label label9;

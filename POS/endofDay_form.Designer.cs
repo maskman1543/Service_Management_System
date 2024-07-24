@@ -249,6 +249,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "endofDay_form";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "endofDay_form";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
