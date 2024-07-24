@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Text;
 using Service_Management_System.POS.Login_Page_Front_and_Back_End;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Service_Management_System.DASHBOARD
 {
@@ -19,12 +20,17 @@ namespace Service_Management_System.DASHBOARD
     {
         bool sidebarExpand;
         bool sidebarExpandbtnEdit;
+        private string userRole;
+
         public UserSecurityForm()
         {
             InitializeComponent();
             LoadEmployeesView();
+            LoadMechanicsView();
             EPasswordValue.PasswordChar = '*'; // Hide password characters
             ECPasswordValue.PasswordChar = '*';// Hide password characters
+
+            this.btnMechanic.Click += new System.EventHandler(this.button10_Click);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -45,6 +51,13 @@ namespace Service_Management_System.DASHBOARD
                 {
                     connection.Open();
                     adapter.Fill(dataTable);
+
+                    // Check if the "Password" column exists and remove it
+                    if (dataTable.Columns.Contains("Password"))
+                    {
+                        dataTable.Columns.Remove("Password");
+                    }
+
                     EmployeeView.DataSource = dataTable;
                 }
                 catch (Exception ex)
@@ -53,6 +66,33 @@ namespace Service_Management_System.DASHBOARD
                 }
             }
         }
+
+        private void LoadMechanicsView()
+        {
+            // Update query to select only FirstName and LastName from the Mechanics table
+            string query = "SELECT FirstName, LastName FROM Mechanics";
+
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    connection.Open();
+                    adapter.Fill(dataTable);
+
+                    // Set the DataSource of EmployeeView to the DataTable
+                    mechanicsView.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+
 
         private void EmployeeView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -99,7 +139,7 @@ namespace Service_Management_System.DASHBOARD
         {
             if (sidebarExpand)
             {
-                sidebar_AddUser.Width -= 10;
+                sidebar_AddUser.Width -= 50;
                 if (sidebar_AddUser.Width == sidebar_AddUser.MinimumSize.Width)
                 {
                     sidebarExpand = false;
@@ -108,7 +148,7 @@ namespace Service_Management_System.DASHBOARD
             }
             else
             {
-                sidebar_AddUser.Width += 10;
+                sidebar_AddUser.Width += 50;
                 if (sidebar_AddUser.Width == sidebar_AddUser.MaximumSize.Width)
                 {
                     sidebarExpand = true;
@@ -131,68 +171,117 @@ namespace Service_Management_System.DASHBOARD
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            // Retrieve values from input fields
-            string firstName = EFirstNameValue.Text;
-            string lastName = ELastNameValue.Text;
-            string email = EEmailValue.Text;
-            // string phoneNumber = phoneNumberValue.Text;
-            string password = EPasswordValue.Text;
-            string confirmPassword = ECPasswordValue.Text;
-
-            // Validate inputs (optional)
-            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(email)
-               /* string.IsNullOrEmpty(phoneNumber*/ || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
-            {
-                MessageBox.Show("Please fill in all required fields.");
-                return;
-            }
-
-            // Check if passwords match
-            if (password != confirmPassword)
-            {
-                MessageBox.Show("Passwords do not match. Please enter matching passwords.");
-                return;
-            }
-
-            // Hash the password
-            string hashedPassword = HashPassword(password);
-
-            // If validation passes, proceed with registration logic (example)
             try
             {
-                // Example: Insert user data into a database
-                OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2);
-                string query = "INSERT INTO Employees (Firstname, LastName, Email, [Password]) " +
-                               "VALUES (@FirstName, @LastName, @Email, @Password)";
 
-                OleDbCommand command = new OleDbCommand(query, connection);
-                command.Parameters.AddWithValue("@FirstName", firstName);
-                command.Parameters.AddWithValue("@LastName", lastName);
-                command.Parameters.AddWithValue("@Email", email);
-                //command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
-                command.Parameters.AddWithValue("@Password", hashedPassword);
-
-                connection.Open();
-                int rowsAffected = command.ExecuteNonQuery();
-                connection.Close();
-
-                if (rowsAffected > 0)
+                if (string.IsNullOrEmpty(userRole))
                 {
-                    MessageBox.Show("User registered successfully.");
-                    // Optionally, clear input fields or reset form state
-                    EFirstNameValue.Text = "";
-                    ELastNameValue.Text = "";
-                    EEmailValue.Text = "";
-                    //phoneNumberValue.Text = "";
-                    EPasswordValue.Text = "";
-                    ECPasswordValue.Text = "";
-
-                    // Close the registration form
-                    this.Close();
+                    MessageBox.Show("Please choose a role");
+                    return;
                 }
-                else
+                if (userRole == "Cashier")
                 {
-                    MessageBox.Show("Failed to register user. Please try again.");
+                    // Retrieve values from input fields
+                    string firstName = EFirstNameValue.Text;
+                    string lastName = ELastNameValue.Text;
+                    string email = EEmailValue.Text;
+                    // string phoneNumber = phoneNumberValue.Text;
+                    string password = EPasswordValue.Text;
+                    string confirmPassword = ECPasswordValue.Text;
+
+                    // Validate inputs (optional)
+                    if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(email)
+                       /* string.IsNullOrEmpty(phoneNumber*/ || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
+                    {
+                        MessageBox.Show("Please fill in all required fields.");
+                        return;
+                    }
+
+                    // Check if passwords match
+                    if (password != confirmPassword)
+                    {
+                        MessageBox.Show("Passwords do not match. Please enter matching passwords.");
+                        return;
+                    }
+
+                    // Hash the password
+                    string hashedPassword = HashPassword(password);
+
+                    // If validation passes, proceed with registration logic (example)
+                    // Example: Insert user data into a database
+                    OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2);
+                    string query = "INSERT INTO Employees (Firstname, LastName, Email, [Password]) " +
+                                   "VALUES (@FirstName, @LastName, @Email, @Password)";
+
+                    OleDbCommand command = new OleDbCommand(query, connection);
+                    command.Parameters.AddWithValue("@FirstName", firstName);
+                    command.Parameters.AddWithValue("@LastName", lastName);
+                    command.Parameters.AddWithValue("@Email", email);
+                    //command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
+                    command.Parameters.AddWithValue("@Password", hashedPassword);
+
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    connection.Close();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("User registered successfully.");
+                        // Optionally, clear input fields or reset form state
+                        EFirstNameValue.Text = "";
+                        ELastNameValue.Text = "";
+                        EEmailValue.Text = "";
+                        //phoneNumberValue.Text = "";
+                        EPasswordValue.Text = "";
+                        ECPasswordValue.Text = "";
+                        LoadEmployeesView();
+                        // Close the registration form
+                        //this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to register user. Please try again.");
+                    }
+                }
+                else if (userRole == "Mechanic")
+                {
+                    // Retrieve values from input fields
+                    string firstName = EFirstNameValue.Text;
+                    string lastName = ELastNameValue.Text;
+
+                    // Validate inputs (optional)
+                    if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
+                    {
+                        MessageBox.Show("Please fill in all required fields.");
+                        return;
+                    }
+                    OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2);
+                    string query = "INSERT INTO Mechanics (Firstname, LastName) " +
+                                   "VALUES (@FirstName, @LastName)";
+
+                    OleDbCommand command = new OleDbCommand(query, connection);
+                    command.Parameters.AddWithValue("@FirstName", firstName);
+                    command.Parameters.AddWithValue("@LastName", lastName);
+
+
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    connection.Close();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("User registered successfully.");
+                        // Optionally, clear input fields or reset form state
+                        EFirstNameValue.Text = "";
+                        ELastNameValue.Text = "";
+                        LoadMechanicsView();
+                        // Close the registration form
+                        //this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to register user. Please try again.");
+                    }
                 }
             }
             catch (Exception ex)
@@ -201,6 +290,8 @@ namespace Service_Management_System.DASHBOARD
                 // Handle any specific error logging or display as needed
             }
         }
+
+
         private void DeleteSelectedRow()
         {
             if (EmployeeView.SelectedCells.Count > 0)
@@ -247,7 +338,7 @@ namespace Service_Management_System.DASHBOARD
         {
             if (sidebarExpandbtnEdit)
             {
-                sidebar_EditUserInfo.Width -= 10;
+                sidebar_EditUserInfo.Width -= 50;
                 if (sidebar_EditUserInfo.Width == sidebar_EditUserInfo.MinimumSize.Width)
                 {
                     sidebarExpandbtnEdit = false;
@@ -256,7 +347,7 @@ namespace Service_Management_System.DASHBOARD
             }
             else
             {
-                sidebar_EditUserInfo.Width += 10;
+                sidebar_EditUserInfo.Width += 50;
                 if (sidebar_EditUserInfo.Width == sidebar_EditUserInfo.MaximumSize.Width)
                 {
                     sidebarExpandbtnEdit = true;
@@ -273,6 +364,43 @@ namespace Service_Management_System.DASHBOARD
         private void btnEdit_Click(object sender, EventArgs e)
         {
             sidebarTimerbtnEdit.Start();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void rdbmechanic1_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            EEmailValue.Enabled = false;
+            EPasswordValue.Enabled = false;
+            ECPasswordValue.Enabled = false;
+            EEmailValue.BackColor = Color.LightGray;
+            EPasswordValue.BackColor = Color.LightGray;
+            ECPasswordValue.BackColor = Color.LightGray;
+            userRole = "Mechanic";
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Enable the EEmailValue textbox
+            EEmailValue.Enabled = true;
+            EPasswordValue.Enabled = true;
+            ECPasswordValue.Enabled = true;
+
+            // Change the background color to the specified RGB value
+            EEmailValue.BackColor = Color.FromArgb(3, 83, 115);
+            EPasswordValue.BackColor = Color.FromArgb(3, 83, 115);
+            ECPasswordValue.BackColor = Color.FromArgb(3, 83, 115);
+            userRole = "Cashier";
         }
     }
 

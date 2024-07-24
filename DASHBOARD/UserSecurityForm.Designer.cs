@@ -41,6 +41,12 @@
             button7 = new Button();
             button1 = new Button();
             sidebar_AddUser = new Panel();
+            textBox1 = new TextBox();
+            btnMechanic = new Button();
+            btnCashier = new Button();
+            label8 = new Label();
+            EEmailValue = new TextBox();
+            label5 = new Label();
             button6 = new Button();
             button5 = new Button();
             lblBack = new Label();
@@ -55,41 +61,53 @@
             label2 = new Label();
             sidebarTimer = new System.Windows.Forms.Timer(components);
             sidebar_EditUserInfo = new Panel();
+            conPass = new TextBox();
+            label16 = new Label();
+            rdbMec = new RadioButton();
+            label15 = new Label();
+            rdbCashier = new RadioButton();
             button8 = new Button();
             button9 = new Button();
             lblBackEdit = new Label();
-            textBox1 = new TextBox();
+            newPass = new TextBox();
             label9 = new Label();
-            textBox2 = new TextBox();
+            oldPass = new TextBox();
             label10 = new Label();
-            textBox3 = new TextBox();
+            txbEmail = new TextBox();
             label11 = new Label();
-            textBox4 = new TextBox();
+            txbLname = new TextBox();
             label12 = new Label();
-            textBox5 = new TextBox();
+            txbFname = new TextBox();
             label13 = new Label();
             label14 = new Label();
             sidebarTimerbtnEdit = new System.Windows.Forms.Timer(components);
-            EEmailValue = new TextBox();
-            label5 = new Label();
+            panel8 = new Panel();
+            label17 = new Label();
+            panel3 = new Panel();
+            label18 = new Label();
+            mechanicsView = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)EmployeeView).BeginInit();
+            panel1.SuspendLayout();
             panel2.SuspendLayout();
             sidebar_AddUser.SuspendLayout();
             sidebar_EditUserInfo.SuspendLayout();
+            panel8.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)mechanicsView).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(3, 83, 115);
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(11, 8);
+            label1.Location = new Point(41, 9);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(107, 28);
+            label1.Size = new Size(137, 28);
             label1.TabIndex = 0;
-            label1.Text = "Users info";
+            label1.Text = "Employee Info";
             label1.Click += label1_Click;
             // 
             // EmployeeView
@@ -97,20 +115,21 @@
             EmployeeView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             EmployeeView.BackgroundColor = Color.White;
             EmployeeView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            EmployeeView.Location = new Point(13, 135);
+            EmployeeView.Location = new Point(13, 174);
             EmployeeView.Margin = new Padding(4);
             EmployeeView.Name = "EmployeeView";
             EmployeeView.ReadOnly = true;
             EmployeeView.RowHeadersWidth = 51;
             EmployeeView.RowTemplate.Height = 25;
             EmployeeView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            EmployeeView.Size = new Size(1071, 744);
+            EmployeeView.Size = new Size(1071, 306);
             EmployeeView.TabIndex = 1;
             EmployeeView.CellContentClick += EmployeeView_CellContentClick;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(3, 83, 115);
+            panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -229,6 +248,10 @@
             // sidebar_AddUser
             // 
             sidebar_AddUser.BackColor = Color.FromArgb(3, 83, 115);
+            sidebar_AddUser.Controls.Add(textBox1);
+            sidebar_AddUser.Controls.Add(btnMechanic);
+            sidebar_AddUser.Controls.Add(btnCashier);
+            sidebar_AddUser.Controls.Add(label8);
             sidebar_AddUser.Controls.Add(EEmailValue);
             sidebar_AddUser.Controls.Add(label5);
             sidebar_AddUser.Controls.Add(button6);
@@ -244,13 +267,85 @@
             sidebar_AddUser.Controls.Add(label3);
             sidebar_AddUser.Controls.Add(label2);
             sidebar_AddUser.Dock = DockStyle.Right;
-            sidebar_AddUser.Location = new Point(754, 46);
+            sidebar_AddUser.Location = new Point(1097, 46);
             sidebar_AddUser.MaximumSize = new Size(343, 860);
-            sidebar_AddUser.MinimumSize = new Size(343, 860);
+            sidebar_AddUser.MinimumSize = new Size(0, 860);
             sidebar_AddUser.Name = "sidebar_AddUser";
-            sidebar_AddUser.Size = new Size(343, 860);
+            sidebar_AddUser.Size = new Size(0, 860);
             sidebar_AddUser.TabIndex = 26;
             sidebar_AddUser.Paint += panel3_Paint;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.FromArgb(3, 83, 115);
+            textBox1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox1.ForeColor = Color.White;
+            textBox1.Location = new Point(28, 89);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(286, 27);
+            textBox1.TabIndex = 21;
+            // 
+            // btnMechanic
+            // 
+            btnMechanic.BackColor = Color.FromArgb(3, 83, 115);
+            btnMechanic.FlatStyle = FlatStyle.Flat;
+            btnMechanic.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMechanic.ForeColor = Color.White;
+            btnMechanic.Location = new Point(181, 161);
+            btnMechanic.Name = "btnMechanic";
+            btnMechanic.Padding = new Padding(10, 0, 10, 0);
+            btnMechanic.Size = new Size(119, 37);
+            btnMechanic.TabIndex = 20;
+            btnMechanic.Text = "Mechanic";
+            btnMechanic.UseVisualStyleBackColor = false;
+            btnMechanic.Click += button10_Click;
+            // 
+            // btnCashier
+            // 
+            btnCashier.BackColor = Color.FromArgb(3, 83, 115);
+            btnCashier.FlatStyle = FlatStyle.Flat;
+            btnCashier.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCashier.ForeColor = Color.White;
+            btnCashier.Location = new Point(77, 161);
+            btnCashier.Name = "btnCashier";
+            btnCashier.Padding = new Padding(10, 0, 10, 0);
+            btnCashier.Size = new Size(104, 37);
+            btnCashier.TabIndex = 19;
+            btnCashier.Text = "Cashier";
+            btnCashier.UseVisualStyleBackColor = false;
+            btnCashier.Click += button3_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(28, 127);
+            label8.Name = "label8";
+            label8.Size = new Size(67, 23);
+            label8.TabIndex = 18;
+            label8.Text = "Position";
+            // 
+            // EEmailValue
+            // 
+            EEmailValue.BackColor = Color.FromArgb(3, 83, 115);
+            EEmailValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            EEmailValue.ForeColor = Color.White;
+            EEmailValue.Location = new Point(27, 380);
+            EEmailValue.Name = "EEmailValue";
+            EEmailValue.Size = new Size(286, 27);
+            EEmailValue.TabIndex = 16;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(26, 353);
+            label5.Name = "label5";
+            label5.Size = new Size(50, 23);
+            label5.TabIndex = 15;
+            label5.Text = "Email";
             // 
             // button6
             // 
@@ -306,7 +401,7 @@
             ECPasswordValue.BackColor = Color.FromArgb(3, 83, 115);
             ECPasswordValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             ECPasswordValue.ForeColor = Color.White;
-            ECPasswordValue.Location = new Point(28, 405);
+            ECPasswordValue.Location = new Point(28, 530);
             ECPasswordValue.Name = "ECPasswordValue";
             ECPasswordValue.Size = new Size(286, 27);
             ECPasswordValue.TabIndex = 11;
@@ -316,7 +411,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(27, 378);
+            label7.Location = new Point(27, 503);
             label7.Name = "label7";
             label7.Size = new Size(145, 23);
             label7.TabIndex = 10;
@@ -327,7 +422,7 @@
             EPasswordValue.BackColor = Color.FromArgb(3, 83, 115);
             EPasswordValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             EPasswordValue.ForeColor = Color.White;
-            EPasswordValue.Location = new Point(27, 328);
+            EPasswordValue.Location = new Point(27, 453);
             EPasswordValue.Name = "EPasswordValue";
             EPasswordValue.Size = new Size(286, 27);
             EPasswordValue.TabIndex = 9;
@@ -337,7 +432,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(26, 301);
+            label6.Location = new Point(26, 426);
             label6.Name = "label6";
             label6.Size = new Size(79, 23);
             label6.TabIndex = 8;
@@ -348,7 +443,7 @@
             ELastNameValue.BackColor = Color.FromArgb(3, 83, 115);
             ELastNameValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             ELastNameValue.ForeColor = Color.White;
-            ELastNameValue.Location = new Point(27, 193);
+            ELastNameValue.Location = new Point(27, 309);
             ELastNameValue.Name = "ELastNameValue";
             ELastNameValue.Size = new Size(286, 27);
             ELastNameValue.TabIndex = 5;
@@ -358,7 +453,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(26, 166);
+            label4.Location = new Point(26, 282);
             label4.Name = "label4";
             label4.Size = new Size(85, 23);
             label4.TabIndex = 4;
@@ -369,7 +464,7 @@
             EFirstNameValue.BackColor = Color.FromArgb(3, 83, 115);
             EFirstNameValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             EFirstNameValue.ForeColor = Color.White;
-            EFirstNameValue.Location = new Point(27, 123);
+            EFirstNameValue.Location = new Point(27, 239);
             EFirstNameValue.Name = "EFirstNameValue";
             EFirstNameValue.Size = new Size(286, 27);
             EFirstNameValue.TabIndex = 3;
@@ -379,7 +474,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(26, 96);
+            label3.Location = new Point(26, 212);
             label3.Name = "label3";
             label3.Size = new Size(86, 23);
             label3.TabIndex = 2;
@@ -407,18 +502,23 @@
             // sidebar_EditUserInfo
             // 
             sidebar_EditUserInfo.BackColor = Color.FromArgb(3, 83, 115);
+            sidebar_EditUserInfo.Controls.Add(conPass);
+            sidebar_EditUserInfo.Controls.Add(label16);
+            sidebar_EditUserInfo.Controls.Add(rdbMec);
+            sidebar_EditUserInfo.Controls.Add(label15);
+            sidebar_EditUserInfo.Controls.Add(rdbCashier);
             sidebar_EditUserInfo.Controls.Add(button8);
             sidebar_EditUserInfo.Controls.Add(button9);
             sidebar_EditUserInfo.Controls.Add(lblBackEdit);
-            sidebar_EditUserInfo.Controls.Add(textBox1);
+            sidebar_EditUserInfo.Controls.Add(newPass);
             sidebar_EditUserInfo.Controls.Add(label9);
-            sidebar_EditUserInfo.Controls.Add(textBox2);
+            sidebar_EditUserInfo.Controls.Add(oldPass);
             sidebar_EditUserInfo.Controls.Add(label10);
-            sidebar_EditUserInfo.Controls.Add(textBox3);
+            sidebar_EditUserInfo.Controls.Add(txbEmail);
             sidebar_EditUserInfo.Controls.Add(label11);
-            sidebar_EditUserInfo.Controls.Add(textBox4);
+            sidebar_EditUserInfo.Controls.Add(txbLname);
             sidebar_EditUserInfo.Controls.Add(label12);
-            sidebar_EditUserInfo.Controls.Add(textBox5);
+            sidebar_EditUserInfo.Controls.Add(txbFname);
             sidebar_EditUserInfo.Controls.Add(label13);
             sidebar_EditUserInfo.Controls.Add(label14);
             sidebar_EditUserInfo.Dock = DockStyle.Right;
@@ -428,6 +528,64 @@
             sidebar_EditUserInfo.Name = "sidebar_EditUserInfo";
             sidebar_EditUserInfo.Size = new Size(0, 860);
             sidebar_EditUserInfo.TabIndex = 26;
+            // 
+            // conPass
+            // 
+            conPass.BackColor = Color.FromArgb(3, 83, 115);
+            conPass.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            conPass.ForeColor = Color.White;
+            conPass.Location = new Point(29, 606);
+            conPass.Name = "conPass";
+            conPass.Size = new Size(286, 27);
+            conPass.TabIndex = 31;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.ForeColor = Color.White;
+            label16.Location = new Point(28, 579);
+            label16.Name = "label16";
+            label16.Size = new Size(145, 23);
+            label16.TabIndex = 30;
+            label16.Text = "Confirm password";
+            // 
+            // rdbMec
+            // 
+            rdbMec.AutoSize = true;
+            rdbMec.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rdbMec.ForeColor = Color.White;
+            rdbMec.Location = new Point(49, 377);
+            rdbMec.Name = "rdbMec";
+            rdbMec.Size = new Size(92, 24);
+            rdbMec.TabIndex = 29;
+            rdbMec.TabStop = true;
+            rdbMec.Text = "Mechanic";
+            rdbMec.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.ForeColor = Color.White;
+            label15.Location = new Point(31, 316);
+            label15.Name = "label15";
+            label15.Size = new Size(67, 23);
+            label15.TabIndex = 28;
+            label15.Text = "Position";
+            // 
+            // rdbCashier
+            // 
+            rdbCashier.AutoSize = true;
+            rdbCashier.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rdbCashier.ForeColor = Color.White;
+            rdbCashier.Location = new Point(49, 347);
+            rdbCashier.Name = "rdbCashier";
+            rdbCashier.Size = new Size(77, 24);
+            rdbCashier.TabIndex = 27;
+            rdbCashier.TabStop = true;
+            rdbCashier.Text = "Cashier";
+            rdbCashier.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
@@ -445,6 +603,7 @@
             button8.Text = "Save";
             button8.TextAlign = ContentAlignment.MiddleRight;
             button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // button9
             // 
@@ -477,55 +636,55 @@
             lblBackEdit.Text = "  ";
             lblBackEdit.Click += lblBackEdit_Click;
             // 
-            // textBox1
+            // newPass
             // 
-            textBox1.BackColor = Color.FromArgb(3, 83, 115);
-            textBox1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(30, 423);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(286, 27);
-            textBox1.TabIndex = 23;
+            newPass.BackColor = Color.FromArgb(3, 83, 115);
+            newPass.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            newPass.ForeColor = Color.White;
+            newPass.Location = new Point(28, 533);
+            newPass.Name = "newPass";
+            newPass.Size = new Size(286, 27);
+            newPass.TabIndex = 23;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.White;
-            label9.Location = new Point(29, 396);
+            label9.Location = new Point(27, 506);
             label9.Name = "label9";
-            label9.Size = new Size(129, 20);
+            label9.Size = new Size(106, 20);
             label9.TabIndex = 22;
-            label9.Text = "Confirm password";
+            label9.Text = "New password";
             // 
-            // textBox2
+            // oldPass
             // 
-            textBox2.BackColor = Color.FromArgb(3, 83, 115);
-            textBox2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox2.ForeColor = Color.White;
-            textBox2.Location = new Point(29, 346);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(286, 27);
-            textBox2.TabIndex = 21;
+            oldPass.BackColor = Color.FromArgb(3, 83, 115);
+            oldPass.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            oldPass.ForeColor = Color.White;
+            oldPass.Location = new Point(27, 456);
+            oldPass.Name = "oldPass";
+            oldPass.Size = new Size(286, 27);
+            oldPass.TabIndex = 21;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.ForeColor = Color.White;
-            label10.Location = new Point(28, 319);
+            label10.Location = new Point(26, 429);
             label10.Name = "label10";
-            label10.Size = new Size(70, 20);
+            label10.Size = new Size(100, 20);
             label10.TabIndex = 20;
-            label10.Text = "Password";
+            label10.Text = "Old password";
             // 
-            // textBox3
+            // txbEmail
             // 
-            textBox3.BackColor = Color.FromArgb(3, 83, 115);
-            textBox3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox3.ForeColor = Color.White;
-            textBox3.Location = new Point(28, 272);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(286, 27);
-            textBox3.TabIndex = 19;
+            txbEmail.BackColor = Color.FromArgb(3, 83, 115);
+            txbEmail.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txbEmail.ForeColor = Color.White;
+            txbEmail.Location = new Point(28, 272);
+            txbEmail.Name = "txbEmail";
+            txbEmail.Size = new Size(286, 27);
+            txbEmail.TabIndex = 19;
             // 
             // label11
             // 
@@ -537,15 +696,15 @@
             label11.TabIndex = 18;
             label11.Text = "Email";
             // 
-            // textBox4
+            // txbLname
             // 
-            textBox4.BackColor = Color.FromArgb(3, 83, 115);
-            textBox4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox4.ForeColor = Color.White;
-            textBox4.Location = new Point(27, 197);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(286, 27);
-            textBox4.TabIndex = 17;
+            txbLname.BackColor = Color.FromArgb(3, 83, 115);
+            txbLname.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txbLname.ForeColor = Color.White;
+            txbLname.Location = new Point(27, 197);
+            txbLname.Name = "txbLname";
+            txbLname.Size = new Size(286, 27);
+            txbLname.TabIndex = 17;
             // 
             // label12
             // 
@@ -557,15 +716,15 @@
             label12.TabIndex = 16;
             label12.Text = "Last name";
             // 
-            // textBox5
+            // txbFname
             // 
-            textBox5.BackColor = Color.FromArgb(3, 83, 115);
-            textBox5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox5.ForeColor = Color.White;
-            textBox5.Location = new Point(27, 127);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(286, 27);
-            textBox5.TabIndex = 15;
+            txbFname.BackColor = Color.FromArgb(3, 83, 115);
+            txbFname.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txbFname.ForeColor = Color.White;
+            txbFname.Location = new Point(27, 127);
+            txbFname.Name = "txbFname";
+            txbFname.Size = new Size(286, 27);
+            txbFname.TabIndex = 15;
             // 
             // label13
             // 
@@ -595,26 +754,64 @@
             sidebarTimerbtnEdit.Interval = 1;
             sidebarTimerbtnEdit.Tick += sidebarTimerbtnEdit_Tick;
             // 
-            // EEmailValue
+            // panel8
             // 
-            EEmailValue.BackColor = Color.FromArgb(3, 83, 115);
-            EEmailValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            EEmailValue.ForeColor = Color.White;
-            EEmailValue.Location = new Point(27, 264);
-            EEmailValue.Name = "EEmailValue";
-            EEmailValue.Size = new Size(286, 27);
-            EEmailValue.TabIndex = 16;
+            panel8.BackColor = Color.FromArgb(90, 126, 140);
+            panel8.Controls.Add(label17);
+            panel8.Location = new Point(13, 118);
+            panel8.Margin = new Padding(2);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(1071, 56);
+            panel8.TabIndex = 27;
             // 
-            // label5
+            // label17
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(26, 237);
-            label5.Name = "label5";
-            label5.Size = new Size(50, 23);
-            label5.TabIndex = 15;
-            label5.Text = "Email";
+            label17.AutoSize = true;
+            label17.Font = new Font("Century Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.ForeColor = Color.White;
+            label17.Location = new Point(440, 8);
+            label17.Margin = new Padding(2, 0, 2, 0);
+            label17.Name = "label17";
+            label17.Size = new Size(144, 34);
+            label17.TabIndex = 0;
+            label17.Text = "CASHIERS";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(90, 126, 140);
+            panel3.Controls.Add(label18);
+            panel3.Location = new Point(11, 493);
+            panel3.Margin = new Padding(2);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1071, 56);
+            panel3.TabIndex = 28;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Century Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.ForeColor = Color.White;
+            label18.Location = new Point(440, 8);
+            label18.Margin = new Padding(2, 0, 2, 0);
+            label18.Name = "label18";
+            label18.Size = new Size(182, 34);
+            label18.TabIndex = 0;
+            label18.Text = "MECHANICS";
+            // 
+            // mechanicsView
+            // 
+            mechanicsView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            mechanicsView.BackgroundColor = Color.White;
+            mechanicsView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            mechanicsView.Location = new Point(11, 547);
+            mechanicsView.Margin = new Padding(4);
+            mechanicsView.Name = "mechanicsView";
+            mechanicsView.ReadOnly = true;
+            mechanicsView.RowHeadersWidth = 51;
+            mechanicsView.RowTemplate.Height = 25;
+            mechanicsView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            mechanicsView.Size = new Size(1071, 306);
+            mechanicsView.TabIndex = 29;
             // 
             // UserSecurityForm
             // 
@@ -625,20 +822,28 @@
             Controls.Add(sidebar_EditUserInfo);
             Controls.Add(panel2);
             Controls.Add(EmployeeView);
-            Controls.Add(label1);
             Controls.Add(panel1);
+            Controls.Add(panel8);
+            Controls.Add(panel3);
+            Controls.Add(mechanicsView);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);
             Name = "UserSecurityForm";
             Text = "UserSecurityForm";
             ((System.ComponentModel.ISupportInitialize)EmployeeView).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel2.ResumeLayout(false);
             sidebar_AddUser.ResumeLayout(false);
             sidebar_AddUser.PerformLayout();
             sidebar_EditUserInfo.ResumeLayout(false);
             sidebar_EditUserInfo.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)mechanicsView).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -671,19 +876,33 @@
         private Button button8;
         private Button button9;
         private Label lblBackEdit;
-        private TextBox textBox1;
+        private TextBox newPass;
         private Label label9;
-        private TextBox textBox2;
+        private TextBox oldPass;
         private Label label10;
-        private TextBox textBox3;
+        private TextBox txbEmail;
         private Label label11;
-        private TextBox textBox4;
+        private TextBox txbLname;
         private Label label12;
-        private TextBox textBox5;
+        private TextBox txbFname;
         private Label label13;
         private Label label14;
         private System.Windows.Forms.Timer sidebarTimerbtnEdit;
         private TextBox EEmailValue;
         private Label label5;
+        private Label label8;
+        private RadioButton rdbMec;
+        private Label label15;
+        private RadioButton rdbCashier;
+        private TextBox conPass;
+        private Label label16;
+        private Button btnMechanic;
+        private Button btnCashier;
+        private TextBox textBox1;
+        private Panel panel8;
+        private Label label17;
+        private Panel panel3;
+        private Label label18;
+        private DataGridView mechanicsView;
     }
 }
