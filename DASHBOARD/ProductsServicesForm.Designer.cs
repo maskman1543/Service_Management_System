@@ -457,7 +457,7 @@
             panelUpper.MaximumSize = new Size(425, 611);
             panelUpper.MinimumSize = new Size(425, 0);
             panelUpper.Name = "panelUpper";
-            panelUpper.Size = new Size(425, 0);
+            panelUpper.Size = new Size(425, 611);
             panelUpper.TabIndex = 17;
             // 
             // textBox1
@@ -496,7 +496,7 @@
             QuantityInStock.BackColor = Color.FromArgb(3, 83, 115);
             QuantityInStock.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             QuantityInStock.ForeColor = Color.White;
-            QuantityInStock.Location = new Point(24, 512);
+            QuantityInStock.Location = new Point(23, 242);
             QuantityInStock.Name = "QuantityInStock";
             QuantityInStock.Size = new Size(127, 30);
             QuantityInStock.TabIndex = 35;
@@ -507,7 +507,7 @@
             label21.AutoSize = true;
             label21.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label21.ForeColor = Color.White;
-            label21.Location = new Point(24, 489);
+            label21.Location = new Point(23, 219);
             label21.Name = "label21";
             label21.Size = new Size(71, 20);
             label21.TabIndex = 34;
@@ -627,7 +627,7 @@
             btnsave.Padding = new Padding(10, 0, 0, 0);
             btnsave.Size = new Size(137, 43);
             btnsave.TabIndex = 14;
-            btnsave.Text = "Save";
+            btnsave.Text = "Add";
             btnsave.UseVisualStyleBackColor = true;
             btnsave.Click += btnsave_Click;
             // 
@@ -636,7 +636,7 @@
             DescriptionValue.BackColor = Color.FromArgb(3, 83, 115);
             DescriptionValue.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             DescriptionValue.ForeColor = Color.White;
-            DescriptionValue.Location = new Point(15, 486);
+            DescriptionValue.Location = new Point(15, 399);
             DescriptionValue.Multiline = true;
             DescriptionValue.Name = "DescriptionValue";
             DescriptionValue.Size = new Size(401, 116);
@@ -647,7 +647,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(15, 463);
+            label11.Location = new Point(15, 376);
             label11.Name = "label11";
             label11.Size = new Size(91, 20);
             label11.TabIndex = 10;
@@ -658,7 +658,7 @@
             textBox4.BackColor = Color.FromArgb(3, 83, 115);
             textBox4.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             textBox4.ForeColor = Color.White;
-            textBox4.Location = new Point(12, 366);
+            textBox4.Location = new Point(17, 339);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(401, 30);
             textBox4.TabIndex = 9;
@@ -668,7 +668,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(13, 343);
+            label9.Location = new Point(18, 316);
             label9.Name = "label9";
             label9.Size = new Size(56, 20);
             label9.TabIndex = 6;
@@ -679,7 +679,7 @@
             BarcodeValue.BackColor = Color.FromArgb(3, 83, 115);
             BarcodeValue.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             BarcodeValue.ForeColor = Color.White;
-            BarcodeValue.Location = new Point(13, 230);
+            BarcodeValue.Location = new Point(16, 273);
             BarcodeValue.Name = "BarcodeValue";
             BarcodeValue.Size = new Size(401, 30);
             BarcodeValue.TabIndex = 5;
@@ -689,7 +689,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(13, 207);
+            label8.Location = new Point(16, 250);
             label8.Name = "label8";
             label8.Size = new Size(73, 20);
             label8.TabIndex = 4;
@@ -700,7 +700,7 @@
             ProductNameValue.BackColor = Color.FromArgb(3, 83, 115);
             ProductNameValue.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             ProductNameValue.ForeColor = Color.White;
-            ProductNameValue.Location = new Point(14, 94);
+            ProductNameValue.Location = new Point(12, 142);
             ProductNameValue.Name = "ProductNameValue";
             ProductNameValue.Size = new Size(310, 30);
             ProductNameValue.TabIndex = 1;
@@ -710,7 +710,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(13, 71);
+            label7.Location = new Point(11, 119);
             label7.Name = "label7";
             label7.Size = new Size(53, 20);
             label7.TabIndex = 0;
@@ -845,7 +845,7 @@
             btnSaveService.Padding = new Padding(10, 0, 0, 0);
             btnSaveService.Size = new Size(137, 43);
             btnSaveService.TabIndex = 16;
-            btnSaveService.Text = "Save";
+            btnSaveService.Text = "Add";
             btnSaveService.UseVisualStyleBackColor = true;
             btnSaveService.Click += btnSaveService_Click;
             // 
@@ -854,7 +854,7 @@
             txtServicePrice.BackColor = Color.FromArgb(3, 83, 115);
             txtServicePrice.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             txtServicePrice.ForeColor = Color.White;
-            txtServicePrice.Location = new Point(12, 238);
+            txtServicePrice.Location = new Point(12, 171);
             txtServicePrice.Name = "txtServicePrice";
             txtServicePrice.Size = new Size(401, 30);
             txtServicePrice.TabIndex = 9;
@@ -864,7 +864,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(12, 215);
+            label12.Location = new Point(12, 148);
             label12.Name = "label12";
             label12.Size = new Size(105, 20);
             label12.TabIndex = 8;
