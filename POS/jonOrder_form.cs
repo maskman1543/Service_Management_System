@@ -100,47 +100,42 @@ namespace Service_Management_System.POS
                 MessageBox.Show("Please fill in all fields.");
                 return;
             }
-            string CustmoerName = FirstNameValue.Text;
-            
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 connection.Open();
                 OleDbTransaction transaction = connection.BeginTransaction();
-                
+
                 try
                 {
-                    
-
-
-                    string insertCustomerQuery = "INSERT INTO JobOrders (CustomerName, CustomerContact, Vehicle, PlateNo) VALUES (@CustomerName, @CustomerContact, @Vehicle, @PlateNo)";
+                    string insertCustomerQuery = "INSERT INTO JobOrders (CustomerName, CustomerContact, Vehicle, PlateNo, DateCreated) VALUES (@CustomerName, @CustomerContact, @Vehicle, @PlateNo, @DateCreated)";
                     using (OleDbCommand cmdCustomer = new OleDbCommand(insertCustomerQuery, connection, transaction))
                     {
                         cmdCustomer.Parameters.AddWithValue("@CustomerName", FirstNameValue.Text);
                         cmdCustomer.Parameters.AddWithValue("@CustomerContact", textBox1.Text);
                         cmdCustomer.Parameters.AddWithValue("@Vehicle", textBox2.Text);
                         cmdCustomer.Parameters.AddWithValue("@PlateNo", textBox3.Text);
+                        cmdCustomer.Parameters.AddWithValue("@DateCreated", DateTime.Now.ToString("dd/MM/yy"));
                         cmdCustomer.ExecuteNonQuery();
                     }
-                    
+
                     transaction.Commit();
                     MessageBox.Show("Data inserted successfully!");
-                    
                 }
                 catch (Exception ex)
                 {
                     transaction.Rollback();
                     MessageBox.Show("An error occurred: " + ex.Message);
                 }
-                
             }
+
             int jobOrderID = jobOrderService.GetJobOrderIDByCustomerName(FirstNameValue.Text);
             Class1.GlobalVariables.JobOrderNumber = jobOrderID;
             MessageBox.Show("Job Order Number: " + Class1.GlobalVariables.JobOrderNumber);
             POSForm pOSForm = new POSForm();
-            this.Close();   
+            this.Close();
         }
-       
+
         public void ClearDataGridView()
         {
 

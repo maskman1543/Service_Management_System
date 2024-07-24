@@ -431,6 +431,8 @@ namespace Service_Management_System.POS
                             command2.Parameters.AddWithValue("@Subtotal", subtotal);
                             command2.ExecuteNonQuery();
                         }
+
+                      
                     }
                 }
                 catch (Exception ex)
@@ -1372,6 +1374,11 @@ namespace Service_Management_System.POS
         }
 
         private void panel_UserInfo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }
