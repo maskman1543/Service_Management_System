@@ -812,6 +812,8 @@ namespace Service_Management_System.POS
             productOrderedView.Size = new Size(451, 160);
             productOrderedView.TabIndex = 3;
             productOrderedView.CellContentClick += productOrderedView_CellContentClick;
+            productOrderedView.RowsAdded += productOrderedView_RowsAdded;
+            productOrderedView.RowsRemoved += productOrderedView_RowsRemoved;
             // 
             // panel4
             // 

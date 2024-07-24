@@ -34,6 +34,7 @@ namespace Service_Management_System.POS
             InitializeProductOrderedView();
             InitializeJobOrderedView();
             MechanicTable();
+            dgvRowCount();
             //this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
         }
 
@@ -120,7 +121,6 @@ namespace Service_Management_System.POS
                 }
                 DisplaySubTotal();
             }
-
         }
 
         private void partsServicesView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -243,7 +243,7 @@ namespace Service_Management_System.POS
                         DataRow serviceRow = dataTable.Rows[0];
 
                         // Add new row for service
-                        jobOrderedView.Rows.Add(serviceRow["ServiceID"],  serviceRow["serviceName"], serviceRow["Price"]);
+                        jobOrderedView.Rows.Add(serviceRow["ServiceID"], serviceRow["serviceName"], serviceRow["Price"]);
                     }
                 }
                 catch (Exception ex)
@@ -1266,6 +1266,21 @@ namespace Service_Management_System.POS
         private void btnEnter_Click(object sender, EventArgs e)
         {
 
+        }
+        private void dgvRowCount()
+        {
+            int rowCount = productOrderedView.Rows.Count - 1;
+            textBox1.Text = rowCount.ToString();
+        }
+
+        private void productOrderedView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            dgvRowCount();
+        }
+
+        private void productOrderedView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            dgvRowCount();
         }
 
 
