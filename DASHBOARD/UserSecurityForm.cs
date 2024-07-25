@@ -124,8 +124,8 @@ namespace Service_Management_System.DASHBOARD
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             sidebarTimer.Start();
-            //sidebar_EditUserInfo.Visible = false;
-            //sidebar_AddUser.Visible = true;
+            sidebar_EditUserInfo.Visible = false;
+            sidebar_AddUser.Visible = true;
         }
 
 
@@ -370,8 +370,8 @@ namespace Service_Management_System.DASHBOARD
         private void btnEdit_Click(object sender, EventArgs e)
         {
             sidebarTimerbtnEdit.Start();
-            //sidebar_AddUser.Visible = false;
-            //sidebar_EditUserInfo.Visible = true;
+            sidebar_AddUser.Visible = false;
+            sidebar_EditUserInfo.Visible = true;
         }
 
         private void button8_Click(object sender, EventArgs e)
