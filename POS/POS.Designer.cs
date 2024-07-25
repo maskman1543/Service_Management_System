@@ -811,8 +811,7 @@ namespace Service_Management_System.POS
             textBox7.Size = new Size(498, 42);
             textBox7.TabIndex = 10;
             textBox7.Text = "Search Product";
-            textBox7.TextChanged += textBox7_TextChanged;
-            textBox7.Enter += textBox7_Enter;
+            textBox7.TextChanged += textBox7_TextChanged_1;
             // 
             // productOrderedView
             // 
@@ -1741,12 +1740,12 @@ namespace Service_Management_System.POS
             // label21
             // 
             label21.AutoSize = true;
-            label21.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label21.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label21.ForeColor = Color.White;
-            label21.Location = new Point(39, 442);
+            label21.Location = new Point(42, 442);
             label21.Margin = new Padding(2, 0, 2, 0);
             label21.Name = "label21";
-            label21.Size = new Size(70, 23);
+            label21.Size = new Size(63, 20);
             label21.TabIndex = 11;
             label21.Text = "Position";
             // 
@@ -1763,12 +1762,12 @@ namespace Service_Management_System.POS
             // label20
             // 
             label20.AutoSize = true;
-            label20.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label20.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label20.ForeColor = Color.White;
-            label20.Location = new Point(39, 362);
+            label20.Location = new Point(42, 362);
             label20.Margin = new Padding(2, 0, 2, 0);
             label20.Name = "label20";
-            label20.Size = new Size(51, 23);
+            label20.Size = new Size(46, 20);
             label20.TabIndex = 9;
             label20.Text = "Email";
             // 
@@ -1785,12 +1784,12 @@ namespace Service_Management_System.POS
             // label19
             // 
             label19.AutoSize = true;
-            label19.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label19.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label19.ForeColor = Color.White;
-            label19.Location = new Point(39, 270);
+            label19.Location = new Point(42, 270);
             label19.Margin = new Padding(2, 0, 2, 0);
             label19.Name = "label19";
-            label19.Size = new Size(102, 23);
+            label19.Size = new Size(90, 20);
             label19.TabIndex = 7;
             label19.Text = "Contact No.";
             // 
@@ -1821,12 +1820,12 @@ namespace Service_Management_System.POS
             // label18
             // 
             label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label18.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label18.ForeColor = Color.White;
-            label18.Location = new Point(39, 185);
+            label18.Location = new Point(42, 185);
             label18.Margin = new Padding(2, 0, 2, 0);
             label18.Name = "label18";
-            label18.Size = new Size(88, 23);
+            label18.Size = new Size(77, 20);
             label18.TabIndex = 4;
             label18.Text = "Last name";
             // 
@@ -1843,12 +1842,12 @@ namespace Service_Management_System.POS
             // label17
             // 
             label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label17.ForeColor = Color.White;
-            label17.Location = new Point(39, 100);
+            label17.Location = new Point(42, 100);
             label17.Margin = new Padding(2, 0, 2, 0);
             label17.Name = "label17";
-            label17.Size = new Size(90, 23);
+            label17.Size = new Size(80, 20);
             label17.TabIndex = 2;
             label17.Text = "First name";
             // 

@@ -302,12 +302,11 @@ namespace Service_Management_System.DASHBOARD
             {
                 int selectedRowIndex = EmployeeView.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = EmployeeView.Rows[selectedRowIndex];
-                int id = Convert.ToInt32(selectedRow.Cells["EmployeeID"].Value); // Assuming "ID" is the primary key column
+                int id = Convert.ToInt32(selectedRow.Cells["EmployeeID"].Value); // Assuming "EmployeeID" is the primary key column
 
-
-                using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString))
+                using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
                 {
-                    string query = "DELETE FROM EmployeeTb WHERE EmployeeID = @ID";
+                    string query = "DELETE FROM Employees WHERE EmployeeID = @ID";
 
                     OleDbCommand command = new OleDbCommand(query, connection);
                     command.Parameters.AddWithValue("@ID", id);
@@ -316,6 +315,8 @@ namespace Service_Management_System.DASHBOARD
                     {
                         connection.Open();
                         int result = command.ExecuteNonQuery();
+                        connection.Close();
+
                         if (result > 0)
                         {
                             MessageBox.Show("Record deleted successfully.");
@@ -337,6 +338,7 @@ namespace Service_Management_System.DASHBOARD
                 MessageBox.Show("Please select a cell to delete.");
             }
         }
+
 
         private void sidebarTimerbtnEdit_Tick(object sender, EventArgs e)
         {

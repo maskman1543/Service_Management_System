@@ -681,7 +681,7 @@
             SalaryTxb.Name = "SalaryTxb";
             SalaryTxb.Size = new Size(209, 29);
             SalaryTxb.TabIndex = 11;
-            SalaryTxb.Text = "Salary";
+            SalaryTxb.Text = "DaysPresent";
             SalaryTxb.TextChanged += SalaryTxb_TextChanged;
             // 
             // Payroll_Form

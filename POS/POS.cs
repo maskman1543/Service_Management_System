@@ -2,7 +2,7 @@
 using Service_Management_System.Login_Page_Front___Backend;
 using Service_Management_System.POS.Login_Page_Front___Backend;
 using Service_Management_System.POS.Login_Page_Front_and_Back_End;
-using System;    
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -351,7 +351,7 @@ namespace Service_Management_System.POS
             lblTotal.Text = total.ToString("C");
 
         }
-
+        /*
         private void btnSaveSale_Click(object sender, EventArgs e)
         {
             int JobOrderNumber = Class1.GlobalVariables.JobOrderNumber; // JobOrderNumber is typically the JobOrderID
@@ -443,6 +443,8 @@ namespace Service_Management_System.POS
                             command2.ExecuteNonQuery();
                         }
 
+
+
                       
                     }
                 }
@@ -454,6 +456,129 @@ namespace Service_Management_System.POS
 
             MessageBox.Show("Sale saved successfully!");
         }
+        */
+
+        private void btnSaveSale_Click(object sender, EventArgs e)
+        {
+            int JobOrderNumber = Class1.GlobalVariables.JobOrderNumber; // JobOrderNumber is typically the JobOrderID
+
+            // Retrieve the CustomerName associated with the JobOrderNumber
+            string CustomerName;
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                string selectCustomerNameQuery = "SELECT CustomerName FROM JobOrders WHERE JobOrderID = @JobOrderID";
+                OleDbCommand command = new OleDbCommand(selectCustomerNameQuery, connection);
+                command.Parameters.AddWithValue("@JobOrderID", JobOrderNumber);
+
+                try
+                {
+                    connection.Open();
+                    CustomerName = (string)command.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error retrieving CustomerName: " + ex.Message);
+                    return;
+                }
+            }
+
+            DateTime DateSaved = DateTime.Now;
+
+            int CartID;
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                string insertCartQuery = "INSERT INTO CartTb_2 (CustomerName, DateSaved) VALUES (@CustomerName, @DateSaved)";
+                OleDbCommand command = new OleDbCommand(insertCartQuery, connection);
+
+                command.Parameters.AddWithValue("@CustomerName", CustomerName);
+                command.Parameters.Add("@DateSaved", OleDbType.Date).Value = DateSaved; // Correctly handling the Date/Time parameter
+
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+
+                    // Retrieve the newly generated CartID
+                    command.CommandText = "SELECT @@IDENTITY";
+                    CartID = Convert.ToInt32(command.ExecuteScalar()); // Correct casting to int
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error generating new CartID: " + ex.Message);
+                    return;
+                }
+            }
+
+            List<(int ProductID, int Quantity)> productDetails = new List<(int, int)>();
+            foreach (DataGridViewRow row in productOrderedView.Rows)
+            {
+                int productID = Convert.ToInt32(row.Cells["ProductID"].Value);
+                int quantity = Convert.ToInt32(row.Cells["Quantity"].Value); // Assuming Quantity column exists
+                productDetails.Add((productID, quantity));
+            }
+
+            List<int> serviceDetails = new List<int>();
+            foreach (DataGridViewRow row in jobOrderedView.Rows)
+            {
+                int serviceID = Convert.ToInt32(row.Cells["ServiceID"].Value);
+                serviceDetails.Add(serviceID);
+            }
+
+            // Get the subtotal value from lblsubtotal.Text and parse it as a decimal
+            string subtotalText = lblsubtotal.Text.Replace("₱", "").Trim();
+            decimal subtotal = decimal.Parse(subtotalText, System.Globalization.NumberStyles.Currency);
+
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                try
+                {
+                    connection.Open();
+                    foreach (var (productID, quantity) in productDetails)
+                    {
+                        // Insert into JobOrderItem table
+                        string query = "INSERT INTO JobOrderItem (JobOrderID, Quantity, CartID) VALUES (@JobOrderID, @Quantity, @CartID)";
+                        using (OleDbCommand command = new OleDbCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@JobOrderID", JobOrderNumber);
+                            command.Parameters.AddWithValue("@Quantity", quantity);
+                            command.Parameters.AddWithValue("@CartID", CartID);
+                            command.ExecuteNonQuery();
+                        }
+
+                        // Insert into CartProductsTb table
+                        string query2 = "INSERT INTO CartProductsTb (CartID, ProductID, Quantity, Subtotal) VALUES (@CartID, @ProductID, @Quantity, @Subtotal)";
+                        using (OleDbCommand command2 = new OleDbCommand(query2, connection))
+                        {
+                            command2.Parameters.AddWithValue("@CartID", CartID);
+                            command2.Parameters.AddWithValue("@ProductID", productID);
+                            command2.Parameters.AddWithValue("@Quantity", quantity);
+                            command2.Parameters.AddWithValue("@Subtotal", subtotal);
+                            command2.ExecuteNonQuery();
+                        }
+                    }
+
+                    foreach (int serviceID in serviceDetails)
+                    {
+                        // Insert into JobOrderService table for services
+                        string query3 = "INSERT INTO JobOrderService (ServiceID, JobOrderID) VALUES (@ServiceID, @JobOrderID)";
+                        using (OleDbCommand command3 = new OleDbCommand(query3, connection))
+                        {
+                            command3.Parameters.AddWithValue("@JobOrderID", JobOrderNumber);
+                            command3.Parameters.AddWithValue("@ServiceID", serviceID);
+                            command3.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error inserting into JobOrderItem, CartProductsTb, or JobOrderService: " + ex.Message);
+                }
+            }
+
+            MessageBox.Show("Sale saved successfully!");
+        }
+
+
 
 
 
@@ -1190,22 +1315,12 @@ namespace Service_Management_System.POS
 
         }
 
-        private void button14_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void panel_Discount_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void panel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button27_Click(object sender, EventArgs e)
         {
 
         }
@@ -1392,6 +1507,80 @@ namespace Service_Management_System.POS
         private void button1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNumbers_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
+            if (clickedButton != null)
+            {
+                if (txtDiscount.Text.Contains("%"))
+                {
+
+                    int percentIndex = txtDiscount.Text.IndexOf("%");
+                    txtDiscount.Text = txtDiscount.Text.Insert(percentIndex, clickedButton.Text);
+                }
+                else
+                {
+                    txtDiscount.Text += clickedButton.Text;
+                }
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtDiscount.Text))
+            {
+                txtDiscount.Text = txtDiscount.Text.Substring(0, txtDiscount.Text.Length - 1);
+            }
+        }
+
+        private void btnPoint_Click(object sender, EventArgs e)
+        {
+            if (!txtDiscount.Text.Contains("."))
+            {
+                if (string.IsNullOrEmpty(txtDiscount.Text))
+                {
+                    txtDiscount.Text = "0.";
+                }
+                else
+                {
+                    txtDiscount.Text += ".";
+                }
+            }
+        }
+
+        private void btnClearAll_Click(object sender, EventArgs e)
+        {
+            txtDiscount.Text = string.Empty;
+        }
+
+        private void btnPercent_Click(object sender, EventArgs e)
+        {
+            txtDiscount.Text = txtDiscount.Text.Replace("₱", "");
+
+            // Add percent sign if not already present
+            if (!txtDiscount.Text.Contains("%"))
+            {
+                if (double.TryParse(txtDiscount.Text, out double number))
+                {
+                    txtDiscount.Text = number.ToString() + "%";
+                }
+            }
+        }
+
+        private void btnPeso_Click(object sender, EventArgs e)
+        {
+            txtDiscount.Text = txtDiscount.Text.Replace("%", "");
+
+            // Add pesos sign if not already present
+            if (!txtDiscount.Text.Contains("₱"))
+            {
+                if (double.TryParse(txtDiscount.Text, out double number))
+                {
+                    txtDiscount.Text = "₱" + number.ToString();
+                }
+            }
         }
 
 
