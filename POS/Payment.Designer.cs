@@ -47,7 +47,7 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
-            button5 = new Button();
+            btnSubmit = new Button();
             button6 = new Button();
             button7 = new Button();
             button8 = new Button();
@@ -64,6 +64,9 @@
             textBox4 = new TextBox();
             textBox5 = new TextBox();
             panel6 = new Panel();
+            changelbl = new Label();
+            changelbbl = new Label();
+            btnGenReceipt = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -284,18 +287,18 @@
             button4.Text = "Debit Card";
             button4.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnSubmit
             // 
-            button5.BackColor = Color.FromArgb(3, 83, 115);
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(682, 359);
-            button5.Name = "button5";
-            button5.Size = new Size(147, 45);
-            button5.TabIndex = 8;
-            button5.Text = "Check";
-            button5.UseVisualStyleBackColor = false;
+            btnSubmit.BackColor = Color.FromArgb(3, 83, 115);
+            btnSubmit.FlatAppearance.BorderSize = 0;
+            btnSubmit.FlatStyle = FlatStyle.Flat;
+            btnSubmit.ForeColor = Color.White;
+            btnSubmit.Location = new Point(861, 422);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.Size = new Size(147, 45);
+            btnSubmit.TabIndex = 8;
+            btnSubmit.Text = "Submit";
+            btnSubmit.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
@@ -303,7 +306,7 @@
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.ForeColor = Color.White;
-            button6.Location = new Point(682, 420);
+            button6.Location = new Point(682, 361);
             button6.Name = "button6";
             button6.Size = new Size(147, 45);
             button6.TabIndex = 9;
@@ -317,7 +320,7 @@
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
             button7.ForeColor = Color.White;
-            button7.Location = new Point(682, 481);
+            button7.Location = new Point(682, 422);
             button7.Name = "button7";
             button7.Size = new Size(147, 45);
             button7.TabIndex = 10;
@@ -332,7 +335,7 @@
             button8.ForeColor = Color.White;
             button8.Image = (Image)resources.GetObject("button8.Image");
             button8.ImageAlign = ContentAlignment.MiddleLeft;
-            button8.Location = new Point(682, 541);
+            button8.Location = new Point(682, 482);
             button8.Name = "button8";
             button8.Size = new Size(147, 45);
             button8.TabIndex = 11;
@@ -349,7 +352,7 @@
             button9.ForeColor = Color.White;
             button9.Image = (Image)resources.GetObject("button9.Image");
             button9.ImageAlign = ContentAlignment.MiddleLeft;
-            button9.Location = new Point(1321, 359);
+            button9.Location = new Point(1322, 386);
             button9.Name = "button9";
             button9.Padding = new Padding(20, 0, 15, 0);
             button9.Size = new Size(147, 45);
@@ -368,7 +371,7 @@
             button10.ForeColor = Color.White;
             button10.Image = (Image)resources.GetObject("button10.Image");
             button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.Location = new Point(1322, 299);
+            button10.Location = new Point(1323, 326);
             button10.Name = "button10";
             button10.Padding = new Padding(20, 0, 20, 0);
             button10.Size = new Size(147, 45);
@@ -387,7 +390,7 @@
             button11.ForeColor = Color.White;
             button11.Image = (Image)resources.GetObject("button11.Image");
             button11.ImageAlign = ContentAlignment.MiddleLeft;
-            button11.Location = new Point(1160, 299);
+            button11.Location = new Point(1161, 326);
             button11.Name = "button11";
             button11.Padding = new Padding(25, 0, 15, 0);
             button11.Size = new Size(147, 45);
@@ -406,7 +409,7 @@
             button12.ForeColor = Color.White;
             button12.Image = (Image)resources.GetObject("button12.Image");
             button12.ImageAlign = ContentAlignment.MiddleLeft;
-            button12.Location = new Point(996, 299);
+            button12.Location = new Point(997, 326);
             button12.Name = "button12";
             button12.Padding = new Padding(25, 0, 25, 0);
             button12.Size = new Size(147, 45);
@@ -451,16 +454,16 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(838, 255);
+            label8.Location = new Point(836, 249);
             label8.Name = "label8";
-            label8.Size = new Size(47, 23);
+            label8.Size = new Size(76, 23);
             label8.TabIndex = 19;
-            label8.Text = "Paid:";
+            label8.Text = "Amount:";
             // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(224, 224, 224);
-            panel4.Location = new Point(841, 279);
+            panel4.Location = new Point(842, 306);
             panel4.Name = "panel4";
             panel4.Size = new Size(998, 10);
             panel4.TabIndex = 20;
@@ -468,7 +471,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(891, 252);
+            pictureBox1.Location = new Point(936, 178);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(21, 26);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -507,12 +510,48 @@
             panel6.Size = new Size(298, 4);
             panel6.TabIndex = 24;
             // 
+            // changelbl
+            // 
+            changelbl.AutoSize = true;
+            changelbl.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            changelbl.Location = new Point(1344, 274);
+            changelbl.Name = "changelbl";
+            changelbl.Size = new Size(0, 28);
+            changelbl.TabIndex = 25;
+            changelbl.TextChanged += changelbl_TextChanged;
+            // 
+            // changelbbl
+            // 
+            changelbbl.AutoSize = true;
+            changelbbl.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            changelbbl.Location = new Point(836, 280);
+            changelbbl.Name = "changelbbl";
+            changelbbl.Size = new Size(73, 23);
+            changelbbl.TabIndex = 26;
+            changelbbl.Text = "Change:";
+            // 
+            // btnGenReceipt
+            // 
+            btnGenReceipt.BackColor = Color.FromArgb(3, 83, 115);
+            btnGenReceipt.FlatAppearance.BorderSize = 0;
+            btnGenReceipt.FlatStyle = FlatStyle.Flat;
+            btnGenReceipt.ForeColor = Color.White;
+            btnGenReceipt.Location = new Point(861, 482);
+            btnGenReceipt.Name = "btnGenReceipt";
+            btnGenReceipt.Size = new Size(147, 45);
+            btnGenReceipt.TabIndex = 27;
+            btnGenReceipt.Text = "Generate Receipt";
+            btnGenReceipt.UseVisualStyleBackColor = false;
+            // 
             // Payment
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(242, 242, 242);
             ClientSize = new Size(1480, 737);
+            Controls.Add(btnGenReceipt);
+            Controls.Add(changelbbl);
+            Controls.Add(changelbl);
             Controls.Add(textBox4);
             Controls.Add(panel6);
             Controls.Add(textBox5);
@@ -529,7 +568,7 @@
             Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(button6);
-            Controls.Add(button5);
+            Controls.Add(btnSubmit);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -567,7 +606,7 @@
         private Button button2;
         private Button button3;
         private Button button4;
-        private Button button5;
+        private Button btnSubmit;
         private Button button6;
         private Button button7;
         private Button button8;
@@ -589,5 +628,8 @@
         private Label label9;
         private Panel panel6;
         private Panel panel7;
+        private Label changelbl;
+        private Label changelbbl;
+        private Button btnGenReceipt;
     }
 }

@@ -13,10 +13,12 @@ namespace Service_Management_System.POS
 {
     public partial class Payment : Form
     {
+        
         public Payment()
         {
             InitializeComponent();
             LoadData();
+
         }
 
         private void LoadData()
@@ -67,7 +69,7 @@ namespace Service_Management_System.POS
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-
+            CalculateAndDisplayChange();
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
@@ -95,56 +97,94 @@ namespace Service_Management_System.POS
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            // Split the value in textBox5 by spaces or commas (or any other delimiter)
+
             string[] values = textBox5.Text.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
 
-            // Assign the values to textBox3 if they exist
+
             if (values.Length > 0)
             {
-                //textBox1.Text = values.Length > 0 ? values[0] : string.Empty;
-                //textBox2.Text = values.Length > 1 ? values[1] : string.Empty;
+
                 textBox3.Text = values.Length > 0 ? values[0] : string.Empty;
             }
             else
             {
-                // Clear the textboxes if textBox5 is empty or doesn't have enough values
+
                 textBox1.Clear();
                 textBox2.Clear();
                 textBox3.Clear();
             }
+            CalculateAndDisplayChange();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Check if the clicked cell is part of the content (not header or out of bounds)
+
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                // Retrieve the row that was clicked
+
                 DataGridViewRow clickedRow = dataGridView1.Rows[e.RowIndex];
 
-                // Assuming "Total", "Subtotal", and "Tax" are the names of the columns you want to display in textBox5, textBox1, and textBox2
-                // Ensure the column names match exactly the ones in your DataGridView
+
                 var totalCell = clickedRow.Cells["Total"];
                 var subtotalCell = clickedRow.Cells["Subtotal"];
                 var taxCell = clickedRow.Cells["Tax"];
 
-                // Check if the cells are not null and have values before setting the textboxes
+
                 if (totalCell.Value != null && subtotalCell.Value != null && taxCell.Value != null)
                 {
-                    // Set the values of the text boxes to the values of the respective cells
+
                     textBox5.Text = totalCell.Value.ToString();
                     textBox1.Text = subtotalCell.Value.ToString();
                     textBox2.Text = taxCell.Value.ToString();
                 }
                 else
                 {
-                    // If any of the cells are null, clear the text boxes
+
                     textBox5.Text = string.Empty;
                     textBox1.Text = string.Empty;
                     textBox2.Text = string.Empty;
                 }
             }
         }
+
+        /*private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            CalculateAndDisplayChange();
+        }*/
+
+        private void CalculateAndDisplayChange()
+        {
+            decimal value1, value2;
+
+            // Try to parse values from textBox5 and textBox4
+            bool isValidValue1 = decimal.TryParse(textBox5.Text, out value1);
+            bool isValidValue2 = decimal.TryParse(textBox4.Text, out value2);
+
+            if (isValidValue1 && isValidValue2)
+            {
+                // Perform subtraction and display the result
+                decimal result = value1 - value2;
+                changelbl.Text = result.ToString("F2"); // Format to 2 decimal places
+            }
+            else
+            {
+                // Clear the label if inputs are invalid
+                changelbl.Text = "Invalid input";
+            }
+        }
+
+        /*private void Form1_Load(object sender, EventArgs e)
+        {
+            textBox5.TextChanged += new EventHandler(TextBox_TextChanged);
+            textBox4.TextChanged += new EventHandler(TextBox_TextChanged);
+        }*/
+
+        private void changelbl_TextChanged(object sender, EventArgs e)
+        {
+            //CalculateAndDisplayChange();
+        }
+
+        
 
     }
 }
