@@ -1,4 +1,5 @@
-﻿using Service_Management_System.DASHBOARD;
+﻿using Microsoft.Data.SqlClient;
+using Service_Management_System.DASHBOARD;
 using Service_Management_System.Login_Page_Front___Backend;
 using Service_Management_System.POS.Login_Page_Front___Backend;
 using Service_Management_System.POS.Login_Page_Front_and_Back_End;
@@ -342,16 +343,17 @@ namespace Service_Management_System.POS
             decimal productTotal = CalculateProductSubTotal();
             decimal ServiceTOtal = CalculateServiceSubTotal();
             decimal subtotal = productTotal + ServiceTOtal;
+            decimal subtotalwithvat = productTotal + ServiceTOtal;
 
-            decimal vat = subtotal * VAT_RATE;
-            decimal total = subtotal + vat;
+            decimal vat = subtotalwithvat * VAT_RATE;
+            decimal total = subtotal;
 
 
             lblsubtotal.Text = subtotal.ToString("C");
             lblVaTax.Text = vat.ToString("C");
             lblTotal.Text = total.ToString("C");
-
         }
+
 
         /*
         private void btnSaveSale_Click(object sender, EventArgs e)
@@ -1407,8 +1409,41 @@ namespace Service_Management_System.POS
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
+            // Get values from text boxes or other controls
+            string mechanicID = tbxMechanicID.Text;
+            string mechanicName = tbxMechanicName.Text;
+            string mechanicLastName = tbxMechanicLastName.Text;
+            DateTime taskAssign = DateTime.Now; // Get the current date and time
 
+            // Database connection string
+            string connectionString = Class1.GlobalVariables.ConnectionString2; // Use your actual connection string
+
+            // SQL query to insert data
+            string query = "INSERT INTO MechanicTask (MechanicID, MechanicName, MechanicLastName, taskAssign) VALUES (?, ?, ?, ?)";
+
+            // Create and open a connection
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            {
+                OleDbCommand command = new OleDbCommand(query, connection);
+                command.Parameters.AddWithValue("?", mechanicID);
+                command.Parameters.AddWithValue("?", mechanicName);
+                command.Parameters.AddWithValue("?", mechanicLastName);
+                command.Parameters.AddWithValue("?", taskAssign.ToString("yyyy-MM-dd HH:mm:ss")); // Format the DateTime for OleDb
+
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Task assigned and inserted into the database successfully.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
         }
+
+
         private void dgvRowCount()
         {
             int rowCount = productOrderedView.Rows.Count;
