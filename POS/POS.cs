@@ -1514,71 +1514,71 @@ namespace Service_Management_System.POS
             System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
             if (clickedButton != null)
             {
-                if (txtDiscount.Text.Contains("%"))
+                if (tbxDiscount.Text.Contains("%"))
                 {
 
-                    int percentIndex = txtDiscount.Text.IndexOf("%");
-                    txtDiscount.Text = txtDiscount.Text.Insert(percentIndex, clickedButton.Text);
+                    int percentIndex = tbxDiscount.Text.IndexOf("%");
+                    tbxDiscount.Text = tbxDiscount.Text.Insert(percentIndex, clickedButton.Text);
                 }
                 else
                 {
-                    txtDiscount.Text += clickedButton.Text;
+                    tbxDiscount.Text += clickedButton.Text;
                 }
             }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtDiscount.Text))
+            if (!string.IsNullOrEmpty(tbxDiscount.Text))
             {
-                txtDiscount.Text = txtDiscount.Text.Substring(0, txtDiscount.Text.Length - 1);
+                tbxDiscount.Text = tbxDiscount.Text.Substring(0, tbxDiscount.Text.Length - 1);
             }
         }
 
         private void btnPoint_Click(object sender, EventArgs e)
         {
-            if (!txtDiscount.Text.Contains("."))
+            if (!tbxDiscount.Text.Contains("."))
             {
-                if (string.IsNullOrEmpty(txtDiscount.Text))
+                if (string.IsNullOrEmpty(tbxDiscount.Text))
                 {
-                    txtDiscount.Text = "0.";
+                    tbxDiscount.Text = "0.";
                 }
                 else
                 {
-                    txtDiscount.Text += ".";
+                    tbxDiscount.Text += ".";
                 }
             }
         }
 
         private void btnClearAll_Click(object sender, EventArgs e)
         {
-            txtDiscount.Text = string.Empty;
+            tbxDiscount.Text = string.Empty;
         }
 
         private void btnPercent_Click(object sender, EventArgs e)
         {
-            txtDiscount.Text = txtDiscount.Text.Replace("₱", "");
+            tbxDiscount.Text = tbxDiscount.Text.Replace("₱", "");
 
             // Add percent sign if not already present
-            if (!txtDiscount.Text.Contains("%"))
+            if (!tbxDiscount.Text.Contains("%"))
             {
-                if (double.TryParse(txtDiscount.Text, out double number))
+                if (double.TryParse(tbxDiscount.Text, out double number))
                 {
-                    txtDiscount.Text = number.ToString() + "%";
+                    tbxDiscount.Text = number.ToString() + "%";
                 }
             }
         }
 
         private void btnPeso_Click(object sender, EventArgs e)
         {
-            txtDiscount.Text = txtDiscount.Text.Replace("%", "");
+            tbxDiscount.Text = tbxDiscount.Text.Replace("%", "");
 
             // Add pesos sign if not already present
-            if (!txtDiscount.Text.Contains("₱"))
+            if (!tbxDiscount.Text.Contains("₱"))
             {
-                if (double.TryParse(txtDiscount.Text, out double number))
+                if (double.TryParse(tbxDiscount.Text, out double number))
                 {
-                    txtDiscount.Text = "₱" + number.ToString();
+                    tbxDiscount.Text = "₱" + number.ToString();
                 }
             }
         }

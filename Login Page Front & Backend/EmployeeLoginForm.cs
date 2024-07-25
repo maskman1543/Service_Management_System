@@ -189,5 +189,11 @@ namespace Service_Management_System.Login_Page_Front___Backend
             new LoginForm().Show();
             this.Hide();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new ForgotPassword().Show();
+            this.Hide();
+        }
     }
 }
