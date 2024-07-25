@@ -104,10 +104,10 @@
             label1.BackColor = Color.FromArgb(3, 83, 115);
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(41, 9);
+            label1.Location = new Point(33, 7);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(137, 28);
+            label1.Size = new Size(109, 21);
             label1.TabIndex = 0;
             label1.Text = "Employee Info";
             label1.Click += label1_Click;
@@ -117,14 +117,13 @@
             EmployeeView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             EmployeeView.BackgroundColor = Color.White;
             EmployeeView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            EmployeeView.Location = new Point(13, 174);
-            EmployeeView.Margin = new Padding(4);
+            EmployeeView.Location = new Point(10, 139);
             EmployeeView.Name = "EmployeeView";
             EmployeeView.ReadOnly = true;
             EmployeeView.RowHeadersWidth = 51;
             EmployeeView.RowTemplate.Height = 25;
             EmployeeView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            EmployeeView.Size = new Size(1071, 306);
+            EmployeeView.Size = new Size(857, 245);
             EmployeeView.TabIndex = 1;
             EmployeeView.CellClick += EmployeeView_CellClick;
             EmployeeView.CellContentClick += EmployeeView_CellContentClick;
@@ -135,8 +134,9 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1097, 46);
+            panel1.Size = new Size(878, 37);
             panel1.TabIndex = 12;
             panel1.Paint += panel1_Paint;
             // 
@@ -147,9 +147,10 @@
             panel2.Controls.Add(btnAddUser);
             panel2.Controls.Add(button7);
             panel2.Controls.Add(button1);
-            panel2.Location = new Point(0, 46);
+            panel2.Location = new Point(0, 37);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1097, 67);
+            panel2.Size = new Size(878, 54);
             panel2.TabIndex = 13;
             panel2.Paint += panel2_Paint;
             // 
@@ -160,9 +161,10 @@
             btnEdit.Font = new Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnEdit.Image = (Image)resources.GetObject("btnEdit.Image");
             btnEdit.ImageAlign = ContentAlignment.TopCenter;
-            btnEdit.Location = new Point(222, 4);
+            btnEdit.Location = new Point(178, 3);
+            btnEdit.Margin = new Padding(2, 2, 2, 2);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(99, 60);
+            btnEdit.Size = new Size(79, 48);
             btnEdit.TabIndex = 23;
             btnEdit.Text = "Edit";
             btnEdit.TextAlign = ContentAlignment.BottomCenter;
@@ -176,9 +178,10 @@
             btnAddUser.Font = new Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnAddUser.Image = (Image)resources.GetObject("btnAddUser.Image");
             btnAddUser.ImageAlign = ContentAlignment.TopCenter;
-            btnAddUser.Location = new Point(117, 4);
+            btnAddUser.Location = new Point(94, 3);
+            btnAddUser.Margin = new Padding(2, 2, 2, 2);
             btnAddUser.Name = "btnAddUser";
-            btnAddUser.Size = new Size(99, 60);
+            btnAddUser.Size = new Size(79, 48);
             btnAddUser.TabIndex = 22;
             btnAddUser.Text = "Add user";
             btnAddUser.TextAlign = ContentAlignment.BottomCenter;
@@ -192,9 +195,10 @@
             button7.Font = new Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             button7.Image = (Image)resources.GetObject("button7.Image");
             button7.ImageAlign = ContentAlignment.TopCenter;
-            button7.Location = new Point(327, 5);
+            button7.Location = new Point(262, 4);
+            button7.Margin = new Padding(2, 2, 2, 2);
             button7.Name = "button7";
-            button7.Size = new Size(99, 60);
+            button7.Size = new Size(79, 48);
             button7.TabIndex = 21;
             button7.Text = "Delete";
             button7.TextAlign = ContentAlignment.BottomCenter;
@@ -208,9 +212,10 @@
             button1.Font = new Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.TopCenter;
-            button1.Location = new Point(12, 3);
+            button1.Location = new Point(10, 2);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(99, 60);
+            button1.Size = new Size(79, 48);
             button1.TabIndex = 15;
             button1.Text = "Refresh";
             button1.TextAlign = ContentAlignment.BottomCenter;
@@ -239,11 +244,12 @@
             sidebar_AddUser.Controls.Add(label3);
             sidebar_AddUser.Controls.Add(label2);
             sidebar_AddUser.Dock = DockStyle.Right;
-            sidebar_AddUser.Location = new Point(1097, 46);
-            sidebar_AddUser.MaximumSize = new Size(343, 860);
-            sidebar_AddUser.MinimumSize = new Size(0, 860);
+            sidebar_AddUser.Location = new Point(878, 37);
+            sidebar_AddUser.Margin = new Padding(2, 2, 2, 2);
+            sidebar_AddUser.MaximumSize = new Size(274, 688);
+            sidebar_AddUser.MinimumSize = new Size(0, 688);
             sidebar_AddUser.Name = "sidebar_AddUser";
-            sidebar_AddUser.Size = new Size(0, 860);
+            sidebar_AddUser.Size = new Size(0, 688);
             sidebar_AddUser.TabIndex = 26;
             sidebar_AddUser.Paint += panel3_Paint;
             // 
@@ -252,9 +258,10 @@
             textBox1.BackColor = Color.FromArgb(3, 83, 115);
             textBox1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(28, 89);
+            textBox1.Location = new Point(22, 71);
+            textBox1.Margin = new Padding(2, 2, 2, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(286, 27);
+            textBox1.Size = new Size(230, 23);
             textBox1.TabIndex = 21;
             // 
             // btnMechanic
@@ -263,10 +270,11 @@
             btnMechanic.FlatStyle = FlatStyle.Flat;
             btnMechanic.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             btnMechanic.ForeColor = Color.White;
-            btnMechanic.Location = new Point(181, 161);
+            btnMechanic.Location = new Point(145, 129);
+            btnMechanic.Margin = new Padding(2, 2, 2, 2);
             btnMechanic.Name = "btnMechanic";
-            btnMechanic.Padding = new Padding(10, 0, 10, 0);
-            btnMechanic.Size = new Size(119, 37);
+            btnMechanic.Padding = new Padding(8, 0, 8, 0);
+            btnMechanic.Size = new Size(95, 30);
             btnMechanic.TabIndex = 20;
             btnMechanic.Text = "Mechanic";
             btnMechanic.UseVisualStyleBackColor = false;
@@ -278,10 +286,11 @@
             btnCashier.FlatStyle = FlatStyle.Flat;
             btnCashier.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             btnCashier.ForeColor = Color.White;
-            btnCashier.Location = new Point(77, 161);
+            btnCashier.Location = new Point(62, 129);
+            btnCashier.Margin = new Padding(2, 2, 2, 2);
             btnCashier.Name = "btnCashier";
-            btnCashier.Padding = new Padding(10, 0, 10, 0);
-            btnCashier.Size = new Size(104, 37);
+            btnCashier.Padding = new Padding(8, 0, 8, 0);
+            btnCashier.Size = new Size(83, 30);
             btnCashier.TabIndex = 19;
             btnCashier.Text = "Cashier";
             btnCashier.UseVisualStyleBackColor = false;
@@ -292,9 +301,10 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(28, 127);
+            label8.Location = new Point(22, 102);
+            label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(67, 23);
+            label8.Size = new Size(56, 19);
             label8.TabIndex = 18;
             label8.Text = "Position";
             // 
@@ -303,9 +313,10 @@
             EEmailValue.BackColor = Color.FromArgb(3, 83, 115);
             EEmailValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             EEmailValue.ForeColor = Color.White;
-            EEmailValue.Location = new Point(27, 380);
+            EEmailValue.Location = new Point(22, 304);
+            EEmailValue.Margin = new Padding(2, 2, 2, 2);
             EEmailValue.Name = "EEmailValue";
-            EEmailValue.Size = new Size(286, 27);
+            EEmailValue.Size = new Size(230, 23);
             EEmailValue.TabIndex = 16;
             // 
             // label5
@@ -313,9 +324,10 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(26, 353);
+            label5.Location = new Point(21, 282);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(50, 23);
+            label5.Size = new Size(41, 19);
             label5.TabIndex = 15;
             label5.Text = "Email";
             // 
@@ -327,10 +339,11 @@
             button6.ForeColor = Color.White;
             button6.Image = (Image)resources.GetObject("button6.Image");
             button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(115, 811);
+            button6.Location = new Point(92, 649);
+            button6.Margin = new Padding(2, 2, 2, 2);
             button6.Name = "button6";
-            button6.Padding = new Padding(10, 0, 10, 0);
-            button6.Size = new Size(104, 37);
+            button6.Padding = new Padding(8, 0, 8, 0);
+            button6.Size = new Size(83, 30);
             button6.TabIndex = 14;
             button6.Text = "Save";
             button6.TextAlign = ContentAlignment.MiddleRight;
@@ -345,9 +358,10 @@
             btnCancelAddUsers.ForeColor = Color.White;
             btnCancelAddUsers.Image = (Image)resources.GetObject("btnCancelAddUsers.Image");
             btnCancelAddUsers.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelAddUsers.Location = new Point(225, 811);
+            btnCancelAddUsers.Location = new Point(180, 649);
+            btnCancelAddUsers.Margin = new Padding(2, 2, 2, 2);
             btnCancelAddUsers.Name = "btnCancelAddUsers";
-            btnCancelAddUsers.Size = new Size(104, 37);
+            btnCancelAddUsers.Size = new Size(83, 30);
             btnCancelAddUsers.TabIndex = 13;
             btnCancelAddUsers.Text = "Cancel";
             btnCancelAddUsers.TextAlign = ContentAlignment.MiddleRight;
@@ -361,10 +375,10 @@
             lblBack.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             lblBack.ForeColor = Color.White;
             lblBack.Image = (Image)resources.GetObject("lblBack.Image");
-            lblBack.Location = new Point(295, 17);
+            lblBack.Location = new Point(236, 14);
             lblBack.Margin = new Padding(2, 0, 2, 0);
             lblBack.Name = "lblBack";
-            lblBack.Size = new Size(34, 41);
+            lblBack.Size = new Size(28, 32);
             lblBack.TabIndex = 12;
             lblBack.Text = "  ";
             lblBack.Click += lblBack_Click;
@@ -374,9 +388,10 @@
             ECPasswordValue.BackColor = Color.FromArgb(3, 83, 115);
             ECPasswordValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             ECPasswordValue.ForeColor = Color.White;
-            ECPasswordValue.Location = new Point(28, 530);
+            ECPasswordValue.Location = new Point(22, 424);
+            ECPasswordValue.Margin = new Padding(2, 2, 2, 2);
             ECPasswordValue.Name = "ECPasswordValue";
-            ECPasswordValue.Size = new Size(286, 27);
+            ECPasswordValue.Size = new Size(230, 23);
             ECPasswordValue.TabIndex = 11;
             // 
             // label7
@@ -384,9 +399,10 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(27, 503);
+            label7.Location = new Point(22, 402);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(145, 23);
+            label7.Size = new Size(120, 19);
             label7.TabIndex = 10;
             label7.Text = "Confirm password";
             // 
@@ -395,9 +411,10 @@
             EPasswordValue.BackColor = Color.FromArgb(3, 83, 115);
             EPasswordValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             EPasswordValue.ForeColor = Color.White;
-            EPasswordValue.Location = new Point(27, 453);
+            EPasswordValue.Location = new Point(22, 362);
+            EPasswordValue.Margin = new Padding(2, 2, 2, 2);
             EPasswordValue.Name = "EPasswordValue";
-            EPasswordValue.Size = new Size(286, 27);
+            EPasswordValue.Size = new Size(230, 23);
             EPasswordValue.TabIndex = 9;
             // 
             // label6
@@ -405,9 +422,10 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(26, 426);
+            label6.Location = new Point(21, 341);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(79, 23);
+            label6.Size = new Size(67, 19);
             label6.TabIndex = 8;
             label6.Text = "Password";
             // 
@@ -416,9 +434,10 @@
             ELastNameValue.BackColor = Color.FromArgb(3, 83, 115);
             ELastNameValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             ELastNameValue.ForeColor = Color.White;
-            ELastNameValue.Location = new Point(27, 309);
+            ELastNameValue.Location = new Point(22, 247);
+            ELastNameValue.Margin = new Padding(2, 2, 2, 2);
             ELastNameValue.Name = "ELastNameValue";
-            ELastNameValue.Size = new Size(286, 27);
+            ELastNameValue.Size = new Size(230, 23);
             ELastNameValue.TabIndex = 5;
             // 
             // label4
@@ -426,9 +445,10 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(26, 282);
+            label4.Location = new Point(21, 226);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(85, 23);
+            label4.Size = new Size(71, 19);
             label4.TabIndex = 4;
             label4.Text = "Last name";
             // 
@@ -437,9 +457,10 @@
             EFirstNameValue.BackColor = Color.FromArgb(3, 83, 115);
             EFirstNameValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             EFirstNameValue.ForeColor = Color.White;
-            EFirstNameValue.Location = new Point(27, 239);
+            EFirstNameValue.Location = new Point(22, 191);
+            EFirstNameValue.Margin = new Padding(2, 2, 2, 2);
             EFirstNameValue.Name = "EFirstNameValue";
-            EFirstNameValue.Size = new Size(286, 27);
+            EFirstNameValue.Size = new Size(230, 23);
             EFirstNameValue.TabIndex = 3;
             // 
             // label3
@@ -447,9 +468,10 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(26, 212);
+            label3.Location = new Point(21, 170);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(86, 23);
+            label3.Size = new Size(72, 19);
             label3.TabIndex = 2;
             label3.Text = "First name";
             label3.Click += label3_Click;
@@ -460,10 +482,10 @@
             label2.BackColor = Color.FromArgb(3, 83, 115);
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(16, 20);
+            label2.Location = new Point(13, 16);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(119, 31);
+            label2.Size = new Size(100, 25);
             label2.TabIndex = 1;
             label2.Text = "Add users";
             // 
@@ -489,11 +511,12 @@
             sidebar_EditUserInfo.Controls.Add(label13);
             sidebar_EditUserInfo.Controls.Add(label14);
             sidebar_EditUserInfo.Dock = DockStyle.Right;
-            sidebar_EditUserInfo.Location = new Point(1097, 46);
-            sidebar_EditUserInfo.MaximumSize = new Size(343, 860);
-            sidebar_EditUserInfo.MinimumSize = new Size(0, 860);
+            sidebar_EditUserInfo.Location = new Point(878, 37);
+            sidebar_EditUserInfo.Margin = new Padding(2, 2, 2, 2);
+            sidebar_EditUserInfo.MaximumSize = new Size(274, 688);
+            sidebar_EditUserInfo.MinimumSize = new Size(0, 688);
             sidebar_EditUserInfo.Name = "sidebar_EditUserInfo";
-            sidebar_EditUserInfo.Size = new Size(0, 860);
+            sidebar_EditUserInfo.Size = new Size(0, 688);
             sidebar_EditUserInfo.TabIndex = 26;
             sidebar_EditUserInfo.Paint += sidebar_EditUserInfo_Paint;
             // 
@@ -506,11 +529,12 @@
             panelUpper.Controls.Add(txbconPass);
             panelUpper.Controls.Add(txbnewPass);
             panelUpper.Controls.Add(label16);
-            panelUpper.Location = new Point(0, 417);
-            panelUpper.MaximumSize = new Size(343, 300);
-            panelUpper.MinimumSize = new Size(343, 0);
+            panelUpper.Location = new Point(0, 334);
+            panelUpper.Margin = new Padding(2, 2, 2, 2);
+            panelUpper.MaximumSize = new Size(274, 240);
+            panelUpper.MinimumSize = new Size(274, 0);
             panelUpper.Name = "panelUpper";
-            panelUpper.Size = new Size(343, 0);
+            panelUpper.Size = new Size(274, 0);
             panelUpper.TabIndex = 34;
             // 
             // button2
@@ -520,10 +544,11 @@
             button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(91, 245);
+            button2.Location = new Point(73, 196);
+            button2.Margin = new Padding(2, 2, 2, 2);
             button2.Name = "button2";
-            button2.Padding = new Padding(10, 0, 10, 0);
-            button2.Size = new Size(128, 37);
+            button2.Padding = new Padding(8, 0, 8, 0);
+            button2.Size = new Size(102, 30);
             button2.TabIndex = 35;
             button2.Text = "Save";
             button2.UseVisualStyleBackColor = false;
@@ -533,9 +558,10 @@
             // 
             label10.AutoSize = true;
             label10.ForeColor = Color.White;
-            label10.Location = new Point(16, 10);
+            label10.Location = new Point(13, 8);
+            label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
-            label10.Size = new Size(100, 20);
+            label10.Size = new Size(79, 15);
             label10.TabIndex = 20;
             label10.Text = "Old password";
             // 
@@ -544,18 +570,20 @@
             txboldPass.BackColor = Color.FromArgb(3, 83, 115);
             txboldPass.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txboldPass.ForeColor = Color.White;
-            txboldPass.Location = new Point(17, 37);
+            txboldPass.Location = new Point(14, 30);
+            txboldPass.Margin = new Padding(2, 2, 2, 2);
             txboldPass.Name = "txboldPass";
-            txboldPass.Size = new Size(286, 27);
+            txboldPass.Size = new Size(230, 23);
             txboldPass.TabIndex = 21;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.White;
-            label9.Location = new Point(17, 87);
+            label9.Location = new Point(14, 70);
+            label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new Size(106, 20);
+            label9.Size = new Size(84, 15);
             label9.TabIndex = 22;
             label9.Text = "New password";
             // 
@@ -564,9 +592,10 @@
             txbconPass.BackColor = Color.FromArgb(3, 83, 115);
             txbconPass.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txbconPass.ForeColor = Color.White;
-            txbconPass.Location = new Point(19, 187);
+            txbconPass.Location = new Point(15, 150);
+            txbconPass.Margin = new Padding(2, 2, 2, 2);
             txbconPass.Name = "txbconPass";
-            txbconPass.Size = new Size(286, 27);
+            txbconPass.Size = new Size(230, 23);
             txbconPass.TabIndex = 31;
             // 
             // txbnewPass
@@ -574,9 +603,10 @@
             txbnewPass.BackColor = Color.FromArgb(3, 83, 115);
             txbnewPass.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txbnewPass.ForeColor = Color.White;
-            txbnewPass.Location = new Point(18, 114);
+            txbnewPass.Location = new Point(14, 91);
+            txbnewPass.Margin = new Padding(2, 2, 2, 2);
             txbnewPass.Name = "txbnewPass";
-            txbnewPass.Size = new Size(286, 27);
+            txbnewPass.Size = new Size(230, 23);
             txbnewPass.TabIndex = 23;
             // 
             // label16
@@ -584,9 +614,10 @@
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label16.ForeColor = Color.White;
-            label16.Location = new Point(18, 160);
+            label16.Location = new Point(14, 128);
+            label16.Margin = new Padding(2, 0, 2, 0);
             label16.Name = "label16";
-            label16.Size = new Size(145, 23);
+            label16.Size = new Size(120, 19);
             label16.TabIndex = 30;
             label16.Text = "Confirm password";
             // 
@@ -594,7 +625,8 @@
             // 
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(225, 381);
+            pictureBox1.Location = new Point(180, 305);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(30, 30);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -608,10 +640,10 @@
             label15.BackColor = Color.FromArgb(3, 83, 115);
             label15.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             label15.ForeColor = Color.White;
-            label15.Location = new Point(27, 380);
+            label15.Location = new Point(22, 304);
             label15.Margin = new Padding(2, 0, 2, 0);
             label15.Name = "label15";
-            label15.Size = new Size(171, 31);
+            label15.Size = new Size(140, 25);
             label15.TabIndex = 32;
             label15.Text = "Reset Password";
             // 
@@ -623,10 +655,11 @@
             button8.ForeColor = Color.White;
             button8.Image = (Image)resources.GetObject("button8.Image");
             button8.ImageAlign = ContentAlignment.MiddleLeft;
-            button8.Location = new Point(91, 811);
+            button8.Location = new Point(73, 649);
+            button8.Margin = new Padding(2, 2, 2, 2);
             button8.Name = "button8";
-            button8.Padding = new Padding(10, 0, 10, 0);
-            button8.Size = new Size(128, 37);
+            button8.Padding = new Padding(8, 0, 8, 0);
+            button8.Size = new Size(102, 30);
             button8.TabIndex = 26;
             button8.Text = "Update";
             button8.TextAlign = ContentAlignment.MiddleRight;
@@ -641,9 +674,10 @@
             btnCancelEditUsers.ForeColor = Color.White;
             btnCancelEditUsers.Image = (Image)resources.GetObject("btnCancelEditUsers.Image");
             btnCancelEditUsers.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelEditUsers.Location = new Point(225, 811);
+            btnCancelEditUsers.Location = new Point(180, 649);
+            btnCancelEditUsers.Margin = new Padding(2, 2, 2, 2);
             btnCancelEditUsers.Name = "btnCancelEditUsers";
-            btnCancelEditUsers.Size = new Size(104, 37);
+            btnCancelEditUsers.Size = new Size(83, 30);
             btnCancelEditUsers.TabIndex = 25;
             btnCancelEditUsers.Text = "Cancel";
             btnCancelEditUsers.TextAlign = ContentAlignment.MiddleRight;
@@ -657,10 +691,10 @@
             lblBackEdit.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             lblBackEdit.ForeColor = Color.White;
             lblBackEdit.Image = (Image)resources.GetObject("lblBackEdit.Image");
-            lblBackEdit.Location = new Point(295, 21);
+            lblBackEdit.Location = new Point(236, 17);
             lblBackEdit.Margin = new Padding(2, 0, 2, 0);
             lblBackEdit.Name = "lblBackEdit";
-            lblBackEdit.Size = new Size(34, 41);
+            lblBackEdit.Size = new Size(28, 32);
             lblBackEdit.TabIndex = 24;
             lblBackEdit.Text = "  ";
             lblBackEdit.Click += lblBackEdit_Click;
@@ -670,18 +704,20 @@
             txbEmail.BackColor = Color.FromArgb(3, 83, 115);
             txbEmail.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txbEmail.ForeColor = Color.White;
-            txbEmail.Location = new Point(27, 313);
+            txbEmail.Location = new Point(22, 250);
+            txbEmail.Margin = new Padding(2, 2, 2, 2);
             txbEmail.Name = "txbEmail";
-            txbEmail.Size = new Size(286, 27);
+            txbEmail.Size = new Size(230, 23);
             txbEmail.TabIndex = 19;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.ForeColor = Color.White;
-            label11.Location = new Point(26, 286);
+            label11.Location = new Point(21, 229);
+            label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
-            label11.Size = new Size(46, 20);
+            label11.Size = new Size(36, 15);
             label11.TabIndex = 18;
             label11.Text = "Email";
             // 
@@ -690,18 +726,20 @@
             txbLname.BackColor = Color.FromArgb(3, 83, 115);
             txbLname.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txbLname.ForeColor = Color.White;
-            txbLname.Location = new Point(27, 197);
+            txbLname.Location = new Point(22, 158);
+            txbLname.Margin = new Padding(2, 2, 2, 2);
             txbLname.Name = "txbLname";
-            txbLname.Size = new Size(286, 27);
+            txbLname.Size = new Size(230, 23);
             txbLname.TabIndex = 17;
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.ForeColor = Color.White;
-            label12.Location = new Point(26, 170);
+            label12.Location = new Point(21, 136);
+            label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
-            label12.Size = new Size(76, 20);
+            label12.Size = new Size(61, 15);
             label12.TabIndex = 16;
             label12.Text = "Last name";
             // 
@@ -710,18 +748,20 @@
             txbFname.BackColor = Color.FromArgb(3, 83, 115);
             txbFname.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txbFname.ForeColor = Color.White;
-            txbFname.Location = new Point(27, 127);
+            txbFname.Location = new Point(22, 102);
+            txbFname.Margin = new Padding(2, 2, 2, 2);
             txbFname.Name = "txbFname";
-            txbFname.Size = new Size(286, 27);
+            txbFname.Size = new Size(230, 23);
             txbFname.TabIndex = 15;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.ForeColor = Color.White;
-            label13.Location = new Point(26, 100);
+            label13.Location = new Point(21, 80);
+            label13.Margin = new Padding(2, 0, 2, 0);
             label13.Name = "label13";
-            label13.Size = new Size(77, 20);
+            label13.Size = new Size(62, 15);
             label13.TabIndex = 14;
             label13.Text = "First name";
             // 
@@ -731,10 +771,10 @@
             label14.BackColor = Color.FromArgb(3, 83, 115);
             label14.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label14.ForeColor = Color.White;
-            label14.Location = new Point(16, 24);
+            label14.Location = new Point(13, 19);
             label14.Margin = new Padding(2, 0, 2, 0);
             label14.Name = "label14";
-            label14.Size = new Size(253, 31);
+            label14.Size = new Size(209, 25);
             label14.TabIndex = 13;
             label14.Text = "Edit users information";
             // 
@@ -747,10 +787,10 @@
             // 
             panel8.BackColor = Color.FromArgb(90, 126, 140);
             panel8.Controls.Add(label17);
-            panel8.Location = new Point(13, 118);
+            panel8.Location = new Point(10, 94);
             panel8.Margin = new Padding(2);
             panel8.Name = "panel8";
-            panel8.Size = new Size(1071, 56);
+            panel8.Size = new Size(857, 45);
             panel8.TabIndex = 27;
             // 
             // label17
@@ -758,10 +798,10 @@
             label17.AutoSize = true;
             label17.Font = new Font("Century Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             label17.ForeColor = Color.White;
-            label17.Location = new Point(440, 8);
+            label17.Location = new Point(352, 6);
             label17.Margin = new Padding(2, 0, 2, 0);
             label17.Name = "label17";
-            label17.Size = new Size(144, 34);
+            label17.Size = new Size(115, 25);
             label17.TabIndex = 0;
             label17.Text = "CASHIERS";
             // 
@@ -769,10 +809,10 @@
             // 
             panel3.BackColor = Color.FromArgb(90, 126, 140);
             panel3.Controls.Add(label18);
-            panel3.Location = new Point(11, 493);
+            panel3.Location = new Point(9, 394);
             panel3.Margin = new Padding(2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1071, 56);
+            panel3.Size = new Size(857, 45);
             panel3.TabIndex = 28;
             // 
             // label18
@@ -780,10 +820,10 @@
             label18.AutoSize = true;
             label18.Font = new Font("Century Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             label18.ForeColor = Color.White;
-            label18.Location = new Point(440, 8);
+            label18.Location = new Point(352, 6);
             label18.Margin = new Padding(2, 0, 2, 0);
             label18.Name = "label18";
-            label18.Size = new Size(182, 34);
+            label18.Size = new Size(148, 25);
             label18.TabIndex = 0;
             label18.Text = "MECHANICS";
             // 
@@ -792,14 +832,13 @@
             mechanicsView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             mechanicsView.BackgroundColor = Color.White;
             mechanicsView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            mechanicsView.Location = new Point(11, 547);
-            mechanicsView.Margin = new Padding(4);
+            mechanicsView.Location = new Point(9, 438);
             mechanicsView.Name = "mechanicsView";
             mechanicsView.ReadOnly = true;
             mechanicsView.RowHeadersWidth = 51;
             mechanicsView.RowTemplate.Height = 25;
             mechanicsView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            mechanicsView.Size = new Size(1071, 306);
+            mechanicsView.Size = new Size(857, 245);
             mechanicsView.TabIndex = 29;
             mechanicsView.CellClick += mechanicsView_CellClick;
             // 
@@ -810,9 +849,9 @@
             // 
             // UserSecurityForm
             // 
-            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1097, 906);
+            ClientSize = new Size(878, 725);
             Controls.Add(sidebar_AddUser);
             Controls.Add(sidebar_EditUserInfo);
             Controls.Add(panel2);
