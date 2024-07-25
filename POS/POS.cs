@@ -36,6 +36,7 @@ namespace Service_Management_System.POS
             InitializeJobOrderedView();
             MechanicTable();
             dgvRowCount();
+
             //this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
         }
 
@@ -547,34 +548,13 @@ namespace Service_Management_System.POS
         // Existing search zlogic
         private int _selectedProductID = -1; // Use -1 to indicate no selection
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-            SearchProduct(textBox7.Text.Trim());
-        }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            string searchQuery = textBox7.Text.Trim();
-            if (!string.IsNullOrEmpty(searchQuery))
-            {
-                DataTable dataTable = (DataTable)partsView.DataSource;
-                if (dataTable != null && dataTable.Rows.Count > 0)
-                {
-                    int productID = Convert.ToInt32(dataTable.Rows[0]["ProductID"]);
-                    AddOrUpdateProductOrderedView(productID);
-                }
-            }
-            else
-            {
-                LoadPartsView(); // Reload all products if search query is empty
-            }
-        }
 
         private void SearchProduct(string searchTerm)
         {
             string query = "SELECT ProductID, ProductName, Price " +
                       "FROM Products " +
-                      "WHERE Products.ProductName LIKE ? OR Products.Barcode LIKE ?";
+                      "WHERE ProductName LIKE ? OR Barcode LIKE ?";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
@@ -611,6 +591,28 @@ namespace Service_Management_System.POS
                         connection.Close();
                     }
                 }
+            }
+        }
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            SearchProduct(textBox7.Text.Trim());
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string searchQuery = textBox7.Text.Trim();
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                DataTable dataTable = (DataTable)partsView.DataSource;
+                if (dataTable != null && dataTable.Rows.Count > 0)
+                {
+                    int productID = Convert.ToInt32(dataTable.Rows[0]["ProductID"]);
+                    AddOrUpdateProductOrderedView(productID);
+                }
+            }
+            else
+            {
+                LoadPartsView(); // Reload all products if search query is empty
             }
         }
         private void textBox8_TextChanged(object sender, EventArgs e)
@@ -1389,6 +1391,12 @@ namespace Service_Management_System.POS
         private void panel_UserInfo_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void textBox7_TextChanged_1(object sender, EventArgs e)
+        {
+            SearchProduct(textBox7.Text.Trim());
+          
         }
 
 

@@ -811,8 +811,7 @@ namespace Service_Management_System.POS
             textBox7.Size = new Size(399, 34);
             textBox7.TabIndex = 10;
             textBox7.Text = "Search Product";
-            textBox7.TextChanged += textBox7_TextChanged;
-            textBox7.Enter += textBox7_Enter;
+            textBox7.TextChanged += textBox7_TextChanged_1;
             // 
             // productOrderedView
             // 
