@@ -30,6 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            dateTimePickerStart = new DateTimePicker();
+            dateTimePickerEnd = new DateTimePicker();
+            Okay = new Button();
+            button2 = new Button();
+            button1 = new Button();
             btnYearly = new Button();
             btnWeekly = new Button();
             btnMonthly = new Button();
@@ -43,13 +48,18 @@
             guna2Elipse_panel4 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse_panel5 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(components);
-            button1 = new Button();
+            dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(3, 83, 115);
+            panel1.Controls.Add(dateTimePickerStart);
+            panel1.Controls.Add(dateTimePickerEnd);
+            panel1.Controls.Add(Okay);
+            panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(btnYearly);
             panel1.Controls.Add(btnWeekly);
@@ -60,6 +70,66 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1097, 54);
             panel1.TabIndex = 2;
+            // 
+            // dateTimePickerStart
+            // 
+            dateTimePickerStart.Location = new Point(45, 16);
+            dateTimePickerStart.Name = "dateTimePickerStart";
+            dateTimePickerStart.Size = new Size(129, 27);
+            dateTimePickerStart.TabIndex = 11;
+            // 
+            // dateTimePickerEnd
+            // 
+            dateTimePickerEnd.Location = new Point(173, 16);
+            dateTimePickerEnd.Name = "dateTimePickerEnd";
+            dateTimePickerEnd.Size = new Size(129, 27);
+            dateTimePickerEnd.TabIndex = 10;
+            dateTimePickerEnd.ValueChanged += dateTimePickerStart_ValueChanged;
+            // 
+            // Okay
+            // 
+            Okay.BackColor = Color.White;
+            Okay.FlatAppearance.BorderSize = 0;
+            Okay.FlatStyle = FlatStyle.Flat;
+            Okay.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Okay.ForeColor = Color.FromArgb(11, 67, 89);
+            Okay.Location = new Point(303, 17);
+            Okay.Name = "Okay";
+            Okay.Size = new Size(46, 26);
+            Okay.TabIndex = 9;
+            Okay.Text = "Ok";
+            Okay.UseVisualStyleBackColor = false;
+            Okay.Click += Okay_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.White;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.ForeColor = Color.FromArgb(11, 67, 89);
+            button2.Location = new Point(364, 12);
+            button2.Name = "button2";
+            button2.Size = new Size(121, 35);
+            button2.TabIndex = 8;
+            button2.Text = "Custom";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.FromArgb(11, 67, 89);
+            button1.Location = new Point(485, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(121, 35);
+            button1.TabIndex = 7;
+            button1.Text = "Yesterday";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // btnYearly
             // 
@@ -74,6 +144,7 @@
             btnYearly.TabIndex = 5;
             btnYearly.Text = "This year";
             btnYearly.UseVisualStyleBackColor = false;
+            btnYearly.Click += btnYearly_Click_1;
             // 
             // btnWeekly
             // 
@@ -88,6 +159,7 @@
             btnWeekly.TabIndex = 6;
             btnWeekly.Text = "Weekly";
             btnWeekly.UseVisualStyleBackColor = false;
+            btnWeekly.Click += btnWeekly_Click_1;
             // 
             // btnMonthly
             // 
@@ -102,6 +174,7 @@
             btnMonthly.TabIndex = 4;
             btnMonthly.Text = "Monthly";
             btnMonthly.UseVisualStyleBackColor = false;
+            btnMonthly.Click += btnMonthly_Click;
             // 
             // btnDaily
             // 
@@ -116,6 +189,7 @@
             btnDaily.TabIndex = 2;
             btnDaily.Text = "Today";
             btnDaily.UseVisualStyleBackColor = false;
+            btnDaily.Click += btnDaily_Click;
             // 
             // panel2
             // 
@@ -138,7 +212,7 @@
             panel4.BackColor = Color.LightGray;
             panel4.Location = new Point(12, 322);
             panel4.Name = "panel4";
-            panel4.Size = new Size(537, 318);
+            panel4.Size = new Size(537, 262);
             panel4.TabIndex = 5;
             // 
             // panel5
@@ -146,15 +220,15 @@
             panel5.BackColor = Color.LightGray;
             panel5.Location = new Point(563, 321);
             panel5.Name = "panel5";
-            panel5.Size = new Size(522, 318);
+            panel5.Size = new Size(522, 263);
             panel5.TabIndex = 6;
             // 
             // panel6
             // 
             panel6.BackColor = Color.LightGray;
-            panel6.Location = new Point(12, 653);
+            panel6.Location = new Point(12, 590);
             panel6.Name = "panel6";
-            panel6.Size = new Size(1073, 240);
+            panel6.Size = new Size(1073, 303);
             panel6.TabIndex = 7;
             // 
             // guna2Elipse_panel3
@@ -177,19 +251,15 @@
             guna2Elipse6.BorderRadius = 10;
             guna2Elipse6.TargetControl = panel6;
             // 
-            // button1
+            // dataGridView1
             // 
-            button1.BackColor = Color.White;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.FromArgb(11, 67, 89);
-            button1.Location = new Point(485, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(121, 35);
-            button1.TabIndex = 7;
-            button1.Text = "Yesterday";
-            button1.UseVisualStyleBackColor = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(322, 60);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(446, 439);
+            dataGridView1.TabIndex = 0;
             // 
             // AnalyticsForm
             // 
@@ -197,6 +267,7 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.White;
             ClientSize = new Size(1097, 906);
+            Controls.Add(dataGridView1);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel4);
@@ -207,6 +278,7 @@
             Name = "AnalyticsForm";
             Text = "AnalyticsForm";
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -226,5 +298,10 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse_panel5;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
         private Button button1;
+        private DataGridView dataGridView1;
+        private DateTimePicker dateTimePickerStart;
+        private DateTimePicker dateTimePickerEnd;
+        private Button Okay;
+        private Button button2;
     }
 }

@@ -25,6 +25,15 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
             InitializeComponent();
             PasswordTextBox.PasswordChar = '•';
         }
+        public static class UserInfo
+        {
+            public static string FirstName { get; set; }
+            public static string LastName { get; set; }
+            public static string Email { get; set; }
+            public static string Contact { get; set; }
+            public static string Position { get; set; }
+        }
+
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -84,9 +93,21 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
 
                         if (reader.Read()) // If user exists
                         {
+                            // Fetch user details
+                            string firstName = reader["FirstName"].ToString();
+                            string lastName = reader["LastName"].ToString();
+                            string userEmail = reader["Email"].ToString();
+                            string contact = reader["Contact"].ToString();
+
                             // Successful login
                             MessageBox.Show("Login successful!");
                             // You can perform further actions here after successful login
+                            UserInfo.FirstName = firstName;
+                            UserInfo.LastName = lastName;
+                            UserInfo.Email = userEmail;
+                            UserInfo.Contact = contact;
+
+
                             MainMenu mainMenu = new MainMenu();
                             mainMenu.Show();
                             this.Close();
@@ -171,7 +192,8 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
 
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            new ForgotPassword().Show();
+            this.Hide();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

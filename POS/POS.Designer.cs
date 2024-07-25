@@ -32,9 +32,9 @@ namespace Service_Management_System.POS
             components = new System.ComponentModel.Container();
             PictureBox minilogo;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POSForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             sidepanelPOS = new Panel();
             panel7 = new Panel();
             moveup = new PictureBox();
@@ -97,7 +97,7 @@ namespace Service_Management_System.POS
             panel10 = new Panel();
             label12 = new Label();
             panel_Discount = new Panel();
-            tbxInputDicsount = new TextBox();
+            tbxDiscount = new TextBox();
             label8 = new Label();
             panel12 = new Panel();
             panel11 = new Panel();
@@ -206,12 +206,12 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(button12);
             sidepanelPOS.Dock = DockStyle.Right;
             sidepanelPOS.ImeMode = ImeMode.NoControl;
-            sidepanelPOS.Location = new Point(1476, 78);
+            sidepanelPOS.Location = new Point(1480, 78);
             sidepanelPOS.Margin = new Padding(2);
-            sidepanelPOS.MaximumSize = new Size(255, 656);
-            sidepanelPOS.MinimumSize = new Size(4, 656);
+            sidepanelPOS.MaximumSize = new Size(256, 656);
+            sidepanelPOS.MinimumSize = new Size(0, 656);
             sidepanelPOS.Name = "sidepanelPOS";
-            sidepanelPOS.Size = new Size(4, 656);
+            sidepanelPOS.Size = new Size(0, 656);
             sidepanelPOS.TabIndex = 16;
             sidepanelPOS.MouseEnter += sidepanelPOS_MouseEnter;
             // 
@@ -709,7 +709,6 @@ namespace Service_Management_System.POS
             textBox1.TabIndex = 5;
             textBox1.TextAlign = HorizontalAlignment.Center;
             textBox1.TextChanged += textBox1_TextChanged;
-            textBox1.KeyPress += textBox1_KeyPress;
             // 
             // lblQuantity
             // 
@@ -812,7 +811,6 @@ namespace Service_Management_System.POS
             textBox7.Size = new Size(498, 42);
             textBox7.TabIndex = 10;
             textBox7.Text = "Search Product";
-            textBox7.TextChanged += textBox7_TextChanged_1;
             // 
             // productOrderedView
             // 
@@ -1186,7 +1184,7 @@ namespace Service_Management_System.POS
             // panel_Discount
             // 
             panel_Discount.BackColor = Color.FromArgb(242, 242, 242);
-            panel_Discount.Controls.Add(tbxInputDicsount);
+            panel_Discount.Controls.Add(tbxDiscount);
             panel_Discount.Controls.Add(label8);
             panel_Discount.Controls.Add(panel12);
             panel_Discount.Controls.Add(panel11);
@@ -1196,29 +1194,28 @@ namespace Service_Management_System.POS
             panel_Discount.Location = new Point(492, 0);
             panel_Discount.Margin = new Padding(2);
             panel_Discount.MaximumSize = new Size(450, 705);
+            panel_Discount.MinimumSize = new Size(450, 0);
             panel_Discount.Name = "panel_Discount";
-            panel_Discount.Size = new Size(450, 705);
+            panel_Discount.Size = new Size(450, 0);
             panel_Discount.TabIndex = 15;
             panel_Discount.Paint += panel_Discount_Paint;
             // 
-            // tbxInputDicsount
+            // tbxDiscount
             // 
-            tbxInputDicsount.BackColor = Color.FromArgb(242, 242, 242);
-            tbxInputDicsount.BorderStyle = BorderStyle.None;
-            tbxInputDicsount.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            tbxInputDicsount.ForeColor = Color.FromArgb(3, 83, 115);
-            tbxInputDicsount.Location = new Point(206, 270);
-            tbxInputDicsount.Margin = new Padding(2);
-            tbxInputDicsount.Name = "tbxInputDicsount";
-            tbxInputDicsount.Size = new Size(108, 27);
-            tbxInputDicsount.TabIndex = 6;
-            tbxInputDicsount.TextChanged += tbxInputDicsount_TextChanged;
+            tbxDiscount.BackColor = Color.FromArgb(242, 242, 242);
+            tbxDiscount.BorderStyle = BorderStyle.None;
+            tbxDiscount.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            tbxDiscount.ForeColor = Color.FromArgb(3, 83, 115);
+            tbxDiscount.Location = new Point(206, 270);
+            tbxDiscount.Margin = new Padding(2);
+            tbxDiscount.Name = "tbxDiscount";
+            tbxDiscount.Size = new Size(108, 27);
+            tbxDiscount.TabIndex = 6;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Image = (Image)resources.GetObject("label8.Image");
             label8.Location = new Point(319, 266);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
@@ -1267,7 +1264,6 @@ namespace Service_Management_System.POS
             button32.Size = new Size(94, 140);
             button32.TabIndex = 14;
             button32.UseVisualStyleBackColor = true;
-            button32.Click += button32_Click;
             // 
             // button31
             // 
@@ -1328,7 +1324,6 @@ namespace Service_Management_System.POS
             button27.TabIndex = 9;
             button27.Text = "8";
             button27.UseVisualStyleBackColor = true;
-            button27.Click += button27_Click;
             // 
             // button26
             // 
@@ -1392,7 +1387,6 @@ namespace Service_Management_System.POS
             // 
             // button21
             // 
-            button21.Image = (Image)resources.GetObject("button21.Image");
             button21.Location = new Point(315, 8);
             button21.Margin = new Padding(2);
             button21.Name = "button21";
@@ -1435,7 +1429,6 @@ namespace Service_Management_System.POS
             button14.TabIndex = 0;
             button14.Text = "1";
             button14.UseVisualStyleBackColor = true;
-            button14.Click += button14_Click_1;
             // 
             // btnPeso
             // 
@@ -1648,26 +1641,26 @@ namespace Service_Management_System.POS
             // 
             // dgvMechanic
             // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dgvMechanic.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvMechanic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dgvMechanic.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvMechanic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvMechanic.ColumnHeadersHeight = 30;
             dgvMechanic.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvMechanic.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvMechanic.DefaultCellStyle = dataGridViewCellStyle6;
             dgvMechanic.GridColor = Color.FromArgb(231, 229, 255);
             dgvMechanic.Location = new Point(30, 219);
             dgvMechanic.Margin = new Padding(2);
@@ -1976,7 +1969,7 @@ namespace Service_Management_System.POS
         private Button btnMechanic;
         private Button button10;
         private Panel panel5;
-        private TextBox tbxInputDicsount;
+        private TextBox tbxDiscount;
         private DataGridView productOrderedView;
         private Panel panel4;
         private Button button11;

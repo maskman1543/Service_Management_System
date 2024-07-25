@@ -77,7 +77,9 @@ namespace Service_Management_System.POS
                             MessageBox.Show("Login successful!");
                             // You can perform further actions here after successful login
                             MainMenu mainMenu = new MainMenu();
-                            mainMenu.Show();
+                            mainMenu.Show(); 
+                         
+                            this.Hide();
                         }
                         else // If no matching user found
                         {
@@ -88,6 +90,7 @@ namespace Service_Management_System.POS
                         reader.Close();
                         connection.Close();
                         
+
                     }
                 }
             }

@@ -14,6 +14,7 @@ using System.Security.Cryptography;
 using System.Text;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Service_Management_System.POS.Login_Page_Front___Backend;
+using static Service_Management_System.POS.Login_Page_Front___Backend.LoginForm;
 
 namespace Service_Management_System.Login_Page_Front___Backend
 {
@@ -105,6 +106,12 @@ namespace Service_Management_System.Login_Page_Front___Backend
 
                         if (reader.Read()) // If user exists
                         {
+                            // Fetch user details
+                            string firstName = reader["FirstName"].ToString();
+                            string lastName = reader["LastName"].ToString();
+                            string userEmail = reader["Email"].ToString();
+                            string position = reader["Position"].ToString();
+
                             // Get the employee ID
                             int employeeId = reader.GetInt32(reader.GetOrdinal("EmployeeID"));
 
@@ -127,6 +134,10 @@ namespace Service_Management_System.Login_Page_Front___Backend
 
                             // Successful login
                             MessageBox.Show("Login successful!");
+                            UserInfo.FirstName = firstName;
+                            UserInfo.LastName = lastName;
+                            UserInfo.Email = userEmail;
+                            UserInfo.Position = position;
 
                             // You can perform further actions here after successful login
                             POSForm posform = new POSForm();
@@ -176,6 +187,12 @@ namespace Service_Management_System.Login_Page_Front___Backend
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new LoginForm().Show();
+            this.Hide();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new ForgotPassword().Show();
             this.Hide();
         }
     }
