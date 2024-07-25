@@ -27,22 +27,22 @@ namespace Service_Management_System.Registration
         public acctRegistration_form()
         {
             InitializeComponent();
-            passwordValue.PasswordChar = '*'; // Hide password characters
-            confirmPasswordValue.PasswordChar = '*';// Hide password characters
+            passwordValue.PasswordChar = '*'; 
+            confirmPasswordValue.PasswordChar = '*';
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Splash mainForm = new Splash();
-            mainForm.Show(); // Show the main form
-            this.Hide(); // Hide the splash screen
+            mainForm.Show(); 
+            this.Hide(); 
         }
 
         private void label12_Click(object sender, EventArgs e)
         {
             LoginForm mainForm = new LoginForm();
-            mainForm.Show(); // Show the main form
-            this.Hide(); // Hide the splash screen
+            mainForm.Show(); 
+            this.Hide(); 
         }
         private string HashPassword(string password)
         {
@@ -59,7 +59,7 @@ namespace Service_Management_System.Registration
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            // Retrieve values from input fields
+            
             string firstName = FirstNameValue.Text;
             string lastName = LastNameValue.Text;
             string email = EmailValue.Text;
@@ -67,7 +67,7 @@ namespace Service_Management_System.Registration
             string password = passwordValue.Text;
             string confirmPassword = confirmPasswordValue.Text;
 
-            // Validate inputs (optional)
+           
             if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(email) ||
                 string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
             {
@@ -75,20 +75,20 @@ namespace Service_Management_System.Registration
                 return;
             }
 
-            // Check if passwords match
+           
             if (password != confirmPassword)
             {
                 MessageBox.Show("Passwords do not match. Please enter matching passwords.");
                 return;
             }
 
-            // Hash the password
+            
             string hashedPassword = HashPassword(password);
 
-            // If validation passes, proceed with registration logic (example)
+           
             try
             {
-                // Example: Insert user data into a database
+                
                 OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString);
                 string query = "INSERT INTO Users (FirstName, LastName, Email, PhoneNumber, [Password]) " +
                                "VALUES (@FirstName, @LastName, @Email, @PhoneNumber, @Password)";
@@ -107,7 +107,7 @@ namespace Service_Management_System.Registration
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("User registered successfully.");
-                    // Optionally, clear input fields or reset form state
+                    
                     FirstNameValue.Text = "";
                     LastNameValue.Text = "";
                     EmailValue.Text = "";
@@ -115,7 +115,7 @@ namespace Service_Management_System.Registration
                     passwordValue.Text = "";
                     confirmPasswordValue.Text = "";
 
-                    // Close the registration form
+                    
                     this.Close();
                     LoginForm loginForm = new LoginForm();
                     loginForm.Show();
@@ -128,14 +128,14 @@ namespace Service_Management_System.Registration
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
-                // Handle any specific error logging or display as needed
+                
             }
         }
 
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // Test connection string
+         
             OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString);
 
 
@@ -159,16 +159,16 @@ namespace Service_Management_System.Registration
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            // Toggle password visibility
+        
             if (checkBox1.Checked)
             {
-                passwordValue.PasswordChar = '\0'; // Show password characters
-                confirmPasswordValue.PasswordChar= '\0';// Show password characters
+                passwordValue.PasswordChar = '\0'; 
+                confirmPasswordValue.PasswordChar= '\0';
             }
             else
             {
-                passwordValue.PasswordChar = '*'; // Hide password characters
-                confirmPasswordValue.PasswordChar = '*';// Hide password characters
+                passwordValue.PasswordChar = '*'; 
+                confirmPasswordValue.PasswordChar = '*';
             }
         }
     }

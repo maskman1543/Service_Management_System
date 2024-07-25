@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using static Service_Management_System.POS.Login_Page_Front___Backend.LoginForm;
-//using Service_Management_System.Registration;
+
 
 namespace Service_Management_System.POS
 {
@@ -38,7 +38,7 @@ namespace Service_Management_System.POS
             InitializeJobOrderedView();
             MechanicTable();
             dgvRowCount();
-            //this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
+            
             DisplayUserInfo();
 
 
@@ -149,11 +149,11 @@ namespace Service_Management_System.POS
         private void InitializeProductOrderedView()
         {
             productOrderedView.Columns.Add("ProductID", "Product ID");
-            //productOrderedView.Columns.Add("ProductGroup", "Product Group");
+            
             productOrderedView.Columns.Add("ProductName", "Product Name");
             productOrderedView.Columns.Add("Price", "Price");
             productOrderedView.Columns.Add("Quantity", "Quantity");
-            //productOrderedView.Columns.Add("Barcode", "Barcode");
+            
         }
 
         private void LoadProductOrderedView(int productID)
@@ -180,7 +180,7 @@ namespace Service_Management_System.POS
         private void InitializeJobOrderedView()
         {
             jobOrderedView.Columns.Add("ServiceID", "Service ID");
-            //jobOrderedView.Columns.Add("serviceType", "Service Type");
+            
             jobOrderedView.Columns.Add("ServiceName", "Service Name");
             jobOrderedView.Columns.Add("Price", "Service Rate");
         }
@@ -202,7 +202,7 @@ namespace Service_Management_System.POS
                     {
                         DataRow serviceRow = dataTable.Rows[0];
 
-                        // Add new row for service
+                      
                         jobOrderedView.Rows.Add(serviceRow["serviceID"], serviceRow["serviceType"], serviceRow["serviceName"], serviceRow["serviceRate"]);
                     }
                 }
@@ -452,9 +452,9 @@ namespace Service_Management_System.POS
         *///buckup POSForm - btnSaveSale Pls don't delete this.
         private void btnSaveSale_Click(object sender, EventArgs e)
         {
-            int JobOrderNumber = Class1.GlobalVariables.JobOrderNumber; // JobOrderNumber is typically the JobOrderID
+            int JobOrderNumber = Class1.GlobalVariables.JobOrderNumber; 
 
-            // Retrieve the CustomerName associated with the JobOrderNumber
+          
             string CustomerName;
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
@@ -480,7 +480,7 @@ namespace Service_Management_System.POS
             foreach (DataGridViewRow row in productOrderedView.Rows)
             {
                 int productID = Convert.ToInt32(row.Cells["ProductID"].Value);
-                int quantity = Convert.ToInt32(row.Cells["Quantity"].Value); // Assuming Quantity column exists
+                int quantity = Convert.ToInt32(row.Cells["Quantity"].Value); 
                 productDetails.Add((productID, quantity));
             }
 
@@ -519,7 +519,7 @@ namespace Service_Management_System.POS
                         }
                     }
 
-                    // Insert into JobOrderService table for services
+                 
                     foreach (int serviceID in serviceDetails)
                     {
                         string query3 = "INSERT INTO JobOrderService (JobOrderID, ServiceID) VALUES (@JobOrderID, @ServiceID)";
@@ -531,7 +531,7 @@ namespace Service_Management_System.POS
                         }
                     }
 
-                    // Update the JobOrders table with the subtotal, tax, and total
+                  
                     string query4 = "UPDATE JobOrders SET Subtotal = @Subtotal, Tax = @Tax, Total = @Total WHERE JobOrderID = @JobOrderID";
                     using (OleDbCommand command4 = new OleDbCommand(query4, connection))
                     {
@@ -600,16 +600,16 @@ namespace Service_Management_System.POS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Check if the form is already open
+         
             if (orderForm == null || orderForm.IsDisposed)
             {
-                // If not, create a new instance and show it
+                
                 orderForm = new jonOrder_form();
                 orderForm.Show();
             }
             else
             {
-                // If already open, bring it to the front
+                
                 orderForm.BringToFront();
             }
         }
@@ -622,7 +622,7 @@ namespace Service_Management_System.POS
                 panel_Discount.Height -= 70;
                 if (panel_Discount.Height <= panel_Discount.MinimumSize.Height)
                 {
-                    panel_Discount.Height = panel_Discount.MinimumSize.Height; // Ensure it doesn't go below minimum size
+                    panel_Discount.Height = panel_Discount.MinimumSize.Height; 
                     sidebarExpandDiscount = false;
                     timer_Discount.Stop();
                 }
@@ -632,7 +632,7 @@ namespace Service_Management_System.POS
                 panel_Discount.Height += 70;
                 if (panel_Discount.Height >= panel_Discount.MaximumSize.Height)
                 {
-                    panel_Discount.Height = panel_Discount.MaximumSize.Height; // Ensure it doesn't exceed maximum size
+                    panel_Discount.Height = panel_Discount.MaximumSize.Height; 
                     sidebarExpandDiscount = true;
                     timer_Discount.Stop();
                 }
@@ -652,7 +652,7 @@ namespace Service_Management_System.POS
         }
 
         // Existing search zlogic
-        private int _selectedProductID = -1; // Use -1 to indicate no selection
+        private int _selectedProductID = -1; 
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
@@ -673,7 +673,7 @@ namespace Service_Management_System.POS
             }
             else
             {
-                LoadPartsView(); // Reload all products if search query is empty
+                LoadPartsView(); 
             }
         }
 
@@ -730,7 +730,7 @@ namespace Service_Management_System.POS
             DataTable dataTable = (DataTable)servicesView.DataSource;
             if (dataTable != null && dataTable.Rows.Count > 0)
             {
-                // Assuming you want to add the first service from the search results
+            
                 int serviceID = Convert.ToInt32(dataTable.Rows[0]["serviceID"]);
                 AddServiceToOrderedView(serviceID);
             }
@@ -1301,16 +1301,16 @@ namespace Service_Management_System.POS
 
         private void btnNewSale_Click(object sender, EventArgs e)
         {
-            // Check if the form is already open
+           
             if (orderForm == null || orderForm.IsDisposed)
             {
-                // If not, create a new instance and show it
+                
                 orderForm = new jonOrder_form();
                 orderForm.Show();
             }
             else
             {
-                // If already open, bring it to the front
+                
                 orderForm.BringToFront();
             }
         }
@@ -1347,7 +1347,7 @@ namespace Service_Management_System.POS
                 panel_Mechanic.Height -= 70;
                 if (panel_Mechanic.Height <= panel_Mechanic.MinimumSize.Height)
                 {
-                    panel_Mechanic.Height = panel_Mechanic.MinimumSize.Height; // Ensure it doesn't go below minimum size
+                    panel_Mechanic.Height = panel_Mechanic.MinimumSize.Height; 
                     sidebarExpandMechanic = false;
                     timerMechanic.Stop();
                 }
@@ -1357,7 +1357,7 @@ namespace Service_Management_System.POS
                 panel_Mechanic.Height += 70;
                 if (panel_Mechanic.Height >= panel_Mechanic.MaximumSize.Height)
                 {
-                    panel_Mechanic.Height = panel_Mechanic.MaximumSize.Height; // Ensure it doesn't exceed maximum size
+                    panel_Mechanic.Height = panel_Mechanic.MaximumSize.Height; 
                     sidebarExpandMechanic = true;
                     timerMechanic.Stop();
                 }
@@ -1409,14 +1409,14 @@ namespace Service_Management_System.POS
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            // Get values from text boxes or other controls
+            
             string mechanicID = tbxMechanicID.Text;
             string mechanicName = tbxMechanicName.Text;
             string mechanicLastName = tbxMechanicLastName.Text;
-            DateTime taskAssign = DateTime.Now; // Get the current date and time
+            DateTime taskAssign = DateTime.Now; 
 
             // Database connection string
-            string connectionString = Class1.GlobalVariables.ConnectionString2; // Use your actual connection string
+            string connectionString = Class1.GlobalVariables.ConnectionString2; 
 
             // SQL query to insert data
             string query = "INSERT INTO MechanicTask (MechanicID, MechanicName, MechanicLastName, taskAssign) VALUES (?, ?, ?, ?)";
@@ -1428,7 +1428,7 @@ namespace Service_Management_System.POS
                 command.Parameters.AddWithValue("?", mechanicID);
                 command.Parameters.AddWithValue("?", mechanicName);
                 command.Parameters.AddWithValue("?", mechanicLastName);
-                command.Parameters.AddWithValue("?", taskAssign.ToString("yyyy-MM-dd HH:mm:ss")); // Format the DateTime for OleDb
+                command.Parameters.AddWithValue("?", taskAssign.ToString("yyyy-MM-dd HH:mm:ss")); 
 
                 try
                 {
@@ -1478,7 +1478,7 @@ namespace Service_Management_System.POS
                 panel_UserInfo.Height -= 70;
                 if (panel_UserInfo.Height <= panel_UserInfo.MinimumSize.Height)
                 {
-                    panel_UserInfo.Height = panel_UserInfo.MinimumSize.Height; // Ensure it doesn't go below minimum size
+                    panel_UserInfo.Height = panel_UserInfo.MinimumSize.Height; 
                     sidebarExpandUserInfo = false;
                     timerUserInfo.Stop();
                 }
@@ -1488,7 +1488,7 @@ namespace Service_Management_System.POS
                 panel_UserInfo.Height += 70;
                 if (panel_UserInfo.Height >= panel_UserInfo.MaximumSize.Height)
                 {
-                    panel_UserInfo.Height = panel_UserInfo.MaximumSize.Height; // Ensure it doesn't exceed maximum size
+                    panel_UserInfo.Height = panel_UserInfo.MaximumSize.Height; 
                     sidebarExpandUserInfo = true;
                     timerUserInfo.Stop();
                 }

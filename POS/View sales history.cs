@@ -65,7 +65,7 @@ namespace Service_Management_System.POS
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             // Example of printing content
-            string salesHistory = "Sales History:\n"; // You should replace this with actual sales data
+            string salesHistory = "Sales History:\n"; 
             salesHistory += "Date\t\tItem\t\tAmount\n";
             salesHistory += "01/01/2024\tItem1\t$100\n";
             salesHistory += "02/01/2024\tItem2\t$200\n";

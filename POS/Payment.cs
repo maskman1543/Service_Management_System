@@ -21,7 +21,7 @@ namespace Service_Management_System.POS
 
         }
 
-        private void LoadData()//Load JobOrder Table to dataGridView1
+        private void LoadData()
         {
             try
             {

@@ -1,6 +1,6 @@
 ﻿using Service_Management_System.POS.Login_Page_Front___Backend;
 using System;
-using System.Windows.Forms; // Ensure this using directive is present for Windows Forms Timer
+using System.Windows.Forms;
 
 namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
 {
@@ -10,7 +10,7 @@ namespace Service_Management_System.POS.Login_Page_Front_and_Back_End
         {
             InitializeComponent();
 
-            // Configure the timer
+            // Configuration timer
             timer.Interval = 3000; // 3 seconds
             timer.Start();
         }
