@@ -95,7 +95,23 @@ namespace Service_Management_System.POS
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
+            // Split the value in textBox5 by spaces or commas (or any other delimiter)
+            string[] values = textBox5.Text.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
 
+            // Assign the values to textBox3 if they exist
+            if (values.Length > 0)
+            {
+                //textBox1.Text = values.Length > 0 ? values[0] : string.Empty;
+                //textBox2.Text = values.Length > 1 ? values[1] : string.Empty;
+                textBox3.Text = values.Length > 0 ? values[0] : string.Empty;
+            }
+            else
+            {
+                // Clear the textboxes if textBox5 is empty or doesn't have enough values
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -106,21 +122,29 @@ namespace Service_Management_System.POS
                 // Retrieve the row that was clicked
                 DataGridViewRow clickedRow = dataGridView1.Rows[e.RowIndex];
 
-                // Assuming "Total" is the name of the column you want to display in textBox5
-                // Ensure the column name matches exactly the one in your DataGridView
+                // Assuming "Total", "Subtotal", and "Tax" are the names of the columns you want to display in textBox5, textBox1, and textBox2
+                // Ensure the column names match exactly the ones in your DataGridView
                 var totalCell = clickedRow.Cells["Total"];
+                var subtotalCell = clickedRow.Cells["Subtotal"];
+                var taxCell = clickedRow.Cells["Tax"];
 
-                if (totalCell.Value != null)
+                // Check if the cells are not null and have values before setting the textboxes
+                if (totalCell.Value != null && subtotalCell.Value != null && taxCell.Value != null)
                 {
-                    // Set the value of textBox5 to the value of the "Total" cell
+                    // Set the values of the text boxes to the values of the respective cells
                     textBox5.Text = totalCell.Value.ToString();
+                    textBox1.Text = subtotalCell.Value.ToString();
+                    textBox2.Text = taxCell.Value.ToString();
                 }
                 else
                 {
-                    // If the cell is null, clear the textBox5
+                    // If any of the cells are null, clear the text boxes
                     textBox5.Text = string.Empty;
+                    textBox1.Text = string.Empty;
+                    textBox2.Text = string.Empty;
                 }
             }
         }
+
     }
 }
