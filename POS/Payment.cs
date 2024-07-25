@@ -1,4 +1,6 @@
-﻿using System;
+﻿using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -67,7 +69,7 @@ namespace Service_Management_System.POS
 
         }
 
-        
+
 
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
@@ -169,24 +171,24 @@ namespace Service_Management_System.POS
         private void button2_Click(object sender, EventArgs e)//cashbutton
         {
             UpdatePaymentMethod("Cash");
-            
+
         }
 
         private void btncreditCard_Click(object sender, EventArgs e)
         {
             UpdatePaymentMethod("CreditCard");
-            
+
         }
 
         private void btndebitCard_Click(object sender, EventArgs e)
         {
             UpdatePaymentMethod("DebitCard");
-            
+
         }
 
         private void btngiftCard_Click(object sender, EventArgs e)
         {
-            
+
             UpdatePaymentMethod("GiftCard");
         }
 
@@ -297,6 +299,140 @@ namespace Service_Management_System.POS
             {
                 MessageBox.Show("Please select a row to update the payment method.");
             }
+        }
+
+        private void btnGenReceipt_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to generate the receipt.");
+                return;
+            }
+
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PDF files (.pdf)|*.pdf";
+                saveFileDialog.Title = "Save Receipt";
+                saveFileDialog.FileName = "Receipt.pdf";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                        string customerName = selectedRow.Cells["CustomerName"].Value?.ToString() ?? "";
+                        string customerContact = selectedRow.Cells["CustomerContact"].Value?.ToString() ?? "";
+                        string vehicle = selectedRow.Cells["Vehicle"].Value?.ToString() ?? "";
+                        string plateNo = selectedRow.Cells["PlateNo"].Value?.ToString() ?? "";
+
+                        string receiptId = Guid.NewGuid().ToString().Substring(0, 8).ToUpper();
+                        string date = DateTime.Now.ToString("MM/dd/yyyy");
+                        string time = DateTime.Now.ToString("hh:mm tt");
+
+                        string subtotal = textBox1.Text;
+                        string tax = textBox2.Text;
+                        string total = textBox3.Text;
+                        string amountReceived = textBox4.Text;
+                        string change = changelbl.Text;
+
+                        Document doc = new Document(PageSize.A4, 50, 50, 25, 25);
+                        PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(saveFileDialog.FileName, FileMode.Create));
+                        doc.Open();
+
+                        iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("logo.png");
+                        logo.ScaleToFit(200f, 200f);
+                        logo.Alignment = Element.ALIGN_LEFT;
+                        doc.Add(logo);
+
+                        /* Paragraph header = new Paragraph("ServiceFlow\nSERVICE MANAGEMENT SYSTEM\n\n", FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD));
+                        header.Alignment = Element.ALIGN_CENTER;
+                        doc.Add(header); */
+
+                        // Add a horizontal line
+                        iTextSharp.text.pdf.draw.LineSeparator line = new iTextSharp.text.pdf.draw.LineSeparator(1f, 100f, BaseColor.BLUE, Element.ALIGN_CENTER, -2);
+                        doc.Add(new Chunk(line));
+
+                        doc.Add(new Paragraph("\n"));
+
+                        doc.Add(new Paragraph($"RECEIPT ID: {receiptId}", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD)));
+                        doc.Add(new Paragraph($"DATE: {date}", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD)));
+                        doc.Add(new Paragraph($"TIME: {time}", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD)));
+                        doc.Add(new Paragraph("\n"));
+                        doc.Add(new Paragraph($"CUSTOMER NAME: {customerName}", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD)));
+                        doc.Add(new Paragraph($"CONTACT NUMBER: {customerContact}", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD)));
+                        doc.Add(new Paragraph("\n"));
+
+                        iTextSharp.text.pdf.draw.LineSeparator line1 = new iTextSharp.text.pdf.draw.LineSeparator(1f, 100f, BaseColor.BLUE, Element.ALIGN_CENTER, -2);
+                        doc.Add(new Chunk(line));
+
+                        doc.Add(new Paragraph("\n"));
+                        doc.Add(new Paragraph("\n"));
+
+                        PdfPTable table = new PdfPTable(2);
+                        table.WidthPercentage = 100;
+                        float[] widths = new float[] { 50f, 50f };
+                        table.SetWidths(widths);
+
+                        table.AddCell(new PdfPCell(new Phrase("VEHICLE", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD))) { HorizontalAlignment = Element.ALIGN_CENTER, BackgroundColor = BaseColor.LIGHT_GRAY });
+                        table.AddCell(new PdfPCell(new Phrase("PLATE NUMBER", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD))) { HorizontalAlignment = Element.ALIGN_CENTER, BackgroundColor = BaseColor.LIGHT_GRAY });
+
+                        table.AddCell(new PdfPCell(new Phrase(vehicle, FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL))) { HorizontalAlignment = Element.ALIGN_CENTER });
+                        table.AddCell(new PdfPCell(new Phrase(plateNo, FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL))) { HorizontalAlignment = Element.ALIGN_CENTER });
+
+                        doc.Add(table);
+
+                        doc.Add(new Paragraph("\n"));
+                        doc.Add(new Paragraph("\n"));
+
+                        PdfPTable totalsTable = new PdfPTable(2);
+                        totalsTable.WidthPercentage = 100;
+                        float[] totalsWidths = new float[] { 50f, 50f };
+                        totalsTable.SetWidths(totalsWidths);
+
+                        iTextSharp.text.pdf.draw.LineSeparator line2 = new iTextSharp.text.pdf.draw.LineSeparator(1f, 100f, BaseColor.BLUE, Element.ALIGN_CENTER, -2);
+                        doc.Add(new Chunk(line));
+
+                        doc.Add(new Paragraph("\n"));
+                        doc.Add(new Paragraph("\n"));
+
+                        totalsTable.AddCell(new PdfPCell(new Phrase("SUBTOTAL:", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD))) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                        totalsTable.AddCell(new PdfPCell(new Phrase(subtotal, FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL))) { Border = iTextSharp.text.Rectangle.NO_BORDER, HorizontalAlignment = Element.ALIGN_RIGHT });
+
+                        totalsTable.AddCell(new PdfPCell(new Phrase("TAX:", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD))) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                        totalsTable.AddCell(new PdfPCell(new Phrase(tax, FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL))) { Border = iTextSharp.text.Rectangle.NO_BORDER, HorizontalAlignment = Element.ALIGN_RIGHT });
+
+                        totalsTable.AddCell(new PdfPCell(new Phrase("TOTAL:", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD))) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                        totalsTable.AddCell(new PdfPCell(new Phrase(total, FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL))) { Border = iTextSharp.text.Rectangle.NO_BORDER, HorizontalAlignment = Element.ALIGN_RIGHT });
+
+                        totalsTable.AddCell(new PdfPCell(new Phrase("AMOUNT RECEIVED:", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD))) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                        totalsTable.AddCell(new PdfPCell(new Phrase(amountReceived, FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL))) { Border = iTextSharp.text.Rectangle.NO_BORDER, HorizontalAlignment = Element.ALIGN_RIGHT });
+
+                        totalsTable.AddCell(new PdfPCell(new Phrase("CHANGE:", FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD))) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                        totalsTable.AddCell(new PdfPCell(new Phrase(change, FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL))) { Border = iTextSharp.text.Rectangle.NO_BORDER, HorizontalAlignment = Element.ALIGN_RIGHT });
+
+                        doc.Add(totalsTable);
+
+                        iTextSharp.text.pdf.draw.LineSeparator line3 = new iTextSharp.text.pdf.draw.LineSeparator(1f, 100f, BaseColor.BLUE, Element.ALIGN_CENTER, -2);
+                        doc.Add(new Chunk(line));
+
+                        doc.Add(new Paragraph("\n"));
+                        doc.Add(new Paragraph("\n"));
+                        doc.Add(new Paragraph("\n"));
+                        Paragraph thankYou = new Paragraph("Thank you for your purchase!", FontFactory.GetFont("Arial", 14, iTextSharp.text.Font.BOLD));
+                        thankYou.Alignment = Element.ALIGN_CENTER;
+                        doc.Add(thankYou);
+
+                        doc.Close();
+
+                        MessageBox.Show("Receipt generated successfully and saved to " + saveFileDialog.FileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred while generating the receipt: " + ex.Message);
+                    }
+                }
+            }
+
         }
     }
 }

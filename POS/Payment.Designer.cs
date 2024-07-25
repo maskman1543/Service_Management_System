@@ -551,6 +551,7 @@
             btnGenReceipt.TabIndex = 27;
             btnGenReceipt.Text = "Generate Receipt";
             btnGenReceipt.UseVisualStyleBackColor = false;
+            btnGenReceipt.Click += btnGenReceipt_Click;
             // 
             // Payment
             // 
