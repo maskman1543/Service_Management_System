@@ -27,7 +27,7 @@ namespace Service_Management_System.POS
         private jonOrder_form orderForm;
         private const decimal VAT_RATE = 0.12m;
         //ss
-        int JobOrderID = Class1.GlobalVariables.JobOrderNumber;
+
 
         public POSForm()
         {
@@ -36,7 +36,6 @@ namespace Service_Management_System.POS
             InitializeJobOrderedView();
             MechanicTable();
             dgvRowCount();
-
             //this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
         }
 
@@ -341,7 +340,7 @@ namespace Service_Management_System.POS
             lblTotal.Text = total.ToString("C");
 
         }
-
+        /*
         private void btnSaveSale_Click(object sender, EventArgs e)
         {
             int JobOrderNumber = Class1.GlobalVariables.JobOrderNumber; // JobOrderNumber is typically the JobOrderID
@@ -432,6 +431,10 @@ namespace Service_Management_System.POS
                             command2.Parameters.AddWithValue("@Subtotal", subtotal);
                             command2.ExecuteNonQuery();
                         }
+
+
+
+                      
                     }
                 }
                 catch (Exception ex)
@@ -442,7 +445,130 @@ namespace Service_Management_System.POS
 
             MessageBox.Show("Sale saved successfully!");
         }
+        */
+        
+        private void btnSaveSale_Click(object sender, EventArgs e)
+        {
+            int JobOrderNumber = Class1.GlobalVariables.JobOrderNumber; // JobOrderNumber is typically the JobOrderID
 
+            // Retrieve the CustomerName associated with the JobOrderNumber
+            string CustomerName;
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                string selectCustomerNameQuery = "SELECT CustomerName FROM JobOrders WHERE JobOrderID = @JobOrderID";
+                OleDbCommand command = new OleDbCommand(selectCustomerNameQuery, connection);
+                command.Parameters.AddWithValue("@JobOrderID", JobOrderNumber);
+
+                try
+                {
+                    connection.Open();
+                    CustomerName = (string)command.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error retrieving CustomerName: " + ex.Message);
+                    return;
+                }
+            }
+
+            DateTime DateSaved = DateTime.Now;
+
+            int CartID;
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                string insertCartQuery = "INSERT INTO CartTb_2 (CustomerName, DateSaved) VALUES (@CustomerName, @DateSaved)";
+                OleDbCommand command = new OleDbCommand(insertCartQuery, connection);
+
+                command.Parameters.AddWithValue("@CustomerName", CustomerName);
+                command.Parameters.Add("@DateSaved", OleDbType.Date).Value = DateSaved; // Correctly handling the Date/Time parameter
+
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+
+                    // Retrieve the newly generated CartID
+                    command.CommandText = "SELECT @@IDENTITY";
+                    CartID = Convert.ToInt32(command.ExecuteScalar()); // Correct casting to int
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error generating new CartID: " + ex.Message);
+                    return;
+                }
+            }
+
+            List<(int ProductID, int Quantity)> productDetails = new List<(int, int)>();
+            foreach (DataGridViewRow row in productOrderedView.Rows)
+            {
+                int productID = Convert.ToInt32(row.Cells["ProductID"].Value);
+                int quantity = Convert.ToInt32(row.Cells["Quantity"].Value); // Assuming Quantity column exists
+                productDetails.Add((productID, quantity));
+            }
+
+            List<int> serviceDetails = new List<int>();
+            foreach (DataGridViewRow row in jobOrderedView.Rows)
+            {
+                int serviceID = Convert.ToInt32(row.Cells["ServiceID"].Value);
+                serviceDetails.Add(serviceID);
+            }
+
+            // Get the subtotal value from lblsubtotal.Text and parse it as a decimal
+            string subtotalText = lblsubtotal.Text.Replace("₱", "").Trim();
+            decimal subtotal = decimal.Parse(subtotalText, System.Globalization.NumberStyles.Currency);
+
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                try
+                {
+                    connection.Open();
+                    foreach (var (productID, quantity) in productDetails)
+                    {
+                        // Insert into JobOrderItem table
+                        string query = "INSERT INTO JobOrderItem (JobOrderID, Quantity, CartID) VALUES (@JobOrderID, @Quantity, @CartID)";
+                        using (OleDbCommand command = new OleDbCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@JobOrderID", JobOrderNumber);
+                            command.Parameters.AddWithValue("@Quantity", quantity);
+                            command.Parameters.AddWithValue("@CartID", CartID);
+                            command.ExecuteNonQuery();
+                        }
+
+                        // Insert into CartProductsTb table
+                        string query2 = "INSERT INTO CartProductsTb (CartID, ProductID, Quantity, Subtotal) VALUES (@CartID, @ProductID, @Quantity, @Subtotal)";
+                        using (OleDbCommand command2 = new OleDbCommand(query2, connection))
+                        {
+                            command2.Parameters.AddWithValue("@CartID", CartID);
+                            command2.Parameters.AddWithValue("@ProductID", productID);
+                            command2.Parameters.AddWithValue("@Quantity", quantity);
+                            command2.Parameters.AddWithValue("@Subtotal", subtotal);
+                            command2.ExecuteNonQuery();
+                        }
+                    }
+
+                    foreach (int serviceID in serviceDetails)
+                    {
+                        // Insert into JobOrderService table for services
+                        string query3 = "INSERT INTO JobOrderService (ServiceID, JobOrderID) VALUES (@ServiceID, @JobOrderID)";
+                        using (OleDbCommand command3 = new OleDbCommand(query3, connection))
+                        {
+                            command3.Parameters.AddWithValue("@JobOrderID", JobOrderNumber);
+                            command3.Parameters.AddWithValue("@ServiceID", serviceID);
+                            command3.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error inserting into JobOrderItem, CartProductsTb, or JobOrderService: " + ex.Message);
+                }
+            }
+
+            MessageBox.Show("Sale saved successfully!");
+        }
+        
+
+        
 
 
         private void button12_Click(object sender, EventArgs e)
@@ -548,13 +674,34 @@ namespace Service_Management_System.POS
         // Existing search zlogic
         private int _selectedProductID = -1; // Use -1 to indicate no selection
 
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            SearchProduct(textBox7.Text.Trim());
+        }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string searchQuery = textBox7.Text.Trim();
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                DataTable dataTable = (DataTable)partsView.DataSource;
+                if (dataTable != null && dataTable.Rows.Count > 0)
+                {
+                    int productID = Convert.ToInt32(dataTable.Rows[0]["ProductID"]);
+                    AddOrUpdateProductOrderedView(productID);
+                }
+            }
+            else
+            {
+                LoadPartsView(); // Reload all products if search query is empty
+            }
+        }
 
         private void SearchProduct(string searchTerm)
         {
             string query = "SELECT ProductID, ProductName, Price " +
                       "FROM Products " +
-                      "WHERE ProductName LIKE ? OR Barcode LIKE ?";
+                      "WHERE Products.ProductName LIKE ? OR Products.Barcode LIKE ?";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
@@ -591,28 +738,6 @@ namespace Service_Management_System.POS
                         connection.Close();
                     }
                 }
-            }
-        }
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-            SearchProduct(textBox7.Text.Trim());
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            string searchQuery = textBox7.Text.Trim();
-            if (!string.IsNullOrEmpty(searchQuery))
-            {
-                DataTable dataTable = (DataTable)partsView.DataSource;
-                if (dataTable != null && dataTable.Rows.Count > 0)
-                {
-                    int productID = Convert.ToInt32(dataTable.Rows[0]["ProductID"]);
-                    AddOrUpdateProductOrderedView(productID);
-                }
-            }
-            else
-            {
-                LoadPartsView(); // Reload all products if search query is empty
             }
         }
         private void textBox8_TextChanged(object sender, EventArgs e)
@@ -1315,21 +1440,6 @@ namespace Service_Management_System.POS
         private void btnEnter_Click(object sender, EventArgs e)
         {
 
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
-            {
-                connection.Open();
-
-                string sql = "UPDATE JobOrders SET MechanicID = MechanicID WHERE JobOrderID = JobOrderID";
-                using (OleDbCommand command = new OleDbCommand(sql, connection))
-                {
-                    // Add parameters with values
-                    command.Parameters.AddWithValue("MechanicID", tbxMechanicID);
-                    command.Parameters.AddWithValue("JobOrderID", JobOrderID); // Replace with the actual JobOrderID
-
-                    // Execute the command
-                    command.ExecuteNonQuery();
-                }
-            }
         }
         private void dgvRowCount()
         {
@@ -1393,10 +1503,9 @@ namespace Service_Management_System.POS
 
         }
 
-        private void textBox7_TextChanged_1(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            SearchProduct(textBox7.Text.Trim());
-          
+
         }
 
 

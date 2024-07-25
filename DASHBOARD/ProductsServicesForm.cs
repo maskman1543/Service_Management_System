@@ -225,7 +225,7 @@ namespace Service_Management_System.DASHBOARD
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            
+
             string productName = ProductNameValue.Text;
             decimal price = decimal.Parse(txtPriceValue.Text);
             int quantityInStock = int.Parse(QuantityInStock.Text);
@@ -254,6 +254,7 @@ namespace Service_Management_System.DASHBOARD
                     {
                         command.ExecuteNonQuery();
                         MessageBox.Show("Product saved successfully.");
+                        DisplayProductCountRecord();
                     }
                     catch (Exception ex)
                     {
@@ -295,7 +296,7 @@ namespace Service_Management_System.DASHBOARD
         {
             string serviceName = txtServiceName.Text;
             decimal servicePrice = decimal.Parse(txtServicePrice.Text);
-           
+
 
             // Create the SQL INSERT statement
             string insertQuery = "INSERT INTO Services (ServiceName, Price) VALUES (@ServiceName, @Price)";
@@ -309,7 +310,7 @@ namespace Service_Management_System.DASHBOARD
                     // Add parameters to the command
                     command.Parameters.AddWithValue("@ServiceName", serviceName);
                     command.Parameters.AddWithValue("@Price", servicePrice);
-                    
+
 
                     // Open the connection
                     connection.Open();
@@ -319,6 +320,7 @@ namespace Service_Management_System.DASHBOARD
                     {
                         command.ExecuteNonQuery();
                         MessageBox.Show("Service saved successfully.");
+                        DisplayServiceCountRecord();
                     }
                     catch (Exception ex)
                     {
@@ -326,6 +328,6 @@ namespace Service_Management_System.DASHBOARD
                     }
                 }
             }
-            }
+        }
     }
 }
