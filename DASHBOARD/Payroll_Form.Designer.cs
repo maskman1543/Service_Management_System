@@ -36,6 +36,7 @@
             panel9 = new Panel();
             label20 = new Label();
             panel10 = new Panel();
+            PrintBtn = new Button();
             SearchBtn = new Button();
             SearchEmpIDTextBox = new TextBox();
             panel11 = new Panel();
@@ -93,7 +94,7 @@
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.BorderStyle = BorderStyle.Fixed3D;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(15, 421);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
@@ -128,6 +129,7 @@
             // 
             // panel10
             // 
+            panel10.Controls.Add(PrintBtn);
             panel10.Controls.Add(SearchBtn);
             panel10.Controls.Add(SearchEmpIDTextBox);
             panel10.Location = new Point(371, 252);
@@ -136,6 +138,27 @@
             panel10.Size = new Size(573, 109);
             panel10.TabIndex = 21;
             panel10.Paint += panel10_Paint;
+            // 
+            // PrintBtn
+            // 
+            PrintBtn.AutoSize = true;
+            PrintBtn.BackColor = Color.FromArgb(3, 83, 115);
+            PrintBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            PrintBtn.FlatAppearance.BorderSize = 0;
+            PrintBtn.FlatStyle = FlatStyle.Flat;
+            PrintBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            PrintBtn.ForeColor = Color.White;
+            PrintBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            PrintBtn.Location = new Point(395, 9);
+            PrintBtn.Margin = new Padding(2);
+            PrintBtn.Name = "PrintBtn";
+            PrintBtn.Padding = new Padding(28, 0, 28, 0);
+            PrintBtn.Size = new Size(101, 40);
+            PrintBtn.TabIndex = 19;
+            PrintBtn.Text = "Print";
+            PrintBtn.TextAlign = ContentAlignment.MiddleRight;
+            PrintBtn.UseVisualStyleBackColor = false;
+            PrintBtn.Click += PrintBtn_Click;
             // 
             // SearchBtn
             // 
@@ -348,5 +371,6 @@
         private Button CalSal;
         private Button SearchBtn;
         private TextBox SearchEmpIDTextBox;
+        private Button PrintBtn;
     }
 }

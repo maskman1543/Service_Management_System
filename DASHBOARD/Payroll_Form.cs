@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,16 +15,21 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace Service_Management_System.DASHBOARD
 {
     public partial class Payroll_Form : Form
-    {
+    { 
+        private PrintDocument printDocument = new PrintDocument();
+        private PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
 
         private Panel chartpanel;
         private Chart chart1;
+
         public Payroll_Form()
         {
             InitializeComponent();
             InitializeChart();
             LoadChartData();
             LoadPayrollData();
+            printDocument.PrintPage += PrintDocument_PrintPage;
+
         }
 
         private void InitializeChart()
@@ -62,32 +68,25 @@ namespace Service_Management_System.DASHBOARD
 
         private void LoadChartData()
         {
-            // Clear any existing series
             chart1.Series.Clear();
-
-            // Create a new series for the pie chart
             Series series = new Series("PieSeries")
             {
-                ChartType = SeriesChartType.Pie, // Set the chart type to Pie
-                IsValueShownAsLabel = true, // Show data values as labels on the pie chart
-                Font = new System.Drawing.Font("Century Gothic", 10f) // Set font to Century Gothic
+                ChartType = SeriesChartType.Pie,
+                IsValueShownAsLabel = true,
+                Font = new Font("Century Gothic", 10f)
             };
 
-            // Add data points to the series
             series.Points.Add(new DataPoint(0, 10) { LegendText = "Category A" });
             series.Points.Add(new DataPoint(1, 20) { LegendText = "Category B" });
             series.Points.Add(new DataPoint(2, 30) { LegendText = "Category C" });
             series.Points.Add(new DataPoint(3, 25) { LegendText = "Category D" });
             series.Points.Add(new DataPoint(4, 15) { LegendText = "Category E" });
 
-            // Add the series to the chart
             chart1.Series.Add(series);
 
-            // Optionally, customize chart area, axis titles, etc.
-            chart1.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Century Gothic", 10f);
-            chart1.ChartAreas[0].AxisY.LabelStyle.Font = new System.Drawing.Font("Century Gothic", 10f);
+            chart1.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Century Gothic", 10f);
+            chart1.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Century Gothic", 10f);
         }
-
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(EmpID.Text))
@@ -110,19 +109,18 @@ namespace Service_Management_System.DASHBOARD
                     connection.Open();
                     int recordCount = (int)selectCmd.ExecuteScalar();
 
-                    string currentMonthYear = DateTime.Now.ToString("MM/yyyy"); // Format the current date to "MM/yyyy"
+                    string currentMonthYear = DateTime.Now.ToString("MM/yyyy");
 
                     if (recordCount > 0)
                     {
-                        // Update the existing record
                         using (OleDbCommand updateCmd = new OleDbCommand(updateQuery, connection))
                         {
                             updateCmd.Parameters.AddWithValue("?", SalaryTxb.Text);
                             updateCmd.Parameters.AddWithValue("?", SSS.Text);
                             updateCmd.Parameters.AddWithValue("?", PagIbig.Text);
                             updateCmd.Parameters.AddWithValue("?", NetSalary.Text);
-                            updateCmd.Parameters.AddWithValue("?", currentMonthYear); // Add formatted current month and year
-                            updateCmd.Parameters.AddWithValue("?", EmpID.Text); // Parameter for WHERE clause must be added last
+                            updateCmd.Parameters.AddWithValue("?", currentMonthYear);
+                            updateCmd.Parameters.AddWithValue("?", EmpID.Text);
 
                             int rowsAffected = updateCmd.ExecuteNonQuery();
 
@@ -138,7 +136,6 @@ namespace Service_Management_System.DASHBOARD
                     }
                     else
                     {
-                        // Insert a new record
                         using (OleDbCommand insertCmd = new OleDbCommand(insertQuery, connection))
                         {
                             insertCmd.Parameters.AddWithValue("?", EmpID.Text);
@@ -146,7 +143,7 @@ namespace Service_Management_System.DASHBOARD
                             insertCmd.Parameters.AddWithValue("?", SSS.Text);
                             insertCmd.Parameters.AddWithValue("?", PagIbig.Text);
                             insertCmd.Parameters.AddWithValue("?", NetSalary.Text);
-                            insertCmd.Parameters.AddWithValue("?", currentMonthYear); // Add formatted current month and year
+                            insertCmd.Parameters.AddWithValue("?", currentMonthYear);
 
                             int rowsAffected = insertCmd.ExecuteNonQuery();
 
@@ -208,13 +205,10 @@ namespace Service_Management_System.DASHBOARD
             decimal sss = Convert.ToDecimal(SSS.Text);
             decimal pagibig = Convert.ToDecimal(PagIbig.Text);
             decimal salary = 435;
-            // Define the deduction per absence (this could be a fixed amount or a calculated value based on salary)
-            decimal deductionPerAbsence = 435; // Example: daily deduction if a month has 30 days
+            decimal deductionPerAbsence = 435;
 
-            // Calculate the total deduction
             decimal totalDeduction = sss + pagibig;
             decimal totalsalary = (salary * basicSalary);
-            // Calculate the net salary
             decimal netSalary = totalsalary - totalDeduction;
 
             NetSalary.Text = netSalary.ToString();
@@ -244,6 +238,7 @@ namespace Service_Management_System.DASHBOARD
             }
         }
 
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -254,10 +249,61 @@ namespace Service_Management_System.DASHBOARD
             string employeeID = SearchEmpIDTextBox.Text;
             LoadPayrollData(employeeID);
         }
-
-        private void PrintPayroll_Click(object sender, EventArgs e)
+        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
+            // Define fonts and brushes
+            Font printFont = new Font("Arial", 10);
+            Brush printBrush = Brushes.Black;
 
+            // Calculate the starting point for printing
+            float yPos = e.MarginBounds.Top;
+            int count = 0;
+
+            // Define the spacing between lines
+            float lineHeight = printFont.GetHeight(e.Graphics);
+            float leftMargin = e.MarginBounds.Left;
+
+            // Define column widths (example values)
+            float[] columnWidths = new float[dataGridView1.Columns.Count];
+            for (int i = 0; i < columnWidths.Length; i++)
+            {
+                columnWidths[i] = 100; // Adjust width as necessary
+            }
+
+            // Loop through each row in the DataGridView
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                // Loop through each cell in the row
+                float xPos = leftMargin;
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    string cellText = cell.Value != null ? cell.Value.ToString() : "";
+                    e.Graphics.DrawString(cellText, printFont, printBrush, xPos, yPos);
+                    xPos += columnWidths[cell.ColumnIndex]; // Move to the next column position
+                }
+
+                // Move down to the next line
+                yPos += lineHeight;
+
+                // Check if the text will fit on the current page
+                if (yPos + lineHeight > e.MarginBounds.Bottom)
+                {
+                    // Indicate that there is more to print on the next page
+                    e.HasMorePages = true;
+                    return;
+                }
+            }
+
+            // No more pages to print
+            e.HasMorePages = false;
+        }
+
+
+
+        private void PrintBtn_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog.Document = printDocument;
+            printPreviewDialog.ShowDialog();
         }
     }
 }

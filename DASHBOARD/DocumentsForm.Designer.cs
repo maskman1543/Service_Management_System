@@ -35,6 +35,7 @@
             SM = new TextBox();
             SearchBtn = new Button();
             dataGridView1 = new DataGridView();
+            PrintBtn = new Button();
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -123,11 +124,33 @@
             dataGridView1.TabIndex = 22;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // PrintBtn
+            // 
+            PrintBtn.AutoSize = true;
+            PrintBtn.BackColor = Color.FromArgb(3, 83, 115);
+            PrintBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            PrintBtn.FlatAppearance.BorderSize = 0;
+            PrintBtn.FlatStyle = FlatStyle.Flat;
+            PrintBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            PrintBtn.ForeColor = Color.White;
+            PrintBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            PrintBtn.Location = new Point(358, 110);
+            PrintBtn.Margin = new Padding(2);
+            PrintBtn.Name = "PrintBtn";
+            PrintBtn.Padding = new Padding(28, 0, 28, 0);
+            PrintBtn.Size = new Size(101, 29);
+            PrintBtn.TabIndex = 23;
+            PrintBtn.Text = "Print";
+            PrintBtn.TextAlign = ContentAlignment.MiddleRight;
+            PrintBtn.UseVisualStyleBackColor = false;
+            PrintBtn.Click += PrintBtn_Click;
+            // 
             // DocumentsForm
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(706, 738);
+            Controls.Add(PrintBtn);
             Controls.Add(dataGridView1);
             Controls.Add(SearchBtn);
             Controls.Add(SM);
@@ -152,5 +175,6 @@
         private TextBox SM;
         private Button SearchBtn;
         private DataGridView dataGridView1;
+        private Button PrintBtn;
     }
 }
