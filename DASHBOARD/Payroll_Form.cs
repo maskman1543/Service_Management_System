@@ -23,6 +23,7 @@ namespace Service_Management_System.DASHBOARD
             InitializeComponent();
             InitializeChart();
             LoadChartData();
+            LoadPayrollData();
         }
 
         private void InitializeChart()
@@ -96,8 +97,8 @@ namespace Service_Management_System.DASHBOARD
             }
 
             string selectQuery = "SELECT COUNT(*) FROM EmployeePayroll WHERE EmployeeID = ?";
-            string insertQuery = "INSERT INTO EmployeePayroll (EmployeeID, DayOfPresent, sss, pagibig, NetSalary) VALUES (?, ?, ?, ?, ?)";
-            string updateQuery = "UPDATE EmployeePayroll SET DayOfPresent = ?, sss = ?, pagibig = ?, NetSalary = ? WHERE EmployeeID = ?";
+            string insertQuery = "INSERT INTO EmployeePayroll (EmployeeID, DayOfPresent, sss, pagibig, NetSalary, MonthSalary) VALUES (?, ?, ?, ?, ?, ?)";
+            string updateQuery = "UPDATE EmployeePayroll SET DayOfPresent = ?, sss = ?, pagibig = ?, NetSalary = ?, MonthSalary = ? WHERE EmployeeID = ?";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
@@ -109,6 +110,8 @@ namespace Service_Management_System.DASHBOARD
                     connection.Open();
                     int recordCount = (int)selectCmd.ExecuteScalar();
 
+                    string currentMonthYear = DateTime.Now.ToString("MM/yyyy"); // Format the current date to "MM/yyyy"
+
                     if (recordCount > 0)
                     {
                         // Update the existing record
@@ -118,6 +121,7 @@ namespace Service_Management_System.DASHBOARD
                             updateCmd.Parameters.AddWithValue("?", SSS.Text);
                             updateCmd.Parameters.AddWithValue("?", PagIbig.Text);
                             updateCmd.Parameters.AddWithValue("?", NetSalary.Text);
+                            updateCmd.Parameters.AddWithValue("?", currentMonthYear); // Add formatted current month and year
                             updateCmd.Parameters.AddWithValue("?", EmpID.Text); // Parameter for WHERE clause must be added last
 
                             int rowsAffected = updateCmd.ExecuteNonQuery();
@@ -142,6 +146,7 @@ namespace Service_Management_System.DASHBOARD
                             insertCmd.Parameters.AddWithValue("?", SSS.Text);
                             insertCmd.Parameters.AddWithValue("?", PagIbig.Text);
                             insertCmd.Parameters.AddWithValue("?", NetSalary.Text);
+                            insertCmd.Parameters.AddWithValue("?", currentMonthYear); // Add formatted current month and year
 
                             int rowsAffected = insertCmd.ExecuteNonQuery();
 
@@ -164,6 +169,7 @@ namespace Service_Management_System.DASHBOARD
 
             LoadPayrollData();
         }
+
 
 
         private void panel10_Paint(object sender, PaintEventArgs e)
@@ -206,27 +212,50 @@ namespace Service_Management_System.DASHBOARD
             decimal deductionPerAbsence = 435; // Example: daily deduction if a month has 30 days
 
             // Calculate the total deduction
-            decimal totalDeduction = sss + pagibig ;
+            decimal totalDeduction = sss + pagibig;
             decimal totalsalary = (salary * basicSalary);
             // Calculate the net salary
             decimal netSalary = totalsalary - totalDeduction;
 
             NetSalary.Text = netSalary.ToString();
         }
-        private void LoadPayrollData()
+        private void LoadPayrollData(string employeeID = null)
         {
             string query = "SELECT * FROM EMPpayroll_Query";
+            if (!string.IsNullOrEmpty(employeeID))
+            {
+                query += " WHERE EmployeeID = ?";
+            }
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
-                OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
+                OleDbDataAdapter adapter = new OleDbDataAdapter();
+                adapter.SelectCommand = new OleDbCommand(query, connection);
+
+                if (!string.IsNullOrEmpty(employeeID))
+                {
+                    adapter.SelectCommand.Parameters.AddWithValue("?", employeeID);
+                }
+
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
 
                 dataGridView1.DataSource = dataTable;
             }
         }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            string employeeID = SearchEmpIDTextBox.Text;
+            LoadPayrollData(employeeID);
+        }
+
+        private void PrintPayroll_Click(object sender, EventArgs e)
         {
 
         }

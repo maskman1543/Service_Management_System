@@ -1550,6 +1550,21 @@ namespace Service_Management_System.POS
             }
         }
 
+        private void tbxMechanicID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxMechanicName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxMechanicLastName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
 
         /*private void button12_MouseEnter(object sender, EventArgs e)
