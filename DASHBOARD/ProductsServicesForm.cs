@@ -230,9 +230,13 @@ namespace Service_Management_System.DASHBOARD
             decimal price = decimal.Parse(txtPriceValue.Text);
             int quantityInStock = int.Parse(QuantityInStock.Text);
             decimal cost = decimal.Parse(txtCostValue.Text);
+            string barcode = BarcodeValue.Text;
+
+
+
 
             // Create the SQL INSERT statement
-            string insertQuery = "INSERT INTO Products (ProductName, Price, QuantityInStock, Cost) VALUES (@ProductName, @Price, @QuantityInStock, @Cost)";
+            string insertQuery = "INSERT INTO Products (ProductName, Price, QuantityInStock, Cost, Barcode) VALUES (@ProductName, @Price, @QuantityInStock, @Cost, @Barcode)";
 
             // Create a connection object
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
@@ -245,7 +249,7 @@ namespace Service_Management_System.DASHBOARD
                     command.Parameters.AddWithValue("@Price", price);
                     command.Parameters.AddWithValue("@Cost", cost);
                     command.Parameters.AddWithValue("@QuantityInStock", quantityInStock);
-
+                    command.Parameters.AddWithValue("@Barcode", barcode);
                     // Open the connection
                     connection.Open();
 

@@ -26,8 +26,9 @@ namespace Service_Management_System.POS
         bool sidebarExpandUserInfo;
         private jonOrder_form orderForm;
         private const decimal VAT_RATE = 0.12m;
-        //ss
 
+        //ss
+        int JobOrderID = Class1.GlobalVariables.JobOrderNumber;
 
         public POSForm()
         {
@@ -36,9 +37,15 @@ namespace Service_Management_System.POS
             InitializeJobOrderedView();
             MechanicTable();
             dgvRowCount();
+           
+
             //this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
         }
 
+        private void TextBox1_KeyPress(object? sender, KeyPressEventArgs e)
+        {
+
+        }
 
         private void timerSfx_Tick(object sender, EventArgs e)
         {
@@ -72,6 +79,13 @@ namespace Service_Management_System.POS
         {
             LoadPartsView();
             LoadServiceView();
+            tbxInputDicsount.TextChanged += TbxInputDicsount_TextChanged;
+
+        }
+
+        private void TbxInputDicsount_TextChanged(object? sender, EventArgs e)
+        {
+           
         }
 
         private void AddOrUpdateProductOrderedView(int productID)
@@ -90,6 +104,7 @@ namespace Service_Management_System.POS
 
                     if (dataTable.Rows.Count > 0)
                     {
+
                         DataRow productRow = dataTable.Rows[0];
                         bool found = false;
 
@@ -131,7 +146,7 @@ namespace Service_Management_System.POS
                 DataGridViewRow selectedRow = partsView.Rows[e.RowIndex];
                 int productID = Convert.ToInt32(selectedRow.Cells["ProductID"].Value);
 
-                AddOrUpdateProductOrderedView(productID);
+                //  AddOrUpdateProductOrderedView(productID);
             }
         }
         private void InitializeProductOrderedView()
@@ -141,7 +156,7 @@ namespace Service_Management_System.POS
             productOrderedView.Columns.Add("ProductName", "Product Name");
             productOrderedView.Columns.Add("Price", "Price");
             productOrderedView.Columns.Add("Quantity", "Quantity");
-            //productOrderedView.Columns.Add("Barcode", "Barcode");
+            // productOrderedView.Columns.Add("Barcode", "Barcode");
         }
 
         private void LoadProductOrderedView(int productID)
@@ -170,7 +185,7 @@ namespace Service_Management_System.POS
             jobOrderedView.Columns.Add("ServiceID", "Service ID");
             //jobOrderedView.Columns.Add("serviceType", "Service Type");
             jobOrderedView.Columns.Add("ServiceName", "Service Name");
-            jobOrderedView.Columns.Add("Price", "Service Rate");
+            jobOrderedView.Columns.Add("Price", "Price");
         }
         private void LoadServiceOrderedView(int serviceID)
         {
@@ -191,7 +206,7 @@ namespace Service_Management_System.POS
                         DataRow serviceRow = dataTable.Rows[0];
 
                         // Add new row for service
-                        jobOrderedView.Rows.Add(serviceRow["serviceID"], serviceRow["serviceType"], serviceRow["serviceName"], serviceRow["serviceRate"]);
+                        jobOrderedView.Rows.Add(serviceRow["serviceID"], serviceRow["ServiceName"], serviceRow["Price"]);
                     }
                 }
                 catch (Exception ex)
@@ -244,7 +259,7 @@ namespace Service_Management_System.POS
                         DataRow serviceRow = dataTable.Rows[0];
 
                         // Add new row for service
-                        jobOrderedView.Rows.Add(serviceRow["ServiceID"], serviceRow["serviceName"], serviceRow["Price"]);
+                        jobOrderedView.Rows.Add(serviceRow["ServiceID"], serviceRow["ServiceName"], serviceRow["Price"]);
                     }
                 }
                 catch (Exception ex)
@@ -327,13 +342,21 @@ namespace Service_Management_System.POS
         }
         private void DisplaySubTotal()
         {
+
             decimal productTotal = CalculateProductSubTotal();
-            decimal ServiceTOtal = CalculateServiceSubTotal();
-            decimal subtotal = productTotal + ServiceTOtal;
+            decimal serviceTotal = CalculateServiceSubTotal();
+            decimal subtotal = productTotal + serviceTotal;
 
             decimal vat = subtotal * VAT_RATE;
-            decimal total = subtotal + vat;
 
+            // Parse the discount value from the TextBox
+            decimal discount = 0;
+            if (decimal.TryParse(tbxInputDicsount.Text, out discount))
+            {
+                subtotal -= discount;
+            }
+
+            decimal total = subtotal + vat;
 
             lblsubtotal.Text = subtotal.ToString("C");
             lblVaTax.Text = vat.ToString("C");
@@ -446,7 +469,7 @@ namespace Service_Management_System.POS
             MessageBox.Show("Sale saved successfully!");
         }
         */
-        
+
         private void btnSaveSale_Click(object sender, EventArgs e)
         {
             int JobOrderNumber = Class1.GlobalVariables.JobOrderNumber; // JobOrderNumber is typically the JobOrderID
@@ -566,9 +589,9 @@ namespace Service_Management_System.POS
 
             MessageBox.Show("Sale saved successfully!");
         }
-        
 
-        
+
+
 
 
         private void button12_Click(object sender, EventArgs e)
@@ -674,34 +697,13 @@ namespace Service_Management_System.POS
         // Existing search zlogic
         private int _selectedProductID = -1; // Use -1 to indicate no selection
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-            SearchProduct(textBox7.Text.Trim());
-        }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            string searchQuery = textBox7.Text.Trim();
-            if (!string.IsNullOrEmpty(searchQuery))
-            {
-                DataTable dataTable = (DataTable)partsView.DataSource;
-                if (dataTable != null && dataTable.Rows.Count > 0)
-                {
-                    int productID = Convert.ToInt32(dataTable.Rows[0]["ProductID"]);
-                    AddOrUpdateProductOrderedView(productID);
-                }
-            }
-            else
-            {
-                LoadPartsView(); // Reload all products if search query is empty
-            }
-        }
 
         private void SearchProduct(string searchTerm)
         {
             string query = "SELECT ProductID, ProductName, Price " +
                       "FROM Products " +
-                      "WHERE Products.ProductName LIKE ? OR Products.Barcode LIKE ?";
+                      "WHERE ProductID LIKE ? OR ProductName LIKE ? OR Barcode LIKE ?";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
@@ -738,6 +740,28 @@ namespace Service_Management_System.POS
                         connection.Close();
                     }
                 }
+            }
+        }
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            SearchProduct(textBox7.Text.Trim());
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string searchQuery = textBox7.Text.Trim();
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                DataTable dataTable = (DataTable)partsView.DataSource;
+                if (dataTable != null && dataTable.Rows.Count > 0)
+                {
+                    int productID = Convert.ToInt32(dataTable.Rows[0]["ProductID"]);
+                    AddOrUpdateProductOrderedView(productID);
+                }
+            }
+            else
+            {
+                LoadPartsView(); // Reload all products if search query is empty
             }
         }
         private void textBox8_TextChanged(object sender, EventArgs e)
@@ -813,6 +837,7 @@ namespace Service_Management_System.POS
                     jobOrderedView.Rows.Remove(row);
                 }
             }
+            DisplaySubTotal();
         }
 
 
@@ -1440,6 +1465,21 @@ namespace Service_Management_System.POS
         private void btnEnter_Click(object sender, EventArgs e)
         {
 
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                connection.Open();
+
+                string sql = "UPDATE JobOrders SET MechanicID = MechanicID WHERE JobOrderID = JobOrderID";
+                using (OleDbCommand command = new OleDbCommand(sql, connection))
+                {
+                    // Add parameters with values
+                    command.Parameters.AddWithValue("MechanicID", tbxMechanicID);
+                    command.Parameters.AddWithValue("JobOrderID", JobOrderID); // Replace with the actual JobOrderID
+
+                    // Execute the command
+                    command.ExecuteNonQuery();
+                }
+            }
         }
         private void dgvRowCount()
         {
@@ -1503,16 +1543,49 @@ namespace Service_Management_System.POS
 
         }
 
+
+        //<<<<<<< HEAD
+        private void textBox7_TextChanged_1(object sender, EventArgs e)
+        {
+            SearchProduct(textBox7.Text.Trim());
+
+            //=======
+
+
+
+
+            /*private void button12_MouseEnter(object sender, EventArgs e)
+            {
+
+            }*/
+        }
         private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            //>>>>>>> 6eb94b2cc1e25c79bc672ab9cf09bf9dc048e1b6
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
 
-
-
-        /*private void button12_MouseEnter(object sender, EventArgs e)
+        private void button32_Click(object sender, EventArgs e)
         {
 
-        }*/
+        }
+
+        private void tbxInputDicsount_TextChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(tbxInputDicsount.Text, out decimal discount) && discount >= 0)
+            {
+                DisplaySubTotal();
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid discount amount.");
+                tbxInputDicsount.Text = "0";
+            }
+        }
     }
 }

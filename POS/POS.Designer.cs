@@ -709,6 +709,7 @@ namespace Service_Management_System.POS
             textBox1.TabIndex = 5;
             textBox1.TextAlign = HorizontalAlignment.Center;
             textBox1.TextChanged += textBox1_TextChanged;
+            textBox1.KeyPress += textBox1_KeyPress;
             // 
             // lblQuantity
             // 
@@ -1196,7 +1197,7 @@ namespace Service_Management_System.POS
             panel_Discount.Margin = new Padding(2);
             panel_Discount.MaximumSize = new Size(450, 705);
             panel_Discount.Name = "panel_Discount";
-            panel_Discount.Size = new Size(450, 0);
+            panel_Discount.Size = new Size(450, 705);
             panel_Discount.TabIndex = 15;
             panel_Discount.Paint += panel_Discount_Paint;
             // 
@@ -1211,6 +1212,7 @@ namespace Service_Management_System.POS
             tbxInputDicsount.Name = "tbxInputDicsount";
             tbxInputDicsount.Size = new Size(108, 27);
             tbxInputDicsount.TabIndex = 6;
+            tbxInputDicsount.TextChanged += tbxInputDicsount_TextChanged;
             // 
             // label8
             // 
@@ -1265,6 +1267,7 @@ namespace Service_Management_System.POS
             button32.Size = new Size(94, 140);
             button32.TabIndex = 14;
             button32.UseVisualStyleBackColor = true;
+            button32.Click += button32_Click;
             // 
             // button31
             // 
