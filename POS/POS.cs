@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using static Service_Management_System.POS.Login_Page_Front___Backend.LoginForm;
 //using Service_Management_System.Registration;
 
 namespace Service_Management_System.POS
@@ -37,8 +38,18 @@ namespace Service_Management_System.POS
             MechanicTable();
             dgvRowCount();
             //this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
-        }
+            DisplayUserInfo();
 
+
+        }
+        private void DisplayUserInfo()
+        {
+            tbxFirstName.Text = UserInfo.FirstName;
+            tbxLastName.Text = UserInfo.LastName;
+            tbxEmail.Text = UserInfo.Email;
+            tbxContactNumber.Text = UserInfo.Contact;
+            tbxPosition.Text = UserInfo.Position;
+        }
 
         private void timerSfx_Tick(object sender, EventArgs e)
         {
@@ -1318,7 +1329,7 @@ namespace Service_Management_System.POS
         }
         private void dgvRowCount()
         {
-            int rowCount = productOrderedView.Rows.Count - 1;
+            int rowCount = productOrderedView.Rows.Count;
             textBox1.Text = rowCount.ToString();
         }
 
