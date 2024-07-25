@@ -44,12 +44,12 @@
             label2 = new Label();
             label1 = new Label();
             button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            btnCash = new Button();
+            btncreditCard = new Button();
+            btndebitCard = new Button();
             btnSubmit = new Button();
-            button6 = new Button();
-            button7 = new Button();
+            btnVoucher = new Button();
+            btngiftCard = new Button();
             button8 = new Button();
             button9 = new Button();
             button10 = new Button();
@@ -248,44 +248,47 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // button2
+            // btnCash
             // 
-            button2.BackColor = Color.FromArgb(3, 83, 115);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(682, 176);
-            button2.Name = "button2";
-            button2.Size = new Size(147, 45);
-            button2.TabIndex = 5;
-            button2.Text = "Cash";
-            button2.UseVisualStyleBackColor = false;
+            btnCash.BackColor = Color.FromArgb(3, 83, 115);
+            btnCash.FlatAppearance.BorderSize = 0;
+            btnCash.FlatStyle = FlatStyle.Flat;
+            btnCash.ForeColor = Color.White;
+            btnCash.Location = new Point(682, 176);
+            btnCash.Name = "btnCash";
+            btnCash.Size = new Size(147, 45);
+            btnCash.TabIndex = 5;
+            btnCash.Text = "Cash";
+            btnCash.UseVisualStyleBackColor = false;
+            btnCash.Click += button2_Click;
             // 
-            // button3
+            // btncreditCard
             // 
-            button3.BackColor = Color.FromArgb(3, 83, 115);
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(682, 239);
-            button3.Name = "button3";
-            button3.Size = new Size(147, 45);
-            button3.TabIndex = 6;
-            button3.Text = "Credit Card";
-            button3.UseVisualStyleBackColor = false;
+            btncreditCard.BackColor = Color.FromArgb(3, 83, 115);
+            btncreditCard.FlatAppearance.BorderSize = 0;
+            btncreditCard.FlatStyle = FlatStyle.Flat;
+            btncreditCard.ForeColor = Color.White;
+            btncreditCard.Location = new Point(682, 239);
+            btncreditCard.Name = "btncreditCard";
+            btncreditCard.Size = new Size(147, 45);
+            btncreditCard.TabIndex = 6;
+            btncreditCard.Text = "Credit Card";
+            btncreditCard.UseVisualStyleBackColor = false;
+            btncreditCard.Click += btncreditCard_Click;
             // 
-            // button4
+            // btndebitCard
             // 
-            button4.BackColor = Color.FromArgb(3, 83, 115);
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(682, 299);
-            button4.Name = "button4";
-            button4.Size = new Size(147, 45);
-            button4.TabIndex = 7;
-            button4.Text = "Debit Card";
-            button4.UseVisualStyleBackColor = false;
+            btndebitCard.BackColor = Color.FromArgb(3, 83, 115);
+            btndebitCard.FlatAppearance.BorderSize = 0;
+            btndebitCard.FlatStyle = FlatStyle.Flat;
+            btndebitCard.ForeColor = Color.White;
+            btndebitCard.Location = new Point(682, 299);
+            btndebitCard.Name = "btndebitCard";
+            btndebitCard.Size = new Size(147, 45);
+            btndebitCard.TabIndex = 7;
+            btndebitCard.Text = "Debit Card";
+            btndebitCard.UseVisualStyleBackColor = false;
+            btndebitCard.Click += btndebitCard_Click;
             // 
             // btnSubmit
             // 
@@ -293,39 +296,41 @@
             btnSubmit.FlatAppearance.BorderSize = 0;
             btnSubmit.FlatStyle = FlatStyle.Flat;
             btnSubmit.ForeColor = Color.White;
-            btnSubmit.Location = new Point(861, 422);
+            btnSubmit.Location = new Point(842, 326);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(147, 45);
             btnSubmit.TabIndex = 8;
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = false;
+            btnSubmit.Click += btnSubmit_Click;
             // 
-            // button6
+            // btnVoucher
             // 
-            button6.BackColor = Color.FromArgb(3, 83, 115);
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.ForeColor = Color.White;
-            button6.Location = new Point(682, 361);
-            button6.Name = "button6";
-            button6.Size = new Size(147, 45);
-            button6.TabIndex = 9;
-            button6.Text = "Voucher";
-            button6.UseVisualStyleBackColor = false;
-            button6.Click += button6_Click;
+            btnVoucher.BackColor = Color.FromArgb(3, 83, 115);
+            btnVoucher.FlatAppearance.BorderSize = 0;
+            btnVoucher.FlatStyle = FlatStyle.Flat;
+            btnVoucher.ForeColor = Color.White;
+            btnVoucher.Location = new Point(682, 361);
+            btnVoucher.Name = "btnVoucher";
+            btnVoucher.Size = new Size(147, 45);
+            btnVoucher.TabIndex = 9;
+            btnVoucher.Text = "Voucher";
+            btnVoucher.UseVisualStyleBackColor = false;
+            btnVoucher.Click += button6_Click;
             // 
-            // button7
+            // btngiftCard
             // 
-            button7.BackColor = Color.FromArgb(3, 83, 115);
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.ForeColor = Color.White;
-            button7.Location = new Point(682, 422);
-            button7.Name = "button7";
-            button7.Size = new Size(147, 45);
-            button7.TabIndex = 10;
-            button7.Text = "Gift Card";
-            button7.UseVisualStyleBackColor = false;
+            btngiftCard.BackColor = Color.FromArgb(3, 83, 115);
+            btngiftCard.FlatAppearance.BorderSize = 0;
+            btngiftCard.FlatStyle = FlatStyle.Flat;
+            btngiftCard.ForeColor = Color.White;
+            btngiftCard.Location = new Point(682, 422);
+            btngiftCard.Name = "btngiftCard";
+            btngiftCard.Size = new Size(147, 45);
+            btngiftCard.TabIndex = 10;
+            btngiftCard.Text = "Gift Card";
+            btngiftCard.UseVisualStyleBackColor = false;
+            btngiftCard.Click += btngiftCard_Click;
             // 
             // button8
             // 
@@ -335,13 +340,14 @@
             button8.ForeColor = Color.White;
             button8.Image = (Image)resources.GetObject("button8.Image");
             button8.ImageAlign = ContentAlignment.MiddleLeft;
-            button8.Location = new Point(682, 482);
+            button8.Location = new Point(997, 386);
             button8.Name = "button8";
             button8.Size = new Size(147, 45);
             button8.TabIndex = 11;
             button8.Text = "Split payments";
             button8.TextAlign = ContentAlignment.MiddleRight;
             button8.UseVisualStyleBackColor = false;
+            button8.Visible = false;
             // 
             // button9
             // 
@@ -536,7 +542,7 @@
             btnGenReceipt.FlatAppearance.BorderSize = 0;
             btnGenReceipt.FlatStyle = FlatStyle.Flat;
             btnGenReceipt.ForeColor = Color.White;
-            btnGenReceipt.Location = new Point(861, 482);
+            btnGenReceipt.Location = new Point(682, 476);
             btnGenReceipt.Name = "btnGenReceipt";
             btnGenReceipt.Size = new Size(147, 45);
             btnGenReceipt.TabIndex = 27;
@@ -566,12 +572,12 @@
             Controls.Add(button10);
             Controls.Add(button9);
             Controls.Add(button8);
-            Controls.Add(button7);
-            Controls.Add(button6);
+            Controls.Add(btngiftCard);
+            Controls.Add(btnVoucher);
             Controls.Add(btnSubmit);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(btndebitCard);
+            Controls.Add(btncreditCard);
+            Controls.Add(btnCash);
             Controls.Add(button1);
             Controls.Add(panel2);
             Controls.Add(dataGridView1);
@@ -603,12 +609,12 @@
         private TextBox textBox3;
         private TextBox textBox2;
         private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
+        private Button btnCash;
+        private Button btncreditCard;
+        private Button btndebitCard;
         private Button btnSubmit;
-        private Button button6;
-        private Button button7;
+        private Button btnVoucher;
+        private Button btngiftCard;
         private Button button8;
         private Button button9;
         private Button button13;
