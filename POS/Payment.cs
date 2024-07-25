@@ -25,7 +25,7 @@ namespace Service_Management_System.POS
             {
                 using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
                 {
-                    string query = "SELECT CustomerName, CustomerContact, DateCreated, Vehicle, PlateNo FROM JobOrders WHERE Status = False";
+                    string query = "SELECT CustomerName, CustomerContact, DateCreated, Vehicle, PlateNo, Subtotal, Tax, Total FROM JobOrders WHERE Status = False";
                     ;
                     OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
@@ -91,6 +91,36 @@ namespace Service_Management_System.POS
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Check if the clicked cell is part of the content (not header or out of bounds)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Retrieve the row that was clicked
+                DataGridViewRow clickedRow = dataGridView1.Rows[e.RowIndex];
+
+                // Assuming "Total" is the name of the column you want to display in textBox5
+                // Ensure the column name matches exactly the one in your DataGridView
+                var totalCell = clickedRow.Cells["Total"];
+
+                if (totalCell.Value != null)
+                {
+                    // Set the value of textBox5 to the value of the "Total" cell
+                    textBox5.Text = totalCell.Value.ToString();
+                }
+                else
+                {
+                    // If the cell is null, clear the textBox5
+                    textBox5.Text = string.Empty;
+                }
+            }
         }
     }
 }

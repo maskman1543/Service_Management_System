@@ -31,7 +31,7 @@ namespace Service_Management_System.POS
             {
                 using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
                 {
-                    string query = "SELECT CustomerName, CustomerContact, DateCreated, Vehicle, PlateNo FROM JobOrders WHERE Status = False";
+                    string query = "SELECT CustomerName, CustomerContact, DateCreated, Vehicle, PlateNo, Subtotal, Tax, Total FROM JobOrders WHERE Status = False";
                     ;
                     OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();

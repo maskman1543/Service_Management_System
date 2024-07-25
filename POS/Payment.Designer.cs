@@ -138,6 +138,7 @@
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.Size = new Size(677, 678);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // panel2
             // 
@@ -496,6 +497,7 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(252, 27);
             textBox5.TabIndex = 22;
+            textBox5.TextChanged += textBox5_TextChanged;
             // 
             // panel6
             // 

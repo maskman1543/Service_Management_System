@@ -353,7 +353,7 @@ namespace Service_Management_System.POS
 
         }
 
-        
+        /*
         private void btnSaveSale_Click(object sender, EventArgs e)
         {
             int JobOrderNumber = Class1.GlobalVariables.JobOrderNumber; // JobOrderNumber is typically the JobOrderID
@@ -425,6 +425,19 @@ namespace Service_Management_System.POS
                             command3.ExecuteNonQuery();
                         }
                     }
+
+                    // Insert into JobOrderItem table
+                    foreach (var (subtotal, tax, total) in productDetailsPrices)
+                    {
+                        string query4 = "INSERT INTO JobOrders (Subtotal, Tax, Total) VALUES (@Subtotal, @Tax, @Total)";
+                        using (OleDbCommand command4 = new OleDbCommand(query4, connection))
+                        {
+                            command4.Parameters.AddWithValue("@Subtotal", subtotal);
+                            command4.Parameters.AddWithValue("@Tax", tax);
+                            command4.Parameters.AddWithValue("@Total", total);
+                            command4.ExecuteNonQuery();
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -434,12 +447,107 @@ namespace Service_Management_System.POS
 
             MessageBox.Show("Sale saved successfully!");
         }
+        *///buckup POSForm - btnSaveSale Pls don't delete this.
+        private void btnSaveSale_Click(object sender, EventArgs e)
+        {
+            int JobOrderNumber = Class1.GlobalVariables.JobOrderNumber; // JobOrderNumber is typically the JobOrderID
 
+            // Retrieve the CustomerName associated with the JobOrderNumber
+            string CustomerName;
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                string selectCustomerNameQuery = "SELECT CustomerName FROM JobOrders WHERE JobOrderID = @JobOrderID";
+                OleDbCommand command = new OleDbCommand(selectCustomerNameQuery, connection);
+                command.Parameters.AddWithValue("@JobOrderID", JobOrderNumber);
 
+                try
+                {
+                    connection.Open();
+                    CustomerName = (string)command.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error retrieving CustomerName: " + ex.Message);
+                    return;
+                }
+            }
 
+            DateTime DateSaved = DateTime.Now;
 
+            List<(int ProductID, int Quantity)> productDetails = new List<(int, int)>();
+            foreach (DataGridViewRow row in productOrderedView.Rows)
+            {
+                int productID = Convert.ToInt32(row.Cells["ProductID"].Value);
+                int quantity = Convert.ToInt32(row.Cells["Quantity"].Value); // Assuming Quantity column exists
+                productDetails.Add((productID, quantity));
+            }
 
+            List<int> serviceDetails = new List<int>();
+            foreach (DataGridViewRow row in jobOrderedView.Rows)
+            {
+                int serviceID = Convert.ToInt32(row.Cells["ServiceID"].Value);
+                serviceDetails.Add(serviceID);
+            }
 
+            // Get the subtotal, tax, and total values from the labels
+            string subtotalText = lblsubtotal.Text.Replace("₱", "").Trim();
+            string taxText = lblVaTax.Text.Replace("₱", "").Trim();
+            string totalText = lblTotal.Text.Replace("₱", "").Trim();
+
+            decimal subtotal = decimal.Parse(subtotalText, System.Globalization.NumberStyles.Currency);
+            decimal tax = decimal.Parse(taxText, System.Globalization.NumberStyles.Currency);
+            decimal total = decimal.Parse(totalText, System.Globalization.NumberStyles.Currency);
+
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Insert into JobOrderItem table
+                    foreach (var (productID, quantity) in productDetails)
+                    {
+                        string query = "INSERT INTO JobOrderItem (JobOrderID, ProductID, Quantity) VALUES (@JobOrderID, @ProductID, @Quantity)";
+                        using (OleDbCommand command = new OleDbCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@JobOrderID", JobOrderNumber);
+                            command.Parameters.AddWithValue("@ProductID", productID);
+                            command.Parameters.AddWithValue("@Quantity", quantity);
+                            command.ExecuteNonQuery();
+                        }
+                    }
+
+                    // Insert into JobOrderService table for services
+                    foreach (int serviceID in serviceDetails)
+                    {
+                        string query3 = "INSERT INTO JobOrderService (JobOrderID, ServiceID) VALUES (@JobOrderID, @ServiceID)";
+                        using (OleDbCommand command3 = new OleDbCommand(query3, connection))
+                        {
+                            command3.Parameters.AddWithValue("@JobOrderID", JobOrderNumber);
+                            command3.Parameters.AddWithValue("@ServiceID", serviceID);
+                            command3.ExecuteNonQuery();
+                        }
+                    }
+
+                    // Update the JobOrders table with the subtotal, tax, and total
+                    string query4 = "UPDATE JobOrders SET Subtotal = @Subtotal, Tax = @Tax, Total = @Total WHERE JobOrderID = @JobOrderID";
+                    using (OleDbCommand command4 = new OleDbCommand(query4, connection))
+                    {
+                        command4.Parameters.AddWithValue("@Subtotal", subtotal);
+                        command4.Parameters.AddWithValue("@Tax", tax);
+                        command4.Parameters.AddWithValue("@Total", total);
+                        command4.Parameters.AddWithValue("@JobOrderID", JobOrderNumber);
+                        command4.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error inserting into JobOrderItem or JobOrderService: " + ex.Message);
+                }
+            }
+
+            MessageBox.Show("Sale saved successfully!");
+        }
 
         private void button12_Click(object sender, EventArgs e)
         {
