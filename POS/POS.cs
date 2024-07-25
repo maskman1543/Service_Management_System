@@ -544,7 +544,7 @@ namespace Service_Management_System.POS
 
         private void btnSignout_Click(object sender, EventArgs e)
         {
-            Splash loginForm = new Splash();
+            LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Close();
         }
