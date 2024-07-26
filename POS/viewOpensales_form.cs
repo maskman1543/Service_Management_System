@@ -31,7 +31,7 @@ namespace Service_Management_System.POS
             {
                 using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
                 {
-                    string query = "SELECT CustomerName, CustomerContact, DateCreated, Vehicle, PlateNo FROM JobOrders WHERE Status = False";
+                    string query = "SELECT CustomerName, CustomerContact, DateCreated, Vehicle, PlateNo, Subtotal, Tax, Total FROM JobOrders WHERE Status = False";
                     ;
                     OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
@@ -48,12 +48,12 @@ namespace Service_Management_System.POS
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Ensure it's not a header row
+            if (e.RowIndex >= 0) 
             {
-                // Get the selected JobOrderID (assuming it's in the first column)
+               
                 int jobOrderID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
 
-                // Set the JobOrderID in Class1
+                
                 Class1.GlobalVariables.JobOrderNumber = jobOrderID;
             }
         }

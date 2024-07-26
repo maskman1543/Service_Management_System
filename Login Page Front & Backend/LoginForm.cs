@@ -192,7 +192,8 @@ namespace Service_Management_System.POS.Login_Page_Front___Backend
 
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            new ForgotPassword().Show();
+            this.Hide();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

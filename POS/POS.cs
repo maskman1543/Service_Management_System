@@ -1,4 +1,5 @@
-﻿using Service_Management_System.DASHBOARD;
+﻿using Microsoft.Data.SqlClient;
+using Service_Management_System.DASHBOARD;
 using Service_Management_System.Login_Page_Front___Backend;
 using Service_Management_System.POS.Login_Page_Front___Backend;
 using Service_Management_System.POS.Login_Page_Front_and_Back_End;
@@ -14,7 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using static Service_Management_System.POS.Login_Page_Front___Backend.LoginForm;
-//using Service_Management_System.Registration;
+
 
 namespace Service_Management_System.POS
 {
@@ -37,7 +38,7 @@ namespace Service_Management_System.POS
             InitializeJobOrderedView();
             MechanicTable();
             dgvRowCount();
-            //this.BackColor = ColorTranslator.FromHtml("#1A5F7A");
+            
             DisplayUserInfo();
 
 
@@ -83,7 +84,6 @@ namespace Service_Management_System.POS
         {
             LoadPartsView();
             LoadServiceView();
-            tbxInputDicsount.KeyPress += tbxInputDicsount_TextChanged;
         }
 
         private void AddOrUpdateProductOrderedView(int productID)
@@ -149,11 +149,11 @@ namespace Service_Management_System.POS
         private void InitializeProductOrderedView()
         {
             productOrderedView.Columns.Add("ProductID", "Product ID");
-            //productOrderedView.Columns.Add("ProductGroup", "Product Group");
+            
             productOrderedView.Columns.Add("ProductName", "Product Name");
             productOrderedView.Columns.Add("Price", "Price");
             productOrderedView.Columns.Add("Quantity", "Quantity");
-            //productOrderedView.Columns.Add("Barcode", "Barcode");
+            
         }
 
         private void LoadProductOrderedView(int productID)
@@ -180,7 +180,7 @@ namespace Service_Management_System.POS
         private void InitializeJobOrderedView()
         {
             jobOrderedView.Columns.Add("ServiceID", "Service ID");
-            //jobOrderedView.Columns.Add("serviceType", "Service Type");
+            
             jobOrderedView.Columns.Add("ServiceName", "Service Name");
             jobOrderedView.Columns.Add("Price", "Service Rate");
         }
@@ -202,7 +202,7 @@ namespace Service_Management_System.POS
                     {
                         DataRow serviceRow = dataTable.Rows[0];
 
-                        // Add new row for service
+                      
                         jobOrderedView.Rows.Add(serviceRow["serviceID"], serviceRow["serviceType"], serviceRow["serviceName"], serviceRow["serviceRate"]);
                     }
                 }
@@ -239,11 +239,12 @@ namespace Service_Management_System.POS
 
         private void AddServiceToOrderedView(int serviceID)
         {
-            string query = "SELECT ServiceID, ServiceName, Price FROM Services WHERE ServiceID = ServiceID";
+            string query = "SELECT ServiceID, ServiceName, Price FROM Services WHERE ServiceID = @ServiceID";
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection);
+                adapter.SelectCommand.Parameters.AddWithValue("@ServiceID", serviceID);
                 DataTable dataTable = new DataTable();
 
                 try
@@ -256,7 +257,7 @@ namespace Service_Management_System.POS
                         DataRow serviceRow = dataTable.Rows[0];
 
                         // Add new row for service
-                        jobOrderedView.Rows.Add(serviceRow["ServiceID"], serviceRow["serviceName"], serviceRow["Price"]);
+                        jobOrderedView.Rows.Add(serviceRow["ServiceID"], serviceRow["ServiceName"], serviceRow["Price"]);
                     }
                 }
                 catch (Exception ex)
@@ -340,30 +341,20 @@ namespace Service_Management_System.POS
         private void DisplaySubTotal()
         {
             decimal productTotal = CalculateProductSubTotal();
-            decimal serviceTotal = CalculateServiceSubTotal();
-            decimal subtotal = productTotal + serviceTotal;
+            decimal ServiceTOtal = CalculateServiceSubTotal();
+            decimal subtotal = productTotal + ServiceTOtal;
+            decimal subtotalwithvat = productTotal + ServiceTOtal;
 
-            // Parse the discount amount from the TextBox
-            if (decimal.TryParse(tbxInputDicsount.Text, out decimal discount))
-            {
-                // Apply the discount to the subtotal
-                subtotal -= discount;
+            decimal vat = subtotalwithvat * VAT_RATE;
+            decimal total = subtotal;
 
-                // Calculate VAT and total based on the discounted subtotal
-                decimal vat = subtotal * VAT_RATE;
-                decimal total = subtotal + vat;
 
-                // Update the UI labels with formatted values
-                lblsubtotal.Text = subtotal.ToString("C");
-                lblVaTax.Text = vat.ToString("C");
-                lblTotal.Text = total.ToString("C");
-            }
-            else
-            {
-                // Handle invalid input from txtDiscount (optional)
-            }
-
+            lblsubtotal.Text = subtotal.ToString("C");
+            lblVaTax.Text = vat.ToString("C");
+            lblTotal.Text = total.ToString("C");
         }
+
+
         /*
         private void btnSaveSale_Click(object sender, EventArgs e)
         {
@@ -391,31 +382,6 @@ namespace Service_Management_System.POS
 
             DateTime DateSaved = DateTime.Now;
 
-            int CartID;
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
-            {
-                string insertCartQuery = "INSERT INTO CartTb_2 (CustomerName, DateSaved) VALUES (@CustomerName, @DateSaved)";
-                OleDbCommand command = new OleDbCommand(insertCartQuery, connection);
-
-                command.Parameters.AddWithValue("@CustomerName", CustomerName);
-                command.Parameters.Add("@DateSaved", OleDbType.Date).Value = DateSaved; // Correctly handling the Date/Time parameter
-
-                try
-                {
-                    connection.Open();
-                    command.ExecuteNonQuery();
-
-                    // Retrieve the newly generated CartID
-                    command.CommandText = "SELECT @@IDENTITY";
-                    CartID = Convert.ToInt32(command.ExecuteScalar()); // Correct casting to int
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error generating new CartID: " + ex.Message);
-                    return;
-                }
-            }
-
             List<(int ProductID, int Quantity)> productDetails = new List<(int, int)>();
             foreach (DataGridViewRow row in productOrderedView.Rows)
             {
@@ -424,58 +390,71 @@ namespace Service_Management_System.POS
                 productDetails.Add((productID, quantity));
             }
 
-            // Get the subtotal value from lblsubtotal.Text and parse it as a decimal
-            string subtotalText = lblsubtotal.Text.Replace("₱", "").Trim();
-            decimal subtotal = decimal.Parse(subtotalText, System.Globalization.NumberStyles.Currency);
+            List<int> serviceDetails = new List<int>();
+            foreach (DataGridViewRow row in jobOrderedView.Rows)
+            {
+                int serviceID = Convert.ToInt32(row.Cells["ServiceID"].Value);
+                serviceDetails.Add(serviceID);
+            }
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 try
                 {
                     connection.Open();
+
+                    // Insert into JobOrderItem table
                     foreach (var (productID, quantity) in productDetails)
                     {
-                        // Insert into JobOrderItem table
-                        string query = "INSERT INTO JobOrderItem (JobOrderID, Quantity, CartID) VALUES (@JobOrderID, @Quantity, @CartID)";
+                        string query = "INSERT INTO JobOrderItem (JobOrderID, ProductID, Quantity) VALUES (@JobOrderID, @ProductID, @Quantity)";
                         using (OleDbCommand command = new OleDbCommand(query, connection))
                         {
                             command.Parameters.AddWithValue("@JobOrderID", JobOrderNumber);
+                            command.Parameters.AddWithValue("@ProductID", productID);
                             command.Parameters.AddWithValue("@Quantity", quantity);
-                            command.Parameters.AddWithValue("@CartID", CartID);
                             command.ExecuteNonQuery();
                         }
+                    }
 
-                        // Insert into CartProductsTb table
-                        string query2 = "INSERT INTO CartProductsTb (CartID, ProductID, Quantity, Subtotal) VALUES (@CartID, @ProductID, @Quantity, @Subtotal)";
-                        using (OleDbCommand command2 = new OleDbCommand(query2, connection))
+                    // Insert into JobOrderService table for services
+                    foreach (int serviceID in serviceDetails)
+                    {
+                        string query3 = "INSERT INTO JobOrderService (JobOrderID, ServiceID) VALUES (@JobOrderID, @ServiceID)";
+                        using (OleDbCommand command3 = new OleDbCommand(query3, connection))
                         {
-                            command2.Parameters.AddWithValue("@CartID", CartID);
-                            command2.Parameters.AddWithValue("@ProductID", productID);
-                            command2.Parameters.AddWithValue("@Quantity", quantity);
-                            command2.Parameters.AddWithValue("@Subtotal", subtotal);
-                            command2.ExecuteNonQuery();
+                            command3.Parameters.AddWithValue("@JobOrderID", JobOrderNumber);
+                            command3.Parameters.AddWithValue("@ServiceID", serviceID);
+                            command3.ExecuteNonQuery();
                         }
+                    }
 
-
-
-                      
+                    // Insert into JobOrderItem table
+                    foreach (var (subtotal, tax, total) in productDetailsPrices)
+                    {
+                        string query4 = "INSERT INTO JobOrders (Subtotal, Tax, Total) VALUES (@Subtotal, @Tax, @Total)";
+                        using (OleDbCommand command4 = new OleDbCommand(query4, connection))
+                        {
+                            command4.Parameters.AddWithValue("@Subtotal", subtotal);
+                            command4.Parameters.AddWithValue("@Tax", tax);
+                            command4.Parameters.AddWithValue("@Total", total);
+                            command4.ExecuteNonQuery();
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error inserting into JobOrderItem or CartProductsTb: " + ex.Message);
+                    MessageBox.Show("Error inserting into JobOrderItem or JobOrderService: " + ex.Message);
                 }
             }
 
             MessageBox.Show("Sale saved successfully!");
         }
-        */
-
+        *///buckup POSForm - btnSaveSale Pls don't delete this.
         private void btnSaveSale_Click(object sender, EventArgs e)
         {
-            int JobOrderNumber = Class1.GlobalVariables.JobOrderNumber; // JobOrderNumber is typically the JobOrderID
+            int JobOrderNumber = Class1.GlobalVariables.JobOrderNumber; 
 
-            // Retrieve the CustomerName associated with the JobOrderNumber
+          
             string CustomerName;
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
@@ -497,36 +476,11 @@ namespace Service_Management_System.POS
 
             DateTime DateSaved = DateTime.Now;
 
-            int CartID;
-            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
-            {
-                string insertCartQuery = "INSERT INTO CartTb_2 (CustomerName, DateSaved) VALUES (@CustomerName, @DateSaved)";
-                OleDbCommand command = new OleDbCommand(insertCartQuery, connection);
-
-                command.Parameters.AddWithValue("@CustomerName", CustomerName);
-                command.Parameters.Add("@DateSaved", OleDbType.Date).Value = DateSaved; // Correctly handling the Date/Time parameter
-
-                try
-                {
-                    connection.Open();
-                    command.ExecuteNonQuery();
-
-                    // Retrieve the newly generated CartID
-                    command.CommandText = "SELECT @@IDENTITY";
-                    CartID = Convert.ToInt32(command.ExecuteScalar()); // Correct casting to int
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error generating new CartID: " + ex.Message);
-                    return;
-                }
-            }
-
             List<(int ProductID, int Quantity)> productDetails = new List<(int, int)>();
             foreach (DataGridViewRow row in productOrderedView.Rows)
             {
                 int productID = Convert.ToInt32(row.Cells["ProductID"].Value);
-                int quantity = Convert.ToInt32(row.Cells["Quantity"].Value); // Assuming Quantity column exists
+                int quantity = Convert.ToInt32(row.Cells["Quantity"].Value); 
                 productDetails.Add((productID, quantity));
             }
 
@@ -537,43 +491,38 @@ namespace Service_Management_System.POS
                 serviceDetails.Add(serviceID);
             }
 
-            // Get the subtotal value from lblsubtotal.Text and parse it as a decimal
+            // Get the subtotal, tax, and total values from the labels
             string subtotalText = lblsubtotal.Text.Replace("₱", "").Trim();
+            string taxText = lblVaTax.Text.Replace("₱", "").Trim();
+            string totalText = lblTotal.Text.Replace("₱", "").Trim();
+
             decimal subtotal = decimal.Parse(subtotalText, System.Globalization.NumberStyles.Currency);
+            decimal tax = decimal.Parse(taxText, System.Globalization.NumberStyles.Currency);
+            decimal total = decimal.Parse(totalText, System.Globalization.NumberStyles.Currency);
 
             using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
             {
                 try
                 {
                     connection.Open();
+
+                    // Insert into JobOrderItem table
                     foreach (var (productID, quantity) in productDetails)
                     {
-                        // Insert into JobOrderItem table
-                        string query = "INSERT INTO JobOrderItem (JobOrderID, Quantity, CartID) VALUES (@JobOrderID, @Quantity, @CartID)";
+                        string query = "INSERT INTO JobOrderItem (JobOrderID, ProductID, Quantity) VALUES (@JobOrderID, @ProductID, @Quantity)";
                         using (OleDbCommand command = new OleDbCommand(query, connection))
                         {
                             command.Parameters.AddWithValue("@JobOrderID", JobOrderNumber);
+                            command.Parameters.AddWithValue("@ProductID", productID);
                             command.Parameters.AddWithValue("@Quantity", quantity);
-                            command.Parameters.AddWithValue("@CartID", CartID);
                             command.ExecuteNonQuery();
-                        }
-
-                        // Insert into CartProductsTb table
-                        string query2 = "INSERT INTO CartProductsTb (CartID, ProductID, Quantity, Subtotal) VALUES (@CartID, @ProductID, @Quantity, @Subtotal)";
-                        using (OleDbCommand command2 = new OleDbCommand(query2, connection))
-                        {
-                            command2.Parameters.AddWithValue("@CartID", CartID);
-                            command2.Parameters.AddWithValue("@ProductID", productID);
-                            command2.Parameters.AddWithValue("@Quantity", quantity);
-                            command2.Parameters.AddWithValue("@Subtotal", subtotal);
-                            command2.ExecuteNonQuery();
                         }
                     }
 
+                 
                     foreach (int serviceID in serviceDetails)
                     {
-                        // Insert into JobOrderService table for services
-                        string query3 = "INSERT INTO JobOrderService (ServiceID, JobOrderID) VALUES (@ServiceID, @JobOrderID)";
+                        string query3 = "INSERT INTO JobOrderService (JobOrderID, ServiceID) VALUES (@JobOrderID, @ServiceID)";
                         using (OleDbCommand command3 = new OleDbCommand(query3, connection))
                         {
                             command3.Parameters.AddWithValue("@JobOrderID", JobOrderNumber);
@@ -581,19 +530,26 @@ namespace Service_Management_System.POS
                             command3.ExecuteNonQuery();
                         }
                     }
+
+                  
+                    string query4 = "UPDATE JobOrders SET Subtotal = @Subtotal, Tax = @Tax, Total = @Total WHERE JobOrderID = @JobOrderID";
+                    using (OleDbCommand command4 = new OleDbCommand(query4, connection))
+                    {
+                        command4.Parameters.AddWithValue("@Subtotal", subtotal);
+                        command4.Parameters.AddWithValue("@Tax", tax);
+                        command4.Parameters.AddWithValue("@Total", total);
+                        command4.Parameters.AddWithValue("@JobOrderID", JobOrderNumber);
+                        command4.ExecuteNonQuery();
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error inserting into JobOrderItem, CartProductsTb, or JobOrderService: " + ex.Message);
+                    MessageBox.Show("Error inserting into JobOrderItem or JobOrderService: " + ex.Message);
                 }
             }
 
             MessageBox.Show("Sale saved successfully!");
         }
-
-
-
-
 
         private void button12_Click(object sender, EventArgs e)
         {
@@ -630,7 +586,7 @@ namespace Service_Management_System.POS
 
         private void btnSignout_Click(object sender, EventArgs e)
         {
-            Splash loginForm = new Splash();
+            LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Close();
         }
@@ -644,16 +600,16 @@ namespace Service_Management_System.POS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Check if the form is already open
+         
             if (orderForm == null || orderForm.IsDisposed)
             {
-                // If not, create a new instance and show it
+                
                 orderForm = new jonOrder_form();
                 orderForm.Show();
             }
             else
             {
-                // If already open, bring it to the front
+                
                 orderForm.BringToFront();
             }
         }
@@ -666,7 +622,7 @@ namespace Service_Management_System.POS
                 panel_Discount.Height -= 70;
                 if (panel_Discount.Height <= panel_Discount.MinimumSize.Height)
                 {
-                    panel_Discount.Height = panel_Discount.MinimumSize.Height; // Ensure it doesn't go below minimum size
+                    panel_Discount.Height = panel_Discount.MinimumSize.Height; 
                     sidebarExpandDiscount = false;
                     timer_Discount.Stop();
                 }
@@ -676,7 +632,7 @@ namespace Service_Management_System.POS
                 panel_Discount.Height += 70;
                 if (panel_Discount.Height >= panel_Discount.MaximumSize.Height)
                 {
-                    panel_Discount.Height = panel_Discount.MaximumSize.Height; // Ensure it doesn't exceed maximum size
+                    panel_Discount.Height = panel_Discount.MaximumSize.Height; 
                     sidebarExpandDiscount = true;
                     timer_Discount.Stop();
                 }
@@ -696,7 +652,7 @@ namespace Service_Management_System.POS
         }
 
         // Existing search zlogic
-        private int _selectedProductID = -1; // Use -1 to indicate no selection
+        private int _selectedProductID = -1; 
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
@@ -717,7 +673,7 @@ namespace Service_Management_System.POS
             }
             else
             {
-                LoadPartsView(); // Reload all products if search query is empty
+                LoadPartsView(); 
             }
         }
 
@@ -774,7 +730,7 @@ namespace Service_Management_System.POS
             DataTable dataTable = (DataTable)servicesView.DataSource;
             if (dataTable != null && dataTable.Rows.Count > 0)
             {
-                // Assuming you want to add the first service from the search results
+            
                 int serviceID = Convert.ToInt32(dataTable.Rows[0]["serviceID"]);
                 AddServiceToOrderedView(serviceID);
             }
@@ -837,7 +793,6 @@ namespace Service_Management_System.POS
                     jobOrderedView.Rows.Remove(row);
                 }
             }
-            DisplaySubTotal();
         }
 
 
@@ -884,6 +839,7 @@ namespace Service_Management_System.POS
         {
             viewOpensales_form opensales_Form = new viewOpensales_form();
             opensales_Form.Show();
+            this.Close();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -1345,16 +1301,16 @@ namespace Service_Management_System.POS
 
         private void btnNewSale_Click(object sender, EventArgs e)
         {
-            // Check if the form is already open
+           
             if (orderForm == null || orderForm.IsDisposed)
             {
-                // If not, create a new instance and show it
+                
                 orderForm = new jonOrder_form();
                 orderForm.Show();
             }
             else
             {
-                // If already open, bring it to the front
+                
                 orderForm.BringToFront();
             }
         }
@@ -1363,7 +1319,7 @@ namespace Service_Management_System.POS
         {
             Payment payment = new Payment();
             payment.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnCash_Click_1(object sender, EventArgs e)
@@ -1391,7 +1347,7 @@ namespace Service_Management_System.POS
                 panel_Mechanic.Height -= 70;
                 if (panel_Mechanic.Height <= panel_Mechanic.MinimumSize.Height)
                 {
-                    panel_Mechanic.Height = panel_Mechanic.MinimumSize.Height; // Ensure it doesn't go below minimum size
+                    panel_Mechanic.Height = panel_Mechanic.MinimumSize.Height; 
                     sidebarExpandMechanic = false;
                     timerMechanic.Stop();
                 }
@@ -1401,7 +1357,7 @@ namespace Service_Management_System.POS
                 panel_Mechanic.Height += 70;
                 if (panel_Mechanic.Height >= panel_Mechanic.MaximumSize.Height)
                 {
-                    panel_Mechanic.Height = panel_Mechanic.MaximumSize.Height; // Ensure it doesn't exceed maximum size
+                    panel_Mechanic.Height = panel_Mechanic.MaximumSize.Height; 
                     sidebarExpandMechanic = true;
                     timerMechanic.Stop();
                 }
@@ -1453,8 +1409,41 @@ namespace Service_Management_System.POS
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
+            
+            string mechanicID = tbxMechanicID.Text;
+            string mechanicName = tbxMechanicName.Text;
+            string mechanicLastName = tbxMechanicLastName.Text;
+            DateTime taskAssign = DateTime.Now; 
 
+            // Database connection string
+            string connectionString = Class1.GlobalVariables.ConnectionString2; 
+
+            // SQL query to insert data
+            string query = "INSERT INTO MechanicTask (MechanicID, MechanicName, MechanicLastName, taskAssign) VALUES (?, ?, ?, ?)";
+
+            // Create and open a connection
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            {
+                OleDbCommand command = new OleDbCommand(query, connection);
+                command.Parameters.AddWithValue("?", mechanicID);
+                command.Parameters.AddWithValue("?", mechanicName);
+                command.Parameters.AddWithValue("?", mechanicLastName);
+                command.Parameters.AddWithValue("?", taskAssign.ToString("yyyy-MM-dd HH:mm:ss")); 
+
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Task assigned and inserted into the database successfully.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
         }
+
+
         private void dgvRowCount()
         {
             int rowCount = productOrderedView.Rows.Count;
@@ -1489,7 +1478,7 @@ namespace Service_Management_System.POS
                 panel_UserInfo.Height -= 70;
                 if (panel_UserInfo.Height <= panel_UserInfo.MinimumSize.Height)
                 {
-                    panel_UserInfo.Height = panel_UserInfo.MinimumSize.Height; // Ensure it doesn't go below minimum size
+                    panel_UserInfo.Height = panel_UserInfo.MinimumSize.Height; 
                     sidebarExpandUserInfo = false;
                     timerUserInfo.Stop();
                 }
@@ -1499,7 +1488,7 @@ namespace Service_Management_System.POS
                 panel_UserInfo.Height += 70;
                 if (panel_UserInfo.Height >= panel_UserInfo.MaximumSize.Height)
                 {
-                    panel_UserInfo.Height = panel_UserInfo.MaximumSize.Height; // Ensure it doesn't exceed maximum size
+                    panel_UserInfo.Height = panel_UserInfo.MaximumSize.Height; 
                     sidebarExpandUserInfo = true;
                     timerUserInfo.Stop();
                 }
@@ -1527,155 +1516,88 @@ namespace Service_Management_System.POS
             System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
             if (clickedButton != null)
             {
-                if (tbxInputDicsount.Text.Contains("%"))
+                if (tbxDiscount.Text.Contains("%"))
                 {
 
-                    int percentIndex = tbxInputDicsount.Text.IndexOf("%");
-                    tbxInputDicsount.Text = tbxInputDicsount.Text.Insert(percentIndex, clickedButton.Text);
+                    int percentIndex = tbxDiscount.Text.IndexOf("%");
+                    tbxDiscount.Text = tbxDiscount.Text.Insert(percentIndex, clickedButton.Text);
                 }
                 else
                 {
-                    tbxInputDicsount.Text += clickedButton.Text;
+                    tbxDiscount.Text += clickedButton.Text;
                 }
             }
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(tbxDiscount.Text))
+            {
+                tbxDiscount.Text = tbxDiscount.Text.Substring(0, tbxDiscount.Text.Length - 1);
+            }
+        }
 
+        private void btnPoint_Click(object sender, EventArgs e)
+        {
+            if (!tbxDiscount.Text.Contains("."))
+            {
+                if (string.IsNullOrEmpty(tbxDiscount.Text))
+                {
+                    tbxDiscount.Text = "0.";
+                }
+                else
+                {
+                    tbxDiscount.Text += ".";
+                }
+            }
+        }
 
-
-
-
+        private void btnClearAll_Click(object sender, EventArgs e)
+        {
+            tbxDiscount.Text = string.Empty;
+        }
 
         private void btnPercent_Click(object sender, EventArgs e)
         {
-            tbxInputDicsount.Text = tbxInputDicsount.Text.Replace("₱", "");
+            tbxDiscount.Text = tbxDiscount.Text.Replace("₱", "");
 
             // Add percent sign if not already present
-            if (!tbxInputDicsount.Text.Contains("%"))
+            if (!tbxDiscount.Text.Contains("%"))
             {
-                if (double.TryParse(tbxInputDicsount.Text, out double number))
+                if (double.TryParse(tbxDiscount.Text, out double number))
                 {
-                    tbxInputDicsount.Text = number.ToString() + "%";
+                    tbxDiscount.Text = number.ToString() + "%";
                 }
             }
         }
 
         private void btnPeso_Click(object sender, EventArgs e)
         {
-            tbxInputDicsount.Text = tbxInputDicsount.Text.Replace("%", "");
+            tbxDiscount.Text = tbxDiscount.Text.Replace("%", "");
 
             // Add pesos sign if not already present
-            if (!tbxInputDicsount.Text.Contains("₱"))
+            if (!tbxDiscount.Text.Contains("₱"))
             {
-                if (double.TryParse(tbxInputDicsount.Text, out double number))
+                if (double.TryParse(tbxDiscount.Text, out double number))
                 {
-                    tbxInputDicsount.Text = "₱" + number.ToString();
+                    tbxDiscount.Text = "₱" + number.ToString();
                 }
             }
         }
 
-        private void btnClear_Click_1(object sender, EventArgs e)
+        private void tbxMechanicID_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(tbxInputDicsount.Text))
-            {
-                tbxInputDicsount.Text = tbxInputDicsount.Text.Substring(0, tbxInputDicsount.Text.Length - 1);
-            }
+
         }
 
-        private void btnClearAll_Click_1(object sender, EventArgs e)
+        private void tbxMechanicName_TextChanged(object sender, EventArgs e)
         {
-            tbxInputDicsount.Text = string.Empty;
+
         }
 
-        private void btnPoint_Click_1(object sender, EventArgs e)
+        private void tbxMechanicLastName_TextChanged(object sender, EventArgs e)
         {
-            if (!tbxInputDicsount.Text.Contains("."))
-            {
-                if (string.IsNullOrEmpty(tbxInputDicsount.Text))
-                {
-                    tbxInputDicsount.Text = "0.";
-                }
-                else
-                {
-                    tbxInputDicsount.Text += ".";
-                }
-            }
-        }
 
-        private void btnPercent_Click_1(object sender, EventArgs e)
-        {
-            tbxInputDicsount.Text = tbxInputDicsount.Text.Replace("₱", "");
-
-            // Add percent sign if not already present
-            if (!tbxInputDicsount.Text.Contains("%"))
-            {
-                if (double.TryParse(tbxInputDicsount.Text, out double number))
-                {
-                    tbxInputDicsount.Text = number.ToString() + "%";
-                }
-            }
-        }
-
-        private void btnPeso_Click_1(object sender, EventArgs e)
-        {
-            tbxInputDicsount.Text = tbxInputDicsount.Text.Replace("%", "");
-
-            // Add pesos sign if not already present
-            if (!tbxInputDicsount.Text.Contains("₱"))
-            {
-                if (double.TryParse(tbxInputDicsount.Text, out double number))
-                {
-                    tbxInputDicsount.Text = "₱" + number.ToString();
-                }
-            }
-        }
-
-        private void tbxInputDicsount_TextChanged(object sender, EventArgs e)
-        {
-            DisplaySubTotal();
-            DisplayDiscount3();
-        }
-        private void DisplayDiscount3()
-        {
-            decimal productTotal = CalculateProductSubTotal();
-            decimal serviceTotal = CalculateServiceSubTotal();
-            decimal subtotal = productTotal + serviceTotal;
-
-            // Remove currency or percent signs before parsing
-            string discountInputText = tbxInputDicsount.Text.Replace("₱", "").Replace("%", "");
-
-            // Parse the discount input from the TextBox
-            if (decimal.TryParse(discountInputText, out decimal discountInput))
-            {
-                decimal discount = 0;
-
-                // Check if the input is a percentage
-                if (tbxInputDicsount.Text.Contains("%"))
-                {
-                    decimal percentage = discountInput / 100;
-                    discount = subtotal * percentage;
-                }
-                else
-                {
-                    discount = discountInput;
-                }
-
-                // Apply the discount to the subtotal
-                subtotal -= discount;
-
-                // Calculate VAT and total based on the discounted subtotal
-                decimal vat = subtotal * VAT_RATE;
-                decimal total = subtotal + vat;
-
-                // Update the UI labels with formatted values
-                lblsubtotal.Text = subtotal.ToString("C");
-                lblVaTax.Text = vat.ToString("C");
-                lblTotal.Text = total.ToString("C");
-            }
-            else
-            {
-
-            }
         }
 
 

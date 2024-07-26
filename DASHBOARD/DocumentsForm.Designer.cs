@@ -28,34 +28,153 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DocumentsForm));
+            panel8 = new Panel();
+            pictureBox9 = new PictureBox();
+            label19 = new Label();
+            SM = new TextBox();
+            SearchBtn = new Button();
+            dataGridView1 = new DataGridView();
+            PrintBtn = new Button();
+            panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // panel8
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(240, 249);
-            label1.Name = "label1";
-            label1.Size = new Size(138, 28);
-            label1.TabIndex = 1;
-            label1.Text = "Documentats";
+            panel8.BackColor = Color.FromArgb(3, 83, 115);
+            panel8.Controls.Add(pictureBox9);
+            panel8.Controls.Add(label19);
+            panel8.Dock = DockStyle.Top;
+            panel8.Location = new Point(0, 0);
+            panel8.Margin = new Padding(3, 2, 3, 2);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(706, 106);
+            panel8.TabIndex = 19;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Location = new Point(20, 2);
+            pictureBox9.Margin = new Padding(3, 2, 3, 2);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(40, 40);
+            pictureBox9.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox9.TabIndex = 3;
+            pictureBox9.TabStop = false;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label19.ForeColor = Color.White;
+            label19.Location = new Point(67, 7);
+            label19.Margin = new Padding(2, 0, 2, 0);
+            label19.Name = "label19";
+            label19.Size = new Size(125, 21);
+            label19.TabIndex = 2;
+            label19.Text = "Mechanic History";
+            // 
+            // SM
+            // 
+            SM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SM.ForeColor = Color.Gray;
+            SM.Location = new Point(11, 110);
+            SM.Margin = new Padding(2);
+            SM.Multiline = true;
+            SM.Name = "SM";
+            SM.Size = new Size(209, 29);
+            SM.TabIndex = 20;
+            SM.Text = "Mechanic ID";
+            SM.TextChanged += SM_TextChanged;
+            // 
+            // SearchBtn
+            // 
+            SearchBtn.AutoSize = true;
+            SearchBtn.BackColor = Color.FromArgb(3, 83, 115);
+            SearchBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            SearchBtn.FlatAppearance.BorderSize = 0;
+            SearchBtn.FlatStyle = FlatStyle.Flat;
+            SearchBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            SearchBtn.ForeColor = Color.White;
+            SearchBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            SearchBtn.Location = new Point(234, 110);
+            SearchBtn.Margin = new Padding(2);
+            SearchBtn.Name = "SearchBtn";
+            SearchBtn.Padding = new Padding(28, 0, 28, 0);
+            SearchBtn.Size = new Size(111, 29);
+            SearchBtn.TabIndex = 21;
+            SearchBtn.Text = "Search";
+            SearchBtn.TextAlign = ContentAlignment.MiddleRight;
+            SearchBtn.UseVisualStyleBackColor = false;
+            SearchBtn.Click += SearchBtn_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 164);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(682, 551);
+            dataGridView1.TabIndex = 22;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // PrintBtn
+            // 
+            PrintBtn.AutoSize = true;
+            PrintBtn.BackColor = Color.FromArgb(3, 83, 115);
+            PrintBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            PrintBtn.FlatAppearance.BorderSize = 0;
+            PrintBtn.FlatStyle = FlatStyle.Flat;
+            PrintBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            PrintBtn.ForeColor = Color.White;
+            PrintBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            PrintBtn.Location = new Point(358, 110);
+            PrintBtn.Margin = new Padding(2);
+            PrintBtn.Name = "PrintBtn";
+            PrintBtn.Padding = new Padding(28, 0, 28, 0);
+            PrintBtn.Size = new Size(101, 29);
+            PrintBtn.TabIndex = 23;
+            PrintBtn.Text = "Print";
+            PrintBtn.TextAlign = ContentAlignment.MiddleRight;
+            PrintBtn.UseVisualStyleBackColor = false;
+            PrintBtn.Click += PrintBtn_Click;
             // 
             // DocumentsForm
             // 
-            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(882, 923);
-            Controls.Add(label1);
+            ClientSize = new Size(706, 738);
+            Controls.Add(PrintBtn);
+            Controls.Add(dataGridView1);
+            Controls.Add(SearchBtn);
+            Controls.Add(SM);
+            Controls.Add(panel8);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
             Name = "DocumentsForm";
             Text = "DocumentsForm";
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Panel panel8;
+        private PictureBox pictureBox9;
+        private Label label19;
+        private TextBox SM;
+        private Button SearchBtn;
+        private DataGridView dataGridView1;
+        private Button PrintBtn;
     }
 }
