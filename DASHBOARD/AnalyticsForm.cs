@@ -27,9 +27,9 @@ namespace Service_Management_System.DASHBOARD
             //PopulateDataGridView();
             InitializeChart();
             LoadChartData();
-            InitializeHorizontalChart();
+            //InitializeHorizontalChart();
             //LoadHorizontalChartData();
-            LoadHorizontalChartData();
+           // LoadHorizontalChartData();
         }
 
 
@@ -102,10 +102,10 @@ namespace Service_Management_System.DASHBOARD
                     connection.Open();
 
                     // Construct the query to sum Prices for each DateSale
-                    string query = "SELECT DateSale, SUM(Price) AS TotalPrice " +
+                    string query = "SELECT DateCreated, SUM(Total) AS TotalPrice " +
                                    "FROM SalesHistory " +
-                                   "WHERE DateSale IN ({0}) " +
-                                   "GROUP BY DateSale";
+                                   "WHERE DateCreated IN ({0}) " +
+                                   "GROUP BY DateCreated";
 
                     // Construct the IN clause parameters dynamically based on arrayDateRange length
                     string dateParams = string.Join(",", arrayDateRange.Select((s, i) => "@date" + i));
@@ -174,7 +174,7 @@ namespace Service_Management_System.DASHBOARD
             chart1.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0; // Remove gridlines
             chart1.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0; // Remove gridlines
         }
-        private void InitializeHorizontalChart()
+       /* private void InitializeHorizontalChart()
         {
             // Initialize the chart
             horizontalChart = new Chart
@@ -241,10 +241,10 @@ namespace Service_Management_System.DASHBOARD
                     connection.Open();
 
                     // Construct the query to sum Quantity for each DateSale
-                    string query = "SELECT DateSale, SUM(Quantity) AS TotalQuantity " +
+                    string query = "SELECT DateCreated, SUM(Quantity) AS TotalQuantity " +
                                    "FROM SalesHistory " +
-                                   "WHERE DateSale IN ({0}) " +
-                                   "GROUP BY DateSale";
+                                   "WHERE DateCreated IN ({0}) " +
+                                   "GROUP BY DateCreated";
 
                     // Construct the IN clause parameters dynamically based on arrayDateRange length
                     string dateParams = string.Join(",", arrayDateRange.Select((s, i) => "?"));
@@ -313,7 +313,7 @@ namespace Service_Management_System.DASHBOARD
             horizontalChart.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0; // Remove gridlines
             horizontalChart.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0; // Remove gridlines
         }
-
+        */
 
 
 

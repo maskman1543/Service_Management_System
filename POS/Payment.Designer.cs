@@ -50,7 +50,7 @@
             btnSubmit = new Button();
             btnVoucher = new Button();
             btngiftCard = new Button();
-            button8 = new Button();
+            btndelRecord = new Button();
             button9 = new Button();
             button10 = new Button();
             button11 = new Button();
@@ -335,22 +335,22 @@
             btngiftCard.UseVisualStyleBackColor = false;
             btngiftCard.Click += btngiftCard_Click;
             // 
-            // button8
+            // btndelRecord
             // 
-            button8.BackColor = Color.FromArgb(3, 83, 115);
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.ForeColor = Color.White;
-            button8.Image = (Image)resources.GetObject("button8.Image");
-            button8.ImageAlign = ContentAlignment.MiddleLeft;
-            button8.Location = new Point(997, 386);
-            button8.Name = "button8";
-            button8.Size = new Size(147, 45);
-            button8.TabIndex = 11;
-            button8.Text = "Split payments";
-            button8.TextAlign = ContentAlignment.MiddleRight;
-            button8.UseVisualStyleBackColor = false;
-            button8.Visible = false;
+            btndelRecord.BackColor = Color.FromArgb(3, 83, 115);
+            btndelRecord.FlatAppearance.BorderSize = 0;
+            btndelRecord.FlatStyle = FlatStyle.Flat;
+            btndelRecord.ForeColor = Color.White;
+            btndelRecord.Image = (Image)resources.GetObject("btndelRecord.Image");
+            btndelRecord.ImageAlign = ContentAlignment.MiddleLeft;
+            btndelRecord.Location = new Point(842, 386);
+            btndelRecord.Name = "btndelRecord";
+            btndelRecord.Size = new Size(147, 45);
+            btndelRecord.TabIndex = 11;
+            btndelRecord.Text = "Delete";
+            btndelRecord.TextAlign = ContentAlignment.MiddleRight;
+            btndelRecord.UseVisualStyleBackColor = false;
+            btndelRecord.Click += btndelRecord_Click;
             // 
             // button9
             // 
@@ -575,7 +575,7 @@
             Controls.Add(button11);
             Controls.Add(button10);
             Controls.Add(button9);
-            Controls.Add(button8);
+            Controls.Add(btndelRecord);
             Controls.Add(btngiftCard);
             Controls.Add(btnVoucher);
             Controls.Add(btnSubmit);
@@ -619,7 +619,7 @@
         private Button btnSubmit;
         private Button btnVoucher;
         private Button btngiftCard;
-        private Button button8;
+        private Button btndelRecord;
         private Button button9;
         private Button button13;
         private Button button10;

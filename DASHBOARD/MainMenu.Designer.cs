@@ -163,7 +163,7 @@
             btnCompany.Padding = new Padding(10, 0, 21, 0);
             btnCompany.Size = new Size(270, 51);
             btnCompany.TabIndex = 7;
-            btnCompany.Text = "My Company";
+            btnCompany.Text = "Attendance";
             btnCompany.TextAlign = ContentAlignment.MiddleLeft;
             btnCompany.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCompany.UseVisualStyleBackColor = true;

@@ -49,16 +49,9 @@ namespace Service_Management_System.POS
             panel1 = new Panel();
             btnmenU2 = new Button();
             btnMechanic = new Button();
-            button10 = new Button();
-            btnRefund = new Button();
             button2 = new Button();
-            btnCash = new Button();
             btnPayment = new Button();
             btnSaveSale = new Button();
-            btnNewSale = new Button();
-            btnDiscount = new Button();
-            btnCustomer = new Button();
-            btnSearch = new Button();
             panel2 = new Panel();
             textBox1 = new TextBox();
             lblQuantity = new Label();
@@ -423,16 +416,9 @@ namespace Service_Management_System.POS
             panel1.Controls.Add(minilogo);
             panel1.Controls.Add(btnmenU2);
             panel1.Controls.Add(btnMechanic);
-            panel1.Controls.Add(button10);
-            panel1.Controls.Add(btnRefund);
             panel1.Controls.Add(button2);
-            panel1.Controls.Add(btnCash);
             panel1.Controls.Add(btnPayment);
             panel1.Controls.Add(btnSaveSale);
-            panel1.Controls.Add(btnNewSale);
-            panel1.Controls.Add(btnDiscount);
-            panel1.Controls.Add(btnCustomer);
-            panel1.Controls.Add(btnSearch);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
@@ -470,7 +456,7 @@ namespace Service_Management_System.POS
             btnMechanic.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             btnMechanic.ForeColor = Color.White;
             btnMechanic.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMechanic.Location = new Point(88, -1);
+            btnMechanic.Location = new Point(15, -1);
             btnMechanic.Margin = new Padding(2);
             btnMechanic.Name = "btnMechanic";
             btnMechanic.Padding = new Padding(0, 35, 0, 0);
@@ -478,43 +464,6 @@ namespace Service_Management_System.POS
             btnMechanic.TabIndex = 9;
             btnMechanic.UseVisualStyleBackColor = true;
             btnMechanic.Click += btnMechanic_Click;
-            // 
-            // button10
-            // 
-            button10.AutoSize = true;
-            button10.BackgroundImage = (Image)resources.GetObject("button10.BackgroundImage");
-            button10.BackgroundImageLayout = ImageLayout.Stretch;
-            button10.FlatAppearance.BorderSize = 0;
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            button10.ForeColor = Color.White;
-            button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.Location = new Point(572, 2);
-            button10.Margin = new Padding(2);
-            button10.Name = "button10";
-            button10.Size = new Size(75, 68);
-            button10.TabIndex = 13;
-            button10.UseVisualStyleBackColor = true;
-            // 
-            // btnRefund
-            // 
-            btnRefund.AutoSize = true;
-            btnRefund.BackgroundImage = (Image)resources.GetObject("btnRefund.BackgroundImage");
-            btnRefund.BackgroundImageLayout = ImageLayout.Stretch;
-            btnRefund.FlatAppearance.BorderSize = 0;
-            btnRefund.FlatStyle = FlatStyle.Flat;
-            btnRefund.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnRefund.ForeColor = Color.White;
-            btnRefund.ImageAlign = ContentAlignment.TopCenter;
-            btnRefund.Location = new Point(411, 2);
-            btnRefund.Margin = new Padding(2);
-            btnRefund.Name = "btnRefund";
-            btnRefund.Size = new Size(75, 68);
-            btnRefund.TabIndex = 11;
-            btnRefund.TextAlign = ContentAlignment.BottomCenter;
-            btnRefund.UseVisualStyleBackColor = true;
-            btnRefund.MouseEnter += btnRefund_MouseEnter;
-            btnRefund.MouseLeave += btnRefund_MouseLeave;
             // 
             // button2
             // 
@@ -526,7 +475,7 @@ namespace Service_Management_System.POS
             button2.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
             button2.ImageAlign = ContentAlignment.TopCenter;
-            button2.Location = new Point(492, 2);
+            button2.Location = new Point(94, 1);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(75, 68);
@@ -536,27 +485,6 @@ namespace Service_Management_System.POS
             button2.Click += button2_Click;
             button2.MouseEnter += button2_MouseEnter;
             button2.MouseLeave += button2_MouseLeave;
-            // 
-            // btnCash
-            // 
-            btnCash.AutoSize = true;
-            btnCash.BackgroundImage = (Image)resources.GetObject("btnCash.BackgroundImage");
-            btnCash.BackgroundImageLayout = ImageLayout.Stretch;
-            btnCash.FlatAppearance.BorderSize = 0;
-            btnCash.FlatStyle = FlatStyle.Flat;
-            btnCash.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCash.ForeColor = Color.White;
-            btnCash.ImageAlign = ContentAlignment.TopCenter;
-            btnCash.Location = new Point(816, 4);
-            btnCash.Margin = new Padding(2);
-            btnCash.Name = "btnCash";
-            btnCash.Size = new Size(75, 68);
-            btnCash.TabIndex = 9;
-            btnCash.TextAlign = ContentAlignment.BottomCenter;
-            btnCash.UseVisualStyleBackColor = true;
-            btnCash.Click += btnCash_Click_1;
-            btnCash.MouseEnter += btnCash_MouseEnter;
-            btnCash.MouseLeave += btnCash_MouseLeave;
             // 
             // btnPayment
             // 
@@ -568,7 +496,7 @@ namespace Service_Management_System.POS
             btnPayment.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnPayment.ForeColor = Color.White;
             btnPayment.ImageAlign = ContentAlignment.TopCenter;
-            btnPayment.Location = new Point(735, 2);
+            btnPayment.Location = new Point(254, 1);
             btnPayment.Margin = new Padding(2);
             btnPayment.Name = "btnPayment";
             btnPayment.Size = new Size(75, 68);
@@ -589,7 +517,7 @@ namespace Service_Management_System.POS
             btnSaveSale.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnSaveSale.ForeColor = Color.White;
             btnSaveSale.ImageAlign = ContentAlignment.TopCenter;
-            btnSaveSale.Location = new Point(654, 2);
+            btnSaveSale.Location = new Point(173, 1);
             btnSaveSale.Margin = new Padding(2);
             btnSaveSale.Name = "btnSaveSale";
             btnSaveSale.Size = new Size(75, 68);
@@ -599,90 +527,6 @@ namespace Service_Management_System.POS
             btnSaveSale.Click += btnSaveSale_Click;
             btnSaveSale.MouseEnter += btnSaveSale_MouseEnter;
             btnSaveSale.MouseLeave += btnSaveSale_MouseLeave;
-            // 
-            // btnNewSale
-            // 
-            btnNewSale.AutoSize = true;
-            btnNewSale.BackgroundImage = (Image)resources.GetObject("btnNewSale.BackgroundImage");
-            btnNewSale.BackgroundImageLayout = ImageLayout.Stretch;
-            btnNewSale.FlatAppearance.BorderSize = 0;
-            btnNewSale.FlatStyle = FlatStyle.Flat;
-            btnNewSale.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNewSale.ForeColor = Color.White;
-            btnNewSale.ImageAlign = ContentAlignment.TopCenter;
-            btnNewSale.Location = new Point(330, 2);
-            btnNewSale.Margin = new Padding(2);
-            btnNewSale.Name = "btnNewSale";
-            btnNewSale.Size = new Size(75, 68);
-            btnNewSale.TabIndex = 4;
-            btnNewSale.TextAlign = ContentAlignment.BottomCenter;
-            btnNewSale.UseVisualStyleBackColor = true;
-            btnNewSale.Click += btnNewSale_Click;
-            btnNewSale.MouseEnter += btnNewSale_MouseEnter;
-            btnNewSale.MouseLeave += btnNewSale_MouseLeave;
-            // 
-            // btnDiscount
-            // 
-            btnDiscount.AutoSize = true;
-            btnDiscount.BackgroundImage = (Image)resources.GetObject("btnDiscount.BackgroundImage");
-            btnDiscount.BackgroundImageLayout = ImageLayout.Stretch;
-            btnDiscount.FlatAppearance.BorderSize = 0;
-            btnDiscount.FlatStyle = FlatStyle.Flat;
-            btnDiscount.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDiscount.ForeColor = Color.White;
-            btnDiscount.ImageAlign = ContentAlignment.TopCenter;
-            btnDiscount.Location = new Point(249, 2);
-            btnDiscount.Margin = new Padding(2);
-            btnDiscount.Name = "btnDiscount";
-            btnDiscount.Size = new Size(75, 68);
-            btnDiscount.TabIndex = 3;
-            btnDiscount.TextAlign = ContentAlignment.BottomCenter;
-            btnDiscount.UseVisualStyleBackColor = true;
-            btnDiscount.Click += btnDiscount_Click;
-            btnDiscount.MouseEnter += btnDiscount_MouseEnter;
-            btnDiscount.MouseLeave += btnDiscount_MouseLeave;
-            // 
-            // btnCustomer
-            // 
-            btnCustomer.AutoSize = true;
-            btnCustomer.BackgroundImage = (Image)resources.GetObject("btnCustomer.BackgroundImage");
-            btnCustomer.BackgroundImageLayout = ImageLayout.Stretch;
-            btnCustomer.FlatAppearance.BorderSize = 0;
-            btnCustomer.FlatStyle = FlatStyle.Flat;
-            btnCustomer.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCustomer.ForeColor = Color.White;
-            btnCustomer.ImageAlign = ContentAlignment.TopCenter;
-            btnCustomer.Location = new Point(168, 2);
-            btnCustomer.Margin = new Padding(2);
-            btnCustomer.Name = "btnCustomer";
-            btnCustomer.Size = new Size(75, 68);
-            btnCustomer.TabIndex = 2;
-            btnCustomer.TextAlign = ContentAlignment.BottomCenter;
-            btnCustomer.UseVisualStyleBackColor = true;
-            btnCustomer.MouseEnter += btnCustomer_MouseEnter;
-            btnCustomer.MouseLeave += btnCustomer_MouseLeave;
-            // 
-            // btnSearch
-            // 
-            btnSearch.AutoSize = true;
-            btnSearch.BackgroundImage = (Image)resources.GetObject("btnSearch.BackgroundImage");
-            btnSearch.BackgroundImageLayout = ImageLayout.Stretch;
-            btnSearch.FlatAppearance.BorderSize = 0;
-            btnSearch.FlatStyle = FlatStyle.Flat;
-            btnSearch.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSearch.ForeColor = Color.White;
-            btnSearch.ImageAlign = ContentAlignment.TopCenter;
-            btnSearch.Location = new Point(6, 2);
-            btnSearch.Margin = new Padding(2);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(75, 68);
-            btnSearch.TabIndex = 1;
-            btnSearch.Text = "\r\n.";
-            btnSearch.TextAlign = ContentAlignment.BottomCenter;
-            btnSearch.UseVisualStyleBackColor = true;
-            btnSearch.Click += btnSearch_Click;
-            btnSearch.MouseEnter += btnSearch_MouseEnter;
-            btnSearch.MouseLeave += btnSearch_MouseLeave;
             // 
             // panel2
             // 
@@ -1957,20 +1801,13 @@ namespace Service_Management_System.POS
         #endregion
 
         private Panel panel1;
-        private Button btnSearch;
-        private Button btnDiscount;
-        private Button btnCustomer;
-        private Button btnNewSale;
         private Button btnPayment;
         private Button btnSaveSale;
-        private Button btnCash;
         private Button button2;
-        private Button btnRefund;
         private Panel panel2;
         private Button btnDelete;
         private Panel panel3;
         private Button btnMechanic;
-        private Button button10;
         private Panel panel5;
         private TextBox tbxDiscount;
         private DataGridView productOrderedView;
