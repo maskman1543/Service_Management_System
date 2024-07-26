@@ -19,6 +19,7 @@ namespace Service_Management_System.DASHBOARD
         private string[] arrayDateRange;
         private Chart chart1;
         private Chart horizontalChart;
+        private Chart pieChart;
         public AnalyticsForm()
         {
             InitializeComponent();
@@ -27,9 +28,11 @@ namespace Service_Management_System.DASHBOARD
             //PopulateDataGridView();
             InitializeChart();
             LoadChartData();
-            InitializeHorizontalChart();
+            InitializePieChart();
+            LoadPieChartData();
+            //InitializeHorizontalChart();
             //LoadHorizontalChartData();
-            LoadHorizontalChartData();
+            //LoadHorizontalChartData();
         }
 
 
@@ -102,10 +105,10 @@ namespace Service_Management_System.DASHBOARD
                     connection.Open();
 
                     // Construct the query to sum Prices for each DateSale
-                    string query = "SELECT DateSale, SUM(Price) AS TotalPrice " +
+                    string query = "SELECT DateCreated, SUM(Total) AS TotalPrice " +
                                    "FROM SalesHistory " +
-                                   "WHERE DateSale IN ({0}) " +
-                                   "GROUP BY DateSale";
+                                   "WHERE DateCreated IN ({0}) " +
+                                   "GROUP BY DateCreated";
 
                     // Construct the IN clause parameters dynamically based on arrayDateRange length
                     string dateParams = string.Join(",", arrayDateRange.Select((s, i) => "@date" + i));
@@ -174,7 +177,7 @@ namespace Service_Management_System.DASHBOARD
             chart1.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0; // Remove gridlines
             chart1.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0; // Remove gridlines
         }
-        private void InitializeHorizontalChart()
+        /*private void InitializeHorizontalChart()
         {
             // Initialize the chart
             horizontalChart = new Chart
@@ -312,9 +315,141 @@ namespace Service_Management_System.DASHBOARD
             horizontalChart.ChartAreas[0].AxisY.IntervalOffset = 0; // Adjust to avoid unnecessary space
             horizontalChart.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0; // Remove gridlines
             horizontalChart.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0; // Remove gridlines
+        }*/
+
+
+        private void LoadPieChartData()
+        {
+            if (pieChart == null)
+            {
+                InitializePieChart();
+            }
+
+            pieChart.Series.Clear();
+            pieChart.Legends.Clear();
+
+            Series series = new Series("PaymentMethods")
+            {
+                ChartType = SeriesChartType.Pie,
+                IsValueShownAsLabel = true,
+                Font = new Font("Microsoft Sans Serif", 8f, FontStyle.Regular)
+            };
+
+            // Fetch existing dates from the database
+            HashSet<string> existingDates = new HashSet<string>();
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Construct the query to fetch distinct dates
+                    string query = "SELECT DISTINCT DateCreated FROM SalesHistory";
+                    using (OleDbCommand command = new OleDbCommand(query, connection))
+                    {
+                        using (OleDbDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                DateTime dateCreated = reader.GetDateTime(0);
+                                existingDates.Add(dateCreated.ToString("d/M/yyyy"));
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error retrieving existing dates: " + ex.Message);
+                    return;
+                }
+            }
+
+            // Filter arrayDateRange based on existing dates
+            var filteredDateRange = arrayDateRange.Where(date => existingDates.Contains(date)).ToArray();
+
+            // Proceed with loading data for the pie chart
+            using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Building the query dynamically
+                    string query = "SELECT PaymentMethod, COUNT(PaymentMethod) AS MethodCount " +
+                                   "FROM SalesHistory " +
+                                   "WHERE DateCreated IN (" + string.Join(",", Enumerable.Range(0, filteredDateRange.Length).Select(_ => "?")) + ") " +
+                                   "GROUP BY PaymentMethod";
+
+                    Console.WriteLine("Generated SQL Query: " + query); // Debug output
+
+                    using (OleDbCommand command = new OleDbCommand(query, connection))
+                    {
+                        foreach (var date in filteredDateRange)
+                        {
+                            command.Parameters.AddWithValue("?", date);
+                        }
+
+                        using (OleDbDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string paymentMethod = reader.GetString(0);
+                                int count = reader.GetInt32(1);
+
+                                if (count > 0)
+                                {
+                                    series.Points.Add(new DataPoint(0, count)
+                                    {
+                                        AxisLabel = paymentMethod,
+                                        LegendText = paymentMethod,
+                                        Label = $"{paymentMethod}: {count}"
+                                    });
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error retrieving data: " + ex.Message);
+                }
+            }
+
+            pieChart.Series.Add(series);
+
+            // Customizing the appearance of the pie chart
+            pieChart.ChartAreas[0].BackColor = Color.White;
+            pieChart.ChartAreas[0].BorderDashStyle = ChartDashStyle.Solid;
+            pieChart.ChartAreas[0].BorderWidth = 1;
+            pieChart.ChartAreas[0].BorderColor = Color.Gray;
         }
 
 
+
+        // Method to initialize the pie chart if it's not already initialized
+        private void InitializePieChart()
+        {
+            pieChart = new Chart
+            {
+                Location = new Point(572, 170),
+                Size = new Size(507, 386),
+                BackColor = Color.White
+            };
+
+            ChartArea chartArea = new ChartArea
+            {
+                Name = "ChartArea1"
+            };
+            pieChart.ChartAreas.Add(chartArea);
+
+            Legend legend = new Legend
+            {
+                Name = "Legend1"
+            };
+            pieChart.Legends.Add(legend);
+
+            this.Controls.Add(pieChart);
+        }
 
 
         private void PopulateDateRangeArray()
@@ -386,6 +521,7 @@ namespace Service_Management_System.DASHBOARD
             InitializeDateTimePickers();
             PopulateDateRangeArray();
             LoadChartData();
+            LoadPieChartData();
             //PopulateDataGridView();
         }
 
@@ -403,6 +539,7 @@ namespace Service_Management_System.DASHBOARD
             InitializeDateTimePickers();
             PopulateDateRangeArray();
             LoadChartData();
+            LoadPieChartData();
             //PopulateDataGridView();
         }
 
@@ -416,6 +553,7 @@ namespace Service_Management_System.DASHBOARD
             InitializeDateTimePickers();
             PopulateDateRangeArray();
             LoadChartData();
+            LoadPieChartData();
             //PopulateDataGridView();
         }
 
@@ -426,6 +564,7 @@ namespace Service_Management_System.DASHBOARD
             InitializeDateTimePickers();
             PopulateDateRangeArray();
             LoadChartData();
+            LoadPieChartData();
             //PopulateDataGridView();
         }
 
@@ -436,6 +575,7 @@ namespace Service_Management_System.DASHBOARD
             InitializeDateTimePickers();
             PopulateDateRangeArray();
             LoadChartData();
+            LoadPieChartData();
             //PopulateDataGridView();
         }
 
@@ -472,7 +612,13 @@ namespace Service_Management_System.DASHBOARD
             AnalyticsDateRange.DateEnd = selectedEndDate;
             PopulateDateRangeArray();
             LoadChartData();
+            LoadPieChartData();
             //PopulateDataGridView();
+        }
+
+        private void AnalyticsForm_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
