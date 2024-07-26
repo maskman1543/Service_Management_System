@@ -23,7 +23,7 @@ namespace Service_Management_System.POS
         {
             POSForm pOSForm = new POSForm();
             pOSForm.Show();
-            this.Close();
+            this.Hide();
         }
         private void LoadData()
         {

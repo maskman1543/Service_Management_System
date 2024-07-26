@@ -83,6 +83,7 @@ namespace Service_Management_System.POS
         {
             LoadPartsView();
             LoadServiceView();
+            tbxInputDicsount.KeyPress += tbxInputDicsount_TextChanged;
         }
 
         private void AddOrUpdateProductOrderedView(int productID)
@@ -339,16 +340,28 @@ namespace Service_Management_System.POS
         private void DisplaySubTotal()
         {
             decimal productTotal = CalculateProductSubTotal();
-            decimal ServiceTOtal = CalculateServiceSubTotal();
-            decimal subtotal = productTotal + ServiceTOtal;
+            decimal serviceTotal = CalculateServiceSubTotal();
+            decimal subtotal = productTotal + serviceTotal;
 
-            decimal vat = subtotal * VAT_RATE;
-            decimal total = subtotal + vat;
+            // Parse the discount amount from the TextBox
+            if (decimal.TryParse(tbxInputDicsount.Text, out decimal discount))
+            {
+                // Apply the discount to the subtotal
+                subtotal -= discount;
 
+                // Calculate VAT and total based on the discounted subtotal
+                decimal vat = subtotal * VAT_RATE;
+                decimal total = subtotal + vat;
 
-            lblsubtotal.Text = subtotal.ToString("C");
-            lblVaTax.Text = vat.ToString("C");
-            lblTotal.Text = total.ToString("C");
+                // Update the UI labels with formatted values
+                lblsubtotal.Text = subtotal.ToString("C");
+                lblVaTax.Text = vat.ToString("C");
+                lblTotal.Text = total.ToString("C");
+            }
+            else
+            {
+                // Handle invalid input from txtDiscount (optional)
+            }
 
         }
         /*
@@ -824,6 +837,7 @@ namespace Service_Management_System.POS
                     jobOrderedView.Rows.Remove(row);
                 }
             }
+            DisplaySubTotal();
         }
 
 
@@ -870,7 +884,6 @@ namespace Service_Management_System.POS
         {
             viewOpensales_form opensales_Form = new viewOpensales_form();
             opensales_Form.Show();
-            this.Close();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -1350,7 +1363,7 @@ namespace Service_Management_System.POS
         {
             Payment payment = new Payment();
             payment.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnCash_Click_1(object sender, EventArgs e)
@@ -1514,72 +1527,154 @@ namespace Service_Management_System.POS
             System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
             if (clickedButton != null)
             {
-                if (txtDiscount.Text.Contains("%"))
+                if (tbxInputDicsount.Text.Contains("%"))
                 {
 
-                    int percentIndex = txtDiscount.Text.IndexOf("%");
-                    txtDiscount.Text = txtDiscount.Text.Insert(percentIndex, clickedButton.Text);
+                    int percentIndex = tbxInputDicsount.Text.IndexOf("%");
+                    tbxInputDicsount.Text = tbxInputDicsount.Text.Insert(percentIndex, clickedButton.Text);
                 }
                 else
                 {
-                    txtDiscount.Text += clickedButton.Text;
+                    tbxInputDicsount.Text += clickedButton.Text;
                 }
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtDiscount.Text))
-            {
-                txtDiscount.Text = txtDiscount.Text.Substring(0, txtDiscount.Text.Length - 1);
-            }
-        }
 
-        private void btnPoint_Click(object sender, EventArgs e)
-        {
-            if (!txtDiscount.Text.Contains("."))
-            {
-                if (string.IsNullOrEmpty(txtDiscount.Text))
-                {
-                    txtDiscount.Text = "0.";
-                }
-                else
-                {
-                    txtDiscount.Text += ".";
-                }
-            }
-        }
 
-        private void btnClearAll_Click(object sender, EventArgs e)
-        {
-            txtDiscount.Text = string.Empty;
-        }
+
+
+
 
         private void btnPercent_Click(object sender, EventArgs e)
         {
-            txtDiscount.Text = txtDiscount.Text.Replace("₱", "");
+            tbxInputDicsount.Text = tbxInputDicsount.Text.Replace("₱", "");
 
             // Add percent sign if not already present
-            if (!txtDiscount.Text.Contains("%"))
+            if (!tbxInputDicsount.Text.Contains("%"))
             {
-                if (double.TryParse(txtDiscount.Text, out double number))
+                if (double.TryParse(tbxInputDicsount.Text, out double number))
                 {
-                    txtDiscount.Text = number.ToString() + "%";
+                    tbxInputDicsount.Text = number.ToString() + "%";
                 }
             }
         }
 
         private void btnPeso_Click(object sender, EventArgs e)
         {
-            txtDiscount.Text = txtDiscount.Text.Replace("%", "");
+            tbxInputDicsount.Text = tbxInputDicsount.Text.Replace("%", "");
 
             // Add pesos sign if not already present
-            if (!txtDiscount.Text.Contains("₱"))
+            if (!tbxInputDicsount.Text.Contains("₱"))
             {
-                if (double.TryParse(txtDiscount.Text, out double number))
+                if (double.TryParse(tbxInputDicsount.Text, out double number))
                 {
-                    txtDiscount.Text = "₱" + number.ToString();
+                    tbxInputDicsount.Text = "₱" + number.ToString();
                 }
+            }
+        }
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(tbxInputDicsount.Text))
+            {
+                tbxInputDicsount.Text = tbxInputDicsount.Text.Substring(0, tbxInputDicsount.Text.Length - 1);
+            }
+        }
+
+        private void btnClearAll_Click_1(object sender, EventArgs e)
+        {
+            tbxInputDicsount.Text = string.Empty;
+        }
+
+        private void btnPoint_Click_1(object sender, EventArgs e)
+        {
+            if (!tbxInputDicsount.Text.Contains("."))
+            {
+                if (string.IsNullOrEmpty(tbxInputDicsount.Text))
+                {
+                    tbxInputDicsount.Text = "0.";
+                }
+                else
+                {
+                    tbxInputDicsount.Text += ".";
+                }
+            }
+        }
+
+        private void btnPercent_Click_1(object sender, EventArgs e)
+        {
+            tbxInputDicsount.Text = tbxInputDicsount.Text.Replace("₱", "");
+
+            // Add percent sign if not already present
+            if (!tbxInputDicsount.Text.Contains("%"))
+            {
+                if (double.TryParse(tbxInputDicsount.Text, out double number))
+                {
+                    tbxInputDicsount.Text = number.ToString() + "%";
+                }
+            }
+        }
+
+        private void btnPeso_Click_1(object sender, EventArgs e)
+        {
+            tbxInputDicsount.Text = tbxInputDicsount.Text.Replace("%", "");
+
+            // Add pesos sign if not already present
+            if (!tbxInputDicsount.Text.Contains("₱"))
+            {
+                if (double.TryParse(tbxInputDicsount.Text, out double number))
+                {
+                    tbxInputDicsount.Text = "₱" + number.ToString();
+                }
+            }
+        }
+
+        private void tbxInputDicsount_TextChanged(object sender, EventArgs e)
+        {
+            DisplaySubTotal();
+            DisplayDiscount3();
+        }
+        private void DisplayDiscount3()
+        {
+            decimal productTotal = CalculateProductSubTotal();
+            decimal serviceTotal = CalculateServiceSubTotal();
+            decimal subtotal = productTotal + serviceTotal;
+
+            // Remove currency or percent signs before parsing
+            string discountInputText = tbxInputDicsount.Text.Replace("₱", "").Replace("%", "");
+
+            // Parse the discount input from the TextBox
+            if (decimal.TryParse(discountInputText, out decimal discountInput))
+            {
+                decimal discount = 0;
+
+                // Check if the input is a percentage
+                if (tbxInputDicsount.Text.Contains("%"))
+                {
+                    decimal percentage = discountInput / 100;
+                    discount = subtotal * percentage;
+                }
+                else
+                {
+                    discount = discountInput;
+                }
+
+                // Apply the discount to the subtotal
+                subtotal -= discount;
+
+                // Calculate VAT and total based on the discounted subtotal
+                decimal vat = subtotal * VAT_RATE;
+                decimal total = subtotal + vat;
+
+                // Update the UI labels with formatted values
+                lblsubtotal.Text = subtotal.ToString("C");
+                lblVaTax.Text = vat.ToString("C");
+                lblTotal.Text = total.ToString("C");
+            }
+            else
+            {
+
             }
         }
 
