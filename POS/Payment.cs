@@ -23,7 +23,28 @@ namespace Service_Management_System.POS
 
         }
 
-        private void LoadData()
+        /*private void LoadData()
+        {
+            try
+            {
+                using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+                {
+                    string query = "SELECT * FROM JobOrders"; // Adjust query as needed
+                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        dataGridView1.DataSource = dataTable;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while loading data: " + ex.Message);
+            }
+        }*/
+
+        private void LoadData()//Load JobOrder Table to dataGridView1
         {
             try
             {
@@ -434,5 +455,229 @@ namespace Service_Management_System.POS
             }
 
         }
+        /*
+        private void btndelRecord_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to delete.");
+                return;
+            }
+
+            // Confirm delete action
+            DialogResult result = MessageBox.Show("Are you sure you want to delete the selected row?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    // Get the selected row
+                    DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                    int rowIndex = selectedRow.Index;
+
+                    // Assuming the primary key column name is "ID" and it's in the database table
+                    // Change "ID" to the actual primary key column name and data type
+                    int recordId = Convert.ToInt32(selectedRow.Cells["JobOrderID"].Value);
+                    string customerName = selectedRow.Cells["CustomerName"].Value.ToString();
+                    string customerContact = selectedRow.Cells["CustomerContact"].Value.ToString();
+                    string vehicle = selectedRow.Cells["Vehicle"].Value.ToString();
+                    string plateNo = selectedRow.Cells["PlateNo"].Value.ToString();
+                    decimal amount = Convert.ToDecimal(selectedRow.Cells["Amount"].Value);
+                    decimal subTotal = Convert.ToDecimal(selectedRow.Cells["SubTotal"].Value);
+                    decimal tax = Convert.ToDecimal(selectedRow.Cells["Tax"].Value);
+                    decimal total = Convert.ToDecimal(selectedRow.Cells["Total"].Value);
+                    decimal discount = Convert.ToDecimal(selectedRow.Cells["Discount"].Value);
+                    decimal change = Convert.ToDecimal(selectedRow.Cells["Change"].Value);
+                    string paymentMethod = selectedRow.Cells["PaymentMethod"].Value.ToString();
+                    string status = selectedRow.Cells["Status"].Value.ToString();
+
+                    // Remove the row from the DataGridView
+                    dataGridView1.Rows.RemoveAt(rowIndex);
+
+                    // Insert the record into JobOrders table
+                    using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+                    {
+                        connection.Open();
+
+                        // Insert into JobOrders table
+                        string insertQuery = @"
+                    INSERT INTO JobOrders (
+                        JobOrderID, 
+                        CustomerName, 
+                        CustomerContact, 
+                        DateCreated, 
+                        Vehicle, 
+                        PlateNo, 
+                        Amount, 
+                        SubTotal, 
+                        Tax, 
+                        Total, 
+                        Discount, 
+                        Change, 
+                        PaymentMethod, 
+                        Status
+                    ) VALUES (
+                        @JobOrderID, 
+                        @CustomerName, 
+                        @CustomerContact, 
+                        @DateCreated, 
+                        @Vehicle, 
+                        @PlateNo, 
+                        @Amount, 
+                        @SubTotal, 
+                        @Tax, 
+                        @Total, 
+                        @Discount, 
+                        @Change, 
+                        @PaymentMethod, 
+                        @Status
+                    )";
+
+                        using (OleDbCommand insertCommand = new OleDbCommand(insertQuery, connection))
+                        {
+                            insertCommand.Parameters.AddWithValue("@JobOrderID", recordId); // Assuming JobOrderID is the same as the record ID
+                            insertCommand.Parameters.AddWithValue("@CustomerName", customerName);
+                            insertCommand.Parameters.AddWithValue("@CustomerContact", customerContact);
+                            insertCommand.Parameters.AddWithValue("@DateCreated", DateTime.Now); // Adjust as necessary
+                            insertCommand.Parameters.AddWithValue("@Vehicle", vehicle);
+                            insertCommand.Parameters.AddWithValue("@PlateNo", plateNo);
+                            insertCommand.Parameters.AddWithValue("@Amount", amount);
+                            insertCommand.Parameters.AddWithValue("@SubTotal", subTotal);
+                            insertCommand.Parameters.AddWithValue("@Tax", tax);
+                            insertCommand.Parameters.AddWithValue("@Total", total);
+                            insertCommand.Parameters.AddWithValue("@Discount", discount);
+                            insertCommand.Parameters.AddWithValue("@Change", change);
+                            insertCommand.Parameters.AddWithValue("@PaymentMethod", paymentMethod);
+                            insertCommand.Parameters.AddWithValue("@Status", status);
+
+                            insertCommand.ExecuteNonQuery();
+                        }
+
+                        // Delete the record from SalesHistory table
+                        string deleteQuery = "DELETE FROM JobOrder WHERE JobOrderID = @JobOrderID"; // Change ID to your actual primary key column name
+                        using (OleDbCommand deleteCommand = new OleDbCommand(deleteQuery, connection))
+                        {
+                            deleteCommand.Parameters.AddWithValue("@JobOrderID", recordId);
+                            deleteCommand.ExecuteNonQuery();
+                        }
+                    }
+
+                    // Refresh dataGridView1
+                    LoadData(); // Call a method to reload data into dataGridView1
+
+                    MessageBox.Show("Record deleted and moved to JobOrders successfully.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred while deleting the record: " + ex.Message);
+                }
+            }
+        }*/
+
+
+        private void btndelRecord_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a row to delete.");
+                return;
+            }
+
+            // Confirm delete action
+            DialogResult result = MessageBox.Show("Are you sure you want to delete the selected row?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    // Get the selected row
+                    DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                    int rowIndex = selectedRow.Index;
+
+                    // Retrieve values from the selected row
+                    int recordId = Convert.ToInt32(selectedRow.Cells["JobOrderID"].Value);
+                    string customerName = selectedRow.Cells["CustomerName"].Value.ToString();
+                    string customerContact = selectedRow.Cells["CustomerContact"].Value.ToString();
+                    DateTime dateCreated = Convert.ToDateTime(selectedRow.Cells["DateCreated"].Value);
+                    string vehicle = selectedRow.Cells["Vehicle"].Value.ToString();
+                    string plateNo = selectedRow.Cells["PlateNo"].Value.ToString();
+                    decimal amount = Convert.ToDecimal(selectedRow.Cells["Amount"].Value);
+                    decimal subTotal = Convert.ToDecimal(selectedRow.Cells["SubTotal"].Value);
+                    decimal tax = Convert.ToDecimal(selectedRow.Cells["Tax"].Value);
+                    decimal total = Convert.ToDecimal(selectedRow.Cells["Total"].Value);
+                    decimal discount = Convert.ToDecimal(selectedRow.Cells["Discount"].Value);
+                    decimal change = Convert.ToDecimal(selectedRow.Cells["Change"].Value);
+                    string paymentMethod = selectedRow.Cells["PaymentMethod"].Value.ToString();
+                    string status = selectedRow.Cells["Status"].Value.ToString();
+
+                    // Remove the row from the DataGridView
+                    dataGridView1.Rows.RemoveAt(rowIndex);
+
+                    // Insert the record into JobOrders table
+                    using (OleDbConnection connection = new OleDbConnection(Class1.GlobalVariables.ConnectionString2))
+                    {
+                        connection.Open();
+
+                        // Insert into JobOrders table
+                        string insertQuery = @"
+                    INSERT INTO JobOrders (
+                        JobOrderID, 
+                        CustomerName, 
+                        CustomerContact, 
+                        DateCreated, 
+                        Vehicle, 
+                        PlateNo, 
+                        Amount, 
+                        SubTotal, 
+                        Tax, 
+                        Total, 
+                        Discount, 
+                        Change, 
+                        PaymentMethod, 
+                        Status
+                    ) VALUES (
+                        @JobOrderID, @CustomerName, @CustomerContact, @DateCreated, @Vehicle, @PlateNo, @Amount, @Subtotal, @Tax, @Total, @Discount, @Change, PaymentMethod, @Status
+                    )";
+
+                        using (OleDbCommand insertCommand = new OleDbCommand(insertQuery, connection))
+                        {
+                            insertCommand.Parameters.Add("@JobOrderID", OleDbType.Integer).Value = recordId;
+                            insertCommand.Parameters.Add("@CustomerName", OleDbType.VarChar).Value = customerName;
+                            insertCommand.Parameters.Add("@CustomerContact", OleDbType.VarChar).Value = customerContact;
+                            insertCommand.Parameters.Add("@DateCreated", OleDbType.Date).Value = dateCreated; // Corrected parameter type
+                            insertCommand.Parameters.Add("@Vehicle", OleDbType.VarChar).Value = vehicle;
+                            insertCommand.Parameters.Add("@PlateNo", OleDbType.VarChar).Value = plateNo;
+                            insertCommand.Parameters.Add("@Amount", OleDbType.Currency).Value = amount;
+                            insertCommand.Parameters.Add("@Subtotal", OleDbType.Currency).Value = subTotal;
+                            insertCommand.Parameters.Add("@Tax", OleDbType.Currency).Value = tax;
+                            insertCommand.Parameters.Add("@Total", OleDbType.Currency).Value = total;
+                            insertCommand.Parameters.Add("@Discount", OleDbType.Currency).Value = discount;
+                            insertCommand.Parameters.Add("@Change", OleDbType.Currency).Value = change;
+                            insertCommand.Parameters.Add("@PaymentMethod", OleDbType.VarChar).Value = paymentMethod;
+                            insertCommand.Parameters.Add("@Status", OleDbType.VarChar).Value = status;
+
+                            insertCommand.ExecuteNonQuery();
+                        }
+
+                        // Delete the record from JobOrder table
+                        string deleteQuery = "DELETE FROM JobOrder WHERE JobOrderID = @ID";
+                        using (OleDbCommand deleteCommand = new OleDbCommand(deleteQuery, connection))
+                        {
+                            deleteCommand.Parameters.Add("@ID", OleDbType.Integer).Value = recordId;
+                            deleteCommand.ExecuteNonQuery();
+                        }
+                    }
+
+                    // Refresh dataGridView1
+                    LoadData(); // Call a method to reload data into dataGridView1
+
+                    MessageBox.Show("Record deleted and moved to JobOrders successfully.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred while deleting the record: " + ex.Message);
+                }
+            }
+        }
+
+
     }
 }

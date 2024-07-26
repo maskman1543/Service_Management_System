@@ -466,6 +466,7 @@ namespace Service_Management_System.POS
                 {
                     connection.Open();
                     CustomerName = (string)command.ExecuteScalar();
+
                 }
                 catch (Exception ex)
                 {
@@ -980,71 +981,71 @@ namespace Service_Management_System.POS
         private void btnSearch_MouseEnter(object sender, EventArgs e)
         {
             // Increase size when mouse enters
-            btnSearch.Width = 79;
-            btnSearch.Height = 71;
+           // btnSearch.Width = 79;
+            //btnSearch.Height = 71;
             //75, 67, orrig
         }
 
         private void btnSearch_MouseLeave(object sender, EventArgs e)
         {
-            btnSearch.Width = 75;
-            btnSearch.Height = 67;
+            //btnSearch.Width = 75;
+            //btnSearch.Height = 67;
             //75, 67, orrig
         }
 
         private void btnCustomer_MouseEnter(object sender, EventArgs e)
         {
-            btnCustomer.Width = 79;
-            btnCustomer.Height = 71;
+        //    btnCustomer.Width = 79;
+          //  btnCustomer.Height = 71;
             //75, 67, orrig
         }
 
         private void btnCustomer_MouseLeave(object sender, EventArgs e)
         {
-            btnCustomer.Width = 75;
-            btnCustomer.Height = 67;
+            //btnCustomer.Width = 75;
+            //btnCustomer.Height = 67;
             //75, 67, orrig
         }
 
         private void btnDiscount_MouseEnter(object sender, EventArgs e)
         {
-            btnDiscount.Width = 79;
-            btnDiscount.Height = 71;
+            //btnDiscount.Width = 79;
+            //btnDiscount.Height = 71;
             //75, 67, orrig
         }
 
         private void btnDiscount_MouseLeave(object sender, EventArgs e)
         {
-            btnDiscount.Width = 75;
-            btnDiscount.Height = 67;
+            //btnDiscount.Width = 75;
+            //btnDiscount.Height = 67;
             //75, 67, orrig
         }
 
         private void btnNewSale_MouseEnter(object sender, EventArgs e)
         {
-            btnNewSale.Width = 79;
-            btnNewSale.Height = 71;
+            //btnNewSale.Width = 79;
+            //btnNewSale.Height = 71;
             //75, 67, orrig
         }
 
         private void btnNewSale_MouseLeave(object sender, EventArgs e)
         {
-            btnNewSale.Width = 75;
-            btnNewSale.Height = 67;
+            //btnNewSale.Width = 75;
+            //btnNewSale.Height = 67;
             //75, 67, orrig
         }
 
         private void btnRefund_MouseEnter(object sender, EventArgs e)
         {
-            btnRefund.Width = 79;
-            btnRefund.Height = 71;
+            //btnRefund.Width = 79;
+            //btnRefund.Height = 71;
             //75, 67, orrig
         }
 
         private void btnRefund_MouseLeave(object sender, EventArgs e)
         {
-            btnRefund.Width = 75;
-            btnRefund.Height = 67;
+            //btnRefund.Width = 75;
+            //btnRefund.Height = 67;
             //75, 67, orrig
         }
 
@@ -1092,15 +1093,15 @@ namespace Service_Management_System.POS
 
         private void btnCash_MouseEnter(object sender, EventArgs e)
         {
-            btnCash.Width = 79;
-            btnCash.Height = 71;
+            //btnCash.Width = 79;
+            //btnCash.Height = 71;
             //75, 67, orrig
         }
 
         private void btnCash_MouseLeave(object sender, EventArgs e)
         {
-            btnCash.Width = 75;
-            btnCash.Height = 67;
+            //btnCash.Width = 75;
+            //btnCash.Height = 67;
             //75, 67, orrig
         }
 

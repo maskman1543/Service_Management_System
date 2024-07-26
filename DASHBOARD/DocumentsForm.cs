@@ -40,7 +40,7 @@ namespace Service_Management_System.DASHBOARD
             string connectionString = Class1.GlobalVariables.ConnectionString2; // Use your actual connection string
 
             // SQL query to search for records by MechanicID
-            string query = "SELECT MechanicID, MechanicName, MechanicLastName, taskAssign FROM MechanicPayroll_query WHERE MechanicID = ?";
+            string query = "SELECT MechanicID, MechanicName, MechanicLastName ,CustomerName , Vehicle, Subtotal, Status , taskAssign FROM MechanicPayroll_query WHERE MechanicID = ?";
 
             // Create and open a connection
             using (OleDbConnection connection = new OleDbConnection(connectionString))
