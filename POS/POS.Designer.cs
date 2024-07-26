@@ -32,9 +32,9 @@ namespace Service_Management_System.POS
             components = new System.ComponentModel.Container();
             PictureBox minilogo;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POSForm));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             sidepanelPOS = new Panel();
             panel7 = new Panel();
             moveup = new PictureBox();
@@ -206,12 +206,12 @@ namespace Service_Management_System.POS
             sidepanelPOS.Controls.Add(button12);
             sidepanelPOS.Dock = DockStyle.Right;
             sidepanelPOS.ImeMode = ImeMode.NoControl;
-            sidepanelPOS.Location = new Point(1480, 78);
+            sidepanelPOS.Location = new Point(1476, 78);
             sidepanelPOS.Margin = new Padding(2);
             sidepanelPOS.MaximumSize = new Size(256, 656);
-            sidepanelPOS.MinimumSize = new Size(0, 656);
+            sidepanelPOS.MinimumSize = new Size(4, 656);
             sidepanelPOS.Name = "sidepanelPOS";
-            sidepanelPOS.Size = new Size(0, 656);
+            sidepanelPOS.Size = new Size(4, 656);
             sidepanelPOS.TabIndex = 16;
             sidepanelPOS.MouseEnter += sidepanelPOS_MouseEnter;
             // 
@@ -1529,6 +1529,7 @@ namespace Service_Management_System.POS
             tbxMechanicLastName.Name = "tbxMechanicLastName";
             tbxMechanicLastName.Size = new Size(226, 27);
             tbxMechanicLastName.TabIndex = 11;
+            tbxMechanicLastName.TextChanged += tbxMechanicLastName_TextChanged;
             // 
             // pictureBox3
             // 
@@ -1584,6 +1585,7 @@ namespace Service_Management_System.POS
             tbxMechanicName.Name = "tbxMechanicName";
             tbxMechanicName.Size = new Size(152, 27);
             tbxMechanicName.TabIndex = 6;
+            tbxMechanicName.TextChanged += tbxMechanicName_TextChanged;
             // 
             // lblBack
             // 
@@ -1638,31 +1640,32 @@ namespace Service_Management_System.POS
             tbxMechanicID.Name = "tbxMechanicID";
             tbxMechanicID.Size = new Size(55, 27);
             tbxMechanicID.TabIndex = 2;
+            tbxMechanicID.TextChanged += tbxMechanicID_TextChanged;
             // 
             // dgvMechanic
             // 
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dgvMechanic.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvMechanic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dgvMechanic.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvMechanic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvMechanic.ColumnHeadersHeight = 30;
             dgvMechanic.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvMechanic.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvMechanic.DefaultCellStyle = dataGridViewCellStyle3;
             dgvMechanic.GridColor = Color.FromArgb(231, 229, 255);
-            dgvMechanic.Location = new Point(30, 219);
+            dgvMechanic.Location = new Point(32, 292);
             dgvMechanic.Margin = new Padding(2);
             dgvMechanic.Name = "dgvMechanic";
             dgvMechanic.ReadOnly = true;

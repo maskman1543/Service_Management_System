@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalyticsForm));
             panel1 = new Panel();
             dateTimePickerStart = new DateTimePicker();
             dateTimePickerEnd = new DateTimePicker();
@@ -39,18 +40,39 @@
             btnWeekly = new Button();
             btnMonthly = new Button();
             btnDaily = new Button();
-            panel2 = new Panel();
             panel3 = new Panel();
-            panel4 = new Panel();
             panel5 = new Panel();
-            panel6 = new Panel();
+            label3 = new Label();
             guna2Elipse_panel3 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse_panel4 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse_panel5 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(components);
-            dataGridView1 = new DataGridView();
+            panel4 = new Panel();
+            pictureBox4 = new PictureBox();
+            label8 = new Label();
+            label4 = new Label();
+            panel6 = new Panel();
+            pictureBox3 = new PictureBox();
+            label2 = new Label();
+            label7 = new Label();
+            panel7 = new Panel();
+            pictureBox2 = new PictureBox();
+            label17 = new Label();
+            label6 = new Label();
+            panel8 = new Panel();
+            pictureBox1 = new PictureBox();
+            label5 = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel5.SuspendLayout();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -191,45 +213,33 @@
             btnDaily.UseVisualStyleBackColor = false;
             btnDaily.Click += btnDaily_Click;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.LightGray;
-            panel2.Location = new Point(12, 90);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(537, 219);
-            panel2.TabIndex = 3;
-            // 
             // panel3
             // 
             panel3.BackColor = Color.LightGray;
-            panel3.Location = new Point(563, 90);
+            panel3.Location = new Point(12, 170);
             panel3.Name = "panel3";
-            panel3.Size = new Size(522, 219);
+            panel3.Size = new Size(1067, 161);
             panel3.TabIndex = 4;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.LightGray;
-            panel4.Location = new Point(12, 322);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(537, 262);
-            panel4.TabIndex = 5;
             // 
             // panel5
             // 
-            panel5.BackColor = Color.LightGray;
-            panel5.Location = new Point(563, 321);
+            panel5.BackColor = Color.FromArgb(3, 83, 115);
+            panel5.Controls.Add(label3);
+            panel5.Location = new Point(12, 562);
             panel5.Name = "panel5";
-            panel5.Size = new Size(522, 263);
+            panel5.Size = new Size(1065, 39);
             panel5.TabIndex = 6;
             // 
-            // panel6
+            // label3
             // 
-            panel6.BackColor = Color.LightGray;
-            panel6.Location = new Point(12, 590);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(1073, 303);
-            panel6.TabIndex = 7;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(18, 4);
+            label3.Name = "label3";
+            label3.Size = new Size(102, 28);
+            label3.TabIndex = 3;
+            label3.Text = "Sales / day";
             // 
             // guna2Elipse_panel3
             // 
@@ -239,7 +249,6 @@
             // guna2Elipse_panel4
             // 
             guna2Elipse_panel4.BorderRadius = 10;
-            guna2Elipse_panel4.TargetControl = panel4;
             // 
             // guna2Elipse_panel5
             // 
@@ -249,17 +258,178 @@
             // guna2Elipse6
             // 
             guna2Elipse6.BorderRadius = 10;
-            guna2Elipse6.TargetControl = panel6;
             // 
-            // dataGridView1
+            // panel4
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(322, 60);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(446, 439);
-            dataGridView1.TabIndex = 0;
+            panel4.BackColor = Color.FromArgb(3, 83, 115);
+            panel4.Controls.Add(pictureBox4);
+            panel4.Controls.Add(label8);
+            panel4.Controls.Add(label4);
+            panel4.Location = new Point(816, 60);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(263, 95);
+            panel4.TabIndex = 18;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(26, 8);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(60, 60);
+            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox4.TabIndex = 4;
+            pictureBox4.TabStop = false;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(89, 59);
+            label8.Name = "label8";
+            label8.Size = new Size(145, 23);
+            label8.TabIndex = 4;
+            label8.Text = "Total Product Sold";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(136, 20);
+            label4.Name = "label4";
+            label4.Size = new Size(37, 39);
+            label4.TabIndex = 3;
+            label4.Text = "0";
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(3, 83, 115);
+            panel6.Controls.Add(pictureBox3);
+            panel6.Controls.Add(label2);
+            panel6.Controls.Add(label7);
+            panel6.Location = new Point(550, 60);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(263, 95);
+            panel6.TabIndex = 17;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(22, 5);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(60, 60);
+            pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox3.TabIndex = 3;
+            pictureBox3.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(120, 27);
+            label2.Name = "label2";
+            label2.Size = new Size(96, 22);
+            label2.TabIndex = 3;
+            label2.Text = "Php. 0.00";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(103, 59);
+            label7.Name = "label7";
+            label7.Size = new Size(113, 23);
+            label7.TabIndex = 3;
+            label7.Text = "Total Revenue";
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(3, 83, 115);
+            panel7.Controls.Add(pictureBox2);
+            panel7.Controls.Add(label17);
+            panel7.Controls.Add(label6);
+            panel7.Location = new Point(283, 60);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(263, 95);
+            panel7.TabIndex = 16;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(22, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(60, 60);
+            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox2.TabIndex = 3;
+            pictureBox2.TabStop = false;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.ForeColor = Color.White;
+            label17.Location = new Point(125, 27);
+            label17.Name = "label17";
+            label17.Size = new Size(96, 22);
+            label17.TabIndex = 2;
+            label17.Text = "Php. 0.00";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(59, 59);
+            label6.Name = "label6";
+            label6.Size = new Size(202, 23);
+            label6.TabIndex = 2;
+            label6.Text = "Average Salary/Employee";
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(3, 83, 115);
+            panel8.Controls.Add(pictureBox1);
+            panel8.Controls.Add(label5);
+            panel8.Controls.Add(label1);
+            panel8.Location = new Point(17, 60);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(263, 95);
+            panel8.TabIndex = 15;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(24, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(60, 60);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semilight", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(90, 59);
+            label5.Name = "label5";
+            label5.Size = new Size(166, 23);
+            label5.TabIndex = 1;
+            label5.Text = "Total salary expenses";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(112, 27);
+            label1.Name = "label1";
+            label1.Size = new Size(96, 22);
+            label1.TabIndex = 0;
+            label1.Text = "Php. 0.00";
             // 
             // AnalyticsForm
             // 
@@ -267,29 +437,39 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.White;
             ClientSize = new Size(1097, 906);
-            Controls.Add(dataGridView1);
-            Controls.Add(panel6);
-            Controls.Add(panel5);
             Controls.Add(panel4);
+            Controls.Add(panel6);
+            Controls.Add(panel7);
+            Controls.Add(panel8);
+            Controls.Add(panel5);
             Controls.Add(panel3);
-            Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AnalyticsForm";
             Text = "AnalyticsForm";
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private Panel panel1;
-        private Panel panel2;
         private Panel panel3;
-        private Panel panel4;
         private Button btnDaily;
         private Panel panel5;
-        private Panel panel6;
         private Button btnYearly;
         private Button btnMonthly;
         private Button btnWeekly;
@@ -298,10 +478,26 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse_panel5;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
         private Button button1;
-        private DataGridView dataGridView1;
         private DateTimePicker dateTimePickerStart;
         private DateTimePicker dateTimePickerEnd;
         private Button Okay;
         private Button button2;
+        private Panel panel4;
+        private PictureBox pictureBox4;
+        private Label label8;
+        private Label label4;
+        private Panel panel6;
+        private PictureBox pictureBox3;
+        private Label label2;
+        private Label label7;
+        private Panel panel7;
+        private PictureBox pictureBox2;
+        private Label label17;
+        private Label label6;
+        private Panel panel8;
+        private PictureBox pictureBox1;
+        private Label label5;
+        private Label label1;
+        private Label label3;
     }
 }
